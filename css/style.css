@@ -119,7 +119,7 @@ img {
     height: auto;
     margin: 0 auto 30px;
     animation: pulse 1.5s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
 }
 
 .loader-bar {
@@ -200,7 +200,7 @@ img {
     width: 90px;
     height: 90px;
     object-fit: contain;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
 }
 
 .nav-logo-text {
@@ -2266,6 +2266,7 @@ body {
     overflow: auto !important;
     opacity: 1 !important;
 }
+
 /* === News Section === */
 .news {
     background: var(--gray-50);
@@ -2327,7 +2328,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 48px;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .news-card.featured .news-img-placeholder {
@@ -2335,10 +2336,22 @@ body {
     min-height: 220px;
 }
 
-.news-img-1 { background: linear-gradient(135deg, #1D5FA8, #2F79C5); }
-.news-img-2 { background: linear-gradient(135deg, #E8A500, #FFD04D); color: rgba(0,0,0,0.4) !important; }
-.news-img-3 { background: linear-gradient(135deg, #1A2744, #243554); }
-.news-img-4 { background: linear-gradient(135deg, #10B981, #34D399); }
+.news-img-1 {
+    background: linear-gradient(135deg, #1D5FA8, #2F79C5);
+}
+
+.news-img-2 {
+    background: linear-gradient(135deg, #E8A500, #FFD04D);
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.news-img-3 {
+    background: linear-gradient(135deg, #1A2744, #243554);
+}
+
+.news-img-4 {
+    background: linear-gradient(135deg, #10B981, #34D399);
+}
 
 .news-tag {
     position: absolute;
@@ -2412,4 +2425,374 @@ body {
 .news-link:hover {
     color: var(--accent);
     gap: 10px;
+}
+
+/* ============================================================
+   HIỆU ỨNG GAK-STYLE: ANNOUNCEMENT BAR + FLOAT + BANNERS + DIARY
+   ============================================================ */
+
+/* === 1. ANNOUNCEMENT BAR === */
+.announcement-bar {
+    background: linear-gradient(90deg, var(--navy) 0%, var(--primary) 50%, var(--navy) 100%);
+    background-size: 200% 100%;
+    animation: annGradient 5s ease infinite;
+    color: var(--white);
+    position: relative;
+    z-index: 1001;
+    overflow: hidden;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes annGradient {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.ann-inner {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.ann-marquee {
+    display: flex;
+    gap: 60px;
+    animation: annScroll 30s linear infinite;
+    white-space: nowrap;
+}
+
+.ann-marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes annScroll {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(-50%)
+    }
+}
+
+.ann-item {
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.ann-item i {
+    color: var(--accent-light);
+    font-size: 12px;
+}
+
+.ann-sep {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.ann-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+    padding: 0 16px;
+    font-size: 14px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.ann-close:hover {
+    color: var(--white);
+}
+
+body.has-ann-bar .navbar {
+    top: 40px;
+}
+
+/* === 2. FLOATING BUTTONS ENHANCEMENT === */
+.fab-pulse-ring {
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: gakPulseRing 2.2s ease-out infinite;
+}
+
+@keyframes gakPulseRing {
+    0% {
+        box-shadow: 0 0 0 0 currentColor;
+        opacity: 0.8
+    }
+
+    70% {
+        box-shadow: 0 0 0 16px transparent;
+        opacity: 0
+    }
+
+    100% {
+        box-shadow: 0 0 0 16px transparent;
+        opacity: 0
+    }
+}
+
+.messenger-btn {
+    background: linear-gradient(135deg, #0084ff 0%, #a334fa 100%);
+}
+
+.messenger-btn .fab-pulse-ring {
+    color: rgba(163, 52, 250, 0.5);
+    animation-delay: 0.7s;
+}
+
+.zalo-btn .fab-pulse-ring {
+    color: rgba(0, 104, 255, 0.5);
+    animation-delay: 0.35s;
+}
+
+.phone-btn .fab-pulse-ring {
+    color: rgba(16, 185, 129, 0.5);
+    animation-delay: 0s;
+}
+
+/* === 3. CATEGORY FEATURE BANNERS === */
+.cat-banners {
+    overflow: hidden;
+}
+
+.cat-banner {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.cat-banner-bg {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cat-banner:hover .cat-banner-bg {
+    transform: scale(1.06);
+}
+
+.cat-banner-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(ellipse at 25% 50%, rgba(255, 255, 255, 0.07) 0%, transparent 65%), repeating-linear-gradient(-55deg, transparent 0px, transparent 18px, rgba(255, 255, 255, 0.025) 18px, rgba(255, 255, 255, 0.025) 19px);
+}
+
+.cat-banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 620px;
+}
+
+.cat-banner.reverse .cat-banner-content {
+    margin-left: auto;
+    text-align: right;
+}
+
+.cat-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: var(--accent-light);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(8px);
+    text-transform: uppercase;
+}
+
+.cat-banner-content h3 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cat-banner-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15.5px;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.cat-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: var(--navy);
+    padding: 13px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(232, 165, 0, 0.35);
+}
+
+.cat-cta:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cat-cta i {
+    transition: transform 0.3s ease;
+}
+
+.cat-cta:hover i {
+    transform: translateX(6px);
+}
+
+/* === 4. DIARY / GALLERY SECTION === */
+.diary-section {
+    background: var(--gray-50);
+}
+
+.diary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 210px);
+    gap: 10px;
+    margin-bottom: 32px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.diary-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.diary-item.diary-tall {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.diary-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+}
+
+.diary-item:hover img {
+    transform: scale(1.09);
+}
+
+.diary-hover {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(29, 95, 168, 0.7) 0%, rgba(26, 39, 68, 0.6) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.diary-item:hover .diary-hover {
+    opacity: 1;
+}
+
+.diary-hover i {
+    font-size: 26px;
+}
+
+.diary-hover span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.diary-hashtags {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.diary-tag {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 22px;
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.diary-tag:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-blue);
+}
+
+@media (max-width: 768px) {
+    .cat-banner {
+        height: 280px;
+    }
+
+    .cat-banner-content {
+        padding: 0 28px;
+    }
+
+    .cat-banner-content h3 {
+        font-size: 24px;
+    }
+
+    .cat-banner.reverse .cat-banner-content {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .diary-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 180px);
+    }
+
+    .diary-item.diary-tall {
+        grid-column: span 2;
+    }
 }

@@ -33,8 +33,11 @@
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
     <style>
-/* ============================================
+        /* ============================================
    THÀNH PHONG - BẢO HỘ LAO ĐỘNG
    Brand Colors:
    - Primary Blue: #1D5FA8
@@ -45,2415 +48,3080 @@
    - Light Gray: #F5F8FC
    ============================================ */
 
-/* === CSS Variables === */
-:root {
-    --primary: #1D5FA8;
-    --primary-dark: #164A85;
-    --primary-light: #2F79C5;
-    --primary-lighter: #3B8DD4;
-    --navy: #1A2744;
-    --navy-light: #243554;
-    --accent: #E8A500;
-    --accent-light: #FFD04D;
-    --white: #FFFFFF;
-    --gray-50: #F8FAFC;
-    --gray-100: #F1F5F9;
-    --gray-200: #E2E8F0;
-    --gray-300: #CBD5E1;
-    --gray-400: #94A3B8;
-    --gray-500: #64748B;
-    --gray-600: #475569;
-    --gray-700: #334155;
-    --gray-800: #1E293B;
-    --gray-900: #0F172A;
-    --success: #10B981;
-    --danger: #EF4444;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
-    --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
-    --shadow-blue: 0 8px 30px rgba(29, 95, 168, 0.25);
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --font: 'Be Vietnam Pro', 'Inter', -apple-system, sans-serif;
-}
-
-/* === Reset & Base === */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-}
-
-body {
-    font-family: var(--font);
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--gray-700);
-    background: var(--white);
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section {
-    padding: 100px 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* === Preloader === */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 99999;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-#preloader.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader {
-    text-align: center;
-}
-
-.loader-logo {
-    width: 180px;
-    height: auto;
-    margin: 0 auto 30px;
-    animation: pulse 1.5s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
-}
-
-.loader-bar {
-    width: 200px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.loader-progress {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--white));
-    border-radius: 2px;
-    animation: loading 1.5s ease-in-out forwards;
-}
-
-@keyframes loading {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 100%;
-    }
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(1.08);
-        opacity: 0.8;
-    }
-}
-
-/* === Navigation === */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 16px 0;
-    transition: var(--transition);
-    background: transparent;
-}
-
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 10px 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-}
-
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-}
-
-.nav-logo img {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
-}
-
-.nav-logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-brand {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--white);
-    letter-spacing: 1px;
-    line-height: 1.2;
-    transition: var(--transition);
-}
-
-.nav-tagline {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: var(--transition);
-}
-
-.navbar.scrolled .nav-brand {
-    color: var(--gray-600);
-}
-
-.navbar.scrolled .nav-tagline {
-    color: var(--gray-500);
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.nav-link {
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
-    border-radius: var(--radius-sm);
-    transition: var(--transition);
-    white-space: nowrap;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.navbar.scrolled .nav-link {
-    color: var(--gray-600);
-}
-
-.navbar.scrolled .nav-link:hover,
-.navbar.scrolled .nav-link.active {
-    color: var(--primary);
-    background: rgba(29, 95, 168, 0.08);
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.nav-phone {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 20px;
-    background: var(--accent);
-    color: var(--white);
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: var(--transition);
-}
-
-.nav-phone:hover {
-    background: var(--accent-light);
-    color: var(--navy);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(232, 165, 0, 0.4);
-}
-
-.nav-phone i {
-    font-size: 12px;
-    animation: ring 2s ease-in-out infinite;
-}
-
-@keyframes ring {
-
-    0%,
-    100% {
-        transform: rotate(0);
-    }
-
-    10% {
-        transform: rotate(15deg);
-    }
-
-    20% {
-        transform: rotate(-10deg);
-    }
-
-    30% {
-        transform: rotate(10deg);
-    }
-
-    40% {
-        transform: rotate(-5deg);
-    }
-
-    50% {
-        transform: rotate(0);
-    }
-}
-
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.nav-toggle span {
-    width: 24px;
-    height: 2.5px;
-    background: var(--white);
-    border-radius: 2px;
-    transition: var(--transition);
-}
-
-.navbar.scrolled .nav-toggle span {
-    background: var(--navy);
-}
-
-.nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* === Hero Section === */
-.hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--navy) 0%, var(--primary-dark) 50%, var(--primary) 100%);
-    overflow: hidden;
-    padding-top: 80px;
-}
-
-.hero-bg-shapes .shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.06;
-}
-
-.shape-1 {
-    width: 600px;
-    height: 600px;
-    background: var(--white);
-    top: -200px;
-    right: -100px;
-    animation: float 8s ease-in-out infinite;
-}
-
-.shape-2 {
-    width: 400px;
-    height: 400px;
-    background: var(--accent);
-    bottom: -100px;
-    left: -150px;
-    animation: float 10s ease-in-out infinite reverse;
-}
-
-.shape-3 {
-    width: 250px;
-    height: 250px;
-    background: var(--primary-light);
-    top: 40%;
-    left: 50%;
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translate(0, 0);
-    }
-
-    33% {
-        transform: translate(20px, -20px);
-    }
-
-    66% {
-        transform: translate(-10px, 15px);
-    }
-}
-
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    padding: 40px 20px;
-}
-
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 20px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    color: var(--accent-light);
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 24px;
-    backdrop-filter: blur(10px);
-}
-
-.hero-title {
-    font-size: 52px;
-    font-weight: 800;
-    color: var(--white);
-    line-height: 1.15;
-    margin-bottom: 16px;
-}
-
-.hero-title .highlight {
-    background: linear-gradient(135deg, var(--accent-light), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-slogan {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--accent-light);
-    font-style: italic;
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-}
-
-.hero-desc {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.8;
-    margin-bottom: 32px;
-    max-width: 520px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 48px;
-    flex-wrap: wrap;
-}
-
-/* Buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 32px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 15px;
-    font-family: var(--font);
-    cursor: pointer;
-    transition: var(--transition);
-    border: 2px solid transparent;
-    white-space: nowrap;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent), var(--accent-light));
-    color: var(--navy);
-    border-color: var(--accent);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(232, 165, 0, 0.4);
-}
-
-.btn-outline {
-    background: transparent;
-    color: var(--white);
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
-.btn-outline:hover {
-    background: var(--white);
-    color: var(--primary);
-    border-color: var(--white);
-    transform: translateY(-3px);
-}
-
-.btn-white {
-    background: var(--white);
-    color: var(--primary);
-    border-color: var(--white);
-    padding: 14px 32px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 15px;
-    font-family: var(--font);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: var(--transition);
-    text-decoration: none;
-}
-
-.btn-white:hover {
-    background: var(--accent);
-    color: var(--white);
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.btn-full {
-    width: 100%;
-    justify-content: center;
-}
-
-/* Hero Stats */
-.hero-stats {
-    display: flex;
-    gap: 40px;
-}
-
-.stat-item {
-    text-align: center;
-    color: var(--white);
-}
-
-.stat-number {
-    font-size: 36px;
-    font-weight: 800;
-    display: block;
-    line-height: 1;
-    background: linear-gradient(135deg, var(--white), var(--accent-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.stat-label {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
-    display: block;
-    margin-top: 4px;
-}
-
-/* Hero Visual */
-.hero-visual {
-    position: relative;
-}
-
-.hero-image-wrapper {
-    position: relative;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-}
-
-.hero-img {
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
-    border-radius: var(--radius-xl);
-    border: 3px solid rgba(255, 255, 255, 0.15);
-}
-
-.hero-floating-card {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 20px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-lg);
-    animation: floatCard 3s ease-in-out infinite;
-}
-
-.hero-floating-card i {
-    font-size: 20px;
-    color: var(--primary);
-}
-
-.hero-floating-card span {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--navy);
-}
-
-.card-1 {
-    top: 30px;
-    right: -20px;
-    animation-delay: 0s;
-}
-
-.card-2 {
-    bottom: 40px;
-    left: -20px;
-    animation-delay: 1.5s;
-}
-
-@keyframes floatCard {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-/* Hero Wave */
-.hero-wave {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-}
-
-.hero-wave svg {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* === Partners Marquee === */
-.partners-marquee {
-    padding: 24px 0;
-    background: var(--gray-50);
-    border-bottom: 1px solid var(--gray-200);
-    overflow: hidden;
-}
-
-.marquee-track {
-    overflow: hidden;
-    width: 100%;
-}
-
-.marquee-content {
-    display: flex;
-    gap: 48px;
-    animation: marquee 30s linear infinite;
-    width: max-content;
-}
-
-.marquee-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--gray-500);
-    white-space: nowrap;
-}
-
-.marquee-item i {
-    color: var(--primary);
-    font-size: 16px;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* === Section Headers === */
-.section-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.section-label.center {
-    justify-content: center;
-}
-
-.label-line {
-    width: 40px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary), var(--primary-light));
-    border-radius: 1px;
-}
-
-.section-title {
-    font-size: 40px;
-    font-weight: 800;
-    color: var(--navy);
-    line-height: 1.2;
-    margin-bottom: 16px;
-}
-
-.section-title.center {
-    text-align: center;
-}
-
-.section-title .highlight {
-    color: var(--primary);
-}
-
-.section-desc {
-    font-size: 16px;
-    color: var(--gray-500);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 1.8;
-}
-
-.section-header {
-    margin-bottom: 60px;
-}
-
-/* === About Section === */
-.about {
-    background: var(--white);
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.about-img-wrapper {
-    position: relative;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-}
-
-.about-img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-xl);
-}
-
-.about-exp-badge {
-    position: absolute;
-    bottom: 24px;
-    right: 24px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 24px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: var(--white);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-blue);
-}
-
-.exp-number {
-    font-size: 36px;
-    font-weight: 800;
-    line-height: 1;
-}
-
-.exp-text {
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1.3;
-}
-
-.about-text {
-    font-size: 15px;
-    color: var(--gray-600);
-    line-height: 1.8;
-    margin-bottom: 16px;
-}
-
-.about-features {
-    display: grid;
-    gap: 16px;
-    margin-top: 28px;
-}
-
-.about-feature {
-    display: flex;
-    gap: 14px;
-    padding: 16px;
-    border-radius: var(--radius-md);
-    background: var(--gray-50);
-    transition: var(--transition);
-}
-
-.about-feature:hover {
-    background: rgba(29, 95, 168, 0.05);
-    transform: translateX(4px);
-}
-
-.feature-icon {
-    flex-shrink: 0;
-}
-
-.feature-icon i {
-    font-size: 20px;
-    color: var(--primary);
-}
-
-.about-feature h4 {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 2px;
-}
-
-.about-feature p {
-    font-size: 13px;
-    color: var(--gray-500);
-}
-
-/* === Products Section === */
-.products {
-    position: relative;
-    background: var(--gray-50);
-}
-
-.products-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 400px;
-    background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
-}
-
-.products .container {
-    position: relative;
-    z-index: 1;
-}
-
-.product-filters {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 48px;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 10px 22px;
-    border: 2px solid var(--gray-200);
-    background: var(--white);
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: var(--font);
-    color: var(--gray-600);
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.filter-btn:hover {
-    border-color: var(--primary-light);
-    color: var(--primary);
-    background: rgba(29, 95, 168, 0.05);
-}
-
-.filter-btn.active {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    color: var(--white);
-    border-color: var(--primary);
-    box-shadow: var(--shadow-blue);
-}
-
-.filter-btn i {
-    font-size: 13px;
-}
-
-/* Products Grid */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
-
-.product-card {
-    position: relative;
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    border: 1px solid var(--gray-100);
-}
-
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-    border-color: rgba(29, 95, 168, 0.15);
-}
-
-.product-card.hidden {
-    display: none;
-}
-
-.product-badge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    padding: 4px 14px;
-    background: linear-gradient(135deg, var(--danger), #FF6B6B);
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 700;
-    border-radius: 50px;
-    z-index: 2;
-    letter-spacing: 0.5px;
-}
-
-.product-badge.new {
-    background: linear-gradient(135deg, var(--success), #34D399);
-}
-
-.product-image {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--gray-50), rgba(29, 95, 168, 0.05));
-    position: relative;
-    overflow: hidden;
-}
-
-.product-image::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(transparent, var(--white));
-}
-
-.product-icon-large {
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    color: var(--white);
-    font-size: 36px;
-    box-shadow: 0 8px 25px rgba(29, 95, 168, 0.3);
-    transition: var(--transition);
-}
-
-.product-card:hover .product-icon-large {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.product-info {
-    padding: 20px 24px 24px;
-}
-
-.product-category-tag {
-    display: inline-block;
-    padding: 3px 12px;
-    background: rgba(29, 95, 168, 0.08);
-    color: var(--primary);
-    font-size: 11px;
-    font-weight: 600;
-    border-radius: 50px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
-.product-info h3 {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 10px;
-    line-height: 1.4;
-}
-
-.product-info p {
-    font-size: 13px;
-    color: var(--gray-500);
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-.product-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--primary);
-    transition: var(--transition);
-}
-
-.product-link:hover {
-    color: var(--primary-dark);
-    gap: 12px;
-}
-
-.product-link i {
-    font-size: 12px;
-    transition: var(--transition);
-}
-
-/* Products CTA */
-.products-cta {
-    text-align: center;
-    margin-top: 50px;
-    padding: 40px;
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--gray-200);
-}
-
-.products-cta p {
-    font-size: 16px;
-    color: var(--gray-600);
-    margin-bottom: 20px;
-}
-
-/* === Why Choose Us === */
-.why-us {
-    background: var(--white);
-}
-
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
-
-.why-card {
-    padding: 36px 28px;
-    border-radius: var(--radius-lg);
-    background: var(--white);
-    border: 1px solid var(--gray-100);
-    text-align: center;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-.why-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--primary-light));
-    transform: scaleX(0);
-    transition: var(--transition);
-}
-
-.why-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(29, 95, 168, 0.15);
-}
-
-.why-card:hover::before {
-    transform: scaleX(1);
-}
-
-.why-icon {
-    width: 72px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    border-radius: var(--radius-md);
-    background: linear-gradient(135deg, rgba(29, 95, 168, 0.08), rgba(29, 95, 168, 0.04));
-    color: var(--primary);
-    font-size: 28px;
-    transition: var(--transition);
-}
-
-.why-card:hover .why-icon {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    color: var(--white);
-    transform: scale(1.05);
-    box-shadow: var(--shadow-blue);
-}
-
-.why-card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 10px;
-}
-
-.why-card p {
-    font-size: 14px;
-    color: var(--gray-500);
-    line-height: 1.7;
-}
-
-/* === Services Banner === */
-.services-banner {
-    padding: 0;
-}
-
-.services-banner .container {
-    max-width: 100%;
-    padding: 0;
-}
-
-.banner-content {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    padding: 48px 60px;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.banner-content::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.banner-icon {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-md);
-    color: var(--white);
-    font-size: 32px;
-}
-
-.banner-text {
-    flex: 1;
-}
-
-.banner-text h3 {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 8px;
-}
-
-.banner-text p {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.7;
-}
-
-/* === Testimonials === */
-.testimonials {
-    background: var(--gray-50);
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
-
-.testimonial-card {
-    background: var(--white);
-    padding: 32px;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--gray-100);
-    transition: var(--transition);
-    position: relative;
-}
-
-.testimonial-card::before {
-    content: '"';
-    position: absolute;
-    top: 16px;
-    right: 24px;
-    font-size: 72px;
-    font-weight: 800;
-    color: rgba(29, 95, 168, 0.06);
-    line-height: 1;
-    font-family: Georgia, serif;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.testimonial-stars {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 16px;
-}
-
-.testimonial-stars i {
-    color: var(--accent);
-    font-size: 14px;
-}
-
-.testimonial-text {
-    font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.8;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-top: 16px;
-    border-top: 1px solid var(--gray-100);
-}
-
-.author-avatar {
-    flex-shrink: 0;
-}
-
-.author-avatar i {
-    font-size: 40px;
-    color: var(--primary-light);
-}
-
-.testimonial-author strong {
-    display: block;
-    font-size: 15px;
-    color: var(--navy);
-}
-
-.testimonial-author span {
-    font-size: 12px;
-    color: var(--gray-400);
-}
-
-/* === Contact Section === */
-.contact {
-    background: var(--white);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-}
-
-.contact-info-card {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--primary-dark) 100%);
-    padding: 40px;
-    border-radius: var(--radius-xl);
-    color: var(--white);
-    height: 100%;
-}
-
-.contact-info-card h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-details {
-    display: grid;
-    gap: 20px;
-}
-
-.contact-detail {
-    display: flex;
-    gap: 16px;
-}
-
-.contact-icon {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: var(--radius-sm);
-    font-size: 16px;
-}
-
-.contact-detail strong {
-    display: block;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
-    margin-bottom: 2px;
-}
-
-.contact-detail p {
-    font-size: 14px;
-    color: var(--white);
-    line-height: 1.5;
-}
-
-.contact-detail a {
-    color: var(--accent-light);
-}
-
-.contact-detail a:hover {
-    color: var(--white);
-}
-
-.contact-social {
-    display: flex;
-    gap: 12px;
-    margin-top: 28px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.social-link {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
-    color: var(--white);
-    font-size: 16px;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    background: var(--accent);
-    transform: translateY(-3px);
-}
-
-/* Contact Form */
-.contact-form {
-    background: var(--white);
-    padding: 40px;
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--gray-200);
-    box-shadow: var(--shadow-md);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 8px;
-}
-
-.form-group label i {
-    color: var(--primary);
-    margin-right: 6px;
-    font-size: 13px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 2px solid var(--gray-200);
-    border-radius: var(--radius-sm);
-    font-size: 14px;
-    font-family: var(--font);
-    color: var(--gray-700);
-    transition: var(--transition);
-    background: var(--white);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(29, 95, 168, 0.08);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: var(--gray-400);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* === Map Section === */
-.map-section {
-    line-height: 0;
-}
-
-.map-section iframe {
-    filter: grayscale(20%);
-}
-
-/* === Footer === */
-.footer {
-    background: var(--navy);
-    color: rgba(255, 255, 255, 0.8);
-    padding: 60px 0 0;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-    gap: 40px;
-    padding-bottom: 40px;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-
-.footer-logo img {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-}
-
-.footer-brand-name {
-    display: block;
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--white);
-    letter-spacing: 1px;
-}
-
-.footer-brand-tag {
-    display: block;
-    font-size: 14px;
-    color: var(--primary-light);
-    font-weight: 500;
-}
-
-.footer-slogan {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--accent-light);
-    font-style: italic;
-    margin-bottom: 12px;
-}
-
-.footer-desc {
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 20px;
-}
-
-.footer-social {
-    display: flex;
-    gap: 10px;
-}
-
-.footer-social a {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-    transition: var(--transition);
-}
-
-.footer-social a:hover {
-    background: var(--primary);
-    color: var(--white);
-    transform: translateY(-3px);
-}
-
-.footer-links h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 12px;
-}
-
-.footer-links h4::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background: var(--primary-light);
-    border-radius: 1px;
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-    transition: var(--transition);
-}
-
-.footer-links a:hover {
-    color: var(--accent-light);
-    padding-left: 6px;
-}
-
-.footer-contact h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 12px;
-}
-
-.footer-contact h4::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background: var(--primary-light);
-    border-radius: 1px;
-}
-
-.footer-contact-item {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 14px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-contact-item i {
-    color: var(--primary-light);
-    font-size: 14px;
-    margin-top: 3px;
-    flex-shrink: 0;
-}
-
-.footer-contact-item a {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-contact-item a:hover {
-    color: var(--accent-light);
-}
-
-.footer-bottom {
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: center;
-}
-
-.footer-bottom p {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.4);
-}
-
-/* === Floating Actions === */
-.floating-actions {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 999;
-}
-
-.fab-btn {
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: var(--white);
-    transition: var(--transition);
-    position: relative;
-    box-shadow: var(--shadow-lg);
-}
-
-.fab-btn:hover {
-    transform: scale(1.1);
-}
-
-.phone-btn {
-    background: linear-gradient(135deg, var(--success), #34D399);
-    animation: phonePulse 2s ease-in-out infinite;
-}
-
-@keyframes phonePulse {
-
-    0%,
-    100% {
-        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
-    }
-
-    50% {
-        box-shadow: 0 0 0 12px rgba(16, 185, 129, 0);
-    }
-}
-
-.zalo-btn {
-    background: linear-gradient(135deg, #0068FF, #00A6FF);
-}
-
-.scroll-top-btn {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-}
-
-.scroll-top-btn.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.fab-tooltip {
-    position: absolute;
-    right: 62px;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 6px 14px;
-    background: var(--navy);
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 500;
-    border-radius: 6px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    pointer-events: none;
-}
-
-.fab-btn:hover .fab-tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* === RESPONSIVE === */
-
-/* Tablet */
-@media (max-width: 1024px) {
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .hero-title {
-        font-size: 40px;
-    }
-
-    .hero-desc {
-        max-width: 100%;
-        margin: 0 auto 32px;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-stats {
-        justify-content: center;
-    }
-
-    .hero-visual {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .section-title {
-        font-size: 32px;
-    }
-
-    .banner-content {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 30px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 320px;
-        height: 100vh;
-        background: var(--navy);
-        flex-direction: column;
-        align-items: stretch;
-        padding: 80px 24px 24px;
-        gap: 0;
-        transition: right 0.3s ease;
-        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-menu.open {
-        right: 0;
-    }
-
-    .nav-menu .nav-link {
-        color: rgba(255, 255, 255, 0.8);
-        padding: 14px 16px;
-        border-radius: var(--radius-sm);
-        font-size: 15px;
-    }
-
-    .nav-menu .nav-link:hover,
-    .nav-menu .nav-link.active {
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--white);
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-
-    .nav-phone span {
-        display: none;
-    }
-
-    .nav-phone {
-        padding: 10px;
-        border-radius: 50%;
-    }
-
-    .hero {
-        min-height: auto;
-        padding: 120px 0 80px;
-    }
-
-    .hero-title {
-        font-size: 32px;
-    }
-
-    .hero-slogan {
-        font-size: 18px;
-    }
-
-    .hero-stats {
-        gap: 24px;
-    }
-
-    .stat-number {
-        font-size: 28px;
-    }
-
-    .hero-floating-card {
-        display: none;
-    }
-
-    .section {
-        padding: 60px 0;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .product-filters {
-        gap: 8px;
-    }
-
-    .filter-btn {
-        padding: 8px 14px;
-        font-size: 12px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-form {
-        padding: 24px;
-    }
-
-    .contact-info-card {
-        padding: 28px;
-    }
-
-    .nav-logo img {
-        width: 56px;
-        height: 56px;
-    }
-
-    .nav-brand {
-        font-size: 20px;
-    }
-
-    .nav-tagline {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 26px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-stats {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .section-title {
-        font-size: 24px;
-    }
-
-    .product-filters {
-        justify-content: flex-start;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        padding-bottom: 8px;
-    }
-
-    .product-filters::-webkit-scrollbar {
-        display: none;
-    }
-}
-
-/* === Selection === */
-::selection {
-    background: rgba(29, 95, 168, 0.2);
-    color: var(--navy);
-}
-
-/* === Scrollbar === */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--gray-100);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-light);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
-}
-
-/* ================================================================
+        /* === CSS Variables === */
+        :root {
+            --primary: #1D5FA8;
+            --primary-dark: #164A85;
+            --primary-light: #2F79C5;
+            --primary-lighter: #3B8DD4;
+            --navy: #1A2744;
+            --navy-light: #243554;
+            --accent: #E8A500;
+            --accent-light: #FFD04D;
+            --white: #FFFFFF;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --gray-500: #64748B;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1E293B;
+            --gray-900: #0F172A;
+            --success: #10B981;
+            --danger: #EF4444;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --shadow-blue: 0 8px 30px rgba(29, 95, 168, 0.25);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font: 'Be Vietnam Pro', 'Inter', -apple-system, sans-serif;
+        }
+
+        /* === Reset & Base === */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: var(--font);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--gray-700);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        .product-action-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .add-to-cart-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--accent);
+            transform: scale(1.1);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Status colors */
+        .status-filters .filter-btn[data-status="new"].active { background: var(--success); }
+        .status-filters .filter-btn[data-status="featured"].active { background: #FF9800; }
+        .status-filters .filter-btn[data-status="best-seller"].active { background: var(--accent); }
+
+        /* === Preloader === */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            text-align: center;
+        }
+
+        .loader-logo {
+            width: 180px;
+            height: auto;
+            margin: 0 auto 30px;
+            animation: pulse 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loader-progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--white));
+            border-radius: 2px;
+            animation: loading 1.5s ease-in-out forwards;
+        }
+
+        @keyframes loading {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 0.8;
+            }
+        }
+
+        /* === Navigation === */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 10px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .nav-logo img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+        }
+
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-brand {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+            line-height: 1.2;
+            transition: var(--transition);
+        }
+
+        .nav-tagline {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .nav-brand {
+            color: var(--gray-600);
+        }
+
+        .navbar.scrolled .nav-tagline {
+            color: var(--gray-500);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--gray-600);
+        }
+
+        .navbar.scrolled .nav-link:hover,
+        .navbar.scrolled .nav-link.active {
+            color: var(--primary);
+            background: rgba(29, 95, 168, 0.08);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Search Bar */
+        .nav-search {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-search input {
+            width: 0;
+            padding: 8px 0;
+            border: none;
+            background: transparent;
+            border-bottom: 2px solid var(--primary-light);
+            color: var(--white);
+            font-family: var(--font);
+            font-size: 14px;
+            transition: var(--transition);
+            outline: none;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-search.active input {
+            width: 180px;
+            padding: 8px 12px;
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .navbar.scrolled .nav-search input {
+            color: var(--gray-800);
+        }
+
+        .search-trigger {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            cursor: pointer;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .search-trigger {
+            color: var(--gray-600);
+        }
+
+        .search-trigger:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Language Toggle */
+        .nav-lang {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .nav-lang {
+            background: var(--gray-100);
+            color: var(--gray-600);
+        }
+
+        .lang-btn {
+            font-size: 12px;
+            font-weight: 700;
+            opacity: 0.5;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            opacity: 1;
+            color: var(--accent-light);
+        }
+
+        .navbar.scrolled .lang-btn.active {
+            color: var(--primary);
+        }
+
+        /* Cart Icon */
+        .nav-cart {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .nav-cart {
+            color: var(--gray-600);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 18px;
+            height: 18px;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 10px;
+            font-weight: 800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .cart-badge {
+            border-color: var(--white);
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .nav-phone:hover {
+            background: var(--accent-light);
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(232, 165, 0, 0.4);
+        }
+
+        .nav-phone i {
+            font-size: 12px;
+            animation: ring 2s ease-in-out infinite;
+        }
+
+        @keyframes ring {
+
+            0%,
+            100% {
+                transform: rotate(0);
+            }
+
+            10% {
+                transform: rotate(15deg);
+            }
+
+            20% {
+                transform: rotate(-10deg);
+            }
+
+            30% {
+                transform: rotate(10deg);
+            }
+
+            40% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(0);
+            }
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2.5px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .nav-toggle span {
+            background: var(--navy);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* === Hero Slider === */
+        .hero-slider {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .hero-slide {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-slide-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4);
+        }
+
+        .hero-slide-content {
+            z-index: 1;
+            padding-top: 80px;
+        }
+
+        .hero-slider .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: var(--white);
+            opacity: 0.5;
+        }
+
+        .hero-slider .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: var(--accent);
+            width: 30px;
+            border-radius: 10px;
+        }
+
+        .hero-slider .swiper-button-next,
+        .hero-slider .swiper-button-prev {
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .hero-slider .swiper-button-next:after,
+        .hero-slider .swiper-button-prev:after {
+            font-size: 20px;
+        }
+
+        .hero-slider .swiper-button-next:hover,
+        .hero-slider .swiper-button-prev:hover {
+            background: var(--primary);
+        }
+
+        /* Hero Animation */
+        .hero-slide-content .hero-badge,
+        .hero-slide-content .hero-title,
+        .hero-slide-content .hero-slogan,
+        .hero-slide-content .hero-desc,
+        .hero-slide-content .hero-buttons {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .swiper-slide-active .hero-slide-content .hero-badge,
+        .swiper-slide-active .hero-slide-content .hero-title,
+        .swiper-slide-active .hero-slide-content .hero-slogan,
+        .swiper-slide-active .hero-slide-content .hero-desc,
+        .swiper-slide-active .hero-slide-content .hero-buttons {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .swiper-slide-active .hero-slide-content .hero-badge { transition-delay: 0.2s; }
+        .swiper-slide-active .hero-slide-content .hero-title { transition-delay: 0.4s; }
+        .swiper-slide-active .hero-slide-content .hero-slogan { transition-delay: 0.5s; }
+        .swiper-slide-active .hero-slide-content .hero-desc { transition-delay: 0.6s; }
+        .swiper-slide-active .hero-slide-content .hero-buttons { transition-delay: 0.8s; }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background: var(--white);
+            z-index: 9999;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-header h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .cart-close {
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray-400);
+            transition: var(--transition);
+        }
+
+        .cart-close:hover {
+            color: var(--danger);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--gray-50);
+        }
+
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            background: var(--gray-50);
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-info h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .cart-item-price {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border: 1px solid var(--gray-200);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 12px;
+            transition: var(--transition);
+        }
+
+        .qty-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .cart-footer {
+            padding: 24px;
+            border-top: 1px solid var(--gray-100);
+            background: var(--gray-50);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* === Partners Marquee === */
+        .partners-marquee {
+            padding: 24px 0;
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 48px;
+            animation: marquee 30s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-500);
+            white-space: nowrap;
+        }
+
+        .marquee-item i {
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* === Section Headers === */
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-label.center {
+            justify-content: center;
+        }
+
+        .label-line {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 1px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-title.center {
+            text-align: center;
+        }
+
+        .section-title .highlight {
+            color: var(--primary);
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        /* === About Section === */
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-img-wrapper {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .about-exp-badge {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-blue);
+        }
+
+        .exp-number {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .exp-text {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .about-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .about-features {
+            display: grid;
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .about-feature {
+            display: flex;
+            gap: 14px;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            background: var(--gray-50);
+            transition: var(--transition);
+        }
+
+        .about-feature:hover {
+            background: rgba(29, 95, 168, 0.05);
+            transform: translateX(4px);
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        .about-feature h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+
+        .about-feature p {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        /* === Products Section === */
+        .products {
+            position: relative;
+            background: var(--gray-50);
+        }
+
+        .products-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+        }
+
+        .products .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 22px;
+            border: 2px solid var(--gray-200);
+            background: var(--white);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: var(--font);
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-light);
+            color: var(--primary);
+            background: rgba(29, 95, 168, 0.05);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-blue);
+        }
+
+        .filter-btn i {
+            font-size: 13px;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .product-card {
+            position: relative;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--gray-100);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(29, 95, 168, 0.15);
+        }
+
+        .product-card.hidden {
+            display: none;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 4px 14px;
+            background: linear-gradient(135deg, var(--danger), #FF6B6B);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 50px;
+            z-index: 2;
+            letter-spacing: 0.5px;
+        }
+
+        .product-badge.new {
+            background: linear-gradient(135deg, var(--success), #34D399);
+        }
+
+        .product-image {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gray-50), rgba(29, 95, 168, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(transparent, var(--white));
+        }
+
+        .product-icon-large {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            font-size: 36px;
+            box-shadow: 0 8px 25px rgba(29, 95, 168, 0.3);
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-icon-large {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .product-info {
+            padding: 20px 24px 24px;
+        }
+
+        .product-category-tag {
+            display: inline-block;
+            padding: 3px 12px;
+            background: rgba(29, 95, 168, 0.08);
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .product-info h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .product-info p {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .product-link:hover {
+            color: var(--primary-dark);
+            gap: 12px;
+        }
+
+        .product-link i {
+            font-size: 12px;
+            transition: var(--transition);
+        }
+
+        /* Products CTA */
+        .products-cta {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            border: 2px dashed var(--gray-200);
+        }
+
+        .products-cta p {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+        }
+
+        /* === Why Choose Us === */
+        .why-us {
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .why-card {
+            padding: 36px 28px;
+            border-radius: var(--radius-lg);
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(29, 95, 168, 0.15);
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .why-icon {
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, rgba(29, 95, 168, 0.08), rgba(29, 95, 168, 0.04));
+            color: var(--primary);
+            font-size: 28px;
+            transition: var(--transition);
+        }
+
+        .why-card:hover .why-icon {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-blue);
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* === Services Banner === */
+        .services-banner {
+            padding: 0;
+        }
+
+        .services-banner .container {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            padding: 48px 60px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .banner-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-md);
+            color: var(--white);
+            font-size: 32px;
+        }
+
+        .banner-text {
+            flex: 1;
+        }
+
+        .banner-text h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .banner-text p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+
+        /* === Testimonials === */
+        .testimonials {
+            background: var(--gray-50);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-100);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 72px;
+            font-weight: 800;
+            color: rgba(29, 95, 168, 0.06);
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-stars i {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .author-avatar {
+            flex-shrink: 0;
+        }
+
+        .author-avatar i {
+            font-size: 40px;
+            color: var(--primary-light);
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 15px;
+            color: var(--navy);
+        }
+
+        .testimonial-author span {
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        /* === Contact Section === */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-info-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--primary-dark) 100%);
+            padding: 40px;
+            border-radius: var(--radius-xl);
+            color: var(--white);
+            height: 100%;
+        }
+
+        .contact-info-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-details {
+            display: grid;
+            gap: 20px;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 16px;
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+        }
+
+        .contact-detail strong {
+            display: block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .contact-detail p {
+            font-size: 14px;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        .contact-detail a {
+            color: var(--accent-light);
+        }
+
+        .contact-detail a:hover {
+            color: var(--white);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .social-link {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--white);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .form-group label i {
+            color: var(--primary);
+            margin-right: 6px;
+            font-size: 13px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-family: var(--font);
+            color: var(--gray-700);
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(29, 95, 168, 0.08);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray-400);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* === Map Section === */
+        .map-section {
+            line-height: 0;
+        }
+
+        .map-section iframe {
+            filter: grayscale(20%);
+        }
+
+        /* === Footer === */
+        .footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+        }
+
+        .footer-brand-name {
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .footer-brand-tag {
+            display: block;
+            font-size: 14px;
+            color: var(--primary-light);
+            font-weight: 500;
+        }
+
+        .footer-slogan {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent-light);
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary-light);
+            border-radius: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+            padding-left: 6px;
+        }
+
+        .footer-contact h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary-light);
+            border-radius: 1px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-contact-item i {
+            color: var(--primary-light);
+            font-size: 14px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .footer-contact-item a {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-contact-item a:hover {
+            color: var(--accent-light);
+        }
+
+        .footer-bottom {
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* === Floating Actions === */
+        .floating-actions {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .fab-btn {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--white);
+            transition: var(--transition);
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.15) translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Pulse ring element */
+        .fab-pulse-ring {
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: gakPulseRing 2.2s ease-out infinite;
+        }
+
+        @keyframes gakPulseRing {
+            0% {
+                box-shadow: 0 0 0 0 currentColor;
+                opacity: 0.8;
+            }
+
+            70% {
+                box-shadow: 0 0 0 16px transparent;
+                opacity: 0;
+            }
+
+            100% {
+                box-shadow: 0 0 0 16px transparent;
+                opacity: 0;
+            }
+        }
+
+        .messenger-btn {
+            background: linear-gradient(135deg, #0084ff 0%, #a334fa 100%);
+        }
+
+        .messenger-btn .fab-pulse-ring {
+            color: rgba(163, 52, 250, 0.5);
+            animation-delay: 0.7s;
+        }
+
+        .phone-btn {
+            background: linear-gradient(135deg, var(--success), #34D399);
+        }
+
+        .phone-btn .fab-pulse-ring {
+            color: rgba(16, 185, 129, 0.5);
+            animation-delay: 0s;
+        }
+
+        .zalo-btn {
+            background: linear-gradient(135deg, #0068FF, #00A6FF);
+        }
+
+        .zalo-btn .fab-pulse-ring {
+            color: rgba(0, 104, 255, 0.5);
+            animation-delay: 0.35s;
+        }
+
+        .scroll-top-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .fab-tooltip {
+            position: absolute;
+            right: 62px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 6px 14px;
+            background: var(--navy);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .fab-btn:hover .fab-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* === RESPONSIVE === */
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-desc {
+                max-width: 100%;
+                margin: 0 auto 32px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .banner-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 30px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background: var(--navy);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 80px 24px 24px;
+                gap: 0;
+                transition: right 0.3s ease;
+                box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.open {
+                right: 0;
+            }
+
+            .nav-menu .nav-link {
+                color: rgba(255, 255, 255, 0.8);
+                padding: 14px 16px;
+                border-radius: var(--radius-sm);
+                font-size: 15px;
+            }
+
+            .nav-menu .nav-link:hover,
+            .nav-menu .nav-link.active {
+                background: rgba(255, 255, 255, 0.1);
+                color: var(--white);
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-phone span {
+                display: none;
+            }
+
+            .nav-phone {
+                padding: 10px;
+                border-radius: 50%;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 120px 0 80px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-slogan {
+                font-size: 18px;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .hero-floating-card {
+                display: none;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-filters {
+                gap: 8px;
+            }
+
+            .filter-btn {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 24px;
+            }
+
+            .contact-info-card {
+                padding: 28px;
+            }
+
+            .nav-logo img {
+                width: 56px;
+                height: 56px;
+            }
+
+            .nav-brand {
+                font-size: 20px;
+            }
+
+            .nav-tagline {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 26px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .product-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding-bottom: 8px;
+            }
+
+            .product-filters::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        /* === Selection === */
+        ::selection {
+            background: rgba(29, 95, 168, 0.2);
+            color: var(--navy);
+        }
+
+        /* === Scrollbar === */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        /* ================================================================
    CHỨC NĂNG LIGHTBOX CHI TIẾT SẢN PHẨM
    ================================================================ */
 
-/* 1. Khung nền bao phủ */
-.product-lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    display: none;
-    /* Ẩn mặc định */
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
+        /* 1. Khung nền bao phủ */
+        .product-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: none;
+            /* Ẩn mặc định */
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-.product-lightbox.open {
-    display: flex;
-}
+        .product-lightbox.open {
+            display: flex;
+        }
 
-.lightbox-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-}
+        .lightbox-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
 
-/* 2. Khung nội dung chính */
-.lightbox-content-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    z-index: 10;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
+        /* 2. Khung nội dung chính */
+        .lightbox-content-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            z-index: 10;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
 
-.lightbox-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #fff;
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 11;
-    transition: 0.3s;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #fff;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 11;
+            transition: 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.lightbox-close:hover {
-    background: #ff4d4f;
-    color: #fff;
-}
+        .lightbox-close:hover {
+            background: #ff4d4f;
+            color: #fff;
+        }
 
-/* 3. Bố cục Grid (Chia 2 cột) */
-.lightbox-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-    /* Đảm bảo 2 bên cao bằng nhau */
-}
+        /* 3. Bố cục Grid (Chia 2 cột) */
+        .lightbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            /* Đảm bảo 2 bên cao bằng nhau */
+        }
 
-/* --- CỘT TRÁI: KHUNG CHỨA ẢNH CỐ ĐỊNH --- */
-.lightbox-main-visual {
-    position: relative;
-    background: #f8f9fa;
-    /* Màu nền cho vùng trống của ảnh */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        /* --- CỘT TRÁI: KHUNG CHỨA ẢNH CỐ ĐỊNH --- */
+        .lightbox-main-visual {
+            position: relative;
+            background: #f8f9fa;
+            /* Màu nền cho vùng trống của ảnh */
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    /* CỐ ĐỊNH TỶ LỆ KHUNG HÌNH 1:1 (Hình vuông) */
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-}
+            /* CỐ ĐỊNH TỶ LỆ KHUNG HÌNH 1:1 (Hình vuông) */
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+        }
 
-#lightboxMainImg {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    /* Giữ nguyên tỉ lệ ảnh, không làm méo, nằm gọn trong khung vuông */
-    object-fit: contain;
-    transition: opacity 0.3s ease;
-}
+        #lightboxMainImg {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            /* Giữ nguyên tỉ lệ ảnh, không làm méo, nằm gọn trong khung vuông */
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
 
-/* Nút điều hướng ảnh (Trái/Phải) */
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        /* Nút điều hướng ảnh (Trái/Phải) */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.nav-btn:hover {
-    background: var(--primary);
-    color: #fff;
-}
+        .nav-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
 
-.prev-btn {
-    left: 10px;
-}
+        .prev-btn {
+            left: 10px;
+        }
 
-.next-btn {
-    right: 10px;
-}
+        .next-btn {
+            right: 10px;
+        }
 
-/* --- CỘT PHẢI: THÔNG TIN CHI TIẾT --- */
-.lightbox-side-panel {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-left: 1px solid #eee;
-}
+        /* --- CỘT PHẢI: THÔNG TIN CHI TIẾT --- */
+        .lightbox-side-panel {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px solid #eee;
+        }
 
-.lightbox-prod-title {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 10px;
-}
+        .lightbox-prod-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
 
-.lightbox-price {
-    font-size: 24px;
-    color: #e4393c;
-    /* Đỏ giá tiền chuyên nghiệp */
-    font-weight: 700;
-    margin-bottom: 20px;
-}
+        .lightbox-price {
+            font-size: 24px;
+            color: #e4393c;
+            /* Đỏ giá tiền chuyên nghiệp */
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
 
-/* Nhóm chọn Size và Số lượng */
-.option-group {
-    margin-bottom: 20px;
-}
+        /* Nhóm chọn Size và Số lượng */
+        .option-group {
+            margin-bottom: 20px;
+        }
 
-.option-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #444;
-}
+        .option-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
 
-.product-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-}
+        .product-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+        }
 
-.quantity-control {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    width: fit-content;
-    border-radius: 4px;
-    overflow: hidden;
-}
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            width: fit-content;
+            border-radius: 4px;
+            overflow: hidden;
+        }
 
-.quantity-control button {
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: #f1f1f1;
-    cursor: pointer;
-    font-weight: bold;
-}
+        .quantity-control button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: #f1f1f1;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-.quantity-control button:hover {
-    background: #e2e2e2;
-}
+        .quantity-control button:hover {
+            background: #e2e2e2;
+        }
 
-.quantity-control input {
-    width: 50px;
-    height: 40px;
-    text-align: center;
-    border: none;
-    font-weight: 700;
-    font-size: 16px;
-}
+        .quantity-control input {
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            border: none;
+            font-weight: 700;
+            font-size: 16px;
+        }
 
-.lightbox-prod-desc {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #666;
-    margin: 20px 0;
-}
+        .lightbox-prod-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #666;
+            margin: 20px 0;
+        }
 
-/* Danh sách ảnh nhỏ (Thumbnails) */
-.lightbox-thumbnails {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
+        /* Danh sách ảnh nhỏ (Thumbnails) */
+        .lightbox-thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
 
-.thumb-item {
-    width: 60px;
-    height: 60px;
-    border: 2px solid #eee;
-    border-radius: 4px;
-    cursor: pointer;
-    overflow: hidden;
-}
+        .thumb-item {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #eee;
+            border-radius: 4px;
+            cursor: pointer;
+            overflow: hidden;
+        }
 
-.thumb-item.active {
-    border-color: var(--primary);
-}
+        .thumb-item.active {
+            border-color: var(--primary);
+        }
 
-.thumb-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-/* Nút mua hàng */
-.btn-add-cart {
-    background: #ff4d4f;
-    color: #fff;
-    border: none;
-    padding: 16px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: 0.3s;
-}
+        /* Nút mua hàng */
+        .btn-add-cart {
+            background: #ff4d4f;
+            color: #fff;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
 
-.btn-add-cart:hover {
-    background: #d4380d;
-    transform: translateY(-2px);
-}
+        .btn-add-cart:hover {
+            background: #d4380d;
+            transform: translateY(-2px);
+        }
 
-/* Responsive cho điện thoại */
-@media (max-width: 768px) {
-    .lightbox-grid {
-        grid-template-columns: 1fr;
-    }
+        /* Responsive cho điện thoại */
+        @media (max-width: 768px) {
+            .lightbox-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .lightbox-content-wrapper {
-        height: 90vh;
-        overflow-y: auto;
-    }
+            .lightbox-content-wrapper {
+                height: 90vh;
+                overflow-y: auto;
+            }
 
-    .lightbox-side-panel {
-        padding: 20px;
-    }
-}
+            .lightbox-side-panel {
+                padding: 20px;
+            }
+        }
 
-#preloader,
-.preloader,
-#loading-screen {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-}
+        #preloader,
+        .preloader,
+        #loading-screen {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }
 
-body {
-    overflow: auto !important;
-    opacity: 1 !important;
-}
-/* === News Section === */
-.news {
-    background: var(--gray-50);
-}
+        body {
+            overflow: auto !important;
+            opacity: 1 !important;
+        }
 
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-    margin-top: 48px;
-}
+        /* === News Section === */
+        .news {
+            background: var(--gray-50);
+        }
 
-@media (max-width: 768px) {
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
 
-.news-card {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-}
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
-.news-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-xl);
-}
+        .news-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
 
-.news-card.featured {
-    grid-column: span 2;
-    flex-direction: row;
-}
+        .news-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
 
-@media (max-width: 768px) {
-    .news-card.featured {
-        grid-column: span 1;
-        flex-direction: column;
-    }
-}
+        .news-card.featured {
+            grid-column: span 2;
+            flex-direction: row;
+        }
 
-.news-image {
-    position: relative;
-    flex-shrink: 0;
-}
+        @media (max-width: 768px) {
+            .news-card.featured {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+        }
 
-.news-card.featured .news-image {
-    width: 340px;
-}
+        .news-image {
+            position: relative;
+            flex-shrink: 0;
+        }
 
-.news-img-placeholder {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    color: rgba(255,255,255,0.7);
-}
+        .news-card.featured .news-image {
+            width: 340px;
+        }
 
-.news-card.featured .news-img-placeholder {
-    height: 100%;
-    min-height: 220px;
-}
+        .news-img-placeholder {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: rgba(255, 255, 255, 0.7);
+        }
 
-.news-img-1 { background: linear-gradient(135deg, #1D5FA8, #2F79C5); }
-.news-img-2 { background: linear-gradient(135deg, #E8A500, #FFD04D); color: rgba(0,0,0,0.4) !important; }
-.news-img-3 { background: linear-gradient(135deg, #1A2744, #243554); }
-.news-img-4 { background: linear-gradient(135deg, #10B981, #34D399); }
+        .news-card.featured .news-img-placeholder {
+            height: 100%;
+            min-height: 220px;
+        }
 
-.news-tag {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    padding: 4px 12px;
-    background: var(--white);
-    color: var(--primary);
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
+        .news-img-1 {
+            background: linear-gradient(135deg, #1D5FA8, #2F79C5);
+        }
 
-.news-tag.hot {
-    background: var(--accent);
-    color: var(--white);
-}
+        .news-img-2 {
+            background: linear-gradient(135deg, #E8A500, #FFD04D);
+            color: rgba(0, 0, 0, 0.4) !important;
+        }
 
-.news-content {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex: 1;
-}
+        .news-img-3 {
+            background: linear-gradient(135deg, #1A2744, #243554);
+        }
 
-.news-meta {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
+        .news-img-4 {
+            background: linear-gradient(135deg, #10B981, #34D399);
+        }
 
-.news-meta span {
-    font-size: 13px;
-    color: var(--gray-400);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+        .news-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            padding: 4px 12px;
+            background: var(--white);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
 
-.news-content h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1.5;
-}
+        .news-tag.hot {
+            background: var(--accent);
+            color: var(--white);
+        }
 
-.news-card.featured .news-content h3 {
-    font-size: 20px;
-}
+        .news-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
 
-.news-content p {
-    font-size: 14px;
-    color: var(--gray-500);
-    line-height: 1.7;
-    flex: 1;
-}
+        .news-meta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
 
-.news-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 14px;
-    margin-top: 4px;
-    transition: var(--transition);
-}
+        .news-meta span {
+            font-size: 13px;
+            color: var(--gray-400);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-.news-link:hover {
-    color: var(--accent);
-    gap: 10px;
-}
+        .news-content h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.5;
+        }
 
-</style>
+        .news-card.featured .news-content h3 {
+            font-size: 20px;
+        }
+
+        .news-content p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 4px;
+            transition: var(--transition);
+        }
+
+        .news-link:hover {
+            color: var(--accent);
+            gap: 10px;
+        }
+
+        /* ============================================================
+           HIỆU ỨNG GAK-STYLE: ANNOUNCEMENT BAR + FLOAT + BANNERS + DIARY
+           ============================================================ */
+
+        /* === 1. ANNOUNCEMENT BAR (Thanh thông báo trên cùng) === */
+        .announcement-bar {
+            background: linear-gradient(90deg, var(--navy) 0%, var(--primary) 50%, var(--navy) 100%);
+            background-size: 200% 100%;
+            animation: annGradient 5s ease infinite;
+            color: var(--white);
+            padding: 0;
+            position: relative;
+            z-index: 1001;
+            overflow: hidden;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes annGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .ann-inner {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .ann-marquee {
+            display: flex;
+            gap: 60px;
+            animation: annScroll 30s linear infinite;
+            white-space: nowrap;
+            will-change: transform;
+        }
+
+        .ann-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes annScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ann-item {
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .ann-item i {
+            color: var(--accent-light);
+            font-size: 12px;
+        }
+
+        .ann-sep {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .ann-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.65);
+            cursor: pointer;
+            padding: 0 16px;
+            font-size: 14px;
+            transition: color 0.2s;
+            flex-shrink: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .ann-close:hover {
+            color: var(--white);
+        }
+
+        /* Shift navbar down to account for announcement bar */
+        body.has-ann-bar .navbar {
+            top: 40px;
+        }
+
+        body.has-ann-bar {
+            padding-top: 0;
+        }
+
+        /* === 2. FLOATING CONTACT BUTTONS (Nút liên hệ nổi) === */
+        .float-contact {
+            position: fixed;
+            right: 18px;
+            bottom: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 8000;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            border: none;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.18) translateY(-3px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Tooltip */
+        .float-btn::before {
+            content: attr(data-tip);
+            position: absolute;
+            right: 58px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--navy);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s;
+            font-family: var(--font);
+        }
+
+        .float-btn::after {
+            content: '';
+            position: absolute;
+            right: 54px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 5px solid transparent;
+            border-left-color: var(--navy);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s;
+        }
+
+        .float-btn:hover::before,
+        .float-btn:hover::after {
+            opacity: 1;
+        }
+
+        .float-zalo {
+            background: #0068ff;
+        }
+
+        .float-fb {
+            background: linear-gradient(135deg, #0084ff 0%, #a334fa 100%);
+        }
+
+        .float-phone-f {
+            background: var(--accent);
+        }
+
+        .float-btn img {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+            border-radius: 3px;
+        }
+
+        .float-btn i {
+            font-size: 22px;
+            color: #fff;
+        }
+
+        /* Pulse rings */
+        .float-pulse {
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .float-zalo .float-pulse {
+            box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.6);
+            animation: pulseRing 2s ease-out infinite;
+        }
+
+        .float-fb .float-pulse {
+            box-shadow: 0 0 0 0 rgba(163, 52, 250, 0.5);
+            animation: pulseRing 2s ease-out infinite 0.5s;
+        }
+
+        .float-phone-f .float-pulse {
+            box-shadow: 0 0 0 0 rgba(232, 165, 0, 0.7);
+            animation: pulseRing 2s ease-out infinite 1s;
+        }
+
+        @keyframes pulseRing {
+            0% {
+                box-shadow: 0 0 0 0 currentColor;
+                opacity: 1;
+            }
+
+            70% {
+                box-shadow: 0 0 0 14px currentColor;
+                opacity: 0;
+            }
+
+            100% {
+                box-shadow: 0 0 0 14px currentColor;
+                opacity: 0;
+            }
+        }
+
+        /* === 3. CATEGORY FEATURE BANNERS (như GAK Đồng phục / Áo ghi lê) === */
+        .cat-banners {
+            overflow: hidden;
+        }
+
+        .cat-banner {
+            position: relative;
+            height: 360px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .cat-banner-bg {
+            position: absolute;
+            inset: 0;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .cat-banner:hover .cat-banner-bg {
+            transform: scale(1.06);
+        }
+
+        .cat-banner-bg-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(ellipse at 25% 50%, rgba(255, 255, 255, 0.07) 0%, transparent 65%),
+                repeating-linear-gradient(-55deg,
+                    transparent 0px, transparent 18px,
+                    rgba(255, 255, 255, 0.025) 18px, rgba(255, 255, 255, 0.025) 19px);
+        }
+
+        .cat-banner-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 80px;
+            max-width: 620px;
+        }
+
+        .cat-banner.reverse .cat-banner-content {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .cat-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: var(--accent-light);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12.5px;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            margin-bottom: 18px;
+            backdrop-filter: blur(8px);
+            text-transform: uppercase;
+        }
+
+        .cat-banner-content h3 {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cat-banner-content p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15.5px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .cat-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--navy);
+            padding: 13px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14.5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(232, 165, 0, 0.35);
+        }
+
+        .cat-cta:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cat-cta i {
+            transition: transform 0.3s ease;
+        }
+
+        .cat-cta:hover i {
+            transform: translateX(6px);
+        }
+
+        /* === 4. DIARY / GALLERY SECTION (như GAK's Nhật ký) === */
+        .diary-section {
+            background: var(--gray-50);
+        }
+
+        .diary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 210px);
+            gap: 10px;
+            margin-bottom: 32px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .diary-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .diary-item.diary-tall {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .diary-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: block;
+        }
+
+        .diary-item:hover img {
+            transform: scale(1.09);
+        }
+
+        .diary-hover {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(29, 95, 168, 0.7) 0%, rgba(26, 39, 68, 0.6) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .diary-item:hover .diary-hover {
+            opacity: 1;
+        }
+
+        .diary-hover i {
+            font-size: 26px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .diary-hover span {
+            font-size: 13px;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .diary-hashtags {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .diary-tag {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 8px 22px;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .diary-tag:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-blue);
+        }
+
+        /* === RESPONSIVE ADDITIONS === */
+        @media (max-width: 768px) {
+            .cat-banner {
+                height: 280px;
+            }
+
+            .cat-banner-content {
+                padding: 0 28px;
+            }
+
+            .cat-banner-content h3 {
+                font-size: 24px;
+            }
+
+            .cat-banner.reverse .cat-banner-content {
+                margin-left: 0;
+                text-align: left;
+            }
+
+            .diary-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 180px);
+            }
+
+            .diary-item.diary-tall {
+                grid-column: span 2;
+            }
+
+            .float-contact {
+                right: 12px;
+                bottom: 80px;
+            }
+
+            .float-btn {
+                width: 44px;
+                height: 44px;
+            }
+
+            .float-btn i {
+                font-size: 18px;
+            }
+
+            .float-btn img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- ===== ANNOUNCEMENT BAR (như GAK) ===== -->
+    <div id="announcementBar" class="announcement-bar">
+        <div class="ann-inner">
+            <div class="ann-marquee">
+                <span class="ann-item"><i class="fas fa-truck"></i> Miễn phí giao hàng đơn từ 500K tại TP.HCM</span>
+                <span class="ann-sep">✦</span>
+                <span class="ann-item"><i class="fas fa-cut"></i> May thêu logo công ty theo yêu cầu – Giá tốt
+                    nhất</span>
+                <span class="ann-sep">✦</span>
+                <span class="ann-item"><i class="fas fa-phone-alt"></i> Hotline: 0349.781.300 – Tư vấn 7:30–17:30</span>
+                <span class="ann-sep">✦</span>
+                <span class="ann-item"><i class="fas fa-shield-alt"></i> Hàng chính hãng – Đổi trả trong 7 ngày</span>
+                <span class="ann-sep">✦</span>
+                <span class="ann-item"><i class="fas fa-star"></i> Hơn 1000 doanh nghiệp tin dùng Thành Phong</span>
+                <span class="ann-sep">✦</span>
+                <!-- duplicate for seamless loop -->
+                <span class="ann-item"><i class="fas fa-truck"></i> Miễn phí giao hàng đơn từ 500K tại TP.HCM</span>
+                <span class="ann-sep">✦</span>
+                <span class="ann-item"><i class="fas fa-cut"></i> May thêu logo công ty theo yêu cầu – Giá tốt
+                    nhất</span>
+                <span class="ann-sep">✦</span>
+                <span class="ann-item"><i class="fas fa-phone-alt"></i> Hotline: 0349.781.300 – Tư vấn 7:30–17:30</span>
+                <span class="ann-sep">✦</span>
+                <span class="ann-item"><i class="fas fa-shield-alt"></i> Hàng chính hãng – Đổi trả trong 7 ngày</span>
+                <span class="ann-sep">✦</span>
+                <span class="ann-item"><i class="fas fa-star"></i> Hơn 1000 doanh nghiệp tin dùng Thành Phong</span>
+                <span class="ann-sep">✦</span>
+            </div>
+        </div>
+        <button class="ann-close" id="annClose" aria-label="Đóng thông báo"><i class="fas fa-times"></i></button>
+    </div>
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
@@ -2484,82 +3152,125 @@ body {
                 <a href="#contact" class="nav-link">Liên hệ</a>
             </nav>
             <div class="nav-actions">
+                <div class="nav-search" id="navSearch">
+                    <input type="text" placeholder="Tìm sản phẩm..." id="searchInput">
+                    <div class="search-trigger" id="searchTrigger">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="nav-lang" id="langToggle">
+                    <span class="lang-btn active" data-lang="vi">VI</span>
+                    <span class="lang-btn" data-lang="en">EN</span>
+                </div>
+                <div class="nav-cart" id="cartTrigger">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </div>
                 <a href="tel:0349781300" class="nav-phone">
                     <i class="fas fa-phone-alt"></i>
                     <span>0349.781.300</span>
                 </a>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
-        <div class="container hero-container">
-            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
-                <div class="hero-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Đối tác tin cậy của doanh nghiệp</span>
-                </div>
-                <h1 class="hero-title">
-                    Bảo Hộ Lao Động<br>
-                    <span class="highlight">Thành Phong</span>
-                </h1>
-                <p class="hero-slogan">"Uy Tín Là Bảo Hộ Tốt Nhất"</p>
-                <p class="hero-desc">Chuyên cung cấp các sản phẩm bảo hộ lao động, đồng phục bảo vệ và phụ kiện an toàn
-                    chất lượng cao. Cam kết mang đến sự an toàn tuyệt đối cho người lao động Việt Nam.</p>
-                <div class="hero-buttons">
-                    <a href="#products" class="btn btn-primary">
-                        <i class="fas fa-box-open"></i> Xem sản phẩm
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-headset"></i> Tư vấn ngay
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="500">0</span>+
-                        <span class="stat-label">Sản phẩm</span>
+    <!-- Hero Section with Swiper -->
+    <section id="hero" class="hero-slider swiper">
+        <div class="swiper-wrapper">
+            <!-- Slide 1: General -->
+            <div class="swiper-slide">
+                <div class="hero-slide">
+                    <div class="hero-slide-bg">
+                        <img src="images/banner-1.jpg" alt="Thành Phong">
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="1000">0</span>+
-                        <span class="stat-label">Khách hàng</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="10">0</span>+
-                        <span class="stat-label">Năm kinh nghiệm</span>
+                    <div class="container">
+                        <div class="hero-slide-content" data-aos="fade-up">
+                            <div class="hero-badge" id="trans-hero-badge">
+                                <i class="fas fa-shield-alt"></i> Bảo Hộ Lao Động Uy Tín Số 1
+                            </div>
+                            <h1 class="hero-title" id="trans-hero-title-1">
+                                An Toàn Của Bạn là<br><span class="highlight">Sứ Mệnh Của Chúng Tôi</span>
+                            </h1>
+                            <p class="hero-slogan" id="trans-hero-slogan">"Uy Tín Là Bảo Hộ Tốt Nhất"</p>
+                            <p class="hero-desc" id="trans-hero-desc-1">
+                                Chuyên cung cấp trang thiết bị bảo hộ lao động và đồng phục chuyên dụng chất lượng cao,
+                                đạt chuẩn an toàn quốc gia và quốc tế.
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="#products" class="btn btn-primary" id="trans-btn-explore">
+                                    Khám Phá Sản Phẩm <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="#contact" class="btn btn-outline" id="trans-btn-contact">
+                                    Nhận Tư Vấn Ngay
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <div class="hero-image-wrapper">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=P%2Ffn4FukadBi2iNf3y4WGz8amAv5pEEc2ZkdMkhLy%2BPzMEUoASiy5H4vxQfGWaqSIXR6XNKwovp3Pj9I0HcnjgKZg%2FYDlR3J8mQ8%2Bp7X7W%2Bnyh9qfjRCl54Nb7msyHat3Ngz&u2=cXa9YXioEdeDT6WW&width=2560"
-                        alt="Thiết bị bảo hộ lao động" class="hero-img">
-                    <div class="hero-floating-card card-1">
-                        <i class="fas fa-hard-hat"></i>
-                        <span>An toàn tuyệt đối</span>
+
+            <!-- Slide 2: Uniforms -->
+            <div class="swiper-slide">
+                <div class="hero-slide">
+                    <div class="hero-slide-bg">
+                        <img src="images/banner-2.jpg" alt="Đồng Phục Bảo Vệ">
                     </div>
-                    <div class="hero-floating-card card-2">
-                        <i class="fas fa-certificate"></i>
-                        <span>Chất lượng cao</span>
+                    <div class="container">
+                        <div class="hero-slide-content">
+                            <div class="hero-badge">
+                                <i class="fas fa-user-shield"></i> Chuyên Nghiệp & Đẳng Cấp
+                            </div>
+                            <h2 class="hero-title" id="trans-hero-title-2">
+                                Đồng Phục Bảo Vệ<br><span class="highlight">Chuyên Nghiệp</span>
+                            </h2>
+                            <p class="hero-desc" id="trans-hero-desc-2">
+                                Thiết kế theo thông tư mới nhất, chất liệu vải cao cấp, bền đẹp và thoáng mát.
+                                Nâng tầm hình ảnh doanh nghiệp của bạn.
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="#products" class="btn btn-primary">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Safety Shoes -->
+            <div class="swiper-slide">
+                <div class="hero-slide">
+                    <div class="hero-slide-bg">
+                        <img src="images/banner-3.jpg" alt="Giày Bảo Hộ">
+                    </div>
+                    <div class="container">
+                        <div class="hero-slide-content">
+                            <div class="hero-badge">
+                                <i class="fas fa-boot"></i> Bền Bỉ & An Toàn
+                            </div>
+                            <h2 class="hero-title" id="trans-hero-title-3">
+                                Giày Bảo Hộ<br><span class="highlight">Tiêu Chuẩn Quốc Tế</span>
+                            </h2>
+                            <p class="hero-desc" id="trans-hero-desc-3">
+                                Chống đâm xuyên, chống va đập và chống trơn trượt tuyệt đối.
+                                Bảo vệ đôi chân bạn trong mọi môi trường làm việc.
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="#products" class="btn btn-primary">Mua Ngay</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-                    fill="white" />
-            </svg>
-        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </section>
 
     <!-- Trusted Partners Marquee -->
@@ -2685,10 +3396,26 @@ body {
                 </button>
             </div>
 
+            <!-- Status Tabs -->
+            <div class="product-filters status-filters" data-aos="fade-up" data-aos-delay="150" style="margin-top: -24px; margin-bottom: 48px;">
+                <button class="filter-btn active" data-status="all">
+                    Tất cả
+                </button>
+                <button class="filter-btn" data-status="new">
+                    <i class="fas fa-sparkles"></i> Mới
+                </button>
+                <button class="filter-btn" data-status="featured">
+                    <i class="fas fa-fire"></i> Nổi bật
+                </button>
+                <button class="filter-btn" data-status="best-seller">
+                    <i class="fas fa-award"></i> Bán chạy
+                </button>
+            </div>
+
             <!-- Products Grid -->
             <div class="products-grid">
                 <!-- Đồng phục bảo vệ -->
-                <div class="product-card" data-category="uniform" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card" data-category="uniform" data-status="best-seller" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-badge">Bán chạy</div>
                     <div class="product-image">
                         <a href="images/Đồng Phục Bảo Vệ/ao-trang-quan-den.png" class="product-gallery-trigger"
@@ -2696,20 +3423,25 @@ body {
                             <img src="images/Đồng Phục Bảo Vệ/ao-trang-quan-den.png" alt="Quần áo bảo vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
-                                <span>Xem chi tiết</span>
+                                <span class="trans-view-detail">Xem chi tiết</span>
                             </div>
                         </a>
                     </div>
                     <div class="product-info">
                         <span class="product-category-tag">Đồng phục</span>
-                        <h3>Quần áo bảo vệ - Áo trắng, quần đen</h3>
-                        <p>Đồng phục bảo vệ chuyên nghiệp, chất liệu vải tốt, form dáng chuẩn. Nhận may thêu logo theo
+                        <h3 class="product-title">Quần áo bảo vệ - Áo trắng, quần đen</h3>
+                        <p class="product-desc">Đồng phục bảo vệ chuyên nghiệp, chất liệu vải tốt, form dáng chuẩn. Nhận may thêu logo theo
                             yêu cầu.</p>
-                        <a href="#contact" class="product-link">Liên hệ báo giá <i class="fas fa-arrow-right"></i></a>
+                        <div class="product-action-row">
+                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <button class="add-to-cart-btn" onclick="handleAddToCart('DongPhucBaoVe')">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="uniform" data-aos="fade-up" data-aos-delay="150">
+                <div class="product-card" data-category="uniform" data-status="new" data-aos="fade-up" data-aos-delay="150">
                     <div class="product-badge new">Mới</div>
                     <div class="product-image">
                         <a href="images/Đồng Phục Bảo Vệ NEW/ao-xanh-bien-quan-xanh-than.png"
@@ -2717,55 +3449,70 @@ body {
                             <img src="images/Đồng Phục Bảo Vệ NEW/ao-xanh-bien-quan-xanh-than.png" alt="Quần áo bảo vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
-                                <span>Xem chi tiết</span>
+                                <span class="trans-view-detail">Xem chi tiết</span>
                             </div>
                         </a>
                     </div>
                     <div class="product-info">
                         <span class="product-category-tag">Đồng phục</span>
-                        <h3>Quần áo bảo vệ - Áo xanh biển, quần xanh than</h3>
-                        <p>Phong cách chuyên nghiệp, vải bền đẹp, thoáng mát, phù hợp môi trường làm việc năng động.</p>
-                        <a href="#contact" class="product-link">Liên hệ báo giá <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="product-title">Quần áo bảo vệ - Áo xanh biển, quần xanh than</h3>
+                        <p class="product-desc">Phong cách chuyên nghiệp, vải bền đẹp, thoáng mát, phù hợp môi trường làm việc năng động.</p>
+                        <div class="product-action-row">
+                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <button class="add-to-cart-btn" onclick="handleAddToCart('DongPhucBaoVeNew')">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Phụ kiện bảo vệ -->
-                <div class="product-card" data-category="accessories" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card" data-category="accessories" data-status="featured" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-image">
                         <a href="images/Cầu Vai Bảo Vệ/do.png" class="product-gallery-trigger"
                             data-album-id="CauVaiBaoVe">
                             <img src="images/Cầu Vai Bảo Vệ/do.png" alt="Cầu vai bảo vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
-                                <span>Xem chi tiết</span>
+                                <span class="trans-view-detail">Xem chi tiết</span>
                             </div>
                         </a>
                     </div>
                     <div class="product-info">
                         <span class="product-category-tag">Phụ kiện</span>
-                        <h3>Cầu vai bảo vệ</h3>
-                        <p>Cầu vai viền đỏ, viền vàng, gạch đồng, thông tư mới. Cầu vai TTM loại đẹp (thêu) đầy đủ mẫu
+                        <h3 class="product-title">Cầu vai bảo vệ</h3>
+                        <p class="product-desc">Cầu vai viền đỏ, viền vàng, gạch đồng, thông tư mới. Cầu vai TTM loại đẹp (thêu) đầy đủ mẫu
                             mã.</p>
-                        <a href="#contact" class="product-link">Liên hệ báo giá <i class="fas fa-arrow-right"></i></a>
+                        <div class="product-action-row">
+                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <button class="add-to-cart-btn" onclick="handleAddToCart('CauVaiBaoVe')">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="accessories" data-aos="fade-up" data-aos-delay="250">
+                <div class="product-card" data-category="accessories" data-status="featured" data-aos="fade-up" data-aos-delay="250">
                     <div class="product-image">
                         <a href="images/Nón , Sao Bảo Vệ/non-bao-ve.png" class="product-gallery-trigger"
                             data-album-id="NonSaoBaoVe">
                             <img src="images/Nón , Sao Bảo Vệ/non-bao-ve.png" alt="Nón bảo vệ & Sao bảo vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
-                                <span>Xem chi tiết</span>
+                                <span class="trans-view-detail">Xem chi tiết</span>
                             </div>
                         </a>
                     </div>
                     <div class="product-info">
                         <span class="product-category-tag">Phụ kiện</span>
-                        <h3>Nón bảo vệ & Sao bảo vệ</h3>
-                        <p>Nón bảo vệ thêu chữ Security, sao bảo vệ chuẩn quy cách. Logo bảo vệ nội bộ đầy đủ.</p>
-                        <a href="#contact" class="product-link">Liên hệ báo giá <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="product-title">Nón bảo vệ & Sao bảo vệ</h3>
+                        <p class="product-desc">Nón bảo vệ thêu chữ Security, sao bảo vệ chuẩn quy cách. Logo bảo vệ nội bộ đầy đủ.</p>
+                        <div class="product-action-row">
+                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <button class="add-to-cart-btn" onclick="handleAddToCart('NonSaoBaoVe')">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -2811,7 +3558,7 @@ body {
                 </div>
 
                 <!-- Giày bảo hộ -->
-                <div class="product-card" data-category="shoes" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card" data-category="shoes" data-status="best-seller" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-badge">Bán chạy</div>
                     <div class="product-image">
                         <a href="images/Giày da bảo vệ - Không buộc dây/day-da-kb.png" class="product-gallery-trigger"
@@ -2820,16 +3567,20 @@ body {
                                 alt="Giày da bảo vệ - không buộc dây">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
-                                <span>Xem chi tiết</span>
+                                <span class="trans-view-detail">Xem chi tiết</span>
                             </div>
                         </a>
                     </div>
                     <div class="product-info">
                         <span class="product-category-tag">Giày</span>
-                        <h3>Giày da bảo vệ - Không buộc dây</h3>
-                        <p>Giày da cao cấp, thiết kế sang trọng, không cần buộc dây tiện lợi. Đế chống trượt, êm chân.
-                        </p>
-                        <a href="#contact" class="product-link">Liên hệ báo giá <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="product-title">Giày da bảo vệ - Không buộc dây</h3>
+                        <p class="product-desc">Giày da cao cấp, thiết kế sang trọng, không cần buộc dây tiện lợi. Đế chống trượt, êm chân.</p>
+                        <div class="product-action-row">
+                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <button class="add-to-cart-btn" onclick="handleAddToCart('DayDaKhongBuoc')">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -2854,7 +3605,7 @@ body {
                     </div>
                 </div>
 
-                <div class="product-card" data-category="shoes" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card" data-category="shoes" data-status="best-seller" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-badge new">Hot</div>
                     <div class="product-image">
                         <a href="images/Giày bảo hộ lao động/Giày Jogger  .png" class="product-gallery-trigger"
@@ -2862,16 +3613,21 @@ body {
                             <img src="images/Giày bảo hộ lao động/Giày Jogger  .png" alt="Giày bảo hộ lao động">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
-                                <span>Xem chi tiết</span>
+                                <span class="trans-view-detail">Xem chi tiết</span>
                             </div>
                         </a>
 
                     </div>
                     <div class="product-info">
                         <span class="product-category-tag">Giày</span>
-                        <h3>Giày bảo hộ lao động</h3>
-                        <p>Giày bảo hộ đầu thép, chống đâm xuyên, chống trượt, đạt tiêu chuẩn an toàn quốc tế.</p>
-                        <a href="#contact" class="product-link">Liên hệ báo giá <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="product-title">Giày bảo hộ lao động</h3>
+                        <p class="product-desc">Giày bảo hộ đầu thép, chống đâm xuyên, chống trượt, đạt tiêu chuẩn an toàn quốc tế.</p>
+                        <div class="product-action-row">
+                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <button class="add-to-cart-btn" onclick="handleAddToCart('DayBaoHoLaoDong')">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -3025,6 +3781,53 @@ body {
         </div>
     </section>
 
+    <!-- ===== CATEGORY FEATURE BANNERS (như GAK) ===== -->
+    <section class="cat-banners">
+
+        <!-- Banner 1: Đồng phục bảo vệ -->
+        <div class="cat-banner" data-aos="fade-up">
+            <div class="cat-banner-bg"
+                style="background: linear-gradient(120deg, #0F172A 0%, #1D5FA8 60%, #243554 100%);">
+                <div class="cat-banner-bg-pattern"></div>
+            </div>
+            <div class="cat-banner-content">
+                <div class="cat-label"><i class="fas fa-tshirt"></i> Đồng phục bảo vệ</div>
+                <h3>Thiết kế theo yêu cầu<br>Chuyên nghiệp & Uy tín</h3>
+                <p>May thêu logo, tên công ty trên đồng phục bảo vệ. Đa dạng mẫu mã, chất liệu vải cao cấp.</p>
+                <a href="#products" class="cat-cta">Khám phá ngay <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Banner 2: Giày & Bảo hộ cá nhân (text căn phải) -->
+        <div class="cat-banner reverse" data-aos="fade-up">
+            <div class="cat-banner-bg"
+                style="background: linear-gradient(240deg, #0F172A 0%, #164A85 55%, #1A2744 100%);">
+                <div class="cat-banner-bg-pattern"></div>
+            </div>
+            <div class="cat-banner-content">
+                <div class="cat-label"><i class="fas fa-hard-hat"></i> Bảo hộ lao động</div>
+                <h3>An toàn – Bền bỉ<br>Đạt chuẩn quốc tế</h3>
+                <p>Mũ bảo hộ, kính, găng tay, giày mũi thép – bảo vệ toàn diện cho người lao động.</p>
+                <a href="#products" class="cat-cta">Khám phá ngay <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Banner 3: Thiết bị PCCC (accent gradient) -->
+        <div class="cat-banner" data-aos="fade-up">
+            <div class="cat-banner-bg"
+                style="background: linear-gradient(110deg, #1A2744 0%, #2F79C5 70%, #1D5FA8 100%);">
+                <div class="cat-banner-bg-pattern"></div>
+            </div>
+            <div class="cat-banner-content">
+                <div class="cat-label"><i class="fas fa-fire-extinguisher"></i> PCCC & An toàn</div>
+                <h3>Thiết bị phòng cháy<br>Đầy đủ – Đạt chuẩn</h3>
+                <p>Bình chữa cháy, vòi cứu hỏa, biển báo an toàn. Doanh nghiệp đủ chuẩn PCCC.</p>
+                <a href="#products" class="cat-cta">Khám phá ngay <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+    </section>
+
     <!-- Why Choose Us Section -->
     <section id="why-us" class="why-us section">
         <div class="container">
@@ -3162,6 +3965,58 @@ body {
         </div>
     </section>
 
+    <!-- ===== NHẬT KÝ THÀNH PHONG (như GAK's Nhật ký) ===== -->
+    <section class="diary-section section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label center">
+                    <span class="label-line"></span>
+                    <span>Hình ảnh thực tế</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title center">Nhật Ký <span class="highlight">Thành Phong</span></h2>
+                <p class="section-desc">Chia sẻ hình ảnh thực tế sản phẩm và công trình cùng hashtag
+                    <strong>#ThanhPhongBaoHo</strong></p>
+            </div>
+
+            <div class="diary-grid" data-aos="fade-up" data-aos-delay="100">
+                <!-- Ảnh lớn (2 cột x 2 hàng) -->
+                <div class="diary-item diary-tall">
+                    <img src="images/Đồng Phục Bảo Vệ/ao-trang-quan-den.png" alt="Đồng phục bảo vệ Thành Phong"
+                        loading="lazy">
+                    <div class="diary-hover">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Đồng phục bảo vệ</span>
+                    </div>
+                </div>
+                <!-- 4 ảnh nhỏ -->
+                <div class="diary-item">
+                    <img src="images/Mũ bảo hộ lao động/N40-1 Thùy Dương.png" alt="Mũ bảo hộ lao động" loading="lazy">
+                    <div class="diary-hover"><i class="fas fa-search-plus"></i><span>Mũ bảo hộ</span></div>
+                </div>
+                <div class="diary-item">
+                    <img src="images/Kính bảo hộ & Khẩu trang/k2.png" alt="Kính bảo hộ" loading="lazy">
+                    <div class="diary-hover"><i class="fas fa-search-plus"></i><span>Kính bảo hộ</span></div>
+                </div>
+                <div class="diary-item">
+                    <img src="images/Áo Phản Quang/vải POLY/image.png" alt="Áo phản quang" loading="lazy">
+                    <div class="diary-hover"><i class="fas fa-search-plus"></i><span>Áo phản quang</span></div>
+                </div>
+                <div class="diary-item">
+                    <img src="images/Gang tay bảo hộ/Găng Tay Da Hàn Đỏ.png" alt="Găng tay bảo hộ" loading="lazy">
+                    <div class="diary-hover"><i class="fas fa-search-plus"></i><span>Găng tay bảo hộ</span></div>
+                </div>
+            </div>
+
+            <div class="diary-hashtags" data-aos="fade-up">
+                <a href="#contact" class="diary-tag">#ThanhPhongBaoHo</a>
+                <a href="#contact" class="diary-tag">#BaoHoLaoDong</a>
+                <a href="#contact" class="diary-tag">#DongPhucBaoVe</a>
+                <a href="#contact" class="diary-tag">#GiayBaoHo</a>
+            </div>
+        </div>
+    </section>
+
     <!-- News Section -->
     <section id="news" class="news section">
         <div class="container">
@@ -3172,7 +4027,8 @@ body {
                     <span class="label-line"></span>
                 </div>
                 <h2 class="section-title center">Tin Tức <span class="highlight">An Toàn Lao Động</span></h2>
-                <p class="section-desc">Cập nhật thông tin mới nhất về an toàn lao động, quy định pháp luật và kiến thức bảo hộ</p>
+                <p class="section-desc">Cập nhật thông tin mới nhất về an toàn lao động, quy định pháp luật và kiến thức
+                    bảo hộ</p>
             </div>
             <div class="news-grid">
                 <div class="news-card featured" data-aos="fade-up" data-aos-delay="100">
@@ -3186,8 +4042,11 @@ body {
                             <span><i class="fas fa-tag"></i> An toàn lao động</span>
                         </div>
                         <h3>TP.HCM phát động Tháng hành động An toàn Vệ sinh Lao động năm 2026</h3>
-                        <p>TP. Hồ Chí Minh chính thức phát động Tháng hành động về an toàn, vệ sinh lao động năm 2026, nhấn mạnh tăng trưởng kinh tế chỉ thực sự trọn vẹn khi đi đôi với bảo vệ tính mạng và sức khỏe người lao động.</p>
-                        <a href="https://baophapluat.vn/tp-ho-chi-minh-phat-dong-thang-hanh-dong-ve-an-toan-ve-sinh-lao-dong-nam-2026.html" target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        <p>TP. Hồ Chí Minh chính thức phát động Tháng hành động về an toàn, vệ sinh lao động năm 2026,
+                            nhấn mạnh tăng trưởng kinh tế chỉ thực sự trọn vẹn khi đi đôi với bảo vệ tính mạng và sức
+                            khỏe người lao động.</p>
+                        <a href="https://baophapluat.vn/tp-ho-chi-minh-phat-dong-thang-hanh-dong-ve-an-toan-ve-sinh-lao-dong-nam-2026.html"
+                            target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="news-card" data-aos="fade-up" data-aos-delay="150">
@@ -3201,8 +4060,10 @@ body {
                             <span><i class="fas fa-tag"></i> Báo cáo</span>
                         </div>
                         <h3>Tai nạn lao động năm 2025: Giảm số vụ nhưng vẫn tiềm ẩn rủi ro</h3>
-                        <p>Cả nước ghi nhận 7.004 vụ tai nạn lao động trong năm 2025, làm 658 người tử vong. Nguyên nhân chủ yếu do vi phạm quy trình an toàn và không sử dụng phương tiện bảo vệ cá nhân.</p>
-                        <a href="https://tcnnld.vn/news/detail/71676/Tinh-hinh-tai-nan-lao-dong-nam-2025-Giam-ve-so-vu-nhung-van-tiem-an-nhieu-rui-ro.html" target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        <p>Cả nước ghi nhận 7.004 vụ tai nạn lao động trong năm 2025, làm 658 người tử vong. Nguyên nhân
+                            chủ yếu do vi phạm quy trình an toàn và không sử dụng phương tiện bảo vệ cá nhân.</p>
+                        <a href="https://tcnnld.vn/news/detail/71676/Tinh-hinh-tai-nan-lao-dong-nam-2025-Giam-ve-so-vu-nhung-van-tiem-an-nhieu-rui-ro.html"
+                            target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="news-card" data-aos="fade-up" data-aos-delay="200">
@@ -3216,8 +4077,10 @@ body {
                             <span><i class="fas fa-tag"></i> Quy định mới</span>
                         </div>
                         <h3>Luật An Toàn Lao Động 2025: Doanh nghiệp bắt buộc trang bị bảo hộ từ ngày đầu làm việc</h3>
-                        <p>Theo quy định mới, doanh nghiệp phải trang bị đầy đủ thiết bị bảo hộ từ ngày đầu tiên người lao động đi làm. Vi phạm có thể bị phạt lên đến 75 triệu đồng.</p>
-                        <a href="https://honeywell-safety.vn/luat-an-toan-lao-dong-2025-ve-trang-bi-bao-ho" target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        <p>Theo quy định mới, doanh nghiệp phải trang bị đầy đủ thiết bị bảo hộ từ ngày đầu tiên người
+                            lao động đi làm. Vi phạm có thể bị phạt lên đến 75 triệu đồng.</p>
+                        <a href="https://honeywell-safety.vn/luat-an-toan-lao-dong-2025-ve-trang-bi-bao-ho"
+                            target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="news-card" data-aos="fade-up" data-aos-delay="250">
@@ -3231,8 +4094,10 @@ body {
                             <span><i class="fas fa-tag"></i> Xu hướng</span>
                         </div>
                         <h3>Xu hướng mới: Tích hợp công nghệ vào thiết bị bảo hộ lao động</h3>
-                        <p>Mũ bảo hiểm hiện đại tích hợp cảm biến theo dõi sức khỏe người lao động như nhịp tim, nhiệt độ cơ thể. Công nghệ đang thay đổi ngành bảo hộ lao động toàn diện.</p>
-                        <a href="https://www.vnsafety.com.vn/bao-ho-lao-dong-tam-quan-trong-va-cac-bien-phap-cai-tien-trong-moi-truong-lam-viec-hien-nay" target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        <p>Mũ bảo hiểm hiện đại tích hợp cảm biến theo dõi sức khỏe người lao động như nhịp tim, nhiệt
+                            độ cơ thể. Công nghệ đang thay đổi ngành bảo hộ lao động toàn diện.</p>
+                        <a href="https://www.vnsafety.com.vn/bao-ho-lao-dong-tam-quan-trong-va-cac-bien-phap-cai-tien-trong-moi-truong-lam-viec-hien-nay"
+                            target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -3349,594 +4214,61 @@ body {
     <section class="map-section">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4!2d106.6!3d10.78!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ2JzQ4LjAiTiAxMDbCsDM2JzAwLjAiRQ!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
-            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="Bản đồ Thành Phong"></iframe>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="images/logo.png" alt="Thành Phong Logo">
-                        <div>
-                            <span class="footer-brand-name">THÀNH PHONG</span>
-                            <span class="footer-brand-tag">Bảo Hộ Lao Động</span>
-                        </div>
-                    </div>
-                    <p class="footer-slogan">"Uy Tín Là Bảo Hộ Tốt Nhất"</p>
-                    <p class="footer-desc">Chuyên cung cấp các sản phẩm bảo hộ lao động, đồng phục bảo vệ và phụ kiện an
-                        toàn chất lượng cao.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Zalo"><i class="fas fa-comment-dots"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Sản phẩm</h4>
-                    <ul>
-                        <li><a href="#products">Đồng phục bảo vệ</a></li>
-                        <li><a href="#products">Phụ kiện bảo vệ</a></li>
-                        <li><a href="#products">Giày bảo hộ</a></li>
-                        <li><a href="#products">Bảo hộ lao động</a></li>
-                        <li><a href="#products">Dụng cụ & Thiết bị</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Thông tin</h4>
-                    <ul>
-                        <li><a href="#about">Về chúng tôi</a></li>
-                        <li><a href="#why-us">Tại sao chọn chúng tôi</a></li>
-                        <li><a href="#testimonials">Đánh giá khách hàng</a></li>
-                        <li><a href="#contact">Liên hệ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Liên hệ</h4>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>213/27B Liên khu 4-5, P. Bình Hưng Hòa B, Q. Bình Tân, TP.HCM</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <span><a href="tel:0349781300">0349.781.300</a> (Ms. Thu Nhàn)</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span><a href="mailto:nguyenthunhan2105@gmail.com">nguyenthunhan2105@gmail.com</a></span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-globe"></i>
-                        <span><a href="https://baohothanhphong.com" target="_blank">baohothanhphong.com</a></span>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Công Ty TNHH Bảo Hộ Lao Động Thành Phong. Tất cả quyền được bảo lưu.</p>
+                <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Giỏ hàng</h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <!-- Items added via JS -->
+            <div class="cart-empty">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Giỏ hàng của bạn đang trống</p>
+                <a href="#products" class="btn btn-primary">Mua ngay</a>
             </div>
         </div>
-    </footer>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Tổng cộng:</span>
+                <span id="cartTotal">Liên hệ báo giá</span>
+            </div>
+            <button class="cart-checkout-btn" id="zaloOrderBtn">
+                <i class="fab fa-whatsapp"></i> Gửi đơn hàng qua Zalo
+            </button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
 
     <!-- Floating Action Buttons -->
     <div class="floating-actions">
-        <a href="tel:0349781300" class="fab-btn phone-btn" aria-label="Gọi điện">
-            <i class="fas fa-phone-alt"></i>
-            <span class="fab-tooltip">Gọi ngay</span>
+        <!-- Messenger -->
+        <a href="https://m.me/baohothanhphong" class="fab-btn messenger-btn" target="_blank" rel="noopener"
+            aria-label="Chat Messenger">
+            <i class="fab fa-facebook-messenger"></i>
+            <span class="fab-tooltip">Chat Messenger</span>
+            <span class="fab-pulse-ring"></span>
         </a>
-        <a href="https://zalo.me/0349781300" class="fab-btn zalo-btn" target="_blank" aria-label="Chat Zalo">
+        <!-- Zalo -->
+        <a href="https://zalo.me/0349781300" class="fab-btn zalo-btn" target="_blank" rel="noopener"
+            aria-label="Chat Zalo">
             <i class="fas fa-comment-dots"></i>
             <span class="fab-tooltip">Chat Zalo</span>
+            <span class="fab-pulse-ring"></span>
         </a>
+        <!-- Phone -->
+        <a href="tel:0349781300" class="fab-btn phone-btn" aria-label="Gọi điện">
+            <i class="fas fa-phone-alt"></i>
+            <span class="fab-tooltip">0349.781.300</span>
+            <span class="fab-pulse-ring"></span>
+        </a>
+        <!-- Scroll top -->
         <button class="fab-btn scroll-top-btn" id="scrollTop" aria-label="Lên đầu trang">
             <i class="fas fa-chevron-up"></i>
         </button>
     </div>
 
-    <!-- AOS Animation Library -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-// ============================================
-// THÀNH PHONG - BẢO HỘ LAO ĐỘNG
-// Main JavaScript
-// ============================================
-
-// 1. Cấu trúc dữ liệu chi tiết sản phẩm (Đầy đủ từ index.html)
-const productData = {
-    'DongPhucBaoVe': {
-        title: 'Quần áo bảo vệ - Áo trắng, quần đen',
-        price: 'Liên hệ',
-        desc: 'Đồng phục bảo vệ chuyên nghiệp, chất liệu vải tốt, form dáng chuẩn. Nhận may thêu logo theo yêu cầu.',
-        imgs: ['images/Đồng Phục Bảo Vệ/ao-trang-quan-den.png', 'images/Đồng Phục Bảo Vệ/do-bao-ve.png']
-    },
-    'DongPhucBaoVeNew': {
-        title: 'Quần áo bảo vệ - Áo xanh biển, quần xanh than',
-        price: 'Liên hệ',
-        desc: 'Phong cách chuyên nghiệp, vải bền đẹp, thoáng mát, phù hợp môi trường làm việc năng động.',
-        imgs: ['images/Đồng Phục Bảo Vệ NEW/ao-xanh-bien-quan-xanh-than.png']
-    },
-    'CauVaiBaoVe': {
-        title: 'Cầu vai bảo vệ',
-        price: 'Liên hệ',
-        desc: 'Cầu vai viền đỏ, viền vàng, gạch đồng, thông tư mới. Cầu vai TTM loại đẹp (thêu) đầy đủ mẫu mã.',
-        imgs: ['images/Cầu Vai Bảo Vệ/do.png']
-    },
-    'NonSaoBaoVe': {
-        title: 'Nón bảo vệ & Sao bảo vệ',
-        price: 'Liên hệ',
-        desc: 'Nón bảo vệ thêu chữ Security, sao bảo vệ chuẩn quy cách. Logo bảo vệ nội bộ đầy đủ.',
-        imgs: ['images/Nón , Sao Bảo Vệ/non-bao-ve.png']
-    },
-    'CaVatVeAoBaoVe': {
-        title: 'Cà vạt & Ve áo bảo vệ',
-        price: 'Liên hệ',
-        desc: 'Cà vạt bảo vệ sang trọng, ve áo bảo vệ thông tư mới. Hoàn thiện bộ đồng phục chuyên nghiệp.',
-        imgs: ['images/Cà Vạt, Ve Bảo Vệ/image.png']
-    },
-    'DayThatLungBaoVe': {
-        title: 'Dây thắt lưng bảo vệ Security',
-        price: 'Liên hệ',
-        desc: 'Dây thắt lưng bền chắc, khóa chắc chắn, in logo Security chuyên dụng cho lực lượng bảo vệ.',
-        imgs: ['images/Dây thắt lưng bảo vệ Security/day-that-lung.png']
-    },
-    'DayDaKhongBuoc': {
-        title: 'Giày da bảo vệ - Không buộc dây',
-        price: 'Liên hệ',
-        desc: 'Giày da cao cấp, thiết kế sang trọng, không cần buộc dây tiện lợi. Đế chống trượt, êm chân.',
-        imgs: ['images/Giày da bảo vệ - Không buộc dây/day-da-kb.png']
-    },
-    'DayDaCoBuoc': {
-        title: 'Giày da bảo vệ - Có buộc dây',
-        price: 'Liên hệ',
-        desc: 'Giày da có dây buộc, ôm chân chắc chắn, phù hợp cho bảo vệ tuần tra, hoạt động ngoài trời.',
-        imgs: ['images/Giày da bảo vệ - Có buộc dây/day-co-cao.png']
-    },
-    'DayBaoHoLaoDong': {
-        title: 'Giày bảo hộ lao động',
-        price: 'Liên hệ',
-        desc: 'Giày bảo hộ đầu thép, chống đâm xuyên, chống trượt, đạt tiêu chuẩn an toàn quốc tế.',
-        imgs: ['images/Giày bảo hộ lao động/Giày Jogger  .png']
-    },
-    'MuBaoHoLaoDong': {
-        title: 'Mũ bảo hộ lao động',
-        price: 'Liên hệ',
-        desc: 'Mũ bảo hộ đạt chuẩn, chống va đập, nhẹ và thoáng khí. Nhiều màu sắc, phù hợp mọi công trường.',
-        imgs: ['images/Mũ bảo hộ lao động/N40-1 Thùy Dương.png']
-    },
-    'KinhKhauTrangBaoHo': {
-        title: 'Kính bảo hộ & Khẩu trang',
-        price: 'Liên hệ',
-        desc: 'Kính chống bụi, chống tia UV, khẩu trang than hoạt tính. Bảo vệ mắt và đường hô hấp hiệu quả.',
-        imgs: ['images/Kính bảo hộ & Khẩu trang/k2.png']
-    },
-    'GangTayBaoHo': {
-        title: 'Găng tay bảo hộ',
-        price: 'Liên hệ',
-        desc: 'Găng tay vải, găng tay cao su, găng tay chống cắt. Đa dạng chủng loại cho mọi ngành nghề.',
-        imgs: ['images/Gang tay bảo hộ/Găng Tay Da Hàn Đỏ.png']
-    },
-    'AoPhanQuangQuanAoBaoHo': {
-        title: 'Áo phản quang & Quần áo bảo hộ',
-        price: 'Liên hệ',
-        desc: 'Áo phản quang an toàn, quần áo bảo hộ vải chống cháy, chống hóa chất. Bảo vệ toàn diện cho người lao động.',
-        imgs: ['images/Áo Phản Quang/vải POLY/image.png']
-    },
-    'GayCaoSuDuiCui': {
-        title: 'Gậy cao su - Dùi cui bảo vệ',
-        price: 'Liên hệ',
-        desc: 'Gậy cao su chuyên dụng cho bảo vệ, dùi cui chất lượng cao, bền bỉ theo thời gian.',
-        imgs: ['images/Gậy cao su - Dùi cui bảo vệ/dcbv.png']
-    },
-    'GayGiaoThong': {
-        title: 'Gậy giao thông',
-        price: 'Liên hệ',
-        desc: 'Gậy điều hướng giao thông phản quang, sáng rõ ban đêm, chuyên dụng cho lực lượng bảo vệ và điều hành giao thông.',
-        imgs: ['images/Gậy giao thông/gdt.png']
-    },
-    'PCCCAnToan': {
-        title: 'Thiết bị PCCC & An toàn',
-        price: 'Liên hệ',
-        desc: 'Bình chữa cháy, vòi cứu hỏa, biển báo an toàn. Trang bị đầy đủ cho doanh nghiệp đạt chuẩn PCCC.',
-        imgs: ['images/Thiết bị PCCC & An toàn/Bình bột ABC - 4kg .png']
-    }
-};
-
-// Biến toàn cục cho Lightbox
-let currentAlbum = [];
-let currentIndex = 0;
-let lightbox, mainImg, thumbsContainer, prevBtn, nextBtn, closeBtn, overlay;
-
-// ==========================================
-// INITIALIZATION
-// ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Ẩn Preloader
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('hidden');
-    }
-
-    // 2. Khởi tạo các thành phần
-    initSmoothScroll();
-    initActiveNavOnScroll();
-    initProductFilter();
-    initStatsCounter();
-    initScrollTop();
-    initContactForm();
-    initProductGalleryLightbox();
-
-    // 3. Khởi tạo AOS Animation
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-    }
-});
-
-// ==========================================
-// SMOOTH SCROLL
-// ==========================================
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
-// ==========================================
-// ACTIVE NAV ON SCROLL
-// ==========================================
-function initActiveNavOnScroll() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    function setActiveLink() {
-        const scrollPos = window.pageYOffset + 120;
-
-        sections.forEach(section => {
-            const top = section.offsetTop;
-            const height = section.offsetHeight;
-            const id = section.getAttribute('id');
-
-            if (scrollPos >= top && scrollPos < top + height) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }
-
-    window.addEventListener('scroll', setActiveLink, { passive: true });
-}
-
-// ==========================================
-// PRODUCT FILTER
-// ==========================================
-function initProductFilter() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-
-    if (!filterBtns.length || !productCards.length) return;
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.dataset.filter;
-
-            productCards.forEach((card, index) => {
-                const category = card.dataset.category;
-                const shouldShow = filter === 'all' || category === filter;
-
-                if (shouldShow) {
-                    card.style.display = 'block';
-                    card.classList.remove('hidden');
-                    card.style.animation = `fadeInUp 0.5s ease ${index * 0.05}s forwards`;
-                } else {
-                    card.style.display = 'none';
-                    card.classList.add('hidden');
-                    card.style.animation = '';
-                }
-            });
-        });
-    });
-}
-
-// ==========================================
-// STATS COUNTER
-// ==========================================
-function initStatsCounter() {
-    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
-    if (!statNumbers.length) return;
-
-    let hasAnimated = false;
-
-    function animateCounters() {
-        if (hasAnimated) return;
-
-        const heroSection = document.getElementById('hero');
-        if (!heroSection) return;
-
-        const rect = heroSection.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-        if (isVisible) {
-            hasAnimated = true;
-
-            statNumbers.forEach(el => {
-                const target = parseInt(el.dataset.count);
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-
-                const counter = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(counter);
-                    }
-                    el.textContent = Math.round(current);
-                }, 16);
-            });
-        }
-    }
-
-    window.addEventListener('scroll', animateCounters, { passive: true });
-    animateCounters();
-}
-
-// ==========================================
-// SCROLL TO TOP
-// ==========================================
-function initScrollTop() {
-    const scrollTopBtn = document.getElementById('scrollTop');
-    if (!scrollTopBtn) return;
-
-    function toggleScrollBtn() {
-        if (window.pageYOffset > 500) {
-            scrollTopBtn.classList.add('visible');
-            scrollTopBtn.style.opacity = '1';
-            scrollTopBtn.style.visibility = 'visible';
-        } else {
-            scrollTopBtn.classList.remove('visible');
-            scrollTopBtn.style.opacity = '0';
-            scrollTopBtn.style.visibility = 'hidden';
-        }
-    }
-
-    window.addEventListener('scroll', toggleScrollBtn, { passive: true });
-
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// ==========================================
-// CONTACT FORM
-// ==========================================
-function initContactForm() {
-    const form = document.getElementById('contactForm');
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-
-        const name = form.querySelector('#name').value.trim();
-        const phone = form.querySelector('#phone').value.trim();
-
-        if (!name) {
-            showNotification('Vui lòng nhập họ và tên!', 'error');
-            return;
-        }
-
-        if (!phone || !/^(0[0-9]{9,10})$/.test(phone)) {
-            showNotification('Vui lòng nhập số điện thoại hợp lệ!', 'error');
-            return;
-        }
-
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
-        submitBtn.disabled = true;
-
-        try {
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            showNotification('Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ bạn sớm nhất.', 'success');
-            form.reset();
-        } catch (error) {
-            showNotification('Có lỗi xảy ra. Vui lòng thử lại!', 'error');
-        } finally {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }
-    });
-}
-
-// ==========================================
-// NOTIFICATION
-// ==========================================
-function showNotification(message, type = 'success') {
-    const existing = document.querySelector('.notification-toast');
-    if (existing) existing.remove();
-
-    const toast = document.createElement('div');
-    toast.className = `notification-toast notification-${type}`;
-    toast.innerHTML = `
-        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
-        <span>${message}</span>
-        <button class="notification-close" onclick="this.parentElement.remove()">
-            <i class="fas fa-times"></i>
-        </button>
-    `;
-
-    Object.assign(toast.style, {
-        position: 'fixed',
-        top: '24px',
-        right: '24px',
-        zIndex: '10000',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '12px',
-        padding: '16px 24px',
-        borderRadius: '12px',
-        fontFamily: "'Be Vietnam Pro', sans-serif",
-        fontSize: '14px',
-        fontWeight: '500',
-        color: '#fff',
-        background: type === 'success' ? 'linear-gradient(135deg, #10B981, #34D399)' : 'linear-gradient(135deg, #EF4444, #F87171)',
-        boxShadow: '0 8px 30px rgba(0,0,0,0.15)',
-        transform: 'translateX(120%)',
-        transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        maxWidth: '400px'
-    });
-
-    document.body.appendChild(toast);
-
-    requestAnimationFrame(() => {
-        toast.style.transform = 'translateX(0)';
-    });
-
-    setTimeout(() => {
-        toast.style.transform = 'translateX(120%)';
-        setTimeout(() => toast.remove(), 400);
-    }, 5000);
-}
-
-// ==========================================
-// PARALLAX EFFECT ON HERO
-// ==========================================
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    const scrolled = window.pageYOffset;
-    const shapes = hero.querySelectorAll('.shape');
-
-    shapes.forEach((shape, i) => {
-        const speed = (i + 1) * 0.03;
-        shape.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-}, { passive: true });
-
-// ==========================================
-// PRODUCT GALLERY LIGHTBOX
-// ==========================================
-function initProductGalleryLightbox() {
-    lightbox = document.getElementById('productLightbox');
-    if (!lightbox) return;
-
-    mainImg = document.getElementById('lightboxMainImg');
-    thumbsContainer = document.getElementById('lightboxThumbs');
-    prevBtn = lightbox.querySelector('.prev-btn');
-    nextBtn = lightbox.querySelector('.next-btn');
-    closeBtn = lightbox.querySelector('.lightbox-close');
-    overlay = lightbox.querySelector('.lightbox-overlay');
-
-    document.querySelectorAll('.product-gallery-trigger').forEach(trigger => {
-        trigger.onclick = (e) => {
-            e.preventDefault();
-            const id = trigger.getAttribute('data-album-id');
-            const data = productData[id];
-
-            if (data) {
-                document.getElementById('lt-title').innerText = data.title;
-                document.getElementById('lt-price').innerText = data.price;
-                document.getElementById('lt-desc').innerText = data.desc;
-                currentAlbum = data.imgs;
-            } else {
-                const title = trigger.closest('.product-card').querySelector('h3').innerText;
-                document.getElementById('lt-title').innerText = title;
-                document.getElementById('lt-price').innerText = 'Liên hệ';
-                document.getElementById('lt-desc').innerText = 'Thông tin chi tiết đang được cập nhật...';
-                currentAlbum = [trigger.getAttribute('href')];
-            }
-
-            currentIndex = 0;
-            updateLightbox();
-            lightbox.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        };
-    });
-
-    const closeLightbox = () => {
-        lightbox.classList.remove('open');
-        document.body.style.overflow = '';
-    };
-
-    if (closeBtn) closeBtn.onclick = closeLightbox;
-    if (overlay) overlay.onclick = closeLightbox;
-
-    if (prevBtn) {
-        prevBtn.onclick = () => {
-            currentIndex = (currentIndex - 1 + currentAlbum.length) % currentAlbum.length;
-            updateLightbox();
-        };
-    }
-
-    if (nextBtn) {
-        nextBtn.onclick = () => {
-            currentIndex = (currentIndex + 1) % currentAlbum.length;
-            updateLightbox();
-        };
-    }
-}
-
-function updateLightbox() {
-    if (!currentAlbum || currentAlbum.length === 0) return;
-    if (mainImg) mainImg.src = currentAlbum[currentIndex];
-
-    if (thumbsContainer) {
-        thumbsContainer.innerHTML = '';
-        currentAlbum.forEach((imgSrc, index) => {
-            const thumb = document.createElement('div');
-            thumb.className = `thumb-item ${index === currentIndex ? 'active' : ''}`;
-            thumb.innerHTML = `<img src="${imgSrc}">`;
-            thumb.onclick = () => {
-                currentIndex = index;
-                updateLightbox();
-            };
-            thumbsContainer.appendChild(thumb);
-        });
-    }
-}
-
-window.changeQty = function (amt) {
-    const qtyInput = document.getElementById('lt-qty');
-    if (!qtyInput) return;
-    let val = parseInt(qtyInput.value) + amt;
-    if (val < 1) val = 1;
-    qtyInput.value = val;
-};
-
-window.addToCart = function () {
-    const title = document.getElementById('lt-title').innerText;
-    showNotification(`Đã thêm ${title} vào giỏ hàng!`, 'success');
-};
-</script>
+    <!-- Product Lightbox -->
     <div id="productLightbox" class="product-lightbox">
         <div class="lightbox-overlay"></div>
         <div class="lightbox-content-wrapper">
@@ -3979,7 +4311,7 @@ window.addToCart = function () {
                     <p id="lt-desc" class="lightbox-prod-desc">Mô tả chi tiết sản phẩm sẽ hiện ở đây...</p>
 
                     <div class="lightbox-actions">
-                        <button class="btn-add-cart" onclick="addToCart()">
+                        <button class="btn-add-cart" id="lt-add-to-cart">
                             <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ HÀNG
                         </button>
                     </div>
@@ -3987,3 +4319,10 @@ window.addToCart = function () {
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
