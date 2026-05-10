@@ -108,9 +108,9 @@
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1320px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
         .section {
@@ -251,7 +251,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 15px;
+            gap: 10px;
+            width: 100%;
         }
 
         .nav-left {
@@ -268,10 +269,11 @@
         }
 
         .nav-logo img {
-            width: 90px;
-            height: 90px;
+            width: 60px;
+            height: 60px;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
+            transition: var(--transition);
         }
 
         .nav-logo-text {
@@ -280,20 +282,22 @@
         }
 
         .nav-brand {
-            font-size: 24px;
-            font-weight: 800;
+            font-size: 20px;
+            font-weight: 900;
             color: var(--white);
             letter-spacing: 1px;
-            line-height: 1.2;
+            line-height: 1;
             transition: var(--transition);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .nav-tagline {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
             letter-spacing: 0.5px;
             transition: var(--transition);
+            margin-top: 1px;
         }
 
         .navbar.scrolled .nav-brand {
@@ -311,10 +315,10 @@
         }
 
         .nav-link {
-            padding: 8px 16px;
-            font-size: 14px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-sm);
             transition: var(--transition);
             white-space: nowrap;
@@ -339,7 +343,7 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
 
         /* Search Bar */
@@ -471,13 +475,14 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 20px;
+            padding: 8px 15px;
             background: var(--accent);
             color: var(--white);
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 13px;
             transition: var(--transition);
+            white-space: nowrap;
         }
 
         .nav-phone:hover {
@@ -583,6 +588,7 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.4);
+            background-color: var(--navy); /* Fallback color */
         }
 
         .hero-slide-content {
@@ -623,6 +629,68 @@
         .hero-slider .swiper-button-next:hover,
         .hero-slider .swiper-button-prev:hover {
             background: var(--primary);
+        }
+
+        /* Hero Typography */
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .hero-title .highlight {
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(232, 165, 0, 0.3);
+        }
+
+        .hero-slogan {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 24px;
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 650px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 40px; }
+            .hero-slogan { font-size: 18px; }
+            .hero-desc { font-size: 15px; }
+            .hero-buttons { flex-direction: column; gap: 12px; }
         }
 
         /* Hero Animation */
@@ -865,11 +933,12 @@
         }
 
         .section-title {
-            font-size: 40px;
-            font-weight: 800;
+            font-size: 42px;
+            font-weight: 900;
             color: var(--navy);
-            line-height: 1.2;
-            margin-bottom: 16px;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
 
         .section-title.center {
@@ -1629,10 +1698,11 @@
 
         .footer-brand-name {
             display: block;
-            font-size: 24px;
-            font-weight: 800;
+            font-size: 26px;
+            font-weight: 900;
             color: var(--white);
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .footer-brand-tag {
@@ -1651,10 +1721,10 @@
         }
 
         .footer-desc {
-            font-size: 14px;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 24px;
         }
 
         .footer-social {
@@ -1897,6 +1967,30 @@
         }
 
         /* === RESPONSIVE === */
+
+        /* Laptop / Large Tablet */
+        @media (max-width: 1280px) {
+            .nav-container {
+                gap: 5px;
+            }
+            .nav-link {
+                padding: 8px 8px;
+                font-size: 13px;
+            }
+            .nav-brand {
+                font-size: 18px;
+            }
+            .nav-logo img {
+                width: 50px;
+                height: 50px;
+            }
+            .nav-phone span {
+                font-size: 12px;
+            }
+            .nav-phone {
+                padding: 8px 10px;
+            }
+        }
 
         /* Tablet */
         @media (max-width: 1024px) {
@@ -2659,12 +2753,13 @@
         }
 
         .ann-item {
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 14px;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             flex-shrink: 0;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
         .ann-item i {
@@ -3125,7 +3220,7 @@
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
-            <img src="images/logo.png" alt="Thành Phong Logo" class="loader-logo">
+            <img src="images/logo-menu.png" alt="Thành Phong Logo" class="loader-logo">
             <div class="loader-bar">
                 <div class="loader-progress"></div>
             </div>
@@ -3136,7 +3231,7 @@
     <header id="navbar" class="navbar">
         <div class="container nav-container">
             <a href="#hero" class="nav-logo">
-                <img src="images/logo.png" alt="Thành Phong Logo">
+                <img src="images/logo-menu.png" alt="Thành Phong Logo">
                 <div class="nav-logo-text">
                     <span class="nav-brand">THÀNH PHONG</span>
                     <span class="nav-tagline">Bảo Hộ Lao Động</span>
@@ -3186,7 +3281,7 @@
             <div class="swiper-slide">
                 <div class="hero-slide">
                     <div class="hero-slide-bg">
-                        <img src="images/banner-1.jpg" alt="Thành Phong">
+                        <img src="images/banner-1.png" alt="Thành Phong">
                     </div>
                     <div class="container">
                         <div class="hero-slide-content" data-aos="fade-up">
@@ -3218,7 +3313,7 @@
             <div class="swiper-slide">
                 <div class="hero-slide">
                     <div class="hero-slide-bg">
-                        <img src="images/banner-2.jpg" alt="Đồng Phục Bảo Vệ">
+                        <img src="images/banner-2.png" alt="Đồng Phục Bảo Vệ">
                     </div>
                     <div class="container">
                         <div class="hero-slide-content">
@@ -3244,7 +3339,7 @@
             <div class="swiper-slide">
                 <div class="hero-slide">
                     <div class="hero-slide-bg">
-                        <img src="images/banner-3.jpg" alt="Giày Bảo Hộ">
+                        <img src="images/banner-3.png" alt="Giày Bảo Hộ">
                     </div>
                     <div class="container">
                         <div class="hero-slide-content">
@@ -3418,9 +3513,9 @@
                 <div class="product-card" data-category="uniform" data-status="best-seller" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-badge">Bán chạy</div>
                     <div class="product-image">
-                        <a href="images/Đồng Phục Bảo Vệ/ao-trang-quan-den.png" class="product-gallery-trigger"
+                        <a href="images/Đồng Phục Bảo Vệ/ao-trang-bao-ve.png" class="product-gallery-trigger"
                             data-album-id="DongPhucBaoVe">
-                            <img src="images/Đồng Phục Bảo Vệ/ao-trang-quan-den.png" alt="Quần áo bảo vệ">
+                            <img src="images/Đồng Phục Bảo Vệ/ao-trang-bao-ve.png" alt="Quần áo bảo vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span class="trans-view-detail">Xem chi tiết</span>
@@ -3444,9 +3539,9 @@
                 <div class="product-card" data-category="uniform" data-status="new" data-aos="fade-up" data-aos-delay="150">
                     <div class="product-badge new">Mới</div>
                     <div class="product-image">
-                        <a href="images/Đồng Phục Bảo Vệ NEW/ao-xanh-bien-quan-xanh-than.png"
+                        <a href="images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png"
                             class="product-gallery-trigger" data-album-id="DongPhucBaoVeNew">
-                            <img src="images/Đồng Phục Bảo Vệ NEW/ao-xanh-bien-quan-xanh-than.png" alt="Quần áo bảo vệ">
+                            <img src="images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png" alt="Quần áo bảo vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span class="trans-view-detail">Xem chi tiết</span>
@@ -3469,9 +3564,9 @@
                 <!-- Phụ kiện bảo vệ -->
                 <div class="product-card" data-category="accessories" data-status="featured" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-image">
-                        <a href="images/Cầu Vai Bảo Vệ/do.png" class="product-gallery-trigger"
+                        <a href="images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png" class="product-gallery-trigger"
                             data-album-id="CauVaiBaoVe">
-                            <img src="images/Cầu Vai Bảo Vệ/do.png" alt="Cầu vai bảo vệ">
+                            <img src="images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png" alt="Cầu vai bảo vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span class="trans-view-detail">Xem chi tiết</span>
@@ -3518,9 +3613,9 @@
 
                 <div class="product-card" data-category="accessories" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-image">
-                        <a href="images/Cà Vạt, Ve Bảo Vệ/image.png" class="product-gallery-trigger"
+                        <a href="images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png" class="product-gallery-trigger"
                             data-album-id="CaVatVeAoBaoVe">
-                            <img src="images/Cà Vạt, Ve Bảo Vệ/image.png" alt="Cà vạt & Ve áo bảo vệ">
+                            <img src="images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png" alt="Cà vạt & Ve áo bảo vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span>Xem chi tiết</span>
@@ -3538,9 +3633,9 @@
 
                 <div class="product-card" data-category="accessories" data-aos="fade-up" data-aos-delay="350">
                     <div class="product-image">
-                        <a href="images/Dây thắt lưng bảo vệ Security/day-that-lung.png" class="product-gallery-trigger"
+                        <a href="images/Dây thắt lưng bảo vệ Security/day-that-llung.png" class="product-gallery-trigger"
                             data-album-id="DayThatLungBaoVe">
-                            <img src="images/Dây thắt lưng bảo vệ Security/day-that-lung.png"
+                            <img src="images/Dây thắt lưng bảo vệ Security/day-that-llung.png"
                                 alt="Dây thắt lưng bảo vệ Security">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
@@ -3561,9 +3656,9 @@
                 <div class="product-card" data-category="shoes" data-status="best-seller" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-badge">Bán chạy</div>
                     <div class="product-image">
-                        <a href="images/Giày da bảo vệ - Không buộc dây/day-da-kb.png" class="product-gallery-trigger"
+                        <a href="images/Giày da bảo vệ - Không buộc dây/day-bao-ve.png" class="product-gallery-trigger"
                             data-album-id="DayDaKhongBuoc">
-                            <img src="images/Giày da bảo vệ - Không buộc dây/day-da-kb.png"
+                            <img src="images/Giày da bảo vệ - Không buộc dây/day-bao-ve.png"
                                 alt="Giày da bảo vệ - không buộc dây">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
@@ -3586,9 +3681,9 @@
 
                 <div class="product-card" data-category="shoes" data-aos="fade-up" data-aos-delay="150">
                     <div class="product-image">
-                        <a href="images/Giày da bảo vệ - Có buộc dây/day-co-cao.png" class="product-gallery-trigger"
+                        <a href="images/Giày da bảo vệ - Có buộc dây/day-bao-ve (1).png" class="product-gallery-trigger"
                             data-album-id="DayDaCoBuoc">
-                            <img src="images/Giày da bảo vệ - Có buộc dây/day-co-cao.png"
+                            <img src="images/Giày da bảo vệ - Có buộc dây/day-bao-ve (1).png"
                                 alt="Giày da bảo vệ - có buộc dây">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
@@ -3608,9 +3703,9 @@
                 <div class="product-card" data-category="shoes" data-status="best-seller" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-badge new">Hot</div>
                     <div class="product-image">
-                        <a href="images/Giày bảo hộ lao động/Giày Jogger  .png" class="product-gallery-trigger"
+                        <a href="images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (1).png" class="product-gallery-trigger"
                             data-album-id="DayBaoHoLaoDong">
-                            <img src="images/Giày bảo hộ lao động/Giày Jogger  .png" alt="Giày bảo hộ lao động">
+                            <img src="images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (1).png" alt="Giày bảo hộ lao động">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span class="trans-view-detail">Xem chi tiết</span>
@@ -3635,9 +3730,9 @@
                 <div class="product-card" data-category="safety" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-badge">Bán chạy</div>
                     <div class="product-image">
-                        <a href="images/Mũ bảo hộ lao động/N40-1 Thùy Dương.png" class="product-gallery-trigger"
+                        <a href="images/Mũ bảo hộ lao động/mu-bao-ho (1).png" class="product-gallery-trigger"
                             data-album-id="MuBaoHoLaoDong">
-                            <img src="images/Mũ bảo hộ lao động/N40-1 Thùy Dương.png" alt="Mũ bảo hộ lao động">
+                            <img src="images/Mũ bảo hộ lao động/mu-bao-ho (1).png" alt="Mũ bảo hộ lao động">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span>Xem chi tiết</span>
@@ -3655,9 +3750,9 @@
 
                 <div class="product-card" data-category="safety" data-aos="fade-up" data-aos-delay="150">
                     <div class="product-image">
-                        <a href="images/Kính bảo hộ & Khẩu trang/k2.png" class="product-gallery-trigger"
+                        <a href="images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png" class="product-gallery-trigger"
                             data-album-id="KinhKhauTrangBaoHo">
-                            <img src="images/Kính bảo hộ & Khẩu trang/k2.png" alt="Kính bảo hộ & Khẩu trang">
+                            <img src="images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png" alt="Kính bảo hộ & Khẩu trang">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span>Xem chi tiết</span>
@@ -3675,9 +3770,9 @@
 
                 <div class="product-card" data-category="safety" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-image">
-                        <a href="images/Gang tay bảo hộ/Găng Tay Da Hàn Đỏ.png" class="product-gallery-trigger"
+                        <a href="images/Gang tay bảo hộ/gang-tay-bao-ho (1).png" class="product-gallery-trigger"
                             data-album-id="GangTayBaoHo">
-                            <img src="images/Gang tay bảo hộ/Găng Tay Da Hàn Đỏ.png" alt="Găng tay bảo hộ">
+                            <img src="images/Gang tay bảo hộ/gang-tay-bao-ho (1).png" alt="Găng tay bảo hộ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span>Xem chi tiết</span>
@@ -3694,9 +3789,9 @@
 
                 <div class="product-card" data-category="safety" data-aos="fade-up" data-aos-delay="250">
                     <div class="product-image">
-                        <a href="images/Áo Phản Quang/vải POLY/image.png" class="product-gallery-trigger"
+                        <a href="images/Áo Phản Quang/vải POLY/vai-poly (1).png" class="product-gallery-trigger"
                             data-album-id="AoPhanQuangQuanAoBaoHo">
-                            <img src="images/Áo Phản Quang/vải POLY/image.png" alt="Áo phản quang & Quần áo bảo hộ">
+                            <img src="images/Áo Phản Quang/vải POLY/vai-poly (1).png" alt="Áo phản quang & Quần áo bảo hộ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span>Xem chi tiết</span>
@@ -3715,9 +3810,9 @@
                 <!-- Dụng cụ -->
                 <div class="product-card" data-category="tools" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-image">
-                        <a href="images/Gây cao su - Dùi cui bảo vệ/dcbv.png" class="product-gallery-trigger"
+                        <a href="images/Gậy cao su - Dùi cui bảo vệ/dui-cui-bao-ve.png" class="product-gallery-trigger"
                             data-album-id="GayCaoSuDuiCui">
-                            <img src="images/Gậy cao su - Dùi cui bảo vệ/dcbv.png" alt="Gậy cao su - Dùi cui bảo vệ">
+                            <img src="images/Gậy cao su - Dùi cui bảo vệ/dui-cui-bao-ve.png" alt="Gậy cao su - Dùi cui bảo vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span>Xem chi tiết</span>
@@ -3734,9 +3829,9 @@
 
                 <div class="product-card" data-category="tools" data-aos="fade-up" data-aos-delay="150">
                     <div class="product-image">
-                        <a href="images/Gậy giao thông/gdt.png" class="product-gallery-trigger"
+                        <a href="images/Gậy giao thông/gay-giao-thong.png" class="product-gallery-trigger"
                             data-album-id="GayGiaoThong">
-                            <img src="images/Gậy giao thông/gdt.png" alt="Gậy giao thông">
+                            <img src="images/Gậy giao thông/gay-giao-thong.png" alt="Gậy giao thông">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span>Xem chi tiết</span>
@@ -3754,9 +3849,9 @@
 
                 <div class="product-card" data-category="tools" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-image">
-                        <a href="images/Thiết bị PCCC & An toàn/Bình bột ABC - 4kg .png" class="product-gallery-trigger"
+                        <a href="images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png" class="product-gallery-trigger"
                             data-album-id="PCCCAnToan">
-                            <img src="images/Thiết bị PCCC & An toàn/Bình bột ABC - 4kg .png"
+                            <img src="images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png"
                                 alt="Thiết bị PCCC & An toàn">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
@@ -4214,7 +4309,77 @@
     <section class="map-section">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4!2d106.6!3d10.78!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ2JzQ4LjAiTiAxMDbCsDM2JzAwLjAiRQ!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
-                <!-- Shopping Cart Sidebar -->
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Bản đồ Thành Phong"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-menu.png" alt="Thành Phong Logo">
+                        <div>
+                            <span class="footer-brand-name">THÀNH PHONG</span>
+                            <span class="footer-brand-tag">Bảo Hộ Lao Động</span>
+                        </div>
+                    </div>
+                    <p class="footer-slogan">"Uy Tín Là Bảo Hộ Tốt Nhất"</p>
+                    <p class="footer-desc">Chuyên cung cấp các sản phẩm bảo hộ lao động, đồng phục bảo vệ và phụ kiện an toàn chất lượng cao.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Zalo"><i class="fas fa-comment-dots"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Sản phẩm</h4>
+                    <ul>
+                        <li><a href="#products">Đồng phục bảo vệ</a></li>
+                        <li><a href="#products">Phụ kiện bảo vệ</a></li>
+                        <li><a href="#products">Giày bảo hộ</a></li>
+                        <li><a href="#products">Bảo hộ lao động</a></li>
+                        <li><a href="#products">Dụng cụ & Thiết bị</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Thông tin</h4>
+                    <ul>
+                        <li><a href="#about">Về chúng tôi</a></li>
+                        <li><a href="#why-us">Tại sao chọn chúng tôi</a></li>
+                        <li><a href="#testimonials">Đánh giá khách hàng</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Liên hệ</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>213/27B Liên khu 4-5, P. Bình Hưng Hòa B, Q. Bình Tân, TP.HCM</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:0349781300">0349.781.300</a> (Ms. Thu Nhàn)</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:nguyenthunhan2105@gmail.com">nguyenthunhan2105@gmail.com</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span><a href="https://baohothanhphong.com" target="_blank">baohothanhphong.com</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Công Ty TNHH Bảo Hộ Lao Động Thành Phong. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
             <h3><i class="fas fa-shopping-cart"></i> Giỏ hàng</h3>

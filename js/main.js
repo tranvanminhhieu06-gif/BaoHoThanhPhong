@@ -10,21 +10,21 @@ const productData = {
         price: 'Liên hệ',
         status: 'best-seller',
         desc: 'Đồng phục bảo vệ chuyên nghiệp, chất liệu vải tốt, form dáng chuẩn. Nhận may thêu logo theo yêu cầu.',
-        imgs: ['images/Đồng Phục Bảo Vệ/ao-trang-quan-den.png', 'images/Đồng Phục Bảo Vệ/do-bao-ve.png']
+        imgs: ['images/Đồng Phục Bảo Vệ/ao-trang-bao-ve.png']
     },
     'DongPhucBaoVeNew': {
         title: 'Quần áo bảo vệ - Áo xanh biển, quần xanh than',
         price: 'Liên hệ',
         status: 'new',
         desc: 'Phong cách chuyên nghiệp, vải bền đẹp, thoáng mát, phù hợp môi trường làm việc năng động.',
-        imgs: ['images/Đồng Phục Bảo Vệ NEW/ao-xanh-bien-quan-xanh-than.png']
+        imgs: ['images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png']
     },
     'CauVaiBaoVe': {
         title: 'Cầu vai bảo vệ',
         price: 'Liên hệ',
         status: 'featured',
         desc: 'Cầu vai viền đỏ, viền vàng, gạch đồng, thông tư mới. Cầu vai TTM loại đẹp (thêu) đầy đủ mẫu mã.',
-        imgs: ['images/Cầu Vai Bảo Vệ/do.png']
+        imgs: ['images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png']
     },
     'NonSaoBaoVe': {
         title: 'Nón bảo vệ & Sao bảo vệ',
@@ -38,84 +38,84 @@ const productData = {
         price: 'Liên hệ',
         status: 'none',
         desc: 'Cà vạt bảo vệ sang trọng, ve áo bảo vệ thông tư mới. Hoàn thiện bộ đồng phục chuyên nghiệp.',
-        imgs: ['images/Cà Vạt, Ve Bảo Vệ/image.png']
+        imgs: ['images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png']
     },
     'DayThatLungBaoVe': {
         title: 'Dây thắt lưng bảo vệ Security',
         price: 'Liên hệ',
         status: 'none',
         desc: 'Dây thắt lưng bền chắc, khóa chắc chắn, in logo Security chuyên dụng cho lực lượng bảo vệ.',
-        imgs: ['images/Dây thắt lưng bảo vệ Security/day-that-lung.png']
+        imgs: ['images/Dây thắt lưng bảo vệ Security/day-that-llung.png']
     },
     'DayDaKhongBuoc': {
         title: 'Giày da bảo vệ - Không buộc dây',
         price: 'Liên hệ',
         status: 'best-seller',
         desc: 'Giày da cao cấp, thiết kế sang trọng, không cần buộc dây tiện lợi. Đế chống trượt, êm chân.',
-        imgs: ['images/Giày da bảo vệ - Không buộc dây/day-da-kb.png']
+        imgs: ['images/Giày da bảo vệ - Không buộc dây/day-bao-ve.png']
     },
     'DayDaCoBuoc': {
         title: 'Giày da bảo vệ - Có buộc dây',
         price: 'Liên hệ',
         status: 'none',
         desc: 'Giày da có dây buộc, ôm chân chắc chắn, phù hợp cho bảo vệ tuần tra, hoạt động ngoài trời.',
-        imgs: ['images/Giày da bảo vệ - Có buộc dây/day-co-cao.png']
+        imgs: ['images/Giày da bảo vệ - Có buộc dây/day-bao-ve (1).png']
     },
     'DayBaoHoLaoDong': {
         title: 'Giày bảo hộ lao động',
         price: 'Liên hệ',
         status: 'best-seller',
         desc: 'Giày bảo hộ đầu thép, chống đâm xuyên, chống trượt, đạt tiêu chuẩn an toàn quốc tế.',
-        imgs: ['images/Giày bảo hộ lao động/Giày Jogger  .png']
+        imgs: ['images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (1).png']
     },
     'MuBaoHoLaoDong': {
         title: 'Mũ bảo hộ lao động',
         price: 'Liên hệ',
         status: 'none',
         desc: 'Mũ bảo hộ đạt chuẩn, chống va đập, nhẹ và thoáng khí. Nhiều màu sắc, phù hợp mọi công trường.',
-        imgs: ['images/Mũ bảo hộ lao động/N40-1 Thùy Dương.png']
+        imgs: ['images/Mũ bảo hộ lao động/mu-bao-ho (1).png']
     },
     'KinhKhauTrangBaoHo': {
         title: 'Kính bảo hộ & Khẩu trang',
         price: 'Liên hệ',
         status: 'none',
         desc: 'Kính chống bụi, chống tia UV, khẩu trang than hoạt tính. Bảo vệ mắt và đường hô hấp hiệu quả.',
-        imgs: ['images/Kính bảo hộ & Khẩu trang/k2.png']
+        imgs: ['images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png']
     },
     'GangTayBaoHo': {
         title: 'Găng tay bảo hộ',
         price: 'Liên hệ',
         status: 'none',
         desc: 'Găng tay vải, găng tay cao su, găng tay chống cắt. Đa dạng chủng loại cho mọi ngành nghề.',
-        imgs: ['images/Gang tay bảo hộ/Găng Tay Da Hàn Đỏ.png']
+        imgs: ['images/Gang tay bảo hộ/gang-tay-bao-ho (1).png']
     },
     'AoPhanQuangQuanAoBaoHo': {
         title: 'Áo phản quang & Quần áo bảo hộ',
         price: 'Liên hệ',
         status: 'featured',
         desc: 'Áo phản quang an toàn, quần áo bảo hộ vải chống cháy, chống hóa chất. Bảo vệ toàn diện cho người lao động.',
-        imgs: ['images/Áo Phản Quang/vải POLY/image.png']
+        imgs: ['images/Áo Phản Quang/vải POLY/vai-poly (1).png']
     },
     'GayCaoSuDuiCui': {
         title: 'Gậy cao su - Dùi cui bảo vệ',
         price: 'Liên hệ',
         status: 'none',
         desc: 'Gậy cao su chuyên dụng cho bảo vệ, dùi cui chất lượng cao, bền bỉ theo thời gian.',
-        imgs: ['images/Gậy cao su - Dùi cui bảo vệ/dcbv.png']
+        imgs: ['images/Gậy cao su - Dùi cui bảo vệ/dui-cui-bao-ve.png']
     },
     'GayGiaoThong': {
         title: 'Gậy giao thông',
         price: 'Liên hệ',
         status: 'none',
         desc: 'Gậy điều hướng giao thông phản quang, sáng rõ ban đêm, chuyên dụng cho lực lượng bảo vệ và điều hành giao thông.',
-        imgs: ['images/Gậy giao thông/gdt.png']
+        imgs: ['images/Gậy giao thông/gay-giao-thong.png']
     },
     'PCCCAnToan': {
-        title: 'Thiết thiết bị PCCC & An toàn',
+        title: 'Thiết bị PCCC & An toàn',
         price: 'Liên hệ',
         status: 'none',
         desc: 'Bình chữa cháy, vòi cứu hỏa, biển báo an toàn. Trang bị đầy đủ cho doanh nghiệp đạt chuẩn PCCC.',
-        imgs: ['images/Thiết bị PCCC & An toàn/Bình bột ABC - 4kg .png']
+        imgs: ['images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png']
     }
 };
 
@@ -727,12 +727,17 @@ if (!document.getElementById('toast-styles')) {
 })();
 
 // Preloader Removal on window load
-window.addEventListener('load', () => {
+function hidePreloader() {
     const preloader = document.getElementById('preloader');
-    if (preloader) {
+    if (preloader && !preloader.classList.contains('hidden')) {
         preloader.classList.add('hidden');
         setTimeout(() => {
             preloader.style.display = 'none';
         }, 600);
     }
-});
+}
+
+window.addEventListener('load', hidePreloader);
+
+// Safety timeout: Hide preloader after 3 seconds regardless of load state
+setTimeout(hidePreloader, 3000);
