@@ -601,6 +601,8 @@ function initNavbarEffects() {
     const navbar = document.getElementById('navbar');
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.querySelector('.nav-menu');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-menu .nav-link');
 
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 50) {
@@ -610,12 +612,46 @@ function initNavbarEffects() {
         }
     });
 
+    const openMenu = () => {
+        navToggle.classList.add('active');
+        navMenu.classList.add('open');
+        if (navOverlay) navOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('open');
+        if (navOverlay) navOverlay.classList.remove('show');
+        document.body.style.overflow = '';
+    };
+
     if (navToggle) {
         navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
     }
+
+    // Close menu when clicking overlay
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeMenu);
+    }
+
+    // Close menu when clicking any nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on resize to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
+    });
 }
 
 // 3. Product Filters (Category & Status)
