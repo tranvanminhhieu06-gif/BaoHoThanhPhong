@@ -165,11 +165,7 @@ let currentLang = localStorage.getItem('tp_lang') || 'vi';
 // INITIALIZATION
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Preloader
-    const preloader = document.getElementById('preloader');
-    if (preloader) setTimeout(() => preloader.classList.add('hidden'), 1000);
-
-    // 2. Initialize Features
+    // 1. Initialize Features
     initHeroCarousel();
     initSmoothScroll();
     initNavbarEffects();
@@ -729,3 +725,14 @@ if (!document.getElementById('toast-styles')) {
         navbar.style.top = window.pageYOffset > 10 ? '0' : (annBar.offsetHeight || 0) + 'px';
     }, { passive: true });
 })();
+
+// Preloader Removal on window load
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('hidden');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 600);
+    }
+});
