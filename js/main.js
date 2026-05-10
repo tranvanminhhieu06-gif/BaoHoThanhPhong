@@ -231,7 +231,7 @@ const productData = {
             "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png",
             "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (10).png",
             "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (11).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (12).png",
+            "images/Kính bảo hộ & Khẩutrang/kinh-bao-ho-va-khau-trang (12).png",
             "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (13).png",
             "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (14).png",
             "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (15).png",
