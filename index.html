@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bảo Hộ Lao Động Thành Phong - Uy Tín Là Bảo Hộ Tốt Nhất</title>
+    <link rel="icon" type="image/png" href="images/logo-menu.png">
+    <link rel="apple-touch-icon" href="images/logo-menu.png">
     <meta name="description"
         content="Công ty TNHH Bảo Hộ Lao Động Thành Phong - Chuyên cung cấp đồ bảo hộ lao động, đồng phục bảo vệ, giày bảo hộ, phụ kiện an toàn chất lượng cao tại TP.HCM">
     <meta name="keywords"
         content="bảo hộ lao động, đồng phục bảo vệ, giày bảo hộ, phụ kiện an toàn, công ty bảo hộ lao động, thiết bị bảo hộ, may thêu đồng phục, sản phẩm bảo hộ chất lượng cao">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://baohothanhphong.com/">
+    <meta property="og:url" content="https://baohothanhphong.vn/">
     <meta property="og:title" content="Thành Phong - Uy Tín Là Bảo Hộ Tốt Nhất">
     <meta property="og:description"
         content="Chuyên cung cấp trang thiết bị bảo hộ lao động và đồng phục chuyên dụng chất lượng cao.">
@@ -1017,7 +1019,7 @@
         .full-cart-header {
             background: #fff;
             padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 10;
@@ -1044,7 +1046,7 @@
             margin-bottom: 15px;
             font-weight: 600;
             color: var(--gray-600);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .cart-item-row {
@@ -1055,12 +1057,12 @@
             grid-template-columns: 50px 1fr 150px 150px 150px 80px;
             align-items: center;
             margin-bottom: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
 
         .cart-item-row:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .cart-item-product {
@@ -1087,7 +1089,8 @@
             color: var(--gray-400);
         }
 
-        .cart-item-price, .cart-item-subtotal {
+        .cart-item-price,
+        .cart-item-subtotal {
             font-weight: 600;
             color: var(--navy);
         }
@@ -1114,7 +1117,7 @@
             width: 100%;
             background: #fff;
             padding: 20px 0;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
             z-index: 11;
         }
 
@@ -1189,37 +1192,77 @@
         }
 
         /* Column Widths */
-        .check-col { width: 50px; text-align: center; }
-        .prod-col { flex: 1; min-width: 300px; }
-        .price-col { width: 150px; text-align: center; }
-        .qty-col { width: 150px; text-align: center; }
-        .total-col { width: 150px; text-align: center; }
-        .action-col { width: 80px; text-align: right; }
+        .check-col {
+            width: 50px;
+            text-align: center;
+        }
+
+        .prod-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .price-col {
+            width: 150px;
+            text-align: center;
+        }
+
+        .qty-col {
+            width: 150px;
+            text-align: center;
+        }
+
+        .total-col {
+            width: 150px;
+            text-align: center;
+        }
+
+        .action-col {
+            width: 80px;
+            text-align: right;
+        }
 
         @media (max-width: 992px) {
             .cart-table-header {
                 display: none;
             }
+
             .cart-item-row {
                 grid-template-columns: 40px 1fr 1fr;
                 gap: 15px;
                 padding: 15px;
             }
-            .prod-col { grid-column: span 2; }
-            .price-col, .total-col { display: none; }
-            .qty-col { grid-column: span 1; text-align: left; }
-            .action-col { grid-column: span 1; }
-            
+
+            .prod-col {
+                grid-column: span 2;
+            }
+
+            .price-col,
+            .total-col {
+                display: none;
+            }
+
+            .qty-col {
+                grid-column: span 1;
+                text-align: left;
+            }
+
+            .action-col {
+                grid-column: span 1;
+            }
+
             .footer-action-bar {
                 flex-direction: column;
                 gap: 15px;
                 align-items: stretch;
             }
+
             .footer-right {
                 flex-direction: column;
                 gap: 10px;
                 align-items: stretch;
             }
+
             .btn-checkout-red {
                 width: 100%;
             }
@@ -3584,7 +3627,7 @@
                 <span class="ann-item"><i class="fas fa-cut"></i> May thêu logo công ty theo yêu cầu – Giá tốt
                     nhất</span>
                 <span class="ann-sep">✦</span>
-                <span class="ann-item"><i class="fas fa-phone-alt"></i> Hotline: 0349.781.300 – Tư vấn 7:30–17:30</span>
+                <span class="ann-item"><i class="fas fa-phone-alt"></i> Hotline: 0931160818 – Tư vấn 7:30–17:30</span>
                 <span class="ann-sep">✦</span>
                 <span class="ann-item"><i class="fas fa-shield-alt"></i> Hàng chính hãng – Đổi trả trong 7 ngày</span>
                 <span class="ann-sep">✦</span>
@@ -3596,7 +3639,7 @@
                 <span class="ann-item"><i class="fas fa-cut"></i> May thêu logo công ty theo yêu cầu – Giá tốt
                     nhất</span>
                 <span class="ann-sep">✦</span>
-                <span class="ann-item"><i class="fas fa-phone-alt"></i> Hotline: 0349.781.300 – Tư vấn 7:30–17:30</span>
+                <span class="ann-item"><i class="fas fa-phone-alt"></i> Hotline: 0931160818 – Tư vấn 7:30–17:30</span>
                 <span class="ann-sep">✦</span>
                 <span class="ann-item"><i class="fas fa-shield-alt"></i> Hàng chính hãng – Đổi trả trong 7 ngày</span>
                 <span class="ann-sep">✦</span>
@@ -3643,17 +3686,9 @@
                         <i class="fas fa-search"></i>
                     </div>
                 </div>
-                <div class="nav-lang" id="langToggle">
-                    <span class="lang-btn active" data-lang="vi">VI</span>
-                    <span class="lang-btn" data-lang="en">EN</span>
-                </div>
-                <div class="nav-cart" id="cartTrigger">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge" id="cartCount">0</span>
-                </div>
-                <a href="tel:0349781300" class="nav-phone">
+                <a href="tel:0931160818" class="nav-phone">
                     <i class="fas fa-phone-alt"></i>
-                    <span>0349.781.300</span>
+                    <span>0931160818</span>
                 </a>
                 <button class="nav-toggle" id="navToggle">
                     <span></span>
@@ -3671,11 +3706,11 @@
 
     <section id="hero" class="hero-slider swiper">
         <div class="swiper-wrapper">
-            <!-- Slide 1: General -->
+            <!-- Slide 1: Bảo Vệ Chuyên Nghiệp -->
             <div class="swiper-slide">
                 <div class="hero-slide">
                     <div class="hero-slide-bg">
-                        <img src="images/banner-1.png" alt="Thành Phong">
+                        <img src="images/1.png" alt="Đồng Phục Bảo Vệ Thành Phong">
                     </div>
                     <div class="container">
                         <div class="hero-slide-content" data-aos="fade-up">
@@ -3703,23 +3738,23 @@
                 </div>
             </div>
 
-            <!-- Slide 2: Uniforms -->
+            <!-- Slide 2: Bảo Hộ Công Nghiệp -->
             <div class="swiper-slide">
                 <div class="hero-slide">
                     <div class="hero-slide-bg">
-                        <img src="images/banner-2.png" alt="Đồng Phục Bảo Vệ">
+                        <img src="images/2.png" alt="Bảo Hộ Lao Động Công Nghiệp">
                     </div>
                     <div class="container">
                         <div class="hero-slide-content">
                             <div class="hero-badge">
-                                <i class="fas fa-user-shield"></i> Chuyên Nghiệp & Đẳng Cấp
+                                <i class="fas fa-hard-hat"></i> Chuyên Nghiệp & Đẳng Cấp
                             </div>
                             <h2 class="hero-title" id="trans-hero-title-2">
-                                Đồng Phục Bảo Vệ<br><span class="highlight">Chuyên Nghiệp</span>
+                                Bảo Hộ Lao Động<br><span class="highlight">Công Nghiệp</span>
                             </h2>
                             <p class="hero-desc" id="trans-hero-desc-2">
-                                Thiết kế theo thông tư mới nhất, chất liệu vải cao cấp, bền đẹp và thoáng mát.
-                                Nâng tầm hình ảnh doanh nghiệp của bạn.
+                                Trang bị đầy đủ thiết bị bảo hộ cho công nhân nhà máy, xưởng sản xuất.
+                                Đảm bảo an toàn tuyệt đối trong môi trường công nghiệp.
                             </p>
                             <div class="hero-buttons">
                                 <a href="#products" class="btn btn-primary">Xem Chi Tiết</a>
@@ -3729,26 +3764,52 @@
                 </div>
             </div>
 
-            <!-- Slide 3: Safety Shoes -->
+            <!-- Slide 3: Thiết Bị Bảo Hộ -->
             <div class="swiper-slide">
                 <div class="hero-slide">
                     <div class="hero-slide-bg">
-                        <img src="images/banner-3.png" alt="Giày Bảo Hộ">
+                        <img src="images/3.png" alt="Thiết Bị Bảo Hộ Lao Động">
                     </div>
                     <div class="container">
                         <div class="hero-slide-content">
                             <div class="hero-badge">
-                                <i class="fas fa-boot"></i> Bền Bỉ & An Toàn
+                                <i class="fas fa-tools"></i> Đa Dạng & Chất Lượng
                             </div>
                             <h2 class="hero-title" id="trans-hero-title-3">
-                                Giày Bảo Hộ<br><span class="highlight">Tiêu Chuẩn Quốc Tế</span>
+                                Thiết Bị Bảo Hộ<br><span class="highlight">Đạt Chuẩn Quốc Tế</span>
                             </h2>
                             <p class="hero-desc" id="trans-hero-desc-3">
-                                Chống đâm xuyên, chống va đập và chống trơn trượt tuyệt đối.
-                                Bảo vệ đôi chân bạn trong mọi môi trường làm việc.
+                                Kính bảo hộ, găng tay, giày bảo hộ, tai nghe chống ồn và nhiều sản phẩm khác.
+                                Bảo vệ toàn diện cho người lao động.
                             </p>
                             <div class="hero-buttons">
                                 <a href="#products" class="btn btn-primary">Mua Ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Bảo Hộ Xây Dựng -->
+            <div class="swiper-slide">
+                <div class="hero-slide">
+                    <div class="hero-slide-bg">
+                        <img src="images/4.png" alt="Bảo Hộ Lao Động Xây Dựng">
+                    </div>
+                    <div class="container">
+                        <div class="hero-slide-content">
+                            <div class="hero-badge">
+                                <i class="fas fa-building"></i> Bền Bỉ & An Toàn
+                            </div>
+                            <h2 class="hero-title" id="trans-hero-title-4">
+                                Bảo Hộ Xây Dựng<br><span class="highlight">Chuyên Nghiệp</span>
+                            </h2>
+                            <p class="hero-desc" id="trans-hero-desc-4">
+                                Trang bị bảo hộ chuyên dụng cho ngành xây dựng, công trình.
+                                An toàn tuyệt đối trên mọi công trường.
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="#products" class="btn btn-primary">Xem Sản Phẩm</a>
                             </div>
                         </div>
                     </div>
@@ -4973,21 +5034,22 @@
                                 <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                                 <div>
                                     <strong>Địa chỉ:</strong>
-                                    <p>213/27B Liên khu 4-5, P. Bình Hưng Hòa B, Q. Bình Tân, TP. HCM</p>
+                                    <p>205/20/33 Phạm Đăng Giảng, P. Bình Hưng Hòa, Q. Bình Tân, TP. HCM</p>
                                 </div>
                             </div>
                             <div class="contact-detail">
                                 <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                                 <div>
                                     <strong>Điện thoại:</strong>
-                                    <p><a href="tel:0349781300">0349.781.300</a> (Ms. Thu Nhàn)</p>
+                                    <p><a href="tel:0931160818">0931160818</a> (Ms. Thu Nhàn)</p>
                                 </div>
                             </div>
                             <div class="contact-detail">
                                 <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                                 <div>
                                     <strong>Email:</strong>
-                                    <p><a href="mailto:nguyenthunhan2105@gmail.com">nguyenthunhan2105@gmail.com</a>
+                                    <p><a
+                                            href="mailto:ketoanthanhphong0607@gmail.com">ketoanthanhphong0607@gmail.com</a>
                                     </p>
                                 </div>
                             </div>
@@ -4995,7 +5057,7 @@
                                 <div class="contact-icon"><i class="fas fa-globe"></i></div>
                                 <div>
                                     <strong>Website:</strong>
-                                    <p><a href="https://baohothanhphong.com" target="_blank">baohothanhphong.com</a>
+                                    <p><a href="https://baohothanhphong.vn" target="_blank">baohothanhphong.vn</a>
                                     </p>
                                 </div>
                             </div>
@@ -5111,24 +5173,25 @@
                     <h4>Liên hệ</h4>
                     <div class="footer-contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>213/27B Liên khu 4-5, P. Bình Hưng Hòa B, Q. Bình Tân, TP.HCM</span>
+                        <span>205/20/33 Phạm Đăng Giảng, P. Bình Hưng Hòa, Q. Bình Tân, TP. HCM</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-phone-alt"></i>
-                        <span><a href="tel:0349781300">0349.781.300</a> (Ms. Thu Nhàn)</span>
+                        <span><a href="tel:0931160818">0931160818</a> (Ms. Thu Nhàn)</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span><a href="mailto:nguyenthunhan2105@gmail.com">nguyenthunhan2105@gmail.com</a></span>
+                        <span><a href="mailto:ketoanthanhphong0607@gmail.com">ketoanthanhphong0607@gmail.com</a></span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-globe"></i>
-                        <span><a href="https://baohothanhphong.com" target="_blank">baohothanhphong.com</a></span>
+                        <span><a href="https://baohothanhphong.vn" target="_blank">baohothanhphong.vn</a></span>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Công Ty TNHH Bảo Hộ Lao Động Thành Phong. Tất cả quyền được bảo lưu.</p>
+                <p>&copy; 2024 Công Ty TNHH Bảo Hộ Lao Động Thành Phong &mdash; MST: 0316903199. Tất cả quyền được bảo
+                    lưu.</p>
             </div>
         </div>
     </footer>
@@ -5164,14 +5227,15 @@
             <div class="cart-actions">
                 <button class="btn btn-view-full-cart" id="viewFullCartBtn">Xem chi tiết giỏ hàng</button>
                 <button class="btn btn-zalo-checkout" id="zaloOrderBtn">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="zalo-icon-small">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo"
+                        class="zalo-icon-small">
                     Gửi đơn hàng qua Zalo
                 </button>
             </div>
         </div>
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
-    
+
     <!-- Full Cart Page Section -->
     <div class="full-cart-section" id="fullCartPage">
         <header class="full-cart-header">
@@ -5227,16 +5291,17 @@
             <span class="fab-pulse-ring"></span>
         </a>
         <!-- Zalo -->
-        <a href="https://zalo.me/0349781300" class="fab-btn zalo-btn" target="_blank" rel="noopener"
+        <a href="https://zalo.me/0931160818" class="fab-btn zalo-btn" target="_blank" rel="noopener"
             aria-label="Chat Zalo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo"
+                style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
             <span class="fab-tooltip">Chat Zalo</span>
             <span class="fab-pulse-ring"></span>
         </a>
         <!-- Phone -->
-        <a href="tel:0349781300" class="fab-btn phone-btn" aria-label="Gọi điện">
+        <a href="tel:0931160818" class="fab-btn phone-btn" aria-label="Gọi điện">
             <i class="fas fa-phone-alt"></i>
-            <span class="fab-tooltip">0349.781.300</span>
+            <span class="fab-tooltip">0931160818</span>
             <span class="fab-pulse-ring"></span>
         </a>
     </div>

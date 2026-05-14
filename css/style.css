@@ -2803,6 +2803,7 @@ body.has-ann-bar .navbar {
 
 /* === NAVBAR MOBILE === */
 @media (max-width: 768px) {
+
     /* Announcement bar gọn hơn */
     .announcement-bar {
         height: 36px;
@@ -3003,6 +3004,7 @@ body.has-ann-bar .navbar {
 
 /* === HERO SECTION MOBILE === */
 @media (max-width: 768px) {
+
     /* Hero slider */
     .hero-slider {
         height: 100svh;
@@ -3466,7 +3468,7 @@ body.has-ann-bar .navbar {
         padding-bottom: 28px;
     }
 
-    .footer-grid > *:first-child {
+    .footer-grid>*:first-child {
         grid-column: span 2;
     }
 
@@ -3512,7 +3514,7 @@ body.has-ann-bar .navbar {
         grid-template-columns: 1fr;
     }
 
-    .footer-grid > *:first-child {
+    .footer-grid>*:first-child {
         grid-column: span 1;
     }
 }
@@ -3542,10 +3544,12 @@ body.has-ann-bar .navbar {
             box-shadow: 0 0 0 0 currentColor;
             opacity: 0.8;
         }
+
         70% {
             box-shadow: 0 0 0 10px transparent;
             opacity: 0;
         }
+
         100% {
             box-shadow: 0 0 0 10px transparent;
             opacity: 0;
@@ -3669,6 +3673,7 @@ body.has-ann-bar .navbar {
 
 /* === GENERAL MOBILE TWEAKS === */
 @media (max-width: 768px) {
+
     /* Container padding */
     .container {
         padding: 0 16px;
@@ -3696,7 +3701,8 @@ body.has-ann-bar .navbar {
     .form-group select,
     .form-group textarea {
         padding: 13px 14px;
-        font-size: 16px; /* Prevent iOS zoom */
+        font-size: 16px;
+        /* Prevent iOS zoom */
         -webkit-appearance: none;
     }
 
@@ -3708,7 +3714,8 @@ body.has-ann-bar .navbar {
     }
 
     /* Improve tap highlight */
-    a, button {
+    a,
+    button {
         -webkit-tap-highlight-color: rgba(29, 95, 168, 0.1);
     }
 }
