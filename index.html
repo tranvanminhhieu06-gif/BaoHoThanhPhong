@@ -283,8 +283,8 @@
         }
 
         .nav-logo img {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             object-fit: contain;
             filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
             transition: var(--transition);
@@ -2327,14 +2327,7 @@
             }
         }
 
-        .messenger-btn {
-            background: linear-gradient(135deg, #0084ff 0%, #a334fa 100%);
-        }
 
-        .messenger-btn .fab-pulse-ring {
-            color: rgba(163, 52, 250, 0.5);
-            animation-delay: 0.7s;
-        }
 
         .phone-btn {
             background: linear-gradient(135deg, var(--success), #34D399);
@@ -2346,7 +2339,7 @@
         }
 
         .zalo-btn {
-            background: linear-gradient(135deg, #0068FF, #00A6FF);
+            background: #ffffff;
         }
 
         .zalo-btn .fab-pulse-ring {
@@ -3672,10 +3665,7 @@
             </a>
             <nav class="nav-menu" id="navMenu">
                 <a href="#hero" class="nav-link active" id="trans-nav-home">Trang chủ</a>
-                <a href="#about" class="nav-link" id="trans-nav-about">Giới thiệu</a>
-                <a href="#products" class="nav-link" id="trans-nav-products">Sản phẩm</a>
-                <a href="#why-us" class="nav-link" id="trans-nav-why">Tại sao chọn chúng tôi</a>
-                <a href="#testimonials" class="nav-link" id="trans-nav-testimonials">Đánh giá</a>
+                <a href="products.html" class="nav-link" id="trans-nav-products">Sản phẩm</a>
                 <a href="#news" class="nav-link" id="trans-nav-news">Tin tức</a>
                 <a href="#contact" class="nav-link" id="trans-nav-contact">Liên hệ</a>
             </nav>
@@ -3847,8 +3837,8 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+    <!-- About Section (merged into homepage) -->
+    <section id="about" class="about section" style="padding-top: 80px; padding-bottom: 80px;">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image" data-aos="fade-right" data-aos-duration="800">
@@ -3925,681 +3915,9 @@
                     doanh nghiệp</p>
             </div>
 
-            <!-- Category Filter -->
-            <div class="product-filters" data-aos="fade-up" data-aos-delay="100">
-                <button class="filter-btn active" data-filter="all">
-                    <i class="fas fa-th-large"></i> Tất cả
-                </button>
-                <button class="filter-btn" data-filter="uniform">
-                    <i class="fas fa-tshirt"></i> Đồng phục bảo vệ
-                </button>
-                <button class="filter-btn" data-filter="accessories">
-                    <i class="fas fa-star"></i> Phụ kiện bảo vệ
-                </button>
-                <button class="filter-btn" data-filter="shoes">
-                    <i class="fas fa-shoe-prints"></i> Giày bảo hộ
-                </button>
-                <button class="filter-btn" data-filter="safety">
-                    <i class="fas fa-hard-hat"></i> Bảo hộ lao động
-                </button>
-                <button class="filter-btn" data-filter="tools">
-                    <i class="fas fa-tools"></i> Dụng cụ & Thiết bị
-                </button>
-            </div>
-
-            <!-- Status Tabs -->
-            <div class="product-filters status-filters" data-aos="fade-up" data-aos-delay="150"
-                style="margin-top: -24px; margin-bottom: 48px;">
-                <button class="filter-btn active" data-status="all">
-                    Tất cả
-                </button>
-                <button class="filter-btn" data-status="new">
-                    <i class="fas fa-sparkles"></i> Mới
-                </button>
-                <button class="filter-btn" data-status="featured">
-                    <i class="fas fa-fire"></i> Nổi bật
-                </button>
-                <button class="filter-btn" data-status="best-seller">
-                    <i class="fas fa-award"></i> Bán chạy
-                </button>
-            </div>
-
             <!-- Products Grid -->
             <div class="products-grid">
-                <!-- All Products -->
-                <!-- Bảng cảnh báo -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Bảng cảnh báo/bang-bao-cao (1).png" class="product-gallery-trigger"
-                            data-album-id="Bảngcảnhbáo">
-                            <img src="images/Bảng cảnh báo/bang-bao-cao (1).png" alt="Bảng cảnh báo">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Bảng cảnh báo</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Bảngcảnhbáo')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Cuộn rào công trình -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Cuộn rào công trình/cuon-chia-lan-duong (1).png" class="product-gallery-trigger"
-                            data-album-id="Cuộnràocôngtrình">
-                            <img src="images/Cuộn rào công trình/cuon-chia-lan-duong (1).png" alt="Cuộn rào công trình">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Cuộn rào công trình</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Cuộnràocôngtrình')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Cà Vạt, Ve Bảo Vệ -->
-                <div class="product-card" data-category="accessories" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png" class="product-gallery-trigger"
-                            data-album-id="CàVạtVeBảoVệ">
-                            <img src="images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png" alt="Cà Vạt, Ve Bảo Vệ">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Accessories</span>
-                        <h3 class="product-title">Cà Vạt, Ve Bảo Vệ</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('CàVạtVeBảoVệ')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Cầu Vai Bảo Vệ -->
-                <div class="product-card" data-category="accessories" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png" class="product-gallery-trigger"
-                            data-album-id="CầuVaiBảoVệ">
-                            <img src="images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png" alt="Cầu Vai Bảo Vệ">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Accessories</span>
-                        <h3 class="product-title">Cầu Vai Bảo Vệ</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('CầuVaiBảoVệ')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Cọc giao thông-cột chia làn đường -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (1).png"
-                            class="product-gallery-trigger" data-album-id="Cọcgiaothôngcộtchialànđường">
-                            <img src="images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (1).png"
-                                alt="Cọc giao thông-cột chia làn đường">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Cọc giao thông-cột chia làn đường</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Cọcgiaothôngcộtchialànđường')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Dây an toàn -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Dây an toàn/dN-n-toN (1).png" class="product-gallery-trigger"
-                            data-album-id="Dâyantoàn">
-                            <img src="images/Dây an toàn/dN-n-toN (1).png" alt="Dây an toàn">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Dây an toàn</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Dâyantoàn')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Dây An Toàn Toàn Thân -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (1).png"
-                            class="product-gallery-trigger" data-album-id="DâyAnToànToànThân">
-                            <img src="images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (1).png"
-                                alt="Dây An Toàn Toàn Thân">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Dây An Toàn Toàn Thân</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('DâyAnToànToànThân')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Dây thắt lưng bảo vệ Security -->
-                <div class="product-card" data-category="accessories" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Dây thắt lưng bảo vệ Security/day-that-llung.png"
-                            class="product-gallery-trigger" data-album-id="DâythắtlưngbảovệSecurity">
-                            <img src="images/Dây thắt lưng bảo vệ Security/day-that-llung.png"
-                                alt="Dây thắt lưng bảo vệ Security">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Accessories</span>
-                        <h3 class="product-title">Dây thắt lưng bảo vệ Security</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('DâythắtlưngbảovệSecurity')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Gang tay bảo hộ -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Gang tay bảo hộ/gang-tay-bao-ho (1).png" class="product-gallery-trigger"
-                            data-album-id="Gangtaybảohộ">
-                            <img src="images/Gang tay bảo hộ/gang-tay-bao-ho (1).png" alt="Gang tay bảo hộ">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Gang tay bảo hộ</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Gangtaybảohộ')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Gậy giao thông -->
-                <div class="product-card" data-category="tools" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Gậy giao thông/gay-giao-thong.png" class="product-gallery-trigger"
-                            data-album-id="Gậygiaothông">
-                            <img src="images/Gậy giao thông/gay-giao-thong.png" alt="Gậy giao thông">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Tools</span>
-                        <h3 class="product-title">Gậy giao thông</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Gậygiaothông')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Hệ Thống Báo Cháy -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Hệ Thống Báo Cháy/he-thong-bao-chay (1).png" class="product-gallery-trigger"
-                            data-album-id="HệThốngBáoCháy">
-                            <img src="images/Hệ Thống Báo Cháy/he-thong-bao-chay (1).png" alt="Hệ Thống Báo Cháy">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Hệ Thống Báo Cháy</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('HệThốngBáoCháy')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Kính bảo hộ & Khẩu trang -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png"
-                            class="product-gallery-trigger" data-album-id="Kínhbảohộ&Khẩutrang">
-                            <img src="images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png"
-                                alt="Kính bảo hộ & Khẩu trang">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Kính bảo hộ & Khẩu trang</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Kínhbảohộ&Khẩutrang')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Mũ bảo hộ lao động -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Mũ bảo hộ lao động/mu-bao-ho (1).png" class="product-gallery-trigger"
-                            data-album-id="Mũbảohộlaođộng">
-                            <img src="images/Mũ bảo hộ lao động/mu-bao-ho (1).png" alt="Mũ bảo hộ lao động">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Mũ bảo hộ lao động</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Mũbảohộlaođộng')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Mặt nạ hàn bảo hộ lao động -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (1).png"
-                            class="product-gallery-trigger" data-album-id="Mặtnạhànbảohộlaođộng">
-                            <img src="images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (1).png"
-                                alt="Mặt nạ hàn bảo hộ lao động">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Mặt nạ hàn bảo hộ lao động</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Mặtnạhànbảohộlaođộng')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Mặt Nạ Phòng Độc -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Mặt Nạ Phòng Độc/mat-na-chong-doc (1).png" class="product-gallery-trigger"
-                            data-album-id="MặtNạPhòngĐộc">
-                            <img src="images/Mặt Nạ Phòng Độc/mat-na-chong-doc (1).png" alt="Mặt Nạ Phòng Độc">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Mặt Nạ Phòng Độc</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('MặtNạPhòngĐộc')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Nón , Sao Bảo Vệ -->
-                <div class="product-card" data-category="accessories" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Nón , Sao Bảo Vệ/non-bao-ve-2.png" class="product-gallery-trigger"
-                            data-album-id="NónSaoBảoVệ">
-                            <img src="images/Nón , Sao Bảo Vệ/non-bao-ve-2.png" alt="Nón , Sao Bảo Vệ">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Accessories</span>
-                        <h3 class="product-title">Nón , Sao Bảo Vệ</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('NónSaoBảoVệ')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Nón vải lưới trùm -->
-                <div class="product-card" data-category="accessories" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Nón vải lưới trùm/non-vai-luoi-trum (1).png" class="product-gallery-trigger"
-                            data-album-id="Nónvảilướitrùm">
-                            <img src="images/Nón vải lưới trùm/non-vai-luoi-trum (1).png" alt="Nón vải lưới trùm">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Accessories</span>
-                        <h3 class="product-title">Nón vải lưới trùm</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Nónvảilướitrùm')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Nút chống ồn -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Nút chống ồn/nut-lao-dong (1).png" class="product-gallery-trigger"
-                            data-album-id="Nútchốngồn">
-                            <img src="images/Nút chống ồn/nut-lao-dong (1).png" alt="Nút chống ồn">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Nút chống ồn</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Nútchốngồn')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (1).png"
-                            class="product-gallery-trigger" data-album-id="NộiquyTiêuđềCấmlửaCấmhútthuốc">
-                            <img src="images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (1).png"
-                                alt="Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('NộiquyTiêuđềCấmlửaCấmhútthuốc')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Thang Thoát Hiểm Cuốn -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (1).png"
-                            class="product-gallery-trigger" data-album-id="ThangThoátHiểmCuốn">
-                            <img src="images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (1).png"
-                                alt="Thang Thoát Hiểm Cuốn">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Thang Thoát Hiểm Cuốn</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('ThangThoátHiểmCuốn')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Thiết bị PCCC & An toàn -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png"
-                            class="product-gallery-trigger" data-album-id="ThiếtbịPCCC&Antoàn">
-                            <img src="images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png"
-                                alt="Thiết bị PCCC & An toàn">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Thiết bị PCCC & An toàn</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('ThiếtbịPCCC&Antoàn')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Thùng đựng rác -->
-                <div class="product-card" data-category="tools" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Thùng đựng rác/thung-dung-rac (1).png" class="product-gallery-trigger"
-                            data-album-id="Thùngđựngrác">
-                            <img src="images/Thùng đựng rác/thung-dung-rac (1).png" alt="Thùng đựng rác">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Tools</span>
-                        <h3 class="product-title">Thùng đựng rác</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Thùngđựngrác')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Áo cá sấu mè cao cấp nhiều -->
-                <div class="product-card" data-category="uniform" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Áo cá sấu mè cao cấp nhiều/do.png" class="product-gallery-trigger"
-                            data-album-id="Áocásấumècaocấpnhiều">
-                            <img src="images/Áo cá sấu mè cao cấp nhiều/do.png" alt="Áo cá sấu mè cao cấp nhiều">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Uniform</span>
-                        <h3 class="product-title">Áo cá sấu mè cao cấp nhiều</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Áocásấumècaocấpnhiều')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Đồ bảo hộ PCCC -->
-                <div class="product-card" data-category="safety" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Đồ bảo hộ PCCC/do-bao-ho-pccc (1).png" class="product-gallery-trigger"
-                            data-album-id="ĐồbảohộPCCC">
-                            <img src="images/Đồ bảo hộ PCCC/do-bao-ho-pccc (1).png" alt="Đồ bảo hộ PCCC">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Safety</span>
-                        <h3 class="product-title">Đồ bảo hộ PCCC</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('ĐồbảohộPCCC')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Đồ đi mưa - áo phao -->
-                <div class="product-card" data-category="uniform" data-aos="fade-up">
-                    <div class="product-image">
-                        <a href="images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (1).png" class="product-gallery-trigger"
-                            data-album-id="Đồđimưaáophao">
-                            <img src="images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (1).png" alt="Đồ đi mưa - áo phao">
-                            <div class="zoom-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span class="trans-view-detail">Xem chi tiết</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category-tag">Uniform</span>
-                        <h3 class="product-title">Đồ đi mưa - áo phao</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
-                        <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Đồđimưaáophao')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- Đồng Phục Bảo Vệ -->
                 <div class="product-card" data-category="uniform" data-aos="fade-up">
                     <div class="product-image">
@@ -4613,20 +3931,16 @@
                         </a>
                     </div>
                     <div class="product-info">
-                        <span class="product-category-tag">Uniform</span>
+                        <span class="product-category-tag">Đồng phục bảo vệ</span>
                         <h3 class="product-title">Đồng Phục Bảo Vệ</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
+                        <p class="product-desc">Chất lượng cao, may theo yêu cầu. Liên hệ để biết thêm chi tiết.</p>
                         <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('ĐồngPhụcBảoVệ')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Đồng Phục Bảo Vệ NEW -->
-                <div class="product-card" data-category="uniform" data-aos="fade-up">
+                <div class="product-card" data-category="uniform" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-image">
                         <a href="images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png" class="product-gallery-trigger"
                             data-album-id="ĐồngPhụcBảoVệNEW">
@@ -4638,24 +3952,20 @@
                         </a>
                     </div>
                     <div class="product-info">
-                        <span class="product-category-tag">Uniform</span>
+                        <span class="product-category-tag">Đồng phục bảo vệ</span>
                         <h3 class="product-title">Đồng Phục Bảo Vệ NEW</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
+                        <p class="product-desc">Mẫu mới, thiết kế hiện đại, chất vải cao cấp.</p>
                         <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('ĐồngPhụcBảoVệNEW')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- Ủng bảo hộ lao động -->
-                <div class="product-card" data-category="shoes" data-aos="fade-up">
+                <!-- Nón , Sao Bảo Vệ -->
+                <div class="product-card" data-category="accessories" data-aos="fade-up" data-aos-delay="150">
                     <div class="product-image">
-                        <a href="images/Ủng bảo hộ lao động/ung-bao-ho (10).png" class="product-gallery-trigger"
-                            data-album-id="Ủngbảohộlaođộng">
-                            <img src="images/Ủng bảo hộ lao động/ung-bao-ho (10).png" alt="Ủng bảo hộ lao động">
+                        <a href="images/Nón , Sao Bảo Vệ/non-bao-ve-2.png" class="product-gallery-trigger"
+                            data-album-id="NónSaoBảoVệ">
+                            <img src="images/Nón , Sao Bảo Vệ/non-bao-ve-2.png" alt="Nón , Sao Bảo Vệ">
                             <div class="zoom-overlay">
                                 <i class="fas fa-search-plus"></i>
                                 <span class="trans-view-detail">Xem chi tiết</span>
@@ -4663,23 +3973,82 @@
                         </a>
                     </div>
                     <div class="product-info">
-                        <span class="product-category-tag">Shoes</span>
-                        <h3 class="product-title">Ủng bảo hộ lao động</h3>
-                        <p class="product-desc">Chất lượng cao, đạt chuẩn an toàn. Liên hệ để biết thêm chi tiết.</p>
+                        <span class="product-category-tag">Phụ kiện bảo vệ</span>
+                        <h3 class="product-title">Nón, Sao Bảo Vệ</h3>
+                        <p class="product-desc">Nón và sao cấp bậc bảo vệ, chất liệu bền đẹp.</p>
                         <div class="product-action-row">
-                            <a href="#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo
-                                    giá</span> <i class="fas fa-arrow-right"></i></a>
-                            <button class="add-to-cart-btn" onclick="handleAddToCart('Ủngbảohộlaođộng')">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cầu Vai Bảo Vệ -->
+                <div class="product-card" data-category="accessories" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <a href="images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png" class="product-gallery-trigger"
+                            data-album-id="CầuVaiBảoVệ">
+                            <img src="images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png" alt="Cầu Vai Bảo Vệ">
+                            <div class="zoom-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="trans-view-detail">Xem chi tiết</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category-tag">Phụ kiện bảo vệ</span>
+                        <h3 class="product-title">Cầu Vai Bảo Vệ</h3>
+                        <p class="product-desc">Cầu vai cấp bậc, chất liệu cao cấp, bền đẹp.</p>
+                        <div class="product-action-row">
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Nón vải lưới trùm -->
+                <div class="product-card" data-category="accessories" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-image">
+                        <a href="images/Nón vải lưới trùm/non-vai-luoi-trum (1).png" class="product-gallery-trigger"
+                            data-album-id="Nónvảilưửditrùm">
+                            <img src="images/Nón vải lưới trùm/non-vai-luoi-trum (1).png" alt="Nón vải lưới trùm">
+                            <div class="zoom-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="trans-view-detail">Xem chi tiết</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category-tag">Phụ kiện bảo vệ</span>
+                        <h3 class="product-title">Nón Vải Lưới Trùm</h3>
+                        <p class="product-desc">Nón vải lưới thoáng mát, phù hợp môi trường lao động.</p>
+                        <div class="product-action-row">
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mũ bảo hộ lao động -->
+                <div class="product-card" data-category="safety" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-image">
+                        <a href="images/Mũ bảo hộ lao động/mu-bao-ho (1).png" class="product-gallery-trigger"
+                            data-album-id="Mũbảohộlaođộng">
+                            <img src="images/Mũ bảo hộ lao động/mu-bao-ho (1).png" alt="Mũ bảo hộ lao động">
+                            <div class="zoom-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="trans-view-detail">Xem chi tiết</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category-tag">Bảo hộ lao động</span>
+                        <h3 class="product-title">Mũ Bảo Hộ Lao Động</h3>
+                        <p class="product-desc">Đạt chuẩn an toàn quốc gia, bảo vệ đầu hiệu quả.</p>
+                        <div class="product-action-row">
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="products-cta" data-aos="fade-up">
-                <p>Không tìm thấy sản phẩm bạn cần? Hãy liên hệ để được tư vấn!</p>
-                <a href="#contact" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Liên hệ tư vấn</a>
+                <p>Xem toàn bộ danh mục sản phẩm bảo hộ lao động của Thành Phong!</p>
+                <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> Xem tất cả sản phẩm</a>
             </div>
         </div>
     </section>
@@ -5283,18 +4652,11 @@
 
     <!-- Floating Action Buttons -->
     <div class="floating-actions">
-        <!-- Messenger -->
-        <a href="https://m.me/baohothanhphong" class="fab-btn messenger-btn" target="_blank" rel="noopener"
-            aria-label="Chat Messenger">
-            <i class="fab fa-facebook-messenger"></i>
-            <span class="fab-tooltip">Chat Messenger</span>
-            <span class="fab-pulse-ring"></span>
-        </a>
         <!-- Zalo -->
         <a href="https://zalo.me/0931160818" class="fab-btn zalo-btn" target="_blank" rel="noopener"
             aria-label="Chat Zalo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo"
-                style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
+                style="width: 32px; height: 32px; object-fit: contain; margin-top: 2px;">
             <span class="fab-tooltip">Chat Zalo</span>
             <span class="fab-pulse-ring"></span>
         </a>

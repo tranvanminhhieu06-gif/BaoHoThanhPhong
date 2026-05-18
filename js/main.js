@@ -943,7 +943,7 @@ function applyTranslations() {
     const dict = translations[currentLang];
     
     // Navbar links
-    const navItems = ['home', 'about', 'products', 'why', 'testimonials', 'news', 'contact'];
+    const navItems = ['home', 'products', 'news', 'contact'];
     navItems.forEach(item => {
         const el = document.getElementById(`trans-nav-${item}`);
         if (el) el.innerText = dict[`nav-${item}`];

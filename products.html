@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sản Phẩm - Bảo Hộ Lao Động Thành Phong</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#1D5FA8;--primary-dark:#164A85;--accent:#F59E0B;--text:#1E293B;--text-muted:#64748B;--bg:#F1F5F9;--white:#fff;--border:#E2E8F0;--shadow:0 2px 12px rgba(0,0,0,.08)}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
+
+/* NAV */
+.navbar{background:var(--white);box-shadow:0 2px 16px rgba(0,0,0,.1);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:70px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo img{width:80px;height:80px;object-fit:contain}
+.nav-logo-text .brand{font-size:18px;font-weight:700;color:var(--primary);display:block}
+.nav-logo-text .tag{font-size:12px;color:var(--text-muted)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text-muted);font-weight:500;font-size:15px;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+.nav-phone{margin-left:auto;background:var(--accent);color:var(--white);padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
+
+/* BREADCRUMB */
+.breadcrumb{max-width:1280px;margin:16px auto;padding:0 24px;font-size:13px;color:var(--text-muted)}
+.breadcrumb a{color:var(--primary);text-decoration:none}
+.breadcrumb span{margin:0 6px}
+
+/* LAYOUT */
+.page-layout{max-width:1280px;margin:0 auto;padding:0 24px 48px;display:grid;grid-template-columns:240px 1fr;gap:24px}
+
+/* SIDEBAR */
+.sidebar{background:var(--white);border-radius:12px;padding:20px;height:fit-content;box-shadow:var(--shadow)}
+.sidebar-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--primary)}
+.cat-list{list-style:none}
+.cat-list li a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:14px;font-weight:500;transition:.2s;cursor:pointer}
+.cat-list li a:hover,.cat-list li a.active{background:rgba(29,95,168,.08);color:var(--primary)}
+.cat-list li a.active{font-weight:600}
+.cat-list li a i{width:18px;text-align:center;color:var(--primary)}
+.cat-count{margin-left:auto;background:var(--bg);border-radius:20px;padding:2px 8px;font-size:11px;font-weight:600}
+
+/* MAIN */
+.main-area{}
+.sort-bar{background:var(--white);border-radius:12px;padding:14px 20px;display:flex;align-items:center;gap:12px;margin-bottom:20px;box-shadow:var(--shadow)}
+.sort-label{font-size:13px;color:var(--text-muted);font-weight:500}
+.sort-btn{padding:7px 16px;border:1px solid var(--border);background:var(--white);border-radius:6px;font-size:13px;cursor:pointer;transition:.2s;font-family:inherit;color:var(--text)}
+.sort-btn.active,.sort-btn:hover{background:var(--primary);color:var(--white);border-color:var(--primary)}
+.results-count{margin-left:auto;font-size:13px;color:var(--text-muted)}
+
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.page-layout{grid-template-columns:1fr}.sidebar{display:none}.products-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.products-grid{grid-template-columns:1fr}}
+
+.product-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:.3s;cursor:pointer;position:relative}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(29,95,168,.15)}
+.product-card .img-wrap{aspect-ratio:1;overflow:hidden;position:relative;background:#f8fafc}
+.product-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.product-card:hover .img-wrap img{transform:scale(1.06)}
+.product-card .overlay{position:absolute;inset:0;background:rgba(29,95,168,.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}
+.product-card:hover .overlay{opacity:1}
+.overlay span{color:#fff;font-size:13px;font-weight:600;background:rgba(255,255,255,.2);padding:8px 16px;border-radius:20px;display:flex;align-items:center;gap:6px}
+.product-card .card-body{padding:12px}
+.cat-tag{font-size:11px;color:var(--primary);font-weight:600;background:rgba(29,95,168,.08);padding:3px 8px;border-radius:4px;display:inline-block;margin-bottom:6px}
+.product-card h3{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;line-height:1.4}
+.price-row{display:flex;align-items:center;justify-content:space-between}
+.price{font-size:13px;color:var(--primary);font-weight:700}
+.contact-btn{background:var(--primary);color:#fff;border:none;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;transition:.2s;text-decoration:none;font-family:inherit;font-weight:500}
+.contact-btn:hover{background:var(--primary-dark)}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.8);align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lb-box{background:var(--white);border-radius:16px;overflow:hidden;max-width:900px;width:95%;max-height:90vh;display:grid;grid-template-columns:1fr 340px}
+.lb-img{background:#f1f5f9;display:flex;align-items:center;justify-content:center;min-height:400px;position:relative}
+.lb-img img{max-width:100%;max-height:500px;object-fit:contain}
+.lb-close{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.5);color:#fff;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
+.lb-info{padding:28px;overflow-y:auto}
+.lb-info h2{font-size:18px;font-weight:700;margin-bottom:8px}
+.lb-info .lb-cat{color:var(--primary);font-size:13px;font-weight:600;margin-bottom:16px;display:block}
+.lb-info p{font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:24px}
+.lb-contact{display:flex;flex-direction:column;gap:10px}
+.lb-btn{padding:12px;border-radius:8px;text-align:center;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px}
+.lb-btn-primary{background:var(--primary);color:#fff}
+.lb-btn-secondary{background:var(--accent);color:#fff}
+@media(max-width:700px){.lb-box{grid-template-columns:1fr;max-height:95vh}.lb-info{max-height:300px}}
+
+/* FOOTER */
+footer{background:#0F172A;color:#94A3B8;text-align:center;padding:24px;font-size:13px;margin-top:48px}
+footer a{color:var(--accent);text-decoration:none}
+
+/* MOBILE NAV */
+@media(max-width:768px){
+.nav-links{display:none}
+.nav-phone span{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-menu.png" alt="Thành Phong">
+      <div class="nav-logo-text">
+        <span class="brand">THÀNH PHONG</span>
+        <span class="tag">Bảo Hộ Lao Động</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="products.html" class="active">Sản phẩm</a></li>
+      <li><a href="index.html#news">Tin tức</a></li>
+      <li><a href="index.html#contact">Liên hệ</a></li>
+    </ul>
+    <a href="tel:0931160818" class="nav-phone"><i class="fas fa-phone-alt"></i><span>0931160818</span></a>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Trang chủ</a><span>›</span>Sản phẩm
+</div>
+
+<div class="page-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title"><i class="fas fa-list" style="color:var(--primary);margin-right:8px"></i>Danh mục</div>
+    <ul class="cat-list">
+      <li><a href="#" class="active" data-cat="all"><i class="fas fa-th-large"></i>Tất cả sản phẩm<span class="cat-count" id="cnt-all">0</span></a></li>
+      <li><a href="#" data-cat="uniform"><i class="fas fa-tshirt"></i>Đồng phục bảo vệ<span class="cat-count" id="cnt-uniform">0</span></a></li>
+      <li><a href="#" data-cat="accessories"><i class="fas fa-star"></i>Phụ kiện bảo vệ<span class="cat-count" id="cnt-accessories">0</span></a></li>
+      <li><a href="#" data-cat="safety"><i class="fas fa-hard-hat"></i>Bảo hộ lao động<span class="cat-count" id="cnt-safety">0</span></a></li>
+      <li><a href="#" data-cat="shoes"><i class="fas fa-shoe-prints"></i>Giày bảo hộ<span class="cat-count" id="cnt-shoes">0</span></a></li>
+      <li><a href="#" data-cat="tools"><i class="fas fa-tools"></i>Dụng cụ & Thiết bị<span class="cat-count" id="cnt-tools">0</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-area">
+    <div class="sort-bar">
+      <span class="sort-label">Sắp xếp:</span>
+      <button class="sort-btn active" data-sort="default">Phổ biến</button>
+      <button class="sort-btn" data-sort="az">A → Z</button>
+      <button class="sort-btn" data-sort="za">Z → A</button>
+      <span class="results-count" id="results-count"></span>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </main>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-box">
+    <div class="lb-img">
+      <button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button>
+      <img src="" alt="" id="lbImg">
+    </div>
+    <div class="lb-info">
+      <span class="lb-cat" id="lbCat"></span>
+      <h2 id="lbTitle"></h2>
+      <p id="lbDesc">Sản phẩm chất lượng cao, đạt chuẩn an toàn quốc gia. Liên hệ để được tư vấn và báo giá tốt nhất.</p>
+      <div class="lb-contact">
+        <a href="index.html#contact" class="lb-btn lb-btn-primary"><i class="fas fa-phone-alt"></i>Liên hệ báo giá</a>
+        <a href="https://zalo.me/0931160818" target="_blank" class="lb-btn lb-btn-secondary"><i class="fas fa-comment-dots"></i>Chat Zalo ngay</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2024 Công Ty TNHH Bảo Hộ Lao Động Thành Phong | MST: 0316903199 | 
+  <a href="tel:0931160818">0931160818</a> | 205/20/33 Phạm Đăng Giảng, Q. Bình Tân, TP.HCM</p>
+</footer>
+
+<script>
+const products = [
+  {id:'ĐồngPhụcBảoVệ',title:'Đồng Phục Bảo Vệ',cat:'uniform',catLabel:'Đồng phục bảo vệ',img:'images/Đồng Phục Bảo Vệ/ao-trang-bao-ve.png'},
+  {id:'ĐồngPhụcBảoVệNEW',title:'Đồng Phục Bảo Vệ NEW',cat:'uniform',catLabel:'Đồng phục bảo vệ',img:'images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png'},
+  {id:'NónSaoBảoVệ',title:'Nón, Sao Bảo Vệ',cat:'accessories',catLabel:'Phụ kiện bảo vệ',img:'images/Nón , Sao Bảo Vệ/non-bao-ve-2.png'},
+  {id:'CầuVaiBảoVệ',title:'Cầu Vai Bảo Vệ',cat:'accessories',catLabel:'Phụ kiện bảo vệ',img:'images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png'},
+  {id:'Nónvảilướitrùm',title:'Nón Vải Lưới Trùm',cat:'accessories',catLabel:'Phụ kiện bảo vệ',img:'images/Nón vải lưới trùm/non-vai-luoi-trum (1).png'},
+  {id:'Mũbảohộlaođộng',title:'Mũ Bảo Hộ Lao Động',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Mũ bảo hộ lao động/mu-bao-ho (1).png'},
+  {id:'CàVạtVeBảoVệ',title:'Cà Vạt, Ve Bảo Vệ',cat:'accessories',catLabel:'Phụ kiện bảo vệ',img:'images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png'},
+  {id:'DâythắtlưngbảovệSecurity',title:'Dây Thắt Lưng Bảo Vệ',cat:'accessories',catLabel:'Phụ kiện bảo vệ',img:'images/Dây thắt lưng bảo vệ Security/day-that-llung.png'},
+  {id:'Áocásấumècaocấpnhiều',title:'Áo Cá Sấu Mè Cao Cấp',cat:'uniform',catLabel:'Đồng phục bảo vệ',img:'images/Áo cá sấu mè cao cấp nhiều/do.png'},
+  {id:'ĐồđimưaÁophao',title:'Đồ Đi Mưa - Áo Phao',cat:'uniform',catLabel:'Đồng phục bảo vệ',img:'images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (1).png'},
+  {id:'Gangtaybảohộ',title:'Gang Tay Bảo Hộ',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Gang tay bảo hộ/gang-tay-bao-ho (1).png'},
+  {id:'Dâyantoàn',title:'Dây An Toàn',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Dây an toàn/dN-n-toN (1).png'},
+  {id:'DâyAnToànToànThân',title:'Dây An Toàn Toàn Thân',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (1).png'},
+  {id:'Kínhbảohộ&Khẩutrang',title:'Kính Bảo Hộ & Khẩu Trang',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png'},
+  {id:'MặtNạPhòngĐộc',title:'Mặt Nạ Phòng Độc',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Mặt Nạ Phòng Độc/mat-na-chong-doc (1).png'},
+  {id:'Mặtnạhànbảohộlaođộng',title:'Mặt Nạ Hàn Bảo Hộ',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (1).png'},
+  {id:'Nútchốngồn',title:'Nút Chống Ồn',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Nút chống ồn/nut-lao-dong (1).png'},
+  {id:'ĐồbảohộPCCC',title:'Đồ Bảo Hộ PCCC',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Đồ bảo hộ PCCC/do-bao-ho-pccc (1).png'},
+  {id:'ThiếtbịPCCC&Antoàn',title:'Thiết Bị PCCC & An Toàn',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png'},
+  {id:'HệThốngBáoCháy',title:'Hệ Thống Báo Cháy',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Hệ Thống Báo Cháy/he-thong-bao-chay (1).png'},
+  {id:'ThangThoátHiểmCuốn',title:'Thang Thoát Hiểm Cuốn',cat:'safety',catLabel:'Bảo hộ lao động',img:'images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (1).png'},
+  {id:'Giàybảohộlaođộng',title:'Giày Bảo Hộ Lao Động',cat:'shoes',catLabel:'Giày bảo hộ',img:'images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (1).png'},
+  {id:'GiàydabảovệCóbuộcdây',title:'Giày Da Bảo Vệ (Buộc Dây)',cat:'shoes',catLabel:'Giày bảo hộ',img:'images/Giày da bảo vệ - Có buộc dây/day-bao-ve (1).png'},
+  {id:'GiàydabảovệKhôngbuộcdây',title:'Giày Da Bảo Vệ (Không Buộc Dây)',cat:'shoes',catLabel:'Giày bảo hộ',img:'images/Giày da bảo vệ - Không buộc dây/day-bao-ve.png'},
+  {id:'Ủngbảohộlaođộng',title:'Ủng Bảo Hộ Lao Động',cat:'shoes',catLabel:'Giày bảo hộ',img:'images/Ủng bảo hộ lao động/ung-bao-ho (10).png'},
+  {id:'GậycaosuDùicuibảovệ',title:'Gậy Cao Su - Dùi Cui',cat:'tools',catLabel:'Dụng cụ & Thiết bị',img:'images/Gậy cao su - Dùi cui bảo vệ/dui-cui-bao-ve.png'},
+  {id:'Gậygiaothông',title:'Gậy Giao Thông',cat:'tools',catLabel:'Dụng cụ & Thiết bị',img:'images/Gậy giao thông/gay-giao-thong.png'},
+  {id:'Thùngđựngrác',title:'Thùng Đựng Rác',cat:'tools',catLabel:'Dụng cụ & Thiết bị',img:'images/Thùng đựng rác/thung-dung-rac (1).png'},
+  {id:'Bảngcảnhbáo',title:'Bảng Cảnh Báo',cat:'tools',catLabel:'Dụng cụ & Thiết bị',img:'images/Bảng cảnh báo/bang-bao-cao (1).png'},
+  {id:'Cọcgiaothôngcộtchialànđường',title:'Cọc Giao Thông',cat:'tools',catLabel:'Dụng cụ & Thiết bị',img:'images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (1).png'},
+  {id:'Cuộnràocôngtrình',title:'Cuộn Rào Công Trình',cat:'tools',catLabel:'Dụng cụ & Thiết bị',img:'images/Cuộn rào công trình/cuon-chia-lan-duong (1).png'},
+  {id:'NộiquyTiêuđềCấmlửaCấmhútthuốc',title:'Nội Quy & Biển Cấm',cat:'tools',catLabel:'Dụng cụ & Thiết bị',img:'images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (1).png'},
+];
+
+let currentCat='all', currentSort='default';
+
+function countByCat(cat){return cat==='all'?products.length:products.filter(p=>p.cat===cat).length;}
+function updateCounts(){
+  ['all','uniform','accessories','safety','shoes','tools'].forEach(c=>{
+    const el=document.getElementById('cnt-'+c);
+    if(el)el.textContent=countByCat(c);
+  });
+}
+
+function getFiltered(){
+  let list=currentCat==='all'?[...products]:products.filter(p=>p.cat===currentCat);
+  if(currentSort==='az')list.sort((a,b)=>a.title.localeCompare(b.title,'vi'));
+  else if(currentSort==='za')list.sort((a,b)=>b.title.localeCompare(a.title,'vi'));
+  return list;
+}
+
+function renderGrid(){
+  const list=getFiltered();
+  const grid=document.getElementById('productsGrid');
+  document.getElementById('results-count').textContent=list.length+' sản phẩm';
+  grid.innerHTML=list.map(p=>`
+    <div class="product-card" onclick="openLightbox(${JSON.stringify(p).replace(/"/g,'&quot;')})">
+      <div class="img-wrap">
+        <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'200\\' height=\\'200\\'%3E%3Crect fill=\\'%23f1f5f9\\' width=\\'200\\' height=\\'200\\'/%3E%3C/svg%3E'">
+        <div class="overlay"><span><i class="fas fa-search-plus"></i> Xem chi tiết</span></div>
+      </div>
+      <div class="card-body">
+        <span class="cat-tag">${p.catLabel}</span>
+        <h3>${p.title}</h3>
+        <div class="price-row">
+          <span class="price">Liên hệ báo giá</span>
+          <a href="index.html#contact" class="contact-btn" onclick="event.stopPropagation()">Hỏi giá</a>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function openLightbox(p){
+  document.getElementById('lbImg').src=p.img;
+  document.getElementById('lbTitle').textContent=p.title;
+  document.getElementById('lbCat').textContent=p.catLabel;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('lbClose').onclick=closeLightbox;
+document.getElementById('lightbox').onclick=function(e){if(e.target===this)closeLightbox();};
+
+// Category filter
+document.querySelectorAll('.cat-list a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelectorAll('.cat-list a').forEach(x=>x.classList.remove('active'));
+    a.classList.add('active');
+    currentCat=a.dataset.cat;
+    renderGrid();
+  });
+});
+
+// Sort
+document.querySelectorAll('.sort-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.sort-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    currentSort=b.dataset.sort;
+    renderGrid();
+  });
+});
+
+updateCounts();
+renderGrid();
+</script>
+</body>
+</html>
