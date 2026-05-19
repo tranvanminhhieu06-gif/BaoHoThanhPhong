@@ -265,7 +265,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 10px;
+            gap: 20px;
             width: 100%;
         }
 
@@ -278,21 +278,21 @@
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
             flex-shrink: 0;
+            z-index: 10;
         }
 
         .nav-logo img {
-            width: 160px;
-            height: 160px;
+            width: 480px; 
+            height: auto;
+            max-height: 170px; /* Nới lỏng chiều cao cho logo cực lớn */
             object-fit: contain;
-            filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
             transition: var(--transition);
         }
 
         .nav-logo-text {
-            display: flex;
-            flex-direction: column;
+            display: none; /* Hide text since the new logo includes it */
         }
 
         .nav-brand {
@@ -2406,8 +2406,8 @@
             }
 
             .nav-logo img {
-                width: 100px;
-                height: 100px;
+                width: 360px;
+                max-height: 130px;
             }
 
             .nav-phone span {
@@ -2604,8 +2604,8 @@
             }
 
             .nav-logo img {
-                width: 112px;
-                height: 112px;
+                width: 300px;
+                max-height: 110px;
             }
 
             .nav-brand {

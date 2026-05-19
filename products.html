@@ -13,11 +13,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
 
 /* NAV */
 .navbar{background:var(--white);box-shadow:0 2px 16px rgba(0,0,0,.1);position:sticky;top:0;z-index:100}
-.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:70px}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-logo img{width:160px;height:160px;object-fit:contain}
-.nav-logo-text .brand{font-size:18px;font-weight:700;color:var(--primary);display:block}
-.nav-logo-text .tag{font-size:12px;color:var(--text-muted)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;min-height:100px;position:relative}
+.nav-logo{display:flex;align-items:center;z-index:10;text-decoration:none}
+.nav-logo img{width:480px;height:auto;max-height:170px;object-fit:contain}
+.nav-logo-text {display:none}
 .nav-links{display:flex;gap:24px;list-style:none}
 .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:500;font-size:15px;transition:.2s}
 .nav-links a:hover,.nav-links a.active{color:var(--primary)}
