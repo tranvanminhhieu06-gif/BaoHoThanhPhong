@@ -570,7 +570,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCart();
     initLanguage();
     initStatsCounter();
-    initScrollTop();
     initContactForm();
     initProductGalleryLightbox();
 
@@ -1043,23 +1042,6 @@ function initSmoothScroll() {
     });
 }
 
-// 9. Scroll To Top
-function initScrollTop() {
-    const btn = document.getElementById('scrollTop');
-    if (!btn) return;
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 500) {
-            btn.classList.add('visible');
-        } else {
-            btn.classList.remove('visible');
-        }
-    });
-
-    btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
 
 // 10. Contact Form
 function initContactForm() {
