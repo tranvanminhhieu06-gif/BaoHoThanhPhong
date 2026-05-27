@@ -55,29 +55,37 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
 
 /* PARTNERS */
 .partners-section {
-  padding: 60px 20px;
+  padding: 60px 0;
   background: var(--white);
   margin-top: 40px;
   text-align: center;
   border-top: 1px solid var(--border);
+  overflow: hidden;
 }
 .partners-section h2 {
   font-size: 24px;
   color: var(--navy);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-weight: 700;
   text-transform: uppercase;
 }
-.partners-grid {
+.partners-marquee-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
 }
-.partners-grid img {
+.partners-marquee-container:hover .partners-track {
+  animation-play-state: paused;
+}
+.partners-track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 60px;
+  padding-right: 60px;
+  animation: scrollMarquee 20s linear infinite;
+}
+.partners-track img {
   height: 70px;
   max-width: 200px;
   object-fit: contain;
@@ -85,17 +93,22 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
   opacity: 0.6;
   transition: var(--transition);
 }
-.partners-grid img:hover {
+.partners-track img:hover {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.05);
 }
 
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 @media(max-width:768px){
   .container-layout{flex-direction:column}
   .sidebar{width:100%;border-right:none;border-bottom:1px solid var(--border);position:static;height:auto}
-  .partners-grid { gap: 20px; }
-  .partners-grid img { height: 50px; }
+  .partners-track { gap: 30px; padding-right: 30px; }
+  .partners-track img { height: 50px; }
 }
 @media(max-width:768px){.page-layout{grid-template-columns:1fr}.sidebar{display:none}.products-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.products-grid{grid-template-columns:1fr}}
@@ -237,14 +250,25 @@ footer a{color:var(--accent);text-decoration:none}
 <!-- PARTNERS SECTION -->
 <section class="partners-section">
   <h2>Đối Tác Của Chúng Tôi</h2>
-  <div class="partners-grid">
-    <img src="images/ĐỐI TÁC THÀNH PHONG/1.png" alt="Đối tác 1">
-    <img src="images/ĐỐI TÁC THÀNH PHONG/2.png" alt="Đối tác 2">
-    <img src="images/ĐỐI TÁC THÀNH PHONG/3.png" alt="Đối tác 3">
-    <img src="images/ĐỐI TÁC THÀNH PHONG/4.png" alt="Đối tác 4">
-    <img src="images/ĐỐI TÁC THÀNH PHONG/5.png" alt="Đối tác 5">
-    <img src="images/ĐỐI TÁC THÀNH PHONG/6.png" alt="Đối tác 6">
-    <img src="images/ĐỐI TÁC THÀNH PHONG/7.png" alt="Đối tác 7">
+  <div class="partners-marquee-container">
+    <div class="partners-track">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/1.png" alt="Đối tác 1">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/2.png" alt="Đối tác 2">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/3.png" alt="Đối tác 3">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/4.png" alt="Đối tác 4">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/5.png" alt="Đối tác 5">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/6.png" alt="Đối tác 6">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/7.png" alt="Đối tác 7">
+    </div>
+    <div class="partners-track">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/1.png" alt="Đối tác 1">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/2.png" alt="Đối tác 2">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/3.png" alt="Đối tác 3">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/4.png" alt="Đối tác 4">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/5.png" alt="Đối tác 5">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/6.png" alt="Đối tác 6">
+      <img src="images/ĐỐI TÁC THÀNH PHONG/7.png" alt="Đối tác 7">
+    </div>
   </div>
 </section>
 
