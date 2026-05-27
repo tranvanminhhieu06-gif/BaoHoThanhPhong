@@ -1296,7 +1296,7 @@
             visibility: visible;
         }
 
-        /* === Partners Marquee === */
+        /* === Text Partners Marquee === */
         .partners-marquee {
             padding: 24px 0;
             background: var(--gray-50);
@@ -1339,6 +1339,51 @@
             100% {
                 transform: translateX(-50%);
             }
+        }
+
+        /* === Partners Marquee === */
+        .partners-marquee-container {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            background: var(--gray-50);
+            padding: 30px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .partners-marquee-container:hover .partners-track {
+            animation-play-state: paused;
+        }
+
+        .partners-track {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            gap: 60px;
+            padding-right: 60px;
+            animation: scrollMarquee 40s linear infinite;
+            will-change: transform;
+        }
+
+        .partners-track img {
+            height: 120px;
+            max-width: 360px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .partners-track img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @media (max-width: 768px) {
+            .partners-track { gap: 30px; padding-right: 30px; }
+            .partners-track img { height: 80px; }
         }
 
         /* === Section Headers === */
@@ -4023,6 +4068,28 @@
         </div>
     </section>
 
+    <!-- Trusted Partners Marquee -->
+    <section class="partners-marquee-container">
+        <div class="partners-track">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/1.png" alt="Đối tác 1">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/2.png" alt="Đối tác 2">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/3.png" alt="Đối tác 3">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/4.png" alt="Đối tác 4">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/5.png" alt="Đối tác 5">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/6.png" alt="Đối tác 6">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/7.png" alt="Đối tác 7">
+        </div>
+        <div class="partners-track">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/1.png" alt="Đối tác 1">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/2.png" alt="Đối tác 2">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/3.png" alt="Đối tác 3">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/4.png" alt="Đối tác 4">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/5.png" alt="Đối tác 5">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/6.png" alt="Đối tác 6">
+            <img src="images/ĐỐI TÁC THÀNH PHONG/7.png" alt="Đối tác 7">
+        </div>
+    </section>
+
     <!-- Product Categories Section -->
     <section id="products" class="products section">
         <div class="products-bg"></div>
@@ -4182,6 +4249,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- ===== CATEGORY FEATURE BANNERS (như GAK) ===== -->
     <section class="cat-banners">
