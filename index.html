@@ -287,9 +287,9 @@
         }
 
         .nav-logo img {
-            width: 480px;
+            width: 300px;
             height: auto;
-            max-height: 170px;
+            max-height: 140px;
             /* Nới lỏng chiều cao cho logo cực lớn */
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
@@ -331,16 +331,16 @@
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 12px;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
         }
 
         .nav-link {
-            padding: 8px 12px;
-            font-size: 13.5px;
-            font-weight: 600;
+            padding: 10px 16px;
+            font-size: 32px;
+            font-weight: 700;
             color: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-sm);
             transition: var(--transition);
@@ -354,7 +354,7 @@
         }
 
         .navbar.scrolled .nav-link {
-            color: var(--gray-600);
+            color: var(--gray-800);
         }
 
         .navbar.scrolled .nav-link:hover,
@@ -403,8 +403,9 @@
         }
 
         .search-trigger {
-            width: 40px;
-            height: 40px;
+            width: 80px;
+            height: 80px;
+            font-size: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -497,13 +498,13 @@
         .nav-phone {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 15px;
+            gap: 16px;
+            padding: 16px 30px;
             background: var(--accent);
             color: var(--white);
             border-radius: 50px;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 26px;
             transition: var(--transition);
             white-space: nowrap;
         }
@@ -516,7 +517,7 @@
         }
 
         .nav-phone i {
-            font-size: 12px;
+            font-size: 24px;
             animation: ring 2s ease-in-out infinite;
         }
 
@@ -1344,10 +1345,11 @@
         /* === Partners Marquee === */
         .partners-marquee-container {
             display: flex;
+            flex-direction: column;
             width: 100%;
             overflow: hidden;
             background: var(--gray-50);
-            padding: 30px 0;
+            padding: 50px 0 30px 0;
             border-bottom: 1px solid var(--gray-200);
         }
 
@@ -1361,13 +1363,13 @@
             flex-shrink: 0;
             gap: 60px;
             padding-right: 60px;
-            animation: scrollMarquee 40s linear infinite;
+            animation: scrollMarquee 60s linear infinite;
             will-change: transform;
         }
 
         .partners-track img {
-            height: 120px;
-            max-width: 360px;
+            height: 144px;
+            max-width: 432px;
             object-fit: contain;
             transition: transform 0.3s ease;
         }
@@ -1383,7 +1385,7 @@
 
         @media (max-width: 768px) {
             .partners-track { gap: 30px; padding-right: 30px; }
-            .partners-track img { height: 80px; }
+            .partners-track img { height: 96px; }
         }
 
         /* === Section Headers === */
@@ -4070,7 +4072,18 @@
 
     <!-- Trusted Partners Marquee -->
     <section class="partners-marquee-container">
-        <div class="partners-track">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" style="margin-bottom: 20px;">
+                <div class="section-label center">
+                    <span class="label-line"></span>
+                    <span>Đối tác đồng hành</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title center">Đối tác của <span class="highlight">Thành Phong</span></h2>
+            </div>
+        </div>
+        <div style="display: flex; width: 100%;">
+            <div class="partners-track">
             <img src="images/ĐỐI TÁC THÀNH PHONG/1.png" alt="Đối tác 1">
             <img src="images/ĐỐI TÁC THÀNH PHONG/2.png" alt="Đối tác 2">
             <img src="images/ĐỐI TÁC THÀNH PHONG/3.png" alt="Đối tác 3">
@@ -4087,6 +4100,7 @@
             <img src="images/ĐỐI TÁC THÀNH PHONG/5.png" alt="Đối tác 5">
             <img src="images/ĐỐI TÁC THÀNH PHONG/6.png" alt="Đối tác 6">
             <img src="images/ĐỐI TÁC THÀNH PHONG/7.png" alt="Đối tác 7">
+            </div>
         </div>
     </section>
 

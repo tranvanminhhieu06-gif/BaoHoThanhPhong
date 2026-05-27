@@ -17,12 +17,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
 .navbar{background:var(--white);box-shadow:0 2px 16px rgba(0,0,0,.1);position:sticky;top:0;z-index:100}
 .nav-inner{max-width:100%;margin:0 auto;padding:10px 24px 10px 5px;display:flex;align-items:center;justify-content:space-between;min-height:100px;position:relative}
 .nav-logo{display:flex;align-items:center;z-index:10;text-decoration:none}
-.nav-logo img{width:480px;height:auto;max-height:170px;object-fit:contain}
+.nav-logo img{width:300px;height:auto;max-height:140px;object-fit:contain}
 .nav-logo-text {display:none}
 .nav-links{display:flex;gap:24px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
-.nav-links a{text-decoration:none;color:var(--text-muted);font-weight:500;font-size:15px;transition:.2s}
+.nav-links a{text-decoration:none;color:var(--text);font-weight:700;font-size:32px;padding:10px 16px;transition:.2s}
 .nav-links a:hover,.nav-links a.active{color:var(--primary)}
-.nav-phone{margin-left:auto;background:var(--accent);color:var(--white);padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
+.nav-phone{margin-left:auto;background:var(--accent);color:var(--white);padding:20px 40px;border-radius:16px;text-decoration:none;font-weight:700;font-size:28px;display:flex;align-items:center;gap:16px}
 
 /* BREADCRUMB */
 .breadcrumb{max-width:1280px;margin:16px auto;padding:0 24px;font-size:13px;color:var(--text-muted)}
@@ -83,12 +83,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
   flex-shrink: 0;
   gap: 60px;
   padding-right: 60px;
-  animation: scrollMarquee 40s linear infinite;
+  animation: scrollMarquee 60s linear infinite;
   will-change: transform;
 }
 .partners-track img {
-  height: 140px;
-  max-width: 400px;
+  height: 168px;
+  max-width: 480px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -105,7 +105,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
   .container-layout{flex-direction:column}
   .sidebar{width:100%;border-right:none;border-bottom:1px solid var(--border);position:static;height:auto}
   .partners-track { gap: 30px; padding-right: 30px; }
-  .partners-track img { height: 100px; }
+  .partners-track img { height: 120px; }
 }
 @media(max-width:768px){.page-layout{grid-template-columns:1fr}.sidebar{display:none}.products-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.products-grid{grid-template-columns:1fr}}
