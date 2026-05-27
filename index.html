@@ -267,6 +267,10 @@
             justify-content: space-between;
             gap: 20px;
             width: 100%;
+            max-width: 100% !important; /* Phá vỡ giới hạn 1280px để full màn hình */
+            padding-left: 5px !important; /* Dính sát lề trái 5px */
+            padding-right: 20px !important;
+            position: relative; /* Thêm position relative để canh giữa menu */
         }
 
         .nav-left {
@@ -283,16 +287,18 @@
         }
 
         .nav-logo img {
-            width: 480px; 
+            width: 480px;
             height: auto;
-            max-height: 170px; /* Nới lỏng chiều cao cho logo cực lớn */
+            max-height: 170px;
+            /* Nới lỏng chiều cao cho logo cực lớn */
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
             transition: var(--transition);
         }
 
         .nav-logo-text {
-            display: none; /* Hide text since the new logo includes it */
+            display: none;
+            /* Hide text since the new logo includes it */
         }
 
         .nav-brand {
@@ -326,6 +332,9 @@
             display: flex;
             align-items: center;
             gap: 4px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .nav-link {
@@ -2491,6 +2500,8 @@
                 position: fixed;
                 top: 0;
                 right: -100%;
+                left: auto; /* Reset absolute left */
+                transform: none; /* Reset absolute transform */
                 width: 80%;
                 max-width: 320px;
                 height: 100vh;
@@ -3936,7 +3947,8 @@
                         <h3 class="product-title">Đồng Phục Bảo Vệ</h3>
                         <p class="product-desc">Chất lượng cao, may theo yêu cầu. Liên hệ để biết thêm chi tiết.</p>
                         <div class="product-action-row">
-                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ
+                                    báo giá</span> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -3957,7 +3969,8 @@
                         <h3 class="product-title">Đồng Phục Bảo Vệ NEW</h3>
                         <p class="product-desc">Mẫu mới, thiết kế hiện đại, chất vải cao cấp.</p>
                         <div class="product-action-row">
-                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ
+                                    báo giá</span> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -3978,7 +3991,8 @@
                         <h3 class="product-title">Nón, Sao Bảo Vệ</h3>
                         <p class="product-desc">Nón và sao cấp bậc bảo vệ, chất liệu bền đẹp.</p>
                         <div class="product-action-row">
-                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ
+                                    báo giá</span> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -3999,7 +4013,8 @@
                         <h3 class="product-title">Cầu Vai Bảo Vệ</h3>
                         <p class="product-desc">Cầu vai cấp bậc, chất liệu cao cấp, bền đẹp.</p>
                         <div class="product-action-row">
-                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ
+                                    báo giá</span> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -4020,7 +4035,8 @@
                         <h3 class="product-title">Nón Vải Lưới Trùm</h3>
                         <p class="product-desc">Nón vải lưới thoáng mát, phù hợp môi trường lao động.</p>
                         <div class="product-action-row">
-                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ
+                                    báo giá</span> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -4041,7 +4057,8 @@
                         <h3 class="product-title">Mũ Bảo Hộ Lao Động</h3>
                         <p class="product-desc">Đạt chuẩn an toàn quốc gia, bảo vệ đầu hiệu quả.</p>
                         <div class="product-action-row">
-                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ báo giá</span> <i class="fas fa-arrow-right"></i></a>
+                            <a href="index.html#contact" class="product-link"><span class="trans-contact-price">Liên hệ
+                                    báo giá</span> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
