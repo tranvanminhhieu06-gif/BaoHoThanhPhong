@@ -1,296 +1,1236 @@
 <!DOCTYPE html>
-<html lang="vi">
+
+<html class="light" lang="vi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sản Phẩm - Bảo Hộ Lao Động Thành Phong</title>
-<link rel="icon" type="image/png" href="images/favicon.png">
-<link rel="apple-touch-icon" href="images/favicon.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#1D5FA8;--primary-dark:#164A85;--accent:#F59E0B;--text:#1E293B;--text-muted:#64748B;--bg:#F1F5F9;--white:#fff;--border:#E2E8F0;--shadow:0 2px 12px rgba(0,0,0,.08);--success:#10B981;--navy:#0F172A;--shadow-lg:0 10px 30px rgba(0,0,0,.15);--shadow-xl:0 20px 50px rgba(0,0,0,.25);--transition:all 0.3s ease}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sản Phẩm - Bảo Hộ Lao Động Thành Phong</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#57657b",
+                        "outline-variant": "#c6c6cd",
+                        "outline": "#76777d",
+                        "on-primary-container": "#7c839b",
+                        "inverse-primary": "#bec6e0",
+                        "tertiary-container": "#001e2f",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#dae2fd",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191c1e",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#d5e3fd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "secondary-fixed": "#d5e3fd",
+                        "background": "#f7f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-fixed": "#c9e6ff",
+                        "on-tertiary-fixed": "#001e2f",
+                        "tertiary": "#000000",
+                        "surface-dim": "#d8dadc",
+                        "secondary": "#515f74",
+                        "on-tertiary-container": "#008cc7",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed-dim": "#89ceff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#565e74",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface-variant": "#45464d",
+                        "on-primary-fixed": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "container-max": "1280px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": [
+                            "Hanken Grotesk"
+                        ],
+                        "headline-lg": [
+                            "Hanken Grotesk"
+                        ],
+                        "headline-md": [
+                            "Hanken Grotesk"
+                        ],
+                        "body-lg": [
+                            "Inter"
+                        ],
+                        "label-sm": [
+                            "Inter"
+                        ],
+                        "body-md": [
+                            "Inter"
+                        ],
+                        "label-md": [
+                            "Inter"
+                        ],
+                        "display-lg": [
+                            "Hanken Grotesk"
+                        ]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": [
+                            "40px",
+                            {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-lg": [
+                            "32px",
+                            {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "headline-md": [
+                            "24px",
+                            {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-md": [
+                            "14px",
+                            {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "display-lg": [
+                            "64px",
+                            {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f7f9fb;
+            color: #191c1e;
+            -webkit-font-smoothing: antialiased;
+        }
 
-/* NAV */
-.navbar{background:var(--white);box-shadow:0 2px 16px rgba(0,0,0,.1);position:sticky;top:0;z-index:100}
-.nav-inner{max-width:100%;margin:0 auto;padding:10px 24px 10px 5px;display:flex;align-items:center;justify-content:space-between;min-height:100px;position:relative}
-.nav-logo{display:flex;align-items:center;z-index:10;text-decoration:none}
-.nav-logo img{width:300px;height:auto;max-height:140px;object-fit:contain}
-.nav-logo-text {display:none}
-.nav-links{display:flex;gap:24px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
-.nav-links a{text-decoration:none;color:var(--text);font-weight:700;font-size:32px;padding:10px 16px;transition:.2s}
-.nav-links a:hover,.nav-links a.active{color:var(--primary)}
-.nav-phone{margin-left:auto;background:var(--accent);color:var(--white);padding:20px 40px;border-radius:16px;text-decoration:none;font-weight:700;font-size:28px;display:flex;align-items:center;gap:16px}
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
 
-/* BREADCRUMB */
-.breadcrumb{max-width:1280px;margin:16px auto;padding:0 24px;font-size:13px;color:var(--text-muted)}
-.breadcrumb a{color:var(--primary);text-decoration:none}
-.breadcrumb span{margin:0 6px}
-
-/* LAYOUT */
-.page-layout{max-width:1280px;margin:0 auto;padding:0 24px 48px;display:grid;grid-template-columns:240px 1fr;gap:24px}
-
-/* SIDEBAR */
-.sidebar{background:var(--white);border-radius:12px;padding:20px;height:fit-content;box-shadow:var(--shadow)}
-.sidebar-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--primary)}
-.cat-list{list-style:none}
-.cat-list li a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:14px;font-weight:500;transition:.2s;cursor:pointer}
-.cat-list li a:hover,.cat-list li a.active{background:rgba(29,95,168,.08);color:var(--primary)}
-.cat-list li a.active{font-weight:600}
-.cat-list li a i{width:18px;text-align:center;color:var(--primary)}
-.cat-count{margin-left:auto;background:var(--bg);border-radius:20px;padding:2px 8px;font-size:11px;font-weight:600}
-
-/* MAIN */
-.main-area{}
-.sort-bar{background:var(--white);border-radius:12px;padding:14px 20px;display:flex;align-items:center;gap:12px;margin-bottom:20px;box-shadow:var(--shadow)}
-.sort-label{font-size:13px;color:var(--text-muted);font-weight:500}
-.sort-btn{padding:7px 16px;border:1px solid var(--border);background:var(--white);border-radius:6px;font-size:13px;cursor:pointer;transition:.2s;font-family:inherit;color:var(--text)}
-.sort-btn.active,.sort-btn:hover{background:var(--primary);color:var(--white);border-color:var(--primary)}
-.results-count{margin-left:auto;font-size:13px;color:var(--text-muted)}
-
-.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-@media(max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr)}}
-
-/* PARTNERS */
-.partners-section {
-  padding: 60px 0;
-  background: var(--white);
-  margin-top: 40px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  overflow: hidden;
-}
-.partners-section h2 {
-  font-size: 24px;
-  color: var(--navy);
-  margin-bottom: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.partners-marquee-container {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-}
-.partners-marquee-container:hover .partners-track {
-  animation-play-state: paused;
-}
-.partners-track {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  gap: 60px;
-  padding-right: 60px;
-  animation: scrollMarquee 60s linear infinite;
-  will-change: transform;
-}
-.partners-track img {
-  height: 168px;
-  max-width: 480px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-.partners-track img:hover {
-  transform: scale(1.05);
-}
-
-@keyframes scrollMarquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-@media(max-width:768px){
-  .container-layout{flex-direction:column}
-  .sidebar{width:100%;border-right:none;border-bottom:1px solid var(--border);position:static;height:auto}
-  .partners-track { gap: 30px; padding-right: 30px; }
-  .partners-track img { height: 120px; }
-  .nav-logo img { width: 140px; max-height: 60px; }
-  .nav-phone { padding: 10px 16px; font-size: 16px; border-radius: 8px; }
-}
-@media(max-width:768px){.page-layout{grid-template-columns:1fr}.sidebar{display:none}.products-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.products-grid{grid-template-columns:1fr}}
-
-.product-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:.3s;cursor:pointer;position:relative}
-.product-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(29,95,168,.15)}
-.product-card .img-wrap{aspect-ratio:1;overflow:hidden;position:relative;background:#f8fafc}
-.product-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:.3s}
-.product-card:hover .img-wrap img{transform:scale(1.06)}
-.product-card .overlay{position:absolute;inset:0;background:rgba(29,95,168,.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}
-.product-card:hover .overlay{opacity:1}
-.overlay span{color:#fff;font-size:13px;font-weight:600;background:rgba(255,255,255,.2);padding:8px 16px;border-radius:20px;display:flex;align-items:center;gap:6px}
-.product-card .card-body{padding:12px}
-.cat-tag{font-size:11px;color:var(--primary);font-weight:600;background:rgba(29,95,168,.08);padding:3px 8px;border-radius:4px;display:inline-block;margin-bottom:6px}
-.product-card h3{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;line-height:1.4}
-.price-row{display:flex;align-items:center;justify-content:space-between}
-.price{font-size:13px;color:var(--primary);font-weight:700}
-.contact-btn{background:var(--primary);color:#fff;border:none;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;transition:.2s;text-decoration:none;font-family:inherit;font-weight:500}
-.contact-btn:hover{background:var(--primary-dark)}
-
-/* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.8);align-items:center;justify-content:center}
-.lightbox.open{display:flex}
-.lb-box{background:var(--white);border-radius:16px;overflow:hidden;max-width:900px;width:95%;max-height:90vh;display:grid;grid-template-columns:1fr 340px}
-.lb-img{background:#f1f5f9;display:flex;align-items:center;justify-content:center;min-height:400px;position:relative}
-.lb-img img{max-width:100%;max-height:500px;object-fit:contain}
-.lb-close{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.5);color:#fff;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
-.lb-info{padding:28px;overflow-y:auto}
-.lb-info h2{font-size:18px;font-weight:700;margin-bottom:8px}
-.lb-info .lb-cat{color:var(--primary);font-size:13px;font-weight:600;margin-bottom:16px;display:block}
-.lb-info p{font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:24px}
-.lb-contact{display:flex;flex-direction:column;gap:10px}
-.lb-btn{padding:12px;border-radius:8px;text-align:center;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px}
-.lb-btn-primary{background:var(--primary);color:#fff}
-.lb-btn-secondary{background:var(--accent);color:#fff}
-@media(max-width:700px){.lb-box{grid-template-columns:1fr;max-height:95vh}.lb-info{max-height:300px}}
-
-/* FOOTER */
-footer{background:#0F172A;color:#94A3B8;text-align:center;padding:24px;font-size:13px;margin-top:48px}
-footer a{color:var(--accent);text-decoration:none}
-
-/* MOBILE NAV */
-@media(max-width:768px){
-.nav-links{display:none}
-.nav-phone span{display:none}
-}
-
-/* FLOATING ACTIONS */
-.floating-actions { position: fixed; bottom: 24px; left: 24px; display: flex; flex-direction: column; gap: 16px; z-index: 999; }
-.fab-btn { position: relative; width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 24px; text-decoration: none; transition: var(--transition); box-shadow: var(--shadow-lg); border: none; cursor: pointer; z-index: 2; }
-.fab-btn:hover { transform: scale(1.15) translateY(-3px); box-shadow: var(--shadow-xl); }
-.fab-pulse-ring { position: absolute; inset: -3px; border-radius: 50%; pointer-events: none; animation: gakPulseRing 2.2s ease-out infinite; }
-@keyframes gakPulseRing { 0% { box-shadow: 0 0 0 0 currentColor; opacity: 0.8; } 70% { box-shadow: 0 0 0 16px transparent; opacity: 0; } 100% { box-shadow: 0 0 0 16px transparent; opacity: 0; } }
-.phone-btn { background: linear-gradient(135deg, var(--success), #34D399); }
-.phone-btn .fab-pulse-ring { color: rgba(16, 185, 129, 0.5); animation-delay: 0s; }
-.zalo-btn { background: transparent; box-shadow: none; }
-.zalo-btn .fab-pulse-ring { color: rgba(0, 104, 255, 0.5); animation-delay: 0.35s; }
-.fab-tooltip { position: absolute; right: 62px; top: 50%; transform: translateY(-50%); padding: 6px 14px; background: var(--navy); color: var(--white); font-size: 12px; font-weight: 500; border-radius: 6px; white-space: nowrap; opacity: 0; visibility: hidden; transition: var(--transition); pointer-events: none; }
-.fab-btn:hover .fab-tooltip { opacity: 1; visibility: visible; }
-@media (max-width: 768px) {
-  .floating-actions { bottom: 20px; left: 20px; gap: 12px; }
-  .fab-btn { width: 48px; height: 48px; font-size: 20px; }
-  .fab-tooltip { display: none; }
-}
-</style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-surface-bright font-sans text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+    <!DOCTYPE html>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo-menu.png" alt="Thành Phong">
-      <div class="nav-logo-text">
-        <span class="brand">THÀNH PHONG</span>
-        <span class="tag">Bảo Hộ Lao Động</span>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Trang chủ</a></li>
-      <li><a href="products.html" class="active">Sản phẩm</a></li>
-      <li><a href="index.html#news">Tin tức</a></li>
-      <li><a href="index.html#contact">Liên hệ</a></li>
-    </ul>
-    <a href="tel:0931160818" class="nav-phone"><i class="fas fa-phone-alt"></i><span>0931160818</span></a>
-  </div>
-</header>
+<html class="light" lang="vi">
 
-<div class="breadcrumb">
-  <a href="index.html">Trang chủ</a><span>›</span>Sản phẩm
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ThÃ nh Phong | Báº£o Há»™ Lao Äá»™ng</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#57657b",
+                        "outline-variant": "#c6c6cd",
+                        "outline": "#76777d",
+                        "on-primary-container": "#7c839b",
+                        "inverse-primary": "#bec6e0",
+                        "tertiary-container": "#001e2f",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#dae2fd",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191c1e",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#d5e3fd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "secondary-fixed": "#d5e3fd",
+                        "background": "#f7f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-fixed": "#c9e6ff",
+                        "on-tertiary-fixed": "#001e2f",
+                        "tertiary": "#000000",
+                        "surface-dim": "#d8dadc",
+                        "secondary": "#515f74",
+                        "on-tertiary-container": "#008cc7",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed-dim": "#89ceff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#565e74",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface-variant": "#45464d",
+                        "on-primary-fixed": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "container-max": "1280px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": [
+                            "Hanken Grotesk"
+                        ],
+                        "headline-lg": [
+                            "Hanken Grotesk"
+                        ],
+                        "headline-md": [
+                            "Hanken Grotesk"
+                        ],
+                        "body-lg": [
+                            "Inter"
+                        ],
+                        "label-sm": [
+                            "Inter"
+                        ],
+                        "body-md": [
+                            "Inter"
+                        ],
+                        "label-md": [
+                            "Inter"
+                        ],
+                        "display-lg": [
+                            "Hanken Grotesk"
+                        ]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": [
+                            "40px",
+                            {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-lg": [
+                            "32px",
+                            {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "headline-md": [
+                            "24px",
+                            {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-md": [
+                            "14px",
+                            {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "display-lg": [
+                            "64px",
+                            {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f7f9fb;
+            color: #191c1e;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-body-md bg-background text-on-background">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 shadow-sm transition-all duration-300 border-b border-outline-variant/20">
+        <div class="flex justify-between items-center max-w-container-max mx-auto px-md h-xl">
+            <div class="flex items-center gap-sm"><img alt="Th nh Phong Logo" class="h-10"
+                    src="https://lh3.googleusercontent.com/aida/ADBb0ugSmXROeauJZ9_bRD9axkgsmVCY8ipDECZR1Mh7niSxpxKlLBhQRIYGCLFAaiKAuCtDy_MHJ1uQB7brRpuLOy9-SOuQ9Ukw0IkpYixpubvBGKO_mSri-zgpG6JeZ9iqOIO4uiiTjVtpq8HW3UalAkUE0VRo2r48rZPQIvKI6P0WA12pzHIHZbuw07JEmkKm17l3NZeATphPYUZcMz5cUai6AOprBm5UqHhb5DMiDgJNEPz_oMDNDe70vrqR" />
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 text-primary relative" id="cartTrigger">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full" style="display: none;">0</span>
+                </button>
+                <a class="bg-primary text-on-primary p-2 rounded-lg" href="tel:0931160818">
+                    <span class="material-symbols-outlined">call</span>
+                </a>
+                <button class="p-2 text-primary">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb -->
+    <div class="bg-surface-container-lowest border-b border-surface-container">
+        <div class="container mx-auto px-4 max-w-7xl py-4 flex items-center gap-2 text-sm">
+            <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Trang chủ</a>
+            <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+            <span class="font-medium text-primary">Sản phẩm</span>
+        </div>
+    </div>
+    
+    <main class="container mx-auto px-4 max-w-7xl py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar -->
+            <aside class="w-full lg:w-1/4 flex flex-col gap-6">
+                <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-container shadow-sm">
+                    <h2 class="text-lg font-bold text-primary font-['Hanken_Grotesk'] mb-6 flex items-center gap-2 pb-4 border-b border-surface-container">
+                        <span class="material-symbols-outlined text-secondary">category</span> Danh mục
+                    </h2>
+                    <ul class="cat-list flex flex-col gap-2">
+                        <li><a href="#" class="cat-link active flex justify-between items-center px-4 py-3 rounded-xl hover:bg-surface-container-low transition-colors font-medium text-primary bg-primary-container text-on-primary-container" data-cat="all">Tất cả sản phẩm <span class="bg-white text-primary text-xs px-2 py-1 rounded-md" id="cnt-all">0</span></a></li>
+                        <li><a href="#" class="cat-link flex justify-between items-center px-4 py-3 rounded-xl hover:bg-surface-container-low transition-colors font-medium text-on-surface-variant hover:text-primary" data-cat="uniform">Đồng phục bảo vệ <span class="bg-surface-container text-on-surface text-xs px-2 py-1 rounded-md" id="cnt-uniform">0</span></a></li>
+                        <li><a href="#" class="cat-link flex justify-between items-center px-4 py-3 rounded-xl hover:bg-surface-container-low transition-colors font-medium text-on-surface-variant hover:text-primary" data-cat="accessories">Phụ kiện bảo vệ <span class="bg-surface-container text-on-surface text-xs px-2 py-1 rounded-md" id="cnt-accessories">0</span></a></li>
+                        <li><a href="#" class="cat-link flex justify-between items-center px-4 py-3 rounded-xl hover:bg-surface-container-low transition-colors font-medium text-on-surface-variant hover:text-primary" data-cat="safety">Bảo hộ lao động <span class="bg-surface-container text-on-surface text-xs px-2 py-1 rounded-md" id="cnt-safety">0</span></a></li>
+                        <li><a href="#" class="cat-link flex justify-between items-center px-4 py-3 rounded-xl hover:bg-surface-container-low transition-colors font-medium text-on-surface-variant hover:text-primary" data-cat="shoes">Giày bảo hộ <span class="bg-surface-container text-on-surface text-xs px-2 py-1 rounded-md" id="cnt-shoes">0</span></a></li>
+                        <li><a href="#" class="cat-link flex justify-between items-center px-4 py-3 rounded-xl hover:bg-surface-container-low transition-colors font-medium text-on-surface-variant hover:text-primary" data-cat="tools">Dụng cụ & Thiết bị <span class="bg-surface-container text-on-surface text-xs px-2 py-1 rounded-md" id="cnt-tools">0</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <!-- Main Grid -->
+            <div class="flex-1 flex flex-col gap-6">
+                <!-- Sort Bar -->
+                <div class="bg-surface-container-lowest rounded-2xl p-4 border border-surface-container shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4 w-full sm:w-auto">
+                        <span class="text-on-surface-variant font-medium">Sắp xếp:</span>
+                        <div class="flex gap-2 bg-surface-container-low p-1 rounded-lg">
+                            <button class="sort-btn active px-4 py-2 rounded-md text-sm font-medium bg-surface-lowest shadow-sm text-primary transition-all" data-sort="default">Phổ biến</button>
+                            <button class="sort-btn px-4 py-2 rounded-md text-sm font-medium text-on-surface-variant hover:text-primary transition-all" data-sort="az">A &rarr; Z</button>
+                            <button class="sort-btn px-4 py-2 rounded-md text-sm font-medium text-on-surface-variant hover:text-primary transition-all" data-sort="za">Z &rarr; A</button>
+                        </div>
+                    </div>
+                    <span class="text-sm font-bold text-tertiary bg-tertiary-container/30 px-4 py-2 rounded-full" id="results-count"></span>
+                </div>
+                
+                <!-- Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" id="productsGrid">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- OVERLAY -->
+<div id="cartOverlay" class="fixed inset-0 bg-black/50 z-[9998] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+<!-- SHOPPING CART SIDEBAR -->
+<div id="cartSidebar" class="fixed top-0 right-0 w-[400px] max-w-full h-full bg-surface-container-lowest z-[9999] shadow-[0_24px_48px_rgba(15,23,42,0.12)] translate-x-full transition-transform duration-300 flex flex-col">
+    <!-- Header -->
+    <div class="p-6 border-b border-surface-container flex items-center justify-between bg-surface-container-lowest">
+        <div class="flex items-center gap-3 text-primary">
+            <span class="material-symbols-outlined text-2xl">shopping_cart</span>
+            <h3 class="font-bold text-xl font-['Hanken_Grotesk']">Giá» hÃ ng</h3>
+        </div>
+        <button id="cartClose" class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-full hover:bg-surface-container">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    
+    <!-- Body -->
+    <div id="cartItems" class="flex-1 overflow-y-auto p-6 flex flex-col gap-4">
+        <!-- Items will be injected by JS -->
+        <div class="flex flex-col items-center justify-center h-full text-on-surface-variant gap-4 opacity-50">
+            <span class="material-symbols-outlined text-6xl">shopping_basket</span>
+            <p>Giá» hÃ ng cá»§a báº¡n Ä‘ang trá»‘ng</p>
+            <a href="#products" id="cartEmptyBuyNow" class="mt-2 bg-primary text-on-primary px-6 py-2 rounded-xl font-medium hover:bg-primary-container hover:text-on-primary-container transition-colors">Mua ngay</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="p-6 border-t border-surface-container bg-surface-bright">
+        <div class="flex justify-between items-center mb-6 font-bold text-lg text-primary">
+            <span>Tá»•ng cá»™ng:</span>
+            <span id="cartTotal" class="text-error">LiÃªn há»‡ bÃ¡o giÃ¡</span>
+        </div>
+        <div class="flex flex-col gap-3">
+            <button id="viewFullCartBtn" class="w-full py-3 rounded-xl border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-colors">
+                Xem chi tiáº¿t giá» hÃ ng
+            </button>
+            <button id="zaloOrderBtn" class="w-full py-3 rounded-xl bg-[#0068FF] text-white font-bold hover:bg-[#0054cc] transition-colors flex items-center justify-center gap-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="w-6 h-6">
+                Gá»­i Ä‘Æ¡n hÃ ng qua Zalo
+            </button>
+        </div>
+    </div>
 </div>
 
-<div class="page-layout">
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar-title"><i class="fas fa-list" style="color:var(--primary);margin-right:8px"></i>Danh mục</div>
-    <ul class="cat-list">
-      <li><a href="#" class="active" data-cat="all"><i class="fas fa-th-large"></i>Tất cả sản phẩm<span class="cat-count" id="cnt-all">0</span></a></li>
-      <li><a href="#" data-cat="uniform"><i class="fas fa-tshirt"></i>Đồng phục bảo vệ<span class="cat-count" id="cnt-uniform">0</span></a></li>
-      <li><a href="#" data-cat="accessories"><i class="fas fa-star"></i>Phụ kiện bảo vệ<span class="cat-count" id="cnt-accessories">0</span></a></li>
-      <li><a href="#" data-cat="safety"><i class="fas fa-hard-hat"></i>Bảo hộ lao động<span class="cat-count" id="cnt-safety">0</span></a></li>
-      <li><a href="#" data-cat="shoes"><i class="fas fa-shoe-prints"></i>Giày bảo hộ<span class="cat-count" id="cnt-shoes">0</span></a></li>
-      <li><a href="#" data-cat="tools"><i class="fas fa-tools"></i>Dụng cụ & Thiết bị<span class="cat-count" id="cnt-tools">0</span></a></li>
-    </ul>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main-area">
-    <div class="sort-bar">
-      <span class="sort-label">Sắp xếp:</span>
-      <button class="sort-btn active" data-sort="default">Phổ biến</button>
-      <button class="sort-btn" data-sort="az">A → Z</button>
-      <button class="sort-btn" data-sort="za">Z → A</button>
-      <span class="results-count" id="results-count"></span>
-    </div>
-    <div class="products-grid" id="productsGrid"></div>
-  </main>
+<!-- FULL CART PAGE -->
+<div id="fullCartPage" class="fixed inset-0 bg-surface-container-lowest z-[10000] hidden flex-col overflow-y-auto">
+    <header class="p-4 border-b border-surface-container bg-surface-bright sticky top-0 z-10">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <button id="fullCartClose" class="flex items-center gap-2 text-primary font-medium hover:text-secondary transition-colors">
+                <span class="material-symbols-outlined">arrow_back</span> Quay láº¡i trang chá»§
+            </button>
+        </div>
+    </header>
+    
+    <main class="flex-1 container mx-auto px-4 max-w-6xl py-8">
+        <h2 class="text-3xl font-bold text-primary font-['Hanken_Grotesk'] mb-8">Chi tiáº¿t giá» hÃ ng</h2>
+        <div class="bg-surface-bright rounded-2xl shadow-[0_4px_20px_rgba(15,23,42,0.04)] overflow-hidden border border-surface-container">
+            <!-- Table Header -->
+            <div class="hidden md:grid grid-cols-12 gap-4 p-4 border-b border-surface-container bg-surface-container font-bold text-sm text-primary">
+                <div class="col-span-1 flex items-center justify-center"><input type="checkbox" id="selectAllItems" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary"></div>
+                <div class="col-span-5">Sáº£n pháº©m</div>
+                <div class="col-span-2 text-center">ÄÆ¡n GiÃ¡</div>
+                <div class="col-span-2 text-center">Sá»‘ lÆ°á»£ng</div>
+                <div class="col-span-2 text-center">Sá»‘ tiá»n</div>
+            </div>
+            
+            <!-- Table Body -->
+            <div id="fullCartItems" class="divide-y divide-surface-container">
+                <!-- Items injected by JS -->
+            </div>
+            
+            <!-- Table Footer -->
+            <div class="p-6 bg-surface-container-low flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-6 text-sm font-medium">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" id="selectAllItemsFooter" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary">
+                        Chá»n táº¥t cáº£
+                    </label>
+                    <button id="deleteSelected" class="text-error hover:text-on-error-container transition-colors flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm">delete</span> XÃ³a Ä‘Ã£ chá»n
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-6 w-full md:w-auto">
+                    <div class="flex-1 md:flex-none text-right">
+                        <span class="text-on-surface-variant text-sm mr-2">Tá»•ng thanh toÃ¡n:</span>
+                        <span id="fullCartTotal" class="text-2xl font-bold text-error font-['Hanken_Grotesk']">LiÃªn há»‡</span>
+                    </div>
+                    <button id="fullCartCheckoutBtn" class="bg-primary text-on-primary px-8 py-3 rounded-xl font-bold hover:bg-primary-container hover:text-on-primary-container transition-colors">
+                        Mua HÃ ng
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
 </div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <div class="lb-box">
-    <div class="lb-img">
-      <button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button>
-      <img src="" alt="" id="lbImg">
+<!-- PRODUCT LIGHTBOX -->
+<div id="productLightbox" class="fixed inset-0 z-[10000] hidden items-center justify-center p-4">
+    <div class="lightbox-overlay absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"></div>
+    
+    <div class="relative bg-surface-container-lowest rounded-2xl shadow-[0_24px_48px_rgba(15,23,42,0.12)] w-full max-w-5xl max-h-[90vh] flex flex-col overflow-hidden animate-[fade-in-up_0.3s_ease-out]">
+        <button class="lightbox-close absolute top-4 right-4 z-10 w-10 h-10 bg-surface-container hover:bg-error hover:text-on-error rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        
+        <div class="flex flex-col md:flex-row h-full overflow-y-auto">
+            <!-- Left: Image -->
+            <div class="w-full md:w-1/2 bg-surface-bright relative flex items-center justify-center p-8 min-h-[300px]">
+                <button class="prev-btn absolute left-4 w-10 h-10 bg-surface-container-lowest shadow-md rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                
+                <div class="w-full h-full flex items-center justify-center">
+                    <img src="" alt="Sáº£n pháº©m" id="lightboxMainImg" class="max-w-full max-h-[60vh] object-contain transition-opacity duration-300">
+                </div>
+                
+                <button class="next-btn absolute right-4 w-10 h-10 bg-surface-container-lowest shadow-md rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+            
+            <!-- Right: Details -->
+            <div class="w-full md:w-1/2 p-8 flex flex-col">
+                <h2 id="lt-title" class="text-2xl font-bold text-primary font-['Hanken_Grotesk'] mb-2">TÃªn sáº£n pháº©m</h2>
+                <div id="lt-price" class="text-xl font-bold text-error mb-6">GiÃ¡: LiÃªn há»‡</div>
+                
+                <div class="flex flex-col gap-4 mb-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-sm font-medium text-on-surface-variant">KÃ­ch thÆ°á»›c:</label>
+                        <select id="lt-size" class="p-3 rounded-xl border border-surface-container bg-surface-bright focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-shadow">
+                            <option value="s">Size S</option>
+                            <option value="m">Size M</option>
+                            <option value="l">Size L</option>
+                            <option value="xl">Size XL</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex flex-col gap-2">
+                        <label class="text-sm font-medium text-on-surface-variant">Sá»‘ lÆ°á»£ng:</label>
+                        <div class="flex items-center w-32 border border-surface-container rounded-xl overflow-hidden bg-surface-bright">
+                            <button type="button" onclick="changeQty(-1)" class="w-10 h-10 flex items-center justify-center hover:bg-surface-container transition-colors">-</button>
+                            <input type="number" id="lt-qty" value="1" min="1" class="flex-1 h-10 text-center border-x border-surface-container bg-transparent outline-none focus:bg-surface-container-lowest">
+                            <button type="button" onclick="changeQty(1)" class="w-10 h-10 flex items-center justify-center hover:bg-surface-container transition-colors">+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="lightboxThumbs" class="flex gap-2 mb-6 overflow-x-auto pb-2">
+                    <!-- Thumbs injected by JS -->
+                </div>
+                
+                <div class="flex-1 overflow-y-auto mb-6 pr-2">
+                    <p id="lt-desc" class="text-on-surface-variant leading-relaxed">MÃ´ táº£ chi tiáº¿t sáº£n pháº©m sáº½ hiá»‡n á»Ÿ Ä‘Ã¢y...</p>
+                </div>
+                
+                <button id="lt-add-to-cart" class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center gap-2 mt-auto">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    THÃŠM VÃ€O GIá»Ž HÃ€NG
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="lb-info">
-      <span class="lb-cat" id="lbCat"></span>
-      <h2 id="lbTitle"></h2>
-      <p id="lbDesc">Sản phẩm chất lượng cao, đạt chuẩn an toàn quốc gia. Liên hệ để được tư vấn và báo giá tốt nhất.</p>
-      <div class="lb-contact">
-        <a href="index.html#contact" class="lb-btn lb-btn-primary"><i class="fas fa-phone-alt"></i>Liên hệ báo giá</a>
-        <a href="https://zalo.me/0931160818" target="_blank" class="lb-btn lb-btn-secondary"><i class="fas fa-comment-dots"></i>Chat Zalo ngay</a>
-      </div>
-    </div>
-  </div>
 </div>
 
-<!-- PARTNERS SECTION -->
-<section class="partners-section">
-  <h2>Đối Tác Của Chúng Tôi</h2>
-  <div class="partners-marquee-container">
-    <div class="partners-track">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/1.png" alt="Đối tác 1">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/2.png" alt="Đối tác 2">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/3.png" alt="Đối tác 3">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/4.png" alt="Đối tác 4">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/5.png" alt="Đối tác 5">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/6.png" alt="Đối tác 6">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/7.png" alt="Đối tác 7">
-    </div>
-    <div class="partners-track">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/1.png" alt="Đối tác 1">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/2.png" alt="Đối tác 2">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/3.png" alt="Đối tác 3">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/4.png" alt="Đối tác 4">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/5.png" alt="Đối tác 5">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/6.png" alt="Đối tác 6">
-      <img src="images/ĐỐI TÁC THÀNH PHONG/7.png" alt="Đối tác 7">
-    </div>
-  </div>
-</section>
+<style>
+    /* Add extra CSS to support the classes toggled by JS */
+    #cartSidebar.open { transform: translateX(0); }
+    #cartOverlay.open { opacity: 1; pointer-events: auto; }
+    
+    /* Fade In Up animation for Lightbox */
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px) scale(0.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    
+    /* Make the lightbox visible when shown via JS */
+    .product-lightbox { display: none; }
+    .product-lightbox[style*="display: flex"] { display: flex !important; }
+</style>
 
-<footer>
-  <p>© 2024 Công Ty TNHH Bảo Hộ Lao Động Thành Phong | MST: 0316903199 | 
-  <a href="tel:0931160818">0931160818</a> | 205/20/33 Phạm Đăng Giảng, Q. Bình Tân, TP.HCM</p>
-</footer>
 
-<!-- Floating Action Buttons -->
-<div class="floating-actions">
-  <a href="https://zalo.me/0931160818" class="fab-btn zalo-btn" target="_blank" rel="noopener" aria-label="Chat Zalo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-    <span class="fab-tooltip">Chat Zalo</span>
-    <span class="fab-pulse-ring" style="border-radius: 12px;"></span>
-  </a>
-  <a href="tel:0931160818" class="fab-btn phone-btn" aria-label="Gọi điện">
-    <i class="fas fa-phone-alt"></i>
-    <span class="fab-tooltip">0931160818</span>
-    <span class="fab-pulse-ring"></span>
-  </a>
-</div>
+    <!DOCTYPE html>
 
-<script>
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ThÃ nh Phong | Báº£o Há»™ Lao Äá»™ng</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#57657b",
+                        "outline-variant": "#c6c6cd",
+                        "outline": "#76777d",
+                        "on-primary-container": "#7c839b",
+                        "inverse-primary": "#bec6e0",
+                        "tertiary-container": "#001e2f",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#dae2fd",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191c1e",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#d5e3fd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "secondary-fixed": "#d5e3fd",
+                        "background": "#f7f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-fixed": "#c9e6ff",
+                        "on-tertiary-fixed": "#001e2f",
+                        "tertiary": "#000000",
+                        "surface-dim": "#d8dadc",
+                        "secondary": "#515f74",
+                        "on-tertiary-container": "#008cc7",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed-dim": "#89ceff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#565e74",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface-variant": "#45464d",
+                        "on-primary-fixed": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "container-max": "1280px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": [
+                            "Hanken Grotesk"
+                        ],
+                        "headline-lg": [
+                            "Hanken Grotesk"
+                        ],
+                        "headline-md": [
+                            "Hanken Grotesk"
+                        ],
+                        "body-lg": [
+                            "Inter"
+                        ],
+                        "label-sm": [
+                            "Inter"
+                        ],
+                        "body-md": [
+                            "Inter"
+                        ],
+                        "label-md": [
+                            "Inter"
+                        ],
+                        "display-lg": [
+                            "Hanken Grotesk"
+                        ]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": [
+                            "40px",
+                            {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-lg": [
+                            "32px",
+                            {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "headline-md": [
+                            "24px",
+                            {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-md": [
+                            "14px",
+                            {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "display-lg": [
+                            "64px",
+                            {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f7f9fb;
+            color: #191c1e;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-body-md bg-background text-on-background">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 shadow-sm transition-all duration-300 border-b border-outline-variant/20">
+        <div class="flex justify-between items-center max-w-container-max mx-auto px-md h-xl">
+            <div class="flex items-center gap-sm"><img alt="Th nh Phong Logo" class="h-10"
+                    src="https://lh3.googleusercontent.com/aida/ADBb0ugSmXROeauJZ9_bRD9axkgsmVCY8ipDECZR1Mh7niSxpxKlLBhQRIYGCLFAaiKAuCtDy_MHJ1uQB7brRpuLOy9-SOuQ9Ukw0IkpYixpubvBGKO_mSri-zgpG6JeZ9iqOIO4uiiTjVtpq8HW3UalAkUE0VRo2r48rZPQIvKI6P0WA12pzHIHZbuw07JEmkKm17l3NZeATphPYUZcMz5cUai6AOprBm5UqHhb5DMiDgJNEPz_oMDNDe70vrqR" />
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 text-primary relative" id="cartTrigger">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full" style="display: none;">0</span>
+                </button>
+                <a class="bg-primary text-on-primary p-2 rounded-lg" href="tel:0931160818">
+                    <span class="material-symbols-outlined">call</span>
+                </a>
+                <button class="p-2 text-primary">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-xl">
+        <!-- Hero Section -->
+        <section class="relative min-h-[800px] flex items-center overflow-hidden bg-surface-container-low">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-80"
+                    data-alt="Construction site workers with safety equipment"
+                    src="https://lh3.googleusercontent.com/aida/ADBb0uj43zLpNDIPzaDqZif0bCe_BSLwiBlnQHW79T9ktbxYwrDGPKq792XpuuqPP7SswXf1JjsPHG_Vyiu6wjaz9HzGFv8OOh57DA2ga4DuP_UwY5AxKPjthuuZyojjchF11alwl2-dwxvjlKZrA_gqTw4f9CgOMyAfc--QOHPwZ7fw9EaF6xUypVb5iRlRUIAdSsgtv9NcTKkaa0x9_P3pCcMdoWLzYYxziQK3gDG4G7CMRC1ikEG4V2CNtIfu" />
+                <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-container-max mx-auto px-md w-full">
+                <div class="max-w-3xl text-center">
+                    <span
+                        class="inline-block bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-sm text-label-sm mb-md uppercase tracking-wider">
+                        Báº£o Há»™ Lao Äá»™ng Uy TÃ­n Sá»‘ 1
+                    </span>
+                    <h1
+                        class="font-display-lg text-display-lg-mobile md:text-display-lg mb-md text-primary leading-tight">
+                        An ToÃ n Cá»§a Báº¡n lÃ <br /> Sá»© Má»‡nh Cá»§a ChÃºng TÃ´i
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-lg leading-relaxed max-w-2xl">
+                        ChuyÃªn cung cáº¥p trang thiáº¿t bá»‹ báº£o há»™ lao Ä‘á»™ng vÃ  Ä‘á»“ng phá»¥c chuyÃªn dá»¥ng cháº¥t lÆ°á»£ng cao, Ä‘áº¡t
+                        chuáº©n an toÃ n quá»‘c gia vÃ  quá»‘c táº¿.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-md items-center">
+                        <button
+                            class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md shadow-lg hover:shadow-xl hover:bg-[#0f172a] hover:-translate-y-0.5 transition-all duration-300">
+                            KhÃ¡m PhÃ¡ Sáº£n Pháº©m
+                        </button>
+                        <button
+                            class="flex items-center justify-center gap-sm px-lg py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-surface-variant hover:-translate-y-0.5 rounded-lg transition-all duration-300">
+                            Nháº­n TÆ° Váº¥n Ngay <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Products Section: Bento Grid Layout -->
+        <section class="py-lg md:py-xl bg-surface">
+            <div class="max-w-container-max mx-auto px-md">
+                <div class="text-center mb-xl">
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Sáº£n Pháº©m Ná»•i Báº­t</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Äa dáº¡ng sáº£n pháº©m báº£o
+                        há»™ lao Ä‘á»™ng cháº¥t lÆ°á»£ng cao, Ä‘Ã¡p á»©ng má»i nhu cáº§u an toÃ n cho doanh nghiá»‡p</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                    <!-- Product 1 -->
+                    <div
+                        class="group bg-surface-container-lowest p-lg rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
+                        <div
+                            class="w-full h-56 bg-surface-container-low rounded-xl flex items-center justify-center mb-lg overflow-hidden p-6 group-hover:bg-surface-container transition-colors">
+                            <img alt="Äá»“ng phá»¥c báº£o vá»‡"
+                                class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida/ADBb0uha0Dssb9TkT4__SioIGF5cOQl5PfZjs-5y0ijCVMVEEKWlG0YyhUeBp5a1Dsf2Bu4ZuH8eHJGr3WFQ47tdWO9QrhkvGznT34uPrvFK5iiHcT-ptAsui08rdU2TTgKKFU0AcBxhKmVcpZ_YZwBjiji5CHwDZ5ywwwm5PRRYirvMnoluZ8xz_OMDq2pCWrqFBgvj7LtqsPxdD1C5-pH66oofXsU29ZTBT5X7iVo_jqPJPuyTcde3RD4pO0wF" />
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-sm">Äá»“ng Phá»¥c Báº£o Vá»‡</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-lg">
+                            Cháº¥t lÆ°á»£ng cao, may theo yÃªu cáº§u. LiÃªn há»‡ Ä‘á»ƒ biáº¿t thÃªm chi tiáº¿t.
+                        </p>
+                        <a class="text-primary font-label-md hover:text-[#0f172a] mt-auto flex items-center gap-1 transition-colors"
+                            href="#">LiÃªn há»‡ bÃ¡o giÃ¡ <span
+                                class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                    </div>
+                    <!-- Product 2 -->
+                    <div
+                        class="group bg-surface-container-lowest p-lg rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
+                        <div
+                            class="w-full h-56 bg-surface-container-low rounded-xl flex items-center justify-center mb-lg overflow-hidden p-6 group-hover:bg-surface-container transition-colors">
+                            <img alt="NÃ³n, Sao Báº£o Vá»‡"
+                                class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida/ADBb0uj564azvrsY4l4zLj-JafL0Um31sg4aDSLXyLMArKz20gpryMKfxPj-ffkTgs5J0HG8sajZ3xXmQsZMDjCmcG-3lHUiOCbeteNvkKjTxPAYe2wNHoLqbFOWvohAPMpVyGpH08aIPfTPg_5jWyzZf8-YNMAVLxN8FREPHT-NbyMzS38l3tVGVxUjTSfyhP08HmjF5edNEaB_dF0jQjHK0_hOsVHNqz1WLn0UsNaUtRUtsFSBLOw2kDPLXiKr" />
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-sm">NÃ³n, Sao Báº£o Vá»‡</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-lg">
+                            NÃ³n vÃ  sao cáº¥p báº­c báº£o vá»‡, cháº¥t liá»‡u bá»n Ä‘áº¹p.
+                        </p>
+                        <a class="text-primary font-label-md hover:text-[#0f172a] mt-auto flex items-center gap-1 transition-colors"
+                            href="#">LiÃªn há»‡ bÃ¡o giÃ¡ <span
+                                class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                    </div>
+                    <!-- Product 3 -->
+                    <div
+                        class="group bg-surface-container-lowest p-lg rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
+                        <div
+                            class="w-full h-56 bg-surface-container-low rounded-xl flex items-center justify-center mb-lg overflow-hidden p-6 group-hover:bg-surface-container transition-colors">
+                            <img alt="MÅ© Báº£o Há»™ Lao Äá»™ng"
+                                class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida/ADBb0uh6mFEmr13-kfjcgFzb0Qtot-tCvYZaokTwKKwEDVVXJKw-xMNsYnwJX1mR9vyr9poPu1abeyUq6cZY_TvwA5MNj1S2OB8M2z4kS3QFZe_UWsk5n3YPT_fEG45L4Anr7eT9OxoY1GuIQ4VuHYiY4YDPMcgX0bsoVhJv1PY21VKboWV-Bx9AX6UiLsQyV7oE5G-ZG-_fYNljMox2ZcKTuFwgobw0PPs_4M9RzQn78eKSKlqts_Dso40rnqI" />
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-sm">MÅ© Báº£o Há»™ Lao Äá»™ng</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-lg">
+                            Äáº¡t chuáº©n an toÃ n quá»‘c gia, báº£o vá»‡ Ä‘áº§u hiá»‡u quáº£.
+                        </p>
+                        <a class="text-primary font-label-md hover:text-[#0f172a] mt-auto flex items-center gap-1 transition-colors"
+                            href="#">LiÃªn há»‡ bÃ¡o giÃ¡ <span
+                                class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                    </div>
+                </div>
+                <div class="text-center mt-xl">
+                    <a class="inline-flex items-center justify-center gap-sm px-lg py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-[#0f172a] hover:text-white rounded-lg transition-all duration-300 shadow-sm hover:shadow-md"
+                        href="#">
+                        Xem táº¥t cáº£ sáº£n pháº©m
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Introduction / Why Choose Us -->
+        <section class="py-lg md:py-xl bg-surface-container-low border-y border-outline-variant/30">
+            <div class="max-w-container-max mx-auto px-md">
+                <div class="flex flex-col lg:flex-row gap-xl items-start">
+                    <div class="lg:w-1/3 text-center lg:text-left">
+                        <span
+                            class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-sm">Vá»
+                            ChÃºng TÃ´i</span>
+                        <h2 class="font-headline-lg text-headline-lg text-primary mb-md">Táº¡i Sao Chá»n ThÃ nh Phong?</h2>
+                        <p class="text-on-surface-variant text-body-lg">ChÃºng tÃ´i cam káº¿t mang Ä‘áº¿n giÃ¡ trá»‹ tá»‘t nháº¥t cho
+                            khÃ¡ch hÃ ng, vá»›i kinh nghiá»‡m nhiá»u nÄƒm trong lÄ©nh vá»±c báº£o há»™ lao Ä‘á»™ng.</p>
+                    </div>
+                    <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+                        <div
+                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-sm">
+                                <span class="material-symbols-outlined">verified</span>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary">Cháº¥t lÆ°á»£ng Ä‘áº£m báº£o</h3>
+                            <p class="text-on-surface-variant text-body-md">100% sáº£n pháº©m chÃ­nh hÃ£ng, cÃ³ giáº¥y chá»©ng nháº­n
+                                cháº¥t lÆ°á»£ng vÃ  nguá»“n gá»‘c xuáº¥t xá»© rÃµ rÃ ng.</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-sm">
+                                <span class="material-symbols-outlined">payments</span>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary">GiÃ¡ cáº¡nh tranh</h3>
+                            <p class="text-on-surface-variant text-body-md">Nháº­p trá»±c tiáº¿p tá»« nhÃ  sáº£n xuáº¥t, khÃ´ng qua
+                                trung gian. Cam káº¿t giÃ¡ tá»‘t nháº¥t thá»‹ trÆ°á»ng.</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-sm">
+                                <span class="material-symbols-outlined">styler</span>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary">May thÃªu theo yÃªu cáº§u</h3>
+                            <p class="text-on-surface-variant text-body-md">Nháº­n may, thÃªu logo, tÃªn cÃ´ng ty trÃªn Ä‘á»“ng
+                                phá»¥c báº£o vá»‡ vÃ  Ä‘á»“ báº£o há»™ theo yÃªu cáº§u riÃªng.</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-sm">
+                                <span class="material-symbols-outlined">local_shipping</span>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary">Giao hÃ ng nhanh</h3>
+                            <p class="text-on-surface-variant text-body-md">Giao hÃ ng toÃ n quá»‘c, Ä‘Ã³ng gÃ³i cáº©n tháº­n. Há»—
+                                trá»£ giao gáº¥p trong khu vá»±c TP.HCM.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial -->
+                <div class="mt-xl bg-surface border border-outline-variant/50 p-lg md:p-xl rounded-2xl relative shadow-sm">
+                    <span
+                        class="material-symbols-outlined text-[120px] text-surface-container-highest absolute -top-8 -left-4 z-0"
+                        style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                    <div class="relative z-10 flex flex-col gap-lg items-center text-center">
+                        <div
+                            class="w-24 h-24 rounded-full bg-primary text-on-primary flex items-center justify-center text-3xl font-bold shrink-0">
+                            MT
+                        </div>
+                        <div>
+                            <p class="font-body-lg text-body-lg italic text-on-surface mb-md leading-relaxed">
+                                "ChÃºng tÃ´i Ä‘Ã£ Ä‘áº·t may Ä‘á»“ng phá»¥c báº£o vá»‡ cho toÃ n bá»™ nhÃ¢n viÃªn táº¡i ThÃ nh Phong. Cháº¥t lÆ°á»£ng
+                                váº£i tá»‘t, Ä‘Æ°á»ng may cháº¯c cháº¯n, giao hÃ ng Ä‘Ãºng háº¹n. Ráº¥t hÃ i lÃ²ng!"
+                            </p>
+                            <div>
+                                <h4 class="font-label-md text-label-md font-bold text-primary">Anh Minh Tuáº¥n</h4>
+                                <p class="font-label-sm text-label-sm text-on-surface-variant">GiÃ¡m Ä‘á»‘c Cty TNHH Dá»‹ch vá»¥
+                                    Báº£o vá»‡ HoÃ ng Long</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Partners Section -->
+        <section class="py-lg md:py-xl bg-surface text-center">
+            <div class="max-w-container-max mx-auto px-md">
+                <span
+                    class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-sm">Äá»‘i
+                    tÃ¡c</span>
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-xl">KhÃ¡ch HÃ ng &amp; Äá»‘i TÃ¡c Cá»§a ChÃºng TÃ´i
+                </h2>
+                <div
+                    class="flex flex-wrap justify-center items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500 gap-4">
+                    <!-- Placeholder logos for partners -->
+                    <div
+                        class="h-12 w-32 bg-surface-container flex items-center justify-center font-bold text-on-surface-variant rounded hover:text-[#0f172a] hover:bg-surface-variant transition-colors cursor-pointer">
+                        LOGO Äá»I TÃC 1</div>
+                    <div
+                        class="h-12 w-32 bg-surface-container flex items-center justify-center font-bold text-on-surface-variant rounded hover:text-[#0f172a] hover:bg-surface-variant transition-colors cursor-pointer">
+                        LOGO Äá»I TÃC 2</div>
+                    <div
+                        class="h-12 w-32 bg-surface-container flex items-center justify-center font-bold text-on-surface-variant rounded hover:text-[#0f172a] hover:bg-surface-variant transition-colors cursor-pointer">
+                        LOGO Äá»I TÃC 3</div>
+                    <div
+                        class="h-12 w-32 bg-surface-container flex items-center justify-center font-bold text-on-surface-variant rounded hover:text-[#0f172a] hover:bg-surface-variant transition-colors cursor-pointer">
+                        LOGO Äá»I TÃC 4</div>
+                    <div
+                        class="h-12 w-32 bg-surface-container flex items-center justify-center font-bold text-on-surface-variant rounded hover:text-[#0f172a] hover:bg-surface-variant transition-colors cursor-pointer">
+                        LOGO Äá»I TÃC 5</div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA / Contact -->
+        <section class="py-lg md:py-xl bg-primary-container relative overflow-hidden" id="contact">
+            <div class="max-w-container-max mx-auto px-md relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-start">
+                    <div>
+                        <h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg text-on-primary mb-md">
+                            LiÃªn Há»‡ Vá»›i ChÃºng TÃ´i</h2>
+                        <p class="font-body-lg text-body-lg text-on-primary-container mb-lg max-w-lg">
+                            HÃ£y Ä‘á»ƒ láº¡i thÃ´ng tin, chÃºng tÃ´i sáº½ liÃªn há»‡ tÆ° váº¥n ngay cho báº¡n. Äá»™i ngÅ© chuyÃªn gia luÃ´n sáºµn
+                            sÃ ng há»— trá»£.
+                        </p>
+                        <div class="flex flex-col gap-md text-on-primary-container">
+                            <div class="flex items-start gap-sm hover:text-on-primary transition-colors">
+                                <span class="material-symbols-outlined text-on-primary mt-1">location_on</span>
+                                <span>205/20/33 Pháº¡m ÄÄƒng Giáº£ng, P. BÃ¬nh HÆ°ng HÃ²a, Q. BÃ¬nh TÃ¢n, TP. HCM</span>
+                            </div>
+                            <div class="flex items-center gap-sm">
+                                <span class="material-symbols-outlined text-on-primary">phone</span>
+                                <a class="hover:text-on-primary transition-colors font-bold text-xl text-on-primary"
+                                    href="tel:0931160818">0931160818 (Ms. Thu NhÃ n)</a>
+                            </div>
+                            <div class="flex items-center gap-sm">
+                                <span class="material-symbols-outlined text-on-primary">mail</span>
+                                <a class="hover:text-on-primary transition-colors"
+                                    href="mailto:ketoanthanhphong0607@gmail.com">ketoanthanhphong0607@gmail.com</a>
+                            </div>
+                            <div class="flex items-start gap-sm hover:text-on-primary transition-colors">
+                                <span class="material-symbols-outlined text-on-primary mt-1">schedule</span>
+                                <span>Thá»© 2 - Thá»© 7: 8:00 - 17:30<br />Chá»§ nháº­t: 8:00 - 12:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-surface p-lg rounded-2xl shadow-xl border border-[#0f172a]/10">
+                        <form class="flex flex-col gap-md">
+                            <div>
+                                <label class="block font-label-md text-on-surface mb-xs font-semibold" for="name">Há» vÃ 
+                                    tÃªn *</label>
+                                <input
+                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
+                                    id="name" placeholder="Nháº­p há» vÃ  tÃªn cá»§a báº¡n" required="" type="text" />
+                            </div>
+                            <div>
+                                <label class="block font-label-md text-on-surface mb-xs font-semibold" for="phone">Sá»‘
+                                    Ä‘iá»‡n thoáº¡i *</label>
+                                <input
+                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
+                                    id="phone" placeholder="Nháº­p sá»‘ Ä‘iá»‡n thoáº¡i liÃªn há»‡" required="" type="tel" />
+                            </div>
+                            <div>
+                                <label class="block font-label-md text-on-surface mb-xs font-semibold" for="product">Sáº£n
+                                    pháº©m quan tÃ¢m</label>
+                                <select
+                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
+                                    id="product">
+                                    <option>-- Chá»n nhÃ³m sáº£n pháº©m --</option>
+                                    <option>Äá»“ng phá»¥c báº£o vá»‡</option>
+                                    <option>Phá»¥ kiá»‡n báº£o vá»‡</option>
+                                    <option>GiÃ y báº£o há»™</option>
+                                    <option>Báº£o há»™ lao Ä‘á»™ng</option>
+                                    <option>Dá»‹ch vá»¥ may thÃªu</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-label-md text-on-surface mb-xs font-semibold" for="message">Ná»™i
+                                    dung</label>
+                                <textarea
+                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
+                                    id="message" placeholder="Nháº­p yÃªu cáº§u tÆ° váº¥n chi tiáº¿t..." rows="4"></textarea>
+                            </div>
+                            <button
+                                class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-md text-label-md hover:bg-[#0f172a] transition-all duration-300 w-full mt-sm shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                                type="submit">
+                                Gá»­i yÃªu cáº§u tÆ° váº¥n
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface w-full border-t border-outline-variant/30">
+        <div class="max-w-container-max mx-auto px-md py-lg md:py-xl">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-xl mb-xl">
+                <div class="flex flex-col gap-sm md:w-1/3">
+                    <img alt="ThÃ nh Phong Logo" class="h-16 w-auto object-contain object-left mb-2"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0ugSmXROeauJZ9_bRD9axkgsmVCY8ipDECZR1Mh7niSxpxKlLBhQRIYGCLFAaiKAuCtDy_MHJ1uQB7brRpuLOy9-SOuQ9Ukw0IkpYixpubvBGKO_mSri-zgpG6JeZ9iqOIO4uiiTjVtpq8HW3UalAkUE0VRo2r48rZPQIvKI6P0WA12pzHIHZbuw07JEmkKm17l3NZeATphPYUZcMz5cUai6AOprBm5UqHhb5DMiDgJNEPz_oMDNDe70vrqR" />
+                    <p class="text-on-surface-variant font-body-sm text-sm max-w-sm">ChuyÃªn cung cáº¥p cÃ¡c sáº£n pháº©m báº£o há»™
+                        lao Ä‘á»™ng, Ä‘á»“ng phá»¥c báº£o vá»‡ vÃ  phá»¥ kiá»‡n an toÃ n cháº¥t lÆ°á»£ng cao. Uy tÃ­n táº¡o niá»m tin.</p>
+                </div>
+                <div class="flex flex-wrap gap-xl md:w-2/3 justify-start md:justify-end">
+                    <div class="flex flex-col gap-sm">
+                        <span class="font-label-md text-label-md font-bold text-primary mb-sm">Sáº£n pháº©m</span>
+                        <a class="text-on-surface-variant hover:text-[#0f172a] hover:underline transition-all duration-200 text-sm"
+                            href="#">Äá»“ng phá»¥c báº£o vá»‡</a>
+                        <a class="text-on-surface-variant hover:text-[#0f172a] hover:underline transition-all duration-200 text-sm"
+                            href="#">Phá»¥ kiá»‡n báº£o vá»‡</a>
+                        <a class="text-on-surface-variant hover:text-[#0f172a] hover:underline transition-all duration-200 text-sm"
+                            href="#">GiÃ y báº£o há»™</a>
+                        <a class="text-on-surface-variant hover:text-[#0f172a] hover:underline transition-all duration-200 text-sm"
+                            href="#">Báº£o há»™ lao Ä‘á»™ng</a>
+                    </div>
+                    <div class="flex flex-col gap-sm">
+                        <span class="font-label-md text-label-md font-bold text-primary mb-sm">ThÃ´ng tin</span>
+                        <a class="text-on-surface-variant hover:text-[#0f172a] hover:underline transition-all duration-200 text-sm"
+                            href="#">Vá» chÃºng tÃ´i</a>
+                        <a class="text-on-surface-variant hover:text-[#0f172a] hover:underline transition-all duration-200 text-sm"
+                            href="#">Táº¡i sao chá»n chÃºng tÃ´i</a>
+                        <a class="text-on-surface-variant hover:text-[#0f172a] hover:underline transition-all duration-200 text-sm"
+                            href="#">ÄÃ¡nh giÃ¡ khÃ¡ch hÃ ng</a>
+                        <a class="text-on-surface-variant hover:text-[#0f172a] hover:underline transition-all duration-200 text-sm"
+                            href="#">LiÃªn há»‡</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-lg border-t border-outline-variant/30 flex flex-col justify-between items-center gap-md">
+                <p class="font-label-sm text-xs text-on-surface-variant">Â© 2024 CÃ´ng Ty TNHH Báº£o Há»™ Lao Äá»™ng ThÃ nh Phong
+                    -- MST: 0316903199. Táº¥t cáº£ quyá»n Ä‘Æ°á»£c báº£o lÆ°u.</p>
+                <div class="flex gap-md">
+                    <a class="font-label-sm text-xs text-on-surface-variant hover:text-[#0f172a] transition-colors"
+                        href="#">ChÃ­nh sÃ¡ch Ä‘á»•i tráº£</a>
+                    <a class="font-label-sm text-xs text-on-surface-variant hover:text-[#0f172a] transition-colors"
+                        href="#">ChÃ­nh sÃ¡ch báº£o máº­t</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+    // Modify active states for cat links and sort btns
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.cat-list a').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelectorAll('.cat-list a').forEach(x => {
+                    x.classList.remove('active', 'bg-primary-container', 'text-on-primary-container');
+                    x.classList.add('text-on-surface-variant');
+                    x.querySelector('span').classList.remove('bg-white', 'text-primary');
+                    x.querySelector('span').classList.add('bg-surface-container', 'text-on-surface');
+                });
+                a.classList.add('active', 'bg-primary-container', 'text-on-primary-container');
+                a.classList.remove('text-on-surface-variant');
+                a.querySelector('span').classList.remove('bg-surface-container', 'text-on-surface');
+                a.querySelector('span').classList.add('bg-white', 'text-primary');
+            });
+        });
+        
+        document.querySelectorAll('.sort-btn').forEach(b => {
+            b.addEventListener('click', () => {
+                document.querySelectorAll('.sort-btn').forEach(x => {
+                    x.classList.remove('active', 'bg-surface-lowest', 'shadow-sm', 'text-primary');
+                    x.classList.add('text-on-surface-variant');
+                });
+                b.classList.add('active', 'bg-surface-lowest', 'shadow-sm', 'text-primary');
+                b.classList.remove('text-on-surface-variant');
+            });
+        });
+    });
+    </script>
+    <script>
 const products = [
   {id:'ĐồngPhụcBảoVệ',title:'Đồng Phục Bảo Vệ',cat:'uniform',catLabel:'Đồng phục bảo vệ',img:'images/Đồng Phục Bảo Vệ/ao-trang-bao-ve.png'},
   {id:'ĐồngPhụcBảoVệNEW',title:'Đồng Phục Bảo Vệ NEW',cat:'uniform',catLabel:'Đồng phục bảo vệ',img:'images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png'},
@@ -348,33 +1288,42 @@ function renderGrid(){
   const grid=document.getElementById('productsGrid');
   document.getElementById('results-count').textContent=list.length+' sản phẩm';
   grid.innerHTML=list.map(p=>`
-    <div class="product-card" onclick="openLightbox(${JSON.stringify(p).replace(/"/g,'&quot;')})">
-      <div class="img-wrap">
-        <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'200\\' height=\\'200\\'%3E%3Crect fill=\\'%23f1f5f9\\' width=\\'200\\' height=\\'200\\'/%3E%3C/svg%3E'">
-        <div class="overlay"><span><i class="fas fa-search-plus"></i> Xem chi tiết</span></div>
-      </div>
-      <div class="card-body">
-        <span class="cat-tag">${p.catLabel}</span>
-        <h3>${p.title}</h3>
-        <div class="price-row">
-          <span class="price">Liên hệ báo giá</span>
-          <a href="index.html#contact" class="contact-btn" onclick="event.stopPropagation()">Hỏi giá</a>
-        </div>
-      </div>
-    </div>`).join('');
+        <div class="group flex flex-col bg-surface-lowest border border-surface-container rounded-2xl overflow-hidden hover:shadow-[0_12px_32px_rgba(15,23,42,0.08)] transition-all duration-300 cursor-pointer" onclick="openLightbox(${JSON.stringify(p).replace(/"/g,'&quot;')})">
+            <div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+                <img src="${p.img}" alt="${p.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'200\\' height=\\'200\\'%3E%3Crect fill=\\'%23f1f5f9\\' width=\\'200\\' height=\\'200\\'/%3E%3C/svg%3E'">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="bg-white/20 text-white font-medium py-2 px-4 rounded-full flex items-center gap-2 backdrop-blur-sm">
+                        <i class="fas fa-search-plus"></i> Xem chi tiết
+                    </span>
+                </div>
+            </div>
+            <div class="p-4 flex flex-col flex-1">
+                <span class="text-[10px] font-bold text-tertiary bg-tertiary/10 px-2 py-1 rounded-md self-start mb-2 uppercase">${p.catLabel}</span>
+                <h3 class="text-sm font-bold text-primary mb-3 line-clamp-2 leading-snug">${p.title}</h3>
+                <div class="mt-auto flex items-center justify-between pt-2 border-t border-surface-container/50">
+                    <span class="text-error font-bold text-sm">Liên hệ</span>
+                    <button class="bg-primary text-on-primary px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-primary-container hover:text-on-primary-container transition-colors" onclick="event.stopPropagation()">Hỏi giá</button>
+                </div>
+            </div>
+        </div>`).join('');
 }
 
 function openLightbox(p){
-  document.getElementById('lbImg').src=p.img;
-  document.getElementById('lbTitle').textContent=p.title;
-  document.getElementById('lbCat').textContent=p.catLabel;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeLightbox(){
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow='';
-}
+        document.getElementById('lightboxMainImg').src = p.img;
+        document.getElementById('lt-title').textContent = p.title;
+        document.getElementById('lt-price').textContent = "Giá: Liên hệ";
+        const lb = document.getElementById('productLightbox');
+        lb.style.display = 'flex';
+        lb.classList.remove('hidden');
+    }
+    document.querySelector('.lightbox-close').addEventListener('click', () => {
+        document.getElementById('productLightbox').style.display = 'none';
+        document.getElementById('productLightbox').classList.add('hidden');
+    });
+    document.querySelector('.lightbox-overlay').addEventListener('click', () => {
+        document.getElementById('productLightbox').style.display = 'none';
+        document.getElementById('productLightbox').classList.add('hidden');
+    });
 document.getElementById('lbClose').onclick=closeLightbox;
 document.getElementById('lightbox').onclick=function(e){if(e.target===this)closeLightbox();};
 
@@ -402,5 +1351,6 @@ document.querySelectorAll('.sort-btn').forEach(b=>{
 updateCounts();
 renderGrid();
 </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
