@@ -109,6 +109,11 @@
                             "Hanken Grotesk"
                         ]
                     },
+                    "boxShadow": {
+                        "level-1": "0px 4px 20px rgba(15, 23, 42, 0.04)",
+                        "level-2": "0px 12px 32px rgba(15, 23, 42, 0.08)",
+                        "level-3": "0px 24px 48px rgba(15, 23, 42, 0.12)"
+                    },
                     "fontSize": {
                         "display-lg-mobile": [
                             "40px",
@@ -303,6 +308,11 @@
                             "Hanken Grotesk"
                         ]
                     },
+                    "boxShadow": {
+                        "level-1": "0px 4px 20px rgba(15, 23, 42, 0.04)",
+                        "level-2": "0px 12px 32px rgba(15, 23, 42, 0.08)",
+                        "level-3": "0px 24px 48px rgba(15, 23, 42, 0.12)"
+                    },
                     "fontSize": {
                         "display-lg-mobile": [
                             "40px",
@@ -389,7 +399,7 @@
 <body class="font-body-md text-body-md bg-background text-on-background">
     <!-- TopNavBar -->
     <nav
-        class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 shadow-sm transition-all duration-300 border-b border-outline-variant/20">
+        class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 shadow-level-1 transition-all duration-300 border-b border-outline-variant/20">
         <div class="flex justify-between items-center max-w-container-max mx-auto px-md h-xl">
             <div class="flex items-center gap-sm"><img alt="Th nh Phong Logo" class="h-10"
                     src="https://lh3.googleusercontent.com/aida/ADBb0ugSmXROeauJZ9_bRD9axkgsmVCY8ipDECZR1Mh7niSxpxKlLBhQRIYGCLFAaiKAuCtDy_MHJ1uQB7brRpuLOy9-SOuQ9Ukw0IkpYixpubvBGKO_mSri-zgpG6JeZ9iqOIO4uiiTjVtpq8HW3UalAkUE0VRo2r48rZPQIvKI6P0WA12pzHIHZbuw07JEmkKm17l3NZeATphPYUZcMz5cUai6AOprBm5UqHhb5DMiDgJNEPz_oMDNDe70vrqR" />
@@ -399,7 +409,7 @@
                     <span class="material-symbols-outlined">shopping_cart</span>
                     <span id="cartCount" class="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full" style="display: none;">0</span>
                 </button>
-                <a class="bg-primary text-on-primary p-2 rounded-lg" href="tel:0931160818">
+                <a class="bg-primary text-on-primary p-2 rounded-xl" href="tel:0931160818">
                     <span class="material-symbols-outlined">call</span>
                 </a>
                 <button class="p-2 text-primary">
@@ -422,7 +432,7 @@
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Sidebar -->
             <aside class="w-full lg:w-1/4 flex flex-col gap-6">
-                <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-container shadow-sm">
+                <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-container shadow-level-1">
                     <h2 class="text-lg font-bold text-primary font-['Hanken_Grotesk'] mb-6 flex items-center gap-2 pb-4 border-b border-surface-container">
                         <span class="material-symbols-outlined text-secondary">category</span> Danh mục
                     </h2>
@@ -440,11 +450,11 @@
             <!-- Main Grid -->
             <div class="flex-1 flex flex-col gap-6">
                 <!-- Sort Bar -->
-                <div class="bg-surface-container-lowest rounded-2xl p-4 border border-surface-container shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="bg-surface-container-lowest rounded-2xl p-4 border border-surface-container shadow-level-1 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div class="flex items-center gap-4 w-full sm:w-auto">
                         <span class="text-on-surface-variant font-medium">Sắp xếp:</span>
-                        <div class="flex gap-2 bg-surface-container-low p-1 rounded-lg">
-                            <button class="sort-btn active px-4 py-2 rounded-md text-sm font-medium bg-surface-lowest shadow-sm text-primary transition-all" data-sort="default">Phổ biến</button>
+                        <div class="flex gap-2 bg-surface-container-low p-1 rounded-xl">
+                            <button class="sort-btn active px-4 py-2 rounded-md text-sm font-medium bg-surface-lowest shadow-level-1 text-primary transition-all" data-sort="default">Phổ biến</button>
                             <button class="sort-btn px-4 py-2 rounded-md text-sm font-medium text-on-surface-variant hover:text-primary transition-all" data-sort="az">A &rarr; Z</button>
                             <button class="sort-btn px-4 py-2 rounded-md text-sm font-medium text-on-surface-variant hover:text-primary transition-all" data-sort="za">Z &rarr; A</button>
                         </div>
@@ -463,7 +473,7 @@
 <div id="cartOverlay" class="fixed inset-0 bg-black/50 z-[9998] opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
 <!-- SHOPPING CART SIDEBAR -->
-<div id="cartSidebar" class="fixed top-0 right-0 w-[400px] max-w-full h-full bg-surface-container-lowest z-[9999] shadow-[0_24px_48px_rgba(15,23,42,0.12)] translate-x-full transition-transform duration-300 flex flex-col">
+<div id="cartSidebar" class="fixed top-0 right-0 w-[400px] max-w-full h-full bg-surface-container-lowest z-[9999] shadow-level-3 translate-x-full transition-transform duration-300 flex flex-col">
     <!-- Header -->
     <div class="p-6 border-b border-surface-container flex items-center justify-between bg-surface-container-lowest">
         <div class="flex items-center gap-3 text-primary">
@@ -560,7 +570,7 @@
 <div id="productLightbox" class="fixed inset-0 z-[10000] hidden items-center justify-center p-4">
     <div class="lightbox-overlay absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"></div>
     
-    <div class="relative bg-surface-container-lowest rounded-2xl shadow-[0_24px_48px_rgba(15,23,42,0.12)] w-full max-w-5xl max-h-[90vh] flex flex-col overflow-hidden animate-[fade-in-up_0.3s_ease-out]">
+    <div class="relative bg-surface-container-lowest rounded-2xl shadow-level-3 w-full max-w-5xl max-h-[90vh] flex flex-col overflow-hidden animate-[fade-in-up_0.3s_ease-out]">
         <button class="lightbox-close absolute top-4 right-4 z-10 w-10 h-10 bg-surface-container hover:bg-error hover:text-on-error rounded-full flex items-center justify-center transition-colors">
             <span class="material-symbols-outlined">close</span>
         </button>
@@ -568,7 +578,7 @@
         <div class="flex flex-col md:flex-row h-full overflow-y-auto">
             <!-- Left: Image -->
             <div class="w-full md:w-1/2 bg-surface-bright relative flex items-center justify-center p-8 min-h-[300px]">
-                <button class="prev-btn absolute left-4 w-10 h-10 bg-surface-container-lowest shadow-md rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+                <button class="prev-btn absolute left-4 w-10 h-10 bg-surface-container-lowest shadow-level-2 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
                     <span class="material-symbols-outlined">chevron_left</span>
                 </button>
                 
@@ -576,7 +586,7 @@
                     <img src="" alt="Sáº£n pháº©m" id="lightboxMainImg" class="max-w-full max-h-[60vh] object-contain transition-opacity duration-300">
                 </div>
                 
-                <button class="next-btn absolute right-4 w-10 h-10 bg-surface-container-lowest shadow-md rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+                <button class="next-btn absolute right-4 w-10 h-10 bg-surface-container-lowest shadow-level-2 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
                     <span class="material-symbols-outlined">chevron_right</span>
                 </button>
             </div>
@@ -752,6 +762,11 @@
                             "Hanken Grotesk"
                         ]
                     },
+                    "boxShadow": {
+                        "level-1": "0px 4px 20px rgba(15, 23, 42, 0.04)",
+                        "level-2": "0px 12px 32px rgba(15, 23, 42, 0.08)",
+                        "level-3": "0px 24px 48px rgba(15, 23, 42, 0.12)"
+                    },
                     "fontSize": {
                         "display-lg-mobile": [
                             "40px",
@@ -838,7 +853,7 @@
 <body class="font-body-md text-body-md bg-background text-on-background">
     <!-- TopNavBar -->
     <nav
-        class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 shadow-sm transition-all duration-300 border-b border-outline-variant/20">
+        class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 shadow-level-1 transition-all duration-300 border-b border-outline-variant/20">
         <div class="flex justify-between items-center max-w-container-max mx-auto px-md h-xl">
             <div class="flex items-center gap-sm"><img alt="Th nh Phong Logo" class="h-10"
                     src="https://lh3.googleusercontent.com/aida/ADBb0ugSmXROeauJZ9_bRD9axkgsmVCY8ipDECZR1Mh7niSxpxKlLBhQRIYGCLFAaiKAuCtDy_MHJ1uQB7brRpuLOy9-SOuQ9Ukw0IkpYixpubvBGKO_mSri-zgpG6JeZ9iqOIO4uiiTjVtpq8HW3UalAkUE0VRo2r48rZPQIvKI6P0WA12pzHIHZbuw07JEmkKm17l3NZeATphPYUZcMz5cUai6AOprBm5UqHhb5DMiDgJNEPz_oMDNDe70vrqR" />
@@ -848,7 +863,7 @@
                     <span class="material-symbols-outlined">shopping_cart</span>
                     <span id="cartCount" class="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full" style="display: none;">0</span>
                 </button>
-                <a class="bg-primary text-on-primary p-2 rounded-lg" href="tel:0931160818">
+                <a class="bg-primary text-on-primary p-2 rounded-xl" href="tel:0931160818">
                     <span class="material-symbols-outlined">call</span>
                 </a>
                 <button class="p-2 text-primary">
@@ -882,11 +897,11 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-md items-center">
                         <button
-                            class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md shadow-lg hover:shadow-xl hover:bg-[#0f172a] hover:-translate-y-0.5 transition-all duration-300">
+                            class="bg-primary text-on-primary px-md py-sm rounded-xl font-label-md text-label-md shadow-level-2 hover:shadow-level-3 hover:bg-[#0f172a] hover:-translate-y-0.5 transition-all duration-300">
                             KhÃ¡m PhÃ¡ Sáº£n Pháº©m
                         </button>
                         <button
-                            class="flex items-center justify-center gap-sm px-lg py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-surface-variant hover:-translate-y-0.5 rounded-lg transition-all duration-300">
+                            class="flex items-center justify-center gap-sm px-md py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-surface-variant hover:-translate-y-0.5 rounded-xl transition-all duration-300">
                             Nháº­n TÆ° Váº¥n Ngay <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                         </button>
                     </div>
@@ -904,7 +919,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
                     <!-- Product 1 -->
                     <div
-                        class="group bg-surface-container-lowest p-lg rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
+                        class="group bg-surface-container-lowest p-md rounded-2xl shadow-level-1 hover:shadow-level-3 hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
                         <div
                             class="w-full h-56 bg-surface-container-low rounded-xl flex items-center justify-center mb-lg overflow-hidden p-6 group-hover:bg-surface-container transition-colors">
                             <img alt="Äá»“ng phá»¥c báº£o vá»‡"
@@ -921,7 +936,7 @@
                     </div>
                     <!-- Product 2 -->
                     <div
-                        class="group bg-surface-container-lowest p-lg rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
+                        class="group bg-surface-container-lowest p-md rounded-2xl shadow-level-1 hover:shadow-level-3 hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
                         <div
                             class="w-full h-56 bg-surface-container-low rounded-xl flex items-center justify-center mb-lg overflow-hidden p-6 group-hover:bg-surface-container transition-colors">
                             <img alt="NÃ³n, Sao Báº£o Vá»‡"
@@ -938,7 +953,7 @@
                     </div>
                     <!-- Product 3 -->
                     <div
-                        class="group bg-surface-container-lowest p-lg rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
+                        class="group bg-surface-container-lowest p-md rounded-2xl shadow-level-1 hover:shadow-level-3 hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
                         <div
                             class="w-full h-56 bg-surface-container-low rounded-xl flex items-center justify-center mb-lg overflow-hidden p-6 group-hover:bg-surface-container transition-colors">
                             <img alt="MÅ© Báº£o Há»™ Lao Äá»™ng"
@@ -955,7 +970,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-xl">
-                    <a class="inline-flex items-center justify-center gap-sm px-lg py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-[#0f172a] hover:text-white rounded-lg transition-all duration-300 shadow-sm hover:shadow-md"
+                    <a class="inline-flex items-center justify-center gap-sm px-md py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-[#0f172a] hover:text-white rounded-xl transition-all duration-300 shadow-level-1 hover:shadow-level-2"
                         href="#">
                         Xem táº¥t cáº£ sáº£n pháº©m
                     </a>
@@ -976,9 +991,9 @@
                     </div>
                     <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-gutter">
                         <div
-                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-md transition-all duration-300">
+                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-level-2 transition-all duration-300">
                             <div
-                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-sm">
+                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center mb-sm">
                                 <span class="material-symbols-outlined">verified</span>
                             </div>
                             <h3 class="font-headline-md text-headline-md text-primary">Cháº¥t lÆ°á»£ng Ä‘áº£m báº£o</h3>
@@ -986,9 +1001,9 @@
                                 cháº¥t lÆ°á»£ng vÃ  nguá»“n gá»‘c xuáº¥t xá»© rÃµ rÃ ng.</p>
                         </div>
                         <div
-                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-md transition-all duration-300">
+                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-level-2 transition-all duration-300">
                             <div
-                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-sm">
+                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center mb-sm">
                                 <span class="material-symbols-outlined">payments</span>
                             </div>
                             <h3 class="font-headline-md text-headline-md text-primary">GiÃ¡ cáº¡nh tranh</h3>
@@ -996,9 +1011,9 @@
                                 trung gian. Cam káº¿t giÃ¡ tá»‘t nháº¥t thá»‹ trÆ°á»ng.</p>
                         </div>
                         <div
-                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-md transition-all duration-300">
+                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-level-2 transition-all duration-300">
                             <div
-                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-sm">
+                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center mb-sm">
                                 <span class="material-symbols-outlined">styler</span>
                             </div>
                             <h3 class="font-headline-md text-headline-md text-primary">May thÃªu theo yÃªu cáº§u</h3>
@@ -1006,9 +1021,9 @@
                                 phá»¥c báº£o vá»‡ vÃ  Ä‘á»“ báº£o há»™ theo yÃªu cáº§u riÃªng.</p>
                         </div>
                         <div
-                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-md transition-all duration-300">
+                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-level-2 transition-all duration-300">
                             <div
-                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-sm">
+                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center mb-sm">
                                 <span class="material-symbols-outlined">local_shipping</span>
                             </div>
                             <h3 class="font-headline-md text-headline-md text-primary">Giao hÃ ng nhanh</h3>
@@ -1018,7 +1033,7 @@
                     </div>
                 </div>
                 <!-- Testimonial -->
-                <div class="mt-xl bg-surface border border-outline-variant/50 p-lg md:p-xl rounded-2xl relative shadow-sm">
+                <div class="mt-xl bg-surface border border-outline-variant/50 p-lg md:p-xl rounded-2xl relative shadow-level-1">
                     <span
                         class="material-symbols-outlined text-[120px] text-surface-container-highest absolute -top-8 -left-4 z-0"
                         style="font-variation-settings: 'FILL' 1;">format_quote</span>
@@ -1075,27 +1090,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-surface p-lg rounded-2xl shadow-xl border border-[#0f172a]/10">
+                    <div class="bg-surface p-md rounded-2xl shadow-level-3 border border-[#0f172a]/10">
                         <form class="flex flex-col gap-md">
                             <div>
                                 <label class="block font-label-md text-on-surface mb-xs font-semibold" for="name">Há» vÃ 
                                     tÃªn *</label>
                                 <input
-                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
+                                    class="w-full rounded-xl border-[#CBD5E1] focus:border-tertiary focus:ring-tertiary/20 focus:ring-2 bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
                                     id="name" placeholder="Nháº­p há» vÃ  tÃªn cá»§a báº¡n" required="" type="text" />
                             </div>
                             <div>
                                 <label class="block font-label-md text-on-surface mb-xs font-semibold" for="phone">Sá»‘
                                     Ä‘iá»‡n thoáº¡i *</label>
                                 <input
-                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
+                                    class="w-full rounded-xl border-[#CBD5E1] focus:border-tertiary focus:ring-tertiary/20 focus:ring-2 bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
                                     id="phone" placeholder="Nháº­p sá»‘ Ä‘iá»‡n thoáº¡i liÃªn há»‡" required="" type="tel" />
                             </div>
                             <div>
                                 <label class="block font-label-md text-on-surface mb-xs font-semibold" for="product">Sáº£n
                                     pháº©m quan tÃ¢m</label>
                                 <select
-                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
+                                    class="w-full rounded-xl border-[#CBD5E1] focus:border-tertiary focus:ring-tertiary/20 focus:ring-2 bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
                                     id="product">
                                     <option>-- Chá»n nhÃ³m sáº£n pháº©m --</option>
                                     <option>Äá»“ng phá»¥c báº£o vá»‡</option>
@@ -1109,11 +1124,11 @@
                                 <label class="block font-label-md text-on-surface mb-xs font-semibold" for="message">Ná»™i
                                     dung</label>
                                 <textarea
-                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
+                                    class="w-full rounded-xl border-[#CBD5E1] focus:border-tertiary focus:ring-tertiary/20 focus:ring-2 bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
                                     id="message" placeholder="Nháº­p yÃªu cáº§u tÆ° váº¥n chi tiáº¿t..." rows="4"></textarea>
                             </div>
                             <button
-                                class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-md text-label-md hover:bg-[#0f172a] transition-all duration-300 w-full mt-sm shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                                class="bg-primary text-on-primary px-md py-sm rounded-xl font-label-md text-label-md hover:bg-[#0f172a] transition-all duration-300 w-full mt-sm shadow-level-2 hover:shadow-level-2 hover:-translate-y-0.5"
                                 type="submit">
                                 Gá»­i yÃªu cáº§u tÆ° váº¥n
                             </button>
@@ -1193,10 +1208,10 @@
         document.querySelectorAll('.sort-btn').forEach(b => {
             b.addEventListener('click', () => {
                 document.querySelectorAll('.sort-btn').forEach(x => {
-                    x.classList.remove('active', 'bg-surface-lowest', 'shadow-sm', 'text-primary');
+                    x.classList.remove('active', 'bg-surface-lowest', 'shadow-level-1', 'text-primary');
                     x.classList.add('text-on-surface-variant');
                 });
-                b.classList.add('active', 'bg-surface-lowest', 'shadow-sm', 'text-primary');
+                b.classList.add('active', 'bg-surface-lowest', 'shadow-level-1', 'text-primary');
                 b.classList.remove('text-on-surface-variant');
             });
         });
@@ -1274,7 +1289,7 @@ function renderGrid(){
                 <h3 class="text-sm font-bold text-primary mb-3 line-clamp-2 leading-snug">${p.title}</h3>
                 <div class="mt-auto flex items-center justify-between pt-2 border-t border-surface-container/50">
                     <span class="text-error font-bold text-sm">Liên hệ</span>
-                    <button class="bg-primary text-on-primary px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-primary-container hover:text-on-primary-container transition-colors" onclick="event.stopPropagation()">Hỏi giá</button>
+                    <button class="bg-primary text-on-primary px-3 py-1.5 rounded-xl text-xs font-bold hover:bg-primary-container hover:text-on-primary-container transition-colors" onclick="event.stopPropagation()">Hỏi giá</button>
                 </div>
             </div>
         </div>`).join('');
