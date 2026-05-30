@@ -752,7 +752,7 @@ function initCart() {
         message += '\nTổng cộng: Liên hệ báo giá\n\nVui lòng tư vấn cho tôi!';
 
         const encodedMsg = encodeURIComponent(message);
-        const zaloUrl = `https://zalo.me/0931160818?text=${encodedMsg}`;
+        const zaloUrl = `https://zalo.me/0349781300?text=${encodedMsg}`;
         window.open(zaloUrl, '_blank');
     };
 
@@ -942,7 +942,7 @@ function applyTranslations() {
     const dict = translations[currentLang];
     
     // Navbar links
-    const navItems = ['home', 'products', 'news', 'contact'];
+    const navItems = ['home', 'about', 'products', 'why', 'testimonials', 'news', 'contact'];
     navItems.forEach(item => {
         const el = document.getElementById(`trans-nav-${item}`);
         if (el) el.innerText = dict[`nav-${item}`];
