@@ -67,17 +67,10 @@
                         "on-surface-variant": "#45464d",
                         "on-primary-fixed": "#131b2e"
                     },
-                    "boxShadow": {
-                        "level-1": "0px 4px 20px rgba(15, 23, 42, 0.04)",
-                        "level-2": "0px 12px 32px rgba(15, 23, 42, 0.08)",
-                        "level-3": "0px 24px 48px rgba(15, 23, 42, 0.12)"
-                    },
                     "borderRadius": {
-                        "DEFAULT": "0.5rem",
-                        "md": "0.75rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "2xl": "1.5rem",
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
                         "full": "9999px"
                     },
                     "spacing": {
@@ -202,14 +195,23 @@
 <body class="font-body-md text-body-md bg-background text-on-background">
     <!-- TopNavBar -->
     <nav
-        class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 shadow-level-1 transition-all duration-300 border-b border-outline-variant/20">
+        class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 shadow-sm transition-all duration-300 border-b border-outline-variant/20">
         <div class="flex justify-between items-center max-w-container-max mx-auto px-md h-xl">
             <div class="flex items-center gap-sm"><img alt="Th nh Phong Logo" class="h-10"
                     src="https://lh3.googleusercontent.com/aida/ADBb0ugSmXROeauJZ9_bRD9axkgsmVCY8ipDECZR1Mh7niSxpxKlLBhQRIYGCLFAaiKAuCtDy_MHJ1uQB7brRpuLOy9-SOuQ9Ukw0IkpYixpubvBGKO_mSri-zgpG6JeZ9iqOIO4uiiTjVtpq8HW3UalAkUE0VRo2r48rZPQIvKI6P0WA12pzHIHZbuw07JEmkKm17l3NZeATphPYUZcMz5cUai6AOprBm5UqHhb5DMiDgJNEPz_oMDNDe70vrqR" />
             </div>
-            <div class="flex items-center gap-4"><a class="bg-primary text-on-primary p-2 rounded-xl"
-                    href="tel:0931160818"><span class="material-symbols-outlined">call</span></a><button
-                    class="p-2 text-primary"><span class="material-symbols-outlined">menu</span></button></div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 text-primary relative" id="cartTrigger">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full" style="display: none;">0</span>
+                </button>
+                <a class="bg-primary text-on-primary p-2 rounded-lg" href="tel:0931160818">
+                    <span class="material-symbols-outlined">call</span>
+                </a>
+                <button class="p-2 text-primary">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
         </div>
     </nav>
     <main class="pt-xl">
@@ -237,11 +239,11 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-md items-center">
                         <button
-                            class="bg-primary text-on-primary px-md py-sm rounded-xl font-label-md text-label-md shadow-level-2 hover:shadow-level-3 hover:bg-[#0f172a] hover:-translate-y-0.5 transition-all duration-300">
+                            class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md shadow-lg hover:shadow-xl hover:bg-[#0f172a] hover:-translate-y-0.5 transition-all duration-300">
                             KhÃ¡m PhÃ¡ Sáº£n Pháº©m
                         </button>
                         <button
-                            class="flex items-center justify-center gap-sm px-md py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-surface-variant hover:-translate-y-0.5 rounded-xl transition-all duration-300">
+                            class="flex items-center justify-center gap-sm px-lg py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-surface-variant hover:-translate-y-0.5 rounded-lg transition-all duration-300">
                             Nháº­n TÆ° Váº¥n Ngay <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                         </button>
                     </div>
@@ -259,7 +261,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
                     <!-- Product 1 -->
                     <div
-                        class="group bg-surface-container-lowest p-md rounded-2xl shadow-level-1 hover:shadow-level-2 hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
+                        class="group bg-surface-container-lowest p-lg rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
                         <div
                             class="w-full h-56 bg-surface-container-low rounded-xl flex items-center justify-center mb-lg overflow-hidden p-6 group-hover:bg-surface-container transition-colors">
                             <img alt="Äá»“ng phá»¥c báº£o vá»‡"
@@ -276,7 +278,7 @@
                     </div>
                     <!-- Product 2 -->
                     <div
-                        class="group bg-surface-container-lowest p-md rounded-2xl shadow-level-1 hover:shadow-level-2 hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
+                        class="group bg-surface-container-lowest p-lg rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
                         <div
                             class="w-full h-56 bg-surface-container-low rounded-xl flex items-center justify-center mb-lg overflow-hidden p-6 group-hover:bg-surface-container transition-colors">
                             <img alt="NÃ³n, Sao Báº£o Vá»‡"
@@ -293,7 +295,7 @@
                     </div>
                     <!-- Product 3 -->
                     <div
-                        class="group bg-surface-container-lowest p-md rounded-2xl shadow-level-1 hover:shadow-level-2 hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
+                        class="group bg-surface-container-lowest p-lg rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant hover:border-[#0f172a]/30 flex flex-col items-center text-center">
                         <div
                             class="w-full h-56 bg-surface-container-low rounded-xl flex items-center justify-center mb-lg overflow-hidden p-6 group-hover:bg-surface-container transition-colors">
                             <img alt="MÅ© Báº£o Há»™ Lao Äá»™ng"
@@ -310,7 +312,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-xl">
-                    <a class="inline-flex items-center justify-center gap-sm px-md py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-[#0f172a] hover:text-white rounded-xl transition-all duration-300 shadow-level-1 hover:shadow-level-2"
+                    <a class="inline-flex items-center justify-center gap-sm px-lg py-sm font-label-md text-label-md text-primary bg-surface-container-highest hover:bg-[#0f172a] hover:text-white rounded-lg transition-all duration-300 shadow-sm hover:shadow-md"
                         href="#">
                         Xem táº¥t cáº£ sáº£n pháº©m
                     </a>
@@ -331,9 +333,9 @@
                     </div>
                     <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-gutter">
                         <div
-                            class="flex flex-col gap-sm p-md bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-level-1 transition-all duration-300">
+                            class="flex flex-col gap-sm p-lg bg-surface rounded-2xl border border-outline-variant/50 hover:border-[#0f172a]/20 hover:shadow-md transition-all duration-300">
                             <div
-                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center mb-sm">
+                                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-sm">
                                 <span class="material-symbols-outlined">verified</span>
                             </div>
                             <h3 class="font-headline-md text-headline-md text-primary">Cháº¥t lÆ°á»£ng Ä‘áº£m báº£o</h3>
@@ -373,7 +375,7 @@
                     </div>
                 </div>
                 <!-- Testimonial -->
-                <div class="mt-xl bg-surface border border-outline-variant/50 p-lg md:p-xl rounded-2xl relative shadow-level-1">
+                <div class="mt-xl bg-surface border border-outline-variant/50 p-lg md:p-xl rounded-2xl relative shadow-sm">
                     <span
                         class="material-symbols-outlined text-[120px] text-surface-container-highest absolute -top-8 -left-4 z-0"
                         style="font-variation-settings: 'FILL' 1;">format_quote</span>
@@ -458,13 +460,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-surface p-md rounded-2xl shadow-level-2 border border-[#0f172a]/10">
+                    <div class="bg-surface p-lg rounded-2xl shadow-xl border border-[#0f172a]/10">
                         <form class="flex flex-col gap-md">
                             <div>
                                 <label class="block font-label-md text-on-surface mb-xs font-semibold" for="name">Há» vÃ 
                                     tÃªn *</label>
                                 <input
-                                    class="w-full rounded-xl border-[#CBD5E1] focus:border-[#0f172a] focus:ring-[#0f172a]/20 focus:ring-2 bg-surface-container-lowest px-4 py-3 transition-all duration-200"
+                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
                                     id="name" placeholder="Nháº­p há» vÃ  tÃªn cá»§a báº¡n" required="" type="text" />
                             </div>
                             <div>
@@ -478,7 +480,7 @@
                                 <label class="block font-label-md text-on-surface mb-xs font-semibold" for="product">Sáº£n
                                     pháº©m quan tÃ¢m</label>
                                 <select
-                                    class="w-full rounded-xl border-[#CBD5E1] focus:border-[#0f172a] focus:ring-[#0f172a]/20 focus:ring-2 bg-surface-container-lowest px-4 py-3 transition-all duration-200"
+                                    class="w-full rounded-lg border-outline-variant focus:border-[#0f172a] focus:ring-[#0f172a] bg-surface-container-lowest px-4 py-3 transition-colors duration-200"
                                     id="product">
                                     <option>-- Chá»n nhÃ³m sáº£n pháº©m --</option>
                                     <option>Äá»“ng phá»¥c báº£o vá»‡</option>
@@ -496,7 +498,7 @@
                                     id="message" placeholder="Nháº­p yÃªu cáº§u tÆ° váº¥n chi tiáº¿t..." rows="4"></textarea>
                             </div>
                             <button
-                                class="bg-primary text-on-primary px-md py-sm rounded-xl font-label-md text-label-md hover:bg-[#0f172a] transition-all duration-300 w-full mt-sm shadow-level-1 hover:shadow-level-2 hover:-translate-y-0.5"
+                                class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-md text-label-md hover:bg-[#0f172a] transition-all duration-300 w-full mt-sm shadow-md hover:shadow-lg hover:-translate-y-0.5"
                                 type="submit">
                                 Gá»­i yÃªu cáº§u tÆ° váº¥n
                             </button>
@@ -558,9 +560,9 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 10) {
-                nav.classList.add('shadow-level-2');
+                nav.classList.add('shadow-md');
             } else {
-                nav.classList.remove('shadow-level-2');
+                nav.classList.remove('shadow-md');
             }
         });
     </script>
