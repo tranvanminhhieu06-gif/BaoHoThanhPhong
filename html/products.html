@@ -4,8 +4,8 @@
     <meta name="view-transition" content="same-origin">
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Sản Phẩm - Mobile - Thành Phong Bảo Hộ Lao Động</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Sản Phẩm - Thành Phong Bảo Hộ Lao Động</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -53,6 +53,63 @@
             transform: scale(0.95);
         }
 
+        /* Marquee animation for long category names */
+        .cat-text-wrapper {
+            overflow: hidden;
+            max-width: 130px;
+            position: relative;
+        }
+        .cat-text-wrapper .cat-text {
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .cat-text-wrapper.is-long .cat-text {
+            animation: marquee-scroll 6s linear infinite;
+            animation-delay: 1s;
+        }
+        .cat-text-wrapper.is-long:hover .cat-text {
+            animation-play-state: paused;
+        }
+        @keyframes marquee-scroll {
+            0%, 15% { transform: translateX(0); }
+            50%, 65% { transform: translateX(calc(-100% + 130px)); }
+            80%, 100% { transform: translateX(0); }
+        }
+
+        /* Trusted products section */
+        .trusted-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .trusted-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(29, 95, 168, 0.15);
+        }
+        .trusted-card:hover .trusted-icon {
+            background: #1D5FA8;
+            color: white;
+        }
+
+        /* Tips tabs */
+        .guide-tab {
+            transition: all 0.3s ease;
+        }
+        .guide-tab.active {
+            background: #1D5FA8;
+            color: white;
+            box-shadow: 0 8px 25px -5px rgba(29, 95, 168, 0.4);
+        }
+        .guide-content {
+            display: none;
+            animation: fadeInTab 0.4s ease;
+        }
+        .guide-content.active {
+            display: block;
+        }
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
@@ -91,7 +148,7 @@
             gap: 15px;
         }
 
-        /* LIGHTBOX CSS (Mobile optimized) */
+        /* LIGHTBOX CSS */
         .lightbox {
             display: none;
             position: fixed;
@@ -99,22 +156,19 @@
             z-index: 1000;
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(4px);
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
         }
         .lightbox.open { display: flex; }
-        .lightbox.open .lb-box { animation: modalSlideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-        @keyframes modalSlideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-        
         .lb-box {
             background: #fff;
+            border-radius: 24px;
             overflow: hidden;
             max-width: 900px;
-            grid-template-columns: 1fr; 
-            border-radius: 32px 32px 0 0; 
-            width: 100%; 
-            display: flex; 
-            flex-direction: column;
+            width: 95%;
+            max-height: 90vh;
+            display: grid;
+            grid-template-columns: 1fr 340px;
             box-shadow: 0 25px 50px -12px rgba(29, 95, 168, 0.25);
         }
         .lb-img {
@@ -122,18 +176,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 400px;
             position: relative;
             padding: 20px;
-            min-height: 250px; 
-            height: 250px;
         }
         .lb-img img { max-width: 100%; max-height: 500px; object-fit: contain; }
         .lb-close {
             position: absolute;
-            background: rgba(255, 255, 255, 0.9); 
-            top: 16px; 
-            right: 16px; 
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            top: 16px;
+            right: 16px;
+            background: rgba(0, 0, 0, 0.1);
             color: #1A2744;
             border: none;
             width: 36px;
@@ -147,11 +199,15 @@
             z-index: 10;
         }
         .lb-close:hover { background: #1D5FA8; color: #fff; }
-        .lb-info { 
-            overflow-y: auto; 
-            background: #fff; 
-            max-height: calc(90vh - 250px); 
-            padding: 24px;
+        .lb-info { padding: 32px; overflow-y: auto; background: #fff; }
+        @media (max-width: 768px) {
+            .lightbox { align-items: flex-end; }
+            .lightbox.open .lb-box { animation: modalSlideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+            @keyframes modalSlideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+            .lb-box { grid-template-columns: 1fr; border-radius: 32px 32px 0 0; width: 100%; display: flex; flex-direction: column; }
+            .lb-img { min-height: 250px; height: 250px; }
+            .lb-close { background: rgba(255, 255, 255, 0.9); top: 16px; right: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+            .lb-info { max-height: calc(90vh - 250px); padding: 24px; }
         }
     </style>
 </head>
@@ -175,7 +231,7 @@
         <div class="flex justify-between items-center h-20">
             <!-- Logo -->
             <a class="flex items-center" href="index.html">
-                <img src="images/logo-menu.png" alt="Thành Phong Logo" class="h-12 w-auto object-contain drop-shadow-sm">
+                <img src="../images/logo-menu.png" alt="Thành Phong Logo" class="h-12 w-auto object-contain drop-shadow-sm">
             </a>
             
             <!-- Center Links -->
@@ -207,7 +263,7 @@
             <span class="material-symbols-outlined text-xs">chevron_right</span>
             <span class="text-[#1D5FA8]">Tất cả sản phẩm</span>
         </nav>
-        <div class="flex flex-col items-end justify-between gap-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
                 <h1 class="text-5xl font-extrabold text-[#1A2744] tracking-tight mb-2">Danh Mục Thiết Bị</h1>
                 <p class="text-gray-500 max-w-xl font-medium">Cung cấp giải pháp bảo hộ lao động toàn diện, tiêu chuẩn chất lượng quốc tế cho doanh nghiệp.</p>
@@ -225,9 +281,9 @@
         </div>
     </div>
 
-    <div class="flex flex-col gap-12">
+    <div class="flex flex-col lg:flex-row gap-12">
         <!-- Sidebar -->
-        <aside class="w-full flex-shrink-0 space-y-10" data-aos="fade-right">
+        <aside class="lg:w-72 flex-shrink-0 space-y-10" data-aos="fade-right">
             <div>
                 <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#1D5FA8] mb-6 flex items-center gap-2">
                     <span class="w-6 h-0.5 bg-[#1D5FA8]"></span>
@@ -391,7 +447,7 @@
     <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat17">
         <div class="flex items-center gap-3 w-full">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">hard_hat</span>
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">engineering</span>
             </div>
             <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">Mũ bảo hộ lao động</span>
         </div>
@@ -546,7 +602,7 @@
 
             <!-- Promotion Card -->
             <div class="relative rounded-[32px] overflow-hidden aspect-[4/5] group shadow-2xl shadow-blue-900/10">
-                <img alt="Promo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="images/banner-home.jpg" onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuD4TdexvGdW_TITfE1AyeMst9RRXkmEkgY1UEJsARogEr-kMeshVAi8wk2BaffseKT4fzSacxqauszjSa8Ka_-uKtPK2sCRJ1iev3OMZI9ozx0TiA3PaASJbmVdQw7AfvpFCl3pIbVl0aB9qn-6bs298epzzaqjmbMLA0Vc0_w0KWrAWvMXSbxL5YGq6LyH6e89SRO61BqM87oiP1R-R2gtx37pdYONIDINfE8xV-w3wmIOxX4KRGRGElm098m1aq8ooxEg1AZ9_BtQ'"/>
+                <img alt="Promo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="../images/banner-home.jpg" onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuD4TdexvGdW_TITfE1AyeMst9RRXkmEkgY1UEJsARogEr-kMeshVAi8wk2BaffseKT4fzSacxqauszjSa8Ka_-uKtPK2sCRJ1iev3OMZI9ozx0TiA3PaASJbmVdQw7AfvpFCl3pIbVl0aB9qn-6bs298epzzaqjmbMLA0Vc0_w0KWrAWvMXSbxL5YGq6LyH6e89SRO61BqM87oiP1R-R2gtx37pdYONIDINfE8xV-w3wmIOxX4KRGRGElm098m1aq8ooxEg1AZ9_BtQ'"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-[#1A2744] via-[#1A2744]/20 to-transparent p-8 flex flex-col justify-end">
                     <p class="text-[#E8A500] text-xs font-extrabold uppercase tracking-widest mb-2">Ưu đãi doanh nghiệp</p>
                     <h4 class="text-white text-2xl font-extrabold leading-tight mb-4">Chiết khấu đặc biệt cho đơn hàng sỉ</h4>
@@ -557,32 +613,180 @@
 
         <!-- Product Grid -->
         <div class="flex-1">
-            <div id="productsGrid" class="grid grid-cols-2 gap-8" data-aos="fade-up">
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8" data-aos="fade-up">
                 <!-- Products rendered via JS -->
             </div>
             
             <div class="mt-8 text-sm font-semibold text-gray-500" id="results-count"></div>
             
-            <!-- Pagination (Mock for UI) -->
-            <div class="mt-20 flex justify-center items-center gap-3" data-aos="fade-up" data-aos-delay="200">
-                <button class="w-12 h-12 flex items-center justify-center rounded-2xl border border-gray-200 text-gray-400 hover:bg-[#1D5FA8] hover:text-white transition-all btn-press">
-                    <span class="material-symbols-outlined">chevron_left</span>
-                </button>
-                <button class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#1D5FA8] text-white font-bold text-sm shadow-lg shadow-blue-200 btn-press">1</button>
-                <button class="w-12 h-12 flex items-center justify-center rounded-2xl border border-gray-200 text-gray-400 hover:bg-[#1D5FA8] hover:text-white transition-all btn-press">
-                    <span class="material-symbols-outlined">chevron_right</span>
-                </button>
-            </div>
+            <!-- Pagination (Dynamic) -->
+            <div id="paginationControls" data-aos="fade-up" data-aos-delay="200"></div>
         </div>
     </div>
 </main>
 
+<!-- Sản phẩm được tin dùng nhất -->
+<section class="py-20 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="inline-block text-xs font-extrabold uppercase tracking-[0.3em] text-[#1D5FA8] bg-[#EBF3FF] px-5 py-2 rounded-full mb-4">Được tin dùng</span>
+            <h2 class="text-4xl font-extrabold text-[#1A2744] tracking-tight">Sản phẩm được tin dùng nhất</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <a href="products.html?cat=cat10" class="trusted-card bg-gray-50 rounded-3xl p-8 text-center cursor-pointer group">
+                <div class="trusted-icon w-20 h-20 mx-auto mb-5 rounded-2xl bg-white flex items-center justify-center text-[#1D5FA8] shadow-sm transition-all duration-300">
+                    <span class="material-symbols-outlined text-4xl">footprint</span>
+                </div>
+                <h4 class="font-bold text-[#1A2744] text-sm">Giày bảo hộ</h4>
+                <p class="text-xs text-gray-400 mt-1">Bảo vệ đôi chân</p>
+            </a>
+            <a href="products.html?cat=cat28" class="trusted-card bg-gray-50 rounded-3xl p-8 text-center cursor-pointer group">
+                <div class="trusted-icon w-20 h-20 mx-auto mb-5 rounded-2xl bg-white flex items-center justify-center text-[#1D5FA8] shadow-sm transition-all duration-300">
+                    <span class="material-symbols-outlined text-4xl">visibility</span>
+                </div>
+                <h4 class="font-bold text-[#1A2744] text-sm">Quần áo bảo hộ</h4>
+                <p class="text-xs text-gray-400 mt-1">An toàn & chuyên nghiệp</p>
+            </a>
+            <a href="products.html?cat=cat2" class="trusted-card bg-gray-50 rounded-3xl p-8 text-center cursor-pointer group">
+                <div class="trusted-icon w-20 h-20 mx-auto mb-5 rounded-2xl bg-white flex items-center justify-center text-[#1D5FA8] shadow-sm transition-all duration-300">
+                    <span class="material-symbols-outlined text-4xl">construction</span>
+                </div>
+                <h4 class="font-bold text-[#1A2744] text-sm">Thiết bị công trình</h4>
+                <p class="text-xs text-gray-400 mt-1">Chất lượng cao</p>
+            </a>
+            <a href="products.html?cat=cat25" class="trusted-card bg-gray-50 rounded-3xl p-8 text-center cursor-pointer group">
+                <div class="trusted-icon w-20 h-20 mx-auto mb-5 rounded-2xl bg-white flex items-center justify-center text-[#1D5FA8] shadow-sm transition-all duration-300">
+                    <span class="material-symbols-outlined text-4xl">fire_extinguisher</span>
+                </div>
+                <h4 class="font-bold text-[#1A2744] text-sm">Thiết bị PCCC</h4>
+                <p class="text-xs text-gray-400 mt-1">Phòng cháy chữa cháy</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Bí quyết lựa chọn sản phẩm + Bảo quản & Hướng dẫn -->
+<section class="py-20 bg-gray-50" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Bí quyết lựa chọn sản phẩm -->
+            <div>
+                <h2 class="text-3xl font-extrabold text-[#1A2744] tracking-tight mb-8">Bí quyết lựa chọn sản phẩm</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-5 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-[#EBF3FF] flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-2xl text-[#1D5FA8]">verified</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#1A2744] mb-1">Kiểm tra chứng chỉ CO/CQ</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Luôn yêu cầu đầy đủ giấy tờ chứng minh nguồn gốc sản phẩm đạt tiêu chuẩn an toàn quốc gia.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-[#FFF8E1] flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-2xl text-[#E8A500]">straighten</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#1A2744] mb-1">Đúng kích cỡ & Công năng</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Bảo hộ lao động cần có chất lượng phù hợp với tính chất và yêu cầu an toàn của môi trường làm việc.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-[#E8F5E9] flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-2xl text-green-600">workspace_premium</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#1A2744] mb-1">Chọn thương hiệu uy tín</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Ưu tiên sản phẩm từ các thương hiệu đã được kiểm chứng và có bảo hành rõ ràng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bảo quản & Hướng dẫn -->
+            <div>
+                <h2 class="text-3xl font-extrabold text-[#1A2744] tracking-tight mb-8">Bảo quản & Hướng dẫn</h2>
+                <div class="flex gap-2 mb-6">
+                    <button class="guide-tab active px-5 py-2.5 rounded-xl text-sm font-bold bg-gray-100 text-gray-600" data-tab="shoes">Giày bảo hộ</button>
+                    <button class="guide-tab px-5 py-2.5 rounded-xl text-sm font-bold bg-gray-100 text-gray-600" data-tab="clothes">Quần áo</button>
+                    <button class="guide-tab px-5 py-2.5 rounded-xl text-sm font-bold bg-gray-100 text-gray-600" data-tab="equipment">Thiết bị khác</button>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 min-h-[260px]">
+                    <div class="guide-content active" id="tab-shoes">
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#1D5FA8] text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Vệ sinh định kỳ bằng khăn khô, tránh tiếp xúc nước trực tiếp.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#1D5FA8] text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Bảo quản nơi khô ráo, tránh ánh nắng gay gắt gây giòn cao su.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#1D5FA8] text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Kiểm tra mũi thép và đế chống đâm định kỳ 3 tháng một lần.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#1D5FA8] text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Thay thế ngay khi phát hiện đế bị mòn hoặc mũi thép bị lộ.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="guide-content" id="tab-clothes">
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#E8A500] text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Giặt riêng với nước ấm, không sử dụng chất tẩy mạnh.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#E8A500] text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Phơi trong bóng râm, tránh tiếp xúc trực tiếp ánh nắng.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#E8A500] text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Kiểm tra dải phản quang và đường may sau mỗi lần giặt.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#E8A500] text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Bảo quản treo trên móc, tránh gấp gây nứt lớp phản quang.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="guide-content" id="tab-equipment">
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-600 text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Kiểm tra định kỳ dây đai, khóa và các mối nối trước mỗi lần sử dụng.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-600 text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Bảo quản thiết bị PCCC ở nơi dễ tiếp cận, tránh nhiệt độ cao.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-600 text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Mũ bảo hộ cần thay thế sau va đập mạnh hoặc sau 3-5 năm sử dụng.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-600 text-lg mt-0.5">check_circle</span>
+                                <span class="text-sm text-gray-600">Găng tay cần kiểm tra độ đàn hồi và khả năng cách điện thường xuyên.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6 bg-[#EBF3FF] rounded-2xl p-5 flex items-center justify-between">
+                    <span class="text-sm font-bold text-[#1D5FA8]">Bạn cần hỗ trợ kỹ thuật?</span>
+                    <a href="tel:0931160818" class="text-sm font-bold text-white bg-[#1D5FA8] px-5 py-2.5 rounded-xl hover:bg-[#164A85] transition-colors btn-press">Gọi ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <!-- Footer -->
 <footer class="bg-[#1A2744] text-white pt-24 pb-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-16 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
             <div class="space-y-8" data-aos="fade-up">
                 
                 <p class="text-gray-400 leading-relaxed text-sm font-medium">
@@ -626,7 +830,7 @@
                 </form>
             </div>
         </div>
-        <div class="flex flex-col justify-between items-center pt-12 border-t border-white/5 text-xs font-bold uppercase tracking-widest text-gray-500">
+        <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 text-xs font-bold uppercase tracking-widest text-gray-500">
             <p>© 2024 THANH PHONG SAFETY. ALL RIGHTS RESERVED.</p>
         </div>
     </div>
@@ -659,8 +863,30 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         if(typeof AOS !== 'undefined') AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 100 });
+
+        // Marquee for long category names (>20 chars)
+        document.querySelectorAll('.cat-text').forEach(el => {
+            const text = el.textContent.trim();
+            if (text.length > 20) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'cat-text-wrapper is-long';
+                el.parentNode.insertBefore(wrapper, el);
+                wrapper.appendChild(el);
+                el.classList.remove('truncate');
+            }
+        });
+
+        // Guide tabs
+        document.querySelectorAll('.guide-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.guide-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+            });
+        });
     });
 </script>
-<script src="js/products.js"></script>
+<script src="../js/products.js"></script>
 </body>
 </html>

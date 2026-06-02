@@ -9,403 +9,403 @@ const productData = {
         "title": "Bảng cảnh báo",
         "cat": "safety",
         "imgs": [
-            "images/Bảng cảnh báo/bang-bao-cao (1).png",
-            "images/Bảng cảnh báo/bang-bao-cao (2).png",
-            "images/Bảng cảnh báo/bang-bao-cao (3).png",
-            "images/Bảng cảnh báo/bang-bao-cao (4).png",
-            "images/Bảng cảnh báo/bang-bao-cao (5).png",
-            "images/Bảng cảnh báo/bang-bao-cao (6).png"
+            "../images/Bảng cảnh báo/bang-bao-cao (1).png",
+            "../images/Bảng cảnh báo/bang-bao-cao (2).png",
+            "../images/Bảng cảnh báo/bang-bao-cao (3).png",
+            "../images/Bảng cảnh báo/bang-bao-cao (4).png",
+            "../images/Bảng cảnh báo/bang-bao-cao (5).png",
+            "../images/Bảng cảnh báo/bang-bao-cao (6).png"
         ]
     },
     "Cuộnràocôngtrình": {
         "title": "Cuộn rào công trình",
         "cat": "safety",
         "imgs": [
-            "images/Cuộn rào công trình/cuon-chia-lan-duong (1).png",
-            "images/Cuộn rào công trình/cuon-chia-lan-duong (2).png",
-            "images/Cuộn rào công trình/cuon-chia-lan-duong (3).png",
-            "images/Cuộn rào công trình/cuon-chia-lan-duong (4).png",
-            "images/Cuộn rào công trình/cuon-chia-lan-duong (5).png",
-            "images/Cuộn rào công trình/cuon-chia-lan-duong (6).png",
-            "images/Cuộn rào công trình/cuon-chia-lan-duong (7).png",
-            "images/Cuộn rào công trình/cuon-chia-lan-duong (8).png"
+            "../images/Cuộn rào công trình/cuon-chia-lan-duong (1).png",
+            "../images/Cuộn rào công trình/cuon-chia-lan-duong (2).png",
+            "../images/Cuộn rào công trình/cuon-chia-lan-duong (3).png",
+            "../images/Cuộn rào công trình/cuon-chia-lan-duong (4).png",
+            "../images/Cuộn rào công trình/cuon-chia-lan-duong (5).png",
+            "../images/Cuộn rào công trình/cuon-chia-lan-duong (6).png",
+            "../images/Cuộn rào công trình/cuon-chia-lan-duong (7).png",
+            "../images/Cuộn rào công trình/cuon-chia-lan-duong (8).png"
         ]
     },
     "CàVạtVeBảoVệ": {
         "title": "Cà Vạt, Ve Bảo Vệ",
         "cat": "accessories",
         "imgs": [
-            "images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png",
-            "images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (2).png",
-            "images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (3).png",
-            "images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (4).png"
+            "../images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png",
+            "../images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (2).png",
+            "../images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (3).png",
+            "../images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (4).png"
         ]
     },
     "CầuVaiBảoVệ": {
         "title": "Cầu Vai Bảo Vệ",
         "cat": "accessories",
         "imgs": [
-            "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png",
-            "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (2).png",
-            "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (3).png",
-            "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (4).png",
-            "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (5).png"
+            "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png",
+            "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (2).png",
+            "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (3).png",
+            "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (4).png",
+            "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (5).png"
         ]
     },
     "Cọcgiaothôngcộtchialànđường": {
         "title": "Cọc giao thông-cột chia làn đường",
         "cat": "safety",
         "imgs": [
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (1).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (10).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (11).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (12).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (13).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (14).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (15).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (2).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (3).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (4).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (5).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (6).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (7).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (8).png",
-            "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (9).png"
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (1).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (10).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (11).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (12).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (13).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (14).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (15).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (2).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (3).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (4).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (5).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (6).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (7).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (8).png",
+            "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (9).png"
         ]
     },
     "Dâyantoàn": {
         "title": "Dây an toàn",
         "cat": "safety",
         "imgs": [
-            "images/Dây an toàn/dN-n-toN (1).png",
-            "images/Dây an toàn/dN-n-toN (10).png",
-            "images/Dây an toàn/dN-n-toN (11).png",
-            "images/Dây an toàn/dN-n-toN (12).png",
-            "images/Dây an toàn/dN-n-toN (13).png",
-            "images/Dây an toàn/dN-n-toN (14).png",
-            "images/Dây an toàn/dN-n-toN (15).png",
-            "images/Dây an toàn/dN-n-toN (16).png",
-            "images/Dây an toàn/dN-n-toN (17).png",
-            "images/Dây an toàn/dN-n-toN (18).png",
-            "images/Dây an toàn/dN-n-toN (19).png",
-            "images/Dây an toàn/dN-n-toN (2).png",
-            "images/Dây an toàn/dN-n-toN (20).png",
-            "images/Dây an toàn/dN-n-toN (21).png",
-            "images/Dây an toàn/dN-n-toN (22).png",
-            "images/Dây an toàn/dN-n-toN (23).png",
-            "images/Dây an toàn/dN-n-toN (24).png",
-            "images/Dây an toàn/dN-n-toN (3).png",
-            "images/Dây an toàn/dN-n-toN (4).png",
-            "images/Dây an toàn/dN-n-toN (5).png",
-            "images/Dây an toàn/dN-n-toN (6).png",
-            "images/Dây an toàn/dN-n-toN (7).png",
-            "images/Dây an toàn/dN-n-toN (8).png",
-            "images/Dây an toàn/dN-n-toN (9).png"
+            "../images/Dây an toàn/dN-n-toN (1).png",
+            "../images/Dây an toàn/dN-n-toN (10).png",
+            "../images/Dây an toàn/dN-n-toN (11).png",
+            "../images/Dây an toàn/dN-n-toN (12).png",
+            "../images/Dây an toàn/dN-n-toN (13).png",
+            "../images/Dây an toàn/dN-n-toN (14).png",
+            "../images/Dây an toàn/dN-n-toN (15).png",
+            "../images/Dây an toàn/dN-n-toN (16).png",
+            "../images/Dây an toàn/dN-n-toN (17).png",
+            "../images/Dây an toàn/dN-n-toN (18).png",
+            "../images/Dây an toàn/dN-n-toN (19).png",
+            "../images/Dây an toàn/dN-n-toN (2).png",
+            "../images/Dây an toàn/dN-n-toN (20).png",
+            "../images/Dây an toàn/dN-n-toN (21).png",
+            "../images/Dây an toàn/dN-n-toN (22).png",
+            "../images/Dây an toàn/dN-n-toN (23).png",
+            "../images/Dây an toàn/dN-n-toN (24).png",
+            "../images/Dây an toàn/dN-n-toN (3).png",
+            "../images/Dây an toàn/dN-n-toN (4).png",
+            "../images/Dây an toàn/dN-n-toN (5).png",
+            "../images/Dây an toàn/dN-n-toN (6).png",
+            "../images/Dây an toàn/dN-n-toN (7).png",
+            "../images/Dây an toàn/dN-n-toN (8).png",
+            "../images/Dây an toàn/dN-n-toN (9).png"
         ]
     },
     "DâyAnToànToànThân": {
         "title": "Dây An Toàn Toàn Thân",
         "cat": "safety",
         "imgs": [
-            "images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (1).png",
-            "images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (2).png",
-            "images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (3).png",
-            "images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (4).png"
+            "../images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (1).png",
+            "../images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (2).png",
+            "../images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (3).png",
+            "../images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (4).png"
         ]
     },
     "DâythắtlưngbảovệSecurity": {
         "title": "Dây thắt lưng bảo vệ Security",
         "cat": "accessories",
         "imgs": [
-            "images/Dây thắt lưng bảo vệ Security/day-that-llung.png"
+            "../images/Dây thắt lưng bảo vệ Security/day-that-llung.png"
         ]
     },
     "Gangtaybảohộ": {
         "title": "Gang tay bảo hộ",
         "cat": "safety",
         "imgs": [
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (1).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (10).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (11).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (12).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (13).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (14).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (15).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (16).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (17).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (18).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (19).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (2).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (20).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (21).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (22).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (23).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (24).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (25).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (26).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (27).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (3).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (4).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (5).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (6).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (7).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (8).png",
-            "images/Gang tay bảo hộ/gang-tay-bao-ho (9).png"
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (1).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (10).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (11).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (12).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (13).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (14).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (15).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (16).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (17).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (18).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (19).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (2).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (20).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (21).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (22).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (23).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (24).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (25).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (26).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (27).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (3).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (4).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (5).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (6).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (7).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (8).png",
+            "../images/Gang tay bảo hộ/gang-tay-bao-ho (9).png"
         ]
     },
     "Giàybảohộlaođộng": {
         "title": "Giày bảo hộ lao động",
         "cat": "shoes",
         "imgs": [
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (1).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (10).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (11).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (12).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (13).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (14).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (2).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (3).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (4).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (5).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (6).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (7).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (8).png",
-            "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (9).png"
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (1).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (10).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (11).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (12).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (13).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (14).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (2).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (3).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (4).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (5).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (6).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (7).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (8).png",
+            "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (9).png"
         ]
     },
     "GiàydabảovệCóbuộcdây": {
         "title": "Giày da bảo vệ - Có buộc dây",
         "cat": "shoes",
         "imgs": [
-            "images/Giày da bảo vệ - Có buộc dây/day-bao-ve (1).png",
-            "images/Giày da bảo vệ - Có buộc dây/day-bao-ve (2).png",
-            "images/Giày da bảo vệ - Có buộc dây/day-bao-ve (3).png",
-            "images/Giày da bảo vệ - Có buộc dây/day-bao-ve (4).png"
+            "../images/Giày da bảo vệ - Có buộc dây/day-bao-ve (1).png",
+            "../images/Giày da bảo vệ - Có buộc dây/day-bao-ve (2).png",
+            "../images/Giày da bảo vệ - Có buộc dây/day-bao-ve (3).png",
+            "../images/Giày da bảo vệ - Có buộc dây/day-bao-ve (4).png"
         ]
     },
     "GiàydabảovệKhôngbuộcdây": {
         "title": "Giày da bảo vệ - Không buộc dây",
         "cat": "shoes",
         "imgs": [
-            "images/Giày da bảo vệ - Không buộc dây/day-bao-ve.png"
+            "../images/Giày da bảo vệ - Không buộc dây/day-bao-ve.png"
         ]
     },
     "GậycaosuDùicuibảovệ": {
         "title": "Gậy cao su - Dùi cui bảo vệ",
         "cat": "tools",
         "imgs": [
-            "images/Gậy cao su - Dùi cui bảo vệ/dui-cui-bao-ve.png"
+            "../images/Gậy cao su - Dùi cui bảo vệ/dui-cui-bao-ve.png"
         ]
     },
     "Gậygiaothông": {
         "title": "Gậy giao thông",
         "cat": "tools",
         "imgs": [
-            "images/Gậy giao thông/gay-giao-thong.png"
+            "../images/Gậy giao thông/gay-giao-thong.png"
         ]
     },
     "HệThốngBáoCháy": {
         "title": "Hệ Thống Báo Cháy",
         "cat": "safety",
         "imgs": [
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (1).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (10).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (11).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (12).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (13).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (14).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (2).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (3).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (4).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (5).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (6).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (7).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (8).png",
-            "images/Hệ Thống Báo Cháy/he-thong-bao-chay (9).png"
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (1).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (10).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (11).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (12).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (13).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (14).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (2).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (3).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (4).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (5).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (6).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (7).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (8).png",
+            "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (9).png"
         ]
     },
     "Kínhbảohộ&Khẩutrang": {
         "title": "Kính bảo hộ & Khẩu trang",
         "cat": "safety",
         "imgs": [
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (10).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (11).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (12).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (13).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (14).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (15).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (16).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (17).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (18).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (19).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (2).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (20).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (3).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (4).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (5).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (6).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (7).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (8).png",
-            "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (9).png"
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (10).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (11).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (12).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (13).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (14).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (15).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (16).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (17).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (18).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (19).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (2).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (20).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (3).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (4).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (5).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (6).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (7).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (8).png",
+            "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (9).png"
         ]
     },
     "Mũbảohộlaođộng": {
         "title": "Mũ bảo hộ lao động",
         "cat": "safety",
         "imgs": [
-            "images/Mũ bảo hộ lao động/mu-bao-ho (1).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (10).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (11).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (12).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (2).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (3).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (4).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (5).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (6).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (7).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (8).png",
-            "images/Mũ bảo hộ lao động/mu-bao-ho (9).png"
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (1).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (10).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (11).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (12).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (2).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (3).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (4).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (5).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (6).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (7).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (8).png",
+            "../images/Mũ bảo hộ lao động/mu-bao-ho (9).png"
         ]
     },
     "Mặtnạhànbảohộlaođộng": {
         "title": "Mặt nạ hàn bảo hộ lao động",
         "cat": "safety",
         "imgs": [
-            "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (1).png",
-            "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (2).png",
-            "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (3).png",
-            "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (4).png",
-            "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (5).png",
-            "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (6).png",
-            "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (7).png",
-            "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (8).png"
+            "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (1).png",
+            "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (2).png",
+            "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (3).png",
+            "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (4).png",
+            "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (5).png",
+            "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (6).png",
+            "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (7).png",
+            "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (8).png"
         ]
     },
     "MặtNạPhòngĐộc": {
         "title": "Mặt Nạ Phòng Độc",
         "cat": "safety",
         "imgs": [
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (1).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (10).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (11).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (12).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (13).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (14).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (15).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (2).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (3).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (4).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (5).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (6).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (7).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (8).png",
-            "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (9).png"
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (1).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (10).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (11).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (12).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (13).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (14).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (15).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (2).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (3).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (4).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (5).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (6).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (7).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (8).png",
+            "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (9).png"
         ]
     },
     "NónSaoBảoVệ": {
         "title": "Nón , Sao Bảo Vệ",
         "cat": "accessories",
         "imgs": [
-            "images/Nón , Sao Bảo Vệ/non-bao-ve-2.png",
-            "images/Nón , Sao Bảo Vệ/non-bao-ve.png"
+            "../images/Nón , Sao Bảo Vệ/non-bao-ve-2.png",
+            "../images/Nón , Sao Bảo Vệ/non-bao-ve.png"
         ]
     },
     "Nónvảilướitrùm": {
         "title": "Nón vải lưới trùm",
         "cat": "accessories",
         "imgs": [
-            "images/Nón vải lưới trùm/non-vai-luoi-trum (1).png",
-            "images/Nón vải lưới trùm/non-vai-luoi-trum (2).png",
-            "images/Nón vải lưới trùm/non-vai-luoi-trum (3).png",
-            "images/Nón vải lưới trùm/non-vai-luoi-trum (4).png"
+            "../images/Nón vải lưới trùm/non-vai-luoi-trum (1).png",
+            "../images/Nón vải lưới trùm/non-vai-luoi-trum (2).png",
+            "../images/Nón vải lưới trùm/non-vai-luoi-trum (3).png",
+            "../images/Nón vải lưới trùm/non-vai-luoi-trum (4).png"
         ]
     },
     "Nútchốngồn": {
         "title": "Nút chống ồn",
         "cat": "safety",
         "imgs": [
-            "images/Nút chống ồn/nut-lao-dong (1).png",
-            "images/Nút chống ồn/nut-lao-dong (2).png",
-            "images/Nút chống ồn/nut-lao-dong (3).png",
-            "images/Nút chống ồn/nut-lao-dong (4).png",
-            "images/Nút chống ồn/nut-lao-dong (5).png",
-            "images/Nút chống ồn/nut-lao-dong (6).png",
-            "images/Nút chống ồn/nut-lao-dong (7).png",
-            "images/Nút chống ồn/nut-lao-dong (8).png"
+            "../images/Nút chống ồn/nut-lao-dong (1).png",
+            "../images/Nút chống ồn/nut-lao-dong (2).png",
+            "../images/Nút chống ồn/nut-lao-dong (3).png",
+            "../images/Nút chống ồn/nut-lao-dong (4).png",
+            "../images/Nút chống ồn/nut-lao-dong (5).png",
+            "../images/Nút chống ồn/nut-lao-dong (6).png",
+            "../images/Nút chống ồn/nut-lao-dong (7).png",
+            "../images/Nút chống ồn/nut-lao-dong (8).png"
         ]
     },
     "NộiquyTiêuđềCấmlửaCấmhútthuốc": {
         "title": "Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc",
         "cat": "safety",
         "imgs": [
-            "images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (1).png",
-            "images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (2).png",
-            "images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (3).png",
-            "images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (4).png"
+            "../images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (1).png",
+            "../images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (2).png",
+            "../images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (3).png",
+            "../images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (4).png"
         ]
     },
     "ThangThoátHiểmCuốn": {
         "title": "Thang Thoát Hiểm Cuốn",
         "cat": "safety",
         "imgs": [
-            "images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (1).png",
-            "images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (2).png",
-            "images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (3).png"
+            "../images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (1).png",
+            "../images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (2).png",
+            "../images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (3).png"
         ]
     },
     "ThiếtbịPCCC&Antoàn": {
         "title": "Thiết bị PCCC & An toàn",
         "cat": "safety",
         "imgs": [
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (10).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (11).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (12).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (13).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (14).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (15).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (16).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (2).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (3).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (4).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (5).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (6).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (7).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (8).png",
-            "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (9).png"
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (10).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (11).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (12).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (13).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (14).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (15).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (16).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (2).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (3).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (4).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (5).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (6).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (7).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (8).png",
+            "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (9).png"
         ]
     },
     "Thùngđựngrác": {
         "title": "Thùng đựng rác",
         "cat": "tools",
         "imgs": [
-            "images/Thùng đựng rác/thung-dung-rac (1).png",
-            "images/Thùng đựng rác/thung-dung-rac (10).png",
-            "images/Thùng đựng rác/thung-dung-rac (11).png",
-            "images/Thùng đựng rác/thung-dung-rac (12).png",
-            "images/Thùng đựng rác/thung-dung-rac (2).png",
-            "images/Thùng đựng rác/thung-dung-rac (3).png",
-            "images/Thùng đựng rác/thung-dung-rac (4).png",
-            "images/Thùng đựng rác/thung-dung-rac (5).png",
-            "images/Thùng đựng rác/thung-dung-rac (6).png",
-            "images/Thùng đựng rác/thung-dung-rac (7).png",
-            "images/Thùng đựng rác/thung-dung-rac (8).png",
-            "images/Thùng đựng rác/thung-dung-rac (9).png"
+            "../images/Thùng đựng rác/thung-dung-rac (1).png",
+            "../images/Thùng đựng rác/thung-dung-rac (10).png",
+            "../images/Thùng đựng rác/thung-dung-rac (11).png",
+            "../images/Thùng đựng rác/thung-dung-rac (12).png",
+            "../images/Thùng đựng rác/thung-dung-rac (2).png",
+            "../images/Thùng đựng rác/thung-dung-rac (3).png",
+            "../images/Thùng đựng rác/thung-dung-rac (4).png",
+            "../images/Thùng đựng rác/thung-dung-rac (5).png",
+            "../images/Thùng đựng rác/thung-dung-rac (6).png",
+            "../images/Thùng đựng rác/thung-dung-rac (7).png",
+            "../images/Thùng đựng rác/thung-dung-rac (8).png",
+            "../images/Thùng đựng rác/thung-dung-rac (9).png"
         ]
     },
     "Áocásấumècaocấpnhiều": {
         "title": "Áo cá sấu mè cao cấp nhiều",
         "cat": "uniform",
         "imgs": [
-            "images/Áo cá sấu mè cao cấp nhiều/do.png",
-            "images/Áo cá sấu mè cao cấp nhiều/luc-lam.png",
-            "images/Áo cá sấu mè cao cấp nhiều/trang.png",
-            "images/Áo cá sấu mè cao cấp nhiều/vang-nhat.png",
-            "images/Áo cá sấu mè cao cấp nhiều/vang.png",
-            "images/Áo cá sấu mè cao cấp nhiều/xang-duong.png",
-            "images/Áo cá sấu mè cao cấp nhiều/xanh-luc.png",
-            "images/Áo cá sấu mè cao cấp nhiều/xanh.png"
+            "../images/Áo cá sấu mè cao cấp nhiều/do.png",
+            "../images/Áo cá sấu mè cao cấp nhiều/luc-lam.png",
+            "../images/Áo cá sấu mè cao cấp nhiều/trang.png",
+            "../images/Áo cá sấu mè cao cấp nhiều/vang-nhat.png",
+            "../images/Áo cá sấu mè cao cấp nhiều/vang.png",
+            "../images/Áo cá sấu mè cao cấp nhiều/xang-duong.png",
+            "../images/Áo cá sấu mè cao cấp nhiều/xanh-luc.png",
+            "../images/Áo cá sấu mè cao cấp nhiều/xanh.png"
         ]
     },
     "ÁoPhảnQuang": {
@@ -417,78 +417,78 @@ const productData = {
         "title": "Đồ bảo hộ PCCC",
         "cat": "safety",
         "imgs": [
-            "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (1).png",
-            "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (2).png",
-            "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (3).png",
-            "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (4).png",
-            "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (5).png",
-            "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (6).png",
-            "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (7).png",
-            "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (8).png"
+            "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (1).png",
+            "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (2).png",
+            "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (3).png",
+            "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (4).png",
+            "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (5).png",
+            "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (6).png",
+            "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (7).png",
+            "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (8).png"
         ]
     },
     "Đồđimưaáophao": {
         "title": "Đồ đi mưa - áo phao",
         "cat": "uniform",
         "imgs": [
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (1).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (10).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (11).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (12).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (2).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (3).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (4).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (5).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (6).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (7).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (8).png",
-            "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (9).png"
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (1).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (10).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (11).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (12).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (2).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (3).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (4).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (5).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (6).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (7).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (8).png",
+            "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (9).png"
         ]
     },
     "ĐồngPhụcBảoVệ": {
         "title": "Đồng Phục Bảo Vệ",
         "cat": "uniform",
         "imgs": [
-            "images/Đồng Phục Bảo Vệ/ao-trang-bao-ve.png",
-            "images/Đồng Phục Bảo Vệ/ao-xanh-bao-ve.png",
-            "images/Đồng Phục Bảo Vệ/ao-xanh-luc-bao-ve.png"
+            "../images/Đồng Phục Bảo Vệ/ao-trang-bao-ve.png",
+            "../images/Đồng Phục Bảo Vệ/ao-xanh-bao-ve.png",
+            "../images/Đồng Phục Bảo Vệ/ao-xanh-luc-bao-ve.png"
         ]
     },
     "ĐồngPhụcBảoVệNEW": {
         "title": "Đồng Phục Bảo Vệ NEW",
         "cat": "uniform",
         "imgs": [
-            "images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png",
-            "images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (2).png",
-            "images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (3).png"
+            "../images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png",
+            "../images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (2).png",
+            "../images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (3).png"
         ]
     },
     "Ủngbảohộlaođộng": {
         "title": "Ủng bảo hộ lao động",
         "cat": "shoes",
         "imgs": [
-            "images/Ủng bảo hộ lao động/ung-bao-ho (10).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (11).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (12).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (13).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (14).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (15).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (16).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (17).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (18).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (19).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (20).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (21).png",
-            "images/Ủng bảo hộ lao động/ung-bao-ho (22).png",
-            "images/Ủng bảo hộ lao động/ung-lao-dong (1).png",
-            "images/Ủng bảo hộ lao động/ung-lao-dong (2).png",
-            "images/Ủng bảo hộ lao động/ung-lao-dong (3).png",
-            "images/Ủng bảo hộ lao động/ung-lao-dong (4).png",
-            "images/Ủng bảo hộ lao động/ung-lao-dong (5).png",
-            "images/Ủng bảo hộ lao động/ung-lao-dong (6).png",
-            "images/Ủng bảo hộ lao động/ung-lao-dong (7).png",
-            "images/Ủng bảo hộ lao động/ung-lao-dong (8).png",
-            "images/Ủng bảo hộ lao động/ung-lao-dong (9).png"
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (10).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (11).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (12).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (13).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (14).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (15).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (16).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (17).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (18).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (19).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (20).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (21).png",
+            "../images/Ủng bảo hộ lao động/ung-bao-ho (22).png",
+            "../images/Ủng bảo hộ lao động/ung-lao-dong (1).png",
+            "../images/Ủng bảo hộ lao động/ung-lao-dong (2).png",
+            "../images/Ủng bảo hộ lao động/ung-lao-dong (3).png",
+            "../images/Ủng bảo hộ lao động/ung-lao-dong (4).png",
+            "../images/Ủng bảo hộ lao động/ung-lao-dong (5).png",
+            "../images/Ủng bảo hộ lao động/ung-lao-dong (6).png",
+            "../images/Ủng bảo hộ lao động/ung-lao-dong (7).png",
+            "../images/Ủng bảo hộ lao động/ung-lao-dong (8).png",
+            "../images/Ủng bảo hộ lao động/ung-lao-dong (9).png"
         ]
     }
 };
@@ -752,7 +752,7 @@ function initCart() {
         message += '\nTổng cộng: Liên hệ báo giá\n\nVui lòng tư vấn cho tôi!';
 
         const encodedMsg = encodeURIComponent(message);
-        const zaloUrl = `https://zalo.me/0931160818?text=${encodedMsg}`;
+        const zaloUrl = `https://zalo.me/0349781300?text=${encodedMsg}`;
         window.open(zaloUrl, '_blank');
     };
 
@@ -942,7 +942,7 @@ function applyTranslations() {
     const dict = translations[currentLang];
     
     // Navbar links
-    const navItems = ['home', 'products', 'news', 'contact'];
+    const navItems = ['home', 'about', 'products', 'why', 'testimonials', 'news', 'contact'];
     navItems.forEach(item => {
         const el = document.getElementById(`trans-nav-${item}`);
         if (el) el.innerText = dict[`nav-${item}`];

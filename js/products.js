@@ -4,7 +4,7 @@ const products = [
     "title": "Biển Báo An Toàn BLC-001",
     "cat": "cat1",
     "catLabel": "Bảng cảnh báo",
-    "img": "images/Bảng cảnh báo/bang-bao-cao (1).png",
+    "img": "../images/Bảng cảnh báo/bang-bao-cao (1).png",
     "desc": "Biển báo an toàn phản quang cao cấp, chữ in sắc nét chống phai màu. Cảnh báo nguy hiểm hiệu quả tại công trường."
   },
   {
@@ -12,7 +12,7 @@ const products = [
     "title": "Biển Báo An Toàn BLC-002",
     "cat": "cat1",
     "catLabel": "Bảng cảnh báo",
-    "img": "images/Bảng cảnh báo/bang-bao-cao (2).png",
+    "img": "../images/Bảng cảnh báo/bang-bao-cao (2).png",
     "desc": "Bảng cảnh báo theo tiêu chuẩn an toàn lao động, chất liệu bền bỉ chịu được thời tiết khắc nghiệt ngoài trời."
   },
   {
@@ -20,7 +20,7 @@ const products = [
     "title": "Biển Báo An Toàn BLC-003",
     "cat": "cat1",
     "catLabel": "Bảng cảnh báo",
-    "img": "images/Bảng cảnh báo/bang-bao-cao (3).png",
+    "img": "../images/Bảng cảnh báo/bang-bao-cao (3).png",
     "desc": "Thiết kế bắt mắt, dễ dàng nhận diện từ xa giúp đảm bảo an toàn tối đa cho khu vực thi công và nhà máy."
   },
   {
@@ -28,7 +28,7 @@ const products = [
     "title": "Biển Báo An Toàn BLC-004",
     "cat": "cat1",
     "catLabel": "Bảng cảnh báo",
-    "img": "images/Bảng cảnh báo/bang-bao-cao (4).png",
+    "img": "../images/Bảng cảnh báo/bang-bao-cao (4).png",
     "desc": "Biển báo an toàn phản quang cao cấp, chữ in sắc nét chống phai màu. Cảnh báo nguy hiểm hiệu quả tại công trường."
   },
   {
@@ -36,7 +36,7 @@ const products = [
     "title": "Biển Báo An Toàn BLC-005",
     "cat": "cat1",
     "catLabel": "Bảng cảnh báo",
-    "img": "images/Bảng cảnh báo/bang-bao-cao (5).png",
+    "img": "../images/Bảng cảnh báo/bang-bao-cao (5).png",
     "desc": "Bảng cảnh báo theo tiêu chuẩn an toàn lao động, chất liệu bền bỉ chịu được thời tiết khắc nghiệt ngoài trời."
   },
   {
@@ -44,7 +44,7 @@ const products = [
     "title": "Biển Báo An Toàn BLC-006",
     "cat": "cat1",
     "catLabel": "Bảng cảnh báo",
-    "img": "images/Bảng cảnh báo/bang-bao-cao (6).png",
+    "img": "../images/Bảng cảnh báo/bang-bao-cao (6).png",
     "desc": "Thiết kế bắt mắt, dễ dàng nhận diện từ xa giúp đảm bảo an toàn tối đa cho khu vực thi công và nhà máy."
   },
   {
@@ -52,7 +52,7 @@ const products = [
     "title": "Rào Chắn Công Trình BLC-001",
     "cat": "cat2",
     "catLabel": "Cuộn rào công trình",
-    "img": "images/Cuộn rào công trình/cuon-chia-lan-duong (1).png",
+    "img": "../images/Cuộn rào công trình/cuon-chia-lan-duong (1).png",
     "desc": "Rào chắn công trình chất lượng cao, màu sắc nổi bật dễ nhận biết. Dùng để khoanh vùng và cách ly khu vực nguy hiểm."
   },
   {
@@ -60,7 +60,7 @@ const products = [
     "title": "Rào Chắn Công Trình BLC-002",
     "cat": "cat2",
     "catLabel": "Cuộn rào công trình",
-    "img": "images/Cuộn rào công trình/cuon-chia-lan-duong (2).png",
+    "img": "../images/Cuộn rào công trình/cuon-chia-lan-duong (2).png",
     "desc": "Sản phẩm chịu lực tốt, dễ dàng triển khai và thu gọn. Đảm bảo an toàn tuyệt đối cho người đi đường và công nhân."
   },
   {
@@ -68,7 +68,7 @@ const products = [
     "title": "Rào Chắn Công Trình BLC-003",
     "cat": "cat2",
     "catLabel": "Cuộn rào công trình",
-    "img": "images/Cuộn rào công trình/cuon-chia-lan-duong (3).png",
+    "img": "../images/Cuộn rào công trình/cuon-chia-lan-duong (3).png",
     "desc": "Chất liệu siêu bền, chống rách hiệu quả. Sử dụng rộng rãi trong các dự án xây dựng và sửa chữa đô thị."
   },
   {
@@ -76,7 +76,7 @@ const products = [
     "title": "Rào Chắn Công Trình BLC-004",
     "cat": "cat2",
     "catLabel": "Cuộn rào công trình",
-    "img": "images/Cuộn rào công trình/cuon-chia-lan-duong (4).png",
+    "img": "../images/Cuộn rào công trình/cuon-chia-lan-duong (4).png",
     "desc": "Rào chắn công trình chất lượng cao, màu sắc nổi bật dễ nhận biết. Dùng để khoanh vùng và cách ly khu vực nguy hiểm."
   },
   {
@@ -84,7 +84,7 @@ const products = [
     "title": "Rào Chắn Công Trình BLC-005",
     "cat": "cat2",
     "catLabel": "Cuộn rào công trình",
-    "img": "images/Cuộn rào công trình/cuon-chia-lan-duong (5).png",
+    "img": "../images/Cuộn rào công trình/cuon-chia-lan-duong (5).png",
     "desc": "Sản phẩm chịu lực tốt, dễ dàng triển khai và thu gọn. Đảm bảo an toàn tuyệt đối cho người đi đường và công nhân."
   },
   {
@@ -92,7 +92,7 @@ const products = [
     "title": "Rào Chắn Công Trình BLC-006",
     "cat": "cat2",
     "catLabel": "Cuộn rào công trình",
-    "img": "images/Cuộn rào công trình/cuon-chia-lan-duong (6).png",
+    "img": "../images/Cuộn rào công trình/cuon-chia-lan-duong (6).png",
     "desc": "Chất liệu siêu bền, chống rách hiệu quả. Sử dụng rộng rãi trong các dự án xây dựng và sửa chữa đô thị."
   },
   {
@@ -100,7 +100,7 @@ const products = [
     "title": "Rào Chắn Công Trình BLC-007",
     "cat": "cat2",
     "catLabel": "Cuộn rào công trình",
-    "img": "images/Cuộn rào công trình/cuon-chia-lan-duong (7).png",
+    "img": "../images/Cuộn rào công trình/cuon-chia-lan-duong (7).png",
     "desc": "Rào chắn công trình chất lượng cao, màu sắc nổi bật dễ nhận biết. Dùng để khoanh vùng và cách ly khu vực nguy hiểm."
   },
   {
@@ -108,7 +108,7 @@ const products = [
     "title": "Rào Chắn Công Trình BLC-008",
     "cat": "cat2",
     "catLabel": "Cuộn rào công trình",
-    "img": "images/Cuộn rào công trình/cuon-chia-lan-duong (8).png",
+    "img": "../images/Cuộn rào công trình/cuon-chia-lan-duong (8).png",
     "desc": "Sản phẩm chịu lực tốt, dễ dàng triển khai và thu gọn. Đảm bảo an toàn tuyệt đối cho người đi đường và công nhân."
   },
   {
@@ -116,7 +116,7 @@ const products = [
     "title": "Phụ Kiện Đồng Phục BLC-001",
     "cat": "cat3",
     "catLabel": "Cà Vạt, Ve Bảo Vệ",
-    "img": "images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png",
+    "img": "../images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -124,7 +124,7 @@ const products = [
     "title": "Phụ Kiện Đồng Phục BLC-002",
     "cat": "cat3",
     "catLabel": "Cà Vạt, Ve Bảo Vệ",
-    "img": "images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (2).png",
+    "img": "../images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -132,7 +132,7 @@ const products = [
     "title": "Phụ Kiện Đồng Phục BLC-003",
     "cat": "cat3",
     "catLabel": "Cà Vạt, Ve Bảo Vệ",
-    "img": "images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (3).png",
+    "img": "../images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -140,7 +140,7 @@ const products = [
     "title": "Phụ Kiện Đồng Phục BLC-004",
     "cat": "cat3",
     "catLabel": "Cà Vạt, Ve Bảo Vệ",
-    "img": "images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (4).png",
+    "img": "../images/Cà Vạt, Ve Bảo Vệ/ca-vat-vai-bao-ve (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -148,7 +148,7 @@ const products = [
     "title": "Cầu Vai Phân Cấp BLC-001",
     "cat": "cat4",
     "catLabel": "Cầu Vai Bảo Vệ",
-    "img": "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png",
+    "img": "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -156,7 +156,7 @@ const products = [
     "title": "Cầu Vai Phân Cấp BLC-002",
     "cat": "cat4",
     "catLabel": "Cầu Vai Bảo Vệ",
-    "img": "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (2).png",
+    "img": "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -164,7 +164,7 @@ const products = [
     "title": "Cầu Vai Phân Cấp BLC-003",
     "cat": "cat4",
     "catLabel": "Cầu Vai Bảo Vệ",
-    "img": "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (3).png",
+    "img": "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -172,7 +172,7 @@ const products = [
     "title": "Cầu Vai Phân Cấp BLC-004",
     "cat": "cat4",
     "catLabel": "Cầu Vai Bảo Vệ",
-    "img": "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (4).png",
+    "img": "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -180,7 +180,7 @@ const products = [
     "title": "Cầu Vai Phân Cấp BLC-005",
     "cat": "cat4",
     "catLabel": "Cầu Vai Bảo Vệ",
-    "img": "images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (5).png",
+    "img": "../images/Cầu Vai Bảo Vệ/cau-vai-bao-ve (5).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -188,7 +188,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-001",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (1).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (1).png",
     "desc": "Cọc tiêu giao thông có dán màng phản quang cao cấp, giúp phân làn và điều tiết giao thông an toàn cả ngày lẫn đêm."
   },
   {
@@ -196,7 +196,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-002",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (10).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (10).png",
     "desc": "Thiết kế chắc chắn, chịu va đập tốt và dễ dàng xếp chồng để bảo quản hoặc di chuyển."
   },
   {
@@ -204,7 +204,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-003",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (11).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (11).png",
     "desc": "Sản phẩm phổ biến dùng tại các công trình, bãi đỗ xe và tuyến đường, tăng cường khả năng cảnh báo chướng ngại vật."
   },
   {
@@ -212,7 +212,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-004",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (12).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (12).png",
     "desc": "Cọc tiêu giao thông có dán màng phản quang cao cấp, giúp phân làn và điều tiết giao thông an toàn cả ngày lẫn đêm."
   },
   {
@@ -220,7 +220,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-005",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (13).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (13).png",
     "desc": "Thiết kế chắc chắn, chịu va đập tốt và dễ dàng xếp chồng để bảo quản hoặc di chuyển."
   },
   {
@@ -228,7 +228,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-006",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (14).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (14).png",
     "desc": "Sản phẩm phổ biến dùng tại các công trình, bãi đỗ xe và tuyến đường, tăng cường khả năng cảnh báo chướng ngại vật."
   },
   {
@@ -236,7 +236,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-007",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (15).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (15).png",
     "desc": "Cọc tiêu giao thông có dán màng phản quang cao cấp, giúp phân làn và điều tiết giao thông an toàn cả ngày lẫn đêm."
   },
   {
@@ -244,7 +244,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-008",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (2).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (2).png",
     "desc": "Thiết kế chắc chắn, chịu va đập tốt và dễ dàng xếp chồng để bảo quản hoặc di chuyển."
   },
   {
@@ -252,7 +252,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-009",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (3).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (3).png",
     "desc": "Sản phẩm phổ biến dùng tại các công trình, bãi đỗ xe và tuyến đường, tăng cường khả năng cảnh báo chướng ngại vật."
   },
   {
@@ -260,7 +260,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-010",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (4).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (4).png",
     "desc": "Cọc tiêu giao thông có dán màng phản quang cao cấp, giúp phân làn và điều tiết giao thông an toàn cả ngày lẫn đêm."
   },
   {
@@ -268,7 +268,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-011",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (5).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (5).png",
     "desc": "Thiết kế chắc chắn, chịu va đập tốt và dễ dàng xếp chồng để bảo quản hoặc di chuyển."
   },
   {
@@ -276,7 +276,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-012",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (6).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (6).png",
     "desc": "Sản phẩm phổ biến dùng tại các công trình, bãi đỗ xe và tuyến đường, tăng cường khả năng cảnh báo chướng ngại vật."
   },
   {
@@ -284,7 +284,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-013",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (7).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (7).png",
     "desc": "Cọc tiêu giao thông có dán màng phản quang cao cấp, giúp phân làn và điều tiết giao thông an toàn cả ngày lẫn đêm."
   },
   {
@@ -292,7 +292,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-014",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (8).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (8).png",
     "desc": "Thiết kế chắc chắn, chịu va đập tốt và dễ dàng xếp chồng để bảo quản hoặc di chuyển."
   },
   {
@@ -300,7 +300,7 @@ const products = [
     "title": "Cọc Tiêu Giao Thông BLC-015",
     "cat": "cat5",
     "catLabel": "Cọc giao thông-cột chia làn đường",
-    "img": "images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (9).png",
+    "img": "../images/Cọc giao thông-cột chia làn đường/coc-giao-thong-cot-chia-lan-duong (9).png",
     "desc": "Sản phẩm phổ biến dùng tại các công trình, bãi đỗ xe và tuyến đường, tăng cường khả năng cảnh báo chướng ngại vật."
   },
   {
@@ -308,7 +308,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-001",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (1).png",
+    "img": "../images/Dây an toàn/dN-n-toN (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -316,7 +316,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-002",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (10).png",
+    "img": "../images/Dây an toàn/dN-n-toN (10).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -324,7 +324,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-003",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (11).png",
+    "img": "../images/Dây an toàn/dN-n-toN (11).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -332,7 +332,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-004",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (12).png",
+    "img": "../images/Dây an toàn/dN-n-toN (12).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -340,7 +340,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-005",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (13).png",
+    "img": "../images/Dây an toàn/dN-n-toN (13).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -348,7 +348,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-006",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (14).png",
+    "img": "../images/Dây an toàn/dN-n-toN (14).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -356,7 +356,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-007",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (15).png",
+    "img": "../images/Dây an toàn/dN-n-toN (15).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -364,7 +364,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-008",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (16).png",
+    "img": "../images/Dây an toàn/dN-n-toN (16).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -372,7 +372,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-009",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (17).png",
+    "img": "../images/Dây an toàn/dN-n-toN (17).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -380,7 +380,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-010",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (18).png",
+    "img": "../images/Dây an toàn/dN-n-toN (18).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -388,7 +388,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-011",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (19).png",
+    "img": "../images/Dây an toàn/dN-n-toN (19).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -396,7 +396,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-012",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (2).png",
+    "img": "../images/Dây an toàn/dN-n-toN (2).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -404,7 +404,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-013",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (20).png",
+    "img": "../images/Dây an toàn/dN-n-toN (20).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -412,7 +412,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-014",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (21).png",
+    "img": "../images/Dây an toàn/dN-n-toN (21).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -420,7 +420,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-015",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (22).png",
+    "img": "../images/Dây an toàn/dN-n-toN (22).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -428,7 +428,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-016",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (23).png",
+    "img": "../images/Dây an toàn/dN-n-toN (23).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -436,7 +436,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-017",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (24).png",
+    "img": "../images/Dây an toàn/dN-n-toN (24).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -444,7 +444,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-018",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (3).png",
+    "img": "../images/Dây an toàn/dN-n-toN (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -452,7 +452,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-019",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (4).png",
+    "img": "../images/Dây an toàn/dN-n-toN (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -460,7 +460,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-020",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (5).png",
+    "img": "../images/Dây an toàn/dN-n-toN (5).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -468,7 +468,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-021",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (6).png",
+    "img": "../images/Dây an toàn/dN-n-toN (6).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -476,7 +476,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-022",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (7).png",
+    "img": "../images/Dây an toàn/dN-n-toN (7).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -484,7 +484,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-023",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (8).png",
+    "img": "../images/Dây an toàn/dN-n-toN (8).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -492,7 +492,7 @@ const products = [
     "title": "Dây Đai An Toàn BLC-024",
     "cat": "cat6",
     "catLabel": "Dây an toàn",
-    "img": "images/Dây an toàn/dN-n-toN (9).png",
+    "img": "../images/Dây an toàn/dN-n-toN (9).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -500,7 +500,7 @@ const products = [
     "title": "Dây Đai Toàn Thân BLC-001",
     "cat": "cat7",
     "catLabel": "Dây An Toàn Toàn Thân",
-    "img": "images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (1).png",
+    "img": "../images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -508,7 +508,7 @@ const products = [
     "title": "Dây Đai Toàn Thân BLC-002",
     "cat": "cat7",
     "catLabel": "Dây An Toàn Toàn Thân",
-    "img": "images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (2).png",
+    "img": "../images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -516,7 +516,7 @@ const products = [
     "title": "Dây Đai Toàn Thân BLC-003",
     "cat": "cat7",
     "catLabel": "Dây An Toàn Toàn Thân",
-    "img": "images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (3).png",
+    "img": "../images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -524,7 +524,7 @@ const products = [
     "title": "Dây Đai Toàn Thân BLC-004",
     "cat": "cat7",
     "catLabel": "Dây An Toàn Toàn Thân",
-    "img": "images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (4).png",
+    "img": "../images/Dây An Toàn Toàn Thân/day-an-toan-toan-than (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -532,7 +532,7 @@ const products = [
     "title": "Thắt Lưng Chuyên Dụng BLC-001",
     "cat": "cat8",
     "catLabel": "Dây thắt lưng bảo vệ Security",
-    "img": "images/Dây thắt lưng bảo vệ Security/day-that-llung.png",
+    "img": "../images/Dây thắt lưng bảo vệ Security/day-that-llung.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -540,7 +540,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-001",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (1).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (1).png",
     "desc": "Găng tay bảo hộ ôm sát, tạo độ bám dính cao khi cầm nắm vật dụng. Bảo vệ bàn tay an toàn."
   },
   {
@@ -548,7 +548,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-002",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (10).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (10).png",
     "desc": "Chất liệu thấm hút mồ hôi tốt, độ co giãn cao giúp linh hoạt trong từng thao tác kỹ thuật chi tiết."
   },
   {
@@ -556,7 +556,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-003",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (11).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (11).png",
     "desc": "Sử dụng rộng rãi trong cơ khí, xây dựng và sản xuất công nghiệp, đảm bảo an toàn và vệ sinh cho người lao động."
   },
   {
@@ -564,7 +564,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-004",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (12).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (12).png",
     "desc": "Găng tay bảo hộ ôm sát, tạo độ bám dính cao khi cầm nắm vật dụng. Bảo vệ bàn tay an toàn."
   },
   {
@@ -572,7 +572,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-005",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (13).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (13).png",
     "desc": "Chất liệu thấm hút mồ hôi tốt, độ co giãn cao giúp linh hoạt trong từng thao tác kỹ thuật chi tiết."
   },
   {
@@ -580,7 +580,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-006",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (14).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (14).png",
     "desc": "Sử dụng rộng rãi trong cơ khí, xây dựng và sản xuất công nghiệp, đảm bảo an toàn và vệ sinh cho người lao động."
   },
   {
@@ -588,7 +588,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-007",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (15).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (15).png",
     "desc": "Găng tay bảo hộ ôm sát, tạo độ bám dính cao khi cầm nắm vật dụng. Bảo vệ bàn tay an toàn."
   },
   {
@@ -596,7 +596,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-008",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (16).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (16).png",
     "desc": "Chất liệu thấm hút mồ hôi tốt, độ co giãn cao giúp linh hoạt trong từng thao tác kỹ thuật chi tiết."
   },
   {
@@ -604,7 +604,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-009",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (17).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (17).png",
     "desc": "Sử dụng rộng rãi trong cơ khí, xây dựng và sản xuất công nghiệp, đảm bảo an toàn và vệ sinh cho người lao động."
   },
   {
@@ -612,7 +612,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-010",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (18).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (18).png",
     "desc": "Găng tay bảo hộ ôm sát, tạo độ bám dính cao khi cầm nắm vật dụng. Bảo vệ bàn tay an toàn."
   },
   {
@@ -620,7 +620,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-011",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (19).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (19).png",
     "desc": "Chất liệu thấm hút mồ hôi tốt, độ co giãn cao giúp linh hoạt trong từng thao tác kỹ thuật chi tiết."
   },
   {
@@ -628,7 +628,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-012",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (2).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (2).png",
     "desc": "Sử dụng rộng rãi trong cơ khí, xây dựng và sản xuất công nghiệp, đảm bảo an toàn và vệ sinh cho người lao động."
   },
   {
@@ -636,7 +636,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-013",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (20).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (20).png",
     "desc": "Găng tay bảo hộ ôm sát, tạo độ bám dính cao khi cầm nắm vật dụng. Bảo vệ bàn tay an toàn."
   },
   {
@@ -644,7 +644,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-014",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (21).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (21).png",
     "desc": "Chất liệu thấm hút mồ hôi tốt, độ co giãn cao giúp linh hoạt trong từng thao tác kỹ thuật chi tiết."
   },
   {
@@ -652,7 +652,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-015",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (22).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (22).png",
     "desc": "Sử dụng rộng rãi trong cơ khí, xây dựng và sản xuất công nghiệp, đảm bảo an toàn và vệ sinh cho người lao động."
   },
   {
@@ -660,7 +660,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-016",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (23).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (23).png",
     "desc": "Găng tay bảo hộ ôm sát, tạo độ bám dính cao khi cầm nắm vật dụng. Bảo vệ bàn tay an toàn."
   },
   {
@@ -668,7 +668,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-017",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (24).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (24).png",
     "desc": "Chất liệu thấm hút mồ hôi tốt, độ co giãn cao giúp linh hoạt trong từng thao tác kỹ thuật chi tiết."
   },
   {
@@ -676,7 +676,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-018",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (25).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (25).png",
     "desc": "Sử dụng rộng rãi trong cơ khí, xây dựng và sản xuất công nghiệp, đảm bảo an toàn và vệ sinh cho người lao động."
   },
   {
@@ -684,7 +684,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-019",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (26).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (26).png",
     "desc": "Găng tay bảo hộ ôm sát, tạo độ bám dính cao khi cầm nắm vật dụng. Bảo vệ bàn tay an toàn."
   },
   {
@@ -692,7 +692,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-020",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (27).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (27).png",
     "desc": "Chất liệu thấm hút mồ hôi tốt, độ co giãn cao giúp linh hoạt trong từng thao tác kỹ thuật chi tiết."
   },
   {
@@ -700,7 +700,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-021",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (3).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (3).png",
     "desc": "Sử dụng rộng rãi trong cơ khí, xây dựng và sản xuất công nghiệp, đảm bảo an toàn và vệ sinh cho người lao động."
   },
   {
@@ -708,7 +708,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-022",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (4).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (4).png",
     "desc": "Găng tay bảo hộ ôm sát, tạo độ bám dính cao khi cầm nắm vật dụng. Bảo vệ bàn tay an toàn."
   },
   {
@@ -716,7 +716,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-023",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (5).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (5).png",
     "desc": "Chất liệu thấm hút mồ hôi tốt, độ co giãn cao giúp linh hoạt trong từng thao tác kỹ thuật chi tiết."
   },
   {
@@ -724,7 +724,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-024",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (6).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (6).png",
     "desc": "Sử dụng rộng rãi trong cơ khí, xây dựng và sản xuất công nghiệp, đảm bảo an toàn và vệ sinh cho người lao động."
   },
   {
@@ -732,7 +732,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-025",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (7).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (7).png",
     "desc": "Găng tay bảo hộ ôm sát, tạo độ bám dính cao khi cầm nắm vật dụng. Bảo vệ bàn tay an toàn."
   },
   {
@@ -740,7 +740,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-026",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (8).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (8).png",
     "desc": "Chất liệu thấm hút mồ hôi tốt, độ co giãn cao giúp linh hoạt trong từng thao tác kỹ thuật chi tiết."
   },
   {
@@ -748,7 +748,7 @@ const products = [
     "title": "Găng Tay Bảo Hộ BLC-027",
     "cat": "cat9",
     "catLabel": "Gang tay bảo hộ",
-    "img": "images/Gang tay bảo hộ/gang-tay-bao-ho (9).png",
+    "img": "../images/Gang tay bảo hộ/gang-tay-bao-ho (9).png",
     "desc": "Sử dụng rộng rãi trong cơ khí, xây dựng và sản xuất công nghiệp, đảm bảo an toàn và vệ sinh cho người lao động."
   },
   {
@@ -756,7 +756,7 @@ const products = [
     "title": "Giày An Toàn BLC-001",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (1).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (1).png",
     "desc": "Giày bảo hộ chuyên dụng, thiết kế ôm chân, thoải mái khi làm việc lâu."
   },
   {
@@ -764,7 +764,7 @@ const products = [
     "title": "Giày An Toàn BLC-002",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (10).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (10).png",
     "desc": "Đế chống trơn trượt hiệu quả trong môi trường dầu mỡ hoặc ẩm ướt. Đảm bảo tiêu chuẩn an toàn lao động khắt khe."
   },
   {
@@ -772,7 +772,7 @@ const products = [
     "title": "Giày An Toàn BLC-003",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (11).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (11).png",
     "desc": "Sản phẩm bền bỉ, thoáng khí và bảo vệ tối đa đôi chân người lao động khỏi các rủi ro tại công trường, nhà xưởng."
   },
   {
@@ -780,7 +780,7 @@ const products = [
     "title": "Giày An Toàn BLC-004",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (12).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (12).png",
     "desc": "Giày bảo hộ chuyên dụng, thiết kế ôm chân, thoải mái khi làm việc lâu."
   },
   {
@@ -788,7 +788,7 @@ const products = [
     "title": "Giày An Toàn BLC-005",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (13).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (13).png",
     "desc": "Đế chống trơn trượt hiệu quả trong môi trường dầu mỡ hoặc ẩm ướt. Đảm bảo tiêu chuẩn an toàn lao động khắt khe."
   },
   {
@@ -796,7 +796,7 @@ const products = [
     "title": "Giày An Toàn BLC-006",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (14).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (14).png",
     "desc": "Sản phẩm bền bỉ, thoáng khí và bảo vệ tối đa đôi chân người lao động khỏi các rủi ro tại công trường, nhà xưởng."
   },
   {
@@ -804,7 +804,7 @@ const products = [
     "title": "Giày An Toàn BLC-007",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (2).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (2).png",
     "desc": "Giày bảo hộ chuyên dụng, thiết kế ôm chân, thoải mái khi làm việc lâu."
   },
   {
@@ -812,7 +812,7 @@ const products = [
     "title": "Giày An Toàn BLC-008",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (3).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (3).png",
     "desc": "Đế chống trơn trượt hiệu quả trong môi trường dầu mỡ hoặc ẩm ướt. Đảm bảo tiêu chuẩn an toàn lao động khắt khe."
   },
   {
@@ -820,7 +820,7 @@ const products = [
     "title": "Giày An Toàn BLC-009",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (4).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (4).png",
     "desc": "Sản phẩm bền bỉ, thoáng khí và bảo vệ tối đa đôi chân người lao động khỏi các rủi ro tại công trường, nhà xưởng."
   },
   {
@@ -828,7 +828,7 @@ const products = [
     "title": "Giày An Toàn BLC-010",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (5).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (5).png",
     "desc": "Giày bảo hộ chuyên dụng, thiết kế ôm chân, thoải mái khi làm việc lâu."
   },
   {
@@ -836,7 +836,7 @@ const products = [
     "title": "Giày An Toàn BLC-011",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (6).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (6).png",
     "desc": "Đế chống trơn trượt hiệu quả trong môi trường dầu mỡ hoặc ẩm ướt. Đảm bảo tiêu chuẩn an toàn lao động khắt khe."
   },
   {
@@ -844,7 +844,7 @@ const products = [
     "title": "Giày An Toàn BLC-012",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (7).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (7).png",
     "desc": "Sản phẩm bền bỉ, thoáng khí và bảo vệ tối đa đôi chân người lao động khỏi các rủi ro tại công trường, nhà xưởng."
   },
   {
@@ -852,7 +852,7 @@ const products = [
     "title": "Giày An Toàn BLC-013",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (8).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (8).png",
     "desc": "Giày bảo hộ chuyên dụng, thiết kế ôm chân, thoải mái khi làm việc lâu."
   },
   {
@@ -860,7 +860,7 @@ const products = [
     "title": "Giày An Toàn BLC-014",
     "cat": "cat10",
     "catLabel": "Giày bảo hộ lao động",
-    "img": "images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (9).png",
+    "img": "../images/Giày bảo hộ lao động/giay-bao-ho-lao-dong (9).png",
     "desc": "Đế chống trơn trượt hiệu quả trong môi trường dầu mỡ hoặc ẩm ướt. Đảm bảo tiêu chuẩn an toàn lao động khắt khe."
   },
   {
@@ -868,7 +868,7 @@ const products = [
     "title": "Giày Da Đồng Phục BLC-001",
     "cat": "cat11",
     "catLabel": "Giày da bảo vệ - Có buộc dây",
-    "img": "images/Giày da bảo vệ - Có buộc dây/day-bao-ve (1).png",
+    "img": "../images/Giày da bảo vệ - Có buộc dây/day-bao-ve (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -876,7 +876,7 @@ const products = [
     "title": "Giày Da Đồng Phục BLC-002",
     "cat": "cat11",
     "catLabel": "Giày da bảo vệ - Có buộc dây",
-    "img": "images/Giày da bảo vệ - Có buộc dây/day-bao-ve (2).png",
+    "img": "../images/Giày da bảo vệ - Có buộc dây/day-bao-ve (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -884,7 +884,7 @@ const products = [
     "title": "Giày Da Đồng Phục BLC-003",
     "cat": "cat11",
     "catLabel": "Giày da bảo vệ - Có buộc dây",
-    "img": "images/Giày da bảo vệ - Có buộc dây/day-bao-ve (3).png",
+    "img": "../images/Giày da bảo vệ - Có buộc dây/day-bao-ve (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -892,7 +892,7 @@ const products = [
     "title": "Giày Da Đồng Phục BLC-004",
     "cat": "cat11",
     "catLabel": "Giày da bảo vệ - Có buộc dây",
-    "img": "images/Giày da bảo vệ - Có buộc dây/day-bao-ve (4).png",
+    "img": "../images/Giày da bảo vệ - Có buộc dây/day-bao-ve (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -900,7 +900,7 @@ const products = [
     "title": "Giày Lười Đồng Phục BLC-001",
     "cat": "cat12",
     "catLabel": "Giày da bảo vệ - Không buộc dây",
-    "img": "images/Giày da bảo vệ - Không buộc dây/day-bao-ve.png",
+    "img": "../images/Giày da bảo vệ - Không buộc dây/day-bao-ve.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -908,7 +908,7 @@ const products = [
     "title": "Gậy Tuần Tra BLC-001",
     "cat": "cat13",
     "catLabel": "Gậy cao su - Dùi cui bảo vệ",
-    "img": "images/Gậy cao su - Dùi cui bảo vệ/dui-cui-bao-ve.png",
+    "img": "../images/Gậy cao su - Dùi cui bảo vệ/dui-cui-bao-ve.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -916,7 +916,7 @@ const products = [
     "title": "Gậy Chỉ Huy Giao Thông BLC-001",
     "cat": "cat14",
     "catLabel": "Gậy giao thông",
-    "img": "images/Gậy giao thông/gay-giao-thong.png",
+    "img": "../images/Gậy giao thông/gay-giao-thong.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -924,7 +924,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-001",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (1).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -932,7 +932,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-002",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (10).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (10).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -940,7 +940,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-003",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (11).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (11).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -948,7 +948,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-004",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (12).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (12).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -956,7 +956,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-005",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (13).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (13).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -964,7 +964,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-006",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (14).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (14).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -972,7 +972,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-007",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (2).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (2).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -980,7 +980,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-008",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (3).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (3).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -988,7 +988,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-009",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (4).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (4).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -996,7 +996,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-010",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (5).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (5).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1004,7 +1004,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-011",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (6).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (6).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1012,7 +1012,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-012",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (7).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (7).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1020,7 +1020,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-013",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (8).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (8).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1028,7 +1028,7 @@ const products = [
     "title": "Thiết Bị PCCC BLC-014",
     "cat": "cat15",
     "catLabel": "Hệ Thống Báo Cháy",
-    "img": "images/Hệ Thống Báo Cháy/he-thong-bao-chay (9).png",
+    "img": "../images/Hệ Thống Báo Cháy/he-thong-bao-chay (9).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1036,7 +1036,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-001",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1044,7 +1044,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-002",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (10).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (10).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1052,7 +1052,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-003",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (11).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (11).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1060,7 +1060,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-004",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (12).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (12).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1068,7 +1068,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-005",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (13).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (13).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1076,7 +1076,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-006",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (14).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (14).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1084,7 +1084,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-007",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (15).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (15).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1092,7 +1092,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-008",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (16).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (16).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1100,7 +1100,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-009",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (17).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (17).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1108,7 +1108,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-010",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (18).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (18).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1116,7 +1116,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-011",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (19).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (19).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1124,7 +1124,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-012",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (2).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (2).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1132,7 +1132,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-013",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (20).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (20).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1140,7 +1140,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-014",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (3).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (3).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1148,7 +1148,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-015",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (4).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (4).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1156,7 +1156,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-016",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (5).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (5).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1164,7 +1164,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-017",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (6).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (6).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1172,7 +1172,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-018",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (7).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (7).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1180,7 +1180,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-019",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (8).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (8).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1188,7 +1188,7 @@ const products = [
     "title": "Thiết Bị Bảo Vệ Mặt BLC-020",
     "cat": "cat16",
     "catLabel": "Kính bảo hộ & Khẩu trang",
-    "img": "images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (9).png",
+    "img": "../images/Kính bảo hộ & Khẩu trang/kinh-bao-ho-va-khau-trang (9).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1196,7 +1196,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-001",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (1).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (1).png",
     "desc": "Mũ bảo hộ bằng nhựa cứng chịu lực va đập, thiết kế an toàn giúp làm việc ngoài trời."
   },
   {
@@ -1204,7 +1204,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-002",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (10).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (10).png",
     "desc": "Quai đeo chắc chắn, hệ thống treo bên trong có thể điều chỉnh để vừa vặn với kích cỡ đầu của người sử dụng."
   },
   {
@@ -1212,7 +1212,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-003",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (11).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (11).png",
     "desc": "Sản phẩm đạt tiêu chuẩn an toàn, bảo vệ phần đầu hiệu quả khỏi các vật rơi từ trên cao tại công trường."
   },
   {
@@ -1220,7 +1220,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-004",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (12).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (12).png",
     "desc": "Mũ bảo hộ bằng nhựa cứng chịu lực va đập, thiết kế an toàn giúp làm việc ngoài trời."
   },
   {
@@ -1228,7 +1228,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-005",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (2).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (2).png",
     "desc": "Quai đeo chắc chắn, hệ thống treo bên trong có thể điều chỉnh để vừa vặn với kích cỡ đầu của người sử dụng."
   },
   {
@@ -1236,7 +1236,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-006",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (3).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (3).png",
     "desc": "Sản phẩm đạt tiêu chuẩn an toàn, bảo vệ phần đầu hiệu quả khỏi các vật rơi từ trên cao tại công trường."
   },
   {
@@ -1244,7 +1244,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-007",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (4).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (4).png",
     "desc": "Mũ bảo hộ bằng nhựa cứng chịu lực va đập, thiết kế an toàn giúp làm việc ngoài trời."
   },
   {
@@ -1252,7 +1252,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-008",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (5).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (5).png",
     "desc": "Quai đeo chắc chắn, hệ thống treo bên trong có thể điều chỉnh để vừa vặn với kích cỡ đầu của người sử dụng."
   },
   {
@@ -1260,7 +1260,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-009",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (6).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (6).png",
     "desc": "Sản phẩm đạt tiêu chuẩn an toàn, bảo vệ phần đầu hiệu quả khỏi các vật rơi từ trên cao tại công trường."
   },
   {
@@ -1268,7 +1268,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-010",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (7).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (7).png",
     "desc": "Mũ bảo hộ bằng nhựa cứng chịu lực va đập, thiết kế an toàn giúp làm việc ngoài trời."
   },
   {
@@ -1276,7 +1276,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-011",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (8).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (8).png",
     "desc": "Quai đeo chắc chắn, hệ thống treo bên trong có thể điều chỉnh để vừa vặn với kích cỡ đầu của người sử dụng."
   },
   {
@@ -1284,7 +1284,7 @@ const products = [
     "title": "Mũ Cứng Bảo Hộ BLC-012",
     "cat": "cat17",
     "catLabel": "Mũ bảo hộ lao động",
-    "img": "images/Mũ bảo hộ lao động/mu-bao-ho (9).png",
+    "img": "../images/Mũ bảo hộ lao động/mu-bao-ho (9).png",
     "desc": "Sản phẩm đạt tiêu chuẩn an toàn, bảo vệ phần đầu hiệu quả khỏi các vật rơi từ trên cao tại công trường."
   },
   {
@@ -1292,7 +1292,7 @@ const products = [
     "title": "Mặt Nạ Hàn BLC-001",
     "cat": "cat18",
     "catLabel": "Mặt nạ hàn bảo hộ lao động",
-    "img": "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (1).png",
+    "img": "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1300,7 +1300,7 @@ const products = [
     "title": "Mặt Nạ Hàn BLC-002",
     "cat": "cat18",
     "catLabel": "Mặt nạ hàn bảo hộ lao động",
-    "img": "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (2).png",
+    "img": "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1308,7 +1308,7 @@ const products = [
     "title": "Mặt Nạ Hàn BLC-003",
     "cat": "cat18",
     "catLabel": "Mặt nạ hàn bảo hộ lao động",
-    "img": "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (3).png",
+    "img": "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1316,7 +1316,7 @@ const products = [
     "title": "Mặt Nạ Hàn BLC-004",
     "cat": "cat18",
     "catLabel": "Mặt nạ hàn bảo hộ lao động",
-    "img": "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (4).png",
+    "img": "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1324,7 +1324,7 @@ const products = [
     "title": "Mặt Nạ Hàn BLC-005",
     "cat": "cat18",
     "catLabel": "Mặt nạ hàn bảo hộ lao động",
-    "img": "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (5).png",
+    "img": "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (5).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1332,7 +1332,7 @@ const products = [
     "title": "Mặt Nạ Hàn BLC-006",
     "cat": "cat18",
     "catLabel": "Mặt nạ hàn bảo hộ lao động",
-    "img": "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (6).png",
+    "img": "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (6).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1340,7 +1340,7 @@ const products = [
     "title": "Mặt Nạ Hàn BLC-007",
     "cat": "cat18",
     "catLabel": "Mặt nạ hàn bảo hộ lao động",
-    "img": "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (7).png",
+    "img": "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (7).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1348,7 +1348,7 @@ const products = [
     "title": "Mặt Nạ Hàn BLC-008",
     "cat": "cat18",
     "catLabel": "Mặt nạ hàn bảo hộ lao động",
-    "img": "images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (8).png",
+    "img": "../images/Mặt nạ hàn bảo hộ lao động/mat-na-bao-ho (8).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1356,7 +1356,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-001",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (1).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1364,7 +1364,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-002",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (10).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (10).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1372,7 +1372,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-003",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (11).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (11).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1380,7 +1380,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-004",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (12).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (12).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1388,7 +1388,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-005",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (13).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (13).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1396,7 +1396,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-006",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (14).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (14).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1404,7 +1404,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-007",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (15).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (15).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1412,7 +1412,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-008",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (2).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1420,7 +1420,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-009",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (3).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1428,7 +1428,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-010",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (4).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1436,7 +1436,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-011",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (5).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (5).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1444,7 +1444,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-012",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (6).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (6).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1452,7 +1452,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-013",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (7).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (7).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1460,7 +1460,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-014",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (8).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (8).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1468,7 +1468,7 @@ const products = [
     "title": "Mặt Nạ Lọc Khí BLC-015",
     "cat": "cat19",
     "catLabel": "Mặt Nạ Phòng Độc",
-    "img": "images/Mặt Nạ Phòng Độc/mat-na-chong-doc (9).png",
+    "img": "../images/Mặt Nạ Phòng Độc/mat-na-chong-doc (9).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1476,7 +1476,7 @@ const products = [
     "title": "Nón và Cấp Hiệu BLC-001",
     "cat": "cat20",
     "catLabel": "Nón , Sao Bảo Vệ",
-    "img": "images/Nón , Sao Bảo Vệ/non-bao-ve-2.png",
+    "img": "../images/Nón , Sao Bảo Vệ/non-bao-ve-2.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1484,7 +1484,7 @@ const products = [
     "title": "Nón và Cấp Hiệu BLC-002",
     "cat": "cat20",
     "catLabel": "Nón , Sao Bảo Vệ",
-    "img": "images/Nón , Sao Bảo Vệ/non-bao-ve.png",
+    "img": "../images/Nón , Sao Bảo Vệ/non-bao-ve.png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1492,7 +1492,7 @@ const products = [
     "title": "Nón Lưới Bảo Vệ BLC-001",
     "cat": "cat21",
     "catLabel": "Nón vải lưới trùm",
-    "img": "images/Nón vải lưới trùm/non-vai-luoi-trum (1).png",
+    "img": "../images/Nón vải lưới trùm/non-vai-luoi-trum (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1500,7 +1500,7 @@ const products = [
     "title": "Nón Lưới Bảo Vệ BLC-002",
     "cat": "cat21",
     "catLabel": "Nón vải lưới trùm",
-    "img": "images/Nón vải lưới trùm/non-vai-luoi-trum (2).png",
+    "img": "../images/Nón vải lưới trùm/non-vai-luoi-trum (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1508,7 +1508,7 @@ const products = [
     "title": "Nón Lưới Bảo Vệ BLC-003",
     "cat": "cat21",
     "catLabel": "Nón vải lưới trùm",
-    "img": "images/Nón vải lưới trùm/non-vai-luoi-trum (3).png",
+    "img": "../images/Nón vải lưới trùm/non-vai-luoi-trum (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1516,7 +1516,7 @@ const products = [
     "title": "Nón Lưới Bảo Vệ BLC-004",
     "cat": "cat21",
     "catLabel": "Nón vải lưới trùm",
-    "img": "images/Nón vải lưới trùm/non-vai-luoi-trum (4).png",
+    "img": "../images/Nón vải lưới trùm/non-vai-luoi-trum (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1524,7 +1524,7 @@ const products = [
     "title": "Nút Tai Giảm Ồn BLC-001",
     "cat": "cat22",
     "catLabel": "Nút chống ồn",
-    "img": "images/Nút chống ồn/nut-lao-dong (1).png",
+    "img": "../images/Nút chống ồn/nut-lao-dong (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1532,7 +1532,7 @@ const products = [
     "title": "Nút Tai Giảm Ồn BLC-002",
     "cat": "cat22",
     "catLabel": "Nút chống ồn",
-    "img": "images/Nút chống ồn/nut-lao-dong (2).png",
+    "img": "../images/Nút chống ồn/nut-lao-dong (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1540,7 +1540,7 @@ const products = [
     "title": "Nút Tai Giảm Ồn BLC-003",
     "cat": "cat22",
     "catLabel": "Nút chống ồn",
-    "img": "images/Nút chống ồn/nut-lao-dong (3).png",
+    "img": "../images/Nút chống ồn/nut-lao-dong (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1548,7 +1548,7 @@ const products = [
     "title": "Nút Tai Giảm Ồn BLC-004",
     "cat": "cat22",
     "catLabel": "Nút chống ồn",
-    "img": "images/Nút chống ồn/nut-lao-dong (4).png",
+    "img": "../images/Nút chống ồn/nut-lao-dong (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1556,7 +1556,7 @@ const products = [
     "title": "Nút Tai Giảm Ồn BLC-005",
     "cat": "cat22",
     "catLabel": "Nút chống ồn",
-    "img": "images/Nút chống ồn/nut-lao-dong (5).png",
+    "img": "../images/Nút chống ồn/nut-lao-dong (5).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1564,7 +1564,7 @@ const products = [
     "title": "Nút Tai Giảm Ồn BLC-006",
     "cat": "cat22",
     "catLabel": "Nút chống ồn",
-    "img": "images/Nút chống ồn/nut-lao-dong (6).png",
+    "img": "../images/Nút chống ồn/nut-lao-dong (6).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1572,7 +1572,7 @@ const products = [
     "title": "Nút Tai Giảm Ồn BLC-007",
     "cat": "cat22",
     "catLabel": "Nút chống ồn",
-    "img": "images/Nút chống ồn/nut-lao-dong (7).png",
+    "img": "../images/Nút chống ồn/nut-lao-dong (7).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1580,7 +1580,7 @@ const products = [
     "title": "Nút Tai Giảm Ồn BLC-008",
     "cat": "cat22",
     "catLabel": "Nút chống ồn",
-    "img": "images/Nút chống ồn/nut-lao-dong (8).png",
+    "img": "../images/Nút chống ồn/nut-lao-dong (8).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1588,7 +1588,7 @@ const products = [
     "title": "Biển Nội Quy BLC-001",
     "cat": "cat23",
     "catLabel": "Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc",
-    "img": "images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (1).png",
+    "img": "../images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1596,7 +1596,7 @@ const products = [
     "title": "Biển Nội Quy BLC-002",
     "cat": "cat23",
     "catLabel": "Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc",
-    "img": "images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (2).png",
+    "img": "../images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1604,7 +1604,7 @@ const products = [
     "title": "Biển Nội Quy BLC-003",
     "cat": "cat23",
     "catLabel": "Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc",
-    "img": "images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (3).png",
+    "img": "../images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1612,7 +1612,7 @@ const products = [
     "title": "Biển Nội Quy BLC-004",
     "cat": "cat23",
     "catLabel": "Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc",
-    "img": "images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (4).png",
+    "img": "../images/Nội quy-Tiêu đề-Cấm lửa-Cấm hút thuốc/noi-quy (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1620,7 +1620,7 @@ const products = [
     "title": "Thang Thoát Hiểm BLC-001",
     "cat": "cat24",
     "catLabel": "Thang Thoát Hiểm Cuốn",
-    "img": "images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (1).png",
+    "img": "../images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1628,7 +1628,7 @@ const products = [
     "title": "Thang Thoát Hiểm BLC-002",
     "cat": "cat24",
     "catLabel": "Thang Thoát Hiểm Cuốn",
-    "img": "images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (2).png",
+    "img": "../images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1636,7 +1636,7 @@ const products = [
     "title": "Thang Thoát Hiểm BLC-003",
     "cat": "cat24",
     "catLabel": "Thang Thoát Hiểm Cuốn",
-    "img": "images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (3).png",
+    "img": "../images/Thang Thoát Hiểm Cuốn/thang-thoat-hiem-cuon (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1644,7 +1644,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-001",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1652,7 +1652,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-002",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (10).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (10).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1660,7 +1660,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-003",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (11).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (11).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1668,7 +1668,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-004",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (12).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (12).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1676,7 +1676,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-005",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (13).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (13).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1684,7 +1684,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-006",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (14).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (14).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1692,7 +1692,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-007",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (15).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (15).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1700,7 +1700,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-008",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (16).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (16).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1708,7 +1708,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-009",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (2).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (2).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1716,7 +1716,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-010",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (3).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (3).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1724,7 +1724,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-011",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (4).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (4).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1732,7 +1732,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-012",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (5).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (5).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1740,7 +1740,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-013",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (6).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (6).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1748,7 +1748,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-014",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (7).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (7).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1756,7 +1756,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-015",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (8).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (8).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1764,7 +1764,7 @@ const products = [
     "title": "Trang Bị Chữa Cháy BLC-016",
     "cat": "cat25",
     "catLabel": "Thiết bị PCCC & An toàn",
-    "img": "images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (9).png",
+    "img": "../images/Thiết bị PCCC & An toàn/thiet-bi-pccc-va-an-toan (9).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1772,7 +1772,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-001",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (1).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1780,7 +1780,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-002",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (10).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (10).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1788,7 +1788,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-003",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (11).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (11).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1796,7 +1796,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-004",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (12).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (12).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1804,7 +1804,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-005",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (2).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1812,7 +1812,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-006",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (3).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1820,7 +1820,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-007",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (4).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1828,7 +1828,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-008",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (5).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (5).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1836,7 +1836,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-009",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (6).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (6).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1844,7 +1844,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-010",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (7).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (7).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1852,7 +1852,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-011",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (8).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (8).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1860,7 +1860,7 @@ const products = [
     "title": "Thùng Rác Vệ Sinh BLC-012",
     "cat": "cat26",
     "catLabel": "Thùng đựng rác",
-    "img": "images/Thùng đựng rác/thung-dung-rac (9).png",
+    "img": "../images/Thùng đựng rác/thung-dung-rac (9).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1868,7 +1868,7 @@ const products = [
     "title": "Áo Thun Phản Quang BLC-001",
     "cat": "cat27",
     "catLabel": "Áo cá sấu mè cao cấp nhiều",
-    "img": "images/Áo cá sấu mè cao cấp nhiều/do.png",
+    "img": "../images/Áo cá sấu mè cao cấp nhiều/do.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1876,7 +1876,7 @@ const products = [
     "title": "Áo Thun Phản Quang BLC-002",
     "cat": "cat27",
     "catLabel": "Áo cá sấu mè cao cấp nhiều",
-    "img": "images/Áo cá sấu mè cao cấp nhiều/luc-lam.png",
+    "img": "../images/Áo cá sấu mè cao cấp nhiều/luc-lam.png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1884,7 +1884,7 @@ const products = [
     "title": "Áo Thun Phản Quang BLC-003",
     "cat": "cat27",
     "catLabel": "Áo cá sấu mè cao cấp nhiều",
-    "img": "images/Áo cá sấu mè cao cấp nhiều/trang.png",
+    "img": "../images/Áo cá sấu mè cao cấp nhiều/trang.png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1892,7 +1892,7 @@ const products = [
     "title": "Áo Thun Phản Quang BLC-004",
     "cat": "cat27",
     "catLabel": "Áo cá sấu mè cao cấp nhiều",
-    "img": "images/Áo cá sấu mè cao cấp nhiều/vang-nhat.png",
+    "img": "../images/Áo cá sấu mè cao cấp nhiều/vang-nhat.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1900,7 +1900,7 @@ const products = [
     "title": "Áo Thun Phản Quang BLC-005",
     "cat": "cat27",
     "catLabel": "Áo cá sấu mè cao cấp nhiều",
-    "img": "images/Áo cá sấu mè cao cấp nhiều/vang.png",
+    "img": "../images/Áo cá sấu mè cao cấp nhiều/vang.png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1908,7 +1908,7 @@ const products = [
     "title": "Áo Thun Phản Quang BLC-006",
     "cat": "cat27",
     "catLabel": "Áo cá sấu mè cao cấp nhiều",
-    "img": "images/Áo cá sấu mè cao cấp nhiều/xang-duong.png",
+    "img": "../images/Áo cá sấu mè cao cấp nhiều/xang-duong.png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -1916,7 +1916,7 @@ const products = [
     "title": "Áo Thun Phản Quang BLC-007",
     "cat": "cat27",
     "catLabel": "Áo cá sấu mè cao cấp nhiều",
-    "img": "images/Áo cá sấu mè cao cấp nhiều/xanh-luc.png",
+    "img": "../images/Áo cá sấu mè cao cấp nhiều/xanh-luc.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -1924,7 +1924,7 @@ const products = [
     "title": "Áo Thun Phản Quang BLC-008",
     "cat": "cat27",
     "catLabel": "Áo cá sấu mè cao cấp nhiều",
-    "img": "images/Áo cá sấu mè cao cấp nhiều/xanh.png",
+    "img": "../images/Áo cá sấu mè cao cấp nhiều/xanh.png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -1932,7 +1932,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-001",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (1).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (1).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -1940,7 +1940,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-002",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (10).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (10).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -1948,7 +1948,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-003",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (11).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (11).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -1956,7 +1956,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-004",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (12).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (12).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -1964,7 +1964,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-005",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (13).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (13).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -1972,7 +1972,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-006",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (14).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (14).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -1980,7 +1980,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-007",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (15).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (15).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -1988,7 +1988,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-008",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (16).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (16).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -1996,7 +1996,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-009",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (17).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (17).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2004,7 +2004,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-010",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (18).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (18).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2012,7 +2012,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-011",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (19).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (19).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2020,7 +2020,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-012",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (2).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (2).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2028,7 +2028,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-013",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (20).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (20).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2036,7 +2036,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-014",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (21).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (21).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2044,7 +2044,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-015",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (22).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (22).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2052,7 +2052,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-016",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (23).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (23).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2060,7 +2060,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-017",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (24).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (24).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2068,7 +2068,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-018",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (25).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (25).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2076,7 +2076,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-019",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (26).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (26).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2084,7 +2084,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-020",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (27).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (27).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2092,7 +2092,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-021",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (28).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (28).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2100,7 +2100,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-022",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (29).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (29).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2108,7 +2108,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-023",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (3).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (3).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2116,7 +2116,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-024",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (30).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (30).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2124,7 +2124,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-025",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (31).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (31).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2132,7 +2132,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-026",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (32).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (32).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2140,7 +2140,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-027",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (33).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (33).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2148,7 +2148,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-028",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (34).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (34).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2156,7 +2156,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-029",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (35).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (35).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2164,7 +2164,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-030",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (36).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (36).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2172,7 +2172,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-031",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (37).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (37).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2180,7 +2180,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-032",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (38).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (38).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2188,7 +2188,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-033",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (39).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (39).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2196,7 +2196,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-034",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (4).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (4).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2204,7 +2204,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-035",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (40).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (40).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2212,7 +2212,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-036",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (41).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (41).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2220,7 +2220,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-037",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (42).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (42).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2228,7 +2228,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-038",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (43).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (43).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2236,7 +2236,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-039",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (44).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (44).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2244,7 +2244,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-040",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (45).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (45).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2252,7 +2252,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-041",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (46).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (46).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2260,7 +2260,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-042",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (47).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (47).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2268,7 +2268,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-043",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (48).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (48).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2276,7 +2276,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-044",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (49).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (49).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2284,7 +2284,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-045",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (5).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (5).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2292,7 +2292,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-046",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (50).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (50).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2300,7 +2300,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-047",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (51).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (51).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2308,7 +2308,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-048",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (52).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (52).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2316,7 +2316,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-049",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (53).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (53).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2324,7 +2324,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-050",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (54).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (54).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2332,7 +2332,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-051",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (55).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (55).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2340,7 +2340,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-052",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (56).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (56).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2348,7 +2348,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-053",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (57).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (57).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2356,7 +2356,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-054",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (58).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (58).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2364,7 +2364,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-055",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (59).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (59).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2372,7 +2372,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-056",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (6).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (6).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2380,7 +2380,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-057",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (60).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (60).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2388,7 +2388,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-058",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (61).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (61).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2396,7 +2396,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-059",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (62).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (62).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2404,7 +2404,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-060",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (63).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (63).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2412,7 +2412,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-061",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (64).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (64).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2420,7 +2420,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-062",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (7).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (7).png",
     "desc": "Chất liệu thoáng mát, trọng lượng nhẹ, tạo cảm giác thoải mái tối đa cho người lao động."
   },
   {
@@ -2428,7 +2428,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-063",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (8).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (8).png",
     "desc": "Đường may chắc chắn, thiết kế tiện dụng. Phù hợp cho công nhân xây dựng, kỹ sư và nhân viên giao thông."
   },
   {
@@ -2436,7 +2436,7 @@ const products = [
     "title": "Áo Gile Phản Quang BLC-064",
     "cat": "cat28",
     "catLabel": "Áo Phản Quang",
-    "img": "images/Áo Phản Quang/ao-phan-quang (9).png",
+    "img": "../images/Áo Phản Quang/ao-phan-quang (9).png",
     "desc": "Áo phản quang cao cấp với các dải băng sáng rõ nét, giúp tăng cường sự hiện diện của người mặc trong điều kiện thiếu sáng."
   },
   {
@@ -2444,7 +2444,7 @@ const products = [
     "title": "Trang Phục Cứu Hỏa BLC-001",
     "cat": "cat29",
     "catLabel": "Đồ bảo hộ PCCC",
-    "img": "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (1).png",
+    "img": "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2452,7 +2452,7 @@ const products = [
     "title": "Trang Phục Cứu Hỏa BLC-002",
     "cat": "cat29",
     "catLabel": "Đồ bảo hộ PCCC",
-    "img": "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (2).png",
+    "img": "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2460,7 +2460,7 @@ const products = [
     "title": "Trang Phục Cứu Hỏa BLC-003",
     "cat": "cat29",
     "catLabel": "Đồ bảo hộ PCCC",
-    "img": "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (3).png",
+    "img": "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2468,7 +2468,7 @@ const products = [
     "title": "Trang Phục Cứu Hỏa BLC-004",
     "cat": "cat29",
     "catLabel": "Đồ bảo hộ PCCC",
-    "img": "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (4).png",
+    "img": "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2476,7 +2476,7 @@ const products = [
     "title": "Trang Phục Cứu Hỏa BLC-005",
     "cat": "cat29",
     "catLabel": "Đồ bảo hộ PCCC",
-    "img": "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (5).png",
+    "img": "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (5).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2484,7 +2484,7 @@ const products = [
     "title": "Trang Phục Cứu Hỏa BLC-006",
     "cat": "cat29",
     "catLabel": "Đồ bảo hộ PCCC",
-    "img": "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (6).png",
+    "img": "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (6).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2492,7 +2492,7 @@ const products = [
     "title": "Trang Phục Cứu Hỏa BLC-007",
     "cat": "cat29",
     "catLabel": "Đồ bảo hộ PCCC",
-    "img": "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (7).png",
+    "img": "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (7).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2500,7 +2500,7 @@ const products = [
     "title": "Trang Phục Cứu Hỏa BLC-008",
     "cat": "cat29",
     "catLabel": "Đồ bảo hộ PCCC",
-    "img": "images/Đồ bảo hộ PCCC/do-bao-ho-pccc (8).png",
+    "img": "../images/Đồ bảo hộ PCCC/do-bao-ho-pccc (8).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2508,7 +2508,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-001",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (1).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2516,7 +2516,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-002",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (10).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (10).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2524,7 +2524,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-003",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (11).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (11).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2532,7 +2532,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-004",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (12).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (12).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2540,7 +2540,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-005",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (2).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2548,7 +2548,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-006",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (3).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2556,7 +2556,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-007",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (4).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (4).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2564,7 +2564,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-008",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (5).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (5).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2572,7 +2572,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-009",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (6).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (6).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2580,7 +2580,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-010",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (7).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (7).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2588,7 +2588,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-011",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (8).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (8).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2596,7 +2596,7 @@ const products = [
     "title": "Áo Mưa/Phao Cứu Sinh BLC-012",
     "cat": "cat30",
     "catLabel": "Đồ đi mưa - áo phao",
-    "img": "images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (9).png",
+    "img": "../images/Đồ đi mưa - áo phao/do-di-mua-ao-phao (9).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2604,7 +2604,7 @@ const products = [
     "title": "Đồng Phục An Ninh BLC-001",
     "cat": "cat31",
     "catLabel": "Đồng Phục Bảo Vệ",
-    "img": "images/Đồng Phục Bảo Vệ/ao-trang-bao-ve.png",
+    "img": "../images/Đồng Phục Bảo Vệ/ao-trang-bao-ve.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2612,7 +2612,7 @@ const products = [
     "title": "Đồng Phục An Ninh BLC-002",
     "cat": "cat31",
     "catLabel": "Đồng Phục Bảo Vệ",
-    "img": "images/Đồng Phục Bảo Vệ/ao-xanh-bao-ve.png",
+    "img": "../images/Đồng Phục Bảo Vệ/ao-xanh-bao-ve.png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2620,7 +2620,7 @@ const products = [
     "title": "Đồng Phục An Ninh BLC-003",
     "cat": "cat31",
     "catLabel": "Đồng Phục Bảo Vệ",
-    "img": "images/Đồng Phục Bảo Vệ/ao-xanh-luc-bao-ve.png",
+    "img": "../images/Đồng Phục Bảo Vệ/ao-xanh-luc-bao-ve.png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2628,7 +2628,7 @@ const products = [
     "title": "Đồng Phục Thế Hệ Mới BLC-001",
     "cat": "cat32",
     "catLabel": "Đồng Phục Bảo Vệ NEW",
-    "img": "images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png",
+    "img": "../images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (1).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2636,7 +2636,7 @@ const products = [
     "title": "Đồng Phục Thế Hệ Mới BLC-002",
     "cat": "cat32",
     "catLabel": "Đồng Phục Bảo Vệ NEW",
-    "img": "images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (2).png",
+    "img": "../images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (2).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2644,7 +2644,7 @@ const products = [
     "title": "Đồng Phục Thế Hệ Mới BLC-003",
     "cat": "cat32",
     "catLabel": "Đồng Phục Bảo Vệ NEW",
-    "img": "images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (3).png",
+    "img": "../images/Đồng Phục Bảo Vệ NEW/dong-phuc-bao-ve (3).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2652,7 +2652,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-001",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (10).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (10).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2660,7 +2660,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-002",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (11).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (11).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2668,7 +2668,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-003",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (12).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (12).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2676,7 +2676,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-004",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (13).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (13).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2684,7 +2684,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-005",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (14).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (14).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2692,7 +2692,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-006",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (15).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (15).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2700,7 +2700,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-007",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (16).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (16).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2708,7 +2708,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-008",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (17).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (17).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2716,7 +2716,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-009",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (18).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (18).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2724,7 +2724,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-010",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (19).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (19).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2732,7 +2732,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-011",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (20).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (20).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2740,7 +2740,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-012",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (21).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (21).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2748,7 +2748,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-013",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-bao-ho (22).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-bao-ho (22).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2756,7 +2756,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-014",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-lao-dong (1).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-lao-dong (1).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2764,7 +2764,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-015",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-lao-dong (2).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-lao-dong (2).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2772,7 +2772,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-016",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-lao-dong (3).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-lao-dong (3).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2780,7 +2780,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-017",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-lao-dong (4).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-lao-dong (4).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2788,7 +2788,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-018",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-lao-dong (5).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-lao-dong (5).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2796,7 +2796,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-019",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-lao-dong (6).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-lao-dong (6).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   },
   {
@@ -2804,7 +2804,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-020",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-lao-dong (7).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-lao-dong (7).png",
     "desc": "Thiết kế tối ưu, mang lại sự thoải mái và tiện dụng. Đảm bảo sự bảo vệ tốt nhất cho người sử dụng."
   },
   {
@@ -2812,7 +2812,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-021",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-lao-dong (8).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-lao-dong (8).png",
     "desc": "Sản phẩm được gia công tỉ mỉ, chất liệu cao cấp đáp ứng yêu cầu khắt khe của ngành công nghiệp và xây dựng."
   },
   {
@@ -2820,7 +2820,7 @@ const products = [
     "title": "Ủng Chống Nước/Hóa Chất BLC-022",
     "cat": "cat33",
     "catLabel": "Ủng bảo hộ lao động",
-    "img": "images/Ủng bảo hộ lao động/ung-lao-dong (9).png",
+    "img": "../images/Ủng bảo hộ lao động/ung-lao-dong (9).png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Độ bền vượt trội trong nhiều môi trường."
   }
 ];
