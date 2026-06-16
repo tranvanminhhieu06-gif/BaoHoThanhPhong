@@ -11628,24 +11628,28 @@ function renderGrid() {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const paginatedList = list.slice(startIndex, startIndex + itemsPerPage);
     grid.innerHTML = paginatedList.map(p => {
-        const pJson = JSON.stringify(p).replace(/"/g, '&quot;');
         const labelText = p.subcatLabel || p.catLabel;
-        const catHtml = labelText.length > 20
-            ? '<div class="overflow-hidden"><p class="text-[10px] font-extrabold text-[#1D5FA8] uppercase tracking-widest mb-1 truncate">' + labelText + '</p></div>'
-            : '<p class="text-[10px] font-extrabold text-[#1D5FA8] uppercase tracking-widest mb-1 truncate">' + labelText + '</p>';
-        const titleHtml = p.title.length > 28
-            ? '<h3 class="font-bold text-base text-[#1A2744] group-hover:text-[#1D5FA8] transition-colors mb-2 truncate" title="' + p.title + '">' + p.title + '</h3>'
-            : '<h3 class="font-bold text-base text-[#1A2744] group-hover:text-[#1D5FA8] transition-colors mb-2 truncate">' + p.title + '</h3>';
-        return '<div class="product-card group bg-white rounded-[24px] overflow-hidden border border-gray-100 shadow-sm cursor-pointer" onclick="openLightbox(' + pJson + ')">' +
+        const detailUrl = '../product/index.html?id=' + p.id;
+        const safeTitle = p.title.replace(/"/g, '&quot;');
+        return '<div class="product-card group bg-white rounded-[24px] overflow-hidden border border-gray-100 shadow-sm cursor-pointer" onclick="window.location.href=\'' + detailUrl + '\'">' +
             '<div class="relative aspect-[4/5] bg-gray-50 overflow-hidden">' +
-            '<img alt="' + p.title + '" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="' + p.img + '" loading="lazy" onerror="this.parentElement.style.background=\'#f1f5f9\'">' +
+            '<img alt="' + safeTitle + '" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="' + p.img + '" loading="lazy" onerror="this.parentElement.style.background=\'#f1f5f9\'">' +
             '<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-end p-6 gap-3">' +
             '<div class="text-center w-full">' +
             '<p class="text-[10px] font-extrabold text-[#E8A500] uppercase tracking-widest mb-1">' + labelText + '</p>' +
             '<h3 class="font-bold text-sm text-white mb-3 line-clamp-2">' + p.title + '</h3>' +
             '</div>' +
-            '<button onclick="event.stopPropagation(); openLightbox(' + pJson + ')" class="w-full py-3 bg-white text-[#1A2744] text-xs font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-[#E8A500] hover:text-white transition-colors btn-press"><span class="material-symbols-outlined text-[18px]">visibility</span> XEM CHI TIẾT</button>' +
-            '</div></div></div>';
+            '<a href="' + detailUrl + '" onclick="event.stopPropagation()" class="w-full py-3 bg-white text-[#1A2744] text-xs font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-[#E8A500] hover:text-white transition-colors btn-press"><span class="material-symbols-outlined text-[18px]">visibility</span> XEM CHI TIẾT</a>' +
+            '</div></div>' +
+            '<div class="p-4">' +
+            '<p class="text-[10px] font-extrabold text-[#1D5FA8] uppercase tracking-widest mb-1 truncate">' + labelText + '</p>' +
+            '<h3 class="font-bold text-sm text-[#1A2744] mb-3 truncate" title="' + safeTitle + '">' + p.title + '</h3>' +
+            '<div class="flex gap-2">' +
+            '<a href="https://zalo.me/0931160818" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="flex-1 py-2 rounded-xl text-xs font-bold text-center text-white btn-press" style="background:#0068FF;" onmouseover="this.style.background=\'#0056CC\'" onmouseout="this.style.background=\'#0068FF\'">Zalo</a>' +
+            '<a href="' + detailUrl + '" onclick="event.stopPropagation()" class="flex-1 py-2 bg-[#1D5FA8] text-white rounded-xl text-xs font-bold text-center hover:bg-[#164A85] transition-colors btn-press">Chi tiết</a>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
     }).join('');
 
     if (paginationEl) {

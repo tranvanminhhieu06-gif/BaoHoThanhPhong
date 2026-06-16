@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm - Thành Phong Bảo Hộ Lao Động</title>
+    <meta name="description" content="Xem chi tiết sản phẩm bảo hộ lao động chất lượng cao tại Thành Phong. Liên hệ báo giá ngay!">
+    <link rel="icon" type="image/png" href="../images/LOGO/Icon logo.png">
+    <link rel="apple-touch-icon" href="../images/LOGO/Icon logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <style>
+        :root {
+            --primary: #1D5FA8;
+            --primary-dark: #164A85;
+            --navy: #1A2744;
+            --accent: #E8A500;
+            --accent-dark: #D99A00;
+            --white: #FFFFFF;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-400: #94A3B8;
+            --gray-500: #64748B;
+            --gray-700: #334155;
+            --font: 'Be Vietnam Pro', 'Inter', -apple-system, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--font);
+            background-color: var(--gray-50);
+            color: var(--gray-700);
+            overflow-x: hidden;
+        }
+
+        /* Transition utilities */
+        .btn-press { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-press:active { transform: scale(0.95); }
+
+        /* Product image zoom */
+        .img-zoom-wrapper { overflow: hidden; border-radius: 24px; }
+        .img-zoom-wrapper img { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .img-zoom-wrapper:hover img { transform: scale(1.05); }
+
+        /* Related product card */
+        .related-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .related-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 48px rgba(29, 95, 168, 0.13);
+        }
+        .related-card:hover .related-img { transform: scale(1.08); }
+        .related-img { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        /* Overlay hover on related cards */
+        .related-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .related-card:hover .related-overlay { opacity: 1; }
+
+        /* Floating action buttons */
+        .floating-actions {
+            position: fixed;
+            bottom: 32px;
+            right: 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* Breadcrumb chevron icon */
+        .breadcrumb-sep {
+            font-family: 'Material Symbols Outlined';
+            font-size: 14px;
+            color: #94A3B8;
+        }
+
+        /* Badge */
+        .badge-in-stock {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ECFDF5;
+            color: #059669;
+            border: 1px solid #A7F3D0;
+            border-radius: 100px;
+            padding: 4px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        /* Feature item */
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid var(--gray-100);
+        }
+
+        /* Guide content */
+        .guide-content { display: none; }
+        .guide-content.active { display: block; }
+        .guide-tab { transition: all 0.2s ease; }
+        .guide-tab.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 8px 25px rgba(29, 95, 168, 0.35);
+        }
+
+        /* Accordion children */
+        .accordion-children { display: none; }
+        .accordion-children.open { display: block; }
+
+        /* Not-found state */
+        .not-found-wrapper {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .floating-actions { bottom: 20px; right: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===================== FLOATING ACTIONS ===================== -->
+<div class="floating-actions">
+    <a href="https://zalo.me/0931160818" target="_blank" rel="noopener" aria-label="Chat Zalo"
+       class="w-14 h-14 rounded-[14px] btn-press shadow-xl block"
+       style="box-shadow: 0 8px 24px rgba(0,104,255,0.30);">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+             alt="Zalo" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+    </a>
+    <a href="tel:0931160818" aria-label="Gọi điện"
+       class="w-14 h-14 bg-[#E8A500] text-white rounded-full flex items-center justify-center btn-press shadow-xl"
+       style="box-shadow: 0 8px 24px rgba(232,165,0,0.35);">
+        <span class="material-symbols-outlined text-3xl">call</span>
+    </a>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Lên đầu trang"
+            class="w-14 h-14 bg-white text-[#1D5FA8] rounded-full flex items-center justify-center btn-press shadow-lg border border-gray-100"
+            id="scrollTopBtn" style="display:none;">
+        <span class="material-symbols-outlined">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <a href="../html/trangchu.html" class="flex items-center gap-3 shrink-0">
+                <img src="../images/LOGO/Icon logo.png" alt="Thành Phong Logo"
+                     class="h-12 w-auto object-contain" style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));">
+            </a>
+
+            <!-- Center Links (desktop) -->
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="../html/trangchu.html"
+                   class="text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:text-[#1D5FA8] px-4 py-2 rounded-xl transition-all">
+                    Trang chủ
+                </a>
+                <a href="../html/sanpham.html"
+                   class="text-sm font-bold bg-[#EBF3FF] text-[#1D5FA8] px-4 py-2 rounded-xl">
+                    Sản phẩm
+                </a>
+                <a href="../html/trangchu.html#news"
+                   class="text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:text-[#1D5FA8] px-4 py-2 rounded-xl transition-all">
+                    Tin tức
+                </a>
+                <a href="https://zalo.me/0931160818" target="_blank" rel="noopener"
+                   class="text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:text-[#1D5FA8] px-4 py-2 rounded-xl transition-all">
+                    Liên hệ
+                </a>
+            </div>
+
+            <!-- Right actions -->
+            <div class="flex items-center gap-3">
+                <a href="tel:0931160818"
+                   class="hidden sm:flex items-center gap-2 bg-[#E8A500] text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-md hover:bg-[#D99A00] transition-colors btn-press">
+                    <span class="material-symbols-outlined text-[18px]">call</span>
+                    0931160818
+                </a>
+                <!-- Mobile menu btn -->
+                <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-colors"
+                        onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden pb-4 border-t border-gray-100 pt-4 space-y-1">
+            <a href="../html/trangchu.html" class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-all">
+                <span class="material-symbols-outlined text-[18px]">home</span> Trang chủ
+            </a>
+            <a href="../html/sanpham.html" class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-bold text-[#1D5FA8] bg-[#EBF3FF]">
+                <span class="material-symbols-outlined text-[18px]">grid_view</span> Sản phẩm
+            </a>
+            <a href="../html/trangchu.html#news" class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-all">
+                <span class="material-symbols-outlined text-[18px]">newspaper</span> Tin tức
+            </a>
+            <a href="https://zalo.me/0931160818" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-all">
+                <span class="material-symbols-outlined text-[18px]">chat</span> Liên hệ Zalo
+            </a>
+            <a href="tel:0931160818" class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-bold bg-[#E8A500] text-white mt-2">
+                <span class="material-symbols-outlined text-[18px]">call</span> 0931160818
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== MAIN CONTENT ===================== -->
+<main class="pt-28 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-1.5 mb-8 text-xs font-bold uppercase tracking-widest text-gray-400" id="breadcrumb" data-aos="fade-down">
+        <a href="../html/trangchu.html" class="hover:text-[#1D5FA8] transition-colors">Trang chủ</a>
+        <span class="material-symbols-outlined" style="font-size:14px;">chevron_right</span>
+        <a href="../html/sanpham.html" class="hover:text-[#1D5FA8] transition-colors">Sản phẩm</a>
+        <span class="material-symbols-outlined" style="font-size:14px;">chevron_right</span>
+        <span class="text-[#1D5FA8]" id="breadcrumb-cat">...</span>
+        <span class="material-symbols-outlined" style="font-size:14px;" id="breadcrumb-sep2">chevron_right</span>
+        <span class="text-[#1A2744]" id="breadcrumb-product">...</span>
+    </nav>
+
+    <!-- ===== NOT FOUND STATE (hidden by default) ===== -->
+    <div class="not-found-wrapper" id="notFoundState" style="display:none;">
+        <div class="w-24 h-24 rounded-3xl bg-gray-100 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-5xl text-gray-300">search_off</span>
+        </div>
+        <h2 class="text-2xl font-extrabold text-[#1A2744] mb-3">Không tìm thấy sản phẩm</h2>
+        <p class="text-gray-500 mb-8 max-w-sm">Sản phẩm này không tồn tại hoặc đã bị xóa. Hãy xem danh sách sản phẩm khác của chúng tôi.</p>
+        <a href="../html/sanpham.html"
+           class="px-8 py-4 bg-[#1D5FA8] text-white rounded-2xl font-bold hover:bg-[#164A85] transition-colors btn-press">
+            Xem tất cả sản phẩm
+        </a>
+    </div>
+
+    <!-- ===== PRODUCT DETAIL ===== -->
+    <div id="productDetailSection">
+
+        <!-- Two-column layout: image + info -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 mb-20" data-aos="fade-up">
+
+            <!-- LEFT: Product Image -->
+            <div class="flex flex-col gap-4">
+                <!-- Main image -->
+                <div class="img-zoom-wrapper aspect-square bg-white border border-gray-100 shadow-sm"
+                     style="border-radius:24px; overflow:hidden;">
+                    <img id="product-main-img" src="" alt=""
+                         class="w-full h-full object-cover"
+                         onerror="this.parentElement.style.background='#F1F5F9';">
+                </div>
+
+                <!-- Badges row -->
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge-in-stock">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+                        Còn hàng – Giao ngay
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 bg-blue-50 text-[#1D5FA8] border border-blue-100 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide">
+                        <span class="material-symbols-outlined text-[14px]">verified</span>
+                        Hàng chính hãng
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 border border-amber-100 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide">
+                        <span class="material-symbols-outlined text-[14px]">edit_note</span>
+                        May theo yêu cầu
+                    </span>
+                </div>
+            </div>
+
+            <!-- RIGHT: Product Info -->
+            <div class="flex flex-col">
+                <!-- Category badge -->
+                <div class="mb-3">
+                    <span id="product-cat"
+                          class="text-[11px] font-extrabold text-[#1D5FA8] uppercase tracking-[0.2em] px-3 py-1 bg-[#EBF3FF] rounded-lg inline-block">
+                        ...
+                    </span>
+                </div>
+
+                <!-- Title -->
+                <h1 id="product-title"
+                    class="text-3xl sm:text-4xl font-extrabold text-[#1A2744] tracking-tight leading-tight mb-6">
+                    ...
+                </h1>
+
+                <!-- Key features -->
+                <div class="space-y-3 mb-8">
+                    <div class="feature-item">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[#1D5FA8]" style="font-size:20px;">verified</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-[#1A2744] text-sm">Chất lượng cao, đạt tiêu chuẩn an toàn</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Sản phẩm chính hãng, có đầy đủ CO/CQ chứng nhận chất lượng</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[#1D5FA8]" style="font-size:20px;">local_shipping</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-[#1A2744] text-sm">Giao hàng toàn quốc – Nhanh chóng</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Hỗ trợ vận chuyển tận nơi, đóng gói chắc chắn an toàn</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-amber-600" style="font-size:20px;">groups</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-[#1A2744] text-sm">Nhận đặt hàng số lượng lớn</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Báo giá sỉ ưu đãi cho doanh nghiệp, may in thêu theo yêu cầu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description box -->
+                <div class="bg-white border border-gray-100 rounded-2xl p-5 mb-8 shadow-sm">
+                    <h4 class="font-extrabold text-[#1A2744] text-sm mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#1D5FA8]" style="font-size:18px;">description</span>
+                        Mô tả sản phẩm
+                    </h4>
+                    <p id="product-desc" class="text-sm text-gray-600 leading-relaxed">
+                        Đang tải thông tin sản phẩm...
+                    </p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                    <!-- Zalo (primary) -->
+                    <a href="https://zalo.me/0931160818" target="_blank" rel="noopener"
+                       class="flex-1 py-4 rounded-2xl text-sm font-bold flex items-center justify-center gap-3 btn-press transition-colors"
+                       style="background:#0068FF; color:white; box-shadow: 0 8px 24px rgba(0,104,255,0.28);"
+                       onmouseover="this.style.background='#0056CC'" onmouseout="this.style.background='#0068FF'">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+                             alt="Zalo" class="w-6 h-6 rounded-md">
+                        Liên hệ qua Zalo
+                    </a>
+                    <!-- Phone -->
+                    <a href="tel:0931160818"
+                       class="flex-1 py-4 bg-[#1D5FA8] text-white rounded-2xl text-sm font-bold flex items-center justify-center gap-3 hover:bg-[#164A85] transition-colors btn-press"
+                       style="box-shadow: 0 8px 24px rgba(29,95,168,0.22);">
+                        <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+                        Gọi ngay: 0931160818
+                    </a>
+                </div>
+
+                <!-- Secondary buttons -->
+                <div class="flex gap-3">
+                    <a href="../html/sanpham.html" id="cat-link"
+                       class="flex-1 py-3 bg-white border border-gray-200 text-[#1A2744] rounded-xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-gray-50 hover:border-[#1D5FA8] hover:text-[#1D5FA8] transition-colors btn-press">
+                        <span class="material-symbols-outlined" style="font-size:16px;">grid_view</span>
+                        Xem thêm danh mục
+                    </a>
+                    <a href="https://zalo.me/0931160818" target="_blank" rel="noopener"
+                       class="flex-1 py-3 bg-white border border-gray-200 text-[#1A2744] rounded-xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-[#E8A500] hover:border-[#E8A500] hover:text-white transition-colors btn-press">
+                        <span class="material-symbols-outlined" style="font-size:16px;">request_quote</span>
+                        Yêu cầu báo giá sỉ
+                    </a>
+                </div>
+
+                <!-- Hours note -->
+                <p class="text-center text-xs text-gray-400 mt-5 font-medium">
+                    Hỗ trợ tư vấn: Thứ 2 – Thứ 7 · 7:30–17:30 &nbsp;·&nbsp; Chủ nhật 8:00–12:00
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== PRODUCTS YOU MIGHT LIKE ===== -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center gap-3">
+                    <span class="w-8 h-1 rounded-full" style="background:#1D5FA8; display:inline-block;"></span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1A2744] tracking-tight">
+                        Sản phẩm có thể bạn thích
+                    </h2>
+                </div>
+                <a href="../html/sanpham.html"
+                   class="text-sm font-bold text-[#1D5FA8] hover:text-[#164A85] transition-colors hidden sm:flex items-center gap-1">
+                    Xem tất cả
+                    <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+                </a>
+            </div>
+
+            <div id="related-products"
+                 class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
+                <!-- Filled by JS -->
+                <div class="col-span-2 md:col-span-3 xl:col-span-4 py-16 text-center text-gray-400 text-sm font-semibold">
+                    <div class="w-10 h-10 border-4 border-gray-200 border-t-[#1D5FA8] rounded-full animate-spin mx-auto mb-4"></div>
+                    Đang tải sản phẩm liên quan...
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHY CHOOSE US ===== -->
+        <section class="mb-20 bg-white rounded-3xl p-8 border border-gray-100 shadow-sm" data-aos="fade-up">
+            <h2 class="text-2xl font-extrabold text-[#1A2744] tracking-tight mb-8 text-center">
+                Tại sao chọn <span style="color:#1D5FA8;">Thành Phong?</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-4">
+                        <span class="material-symbols-outlined text-[#1D5FA8]" style="font-size:28px;">workspace_premium</span>
+                    </div>
+                    <h4 class="font-bold text-[#1A2744] text-sm mb-1">Chính hãng 100%</h4>
+                    <p class="text-xs text-gray-500">Có đầy đủ giấy tờ CO/CQ chứng nhận xuất xứ</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center mx-auto mb-4">
+                        <span class="material-symbols-outlined text-amber-600" style="font-size:28px;">payments</span>
+                    </div>
+                    <h4 class="font-bold text-[#1A2744] text-sm mb-1">Giá cạnh tranh</h4>
+                    <p class="text-xs text-gray-500">Báo giá sỉ tốt nhất cho doanh nghiệp mua số lượng</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+                        <span class="material-symbols-outlined text-emerald-600" style="font-size:28px;">support_agent</span>
+                    </div>
+                    <h4 class="font-bold text-[#1A2744] text-sm mb-1">Hỗ trợ tận tình</h4>
+                    <p class="text-xs text-gray-500">Tư vấn chọn sản phẩm phù hợp mọi ngành nghề</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center mx-auto mb-4">
+                        <span class="material-symbols-outlined text-purple-600" style="font-size:28px;">design_services</span>
+                    </div>
+                    <h4 class="font-bold text-[#1A2744] text-sm mb-1">May in thêu riêng</h4>
+                    <p class="text-xs text-gray-500">Thiết kế logo, đồng phục theo yêu cầu doanh nghiệp</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT BANNER ===== -->
+        <section class="rounded-3xl overflow-hidden mb-20 relative" data-aos="fade-up"
+                 style="background: linear-gradient(135deg, #1A2744 0%, #1D5FA8 100%);">
+            <div class="px-8 py-12 md:flex md:items-center md:justify-between gap-8 relative z-10">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-[#E8A500] text-xs font-extrabold uppercase tracking-[0.2em] mb-2">
+                        Cần tư vấn thêm?
+                    </p>
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">
+                        Liên hệ ngay để nhận<br>
+                        <span style="color:#E8A500;">báo giá tốt nhất</span> hôm nay!
+                    </h3>
+                    <p class="text-blue-200 text-sm mt-2">Ms. Thu Nhàn · 0931160818 · 7:30–17:30 T2–T7</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+                    <a href="https://zalo.me/0931160818" target="_blank" rel="noopener"
+                       class="flex items-center justify-center gap-3 px-7 py-4 rounded-2xl text-sm font-bold btn-press"
+                       style="background:#0068FF; color:white; box-shadow:0 8px 24px rgba(0,104,255,0.4);"
+                       onmouseover="this.style.background='#0056CC'" onmouseout="this.style.background='#0068FF'">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+                             alt="Zalo" class="w-6 h-6 rounded-md">
+                        Chat Zalo ngay
+                    </a>
+                    <a href="tel:0931160818"
+                       class="flex items-center justify-center gap-3 px-7 py-4 rounded-2xl text-sm font-bold bg-white text-[#1A2744] hover:bg-[#E8A500] hover:text-white transition-colors btn-press">
+                        <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+                        0931160818
+                    </a>
+                </div>
+            </div>
+            <!-- Decorative circles -->
+            <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04);z-index:0;"></div>
+            <div style="position:absolute;bottom:-60px;left:-20px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,0.04);z-index:0;"></div>
+        </section>
+
+    </div><!-- end #productDetailSection -->
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer style="background:#1A2744; color:white;" class="pt-16 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <!-- Brand -->
+            <div>
+                <a href="../html/trangchu.html" class="flex items-center gap-3 mb-6">
+                    <img src="../images/LOGO/Icon logo.png" alt="Thành Phong Logo" class="h-10 w-auto">
+                    <span class="text-xl font-black tracking-wider">THANH PHONG.</span>
+                </a>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Nhà phân phối thiết bị bảo hộ lao động chính hãng. Cam kết chất lượng và giá tốt nhất cho doanh nghiệp.
+                </p>
+                <div class="flex gap-3">
+                    <a href="https://zalo.me/0931160818" target="_blank" rel="noopener"
+                       class="w-10 h-10 rounded-xl flex items-center justify-center btn-press"
+                       style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1);"
+                       aria-label="Zalo">
+                        <span class="material-symbols-outlined" style="font-size:20px;">chat</span>
+                    </a>
+                    <a href="tel:0931160818"
+                       class="w-10 h-10 rounded-xl flex items-center justify-center btn-press"
+                       style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1);"
+                       aria-label="Gọi điện">
+                        <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+                    </a>
+                    <a href="mailto:nguyenthunhan2105@gmail.com"
+                       class="w-10 h-10 rounded-xl flex items-center justify-center btn-press"
+                       style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1);"
+                       aria-label="Email">
+                        <span class="material-symbols-outlined" style="font-size:20px;">mail</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact info -->
+            <div>
+                <h4 style="color:#E8A500;" class="text-sm font-extrabold uppercase tracking-[0.2em] mb-6">Thông tin liên hệ</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined shrink-0 mt-0.5" style="font-size:18px;color:#E8A500;">location_on</span>
+                        205/20/33 Phạm Đăng Giảng, P. Bình Hưng Hòa, Q. Bình Tân, TP.HCM
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined shrink-0" style="font-size:18px;color:#E8A500;">call</span>
+                        <a href="tel:0931160818" class="hover:text-white transition-colors">0931160818</a>
+                        <span class="text-gray-600">Ms. Thu Nhàn</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined shrink-0" style="font-size:18px;color:#E8A500;">mail</span>
+                        <a href="mailto:nguyenthunhan2105@gmail.com" class="hover:text-white transition-colors">nguyenthunhan2105@gmail.com</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined shrink-0" style="font-size:18px;color:#E8A500;">schedule</span>
+                        T2–T7: 7:30–17:30 &nbsp;|&nbsp; CN: 8:00–12:00
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Product links -->
+            <div>
+                <h4 style="color:#E8A500;" class="text-sm font-extrabold uppercase tracking-[0.2em] mb-6">Sản phẩm chính</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="../html/sanpham.html?cat=cat14" class="hover:text-white transition-colors">Đồng phục bảo vệ</a></li>
+                    <li><a href="../html/sanpham.html?cat=cat23" class="hover:text-white transition-colors">Mũ bảo hộ CN</a></li>
+                    <li><a href="../html/sanpham.html?cat=cat15" class="hover:text-white transition-colors">Găng tay bảo hộ</a></li>
+                    <li><a href="../html/sanpham.html?cat=cat1" class="hover:text-white transition-colors">Áo ghi lê phản quang</a></li>
+                    <li><a href="../html/sanpham.html?cat=cat8" class="hover:text-white transition-colors">Bình PCCC</a></li>
+                    <li><a href="../html/sanpham.html" class="hover:text-white transition-colors flex items-center gap-1">
+                        Xem tất cả sản phẩm
+                        <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-4"
+             style="border-top:1px solid rgba(255,255,255,0.07);">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-500">
+                © 2026 THANH PHONG SAFETY. ALL RIGHTS RESERVED.
+            </p>
+            <p class="text-xs text-gray-600">
+                <a href="https://baohothanhphong.vn" class="hover:text-white transition-colors">baohothanhphong.vn</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Init AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 700, easing: 'ease-in-out', once: true, offset: 80 });
+    }
+
+    // Navbar scroll shadow
+    window.addEventListener('scroll', function() {
+        var nav = document.getElementById('navbar');
+        if (nav) nav.classList.toggle('shadow-md', window.scrollY > 20);
+
+        // Scroll to top button
+        var scrollBtn = document.getElementById('scrollTopBtn');
+        if (scrollBtn) scrollBtn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+    });
+</script>
+
+<!-- Load product data -->
+<script src="../js/products.js"></script>
+
+<script>
+(function() {
+    var ZALO_URL = 'https://zalo.me/0931160818';
+
+    // Fisher-Yates shuffle
+    function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+    }
+
+    function renderRelated(currentProduct) {
+        var grid = document.getElementById('related-products');
+        if (!grid || typeof products === 'undefined') return;
+
+        // Prefer same category, then mix in others — always randomized
+        var sameCat = products.filter(function(p) {
+            return p.cat === currentProduct.cat && p.id !== currentProduct.id;
+        });
+        var otherCat = products.filter(function(p) {
+            return p.cat !== currentProduct.cat && p.id !== currentProduct.id;
+        });
+
+        var shuffledSame = shuffle(sameCat);
+        var shuffledOther = shuffle(otherCat);
+        // Take up to 6 same-cat, fill rest from other cats, total 8
+        var combined = shuffledSame.slice(0, 6).concat(shuffledOther).slice(0, 8);
+
+        if (combined.length === 0) {
+            grid.innerHTML = '<div class="col-span-full text-center text-gray-400 py-12 text-sm">Chưa có sản phẩm liên quan</div>';
+            return;
+        }
+
+        grid.innerHTML = combined.map(function(p) {
+            var label = p.subcatLabel || p.catLabel;
+            var safeTitle = p.title.replace(/"/g, '&quot;');
+            var safeLabel = label.replace(/</g, '&lt;');
+
+            return '<div class="related-card bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm" onclick="window.location.href=\'index.html?id=' + p.id + '\'">' +
+                '<div class="relative overflow-hidden" style="aspect-ratio:4/5; background:#F8FAFC;">' +
+                '<img src="' + p.img + '" alt="' + safeTitle + '" class="related-img w-full h-full object-cover" loading="lazy" onerror="this.parentElement.style.background=\'#F1F5F9\'">' +
+                '<div class="related-overlay absolute inset-0 flex flex-col items-center justify-end p-4" style="background:linear-gradient(to top, rgba(26,39,68,0.82) 0%, transparent 60%);">' +
+                '<span class="text-white text-xs font-bold">Xem chi tiết →</span>' +
+                '</div>' +
+                '</div>' +
+                '<div class="p-4">' +
+                '<p class="text-[10px] font-extrabold uppercase tracking-widest mb-1 truncate" style="color:#1D5FA8;">' + safeLabel + '</p>' +
+                '<h3 class="font-bold text-sm mb-3 truncate" style="color:#1A2744;" title="' + safeTitle + '">' + safeTitle + '</h3>' +
+                '<div class="flex gap-2">' +
+                '<a href="' + ZALO_URL + '" target="_blank" rel="noopener" onclick="event.stopPropagation()" ' +
+                'class="flex-1 py-2 rounded-xl text-xs font-bold text-center text-white btn-press" ' +
+                'style="background:#0068FF;" onmouseover="this.style.background=\'#0056CC\'" onmouseout="this.style.background=\'#0068FF\'">' +
+                'Zalo' +
+                '</a>' +
+                '<a href="index.html?id=' + p.id + '" onclick="event.stopPropagation()" ' +
+                'class="flex-1 py-2 bg-[#1D5FA8] text-white rounded-xl text-xs font-bold text-center hover:bg-[#164A85] transition-colors btn-press">' +
+                'Chi tiết' +
+                '</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+        }).join('');
+    }
+
+    function loadProduct() {
+        if (typeof products === 'undefined') {
+            console.error('products.js not loaded');
+            return;
+        }
+
+        var params = new URLSearchParams(window.location.search);
+        var productId = params.get('id');
+
+        var detailSection = document.getElementById('productDetailSection');
+        var notFound = document.getElementById('notFoundState');
+
+        if (!productId) {
+            // No ID - redirect to product list
+            window.location.href = '../html/sanpham.html';
+            return;
+        }
+
+        var product = null;
+        for (var i = 0; i < products.length; i++) {
+            if (products[i].id === productId) { product = products[i]; break; }
+        }
+
+        if (!product) {
+            if (detailSection) detailSection.style.display = 'none';
+            if (notFound) notFound.style.display = 'flex';
+            return;
+        }
+
+        // Update page title + meta
+        document.title = product.title + ' - Thành Phong Bảo Hộ Lao Động';
+
+        // Breadcrumb
+        var catLabel = product.subcatLabel || product.catLabel;
+        var bcCat = document.getElementById('breadcrumb-cat');
+        var bcProduct = document.getElementById('breadcrumb-product');
+        var bcSep2 = document.getElementById('breadcrumb-sep2');
+        if (bcCat) bcCat.textContent = catLabel;
+        if (bcProduct) bcProduct.textContent = product.title;
+        if (bcSep2) bcSep2.style.display = 'inline';
+
+        // Category link in sidebar button
+        var catLink = document.getElementById('cat-link');
+        if (catLink) {
+            catLink.href = '../html/sanpham.html?cat=' + product.cat;
+        }
+
+        // Product data
+        var catEl = document.getElementById('product-cat');
+        if (catEl) catEl.textContent = catLabel;
+
+        var titleEl = document.getElementById('product-title');
+        if (titleEl) titleEl.textContent = product.title;
+
+        var imgEl = document.getElementById('product-main-img');
+        if (imgEl) {
+            imgEl.src = product.img;
+            imgEl.alt = product.title;
+        }
+
+        var descEl = document.getElementById('product-desc');
+        if (descEl) {
+            descEl.textContent = product.desc ||
+                'Sản phẩm chất lượng cao, đạt chuẩn an toàn quốc gia. Vui lòng liên hệ để được tư vấn kích thước và nhận báo giá tốt nhất cho doanh nghiệp của bạn.';
+        }
+
+        // Related products (random each load)
+        renderRelated(product);
+    }
+
+    // Run after DOM is ready (products.js also adds DOMContentLoaded, so both fire)
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadProduct);
+    } else {
+        loadProduct();
+    }
+})();
+</script>
+
+</body>
+</html>
