@@ -11636,15 +11636,16 @@ function renderGrid() {
         const titleHtml = p.title.length > 28
             ? '<h3 class="font-bold text-base text-[#1A2744] group-hover:text-[#1D5FA8] transition-colors mb-2 truncate" title="' + p.title + '">' + p.title + '</h3>'
             : '<h3 class="font-bold text-base text-[#1A2744] group-hover:text-[#1D5FA8] transition-colors mb-2 truncate">' + p.title + '</h3>';
-        return '<div class="product-card group bg-white rounded-[24px] overflow-hidden border border-gray-100 shadow-sm">' +
-            '<div class="relative aspect-[4/5] bg-gray-50 overflow-hidden cursor-pointer" onclick="openLightbox(' + pJson + ')">' +
+        return '<div class="product-card group bg-white rounded-[24px] overflow-hidden border border-gray-100 shadow-sm cursor-pointer" onclick="openLightbox(' + pJson + ')">' +
+            '<div class="relative aspect-[4/5] bg-gray-50 overflow-hidden">' +
             '<img alt="' + p.title + '" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="' + p.img + '" loading="lazy" onerror="this.parentElement.style.background=\'#f1f5f9\'">' +
-            '<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 gap-4">' +
-            '<a href="tel:0931160818" onclick="event.stopPropagation()" class="w-full py-4 bg-[#1D5FA8] text-white text-xs font-bold rounded-2xl shadow-xl flex items-center justify-center gap-2 hover:bg-[#164A85] transition-colors btn-press"><span class="material-symbols-outlined text-[18px]">chat_bubble</span> LIÊN HỆ VỚI CHÚNG TÔI</a>' +
-            '<button onclick="event.stopPropagation(); openLightbox(' + pJson + ')" class="w-full py-4 bg-white text-[#1A2744] text-xs font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-[#E8A500] hover:text-white transition-colors btn-press"><span class="material-symbols-outlined text-[18px]">visibility</span> XEM CHI TIẾT</button>' +
-            '</div></div>' +
-            '<div class="p-5 text-center">' + catHtml + titleHtml +
-            '<p class="text-sm font-bold text-[#E8A500]">Liên hệ để biết giá</p></div></div>';
+            '<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-end p-6 gap-3">' +
+            '<div class="text-center w-full">' +
+            '<p class="text-[10px] font-extrabold text-[#E8A500] uppercase tracking-widest mb-1">' + labelText + '</p>' +
+            '<h3 class="font-bold text-sm text-white mb-3 line-clamp-2">' + p.title + '</h3>' +
+            '</div>' +
+            '<button onclick="event.stopPropagation(); openLightbox(' + pJson + ')" class="w-full py-3 bg-white text-[#1A2744] text-xs font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-[#E8A500] hover:text-white transition-colors btn-press"><span class="material-symbols-outlined text-[18px]">visibility</span> XEM CHI TIẾT</button>' +
+            '</div></div></div>';
     }).join('');
 
     if (paginationEl) {
