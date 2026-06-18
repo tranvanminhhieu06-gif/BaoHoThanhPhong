@@ -11643,11 +11643,7 @@ function renderGrid() {
             '</div></div>' +
             '<div class="p-4">' +
             '<p class="text-[10px] font-extrabold text-[#1D5FA8] uppercase tracking-widest mb-1 truncate">' + labelText + '</p>' +
-            '<h3 class="font-bold text-sm text-[#1A2744] mb-3 truncate" title="' + safeTitle + '">' + p.title + '</h3>' +
-            '<div class="flex gap-2">' +
-            '<a href="https://zalo.me/0931160818" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="flex-1 py-2 rounded-xl text-xs font-bold text-center text-white btn-press" style="background:#0068FF;" onmouseover="this.style.background=\'#0056CC\'" onmouseout="this.style.background=\'#0068FF\'">Zalo</a>' +
-            '<a href="' + detailUrl + '" onclick="event.stopPropagation()" class="flex-1 py-2 bg-[#1D5FA8] text-white rounded-xl text-xs font-bold text-center hover:bg-[#164A85] transition-colors btn-press">Chi tiết</a>' +
-            '</div>' +
+            '<h3 class="font-bold text-sm text-[#1A2744] truncate" title="' + safeTitle + '">' + p.title + '</h3>' +
             '</div>' +
             '</div>';
     }).join('');
