@@ -498,25 +498,40 @@
             border-color: var(--white);
         }
 
-        .nav-phone {
+        .nav-phone { display: none; }
+
+        .nav-clock {
             display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: var(--accent);
-            color: var(--white);
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 14px;
-            transition: var(--transition);
+            flex-direction: column;
+            align-items: flex-end;
             white-space: nowrap;
+            line-height: 1.25;
         }
 
-        .nav-phone:hover {
-            background: var(--accent-light);
+        .nav-clock .clock-time {
+            font-size: 15px;
+            font-weight: 800;
             color: var(--navy);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(232, 165, 0, 0.4);
+            letter-spacing: 0.02em;
+        }
+
+        .navbar.scrolled .nav-clock .clock-time {
+            color: var(--navy);
+        }
+
+        .navbar:not(.scrolled) .nav-clock .clock-time {
+            color: var(--white);
+        }
+
+        .nav-clock .clock-date {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gray-500);
+            letter-spacing: 0.01em;
+        }
+
+        .navbar:not(.scrolled) .nav-clock .clock-date {
+            color: rgba(255,255,255,0.75);
         }
 
         .nav-phone i {
@@ -3881,10 +3896,10 @@
                         <i class="fas fa-search"></i>
                     </div>
                 </div>
-                <a href="tel:0931160818" class="nav-phone">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>0931160818</span>
-                </a>
+                <div class="nav-clock" id="navClock">
+                    <span class="clock-time" id="clockTime">--:--</span>
+                    <span class="clock-date" id="clockDate">--/--/----</span>
+                </div>
                 <button class="nav-toggle" id="navToggle">
                     <span></span>
                     <span></span>
@@ -4916,6 +4931,27 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+        (function () {
+            var days = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+            function pad(n) { return n < 10 ? '0' + n : n; }
+            function updateClock() {
+                var now = new Date();
+                var h = pad(now.getHours());
+                var m = pad(now.getMinutes());
+                var d = pad(now.getDate());
+                var mo = pad(now.getMonth() + 1);
+                var y = now.getFullYear();
+                var day = days[now.getDay()];
+                var timeEl = document.getElementById('clockTime');
+                var dateEl = document.getElementById('clockDate');
+                if (timeEl) timeEl.textContent = h + ':' + m;
+                if (dateEl) dateEl.textContent = day + ', ' + d + '/' + mo + '/' + y;
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+        })();
+    </script>
 </body>
 
 </html>

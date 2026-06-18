@@ -202,11 +202,10 @@
 
             <!-- Right actions -->
             <div class="flex items-center gap-3">
-                <a href="tel:0931160818"
-                   class="hidden sm:flex items-center gap-2 bg-[#E8A500] text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-md hover:bg-[#D99A00] transition-colors btn-press">
-                    <span class="material-symbols-outlined text-[18px]">call</span>
-                    0931160818
-                </a>
+                <div class="hidden sm:flex flex-col items-end leading-tight">
+                    <span id="pdClockTime" class="text-sm font-extrabold text-[#1A2744] tracking-tight">--:--</span>
+                    <span id="pdClockDate" class="text-[11px] font-semibold text-gray-500">--/--/----</span>
+                </div>
                 <!-- Mobile menu btn -->
                 <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-colors"
                         onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
@@ -751,6 +750,23 @@
         loadProduct();
     }
 })();
+</script>
+<script>
+    (function () {
+        var days = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+        function pad(n) { return n < 10 ? '0' + n : n; }
+        function updateClock() {
+            var now = new Date();
+            var h = pad(now.getHours()); var m = pad(now.getMinutes());
+            var d = pad(now.getDate()); var mo = pad(now.getMonth() + 1); var y = now.getFullYear();
+            var timeEl = document.getElementById('pdClockTime');
+            var dateEl = document.getElementById('pdClockDate');
+            if (timeEl) timeEl.textContent = h + ':' + m;
+            if (dateEl) dateEl.textContent = days[now.getDay()] + ', ' + d + '/' + mo + '/' + y;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    })();
 </script>
 
 </body>
