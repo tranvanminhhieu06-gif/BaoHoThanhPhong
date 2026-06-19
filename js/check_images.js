@@ -8,8 +8,8 @@ function checkImagesInFile(filePath) {
     if (!fs.existsSync(filePath)) return;
     const content = fs.readFileSync(filePath, 'utf8');
     
-    // Match anything starting with images/ and ending before a quote or space or > 
-    const regex = /images\/[^\"\'\>\s]+/g;
+    // Match anything starting with images/ and ending before a quote or > (folder/file names may contain spaces)
+    const regex = /images\/[^"'>]+/g;
     let match;
     while ((match = regex.exec(content)) !== null) {
         const imgPath = match[0];
@@ -23,7 +23,10 @@ function checkImagesInFile(filePath) {
 }
 
 checkImagesInFile('index.html');
-checkImagesInFile('products.html');
 checkImagesInFile('js/main.js');
+checkImagesInFile('js/products.js');
+checkImagesInFile('html/trangchu.html');
+checkImagesInFile('html/sanpham.html');
+checkImagesInFile('product/index.html');
 
 console.log('Checked ' + checked + ' image references. Missing: ' + missing);
