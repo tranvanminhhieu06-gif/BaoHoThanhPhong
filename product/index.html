@@ -56,6 +56,20 @@
         .img-zoom-wrapper img { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
         .img-zoom-wrapper:hover img { transform: scale(1.05); }
 
+        /* Thumbnail gallery below main image */
+        .pd-thumbs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 2px; }
+        .pd-thumb {
+            width: 72px; height: 72px; flex-shrink: 0; border-radius: 14px; overflow: hidden;
+            cursor: pointer; border: 2px solid transparent; background: var(--gray-100);
+            transition: border-color 0.2s;
+        }
+        .pd-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .pd-thumb.active { border-color: var(--primary); }
+        .pd-thumb-empty {
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gray-400); border: 1.5px dashed var(--gray-200); cursor: default;
+        }
+
         /* Related product card */
         .related-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -271,12 +285,17 @@
             <!-- LEFT: Product Image -->
             <div class="flex flex-col gap-4">
                 <!-- Main image -->
-                <div class="img-zoom-wrapper aspect-square bg-white border border-gray-100 shadow-sm"
+                <div class="img-zoom-wrapper aspect-square bg-white border border-gray-100 shadow-sm relative"
                      style="border-radius:24px; overflow:hidden;">
                     <img id="product-main-img" src="" alt=""
                          class="w-full h-full object-cover"
                          onerror="this.parentElement.style.background='#F1F5F9';">
+                    <img src="../images/BANNER BAN ĐẦU/khung-san-pham.png" alt=""
+                         class="absolute inset-0 w-full h-full object-cover pointer-events-none">
                 </div>
+
+                <!-- Thumbnail gallery -->
+                <div class="pd-thumbs" id="product-thumbs"></div>
 
                 <!-- Badges row -->
                 <div class="flex flex-wrap gap-2">
@@ -293,12 +312,26 @@
                         May theo yêu cầu
                     </span>
                 </div>
+
+                <!-- Description box -->
+                <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+                    <h4 class="font-extrabold text-[#1A2744] text-sm mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#1D5FA8]" style="font-size:18px;">description</span>
+                        Mô tả sản phẩm
+                    </h4>
+                    <p id="product-desc" class="text-sm text-gray-600 leading-relaxed">
+                        Đang tải thông tin sản phẩm...
+                    </p>
+                </div>
             </div>
 
             <!-- RIGHT: Product Info -->
             <div class="flex flex-col">
-                <!-- Category badge -->
+                <!-- Category badge / tagline -->
                 <div class="mb-3">
+                    <p id="product-tagline"
+                       class="text-[12px] font-extrabold text-[#1D5FA8] uppercase tracking-[0.12em] leading-snug mb-2"
+                       style="display:none;"></p>
                     <span id="product-cat"
                           class="text-[11px] font-extrabold text-[#1D5FA8] uppercase tracking-[0.2em] px-3 py-1 bg-[#EBF3FF] rounded-lg inline-block">
                         ...
@@ -314,43 +347,32 @@
                 <!-- Key features -->
                 <div class="space-y-3 mb-8">
                     <div class="feature-item">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                            <span class="material-symbols-outlined text-[#1D5FA8]" style="font-size:20px;">verified</span>
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0" id="feature1-iconwrap">
+                            <span class="material-symbols-outlined text-[#1D5FA8]" id="feature1-icon" style="font-size:20px;">verified</span>
                         </div>
                         <div>
-                            <p class="font-bold text-[#1A2744] text-sm">Chất lượng cao, đạt tiêu chuẩn an toàn</p>
-                            <p class="text-xs text-gray-500 mt-0.5">Sản phẩm chính hãng, có đầy đủ CO/CQ chứng nhận chất lượng</p>
+                            <p class="font-bold text-[#1A2744] text-sm" id="feature1-title">Chất lượng cao, đạt tiêu chuẩn an toàn</p>
+                            <p class="text-xs text-gray-500 mt-0.5" id="feature1-desc">Sản phẩm chính hãng, có đầy đủ CO/CQ chứng nhận chất lượng</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                            <span class="material-symbols-outlined text-[#1D5FA8]" style="font-size:20px;">local_shipping</span>
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0" id="feature2-iconwrap">
+                            <span class="material-symbols-outlined text-[#1D5FA8]" id="feature2-icon" style="font-size:20px;">local_shipping</span>
                         </div>
                         <div>
-                            <p class="font-bold text-[#1A2744] text-sm">Giao hàng toàn quốc – Nhanh chóng</p>
-                            <p class="text-xs text-gray-500 mt-0.5">Hỗ trợ vận chuyển tận nơi, đóng gói chắc chắn an toàn</p>
+                            <p class="font-bold text-[#1A2744] text-sm" id="feature2-title">Giao hàng toàn quốc – Nhanh chóng</p>
+                            <p class="text-xs text-gray-500 mt-0.5" id="feature2-desc">Hỗ trợ vận chuyển tận nơi, đóng gói chắc chắn an toàn</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0">
-                            <span class="material-symbols-outlined text-amber-600" style="font-size:20px;">groups</span>
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0" id="feature3-iconwrap">
+                            <span class="material-symbols-outlined text-amber-600" id="feature3-icon" style="font-size:20px;">groups</span>
                         </div>
                         <div>
-                            <p class="font-bold text-[#1A2744] text-sm">Nhận đặt hàng số lượng lớn</p>
-                            <p class="text-xs text-gray-500 mt-0.5">Báo giá sỉ ưu đãi cho doanh nghiệp, may in thêu theo yêu cầu</p>
+                            <p class="font-bold text-[#1A2744] text-sm" id="feature3-title">Nhận đặt hàng số lượng lớn</p>
+                            <p class="text-xs text-gray-500 mt-0.5" id="feature3-desc">Báo giá sỉ ưu đãi cho doanh nghiệp, may in thêu theo yêu cầu</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- Description box -->
-                <div class="bg-white border border-gray-100 rounded-2xl p-5 mb-8 shadow-sm">
-                    <h4 class="font-extrabold text-[#1A2744] text-sm mb-3 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[#1D5FA8]" style="font-size:18px;">description</span>
-                        Mô tả sản phẩm
-                    </h4>
-                    <p id="product-desc" class="text-sm text-gray-600 leading-relaxed">
-                        Đang tải thông tin sản phẩm...
-                    </p>
                 </div>
 
                 <!-- CTA Buttons -->
@@ -393,6 +415,33 @@
                 </p>
             </div>
         </div>
+
+        <!-- ===== CATEGORY DETAIL COLUMNS (shown only for categories with custom content) ===== -->
+        <section class="mb-20" id="category-columns-section" style="display:none;" data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                    <h3 class="flex items-center gap-2 font-extrabold text-[#1A2744] text-base mb-4">
+                        <span class="material-symbols-outlined" id="col1-icon" style="font-size:20px;color:#1D5FA8;">groups</span>
+                        <span id="col1-title">Ứng Dụng</span>
+                    </h3>
+                    <ul class="space-y-2.5 text-sm text-gray-600" id="col1-list"></ul>
+                </div>
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                    <h3 class="flex items-center gap-2 font-extrabold text-[#1A2744] text-base mb-4">
+                        <span class="material-symbols-outlined" id="col2-icon" style="font-size:20px;color:#D99A00;">trending_up</span>
+                        <span id="col2-title">Lợi Ích Khi Sử Dụng</span>
+                    </h3>
+                    <ul class="space-y-2.5 text-sm text-gray-600" id="col2-list"></ul>
+                </div>
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                    <h3 class="flex items-center gap-2 font-extrabold text-[#1A2744] text-base mb-4">
+                        <span class="material-symbols-outlined" id="col3-icon" style="font-size:20px;color:#059669;">check_circle</span>
+                        <span id="col3-title">Cam Kết Từ Thành Phong</span>
+                    </h3>
+                    <ul class="space-y-2.5 text-sm text-gray-600" id="col3-list"></ul>
+                </div>
+            </div>
+        </section>
 
         <!-- ===== PRODUCTS YOU MIGHT LIKE ===== -->
         <section class="mb-20" data-aos="fade-up">
@@ -610,6 +659,110 @@
 (function() {
     var ZALO_URL = 'https://zalo.me/0931160818';
 
+    // Per-category marketing content overrides (falls back to generic content when absent)
+    var categoryContent = {
+        cat11: {
+            tagline: 'QUẦN ÁO KỸ SƯ CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG',
+            heading: 'QUẦN ÁO KỸ SƯ CHUYÊN NGHIỆP – HIỆN ĐẠI, NÂNG CAO HÌNH ẢNH DOANH NGHIỆP',
+            shortDesc: 'Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp.',
+            features: [
+                {
+                    icon: 'verified', iconWrapClass: 'bg-blue-50', iconClass: 'text-[#1D5FA8]',
+                    title: 'Chất liệu cao cấp',
+                    desc: 'Vải kaki liên doanh, pangrim hoặc kate chất lượng cao. Độ bền cao, ít nhăn. Thoáng mát, phù hợp làm việc trong thời gian dài.'
+                },
+                {
+                    icon: 'design_services', iconWrapClass: 'bg-rose-50', iconClass: 'text-rose-500',
+                    title: 'Thiết kế chuyên nghiệp',
+                    desc: 'Form dáng hiện đại, lịch sự. Nhiều túi chức năng tiện lợi. Phối màu nổi bật, dễ nhận diện vị trí kỹ sư.'
+                },
+                {
+                    icon: 'stars', iconWrapClass: 'bg-amber-50', iconClass: 'text-amber-600',
+                    title: 'Đặc điểm nổi bật',
+                    desc: 'Dễ dàng thêu hoặc in logo doanh nghiệp. Đường may tỉ mỉ, chắc chắn. Tăng tính chuyên nghiệp cho đội ngũ kỹ thuật.'
+                }
+            ],
+            columns: [
+                {
+                    icon: 'groups', color: '#1D5FA8', title: 'Ứng Dụng',
+                    items: ['Kỹ sư xây dựng, Kỹ sư cơ khí', 'Kỹ sư điện, Kỹ sư giám sát công trình', 'Đội ngũ quản lý kỹ thuật tại nhà máy và khu công nghiệp']
+                },
+                {
+                    icon: 'trending_up', color: '#D99A00', title: 'Lợi Ích Khi Sử Dụng',
+                    items: ['Xây dựng hình ảnh chuyên nghiệp cho doanh nghiệp', 'Tăng khả năng nhận diện thương hiệu', 'Mang lại sự thoải mái khi làm việc tại công trường hoặc nhà máy']
+                },
+                {
+                    icon: 'check_circle', color: '#059669', title: 'Cam Kết Từ Thành Phong',
+                    items: ['Chất liệu bền đẹp, đúng mô tả', 'Thiết kế theo yêu cầu doanh nghiệp', 'Hỗ trợ tư vấn và thiết kế miễn phí', 'Giá cạnh tranh cho đơn hàng số lượng lớn', 'Giao hàng toàn quốc nhanh chóng']
+                }
+            ]
+        }
+    };
+
+    function applyCategoryContent(product, catLabel) {
+        var content = categoryContent[product.cat];
+
+        var taglineEl = document.getElementById('product-tagline');
+        var catEl = document.getElementById('product-cat');
+        var titleEl = document.getElementById('product-title');
+        var descEl = document.getElementById('product-desc');
+        var columnsSection = document.getElementById('category-columns-section');
+
+        if (!content) {
+            if (taglineEl) taglineEl.style.display = 'none';
+            if (catEl) catEl.style.display = 'inline-block';
+            if (catEl) catEl.textContent = catLabel;
+            if (titleEl) titleEl.textContent = product.title;
+            if (descEl) {
+                descEl.textContent = product.desc ||
+                    'Sản phẩm chất lượng cao, đạt chuẩn an toàn quốc gia. Vui lòng liên hệ để được tư vấn kích thước và nhận báo giá tốt nhất cho doanh nghiệp của bạn.';
+            }
+            if (columnsSection) columnsSection.style.display = 'none';
+            return;
+        }
+
+        if (taglineEl) {
+            taglineEl.textContent = content.tagline;
+            taglineEl.style.display = 'block';
+        }
+        if (catEl) catEl.style.display = 'none';
+        if (titleEl) titleEl.textContent = content.heading;
+        if (descEl) descEl.textContent = content.shortDesc;
+
+        content.features.forEach(function(feature, idx) {
+            var n = idx + 1;
+            var wrapEl = document.getElementById('feature' + n + '-iconwrap');
+            var iconEl = document.getElementById('feature' + n + '-icon');
+            var titleEl2 = document.getElementById('feature' + n + '-title');
+            var descEl2 = document.getElementById('feature' + n + '-desc');
+            if (wrapEl) wrapEl.className = 'w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ' + feature.iconWrapClass;
+            if (iconEl) {
+                iconEl.textContent = feature.icon;
+                iconEl.className = 'material-symbols-outlined ' + feature.iconClass;
+            }
+            if (titleEl2) titleEl2.textContent = feature.title;
+            if (descEl2) descEl2.textContent = feature.desc;
+        });
+
+        if (columnsSection) {
+            columnsSection.style.display = 'block';
+            content.columns.forEach(function(col, idx) {
+                var n = idx + 1;
+                var iconEl = document.getElementById('col' + n + '-icon');
+                var titleEl3 = document.getElementById('col' + n + '-title');
+                var listEl = document.getElementById('col' + n + '-list');
+                if (iconEl) { iconEl.textContent = col.icon; iconEl.style.color = col.color; }
+                if (titleEl3) titleEl3.textContent = col.title;
+                if (listEl) {
+                    listEl.innerHTML = col.items.map(function(item) {
+                        var safeItem = item.replace(/</g, '&lt;');
+                        return '<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style="background:' + col.color + ';"></span><span>' + safeItem + '</span></li>';
+                    }).join('');
+                }
+            });
+        }
+    }
+
     // Fisher-Yates shuffle
     function shuffle(arr) {
         var a = arr.slice();
@@ -648,8 +801,9 @@
             var safeLabel = label.replace(/</g, '&lt;');
 
             return '<div class="related-card bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm" onclick="window.location.href=\'index.html?id=' + p.id + '\'">' +
-                '<div class="relative overflow-hidden" style="aspect-ratio:4/5; background:#F8FAFC;">' +
+                '<div class="relative overflow-hidden" style="aspect-ratio:1/1; background:#F8FAFC;">' +
                 '<img src="' + p.img + '" alt="' + safeTitle + '" class="related-img w-full h-full object-cover" loading="lazy" onerror="this.parentElement.style.background=\'#F1F5F9\'">' +
+                '<img src="../images/BANNER BAN ĐẦU/khung-san-pham.png" alt="" class="absolute inset-0 w-full h-full object-cover" style="pointer-events:none;">' +
                 '<div class="related-overlay absolute inset-0 flex flex-col items-center justify-end p-4" style="background:linear-gradient(to top, rgba(26,39,68,0.82) 0%, transparent 60%);">' +
                 '<span class="text-white text-xs font-bold">Xem chi tiết →</span>' +
                 '</div>' +
@@ -671,6 +825,36 @@
                 '</div>' +
                 '</div>';
         }).join('');
+    }
+
+    // Thumbnail gallery below the main image: uses product.images[] when
+    // provided, otherwise shows empty placeholder slots until real photos
+    // are added per product.
+    function renderThumbnails(product, mainImgEl) {
+        var thumbsEl = document.getElementById('product-thumbs');
+        if (!thumbsEl) return;
+
+        var images = Array.isArray(product.images) && product.images.length ? product.images : null;
+
+        if (images) {
+            var safeTitle = product.title.replace(/"/g, '&quot;');
+            thumbsEl.innerHTML = images.map(function(src, i) {
+                return '<button type="button" class="pd-thumb' + (i === 0 ? ' active' : '') + '" data-src="' + src + '">' +
+                    '<img src="' + src + '" alt="' + safeTitle + ' - ' + (i + 1) + '"></button>';
+            }).join('');
+            var thumbBtns = thumbsEl.querySelectorAll('.pd-thumb');
+            thumbBtns.forEach(function(btn) {
+                btn.onclick = function() {
+                    if (mainImgEl) mainImgEl.src = btn.dataset.src;
+                    thumbBtns.forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                };
+            });
+        } else {
+            thumbsEl.innerHTML = Array.from({ length: 4 }).map(function() {
+                return '<div class="pd-thumb pd-thumb-empty"><span class="material-symbols-outlined" style="font-size:24px;">image</span></div>';
+            }).join('');
+        }
     }
 
     function loadProduct() {
@@ -720,12 +904,8 @@
             catLink.href = '../html/sanpham.html?cat=' + product.cat;
         }
 
-        // Product data
-        var catEl = document.getElementById('product-cat');
-        if (catEl) catEl.textContent = catLabel;
-
-        var titleEl = document.getElementById('product-title');
-        if (titleEl) titleEl.textContent = product.title;
+        // Product data (category-specific marketing content, falls back to generic)
+        applyCategoryContent(product, catLabel);
 
         var imgEl = document.getElementById('product-main-img');
         if (imgEl) {
@@ -733,11 +913,7 @@
             imgEl.alt = product.title;
         }
 
-        var descEl = document.getElementById('product-desc');
-        if (descEl) {
-            descEl.textContent = product.desc ||
-                'Sản phẩm chất lượng cao, đạt chuẩn an toàn quốc gia. Vui lòng liên hệ để được tư vấn kích thước và nhận báo giá tốt nhất cho doanh nghiệp của bạn.';
-        }
+        renderThumbnails(product, imgEl);
 
         // Related products (random each load)
         renderRelated(product);

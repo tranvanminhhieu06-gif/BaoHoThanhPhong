@@ -294,7 +294,11 @@
                 <h1 class="text-5xl font-extrabold text-[#1A2744] tracking-tight mb-2">Danh Mục Thiết Bị</h1>
                 <p class="text-gray-500 max-w-xl font-medium">Cung cấp giải pháp bảo hộ lao động toàn diện, tiêu chuẩn chất lượng quốc tế cho doanh nghiệp.</p>
             </div>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
+                <button id="shuffleBtn" onclick="window.shuffleCats()" title="Hiển thị ngẫu nhiên" style="display:none;" class="flex items-center gap-2 px-5 py-3.5 bg-[#1D5FA8] text-white rounded-2xl text-sm font-bold shadow-sm hover:bg-[#164A85] active:scale-95 transition-all btn-press">
+                    <span class="material-symbols-outlined text-[18px]">shuffle</span>
+                    Ngẫu nhiên
+                </button>
                 <div class="relative group">
                     <select id="sortSelect" class="appearance-none bg-white border border-gray-200 rounded-2xl px-6 py-3.5 pr-14 text-sm font-bold text-[#1A2744] focus:ring-4 focus:ring-[#1D5FA8]/10 focus:border-[#1D5FA8] transition-all cursor-pointer shadow-sm">
                         <option value="default">Phân loại: Mặc định</option>

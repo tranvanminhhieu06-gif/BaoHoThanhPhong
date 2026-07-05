@@ -6697,7 +6697,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714009145630_1714031335430.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu671",
@@ -6707,7 +6707,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714009150309_1714031335899.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu672",
@@ -6717,7 +6717,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714009178799_1714031336992.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu673",
@@ -6727,7 +6727,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714009180509_1714031337920.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu674",
@@ -6737,7 +6737,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714009182412_1714031338395.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu675",
@@ -6747,7 +6747,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714009192828_1714031340565.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu676",
@@ -6757,7 +6757,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714009194309_1714031341235.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu677",
@@ -6767,7 +6767,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714701886593_1714705679804.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu678",
@@ -6777,7 +6777,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714701890587_1714705680357.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu679",
@@ -6787,7 +6787,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714701893011_1714705681508.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu680",
@@ -6797,7 +6797,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714701894979_1714705682431.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu681",
@@ -6807,7 +6807,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714701899807_1714705682852.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu682",
@@ -6817,7 +6817,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_1714701905327_1714705683255.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu683",
@@ -6827,7 +6827,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240108_095007.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu684",
@@ -6837,7 +6837,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240108_095014.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu685",
@@ -6847,7 +6847,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240108_095023.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu686",
@@ -6857,7 +6857,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240510_111609.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu687",
@@ -6867,7 +6867,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240510_111810.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu688",
@@ -6877,7 +6877,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240510_111813.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu689",
@@ -6887,7 +6887,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240510_111816.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu690",
@@ -6897,7 +6897,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240510_111819.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu691",
@@ -6907,7 +6907,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240510_111821.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu692",
@@ -6917,7 +6917,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240510_111824.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu693",
@@ -6927,7 +6927,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240510_111827.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu694",
@@ -6937,7 +6937,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240521_155925.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu695",
@@ -6947,7 +6947,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240521_155928.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu696",
@@ -6957,7 +6957,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240521_155931.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu697",
@@ -6967,7 +6967,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240521_155935.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu698",
@@ -6977,7 +6977,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240521_155938.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu699",
@@ -6987,7 +6987,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240521_160118.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu700",
@@ -6997,7 +6997,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240530_102431.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu701",
@@ -7007,7 +7007,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240530_102434.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu702",
@@ -7017,7 +7017,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240530_102441.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu703",
@@ -7027,7 +7027,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240530_102930.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu704",
@@ -7037,7 +7037,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240530_102935.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu705",
@@ -7047,7 +7047,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240530_102941.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu706",
@@ -7057,7 +7057,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20240530_102945.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu707",
@@ -7067,7 +7067,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20250524_045336.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu708",
@@ -7077,7 +7077,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20250524_045346.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu709",
@@ -7087,7 +7087,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101300.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu710",
@@ -7097,7 +7097,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101303.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu711",
@@ -7107,7 +7107,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101306.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu712",
@@ -7117,7 +7117,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101308.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu713",
@@ -7127,7 +7127,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101312.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu714",
@@ -7137,7 +7137,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101335.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu715",
@@ -7147,7 +7147,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101337.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu716",
@@ -7157,7 +7157,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101340.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu717",
@@ -7167,7 +7167,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101342.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu718",
@@ -7177,7 +7177,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101345.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu719",
@@ -7187,7 +7187,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101347.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu720",
@@ -7197,7 +7197,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101350.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu721",
@@ -7207,7 +7207,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101352.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu722",
@@ -7217,7 +7217,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101354.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu723",
@@ -7227,7 +7227,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101357.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu724",
@@ -7237,7 +7237,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/IMG_20251115_101400.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu725",
@@ -7247,7 +7247,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_01.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu726",
@@ -7257,7 +7257,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_02.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu727",
@@ -7267,7 +7267,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_03.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu728",
@@ -7277,7 +7277,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_05.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu729",
@@ -7287,7 +7287,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_06.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu730",
@@ -7297,7 +7297,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_07.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu731",
@@ -7307,7 +7307,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_08.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu732",
@@ -7317,7 +7317,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_09.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu733",
@@ -7327,7 +7327,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_11.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu734",
@@ -7337,7 +7337,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/mau_12.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu735",
@@ -7347,7 +7347,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/z6004480474682_ad8a38a2aceeb2760ea90cc38f8a91ac.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu736",
@@ -7357,7 +7357,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/z6004527029099_89cc967b6ccbb71f3031da42deb2712c.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu737",
@@ -7367,7 +7367,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/z6004527029465_7d57cef438abfbe49f98f3ff8efcd1d9.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu738",
@@ -7377,7 +7377,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/z6004527040069_1041d2901b0965687bd9554ac7bc28c7.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaokysu739",
@@ -7387,7 +7387,7 @@
     "subcat": "",
     "subcatLabel": "",
     "img": "../images/QUẦN ÁO KỸ SƯ/z6004547319979_1f9274e6ac4545614e3037f07f94246d.jpg",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp."
   },
   {
     "id": "quanaomuaaop740",
@@ -11425,6 +11425,40 @@ let currentFilter = 'all';
 let currentSort = 'default';
 let currentPage = 1;
 const itemsPerPage = 12;
+let currentShuffledList = null;
+let currentCatOrder = null;
+
+const catBiaImages = {
+    'cat1':  '../images/BÌA/bia-ao-ghile.png',
+    'cat2':  '../images/BÌA/bia-ao-phan-quang-kieu-3m.png',
+    'cat3':  '../images/BÌA/bia-ao-thun-cong-nhan.png',
+    'cat4':  '../images/BÌA/bia-thiet-bi-bao-ve-tai.png',
+    'cat5':  '../images/BÌA/bia-quan-tay.png',
+    'cat6':  '../images/BÌA/bia-đong-phuc-bao-ve.png',
+    'cat7':  '../images/BÌA/bia-gang-tay-da-han.png',
+    'cat8':  '../images/BÌA/bia-mat-na-phong-doc.png',
+    'cat9':  '../images/BÌA/bia-non-bao-ho-non-cong-nhan.png',
+    'cat10': '../images/BÌA/bia-quan-ao-cong-nhan.png',
+    'cat11': '../images/BÌA/bia-quan-ao-ky-su.png',
+    'cat12': '../images/BÌA/bia-ao-mua-canh-doi.png',
+    'cat13': '../images/BÌA/bia-ao-phao.png',
+    'cat14': '../images/BÌA/bia-day-an-toan.png',
+    'cat15': '../images/BÌA/bia-dep-nhua.png',
+    'cat16': '../images/BÌA/bia-thiet-bi-bao-ve-mat.png',
+    'cat17': '../images/BÌA/bia-coc-giao-thong.png',
+    'cat18': '../images/BÌA/bia-cuon-rao-cong-trinh.png',
+    'cat19': '../images/BÌA/bia-binh-cuu-hoa-binh-chua-chay.png',
+    'cat20': '../images/BÌA/bia-thung-rac-cong-nghiep.png'
+};
+
+function shuffleArray(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+}
 
 function countByFilter(f) {
     if (f === 'all') return products.length;
@@ -11454,24 +11488,88 @@ function getFiltered() {
     return list;
 }
 
+function buildPagination(paginationEl, totalPages) {
+    if (!paginationEl) return;
+    if (totalPages > 1) {
+        let html = '<div class="flex items-center justify-center gap-2 mt-12">';
+        const prevCls = currentPage === 1 ? 'text-gray-300 cursor-not-allowed border border-gray-100' : 'text-gray-600 border border-gray-200 hover:bg-[#1D5FA8] hover:text-white hover:border-[#1D5FA8] btn-press';
+        html += '<button onclick="window.changePage(' + (currentPage - 1) + ')" class="w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all ' + prevCls + '"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>';
+        let start = currentPage, end = Math.min(totalPages, currentPage + 2);
+        if (currentPage + 2 > totalPages) { start = Math.max(1, totalPages - 2); end = totalPages; }
+        for (let i = start; i <= end; i++) {
+            const cls = currentPage === i ? 'bg-[#1D5FA8] text-white shadow-lg border border-[#1D5FA8]' : 'text-gray-600 border border-gray-200 hover:bg-[#1D5FA8] hover:text-white hover:border-[#1D5FA8] btn-press';
+            html += '<button onclick="window.changePage(' + i + ')" class="w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all ' + cls + '">' + i + '</button>';
+        }
+        if (end < totalPages - 1) html += '<span class="text-gray-400 font-bold px-1">...</span>';
+        if (end < totalPages) html += '<button onclick="window.changePage(' + totalPages + ')" class="w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all text-gray-600 border border-gray-200 hover:bg-[#1D5FA8] hover:text-white hover:border-[#1D5FA8] btn-press">' + totalPages + '</button>';
+        const nextCls = currentPage === totalPages ? 'text-gray-300 cursor-not-allowed border border-gray-100' : 'text-gray-600 border border-gray-200 hover:bg-[#1D5FA8] hover:text-white hover:border-[#1D5FA8] btn-press';
+        html += '<button onclick="window.changePage(' + (currentPage + 1) + ')" class="w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all ' + nextCls + '"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>';
+        html += '</div>';
+        paginationEl.innerHTML = html;
+    } else {
+        paginationEl.innerHTML = '';
+    }
+}
+
 function renderGrid() {
-    const list = getFiltered();
     const grid = document.getElementById('productsGrid');
     const paginationEl = document.getElementById('paginationControls');
     const resultsCountEl = document.getElementById('results-count');
+    if (!grid) return;
+
+    // Toggle shuffle button visibility
+    const shuffleBtn = document.getElementById('shuffleBtn');
+    if (shuffleBtn) shuffleBtn.style.display = currentFilter === 'all' ? 'flex' : 'none';
+
+    // ── "Tất cả" view: show category bìa cards ──────────────────────────────
+    if (currentFilter === 'all') {
+        if (!currentCatOrder) currentCatOrder = shuffleArray(Object.keys(catBiaImages));
+        const catList = currentCatOrder;
+        if (resultsCountEl) resultsCountEl.textContent = catList.length + ' danh mục sản phẩm';
+        const totalPages = Math.ceil(catList.length / itemsPerPage);
+        if (currentPage > totalPages) currentPage = totalPages || 1;
+        if (currentPage < 1) currentPage = 1;
+        const paginatedCats = catList.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+        grid.innerHTML = paginatedCats.map(catId => {
+            const catProducts = products.filter(p => p.cat === catId);
+            const catLabel = catProducts.length > 0 ? catProducts[0].catLabel : catId;
+            const count = catProducts.length;
+            const biaImg = catBiaImages[catId];
+            const safeLabel = catLabel.replace(/"/g, '&quot;');
+            return '<div class="product-card group bg-white rounded-[24px] overflow-hidden border border-gray-100 shadow-sm cursor-pointer" onclick="window.goCat(\'' + catId + '\')">' +
+                '<div class="relative aspect-square bg-gray-50 overflow-hidden">' +
+                '<img alt="' + safeLabel + '" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="' + biaImg + '" loading="lazy" onerror="this.parentElement.style.background=\'#f1f5f9\'">' +
+                '<img alt="" src="../images/BANNER BAN ĐẦU/khung-san-pham.png" class="absolute inset-0 w-full h-full object-cover pointer-events-none">' +
+                '<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-end p-6 gap-3">' +
+                '<div class="text-center w-full"><h3 class="font-bold text-sm text-white mb-3 line-clamp-2">' + catLabel + '</h3></div>' +
+                '<button class="w-full py-3 bg-white text-[#1A2744] text-xs font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-[#E8A500] hover:text-white transition-colors btn-press"><span class="material-symbols-outlined text-[18px]">grid_view</span> XEM SẢN PHẨM</button>' +
+                '</div></div>' +
+                '<div class="p-4">' +
+                '<p class="text-[10px] font-extrabold text-[#1D5FA8] uppercase tracking-widest mb-1 truncate">' + count + ' sản phẩm</p>' +
+                '<h3 class="font-bold text-sm text-[#1A2744] truncate" title="' + safeLabel + '">' + catLabel + '</h3>' +
+                '</div></div>';
+        }).join('');
+
+        buildPagination(paginationEl, totalPages);
+        return;
+    }
+
+    // ── Category / subcat product view ───────────────────────────────────────
+    const list = currentShuffledList || getFiltered();
     if (resultsCountEl) resultsCountEl.textContent = 'Hiển thị ' + list.length + ' sản phẩm';
     const totalPages = Math.ceil(list.length / itemsPerPage);
     if (currentPage > totalPages) currentPage = totalPages || 1;
     if (currentPage < 1) currentPage = 1;
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const paginatedList = list.slice(startIndex, startIndex + itemsPerPage);
+    const paginatedList = list.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
     grid.innerHTML = paginatedList.map(p => {
         const labelText = p.subcatLabel || p.catLabel;
         const detailUrl = '../product/index.html?id=' + p.id;
         const safeTitle = p.title.replace(/"/g, '&quot;');
         return '<div class="product-card group bg-white rounded-[24px] overflow-hidden border border-gray-100 shadow-sm cursor-pointer" onclick="window.location.href=\'' + detailUrl + '\'">' +
-            '<div class="relative aspect-[4/5] bg-gray-50 overflow-hidden">' +
+            '<div class="relative aspect-square bg-gray-50 overflow-hidden">' +
             '<img alt="' + safeTitle + '" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="' + p.img + '" loading="lazy" onerror="this.parentElement.style.background=\'#f1f5f9\'">' +
+            '<img alt="" src="../images/BANNER BAN ĐẦU/khung-san-pham.png" class="absolute inset-0 w-full h-full object-cover pointer-events-none">' +
             '<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-end p-6 gap-3">' +
             '<div class="text-center w-full">' +
             '<p class="text-[10px] font-extrabold text-[#E8A500] uppercase tracking-widest mb-1">' + labelText + '</p>' +
@@ -11486,36 +11584,43 @@ function renderGrid() {
             '</div>';
     }).join('');
 
-    if (paginationEl) {
-        if (totalPages > 1) {
-            let html = '<div class="flex items-center justify-center gap-2 mt-12">';
-            const prevCls = currentPage === 1 ? 'text-gray-300 cursor-not-allowed border border-gray-100' : 'text-gray-600 border border-gray-200 hover:bg-[#1D5FA8] hover:text-white hover:border-[#1D5FA8] btn-press';
-            html += '<button onclick="window.changePage(' + (currentPage - 1) + ')" class="w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all ' + prevCls + '"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>';
-            let start = currentPage, end = Math.min(totalPages, currentPage + 2);
-            if (currentPage + 2 > totalPages) { start = Math.max(1, totalPages - 2); end = totalPages; }
-            for (let i = start; i <= end; i++) {
-                const cls = currentPage === i ? 'bg-[#1D5FA8] text-white shadow-lg border border-[#1D5FA8]' : 'text-gray-600 border border-gray-200 hover:bg-[#1D5FA8] hover:text-white hover:border-[#1D5FA8] btn-press';
-                html += '<button onclick="window.changePage(' + i + ')" class="w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all ' + cls + '">' + i + '</button>';
-            }
-            if (end < totalPages - 1) html += '<span class="text-gray-400 font-bold px-1">...</span>';
-            if (end < totalPages) html += '<button onclick="window.changePage(' + totalPages + ')" class="w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all text-gray-600 border border-gray-200 hover:bg-[#1D5FA8] hover:text-white hover:border-[#1D5FA8] btn-press">' + totalPages + '</button>';
-            const nextCls = currentPage === totalPages ? 'text-gray-300 cursor-not-allowed border border-gray-100' : 'text-gray-600 border border-gray-200 hover:bg-[#1D5FA8] hover:text-white hover:border-[#1D5FA8] btn-press';
-            html += '<button onclick="window.changePage(' + (currentPage + 1) + ')" class="w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all ' + nextCls + '"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>';
-            html += '</div>';
-            paginationEl.innerHTML = html;
-        } else {
-            paginationEl.innerHTML = '';
-        }
-    }
+    buildPagination(paginationEl, totalPages);
 }
 
 window.changePage = function(page) {
-    const list = getFiltered();
-    const totalPages = Math.ceil(list.length / itemsPerPage);
+    const totalItems = currentFilter === 'all'
+        ? Object.keys(catBiaImages).length
+        : (currentShuffledList || getFiltered()).length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
     if (page >= 1 && page <= totalPages) {
         currentPage = page;
         renderGrid();
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+window.goCat = function(catId) {
+    currentShuffledList = shuffleArray(products.filter(p => p.cat === catId));
+    currentCatOrder = null;
+    currentFilter = catId;
+    currentPage = 1;
+    if (window._setActiveFilter) window._setActiveFilter(catId);
+    const url = new URL(window.location);
+    url.searchParams.set('cat', catId);
+    url.searchParams.delete('subcat');
+    window.history.pushState({}, '', url);
+    renderGrid();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+window.shuffleCats = function() {
+    currentCatOrder = shuffleArray(Object.keys(catBiaImages));
+    currentPage = 1;
+    renderGrid();
+    const btn = document.getElementById('shuffleBtn');
+    if (btn) {
+        btn.classList.add('opacity-60');
+        setTimeout(() => btn.classList.remove('opacity-60'), 300);
     }
 };
 
@@ -11549,6 +11654,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lightbox) lightbox.onclick = e => { if (e.target === lightbox) window.closeLightbox(); };
 
     function setActiveFilter(filter) {
+        currentShuffledList = null;
+        if (filter === 'all') currentCatOrder = null;
         currentFilter = filter;
         currentPage = 1;
 
@@ -11678,9 +11785,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    window._setActiveFilter = setActiveFilter;
+
     // Sort
     const sortSelect = document.getElementById('sortSelect');
-    if (sortSelect) sortSelect.addEventListener('change', e => { currentSort = e.target.value; currentPage = 1; renderGrid(); });
+    if (sortSelect) sortSelect.addEventListener('change', e => { currentShuffledList = null; currentSort = e.target.value; currentPage = 1; renderGrid(); });
 
     // Scroll nav shadow
     window.addEventListener('scroll', () => {
