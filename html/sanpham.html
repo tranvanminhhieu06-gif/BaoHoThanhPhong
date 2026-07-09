@@ -339,24 +339,70 @@
         </div>
         <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat1">0</span>
     </a>
-    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat2">
+    <div class="accordion-group">
+    <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat2" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
                 <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">visibility</span>
             </div>
             <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">ÁO PHẢN QUANG</span>
         </div>
-        <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat2">0</span>
-    </a>
-    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat3">
+        <div class="flex items-center gap-1 shrink-0 ml-1">
+            <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat2">0</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-400 accordion-chevron transition-transform duration-300">expand_more</span>
+        </div>
+    </button>
+    <div class="accordion-children" id="children-cat2">
+        <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat2" data-subcat="cat2_s1">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO PHẢN QUANG KIỂU 3M</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat2_s1">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat2" data-subcat="cat2_s2">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO PHẢN QUANG PALIZE</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat2_s2">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat2" data-subcat="cat2_s3">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO PHẢN QUANG TÚI LƯỚI</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat2_s3">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat2" data-subcat="cat2_s4">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO PHẢN QUANGTHUN 2 BÊN</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat2_s4">0</span>
+        </a>
+        </div>
+    </div>
+    </div>
+    <div class="accordion-group">
+    <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat3" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
                 <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">apparel</span>
             </div>
             <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">ÁO THUN</span>
         </div>
-        <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat3">0</span>
-    </a>
+        <div class="flex items-center gap-1 shrink-0 ml-1">
+            <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat3">0</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-400 accordion-chevron transition-transform duration-300">expand_more</span>
+        </div>
+    </button>
+    <div class="accordion-children" id="children-cat3">
+        <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat3" data-subcat="cat3_s1">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO THUN CÔNG NHÂN</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat3_s1">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat3" data-subcat="cat3_s2">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO THUN THỂ THAO</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat3_s2">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat3" data-subcat="cat3_s3">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO THUN VĂN PHÒNG</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat3_s3">0</span>
+        </a>
+        </div>
+    </div>
+    </div>
     <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat4">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
@@ -366,35 +412,22 @@
         </div>
         <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat4">0</span>
     </a>
-    <div class="accordion-group">
-    <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat5" data-has-children="true">
+    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat5">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">shield_person</span>
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">folder</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">ĐỒNG PHỤC CÔNG SỞ</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">BÌA</span>
         </div>
-        <div class="flex items-center gap-1 shrink-0 ml-1">
-            <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat5">0</span>
-            <span class="material-symbols-outlined text-[18px] text-gray-400 accordion-chevron transition-transform duration-300">expand_more</span>
-        </div>
-    </button>
-    <div class="accordion-children" id="children-cat5">
-        <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat5" data-subcat="cat5_s1">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">QUẦN TÂY</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat5_s1">0</span>
-        </a>
-        </div>
-    </div>
-    </div>
+        <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat5">0</span>
+    </a>
     <div class="accordion-group">
     <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat6" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
                 <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">shield_person</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">ĐỒNG PHỤC CÔNG SỞ</span>
         </div>
         <div class="flex items-center gap-1 shrink-0 ml-1">
             <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat6">0</span>
@@ -404,12 +437,16 @@
     <div class="accordion-children" id="children-cat6">
         <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat6" data-subcat="cat6_s1">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ĐỒNG PHỤC</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO SƠ MI</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat6_s1">0</span>
         </a>
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat6" data-subcat="cat6_s2">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">PHỤ KIỆN BẢO VỆ</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">CHÂN VÁY CÔNG SỞ</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat6_s2">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat6" data-subcat="cat6_s3">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">QUẦN TÂY</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat6_s3">0</span>
         </a>
         </div>
     </div>
@@ -418,9 +455,9 @@
     <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat7" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">front_hand</span>
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">shield_person</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">GĂNG TAY BẢO HỘ LAO ĐỘNG</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ</span>
         </div>
         <div class="flex items-center gap-1 shrink-0 ml-1">
             <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat7">0</span>
@@ -430,59 +467,64 @@
     <div class="accordion-children" id="children-cat7">
         <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat7" data-subcat="cat7_s1">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GANG TAY CÁCH ĐIỆN</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO BẢO VỆ TAY DÀI</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat7_s1">0</span>
         </a>
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat7" data-subcat="cat7_s2">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY CAO SU</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO BẢO VỆ TAY NGẮN</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat7_s2">0</span>
         </a>
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat7" data-subcat="cat7_s3">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY DA HÀN</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ĐỒNG PHỤC BẢO VỆ</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat7_s3">0</span>
         </a>
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat7" data-subcat="cat7_s4">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY DA HÀN TIG</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">PHỤ KIỆN BẢO VỆ</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat7_s4">0</span>
         </a>
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat7" data-subcat="cat7_s5">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY LEN</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat7_s5">0</span>
-        </a>
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat7" data-subcat="cat7_s6">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY LEN CHẤM HẠT NHỰA</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat7_s6">0</span>
-        </a>
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat7" data-subcat="cat7_s7">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY PHỦ CAO SU</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat7_s7">0</span>
-        </a>
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat7" data-subcat="cat7_s8">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY VẢI</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat7_s8">0</span>
-        </a>
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat7" data-subcat="cat7_s9">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY VẢI MẬP</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat7_s9">0</span>
-        </a>
         </div>
     </div>
     </div>
-    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat8">
+    <div class="accordion-group">
+    <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat8" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">masks</span>
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">front_hand</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">MẶT NẠ BẢO HỘ LAO ĐỘNG</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">GĂNG TAY BẢO HỘ LAO ĐỘNG</span>
         </div>
-        <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat8">0</span>
-    </a>
+        <div class="flex items-center gap-1 shrink-0 ml-1">
+            <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat8">0</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-400 accordion-chevron transition-transform duration-300">expand_more</span>
+        </div>
+    </button>
+    <div class="accordion-children" id="children-cat8">
+        <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat8" data-subcat="cat8_s1">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GANG TAY CÁCH ĐIỆN</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat8_s1">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat8" data-subcat="cat8_s2">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY CAO SU</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat8_s2">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat8" data-subcat="cat8_s3">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY DA HÀN</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat8_s3">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat8" data-subcat="cat8_s4">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GĂNG TAY LEN - GĂNG TAY VẢI SỢI</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat8_s4">0</span>
+        </a>
+        </div>
+    </div>
+    </div>
     <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat9">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">engineering</span>
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">apparel</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">NÓN BẢO HỘ - NÓN VẢI</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">QUẦN ÁO CÔNG NHÂN</span>
         </div>
         <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat9">0</span>
     </a>
@@ -491,25 +533,42 @@
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
                 <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">apparel</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">QUẦN ÁO CÔNG NHÂN</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">QUẦN ÁO KỸ SƯ</span>
         </div>
         <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat10">0</span>
     </a>
-    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat11">
-        <div class="flex items-center gap-3 flex-1 min-w-0">
-            <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">apparel</span>
-            </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">QUẦN ÁO KỸ SƯ</span>
-        </div>
-        <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat11">0</span>
-    </a>
-    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat12">
+    <div class="accordion-group">
+    <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat11" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
                 <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">umbrella</span>
             </div>
             <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">QUẦN ÁO MƯA – ÁO PHAO</span>
+        </div>
+        <div class="flex items-center gap-1 shrink-0 ml-1">
+            <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat11">0</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-400 accordion-chevron transition-transform duration-300">expand_more</span>
+        </div>
+    </button>
+    <div class="accordion-children" id="children-cat11">
+        <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat11" data-subcat="cat11_s1">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO MƯA CÁNH DƠI</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat11_s1">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat11" data-subcat="cat11_s2">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO PHAO</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat11_s2">0</span>
+        </a>
+        </div>
+    </div>
+    </div>
+    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat12">
+        <div class="flex items-center gap-3 flex-1 min-w-0">
+            <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">umbrella</span>
+            </div>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">QUẦN ÁO PHÒNG SẠCH</span>
         </div>
         <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat12">0</span>
     </a>
@@ -517,9 +576,9 @@
     <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat13" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">umbrella</span>
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">security</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">QUẦN ÁO PHÒNG SẠCH</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ AN TOÀN TRÊN CAO</span>
         </div>
         <div class="flex items-center gap-1 shrink-0 ml-1">
             <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat13">0</span>
@@ -529,16 +588,20 @@
     <div class="accordion-children" id="children-cat13">
         <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat13" data-subcat="cat13_s1">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO MƯA CÁNH DƠI</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">DÂY AN TOÀN</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat13_s1">0</span>
         </a>
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat13" data-subcat="cat13_s2">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ÁO PHAO</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">DÂY THỪNG CỨU SINH</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat13_s2">0</span>
         </a>
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat13" data-subcat="cat13_s3">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">QUẦN ÁO MƯA BỘ</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">LƯỚI CÔNG TRÌNH</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat13_s3">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat13" data-subcat="cat13_s4">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">THANG DÂY</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat13_s4">0</span>
         </a>
         </div>
     </div>
@@ -547,9 +610,9 @@
     <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat14" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">security</span>
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">footprint</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ AN TOÀN TRÊN CAO</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ BẢO VỆ CHÂN</span>
         </div>
         <div class="flex items-center gap-1 shrink-0 ml-1">
             <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat14">0</span>
@@ -559,16 +622,20 @@
     <div class="accordion-children" id="children-cat14">
         <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat14" data-subcat="cat14_s1">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">DÂY AN TOÀN</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">DÉP NHỰA</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat14_s1">0</span>
         </a>
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat14" data-subcat="cat14_s2">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">LƯỚI CÔNG TRÌNH</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">DÉP PHÒNG SẠCH</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat14_s2">0</span>
         </a>
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat14" data-subcat="cat14_s3">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">THANG DÂY</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GIÀY BẢO HỘ</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat14_s3">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat14" data-subcat="cat14_s4">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ỦNG BẢO HỘ</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat14_s4">0</span>
         </a>
         </div>
     </div>
@@ -577,9 +644,9 @@
     <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat15" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">footprint</span>
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">folder</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ BẢO VỆ CHÂN</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ BẢO VỆ ĐẦU</span>
         </div>
         <div class="flex items-center gap-1 shrink-0 ml-1">
             <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat15">0</span>
@@ -589,90 +656,136 @@
     <div class="accordion-children" id="children-cat15">
         <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat15" data-subcat="cat15_s1">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">DÉP NHỰA</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">NÓN BẢO HỘ - NÓN CÔNG NHÂN</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat15_s1">0</span>
         </a>
         <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat15" data-subcat="cat15_s2">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">GIÀY BẢO HỘ</span>
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">NÓN VẢI</span>
             <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat15_s2">0</span>
-        </a>
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat15" data-subcat="cat15_s3">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ỦNG BẢO HỘ</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat15_s3">0</span>
         </a>
         </div>
     </div>
     </div>
-    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat16">
+    <div class="accordion-group">
+    <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat16" data-has-children="true">
+        <div class="flex items-center gap-3 flex-1 min-w-0">
+            <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">folder</span>
+            </div>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ BẢO VỆ ĐƯỜNG HÔ HẤP</span>
+        </div>
+        <div class="flex items-center gap-1 shrink-0 ml-1">
+            <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat16">0</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-400 accordion-chevron transition-transform duration-300">expand_more</span>
+        </div>
+    </button>
+    <div class="accordion-children" id="children-cat16">
+        <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat16" data-subcat="cat16_s1">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">KHẨU TRANG BẢO HỘ LAO ĐỘNG</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat16_s1">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat16" data-subcat="cat16_s2">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">MẶT NẠ PHÒNG ĐỘC</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat16_s2">0</span>
+        </a>
+        </div>
+    </div>
+    </div>
+    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat17">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
                 <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">visibility</span>
             </div>
             <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ BẢO VỆ MẮT</span>
         </div>
-        <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat16">0</span>
+        <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat17">0</span>
     </a>
-    <div class="accordion-group">
-    <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat17" data-has-children="true">
-        <div class="flex items-center gap-3 flex-1 min-w-0">
-            <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">traffic</span>
-            </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ CẢNH BÁO ATGT</span>
-        </div>
-        <div class="flex items-center gap-1 shrink-0 ml-1">
-            <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat17">0</span>
-            <span class="material-symbols-outlined text-[18px] text-gray-400 accordion-chevron transition-transform duration-300">expand_more</span>
-        </div>
-    </button>
-    <div class="accordion-children" id="children-cat17">
-        <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat17" data-subcat="cat17_s1">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">CỌC GIAO THÔNG</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat17_s1">0</span>
-        </a>
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat17" data-subcat="cat17_s2">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">DÂY PHẢN QUANG</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat17_s2">0</span>
-        </a>
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat17" data-subcat="cat17_s3">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ĐÈN NHẤP NHÁY</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat17_s3">0</span>
-        </a>
-        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat17" data-subcat="cat17_s4">
-            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">NỘI QUY</span>
-            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat17_s4">0</span>
-        </a>
-        </div>
-    </div>
-    </div>
     <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat18">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">construction</span>
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">folder</span>
             </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ CÔNG TRÌNH</span>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ BẢO VỆ SINH MÔI TRƯỜNG - THÙNG RÁC CÔNG NGHIỆP</span>
         </div>
         <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat18">0</span>
     </a>
-    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat19">
+    <div class="accordion-group">
+    <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat19" data-has-children="true">
+        <div class="flex items-center gap-3 flex-1 min-w-0">
+            <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
+                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">folder</span>
+            </div>
+            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ CẢNH BÁO AN TOÀN</span>
+        </div>
+        <div class="flex items-center gap-1 shrink-0 ml-1">
+            <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat19">0</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-400 accordion-chevron transition-transform duration-300">expand_more</span>
+        </div>
+    </button>
+    <div class="accordion-children" id="children-cat19">
+        <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat19" data-subcat="cat19_s1">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">BẢNG CẢNH BÁO AN TOÀN</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat19_s1">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat19" data-subcat="cat19_s2">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">CỌC GIAO THÔNG</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat19_s2">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat19" data-subcat="cat19_s3">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">CUỘN RÀO CÔNG TRÌNH</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat19_s3">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat19" data-subcat="cat19_s4">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">DÂY PHẢN QUANG</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat19_s4">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat19" data-subcat="cat19_s5">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">ĐÈN CẢNH BÁO THOÁT HIỂM</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat19_s5">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat19" data-subcat="cat19_s6">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">NỘI QUY</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat19_s6">0</span>
+        </a>
+        </div>
+    </div>
+    </div>
+    <div class="accordion-group">
+    <button class="filter-btn accordion-toggle w-full flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat20" data-has-children="true">
         <div class="flex items-center gap-3 flex-1 min-w-0">
             <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
                 <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">fire_extinguisher</span>
             </div>
             <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY</span>
         </div>
-        <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat19">0</span>
-    </a>
-    <a href="#" class="filter-btn flex items-center justify-between p-3 rounded-2xl text-gray-600 hover:bg-white hover:shadow-md border border-transparent hover:border-gray-100 transition-all duration-300 group" data-cat="cat20">
-        <div class="flex items-center gap-3 flex-1 min-w-0">
-            <div class="w-10 h-10 rounded-xl bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center transition-colors shrink-0">
-                <span class="material-symbols-outlined text-[20px] cat-icon text-gray-400 group-hover:text-[#1D5FA8] transition-colors">delete</span>
-            </div>
-            <span class="font-bold text-sm text-left truncate cat-text group-hover:text-[#1A2744] transition-colors">THÙNG RÁC</span>
+        <div class="flex items-center gap-1 shrink-0 ml-1">
+            <span class="text-xs font-bold px-2 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count" id="cnt-cat20">0</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-400 accordion-chevron transition-transform duration-300">expand_more</span>
         </div>
-        <span class="text-xs font-bold px-3 py-1 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-lg cat-count shrink-0" id="cnt-cat20">0</span>
-    </a>
+    </button>
+    <div class="accordion-children" id="children-cat20">
+        <div class="ml-3 mt-1 space-y-1 border-l-2 border-blue-100 pl-3 pb-1">
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat20" data-subcat="cat20_s1">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">BÌNH CỨU HỎA- BÌNH CHỮA CHÁY</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat20_s1">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat20" data-subcat="cat20_s2">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">BỘ TIÊU LỆNH PHÒNG CHÁY CHỮA CHÁY</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat20_s2">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat20" data-subcat="cat20_s3">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">KỆ ĐỰNG BÌNH CHỮA CHÁY</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat20_s3">0</span>
+        </a>
+        <a href="#" class="filter-btn subcat-btn flex items-center justify-between p-2 rounded-xl text-gray-500 hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all duration-200 group" data-cat="cat20" data-subcat="cat20_s4">
+            <span class="font-semibold text-xs text-left truncate group-hover:text-[#1A2744] transition-colors">QUẦN ÁO PHÒNG CHÁY CHỮA CHÁY</span>
+            <span class="text-xs font-bold px-2 py-0.5 bg-gray-50 group-hover:bg-gray-100 text-gray-400 rounded-md cat-count shrink-0 ml-1" id="cnt-cat20_s4">0</span>
+        </a>
+        </div>
+    </div>
+    </div>
 
 
 
