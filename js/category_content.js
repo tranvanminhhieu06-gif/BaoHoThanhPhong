@@ -1,4 +1,4 @@
-{
+var categoryContent = {
   "cat1": {
     "tagline": "ÁO GHILE – ÁO KỸ SƯ CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "heading": "ÁO GHILE – ÁO KỸ SƯ",
@@ -1551,4 +1551,4 @@
       }
     ]
   }
-}
+};

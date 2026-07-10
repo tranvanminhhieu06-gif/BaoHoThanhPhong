@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const IMAGES_DIR = 'images';
-const EXCLUDED_TOP = ['BANNER BAN ĐẦU', 'LOGO', 'TIN TỨC', 'ĐỐI TÁC THÀNH PHONG'];
+const EXCLUDED_TOP = ['BANNER BAN ĐẦU', 'LOGO', 'TIN TỨC', 'ĐỐI TÁC THÀNH PHONG', 'BÌA'];
 const IMG_EXT_RE = /\.(jpe?g|png|webp)$/i;
 
 function viSort(a, b) {

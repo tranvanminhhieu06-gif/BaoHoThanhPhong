@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const IMAGES_DIR = 'images';
-const EXCLUDED_TOP = ['BANNER BAN ĐẦU', 'LOGO', 'TIN TỨC', 'ĐỐI TÁC THÀNH PHONG'];
+const EXCLUDED_TOP = ['BANNER BAN ĐẦU', 'LOGO', 'TIN TỨC', 'ĐỐI TÁC THÀNH PHONG', 'BÌA'];
 const IMG_EXT_RE = /\.(jpe?g|png|webp)$/i;
 
 function viSort(a, b) {
@@ -102,20 +102,53 @@ topEntries.forEach((catName, catIdx) => {
 const sanphamPath = path.join('html', 'sanpham.html');
 let pageCode = fs.readFileSync(sanphamPath, 'utf8');
 
-const marker = 'id="cnt-all">0</span>\r\n    </a>\r\n';
-const endMarker = '\r\n\r\n\r\n            </div>\r\n        </div>\r\n    </aside>';
+// Normalize everything to LF to prevent CRLF/LF mismatches
+const normalizedCode = pageCode.replace(/\r\n/g, '\n');
 
-const startIdx = pageCode.indexOf(marker);
-const endIdx = pageCode.indexOf(endMarker);
-if (startIdx === -1 || endIdx === -1) {
-  console.error('Markers not found:', startIdx, endIdx);
+// Find the end of the first "all" category filter link
+const marker = 'id="cnt-all">0</span>';
+const startIdx = normalizedCode.indexOf(marker);
+if (startIdx === -1) {
+  console.error('Marker id="cnt-all">0</span> not found!');
   process.exit(1);
 }
-const insertAt = startIdx + marker.length;
-const before = pageCode.slice(0, insertAt);
-const after = pageCode.slice(endIdx); // keep from the blank-lines run before </div></div></aside>
 
-const htmlCrlf = html.replace(/\n/g, '\r\n');
-pageCode = before + htmlCrlf + after;
-fs.writeFileSync(sanphamPath, pageCode, 'utf8');
+// Find the closing </a> for the "all" filter link
+const closeAIdx = normalizedCode.indexOf('</a>', startIdx);
+if (closeAIdx === -1) {
+  console.error('Closing </a> tag for "all" filter not found!');
+  process.exit(1);
+}
+
+const insertAt = closeAIdx + 4; // Right after </a>
+
+// Find the end marker (closing divs of categoryFilter and aside)
+const endMarkerPattern = '</div>\n        </div>\n    </aside>';
+let endIdx = normalizedCode.indexOf(endMarkerPattern, insertAt);
+if (endIdx === -1) {
+  // Try with different indentation just in case
+  const fallbackPattern = '</div>\n    </div>\n</aside>';
+  endIdx = normalizedCode.indexOf(fallbackPattern, insertAt);
+  if (endIdx === -1) {
+    // Try finding close tag by matching closing div
+    const genericPattern = '</div>\n        </div>';
+    endIdx = normalizedCode.indexOf(genericPattern, insertAt);
+    if (endIdx === -1) {
+      console.error('End marker not found!');
+      process.exit(1);
+    }
+  }
+}
+
+// Re-generate the page code with the new sidebar inserted
+const before = normalizedCode.slice(0, insertAt);
+const after = normalizedCode.slice(endIdx);
+
+// Standardize HTML indentation
+const cleanHtml = '\n' + html.trim() + '\n';
+const newPageCode = before + cleanHtml + after;
+
+// Write back preserving standard CRLF if original had it, or just write it out
+fs.writeFileSync(sanphamPath, newPageCode.replace(/\n/g, '\r\n'), 'utf8');
 console.log('Sidebar regenerated. Categories:', topEntries.length);
+
