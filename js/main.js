@@ -2038,7 +2038,8 @@ let currentLang = localStorage.getItem('tp_lang') || 'vi';
 // INITIALIZATION
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialize Features
+    shuffleHomepageBanners();
+    renderHomepageProducts();
     initHeroCarousel();
     initSmoothScroll();
     initNavbarEffects();
@@ -2701,3 +2702,67 @@ window.addEventListener('load', hidePreloader);
 
 // Safety timeout: Hide preloader after 3 seconds regardless of load state
 setTimeout(hidePreloader, 3000);
+
+
+// Helper: Shuffle homepage hero slides (ảnh bìa banner)
+function shuffleHomepageBanners() {
+    const swiperWrapper = document.querySelector('.hero-slider .swiper-wrapper');
+    if (!swiperWrapper) return;
+    const slides = Array.from(swiperWrapper.children);
+    
+    // Fisher-Yates Shuffle
+    for (let i = slides.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [slides[i], slides[j]] = [slides[j], slides[i]];
+    }
+    
+    swiperWrapper.innerHTML = '';
+    slides.forEach(slide => swiperWrapper.appendChild(slide));
+}
+
+// Helper: Shuffle homepage product cards (các ảnh bìa danh mục)
+// Render homepage category cards dynamically and shuffle them
+function renderHomepageProducts() {
+    const grid = document.querySelector('.products-grid');
+    if (!grid || typeof products === 'undefined' || typeof catBiaImages === 'undefined') return;
+    
+    // Shuffle category keys
+    const catKeys = Object.keys(catBiaImages);
+    for (let i = catKeys.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [catKeys[i], catKeys[j]] = [catKeys[j], catKeys[i]];
+    }
+    
+    // Map to HTML
+    grid.innerHTML = catKeys.map((catId, index) => {
+        const catProducts = products.filter(p => p.cat === catId);
+        const catLabel = catProducts.length > 0 ? catProducts[0].catLabel : catId;
+        const count = catProducts.length;
+        const biaImg = catBiaImages[catId];
+        const safeLabel = catLabel.replace(/"/g, '&quot;');
+        const delay = index * 50;
+        
+        return '<div class="product-card" data-aos="fade-up" data-aos-delay="' + delay + '" onclick="window.location.href=\'sanpham.html?cat=' + catId + '\'">' +
+            '<div class="product-image">' +
+            '<a href="sanpham.html?cat=' + catId + '">' +
+            '<img src="' + biaImg + '" alt="' + safeLabel + '" loading="lazy" onerror="this.parentElement.style.background=\'#f1f5f9\'">' +
+            '<div class="zoom-overlay">' +
+            '<i class="fas fa-search-plus"></i>' +
+            '<span class="trans-view-detail">Xem chi tiết</span>' +
+            '</div>' +
+            '</a>' +
+            '</div>' +
+            '<div class="product-info">' +
+            '<span class="product-category-tag">' + count + ' sản phẩm</span>' +
+            '<h3 class="product-title">' + catLabel + '</h3>' +
+            '<p class="product-desc">Cung cấp trang thiết bị bảo hộ đạt chuẩn, chất lượng cao.</p>' +
+            '<div class="product-action-row">' +
+            '<a href="sanpham.html?cat=' + catId + '" class="product-link">' +
+            '<span class="trans-contact-price">Xem chi tiết</span> ' +
+            '<i class="fas fa-arrow-right"></i>' +
+            '</a>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+    }).join('');
+}

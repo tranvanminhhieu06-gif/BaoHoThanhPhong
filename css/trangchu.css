@@ -1,0 +1,349 @@
+/* ==========================================================================
+   TRANG CHỦ STYLE ENHANCEMENTS - BẢO HỘ LAO ĐỘNG THÀNH PHONG
+   ========================================================================== */
+
+/* === 1. Hero Swiper Slider (Desktop & General) === */
+.hero-slider {
+    width: 100%;
+    height: 90vh; /* Premium height for desktop view */
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-slide-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.05); /* Darken slider images slightly for better text readability */
+    background-color: var(--navy);
+    transition: transform 10s ease;
+}
+
+/* Zoom effect during slide transition */
+.swiper-slide-active .hero-slide-bg img {
+    transform: scale(1.08);
+}
+
+.hero-slide-content {
+    z-index: 1;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Swiper Pagination styling */
+.hero-slider .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: var(--white);
+    opacity: 0.4;
+    transition: var(--transition);
+}
+
+.hero-slider .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--accent);
+    width: 28px;
+    border-radius: 10px;
+}
+
+/* Swiper Navigation Buttons styling */
+.hero-slider .swiper-button-next,
+.hero-slider .swiper-button-prev {
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.hero-slider .swiper-button-next:after,
+.hero-slider .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hero-slider .swiper-button-next:hover,
+.hero-slider .swiper-button-prev:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-blue);
+}
+
+/* === 2. Responsive Hero Slider Override === */
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 100svh;
+        min-height: 560px;
+    }
+    
+    .hero-slide-content {
+        padding-top: 70px;
+        padding-bottom: 60px;
+    }
+    
+    .hero-slider .swiper-button-next,
+    .hero-slider .swiper-button-prev {
+        display: none; /* Hide slider arrows on tablet/mobile */
+    }
+    
+    .hero-slider .swiper-pagination {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-slider {
+        min-height: 500px;
+    }
+}
+
+/* === 3. Product Card Styling & Visual Enhancements === */
+.products-grid .product-card {
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.products-grid .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(29, 95, 168, 0.12);
+    border-color: rgba(29, 95, 168, 0.1);
+}
+
+/* Square aspect-ratio container for product image */
+.products-grid .product-image {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, var(--gray-50), rgba(29, 95, 168, 0.03));
+}
+
+.products-grid .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.products-grid .product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+/* === 4. About Us Visual Polish === */
+.about-img-wrapper {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.about-img {
+    transition: transform 0.8s ease;
+}
+
+.about-img-wrapper:hover .about-img {
+    transform: scale(1.03);
+}
+
+/* === 5. Why Choose Us visual updates === */
+.why-grid .why-card {
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-grid .why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(29, 95, 168, 0.08);
+    border-color: rgba(29, 95, 168, 0.05);
+}
+
+/* === 6. Micro interactions & generic effects === */
+.btn-press:active {
+    transform: scale(0.96) !important;
+}
+
+.label-line {
+    background: linear-gradient(90deg, transparent, var(--primary), transparent) !important;
+}
+
+.section-title {
+    position: relative;
+    font-weight: 800;
+}
+
+/* === 7. Search Bar Styling (Fixed & Enhanced) === */
+.nav-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-search input {
+    width: 0;
+    padding: 8px 0;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 14px;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-search.active input {
+    width: 220px;
+    padding: 8px 16px;
+    padding-right: 40px; /* Space for the search icon */
+    opacity: 1;
+    pointer-events: all;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Scrolled state of navbar */
+.navbar.scrolled .nav-search input {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--gray-800);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled .nav-search.active input {
+    border-color: var(--primary-light);
+}
+
+.search-trigger {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.navbar.scrolled .search-trigger {
+    color: var(--gray-600);
+}
+
+.search-trigger:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--accent);
+}
+
+.navbar.scrolled .search-trigger:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--primary);
+}
+
+/* === 8. Partner Logo Marquee (Auto-scroll from Right to Left) === */
+.partners-marquee-container {
+    padding: 60px 0;
+    background: var(--white);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.partners-marquee-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Soft white gradients on sides to fade out logo edges */
+.partners-marquee-container::before,
+.partners-marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.partners-marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--white) 0%, transparent 100%);
+}
+
+.partners-marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--white) 0%, transparent 100%);
+}
+
+/* Scroll track containing partner logo containers */
+.partners-track {
+    display: flex;
+    align-items: center;
+    gap: 48px; /* Space between logo containers */
+    padding: 0 16px;
+    animation: partnersMarquee 28s linear infinite;
+    white-space: nowrap;
+    will-change: transform;
+    flex-shrink: 0;
+}
+
+/* Individual partner logo style (bỏ khung, giữ màu, to x3) */
+.partners-track img {
+    height: 180px; /* 3x larger height (original was 64px) */
+    width: auto;
+    max-width: 480px; /* 3x larger max-width (original was 160px) */
+    object-fit: contain;
+    transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.partners-track img:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
+/* Continuous scrolling animation */
+@keyframes partnersMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

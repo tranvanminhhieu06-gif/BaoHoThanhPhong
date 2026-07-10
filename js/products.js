@@ -1,4 +1,4 @@
-﻿const products = [
+const products = [
   {
     "id": "aoghileaokys1",
     "title": "Áo Ghile – Áo Kỹ Sư - 001",
@@ -11720,7 +11720,6 @@ function renderGrid() {
             return '<div class="product-card group bg-white rounded-[24px] overflow-hidden border border-gray-100 shadow-sm cursor-pointer" onclick="window.goCat(\'' + catId + '\')">' +
                 '<div class="relative aspect-square bg-gray-50 overflow-hidden">' +
                 '<img alt="' + safeLabel + '" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="' + biaImg + '" loading="lazy" onerror="this.parentElement.style.background=\'#f1f5f9\'">' +
-                '<img alt="" src="../images/BANNER BAN ĐẦU/khung-san-pham.png" class="absolute inset-0 w-full h-full object-cover pointer-events-none">' +
                 '<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-end p-6 gap-3">' +
                 '<div class="text-center w-full"><h3 class="font-bold text-sm text-white mb-3 line-clamp-2">' + catLabel + '</h3></div>' +
                 '<button class="w-full py-3 bg-white text-[#1A2744] text-xs font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-[#E8A500] hover:text-white transition-colors btn-press"><span class="material-symbols-outlined text-[18px]">grid_view</span> XEM SẢN PHẨM</button>' +
@@ -11749,7 +11748,6 @@ function renderGrid() {
         return '<div class="product-card group bg-white rounded-[24px] overflow-hidden border border-gray-100 shadow-sm cursor-pointer" onclick="window.location.href=\'' + detailUrl + '\'">' +
             '<div class="relative aspect-square bg-gray-50 overflow-hidden">' +
             '<img alt="' + safeTitle + '" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="' + p.img + '" loading="lazy" onerror="this.parentElement.style.background=\'#f1f5f9\'">' +
-            '<img alt="" src="../images/BANNER BAN ĐẦU/khung-san-pham.png" class="absolute inset-0 w-full h-full object-cover pointer-events-none">' +
             '<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-end p-6 gap-3">' +
             '<div class="text-center w-full">' +
             '<p class="text-[10px] font-extrabold text-[#E8A500] uppercase tracking-widest mb-1">' + labelText + '</p>' +

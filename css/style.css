@@ -929,7 +929,7 @@ img {
 .product-card {
     position: relative;
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
@@ -965,13 +965,64 @@ img {
 }
 
 .product-image {
-    height: 200px;
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--gray-50), rgba(29, 95, 168, 0.05));
     position: relative;
     overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-frame-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.zoom-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(29, 95, 168, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--white);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 3;
+}
+
+.product-image:hover .zoom-overlay {
+    opacity: 1;
+}
+
+.zoom-overlay i {
+    font-size: 24px;
+}
+
+.zoom-overlay span {
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .product-image::after {
@@ -3188,7 +3239,7 @@ body.has-ann-bar .navbar {
     }
 
     .product-image {
-        height: 150px;
+        height: auto;
     }
 
     .product-icon-large {
@@ -3249,7 +3300,7 @@ body.has-ann-bar .navbar {
     }
 
     .product-image {
-        height: 200px;
+        height: auto;
     }
 }
 
@@ -3744,7 +3795,7 @@ body.has-ann-bar .navbar {
     }
 
     .product-image {
-        height: 200px;
+        height: auto;
     }
 
     .contact-info-card,
