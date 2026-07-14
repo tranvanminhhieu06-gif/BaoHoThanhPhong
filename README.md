@@ -133,3 +133,12 @@ Landing page chuyên nghiệp cho **Công Ty TNHH Bảo Hộ Lao Động Thành 
 1. **Tích hợp backend** để lưu trữ form liên hệ
 2. **Thêm hình ảnh sản phẩm thực tế** thay cho icons
 3. **Trang chi tiết sản phẩm** cho từng sản phẩm
+
+## 🛠️ Công cụ phát triển (Developer Tools)
+
+Dự án cung cấp các script tự động hóa trong thư mục `scripts/`:
+
+1. **`node scripts/generate_products.js`**: Tự động duyệt qua tất cả thư mục hình ảnh trong `images/` và sinh ra cơ sở dữ liệu sản phẩm trong `js/products.js`.
+2. **`node scripts/generate_sidebar.js`**: Cập nhật danh sách danh mục, cấu trúc và số lượng sản phẩm vào thanh sidebar trong `html/sanpham.html`.
+3. **`node scripts/watch_images.js`**: Theo dõi tự động thư mục `images/`. Khi bạn thêm, xóa hoặc cập nhật bất kỳ hình ảnh nào trong thư mục `images/`, script này sẽ tự động chạy lại hai trình tạo trên để đồng bộ hóa số lượng sản phẩm và cập nhật giao diện web ngay lập tức.
+

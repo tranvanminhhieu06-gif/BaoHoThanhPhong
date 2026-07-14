@@ -122,22 +122,11 @@ if (closeAIdx === -1) {
 
 const insertAt = closeAIdx + 4; // Right after </a>
 
-// Find the end marker (closing divs of categoryFilter and aside)
-const endMarkerPattern = '</div>\n        </div>\n    </aside>';
-let endIdx = normalizedCode.indexOf(endMarkerPattern, insertAt);
+// Find the end marker (closing aside tag)
+const endIdx = normalizedCode.indexOf('</aside>', insertAt);
 if (endIdx === -1) {
-  // Try with different indentation just in case
-  const fallbackPattern = '</div>\n    </div>\n</aside>';
-  endIdx = normalizedCode.indexOf(fallbackPattern, insertAt);
-  if (endIdx === -1) {
-    // Try finding close tag by matching closing div
-    const genericPattern = '</div>\n        </div>';
-    endIdx = normalizedCode.indexOf(genericPattern, insertAt);
-    if (endIdx === -1) {
-      console.error('End marker not found!');
-      process.exit(1);
-    }
-  }
+  console.error('</aside> tag not found!');
+  process.exit(1);
 }
 
 // Re-generate the page code with the new sidebar inserted
@@ -145,7 +134,7 @@ const before = normalizedCode.slice(0, insertAt);
 const after = normalizedCode.slice(endIdx);
 
 // Standardize HTML indentation
-const cleanHtml = '\n' + html.trim() + '\n';
+const cleanHtml = '\n' + html.trim() + '\n                    </div>\n                </div>\n            ';
 const newPageCode = before + cleanHtml + after;
 
 // Write back preserving standard CRLF if original had it, or just write it out

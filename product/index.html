@@ -317,7 +317,7 @@
                         <span class="material-symbols-outlined text-[#1D5FA8]" style="font-size:18px;">description</span>
                         Mô tả sản phẩm
                     </h4>
-                    <p id="product-desc" class="text-sm text-gray-600 leading-relaxed">
+                    <p id="product-desc" class="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
                         Đang tải thông tin sản phẩm...
                     </p>
                 </div>
@@ -661,7 +661,7 @@
     // Per-category marketing content overrides (falls back to generic content when absent)
     
     function applyCategoryContent(product, catLabel) {
-        var content = categoryContent[product.cat];
+        var content = (product.subcat && categoryContent[product.subcat]) ? categoryContent[product.subcat] : categoryContent[product.cat];
 
         var taglineEl = document.getElementById('product-tagline');
         var catEl = document.getElementById('product-cat');
@@ -683,8 +683,12 @@
         }
 
         if (taglineEl) {
-            taglineEl.textContent = content.tagline;
-            taglineEl.style.display = 'block';
+            if (content.tagline) {
+                taglineEl.textContent = content.tagline;
+                taglineEl.style.display = 'block';
+            } else {
+                taglineEl.style.display = 'none';
+            }
         }
         if (catEl) catEl.style.display = 'none';
         if (titleEl) titleEl.textContent = content.heading;
@@ -758,8 +762,16 @@
 
         grid.innerHTML = combined.map(function(p) {
             var label = p.subcatLabel || p.catLabel;
+            var cleanLabel = label;
+            if (cleanLabel.indexOf('–') !== -1) {
+                cleanLabel = cleanLabel.split('–')[0].trim();
+            } else if (cleanLabel.indexOf('—') !== -1) {
+                cleanLabel = cleanLabel.split('—')[0].trim();
+            } else if (cleanLabel.indexOf(' - ') !== -1) {
+                cleanLabel = cleanLabel.split(' - ')[0].trim();
+            }
             var safeTitle = p.title.replace(/"/g, '&quot;');
-            var safeLabel = label.replace(/</g, '&lt;');
+            var safeLabel = cleanLabel.replace(/</g, '&lt;');
 
             return '<div class="related-card bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm" onclick="window.location.href=\'index.html?id=' + p.id + '\'">' +
                 '<div class="relative overflow-hidden" style="aspect-ratio:1/1; background:#F8FAFC;">' +
@@ -796,21 +808,7 @@
 
         var images = Array.isArray(product.images) && product.images.length ? product.images : null;
 
-        if (!images && typeof products !== 'undefined') {
-            // Fallback: gather up to 3 other images from the same category to show in the gallery
-            var related = products.filter(function(p) {
-                return p.cat === product.cat && p.id !== product.id;
-            });
-            var uniqueImages = [product.img];
-            for (var i = 0; i < related.length && uniqueImages.length < 4; i++) {
-                if (uniqueImages.indexOf(related[i].img) === -1) {
-                    uniqueImages.push(related[i].img);
-                }
-            }
-            images = uniqueImages;
-        }
-
-        if (images && images.length) {
+        if (images && images.length > 1) {
             var safeTitle = product.title.replace(/"/g, '&quot;');
             thumbsEl.innerHTML = images.map(function(src, i) {
                 return '<button type="button" class="pd-thumb' + (i === 0 ? ' active' : '') + '" data-src="' + src + '">' +
@@ -825,9 +823,7 @@
                 };
             });
         } else {
-            thumbsEl.innerHTML = Array.from({ length: 4 }).map(function() {
-                return '<div class="pd-thumb pd-thumb-empty"><span class="material-symbols-outlined" style="font-size:24px;">image</span></div>';
-            }).join('');
+            thumbsEl.innerHTML = ''; // If none, leave blank
         }
     }
 
@@ -865,10 +861,18 @@
 
         // Breadcrumb
         var catLabel = product.subcatLabel || product.catLabel;
+        var cleanCatLabel = catLabel;
+        if (cleanCatLabel.indexOf('–') !== -1) {
+            cleanCatLabel = cleanCatLabel.split('–')[0].trim();
+        } else if (cleanCatLabel.indexOf('—') !== -1) {
+            cleanCatLabel = cleanCatLabel.split('—')[0].trim();
+        } else if (cleanCatLabel.indexOf(' - ') !== -1) {
+            cleanCatLabel = cleanCatLabel.split(' - ')[0].trim();
+        }
         var bcCat = document.getElementById('breadcrumb-cat');
         var bcProduct = document.getElementById('breadcrumb-product');
         var bcSep2 = document.getElementById('breadcrumb-sep2');
-        if (bcCat) bcCat.textContent = catLabel;
+        if (bcCat) bcCat.textContent = cleanCatLabel;
         if (bcProduct) bcProduct.textContent = product.title;
         if (bcSep2) bcSep2.style.display = 'inline';
 
