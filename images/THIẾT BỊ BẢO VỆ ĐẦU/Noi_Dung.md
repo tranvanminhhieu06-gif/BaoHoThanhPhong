@@ -1,4 +1,5 @@
-**Tiêu đề:** THIẾT BỊ BẢO VỆ CHÂN CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG
+**Tiêu đề:** THIẾT BỊ BẢO VỆ ĐẦU CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG
+
 GIÀY BẢO HỘ LAO ĐỘNG CHÍNH HÃNG – AN TOÀN, BỀN BỈ CHO MỌI MÔI TRƯỜNG LÀM VIỆC
 
 **Đặc điểm nổi bật:**

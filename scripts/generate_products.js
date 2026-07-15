@@ -347,6 +347,28 @@ const KEY_MAP = {
   'ĐỒNG PHỤC': ['Đồng Phục Bảo Vệ', 'Đồng Phục Bảo Vệ NEW'],
 };
 
+const BIA_MAPPING = {
+  'ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH': 'bia-ao-ghile.png',
+  'ÁO PHẢN QUANG': 'bia-ao-phan-quang-kieu-3m.png',
+  'ÁO THUN': 'bia-ao-thun-cong-nhan.png',
+  'ĐỒNG PHỤC CÔNG SỞ': 'bia-quan-tay.png',
+  'ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ': 'bia-đong-phuc-bao-ve.png',
+  'GĂNG TAY BẢO HỘ LAO ĐỘNG': 'bia-gang-tay-da-han.png',
+  'QUẦN ÁO CÔNG NHÂN': 'bia-quan-ao-cong-nhan.png',
+  'QUẦN ÁO KỸ SƯ': 'bia-quan-ao-ky-su.png',
+  'QUẦN ÁO MƯA – ÁO PHAO': 'bia-ao-mua-canh-doi.png',
+  'QUẦN ÁO PHÒNG SẠCH': 'bia-dep-phong-sach.png',
+  'THIẾT BỊ AN TOÀN TRÊN CAO': 'bia-day-an-toan.png',
+  'THIẾT BỊ BẢO VỆ CHÂN': 'bia-day-bao-ho.png',
+  'THIẾT BỊ BẢO VỆ ĐẦU': 'bia-non-bao-ho-non-cong-nhan.png',
+  'THIẾT BỊ BẢO VỆ ĐƯỜNG HÔ HẤP': 'bia-mat-na-phong-doc.png',
+  'THIẾT BỊ BẢO VỆ MẮT - KÍNH BẢO HỘ LAO ĐỘNG': 'bia-thiet-bi-bao-ve-mat.png',
+  'THIẾT BỊ BẢO VỆ SINH MÔI TRƯỜNG - THÙNG RÁC CÔNG NGHIỆP': 'bia-thung-rac-cong-nghiep.png',
+  'THIẾT BỊ BẢO VỆ TAI - NÚT TAI CHỐNG ỒN': 'bia-thiet-bi-bao-ve-tai.png',
+  'THIẾT BỊ CẢNH BÁO AN TOÀN': 'bia-coc-giao-thong.png',
+  'THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY': 'bia-binh-cuu-hoa-binh-chua-chay.png'
+};
+
 // Generic one-liner fallback for labels with no curated pool match.
 const GENERIC_DESC = 'Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất.';
 
@@ -377,6 +399,7 @@ topEntries.forEach((name, i) => console.log('  cat' + (i + 1) + ' = ' + name));
 
 const idsList = ['all'];
 const updatedProducts = [];
+const catBiaImages = {};
 let globalCounter = 0;
 const summary = [];
 const genericLabels = [];
@@ -384,6 +407,9 @@ const genericLabels = [];
 topEntries.forEach((catName, catIdx) => {
   const catId = 'cat' + (catIdx + 1);
   idsList.push(catId);
+  
+  const coverFile = BIA_MAPPING[catName] || 'default-bia.png';
+  catBiaImages[catId] = '../images/BÌA/' + coverFile;
   const catPath = path.join(IMAGES_DIR, catName);
   const entries = fs.readdirSync(catPath, { withFileTypes: true });
   const subdirs = entries.filter(e => e.isDirectory()).map(e => e.name).sort(viSort);
@@ -480,6 +506,12 @@ let code = fs.readFileSync(productsJsPath, 'utf8');
 code = code.replace(
   /const products = \[[\s\S]*?\];/,
   'const products = ' + JSON.stringify(updatedProducts, null, 2) + ';'
+);
+
+// Replace the catBiaImages object
+code = code.replace(
+  /const catBiaImages = \{[\s\S]*?\};/,
+  'const catBiaImages = ' + JSON.stringify(catBiaImages, null, 2) + ';'
 );
 
 // Replace the ids list inside updateCounts()

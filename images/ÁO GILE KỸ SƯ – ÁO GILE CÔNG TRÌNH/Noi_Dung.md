@@ -24,6 +24,7 @@ Xây dựng hình ảnh chuyên nghiệp.
 Tăng khả năng nhận diện doanh nghiệp.
 Tạo sự thoải mái trong quá trình làm việc.
 Đảm bảo độ bền khi sử dụng thường xuyên tại công trường.
+
 Cam Kết Từ Thành Phong
 Vải kaki liên doanh.
 Vải pangrim nhập khẩu.

@@ -80,27 +80,37 @@ const products = [
     "desc": "Cotton Pique 220gsm, thêu logo bảo vệ trước ngực, cổ bẻ vải dệt kim. Co giãn nhẹ, thoáng khí, mặc làm việc cả ngày thoải mái."
   },
   {
-    "id": "chanvaycongs9",
-    "title": "Chân Váy Công Sở Cao Cấp - 001",
+    "id": "aosomicongso9",
+    "title": "Áo Sơ Mi Công Sở Cao Cấp - 001",
     "cat": "cat4",
     "catLabel": "ĐỒNG PHỤC CÔNG SỞ",
     "subcat": "cat4_s1",
+    "subcatLabel": "ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP",
+    "img": "../images/ĐỒNG PHỤC CÔNG SỞ/ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/bia-ao-so-mi.png",
+    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+  },
+  {
+    "id": "chanvaycongs10",
+    "title": "Chân Váy Công Sở Cao Cấp - 001",
+    "cat": "cat4",
+    "catLabel": "ĐỒNG PHỤC CÔNG SỞ",
+    "subcat": "cat4_s2",
     "subcatLabel": "CHÂN VÁY CÔNG SỞ CAO CẤP – THANH LỊCH, TÔN DÁNG CHO NỮ NHÂN VIÊN",
     "img": "../images/ĐỒNG PHỤC CÔNG SỞ/CHÂN VÁY CÔNG SỞ CAO CẤP – THANH LỊCH, TÔN DÁNG CHO NỮ NHÂN VIÊN/bia-chan-vay-cong-so.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "quantaycongs10",
+    "id": "quantaycongs11",
     "title": "Quần Tây Công Sở Cao Cấp - 001",
     "cat": "cat4",
     "catLabel": "ĐỒNG PHỤC CÔNG SỞ",
-    "subcat": "cat4_s2",
+    "subcat": "cat4_s3",
     "subcatLabel": "QUẦN TÂY CÔNG SỞ CAO CẤP – LỊCH SỰ, SANG TRỌNG VÀ BỀN ĐẸP",
     "img": "../images/ĐỒNG PHỤC CÔNG SỞ/QUẦN TÂY CÔNG SỞ CAO CẤP – LỊCH SỰ, SANG TRỌNG VÀ BỀN ĐẸP/bia-quan-tay.png",
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "aobaovetayda11",
+    "id": "aobaovetayda12",
     "title": "Áo Bảo Vệ Tay Dài - 001",
     "cat": "cat5",
     "catLabel": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ",
@@ -110,7 +120,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "aobaovetayng12",
+    "id": "aobaovetayng13",
     "title": "Áo Bảo Vệ Tay Ngắn - 001",
     "cat": "cat5",
     "catLabel": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ",
@@ -120,7 +130,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "phukienbaove13",
+    "id": "phukienbaove14",
     "title": "Phụ Kiện Bảo Vệ Chuyên Nghiệp - 001",
     "cat": "cat5",
     "catLabel": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ",
@@ -130,7 +140,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "gangtaycachd14",
+    "id": "gangtaycachd15",
     "title": "Găng Tay Cách Điện Chính Hãng - 001",
     "cat": "cat6",
     "catLabel": "GĂNG TAY BẢO HỘ LAO ĐỘNG",
@@ -140,7 +150,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "gangtaycaosu15",
+    "id": "gangtaycaosu16",
     "title": "Găng Tay Cao Su Bảo Hộ - 001",
     "cat": "cat6",
     "catLabel": "GĂNG TAY BẢO HỘ LAO ĐỘNG",
@@ -150,7 +160,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "gangtaydahan16",
+    "id": "gangtaydahan17",
     "title": "Găng Tay Da Hàn Chịu Nhiệt - 001",
     "cat": "cat6",
     "catLabel": "GĂNG TAY BẢO HỘ LAO ĐỘNG",
@@ -160,7 +170,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "gangtaylenba17",
+    "id": "gangtaylenba18",
     "title": "Găng Tay Len Bảo Hộ - 001",
     "cat": "cat6",
     "catLabel": "GĂNG TAY BẢO HỘ LAO ĐỘNG",
@@ -170,7 +180,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "quanaocongnh18",
+    "id": "quanaocongnh19",
     "title": "Quần Áo Công Nhân Chất Lượng Cao - 001",
     "cat": "cat7",
     "catLabel": "QUẦN ÁO CÔNG NHÂN",
@@ -180,7 +190,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "quanaokysuch19",
+    "id": "quanaokysuch20",
     "title": "Quần Áo Kỹ Sư Chuyên Nghiệp - 001",
     "cat": "cat8",
     "catLabel": "QUẦN ÁO KỸ SƯ",
@@ -190,7 +200,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "aomuacanhdoi20",
+    "id": "aomuacanhdoi21",
     "title": "Áo Mưa Cánh Dơi Chất Lượng Cao - 001",
     "cat": "cat9",
     "catLabel": "QUẦN ÁO MƯA – ÁO PHAO",
@@ -200,7 +210,7 @@ const products = [
     "desc": "Bộ PVC 2 mảnh áo+quần, dày 0.2mm, dải phản quang bạc. Dùng công trường ngoài trời, mưa to không thấm, khóa kéo bền, size S-3XL."
   },
   {
-    "id": "aophaocaocap21",
+    "id": "aophaocaocap22",
     "title": "Áo Phao Cao Cấp - 001",
     "cat": "cat9",
     "catLabel": "QUẦN ÁO MƯA – ÁO PHAO",
@@ -210,7 +220,17 @@ const products = [
     "desc": "Bộ PVC 2 mảnh áo+quần, dày 0.2mm, dải phản quang bạc. Dùng công trường ngoài trời, mưa to không thấm, khóa kéo bền, size S-3XL."
   },
   {
-    "id": "dayantoancho22",
+    "id": "quanaomuaboc23",
+    "title": "Quần Áo Mưa Bộ Cao Cấp - 001",
+    "cat": "cat9",
+    "catLabel": "QUẦN ÁO MƯA – ÁO PHAO",
+    "subcat": "cat9_s3",
+    "subcatLabel": "QUẦN ÁO MƯA BỘ CAO CẤP – CHỐNG THẤM HIỆU QUẢ, BỀN ĐẸP MỌI THỜI TIẾT",
+    "img": "../images/QUẦN ÁO MƯA – ÁO PHAO/QUẦN ÁO MƯA BỘ CAO CẤP – CHỐNG THẤM HIỆU QUẢ, BỀN ĐẸP MỌI THỜI TIẾT/quan-ao-mua-bo-cao-cap.png",
+    "desc": "Bộ PVC 2 mảnh áo+quần, dày 0.2mm, dải phản quang bạc. Dùng công trường ngoài trời, mưa to không thấm, khóa kéo bền, size S-3XL."
+  },
+  {
+    "id": "dayantoancho24",
     "title": "Dây An Toàn Chống Rơi Ngã - 001",
     "cat": "cat11",
     "catLabel": "THIẾT BỊ AN TOÀN TRÊN CAO",
@@ -220,7 +240,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "daythungcuus23",
+    "id": "daythungcuus25",
     "title": "Dây Thừng Cứu Sinh Chịu Lực Cao - 001",
     "cat": "cat11",
     "catLabel": "THIẾT BỊ AN TOÀN TRÊN CAO",
@@ -230,7 +250,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "luoicongtrin24",
+    "id": "luoicongtrin26",
     "title": "Lưới Công Trình Chất Lượng Cao - 001",
     "cat": "cat11",
     "catLabel": "THIẾT BỊ AN TOÀN TRÊN CAO",
@@ -240,7 +260,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "thangday25",
+    "id": "thangday27",
     "title": "Thang Dây - 001",
     "cat": "cat11",
     "catLabel": "THIẾT BỊ AN TOÀN TRÊN CAO",
@@ -250,7 +270,7 @@ const products = [
     "desc": "Thang xích thép mạ kẽm, bậc sắt Ø20mm, dài 6m (2 tầng). Chịu tải 150kg, gấp gọn 30x15x10cm, móc treo cửa sổ chắc chắn."
   },
   {
-    "id": "depnhualaodo26",
+    "id": "depnhualaodo28",
     "title": "Dép Nhựa Lao Động - 001",
     "cat": "cat12",
     "catLabel": "THIẾT BỊ BẢO VỆ CHÂN",
@@ -260,7 +280,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "depphongsach27",
+    "id": "depphongsach29",
     "title": "Dép Phòng Sạch Chống Tĩnh Điện - 001",
     "cat": "cat12",
     "catLabel": "THIẾT BỊ BẢO VỆ CHÂN",
@@ -270,7 +290,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "giaybaoholao28",
+    "id": "giaybaoholao30",
     "title": "Giày Bảo Hộ Lao Động Chính Hãng - 001",
     "cat": "cat12",
     "catLabel": "THIẾT BỊ BẢO VỆ CHÂN",
@@ -280,7 +300,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "ungbaoholaod29",
+    "id": "ungbaoholaod31",
     "title": "Ủng Bảo Hộ Lao Động Chất Lượng Cao - 001",
     "cat": "cat12",
     "catLabel": "THIẾT BỊ BẢO VỆ CHÂN",
@@ -290,7 +310,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "nonbaoholaod30",
+    "id": "nonbaoholaod32",
     "title": "Nón Bảo Hộ Lao Động - 001",
     "cat": "cat13",
     "catLabel": "THIẾT BỊ BẢO VỆ ĐẦU",
@@ -300,7 +320,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "nonvaicongnh31",
+    "id": "nonvaicongnh33",
     "title": "Nón Vải Công Nhân Chất Lượng Cao - 001",
     "cat": "cat13",
     "catLabel": "THIẾT BỊ BẢO VỆ ĐẦU",
@@ -310,7 +330,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "khautrangbao32",
+    "id": "khautrangbao34",
     "title": "Khẩu Trang Bảo Hộ Lao Động Chất Lượng Cao - 001",
     "cat": "cat14",
     "catLabel": "THIẾT BỊ BẢO VỆ ĐƯỜNG HÔ HẤP",
@@ -320,7 +340,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "matnabaohola33",
+    "id": "matnabaohola35",
     "title": "Mặt Nạ Bảo Hộ Lao Động - 001",
     "cat": "cat14",
     "catLabel": "THIẾT BỊ BẢO VỆ ĐƯỜNG HÔ HẤP",
@@ -330,7 +350,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "kinhbaoholao34",
+    "id": "kinhbaoholao36",
     "title": "Kính Bảo Hộ Lao Động Chính Hãng - 001",
     "cat": "cat15",
     "catLabel": "THIẾT BỊ BẢO VỆ MẮT - KÍNH BẢO HỘ LAO ĐỘNG",
@@ -340,7 +360,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "thungracchat35",
+    "id": "thungracchat37",
     "title": "Thùng Rác Chất Lượng Cao - 001",
     "cat": "cat16",
     "catLabel": "THIẾT BỊ BẢO VỆ SINH MÔI TRƯỜNG - THÙNG RÁC CÔNG NGHIỆP",
@@ -350,7 +370,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "nuttaichongo36",
+    "id": "nuttaichongo38",
     "title": "Nút Tai Chống Ồn Chất Lượng Cao - 001",
     "cat": "cat17",
     "catLabel": "THIẾT BỊ BẢO VỆ TAI - NÚT TAI CHỐNG ỒN",
@@ -360,7 +380,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "bangcanhbaoa37",
+    "id": "bangcanhbaoa39",
     "title": "Bảng Cảnh Báo An Toàn Chất Lượng Cao - 001",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
@@ -370,7 +390,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "cocgiaothong38",
+    "id": "cocgiaothong40",
     "title": "Cọc Giao Thông Chất Lượng Cao - 001",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
@@ -380,7 +400,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "cuonraocongt39",
+    "id": "cuonraocongt41",
     "title": "Cuộn Rào Công Trình Chất Lượng Cao - 001",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
@@ -390,7 +410,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "dayphanquang40",
+    "id": "dayphanquang42",
     "title": "Dây Phản Quang Cảnh Báo - 001",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
@@ -400,7 +420,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "dennhapnhayc41",
+    "id": "dennhapnhayc43",
     "title": "Đèn Nhấp Nháy Cảnh Báo Giao Thông - 001",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
@@ -410,7 +430,7 @@ const products = [
     "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
   },
   {
-    "id": "noiquy42",
+    "id": "noiquy44",
     "title": "Nội Quy - 001",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
@@ -420,7 +440,7 @@ const products = [
     "desc": "Biển nhựa PVC 3mm, in offset 4 màu nội quy 10 điểm chữ đậm. Kích thước A2 (42x59cm), lỗ treo 4 góc, ép film bóng chống ẩm."
   },
   {
-    "id": "binhcuuhoabi43",
+    "id": "binhcuuhoabi45",
     "title": "Bình Cứu Hỏa - 001",
     "cat": "cat19",
     "catLabel": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY",
@@ -430,7 +450,7 @@ const products = [
     "desc": "Đầu báo khói quang học địa chỉ, phát hiện khói tán xạ mật độ >3%/m. Địa chỉ 1-127 trên vòng lặp, LED chỉ thị đỏ, cắm cơ sở rút được."
   },
   {
-    "id": "botieulenhph44",
+    "id": "botieulenhph46",
     "title": "Bộ Tiêu Lệnh Phòng Cháy Chữa Cháy Chính Hãng - 001",
     "cat": "cat19",
     "catLabel": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY",
@@ -440,7 +460,7 @@ const products = [
     "desc": "Đầu báo khói quang học địa chỉ, phát hiện khói tán xạ mật độ >3%/m. Địa chỉ 1-127 trên vòng lặp, LED chỉ thị đỏ, cắm cơ sở rút được."
   },
   {
-    "id": "kedungbinhch45",
+    "id": "kedungbinhch47",
     "title": "Kệ Đựng Bình Chữa Cháy Chính Hãng - 001",
     "cat": "cat19",
     "catLabel": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY",
@@ -450,7 +470,7 @@ const products = [
     "desc": "Đầu báo khói quang học địa chỉ, phát hiện khói tán xạ mật độ >3%/m. Địa chỉ 1-127 trên vòng lặp, LED chỉ thị đỏ, cắm cơ sở rút được."
   },
   {
-    "id": "quanaophongc46",
+    "id": "quanaophongc48",
     "title": "Quần Áo Phòng Cháy Chữa Cháy Chính Hãng - 001",
     "cat": "cat19",
     "catLabel": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY",
@@ -469,26 +489,25 @@ let currentShuffledList = null;
 let currentCatOrder = null;
 
 const catBiaImages = {
-  'cat1': '../images/BÌA/bia-ao-ghile.png',
-  'cat2': '../images/BÌA/bia-ao-phan-quang-kieu-3m.png',
-  'cat3': '../images/BÌA/bia-ao-thun-cong-nhan.png',
-  'cat4': '../images/BÌA/bia-thiet-bi-bao-ve-tai.png',
-  'cat5': '../images/BÌA/bia-quan-tay.png',
-  'cat6': '../images/BÌA/bia-đong-phuc-bao-ve.png',
-  'cat7': '../images/BÌA/bia-gang-tay-da-han.png',
-  'cat8': '../images/BÌA/bia-mat-na-phong-doc.png',
-  'cat9': '../images/BÌA/bia-non-bao-ho-non-cong-nhan.png',
-  'cat10': '../images/BÌA/bia-quan-ao-cong-nhan.png',
-  'cat11': '../images/BÌA/bia-quan-ao-ky-su.png',
-  'cat12': '../images/BÌA/bia-ao-mua-canh-doi.png',
-  'cat13': '../images/BÌA/bia-ao-phao.png',
-  'cat14': '../images/BÌA/bia-day-an-toan.png',
-  'cat15': '../images/BÌA/bia-dep-nhua.png',
-  'cat16': '../images/BÌA/bia-thiet-bi-bao-ve-mat.png',
-  'cat17': '../images/BÌA/bia-coc-giao-thong.png',
-  'cat18': '../images/BÌA/bia-cuon-rao-cong-trinh.png',
-  'cat19': '../images/BÌA/bia-binh-cuu-hoa-binh-chua-chay.png',
-  'cat20': '../images/BÌA/bia-thung-rac-cong-nghiep.png'
+  "cat1": "../images/BÌA/bia-ao-ghile.png",
+  "cat2": "../images/BÌA/bia-ao-phan-quang-kieu-3m.png",
+  "cat3": "../images/BÌA/bia-ao-thun-cong-nhan.png",
+  "cat4": "../images/BÌA/bia-quan-tay.png",
+  "cat5": "../images/BÌA/bia-đong-phuc-bao-ve.png",
+  "cat6": "../images/BÌA/bia-gang-tay-da-han.png",
+  "cat7": "../images/BÌA/bia-quan-ao-cong-nhan.png",
+  "cat8": "../images/BÌA/bia-quan-ao-ky-su.png",
+  "cat9": "../images/BÌA/bia-ao-mua-canh-doi.png",
+  "cat10": "../images/BÌA/bia-dep-phong-sach.png",
+  "cat11": "../images/BÌA/bia-day-an-toan.png",
+  "cat12": "../images/BÌA/bia-day-bao-ho.png",
+  "cat13": "../images/BÌA/bia-non-bao-ho-non-cong-nhan.png",
+  "cat14": "../images/BÌA/bia-mat-na-phong-doc.png",
+  "cat15": "../images/BÌA/bia-thiet-bi-bao-ve-mat.png",
+  "cat16": "../images/BÌA/bia-thung-rac-cong-nghiep.png",
+  "cat17": "../images/BÌA/bia-thiet-bi-bao-ve-tai.png",
+  "cat18": "../images/BÌA/bia-coc-giao-thong.png",
+  "cat19": "../images/BÌA/bia-binh-cuu-hoa-binh-chua-chay.png"
 };
 
 function shuffleArray(arr) {
@@ -507,7 +526,7 @@ function countByFilter(f) {
 }
 
 function updateCounts() {
-  const ids = ["all","cat1","cat1_s1","cat2","cat2_s1","cat2_s2","cat2_s3","cat2_s4","cat3","cat3_s1","cat3_s2","cat3_s3","cat4","cat4_s1","cat4_s2","cat5","cat5_s1","cat5_s2","cat5_s3","cat6","cat6_s1","cat6_s2","cat6_s3","cat6_s4","cat7","cat7_s1","cat8","cat8_s1","cat9","cat9_s1","cat9_s2","cat10","cat11","cat11_s1","cat11_s2","cat11_s3","cat11_s4","cat12","cat12_s1","cat12_s2","cat12_s3","cat12_s4","cat13","cat13_s1","cat13_s2","cat14","cat14_s1","cat14_s2","cat15","cat15_s1","cat16","cat16_s1","cat17","cat17_s1","cat18","cat18_s1","cat18_s2","cat18_s3","cat18_s4","cat18_s5","cat18_s6","cat19","cat19_s1","cat19_s2","cat19_s3","cat19_s4"];
+  const ids = ["all","cat1","cat1_s1","cat2","cat2_s1","cat2_s2","cat2_s3","cat2_s4","cat3","cat3_s1","cat3_s2","cat3_s3","cat4","cat4_s1","cat4_s2","cat4_s3","cat5","cat5_s1","cat5_s2","cat5_s3","cat6","cat6_s1","cat6_s2","cat6_s3","cat6_s4","cat7","cat7_s1","cat8","cat8_s1","cat9","cat9_s1","cat9_s2","cat9_s3","cat10","cat11","cat11_s1","cat11_s2","cat11_s3","cat11_s4","cat12","cat12_s1","cat12_s2","cat12_s3","cat12_s4","cat13","cat13_s1","cat13_s2","cat14","cat14_s1","cat14_s2","cat15","cat15_s1","cat16","cat16_s1","cat17","cat17_s1","cat18","cat18_s1","cat18_s2","cat18_s3","cat18_s4","cat18_s5","cat18_s6","cat19","cat19_s1","cat19_s2","cat19_s3","cat19_s4"];
   ids.forEach(id => {
     const el = document.getElementById('cnt-' + id);
     if (el) {

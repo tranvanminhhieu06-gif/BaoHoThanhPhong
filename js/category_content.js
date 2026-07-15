@@ -73,7 +73,7 @@ var categoryContent = {
   },
   "cat1_s1": {
     "tagline": "",
-    "heading": "Áo Gile Kỹ Sư Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH",
     "shortDesc": "Áo gile kỹ sư là trang phục được sử dụng phổ biến tại các công trình xây dựng, nhà máy, khu công nghiệp và các dự án kỹ thuật. Với thiết kế nhiều túi tiện dụng cùng kiểu dáng chuyên nghiệp, áo gile giúp kỹ sư và nhân viên kỹ thuật dễ dàng mang theo các vật dụng cần thiết trong quá trình làm việc.\nCông ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp áo gile kỹ sư chất lượng cao, đa dạng mẫu mã, màu sắc và nhận may theo yêu cầu doanh nghiệp.",
     "features": [
       {
@@ -147,7 +147,7 @@ var categoryContent = {
   },
   "cat2": {
     "tagline": "",
-    "heading": "Áo Phản Quang Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "ÁO PHẢN QUANG CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "Áo phản quang là trang bị bảo hộ quan trọng giúp người lao động dễ dàng được nhận diện trong điều kiện thiếu sáng, môi trường làm việc phức tạp hoặc khu vực có phương tiện lưu thông. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp áo phản quang chất lượng cao, đáp ứng các tiêu chuẩn an toàn lao động cho công trình, nhà máy, kho bãi và giao thông.\nSản phẩm được thiết kế với dải phản quang nổi bật, chất liệu bền đẹp và nhiều kiểu dáng phù hợp với từng ngành nghề.",
     "features": [
       {
@@ -235,7 +235,7 @@ var categoryContent = {
   },
   "cat2_s1": {
     "tagline": "",
-    "heading": "Áo phản quang kiểu 3M là gì?",
+    "heading": "Áo Phản Quang Kiểu 3M Cao Cấp – Thiết Kế Hiện Đại An Toàn Khi Làm Việc",
     "shortDesc": "Áo phản quang kiểu 3M là dòng áo bảo hộ được thiết kế theo phong cách hiện đại với hệ thống dải phản quang bố trí khoa học trên vai và thân áo, giúp tăng khả năng nhận diện trong điều kiện thiếu sáng. Sản phẩm được sử dụng phổ biến trong các ngành xây dựng, giao thông, kho vận, môi trường, điện lực và nhiều lĩnh vực lao động ngoài trời.\nTại Bảo hộ lao động Thành Phong, áo phản quang kiểu 3M được sản xuất từ chất liệu lưới Polyester cao cấp, mang lại cảm giác thông thoáng, nhẹ và bền bỉ. Doanh nghiệp có thể đặt may theo màu sắc, kích thước và in hoặc thêu logo để phù hợp với nhận diện thương hiệu.",
     "features": [
       {
@@ -365,7 +365,7 @@ var categoryContent = {
   },
   "cat2_s2": {
     "tagline": "",
-    "heading": "Áo phản quang lưới thun 2 bên là gì?",
+    "heading": "Áo Phản Quang Lưới Thun 2 Bên Cao Cấp – Thoáng Mát, Nhẹ, An Toàn",
     "shortDesc": "Áo phản quang lưới thun 2 bên là dòng áo bảo hộ được thiết kế chuyên dụng dành cho công nhân, kỹ sư, nhân viên giao thông, logistics và các ngành nghề thường xuyên làm việc ngoài trời hoặc trong môi trường thiếu ánh sáng. Sản phẩm nổi bật với chất liệu lưới polyester cao cấp kết hợp hai bên hông bằng vải thun co giãn, mang lại cảm giác thoải mái, thông thoáng và linh hoạt khi vận động.\nBảo hộ lao động Thành Phong cung cấp áo phản quang lưới thun 2 bên chất lượng cao, nhận may theo yêu cầu về màu sắc, kích thước và in hoặc thêu logo doanh nghiệp, đáp ứng đa dạng nhu cầu sử dụng của khách hàng.",
     "features": [
       {
@@ -482,7 +482,7 @@ var categoryContent = {
   },
   "cat2_s3": {
     "tagline": "",
-    "heading": "Áo phản quang Palize là gì?",
+    "heading": "Áo Phản Quang Palize Cao Cấp – An Toàn, Thoáng Mát, May Theo Yêu Cầu",
     "shortDesc": "Áo phản quang Palize là dòng áo bảo hộ được thiết kế chuyên dụng dành cho người lao động làm việc tại công trường, nhà máy, khu vực giao thông hoặc những môi trường có điều kiện ánh sáng yếu. Sản phẩm giúp tăng khả năng nhận diện từ xa nhờ các dải phản quang chất lượng cao kết hợp cùng màu dạ quang nổi bật, góp phần đảm bảo an toàn trong quá trình làm việc.\nBảo hộ lao động Thành Phong cung cấp áo phản quang Palize chất lượng cao, được gia công tỉ mỉ, phù hợp cho doanh nghiệp, nhà thầu xây dựng, đơn vị vệ sinh môi trường, giao thông, logistics và nhiều ngành nghề khác.",
     "features": [
       {
@@ -612,7 +612,7 @@ var categoryContent = {
   },
   "cat2_s4": {
     "tagline": "",
-    "heading": "Áo phản quang túi lưới là gì?",
+    "heading": "Áo Phản Quang Túi Lưới Cao Cấp – Thoáng Mát, Nhiều Ngăn Tiện Lợi",
     "shortDesc": "Áo phản quang túi lưới là dòng áo bảo hộ được thiết kế chuyên dụng dành cho người lao động thường xuyên làm việc ngoài trời hoặc trong môi trường thiếu ánh sáng. Sản phẩm nổi bật với chất liệu lưới Polyester cao cấp, hệ thống phản quang may chắc chắn cùng 2 túi lưới có khóa kéo tiện lợi, giúp người mặc vừa đảm bảo an toàn vừa dễ dàng mang theo các vật dụng cần thiết khi làm việc.\nTại Bảo hộ lao động Thành Phong, áo phản quang túi lưới được sản xuất với tiêu chuẩn chất lượng cao, nhận may theo yêu cầu về màu sắc, kích thước, in hoặc thêu logo doanh nghiệp, phù hợp với nhiều lĩnh vực sản xuất và thi công.",
     "features": [
       {
@@ -805,8 +805,8 @@ var categoryContent = {
   },
   "cat3_s1": {
     "tagline": "",
-    "heading": "Áo thun công nhân là dòng đồng phục được thiết kế dành riêng cho người lao động trong các nhà máy, xưởng sản xuất, công trình và kho vận. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp áo thun công nhân chất lượng cao với độ bền vượt trội, mang lại sự thoải mái trong suốt quá trình làm việc.",
-    "shortDesc": "",
+    "heading": "ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC",
+    "shortDesc": "Áo thun công nhân là dòng đồng phục được thiết kế dành riêng cho người lao động trong các nhà máy, xưởng sản xuất, công trình và kho vận. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp áo thun công nhân chất lượng cao với độ bền vượt trội, mang lại sự thoải mái trong suốt quá trình làm việc.",
     "features": [
       {
         "icon": "verified",
@@ -872,8 +872,8 @@ var categoryContent = {
   },
   "cat3_s2": {
     "tagline": "",
-    "heading": "Áo thun thể thao được thiết kế dành cho các hoạt động vận động, thi đấu, tập luyện và tổ chức sự kiện thể thao. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu áo thun thể thao hiện đại với chất liệu nhẹ, thoáng khí và khả năng co giãn tối ưu.",
-    "shortDesc": "",
+    "heading": "ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI",
+    "shortDesc": "Áo thun thể thao được thiết kế dành cho các hoạt động vận động, thi đấu, tập luyện và tổ chức sự kiện thể thao. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu áo thun thể thao hiện đại với chất liệu nhẹ, thoáng khí và khả năng co giãn tối ưu.",
     "features": [
       {
         "icon": "verified",
@@ -939,8 +939,8 @@ var categoryContent = {
   },
   "cat3_s3": {
     "tagline": "",
-    "heading": "Áo thun văn phòng là lựa chọn được nhiều doanh nghiệp ưu tiên sử dụng nhờ sự thoải mái, năng động và chuyên nghiệp. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp áo thun đồng phục văn phòng với nhiều mẫu mã hiện đại, chất liệu cao cấp và dịch vụ may theo yêu cầu.",
-    "shortDesc": "Sản phẩm phù hợp cho nhân viên văn phòng, nhân viên kinh doanh, lễ tân, kỹ thuật và các chương trình sự kiện của doanh nghiệp.",
+    "heading": "ÁO THUN VĂN PHÒNG CAO CẤP – THOẢI MÁI, CHUYÊN NGHIỆP CHO DOANH NGHIỆP",
+    "shortDesc": "Áo thun văn phòng là lựa chọn được nhiều doanh nghiệp ưu tiên sử dụng nhờ sự thoải mái, năng động và chuyên nghiệp. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp áo thun đồng phục văn phòng với nhiều mẫu mã hiện đại, chất liệu cao cấp và dịch vụ may theo yêu cầu.\nSản phẩm phù hợp cho nhân viên văn phòng, nhân viên kinh doanh, lễ tân, kỹ thuật và các chương trình sự kiện của doanh nghiệp.",
     "features": [
       {
         "icon": "verified",
@@ -999,7 +999,7 @@ var categoryContent = {
   },
   "cat4": {
     "tagline": "",
-    "heading": "BẢO VỆ TAI CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "ĐỒNG PHỤC CÔNG SỞ CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "NÚT TAI CHỐNG ỒN CHẤT LƯỢNG CAO – BẢO VỆ THÍNH GIÁC HIỆU QUẢ TRONG MÔI TRƯỜNG LÀM VIỆC",
     "features": [
       {
@@ -1067,7 +1067,71 @@ var categoryContent = {
   },
   "cat4_s1": {
     "tagline": "",
-    "heading": "Chân Váy Công Sở Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP",
+    "shortDesc": "Áo sơ mi công sở là trang phục không thể thiếu trong môi trường làm việc hiện đại, giúp xây dựng hình ảnh chuyên nghiệp và đồng bộ cho doanh nghiệp. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp áo sơ mi công sở nam nữ với thiết kế hiện đại, chất liệu cao cấp và khả năng may đo theo yêu cầu.\nSản phẩm phù hợp cho nhân viên văn phòng, nhân viên kinh doanh, lễ tân, quản lý và đội ngũ điều hành doanh nghiệp.",
+    "features": [
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Vải kate silk, kate Mỹ, kate Ford hoặc cotton cao cấp.",
+        "desc": ""
+      },
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Mềm mại, thoáng mát và thấm hút mồ hôi tốt.",
+        "desc": ""
+      },
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Hạn chế nhăn, dễ dàng vệ sinh và bảo quản.",
+        "desc": ""
+      }
+    ],
+    "columns": [
+      {
+        "icon": "info",
+        "color": "#1D5FA8",
+        "title": "Ứng Dụng Thực Tế",
+        "items": []
+      },
+      {
+        "icon": "verified",
+        "color": "#10B981",
+        "title": "Ưu Điểm Nổi Bật",
+        "items": [
+          "Form áo chuẩn công sở, tôn dáng người mặc.",
+          "Đường may tỉ mỉ, chắc chắn.",
+          "Dễ dàng thêu hoặc in logo doanh nghiệp.",
+          "Áo sơ mi tay ngắn.",
+          "Áo sơ mi tay dài.",
+          "Thiết kế riêng theo nhận diện thương hiệu.",
+          "Mang lại hình ảnh chuyên nghiệp cho doanh nghiệp.",
+          "Tăng tính đồng bộ và nhận diện thương hiệu.",
+          "Thoải mái khi làm việc trong thời gian dài."
+        ]
+      },
+      {
+        "icon": "thumb_up",
+        "color": "#E8A500",
+        "title": "Cam Kết Từ Thành Phong",
+        "items": [
+          "✔ Chất liệu đúng mô tả.",
+          "✔ May theo yêu cầu doanh nghiệp.",
+          "✔ Thiết kế miễn phí.",
+          "✔ Giá tận xưởng cạnh tranh.",
+          "✔ Giao hàng toàn quốc."
+        ]
+      }
+    ]
+  },
+  "cat4_s2": {
+    "tagline": "",
+    "heading": "CHÂN VÁY CÔNG SỞ CAO CẤP – THANH LỊCH, TÔN DÁNG CHO NỮ NHÂN VIÊN",
     "shortDesc": "Chân váy công s ở là một trong những trang phục giúp nữ nhân viên thể hiện sự chuyên nghiệp, thanh lịch và hiện đại trong môi trường làm việc. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp đa dạng mẫu chân váy công sở với thiết kế tinh tế, chất liệu cao cấp và khả năng may theo yêu cầu.",
     "features": [
       {
@@ -1131,9 +1195,9 @@ var categoryContent = {
       }
     ]
   },
-  "cat4_s2": {
+  "cat4_s3": {
     "tagline": "",
-    "heading": "Quần Tây Công Sở Chuyên Nghiệp Tại Bảo Hộ Lao Động Thành Phong",
+    "heading": "QUẦN TÂY CÔNG SỞ CAO CẤP – LỊCH SỰ, SANG TRỌNG VÀ BỀN ĐẸP",
     "shortDesc": "Quần tây công sở là sản phẩm được nhiều doanh nghiệp lựa chọn để xây dựng hình ảnh chuyên nghiệp cho đội ngũ nhân sự. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần tây công sở nam nữ với thiết kế hiện đại, chất liệu bền đẹp và kiểu dáng thanh lịch.",
     "features": [
       {
@@ -1198,7 +1262,7 @@ var categoryContent = {
   },
   "cat5": {
     "tagline": "",
-    "heading": "ĐỒNG PHỤC CÔNG SỞ CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP",
     "features": [
       {
@@ -1274,7 +1338,7 @@ var categoryContent = {
   },
   "cat5_s1": {
     "tagline": "",
-    "heading": "ÁO BẢO VỆ TAY DÀI CHẤT LƯỢNG CAO TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "ÁO BẢO VỆ TAY DÀI",
     "shortDesc": "ÁO BẢO VỆ TAY DÀI là giải pháp bảo hộ lao động tối ưu cho doanh nghiệp, mang lại sự an toàn, chuyên nghiệp và hiệu quả vượt trội trong suốt quá trình làm việc.",
     "features": [
       {
@@ -1343,7 +1407,7 @@ var categoryContent = {
   },
   "cat5_s2": {
     "tagline": "",
-    "heading": "ÁO BẢO VỆ TAY NGẮN CHẤT LƯỢNG CAO TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "ÁO BẢO VỆ TAY NGẮN",
     "shortDesc": "ÁO BẢO VỆ TAY NGẮN là giải pháp bảo hộ lao động tối ưu cho doanh nghiệp, mang lại sự an toàn, chuyên nghiệp và hiệu quả vượt trội trong suốt quá trình làm việc.",
     "features": [
       {
@@ -1412,9 +1476,24 @@ var categoryContent = {
   },
   "cat5_s3": {
     "tagline": "",
-    "heading": "Phụ Kiện Bảo Vệ Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
-    "shortDesc": "Bên cạnh đồng phục bảo vệ, các phụ kiện bảo vệ đóng vai trò quan trọng trong việc hoàn thiện hình ảnh chuyên nghiệp và đúng quy chuẩn của lực lượng bảo vệ. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp đầy đủ các phụ kiện bảo vệ chất lượng cao với mẫu mã đa dạng và độ bền vượt trội.\nCác Loại Phụ Kiện Bảo Vệ\nCầu Vai Bảo Vệ\nThiết kế đúng tiêu chuẩn ngành bảo vệ.\nĐường may chắc chắn, bền đẹp.\nVe Áo Bảo Vệ\nKiểu dáng chuẩn quy định.\nDễ dàng gắn trên đồng phục.\nNón Bảo Vệ\nKiểu dáng chuyên nghiệp.\nChất liệu bền đẹp, thoáng mát.\nCà Vạt Bảo Vệ\nMẫu mã đẹp, dễ sử dụng.\nPhù hợp với đồng phục bảo vệ.\nSao Bảo Vệ Và Huy Hiệu\nGia công sắc nét.\nTăng tính chuyên nghiệp cho người mặc.\nƯu Điểm Nổi Bật\nĐồng bộ với đồng phục bảo vệ.\nĐộ bền cao.\nThiết kế đúng tiêu chuẩn ngành.\nGiá thành hợp lý.",
-    "features": [],
+    "heading": "PHỤ KIỆN BẢO VỆ CHUYÊN NGHIỆP – ĐẦY ĐỦ TRANG BỊ CHO LỰC LƯỢNG BẢO VỆ",
+    "shortDesc": "Bên cạnh đồng phục bảo vệ, các phụ kiện bảo vệ đóng vai trò quan trọng trong việc hoàn thiện hình ảnh chuyên nghiệp và đúng quy chuẩn của lực lượng bảo vệ. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp đầy đủ các phụ kiện bảo vệ chất lượng cao với mẫu mã đa dạng và độ bền vượt trội.",
+    "features": [
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Thiết kế đúng tiêu chuẩn ngành bảo vệ.",
+        "desc": ""
+      },
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Đường may chắc chắn, bền đẹp.",
+        "desc": ""
+      }
+    ],
     "columns": [
       {
         "icon": "info",
@@ -1426,7 +1505,20 @@ var categoryContent = {
         "icon": "verified",
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
-        "items": []
+        "items": [
+          "Kiểu dáng chuẩn quy định.",
+          "Dễ dàng gắn trên đồng phục.",
+          "Kiểu dáng chuyên nghiệp.",
+          "Chất liệu bền đẹp, thoáng mát.",
+          "Mẫu mã đẹp, dễ sử dụng.",
+          "Phù hợp với đồng phục bảo vệ.",
+          "Gia công sắc nét.",
+          "Tăng tính chuyên nghiệp cho người mặc.",
+          "Đồng bộ với đồng phục bảo vệ.",
+          "Độ bền cao.",
+          "Thiết kế đúng tiêu chuẩn ngành.",
+          "Giá thành hợp lý."
+        ]
       },
       {
         "icon": "thumb_up",
@@ -1444,8 +1536,8 @@ var categoryContent = {
   },
   "cat6": {
     "tagline": "",
-    "heading": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
-    "shortDesc": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ – ĐƯỜNG MAY CHẮC CHẮN, KIỂU DÁNG CHUYÊN NGHIỆP",
+    "heading": "GĂNG TAY BẢO HỘ LAO ĐỘNG CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "shortDesc": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG\nĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ – ĐƯỜNG MAY CHẮC CHẮN, KIỂU DÁNG CHUYÊN NGHIỆP",
     "features": [
       {
         "icon": "verified",
@@ -1519,7 +1611,7 @@ var categoryContent = {
   },
   "cat6_s1": {
     "tagline": "",
-    "heading": "Găng Tay Cách Điện Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "GĂNG TAY CÁCH ĐIỆN CHÍNH HÃNG – THIẾT BỊ AN TOÀN CHO NGÀNH ĐIỆN",
     "shortDesc": "Găng tay cách điện là thiết bị bảo hộ lao động quan trọng dành cho kỹ sư điện, công nhân điện lực và những người thường xuyên làm việc với hệ thống điện. Sản phẩm được thiết kế nhằm giảm thiểu nguy cơ điện giật, góp phần đảm bảo an toàn lao động trong quá trình làm việc.",
     "features": [
       {
@@ -1564,10 +1656,7 @@ var categoryContent = {
         "items": [
           "Găng tay cách điện hạ thế.",
           "Găng tay cách điện trung thế.",
-          "Găng tay cách điện chuyên dụng cho ngành điện lực.",
-          "Chống rò rỉ điện.",
-          "Độ bền cao.",
-          "Dễ dàng kiểm tra và bảo quản."
+          "Găng tay cách điện chuyên dụng cho ngành điện lực."
         ]
       },
       {
@@ -1593,7 +1682,7 @@ var categoryContent = {
   },
   "cat6_s2": {
     "tagline": "",
-    "heading": "Găng Tay Cao Su Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "GĂNG TAY CAO SU BẢO HỘ – CHỐNG THẤM, CHỐNG HÓA CHẤT HIỆU QUẢ",
     "shortDesc": "Găng tay cao su là thiết bị bảo hộ lao động giúp bảo vệ đôi tay khỏi nước, hóa chất, dầu mỡ và các tác nhân gây hại trong môi trường làm việc. Thành Phong cung cấp đa dạng các loại găng tay cao su phù hợp cho nhiều lĩnh vực sản xuất và dịch vụ.",
     "features": [
       {
@@ -1635,11 +1724,7 @@ var categoryContent = {
         "icon": "verified",
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
-        "items": [
-          "Chống trơn trượt.",
-          "Hạn chế tiếp xúc hóa chất thông thường.",
-          "Độ bền cao, dễ sử dụng."
-        ]
+        "items": []
       },
       {
         "icon": "thumb_up",
@@ -1663,7 +1748,7 @@ var categoryContent = {
   },
   "cat6_s3": {
     "tagline": "",
-    "heading": "Găng Tay Da Hàn Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "GĂNG TAY DA HÀN CHỊU NHIỆT – BẢO VỆ TỐI ƯU CHO THỢ HÀN",
     "shortDesc": "Găng tay da hàn là thiết bị bảo hộ chuyên dụng dành cho thợ hàn và người làm việc trong môi trường nhiệt độ cao. Sản phẩm giúp bảo vệ đôi tay khỏi tia lửa hàn, kim loại nóng và các tác động cơ học trong quá trình lao động.",
     "features": [
       {
@@ -1738,7 +1823,7 @@ var categoryContent = {
   },
   "cat6_s4": {
     "tagline": "",
-    "heading": "Găng Tay Len Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "GĂNG TAY LEN BẢO HỘ – GIẢI PHÁP BẢO VỆ TAY HIỆU QUẢ TRONG LAO ĐỘNG",
     "shortDesc": "Găng tay len bảo hộ là sản phẩm được sử dụng phổ biến trong nhiều ngành nghề nhờ khả năng bảo vệ bàn tay khỏi bụi bẩn, ma sát và các tác động nhẹ trong quá trình làm việc. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp găng tay len chất lượng cao với độ bền tốt và giá thành hợp lý.",
     "features": [
       {
@@ -1779,11 +1864,7 @@ var categoryContent = {
         "icon": "verified",
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
-        "items": [
-          "Hạn chế trầy xước khi làm việc.",
-          "Chống bám bụi hiệu quả.",
-          "Dễ sử dụng và vệ sinh."
-        ]
+        "items": []
       },
       {
         "icon": "thumb_up",
@@ -1807,7 +1888,7 @@ var categoryContent = {
   },
   "cat7": {
     "tagline": "",
-    "heading": "GĂNG TAY BẢO HỘ LAO ĐỘNG CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "QUẦN ÁO CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC",
     "shortDesc": "GĂNG TAY LEN BẢO HỘ – GIẢI PHÁP BẢO VỆ TAY HIỆU QUẢ TRONG LAO ĐỘNG",
     "features": [
       {
@@ -1898,7 +1979,7 @@ var categoryContent = {
   },
   "cat7_s1": {
     "tagline": "",
-    "heading": "Quần Áo Công Nhân Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "QUẦN ÁO CÔNG NHÂN CHẤT LƯỢNG CAO – BỀN ĐẸP, THOẢI MÁI KHI LÀM VIỆC",
     "shortDesc": "Quần áo công nhân là trang phục lao động thiết yếu trong các nhà máy, xưởng sản xuất, công trình xây dựng và khu công nghiệp. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp quần áo công nhân chất lượng cao, đáp ứng yêu cầu về độ bền, tính thẩm mỹ và sự thoải mái cho người lao động.\nSản phẩm được sản xuất từ các loại vải chuyên dụng, đường may chắc chắn, phù hợp với nhiều ngành nghề và môi trường làm việc khác nhau.",
     "features": [
       {
@@ -1967,7 +2048,7 @@ var categoryContent = {
   },
   "cat8": {
     "tagline": "",
-    "heading": "QUẦN ÁO CÔNG NHÂN CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "QUẦN ÁO KỸ SƯ CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "QUẦN ÁO CÔNG NHÂN CHẤT LƯỢNG CAO – BỀN ĐẸP, THOẢI MÁI KHI LÀM VIỆC",
     "features": [
       {
@@ -2031,7 +2112,7 @@ var categoryContent = {
   },
   "cat8_s1": {
     "tagline": "",
-    "heading": "Quần Áo Kỹ Sư Cao Cấp Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "QUẦN ÁO KỸ SƯ CHUYÊN NGHIỆP – HIỆN ĐẠI, NÂNG CAO HÌNH ẢNH DOANH NGHIỆP",
     "shortDesc": "Quần áo kỹ sư là dòng đồng phục được thiết kế dành riêng cho kỹ sư công trình, kỹ sư cơ khí, kỹ sư điện, kỹ sư giám sát và đội ngũ quản lý kỹ thuật. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu quần áo kỹ sư hiện đại, chuyên nghiệp, mang lại sự thoải mái và nâng cao hình ảnh doanh nghiệp.",
     "features": [
       {
@@ -2102,7 +2183,7 @@ var categoryContent = {
   },
   "cat9": {
     "tagline": "",
-    "heading": "QUẦN ÁO KỸ SƯ CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "QUẦN ÁO MƯA – ÁO PHAO CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "QUẦN ÁO KỸ SƯ CHUYÊN NGHIỆP – HIỆN ĐẠI, NÂNG CAO HÌNH ẢNH DOANH NGHIỆP",
     "features": [
       {
@@ -2172,7 +2253,7 @@ var categoryContent = {
   },
   "cat9_s1": {
     "tagline": "",
-    "heading": "Áo Mưa Cánh Dơi Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "ÁO MƯA CÁNH DƠI CHẤT LƯỢNG CAO – RỘNG RÃI, TIỆN LỢI KHI DI CHUYỂN",
     "shortDesc": "Áo mưa cánh dơi là dòng sản phẩm phổ biến nhờ thiết kế rộng rãi, dễ sử dụng và khả năng che phủ tốt cho cả người và phương tiện. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp áo mưa cánh dơi chất lượng cao với nhiều mẫu mã phù hợp cho cá nhân, doanh nghiệp và đơn vị tổ chức sự kiện.",
     "features": [
       {
@@ -2240,7 +2321,7 @@ var categoryContent = {
   },
   "cat9_s2": {
     "tagline": "",
-    "heading": "Áo Phao Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "ÁO PHAO CAO CẤP – GIỮ ẤM HIỆU QUẢ, THIẾT KẾ HIỆN ĐẠI",
     "shortDesc": "Áo phao là sản phẩm được sử dụng phổ biến trong môi trường làm việc ngoài trời, khu vực có thời tiết lạnh hoặc phục vụ nhu cầu giữ ấm cho người lao động. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp các mẫu áo phao chất lượng cao với khả năng giữ nhiệt tốt, thiết kế đẹp và độ bền vượt trội.",
     "features": [
       {
@@ -2308,9 +2389,75 @@ var categoryContent = {
       }
     ]
   },
+  "cat9_s3": {
+    "tagline": "",
+    "heading": "QUẦN ÁO MƯA BỘ CAO CẤP – CHỐNG THẤM HIỆU QUẢ, BỀN ĐẸP MỌI THỜI TIẾT",
+    "shortDesc": "Quần áo mưa bộ là sản phẩm được nhiều người lao động, công nhân, kỹ sư và người thường xuyên di chuyển ngoài trời lựa chọn nhờ khả năng che chắn toàn diện. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp quần áo mưa bộ chất lượng cao với thiết kế tiện lợi, chống thấm hiệu quả và độ bền vượt trội.",
+    "features": [
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Vải PVC, Polyester phủ nhựa hoặc EVA cao cấp.",
+        "desc": ""
+      },
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Chống thấm nước hiệu quả.",
+        "desc": ""
+      },
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Độ bền cao, khó rách.",
+        "desc": ""
+      }
+    ],
+    "columns": [
+      {
+        "icon": "info",
+        "color": "#1D5FA8",
+        "title": "Ứng Dụng Thực Tế",
+        "items": []
+      },
+      {
+        "icon": "verified",
+        "color": "#10B981",
+        "title": "Ưu Điểm Nổi Bật",
+        "items": [
+          "Bộ gồm áo và quần đồng bộ.",
+          "Mũ trùm đầu rộng.",
+          "Khóa kéo và nút bấm chắc chắn.",
+          "Dễ mặc và dễ bảo quản.",
+          "Quần áo mưa bộ công nhân.",
+          "Quần áo mưa kỹ sư.",
+          "Quần áo mưa phản quang.",
+          "Quần áo mưa lao động ngoài trời.",
+          "Che chắn toàn thân.",
+          "Hạn chế nước mưa thấm vào quần áo.",
+          "Phù hợp làm việc trong điều kiện thời tiết xấu.",
+          "Độ bền cao, sử dụng lâu dài."
+        ]
+      },
+      {
+        "icon": "thumb_up",
+        "color": "#E8A500",
+        "title": "Cam Kết Từ Thành Phong",
+        "items": [
+          "✔ Chống thấm hiệu quả.",
+          "✔ Chất liệu bền đẹp.",
+          "✔ Giá tận xưởng.",
+          "✔ Giao hàng toàn quốc."
+        ]
+      }
+    ]
+  },
   "cat10": {
     "tagline": "",
-    "heading": "QUẦN ÁO MƯA – ÁO PHAO CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "QUẦN ÁO PHÒNG SẠCH CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "QUẦN ÁO MƯA BỘ CAO CẤP – CHỐNG THẤM HIỆU QUẢ, BỀN ĐẸP MỌI THỜI TIẾT",
     "features": [
       {
@@ -2392,7 +2539,7 @@ var categoryContent = {
   },
   "cat11": {
     "tagline": "",
-    "heading": "QUẦN ÁO PHÒNG SẠCH CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "THIẾT BỊ AN TOÀN TRÊN CAO CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "QUẦN ÁO PHÒNG SẠCH CHẤT LƯỢO CÔNG NGHIỆP – ĐÁP ỨNG TIÊU CHUẨN MÔI TRƯỜNG SẢN XUẤT",
     "features": [
       {
@@ -2459,7 +2606,7 @@ var categoryContent = {
   },
   "cat11_s1": {
     "tagline": "",
-    "heading": "Dây An Toàn Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "DÂY AN TOÀN CHỐNG RƠI NGÃ – THIẾT BỊ BẢO HỘ LÀM VIỆC TRÊN CAO CHUYÊN DỤNG",
     "shortDesc": "Dây an toàn là thiết bị bảo hộ lao động không thể thiếu đối với người làm việc trên cao, giúp hạn chế nguy cơ té ngã và đảm bảo an toàn trong quá trình thi công. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các loại dây an toàn đạt tiêu chuẩn chất lượng, phù hợp cho công trình xây dựng, điện lực, viễn thông, cơ khí và nhiều ngành nghề khác.",
     "features": [
       {
@@ -2526,7 +2673,7 @@ var categoryContent = {
   },
   "cat11_s2": {
     "tagline": "",
-    "heading": "Dây Thừng Cứu Sinh Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "DÂY THỪNG CỨU SINH CHỊU LỰC CAO – GIẢI PHÁP AN TOÀN CHO CÔNG TRÌNH VÀ CỨU HỘ",
     "shortDesc": "Dây thừng cứu sinh là thiết bị chuyên dụng được sử dụng trong các hoạt động cứu hộ, cứu nạn, leo trèo công nghiệp và làm việc trên cao. Sản phẩm được sản xuất từ vật liệu có độ bền cao, đáp ứng yêu cầu khắt khe về an toàn lao động.",
     "features": [
       {
@@ -2569,10 +2716,7 @@ var categoryContent = {
         "title": "Ưu Điểm Nổi Bật",
         "items": [
           "Nhiều đường kính khác nhau.",
-          "Chiều dài linh hoạt theo nhu cầu sử dụng.",
-          "Độ bền cao.",
-          "Khả năng chịu lực tốt.",
-          "Dễ dàng cuộn gọn và vận chuyển."
+          "Chiều dài linh hoạt theo nhu cầu sử dụng."
         ]
       },
       {
@@ -2590,7 +2734,7 @@ var categoryContent = {
   },
   "cat11_s3": {
     "tagline": "",
-    "heading": "Lưới Công Trình Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "LƯỚI CÔNG TRÌNH CHẤT LƯỢNG CAO – ĐẢM BẢO AN TOÀN THI CÔNG HIỆU QUẢ",
     "shortDesc": "Lưới công trình là giải pháp bảo vệ an toàn được sử dụng phổ biến tại các công trình xây dựng nhằm hạn chế vật rơi, giảm thiểu bụi bẩn và bảo vệ người lao động cũng như khu vực xung quanh. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp lưới công trình chất lượng cao với độ bền vượt trội và khả năng sử dụng lâu dài.",
     "features": [
       {
@@ -2635,10 +2779,7 @@ var categoryContent = {
           "Lưới bao che công trình.",
           "Lưới an toàn xây dựng.",
           "Lưới chắn bụi công trình.",
-          "Lưới chống rơi vật liệu.",
-          "Độ bền cao.",
-          "Dễ thi công và lắp đặt.",
-          "Hạn chế bụi và vật liệu rơi từ trên cao."
+          "Lưới chống rơi vật liệu."
         ]
       },
       {
@@ -2657,7 +2798,7 @@ var categoryContent = {
   },
   "cat11_s4": {
     "tagline": "",
-    "heading": "Thang Dây Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "THANG DÂY",
     "shortDesc": "Thang dây là thiết bị được sử dụng trong các công trình xây dựng, nhà xưởng, tàu thuyền và hệ thống thoát hiểm khẩn cấp. Với thiết kế gọn nhẹ, dễ lắp đặt và sử dụng, thang dây giúp người dùng tiếp cận các vị trí trên cao hoặc thoát hiểm an toàn khi cần thiết.",
     "features": [
       {
@@ -2723,7 +2864,7 @@ var categoryContent = {
   },
   "cat12": {
     "tagline": "",
-    "heading": "THIẾT BỊ AN TOÀN TRÊN CAO CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "THIẾT BỊ BẢO VỆ CHÂN CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "DÂY AN TOÀN CHỐNG RƠI NGÃ – THIẾT BỊ BẢO HỘ LÀM VIỆC TRÊN CAO CHUYÊN DỤNG",
     "features": [
       {
@@ -2814,7 +2955,7 @@ var categoryContent = {
   },
   "cat12_s1": {
     "tagline": "",
-    "heading": "Dép Nhựa Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "DÉP NHỰA LAO ĐỘNG – BỀN ĐẸP, CHỐNG TRƠN TRƯỢT HIỆU QUẢ",
     "shortDesc": "Dép nhựa lao động là sản phẩm được sử dụng phổ biến trong các môi trường làm việc cần sự tiện lợi, chống nước và dễ vệ sinh. Với thiết kế đơn giản, độ bền cao và khả năng chống trơn trượt tốt, dép nhựa là lựa chọn phù hợp cho nhiều ngành nghề khác nhau.",
     "features": [
       {
@@ -2860,11 +3001,7 @@ var categoryContent = {
         "icon": "verified",
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
-        "items": [
-          "Nhẹ và thoải mái khi sử dụng.",
-          "Chống trơn trượt hiệu quả.",
-          "Dễ dàng vệ sinh sau khi sử dụng."
-        ]
+        "items": []
       },
       {
         "icon": "thumb_up",
@@ -2888,7 +3025,7 @@ var categoryContent = {
   },
   "cat12_s2": {
     "tagline": "",
-    "heading": "Dép Phòng Sạch Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "DÉP PHÒNG SẠCH CHỐNG TĨNH ĐIỆN – GIẢI PHÁP AN TOÀN CHO MÔI TRƯỜNG SẢN XUẤT",
     "shortDesc": "Dép phòng sạch là sản phẩm chuyên dụng dành cho môi trường sản xuất yêu cầu độ sạch cao như điện tử, bán dẫn, dược phẩm và phòng thí nghiệm. Sản phẩm được thiết kế nhằm hạn chế phát sinh bụi và kiểm soát tĩnh điện hiệu quả trong quá trình làm việc.",
     "features": [
       {
@@ -2935,11 +3072,7 @@ var categoryContent = {
         "icon": "verified",
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
-        "items": [
-          "Chống tĩnh điện hiệu quả.",
-          "Thiết kế nhẹ và thoải mái.",
-          "Chống trơn trượt tốt."
-        ]
+        "items": []
       },
       {
         "icon": "thumb_up",
@@ -2963,7 +3096,7 @@ var categoryContent = {
   },
   "cat12_s3": {
     "tagline": "",
-    "heading": "Giày Bảo Hộ Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "GIÀY BẢO HỘ LAO ĐỘNG CHÍNH HÃNG – AN TOÀN, BỀN BỈ CHO MỌI MÔI TRƯỜNG LÀM VIỆC",
     "shortDesc": "Giày bảo hộ lao động là trang bị không thể thiếu giúp bảo vệ đôi chân khỏi các nguy cơ va đập, đâm xuyên, trơn trượt và các tác động từ môi trường làm việc. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các dòng giày bảo hộ chất lượng cao, đáp ứng nhu cầu sử dụng trong nhiều ngành nghề khác nhau.",
     "features": [
       {
@@ -3038,7 +3171,7 @@ var categoryContent = {
   },
   "cat12_s4": {
     "tagline": "",
-    "heading": "Ủng Bảo Hộ Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "ỦNG BẢO HỘ LAO ĐỘNG CHẤT LƯỢNG CAO – BẢO VỆ TOÀN DIỆN CHO ĐÔI CHÂN",
     "shortDesc": "Ủng bảo hộ là thiết bị bảo hộ chuyên dụng giúp bảo vệ bàn chân và cẳng chân khỏi nước, hóa chất, bùn đất và các tác động nguy hiểm trong môi trường lao động. Thành Phong cung cấp nhiều mẫu ủng bảo hộ chất lượng cao, phù hợp với nhiều lĩnh vực sản xuất và thi công.",
     "features": [
       {
@@ -3112,7 +3245,7 @@ var categoryContent = {
   },
   "cat13": {
     "tagline": "",
-    "heading": "THIẾT BỊ BẢO VỆ CHÂN CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "THIẾT BỊ BẢO VỆ ĐẦU CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "GIÀY BẢO HỘ LAO ĐỘNG CHÍNH HÃNG – AN TOÀN, BỀN BỈ CHO MỌI MÔI TRƯỜNG LÀM VIỆC",
     "features": [
       {
@@ -3204,7 +3337,7 @@ var categoryContent = {
   },
   "cat13_s1": {
     "tagline": "",
-    "heading": "Nón Vải Công Nhân Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "NÓN BẢO HỘ LAO ĐỘNG – NÓN CÔNG NHÂN CHÍNH HÃNG, AN TOÀN CHO MỌI CÔNG TRÌNH",
     "shortDesc": "Nón vải công nhân là phụ kiện đồng phục được sử dụng phổ biến trong các nhà máy, xưởng sản xuất, khu công nghiệp và doanh nghiệp nhằm tạo sự đồng bộ, chuyên nghiệp và hỗ trợ bảo vệ người lao động khỏi bụi bẩn, ánh nắng trong quá trình làm việc.\nCông ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các mẫu nón vải công nhân chất lượng cao với đa dạng kiểu dáng, màu sắc và nhận may theo yêu cầu doanh nghiệp.",
     "features": [
       {
@@ -3285,7 +3418,7 @@ var categoryContent = {
   },
   "cat13_s2": {
     "tagline": "",
-    "heading": "Nón Bảo Hộ Lao Động Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "NÓN VẢI CÔNG NHÂN CHẤT LƯỢNG CAO – THOẢI MÁI, CHUYÊN NGHIỆP CHO NGƯỜI LAO ĐỘNG",
     "shortDesc": "Nón bảo hộ lao động là thiết bị bảo vệ cá nhân quan trọng giúp giảm thiểu nguy cơ chấn thương vùng đầu do va đập, vật rơi hoặc các tác động từ môi trường làm việc. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các loại nón bảo hộ công nhân chất lượng cao, đáp ứng nhu cầu sử dụng trong nhiều lĩnh vực công nghiệp và xây dựng.\nSản phẩm được sản xuất từ vật liệu bền chắc, thiết kế đạt tiêu chuẩn an toàn lao động và mang lại cảm giác thoải mái cho người sử dụng.",
     "features": [
       {
@@ -3370,7 +3503,7 @@ var categoryContent = {
   },
   "cat14": {
     "tagline": "",
-    "heading": "THIẾT BỊ BẢO VỆ ĐẦU CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "THIẾT BỊ BẢO VỆ ĐƯỜNG HÔ HẤP CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "NÓN BẢO HỘ LAO ĐỘNG – NÓN CÔNG NHÂN CHÍNH HÃNG, AN TOÀN CHO MỌI CÔNG TRÌNH",
     "features": [
       {
@@ -3454,7 +3587,7 @@ var categoryContent = {
   },
   "cat14_s1": {
     "tagline": "",
-    "heading": "Khẩu Trang Bảo Hộ Lao Động Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "KHẨU TRANG BẢO HỘ LAO ĐỘNG CHẤT LƯỢNG CAO – BẢO VỆ HỆ HÔ HẤP HIỆU QUẢ",
     "shortDesc": "Khẩu trang bảo hộ lao động là thiết bị bảo vệ cá nhân quan trọng giúp ngăn ngừa bụi bẩn, vi khuẩn, hơi hóa chất và các tác nhân gây hại trong không khí. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các loại khẩu trang bảo hộ chất lượng cao, đáp ứng nhu cầu sử dụng trong nhiều ngành nghề và môi trường làm việc khác nhau.\nSản phẩm được lựa chọn từ các thương hiệu uy tín, đảm bảo khả năng lọc hiệu quả, mang lại sự an toàn và thoải mái cho người sử dụng.",
     "features": [
       {
@@ -3541,7 +3674,7 @@ var categoryContent = {
   },
   "cat14_s2": {
     "tagline": "",
-    "heading": "Mặt Nạ Bảo Hộ Lao Động Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "MẶT NẠ BẢO HỘ LAO ĐỘNG – MẶT NẠ PHÒNG ĐỘC CHÍNH HÃNG, BẢO VỆ HỆ HÔ HẤP HIỆU QUẢ",
     "shortDesc": "Mặt nạ bảo hộ lao động là thiết bị bảo vệ cá nhân quan trọng giúp ngăn ngừa bụi bẩn, khí độc, hơi hóa chất và các tác nhân gây hại xâm nhập vào đường hô hấp. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các loại mặt nạ bảo hộ và mặt nạ phòng độc chất lượng cao, đáp ứng nhu cầu sử dụng trong nhiều lĩnh vực công nghiệp, xây dựng và sản xuất.\nSản phẩm được thiết kế đảm bảo độ kín khít, dễ sử dụng và mang lại hiệu quả bảo vệ tối ưu cho người lao động.",
     "features": [
       {
@@ -3628,8 +3761,8 @@ var categoryContent = {
   },
   "cat15": {
     "tagline": "",
-    "heading": "THIẾT BỊ BẢO VỆ ĐƯỜNG HÔ HẤP CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
-    "shortDesc": "MẶT NẠ BẢO HỘ LAO ĐỘNG – MẶT NẠ PHÒNG ĐỘC CHÍNH HÃNG, BẢO VỆ HỆ HÔ HẤP HIỆU QUẢ",
+    "heading": "THIẾT BỊ BẢO VỆ MẮT - KÍNH BẢO HỘ LAO ĐỘNG CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "shortDesc": "THIẾT BỊ BẢO VỆ ĐƯỜNG HÔ HẤP CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG\nMẶT NẠ BẢO HỘ LAO ĐỘNG – MẶT NẠ PHÒNG ĐỘC CHÍNH HÃNG, BẢO VỆ HỆ HÔ HẤP HIỆU QUẢ",
     "features": [
       {
         "icon": "verified",
@@ -3719,7 +3852,7 @@ var categoryContent = {
   },
   "cat15_s1": {
     "tagline": "",
-    "heading": "Kính Bảo Hộ Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "KÍNH BẢO HỘ LAO ĐỘNG CHÍNH HÃNG – BẢO VỆ ĐÔI MẮT AN TOÀN TRONG MỌI MÔI TRƯỜNG LÀM VIỆC",
     "shortDesc": "Kính bảo hộ lao động là trang bị bảo vệ cá nhân quan trọng giúp bảo vệ mắt khỏi bụi bẩn, mảnh văng, hóa chất, tia UV và các tác nhân nguy hiểm trong quá trình làm việc. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các loại kính bảo hộ chất lượng cao, đáp ứng nhu cầu sử dụng trong nhiều ngành nghề khác nhau.\nSản phẩm được thiết kế theo tiêu chuẩn an toàn lao động, mang lại sự thoải mái và khả năng bảo vệ tối ưu cho người sử dụng.",
     "features": [
       {
@@ -3805,7 +3938,7 @@ var categoryContent = {
   },
   "cat16": {
     "tagline": "",
-    "heading": "THIẾT BỊ BẢO VỆ MẮT CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "heading": "THIẾT BỊ BẢO VỆ SINH MÔI TRƯỜNG - THÙNG RÁC CÔNG NGHIỆP CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
     "shortDesc": "KÍNH BẢO HỘ LAO ĐỘNG CHÍNH HÃNG – BẢO VỆ ĐÔI MẮT AN TOÀN TRONG MỌI MÔI TRƯỜNG LÀM VIỆC",
     "features": [
       {
@@ -3874,7 +4007,7 @@ var categoryContent = {
   },
   "cat16_s1": {
     "tagline": "",
-    "heading": "Thùng Rác Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "THÙNG RÁC CHẤT LƯỢNG CAO – GIẢI PHÁP THU GOM RÁC THẢI HIỆU QUẢ CHO MỌI KHÔNG GIAN",
     "shortDesc": "Thùng rác là thiết bị vệ sinh môi trường không thể thiếu tại nhà máy, xí nghiệp, văn phòng, trường học, bệnh viện, khu công nghiệp và khu dân cư. Việc sử dụng thùng rác đúng quy cách góp phần giữ gìn vệ sinh môi trường, nâng cao mỹ quan và xây dựng môi trường làm việc chuyên nghiệp.\nCông ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các loại thùng rác chất lượng cao với đa dạng dung tích, mẫu mã và chất liệu, đáp ứng nhu cầu sử dụng từ cá nhân đến doanh nghiệp.",
     "features": [
       {
@@ -3964,8 +4097,8 @@ var categoryContent = {
   },
   "cat17": {
     "tagline": "",
-    "heading": "THIẾT BỊ VỆ SINH MÔI TRƯỜNG - THÙNG RÁC CÔNG NGHIỆP CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
-    "shortDesc": "THÙNG RÁC CHẤT LƯỢNG CAO – GIẢI PHÁP THU GOM RÁC THẢI HIỆU QUẢ CHO MỌI KHÔNG GIAN",
+    "heading": "THIẾT BỊ BẢO VỆ TAI - NÚT TAI CHỐNG ỒN CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "shortDesc": "THIẾT BỊ VỆ SINH MÔI TRƯỜNG - THÙNG RÁC CÔNG NGHIỆP CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG\nTHÙNG RÁC CHẤT LƯỢNG CAO – GIẢI PHÁP THU GOM RÁC THẢI HIỆU QUẢ CHO MỌI KHÔNG GIAN",
     "features": [
       {
         "icon": "verified",
@@ -4036,7 +4169,7 @@ var categoryContent = {
   },
   "cat17_s1": {
     "tagline": "",
-    "heading": "Nút Tai Chống Ồn Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "NÚT TAI CHỐNG ỒN CHẤT LƯỢNG CAO – BẢO VỆ THÍNH GIÁC HIỆU QUẢ TRONG MÔI TRƯỜNG LÀM VIỆC",
     "shortDesc": "Nút tai chống ồn là thiết bị bảo hộ lao động quan trọng giúp giảm thiểu tác động của tiếng ồn lớn đến thính giác người lao động. Sản phẩm được sử dụng rộng rãi tại nhà máy, xưởng sản xuất, công trình xây dựng, khu công nghiệp và những môi trường có cường độ âm thanh cao.\nCông ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các loại nút tai chống ồn chất lượng cao, giúp bảo vệ sức khỏe người lao động và nâng cao hiệu quả làm việc.",
     "features": [
       {
@@ -4232,7 +4365,7 @@ var categoryContent = {
   },
   "cat18_s1": {
     "tagline": "",
-    "heading": "Bảng Cảnh Báo An Toàn Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "BẢNG CẢNH BÁO AN TOÀN CHẤT LƯỢNG CAO – GIẢI PHÁP NHẮC NHỞ VÀ PHÒNG NGỪA RỦI RO HIỆU QUẢ",
     "shortDesc": "Bảng cảnh báo an toàn là thiết bị không thể thiếu trong các nhà máy, công trình xây dựng, khu công nghiệp, kho bãi và nhiều môi trường làm việc khác. Sản phẩm giúp truyền tải thông tin cảnh báo, hướng dẫn và nhắc nhở người lao động tuân thủ các quy định an toàn, góp phần hạn chế tai nạn lao động và sự cố ngoài ý muốn.\nCông ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các loại bảng cảnh báo an toàn chất lượng cao với đa dạng mẫu mã, kích thước và nội dung theo yêu cầu.",
     "features": [
       {
@@ -4308,7 +4441,7 @@ var categoryContent = {
   },
   "cat18_s2": {
     "tagline": "",
-    "heading": "Cọc Giao Thông Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "CỌC GIAO THÔNG CHẤT LƯỢNG CAO – GIẢI PHÁP PHÂN LUỒNG VÀ CẢNH BÁO HIỆU QUẢ",
     "shortDesc": "Cọc giao thông là thiết bị cảnh báo an toàn được sử dụng phổ biến trong các công trình giao thông, bãi đỗ xe, khu công nghiệp, nhà máy và khu vực thi công nhằm phân luồng phương tiện, cảnh báo nguy hiểm và đảm bảo an toàn cho người tham gia giao thông.\nCông ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các loại cọc giao thông chất lượng cao, độ bền vượt trội và khả năng nhận diện tốt trong nhiều điều kiện môi trường khác nhau.",
     "features": [
       {
@@ -4375,7 +4508,7 @@ var categoryContent = {
   },
   "cat18_s3": {
     "tagline": "",
-    "heading": "Cuộn Rào Công Trình Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "CUỘN RÀO CÔNG TRÌNH CHẤT LƯỢNG CAO – GIẢI PHÁP KHOANH VÙNG VÀ CẢNH BÁO HIỆU QUẢ",
     "shortDesc": "Cuộn rào công trình là thiết bị cảnh báo an toàn được sử dụng để khoanh vùng khu vực thi công, khu vực nguy hiểm hoặc hạn chế người và phương tiện ra vào. Với màu sắc nổi bật và thiết kế linh hoạt, sản phẩm giúp nâng cao mức độ an toàn tại công trình xây dựng, nhà máy và các khu vực làm việc đặc thù.\nCông ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp cuộn rào công trình chất lượng cao với nhiều kích thước và quy cách khác nhau.",
     "features": [
       {
@@ -4448,7 +4581,7 @@ var categoryContent = {
   },
   "cat18_s4": {
     "tagline": "",
-    "heading": "Dây Phản Quang Chất Lượng Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "DÂY PHẢN QUANG CẢNH BÁO – GIẢI PHÁP KHOANH VÙNG AN TOÀN HIỆU QUẢ",
     "shortDesc": "Dây phản quang là thiết bị cảnh báo được sử dụng để khoanh vùng khu vực nguy hiểm, phân luồng giao thông hoặc cảnh báo công trình thi công. Với màu sắc nổi bật và khả năng phản quang tốt, sản phẩm giúp tăng khả năng nhận diện vào ban đêm hoặc trong điều kiện thiếu ánh sáng.",
     "features": [
       {
@@ -4494,11 +4627,7 @@ var categoryContent = {
         "icon": "verified",
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
-        "items": [
-          "Màu sắc cảnh báo dễ nhận biết.",
-          "Khả năng phản quang hiệu quả.",
-          "Dễ dàng căng, buộc và lắp đặt."
-        ]
+        "items": []
       },
       {
         "icon": "thumb_up",
@@ -4515,7 +4644,7 @@ var categoryContent = {
   },
   "cat18_s5": {
     "tagline": "",
-    "heading": "Đèn Nhấp Nháy Cảnh Báo Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong",
+    "heading": "ĐÈN NHẤP NHÁY CẢNH BÁO GIAO THÔNG – TĂNG KHẢ NĂNG NHẬN DIỆN VÀ AN TOÀN",
     "shortDesc": "Đèn nhấp nháy cảnh báo là thiết bị hỗ trợ cảnh báo hiệu quả tại các khu vực thi công, công trình giao thông, bãi đỗ xe và những nơi có nguy cơ mất an toàn. Với khả năng phát sáng liên tục hoặc nhấp nháy, sản phẩm giúp người tham gia giao thông dễ dàng nhận biết chướng ngại vật từ khoảng cách xa.",
     "features": [
       {
@@ -4587,7 +4716,7 @@ var categoryContent = {
   },
   "cat18_s6": {
     "tagline": "",
-    "heading": "Sản Phẩm Chất Lượng Cao",
+    "heading": "NỘI QUY",
     "shortDesc": "",
     "features": [],
     "columns": [
@@ -4613,9 +4742,31 @@ var categoryContent = {
   },
   "cat19": {
     "tagline": "",
-    "heading": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY CHẤT LƯỢNG CAO – GIẢI PHÁP BẢO VỆ AN TOÀN TOÀN DIỆN",
-    "shortDesc": "Thiết Bị Phòng Cháy Chữa Cháy Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong\nThiết bị phòng cháy chữa cháy (PCCC) là những trang bị quan trọng giúp phát hiện, ngăn chặn và xử lý kịp thời các sự cố cháy nổ, góp phần bảo vệ tính mạng con người và tài sản. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các thiết bị PCCC chất lượng cao, đáp ứng nhu cầu sử dụng cho nhà máy, xí nghiệp, văn phòng, chung cư, trường học, bệnh viện và nhiều công trình khác.\nCác sản phẩm được lựa chọn từ những thương hiệu uy tín, đảm bảo chất lượng và đáp ứng các tiêu chuẩn an toàn hiện hành.\nDanh Mục Thiết Bị Phòng Cháy Chữa Cháy\nBình Chữa Cháy\nBình chữa cháy bột.\nBình chữa cháy khí CO₂.\nBình chữa cháy xe đẩy.\nBình chữa cháy tự động.\nThiết Bị Báo Cháy\nĐầu báo khói.\nĐầu báo nhiệt.\nChuông báo cháy.\nNút nhấn khẩn cấp.\nTrung tâm báo cháy.\nThiết Bị Chữa Cháy\nCuộn vòi chữa cháy.\nLăng phun chữa cháy.\nTrụ tiếp nước chữa cháy.\nHọng nước chữa cháy.\nThiết Bị Hỗ Trợ PCCC\nTủ đựng thiết bị chữa cháy.\nBảng tiêu lệnh PCCC.\nNội quy phòng cháy chữa cháy.\nĐèn sự cố.\nĐèn Exit chỉ dẫn thoát hiểm.\nƯu Điểm Nổi Bật\nChất lượng đảm bảo\nSản phẩm có nguồn gốc rõ ràng.\nĐộ bền cao, hoạt động ổn định.\nĐáp ứng yêu cầu an toàn phòng cháy chữa cháy.\nĐa dạng chủng loại\nPhù hợp cho hộ gia đình, doanh nghiệp và công trình lớn.\nNhiều lựa chọn theo nhu cầu sử dụng thực tế.\nHỗ trợ tư vấn chuyên nghiệp\nTư vấn lựa chọn thiết bị phù hợp.\nHỗ trợ báo giá nhanh chóng.\nCung cấp số lượng lớn cho dự án và công trình.",
-    "features": [],
+    "heading": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY CAO CẤP TẠI CÔNG TY TNHH BẢO HỘ LAO ĐỘNG THÀNH PHONG",
+    "shortDesc": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY CHẤT LƯỢNG CAO – GIẢI PHÁP BẢO VỆ AN TOÀN TOÀN DIỆN\nThiết Bị Phòng Cháy Chữa Cháy Tại Công Ty TNHH Bảo Hộ Lao Động Thành Phong\nThiết bị phòng cháy chữa cháy (PCCC) là những trang bị quan trọng giúp phát hiện, ngăn chặn và xử lý kịp thời các sự cố cháy nổ, góp phần bảo vệ tính mạng con người và tài sản. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp các thiết bị PCCC chất lượng cao, đáp ứng nhu cầu sử dụng cho nhà máy, xí nghiệp, văn phòng, chung cư, trường học, bệnh viện và nhiều công trình khác.\nCác sản phẩm được lựa chọn từ những thương hiệu uy tín, đảm bảo chất lượng và đáp ứng các tiêu chuẩn an toàn hiện hành.",
+    "features": [
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Bình chữa cháy bột.",
+        "desc": ""
+      },
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Bình chữa cháy khí CO₂.",
+        "desc": ""
+      },
+      {
+        "icon": "verified",
+        "iconWrapClass": "bg-blue-50",
+        "iconClass": "text-[#1D5FA8]",
+        "title": "Bình chữa cháy xe đẩy.",
+        "desc": ""
+      }
+    ],
     "columns": [
       {
         "icon": "info",
@@ -4636,7 +4787,30 @@ var categoryContent = {
         "icon": "verified",
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
-        "items": []
+        "items": [
+          "Đầu báo khói.",
+          "Đầu báo nhiệt.",
+          "Chuông báo cháy.",
+          "Nút nhấn khẩn cấp.",
+          "Trung tâm báo cháy.",
+          "Cuộn vòi chữa cháy.",
+          "Lăng phun chữa cháy.",
+          "Trụ tiếp nước chữa cháy.",
+          "Họng nước chữa cháy.",
+          "Tủ đựng thiết bị chữa cháy.",
+          "Bảng tiêu lệnh PCCC.",
+          "Nội quy phòng cháy chữa cháy.",
+          "Đèn sự cố.",
+          "Đèn Exit chỉ dẫn thoát hiểm.",
+          "Sản phẩm có nguồn gốc rõ ràng.",
+          "Độ bền cao, hoạt động ổn định.",
+          "Đáp ứng yêu cầu an toàn phòng cháy chữa cháy.",
+          "Phù hợp cho hộ gia đình, doanh nghiệp và công trình lớn.",
+          "Nhiều lựa chọn theo nhu cầu sử dụng thực tế.",
+          "Tư vấn lựa chọn thiết bị phù hợp.",
+          "Hỗ trợ báo giá nhanh chóng.",
+          "Cung cấp số lượng lớn cho dự án và công trình."
+        ]
       },
       {
         "icon": "thumb_up",
@@ -4660,28 +4834,14 @@ var categoryContent = {
   },
   "cat19_s1": {
     "tagline": "",
-    "heading": "Bình cứu hỏa - Bình chữa cháy là gì?",
-    "shortDesc": "Bình cứu hỏa (bình chữa cháy) là thiết bị phòng cháy chữa cháy quan trọng, được sử dụng để dập tắt hoặc khống chế các đám cháy ngay từ giai đoạn ban đầu, góp phần hạn chế thiệt hại về người và tài sản. Đây là thiết bị bắt buộc phải trang bị tại nhà ở, văn phòng, nhà xưởng, kho hàng, trường học, bệnh viện, khách sạn, trung tâm thương mại và các công trình theo quy định về phòng cháy chữa cháy.\nBảo hộ lao động Thành Phong chuyên cung cấp các loại bình chữa cháy chính hãng, đa dạng chủng loại và dung tích, đáp ứng nhu cầu sử dụng của cá nhân, doanh nghiệp và các dự án trên toàn quốc.\nCác loại bình chữa cháy phổ biến\nTại Bảo hộ lao động Thành Phong, khách hàng có thể lựa chọn nhiều dòng bình chữa cháy phù hợp với từng loại đám cháy.\nBình chữa cháy bột ABC\nBình chữa cháy bột ABC sử dụng bột khô chuyên dụng để dập tắt đám cháy loại A (chất rắn), B (chất lỏng dễ cháy) và C (khí cháy).\nƯu điểm\nKhả năng chữa cháy nhanh.",
+    "heading": "Bình Cứu Hỏa - Bình Chữa Cháy Chính Hãng, Đạt Chuẩn An Toàn",
+    "shortDesc": "Bình cứu hỏa (bình chữa cháy) là thiết bị phòng cháy chữa cháy quan trọng, được sử dụng để dập tắt hoặc khống chế các đám cháy ngay từ giai đoạn ban đầu, góp phần hạn chế thiệt hại về người và tài sản. Đây là thiết bị bắt buộc phải trang bị tại nhà ở, văn phòng, nhà xưởng, kho hàng, trường học, bệnh viện, khách sạn, trung tâm thương mại và các công trình theo quy định về phòng cháy chữa cháy.\nBảo hộ lao động Thành Phong chuyên cung cấp các loại bình chữa cháy chính hãng, đa dạng chủng loại và dung tích, đáp ứng nhu cầu sử dụng của cá nhân, doanh nghiệp và các dự án trên toàn quốc.",
     "features": [
       {
         "icon": "verified",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
-        "title": "Thiết kế nhỏ gọn, dễ sử dụng.",
-        "desc": ""
-      },
-      {
-        "icon": "verified",
-        "iconWrapClass": "bg-blue-50",
-        "iconClass": "text-[#1D5FA8]",
-        "title": "Thân bình bằng thép chịu áp lực cao.",
-        "desc": ""
-      },
-      {
-        "icon": "verified",
-        "iconWrapClass": "bg-blue-50",
-        "iconClass": "text-[#1D5FA8]",
-        "title": "Sơn tĩnh điện chống gỉ sét.",
+        "title": "Tại Bảo hộ lao động Thành Phong, khách hàng có thể lựa chọn nhiều dòng bình chữa cháy phù hợp với từng loại đám cháy.",
         "desc": ""
       }
     ],
@@ -4787,6 +4947,8 @@ var categoryContent = {
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
         "items": [
+          "Bình chữa cháy bột ABC sử dụng bột khô chuyên dụng để dập tắt đám cháy loại A (chất rắn), B (chất lỏng dễ cháy) và C (khí cháy).",
+          "Khả năng chữa cháy nhanh.",
           "Thiết kế nhỏ gọn, dễ sử dụng.",
           "Thân bình bằng thép chịu áp lực cao.",
           "Sơn tĩnh điện chống gỉ sét.",
@@ -4808,28 +4970,28 @@ var categoryContent = {
   },
   "cat19_s2": {
     "tagline": "",
-    "heading": "Bộ tiêu lệnh phòng cháy chữa cháy là gì?",
-    "shortDesc": "Bộ tiêu lệnh phòng cháy chữa cháy (PCCC) là hệ thống bảng hướng dẫn và nội quy được lắp đặt tại các khu vực công cộng, nhà máy, doanh nghiệp, văn phòng, trường học, bệnh viện và công trình xây dựng nhằm tuyên truyền, hướng dẫn các biện pháp phòng cháy chữa cháy cũng như cách xử lý khi xảy ra sự cố cháy nổ.\nĐây là hạng mục quan trọng trong hệ thống an toàn phòng cháy chữa cháy, góp phần nâng cao ý thức của người lao động, giúp mọi người xử lý nhanh chóng và đúng quy trình khi phát hiện cháy.\nBảo hộ lao động Thành Phong cung cấp đầy đủ các mẫu bộ tiêu lệnh phòng cháy chữa cháy theo đúng quy chuẩn hiện hành, chất lượng cao, bền đẹp, phù hợp lắp đặt tại mọi công trình.\nBộ tiêu lệnh phòng cháy chữa cháy gồm những gì?\nMột bộ tiêu lệnh PCCC tiêu chuẩn thường bao gồm:\nTiêu lệnh phòng cháy chữa cháy.\nNội quy phòng cháy chữa cháy.\nBảng hướng dẫn sử dụng bình chữa cháy.\nSố điện thoại khẩn cấp của lực lượng PCCC.\nBiển chỉ dẫn hoặc biển cảnh báo theo quy định.\nTùy theo nhu cầu của từng doanh nghiệp hoặc công trình, Thành Phong nhận thiết kế và gia công bộ tiêu lệnh theo yêu cầu.",
+    "heading": "Bộ Tiêu Lệnh Phòng Cháy Chữa Cháy Chính Hãng – Đáp Ứng Quy Định PCCC",
+    "shortDesc": "Bộ tiêu lệnh phòng cháy chữa cháy (PCCC) là hệ thống bảng hướng dẫn và nội quy được lắp đặt tại các khu vực công cộng, nhà máy, doanh nghiệp, văn phòng, trường học, bệnh viện và công trình xây dựng nhằm tuyên truyền, hướng dẫn các biện pháp phòng cháy chữa cháy cũng như cách xử lý khi xảy ra sự cố cháy nổ.\nĐây là hạng mục quan trọng trong hệ thống an toàn phòng cháy chữa cháy, góp phần nâng cao ý thức của người lao động, giúp mọi người xử lý nhanh chóng và đúng quy trình khi phát hiện cháy.\nBảo hộ lao động Thành Phong cung cấp đầy đủ các mẫu bộ tiêu lệnh phòng cháy chữa cháy theo đúng quy chuẩn hiện hành, chất lượng cao, bền đẹp, phù hợp lắp đặt tại mọi công trình.",
     "features": [
       {
         "icon": "verified",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
-        "title": "Bộ tiêu lệnh phòng cháy chữa cháy được sản xuất từ nhiều loại vật liệu chất lượng như:",
+        "title": "Tiêu lệnh phòng cháy chữa cháy.",
         "desc": ""
       },
       {
         "icon": "verified",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
-        "title": "Tấm mica.",
+        "title": "Nội quy phòng cháy chữa cháy.",
         "desc": ""
       },
       {
         "icon": "verified",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
-        "title": "Formex PVC.",
+        "title": "Bảng hướng dẫn sử dụng bình chữa cháy.",
         "desc": ""
       }
     ],
@@ -4902,6 +5064,12 @@ var categoryContent = {
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
         "items": [
+          "Bộ tiêu lệnh phòng cháy chữa cháy được sản xuất từ nhiều loại vật liệu chất lượng như:",
+          "Tấm mica.",
+          "Formex PVC.",
+          "Alu nhôm nhựa.",
+          "Tôn sơn tĩnh điện.",
+          "Decal cán màng bảo vệ.",
           "Chống nước.",
           "Chống ẩm.",
           "Chống cong vênh.",
@@ -4936,7 +5104,7 @@ var categoryContent = {
   },
   "cat19_s3": {
     "tagline": "",
-    "heading": "Kệ đựng bình chữa cháy là gì?",
+    "heading": "Kệ Đựng Bình Chữa Cháy Chính Hãng – Giải Pháp Bảo Quản Thiết Bị PCCC An Toàn",
     "shortDesc": "Kệ đựng bình chữa cháy là phụ kiện chuyên dụng dùng để cố định và bảo quản bình chữa cháy tại các vị trí quy định trong hệ thống phòng cháy chữa cháy. Sản phẩm giúp bình chữa cháy luôn được đặt đúng vị trí, dễ quan sát, dễ tiếp cận khi xảy ra sự cố, đồng thời hạn chế hư hỏng do va đập hoặc tiếp xúc trực tiếp với nền đất.\nBảo hộ lao động Thành Phong cung cấp đa dạng các mẫu kệ đựng bình chữa cháy với nhiều kích thước, phù hợp cho bình chữa cháy bột, bình CO₂ và các loại bình chữa cháy thông dụng trên thị trường.",
     "features": [
       {
@@ -5058,7 +5226,7 @@ var categoryContent = {
   },
   "cat19_s4": {
     "tagline": "",
-    "heading": "Quần áo phòng cháy chữa cháy là gì?",
+    "heading": "Quần Áo Phòng Cháy Chữa Cháy Chính Hãng – Bảo Vệ An Toàn Trong Môi Trường Nhiệt Độ Cao",
     "shortDesc": "Quần áo phòng cháy chữa cháy là trang phục bảo hộ chuyên dụng được thiết kế nhằm bảo vệ người mặc trước tác động của nhiệt độ cao, tia lửa, ngọn lửa và các yếu tố nguy hiểm phát sinh trong quá trình chữa cháy hoặc cứu hộ cứu nạn. Đây là trang bị không thể thiếu đối với lực lượng phòng cháy chữa cháy chuyên nghiệp, đội PCCC cơ sở, nhà máy, khu công nghiệp và nhiều đơn vị có nguy cơ cháy nổ.\nBảo hộ lao động Thành Phong cung cấp đa dạng các mẫu quần áo phòng cháy chữa cháy đạt tiêu chuẩn chất lượng, phù hợp cho nhiều môi trường làm việc khác nhau, đáp ứng nhu cầu sử dụng từ cá nhân đến doanh nghiệp.",
     "features": [
       {
