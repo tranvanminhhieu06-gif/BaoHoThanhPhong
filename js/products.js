@@ -1,7 +1,7 @@
 const products = [
   {
     "id": "aogilekysuao1",
-    "title": "Áo Gile Kỹ Sư - 001",
+    "title": "Áo Gile Kỹ Sư",
     "cat": "cat1",
     "catLabel": "ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH",
     "subcat": "cat1_s1",
@@ -11,7 +11,7 @@ const products = [
   },
   {
     "id": "aophanquangk2",
-    "title": "Áo Phản Quang Kiểu 3m Cao Cấp - 001",
+    "title": "Áo Phản Quang Kiểu 3m Cao Cấp",
     "cat": "cat2",
     "catLabel": "ÁO PHẢN QUANG",
     "subcat": "cat2_s1",
@@ -21,7 +21,7 @@ const products = [
   },
   {
     "id": "aophanquangl3",
-    "title": "Áo Phản Quang Lưới Thun 2 Bên Cao Cấp - 001",
+    "title": "Áo Phản Quang Lưới Thun 2 Bên Cao Cấp",
     "cat": "cat2",
     "catLabel": "ÁO PHẢN QUANG",
     "subcat": "cat2_s2",
@@ -31,7 +31,7 @@ const products = [
   },
   {
     "id": "aophanquangp4",
-    "title": "Áo Phản Quang Palize Cao Cấp - 001",
+    "title": "Áo Phản Quang Palize Cao Cấp",
     "cat": "cat2",
     "catLabel": "ÁO PHẢN QUANG",
     "subcat": "cat2_s3",
@@ -41,7 +41,7 @@ const products = [
   },
   {
     "id": "aophanquangt5",
-    "title": "Áo Phản Quang Túi Lưới Cao Cấp - 001",
+    "title": "Áo Phản Quang Túi Lưới Cao Cấp",
     "cat": "cat2",
     "catLabel": "ÁO PHẢN QUANG",
     "subcat": "cat2_s4",
@@ -51,7 +51,7 @@ const products = [
   },
   {
     "id": "aothuncongnh6",
-    "title": "Áo Thun Công Nhân Bền Đẹp - 001",
+    "title": "Áo Thun Công Nhân Bền Đẹp",
     "cat": "cat3",
     "catLabel": "ÁO THUN",
     "subcat": "cat3_s1",
@@ -61,7 +61,7 @@ const products = [
   },
   {
     "id": "aothunthetha7",
-    "title": "Áo Thun Thể Thao Cao Cấp - 001",
+    "title": "Áo Thun Thể Thao Cao Cấp",
     "cat": "cat3",
     "catLabel": "ÁO THUN",
     "subcat": "cat3_s2",
@@ -71,7 +71,7 @@ const products = [
   },
   {
     "id": "aothunvanpho8",
-    "title": "Áo Thun Văn Phòng Cao Cấp - 001",
+    "title": "Áo Thun Văn Phòng Cao Cấp",
     "cat": "cat3",
     "catLabel": "ÁO THUN",
     "subcat": "cat3_s3",
@@ -81,7 +81,7 @@ const products = [
   },
   {
     "id": "aosomicongso9",
-    "title": "Áo Sơ Mi Công Sở Cao Cấp - 001",
+    "title": "Áo Sơ Mi Công Sở Cao Cấp",
     "cat": "cat4",
     "catLabel": "ĐỒNG PHỤC CÔNG SỞ",
     "subcat": "cat4_s1",
@@ -91,7 +91,7 @@ const products = [
   },
   {
     "id": "chanvaycongs10",
-    "title": "Chân Váy Công Sở Cao Cấp - 001",
+    "title": "Chân Váy Công Sở Cao Cấp",
     "cat": "cat4",
     "catLabel": "ĐỒNG PHỤC CÔNG SỞ",
     "subcat": "cat4_s2",
@@ -101,7 +101,7 @@ const products = [
   },
   {
     "id": "quantaycongs11",
-    "title": "Quần Tây Công Sở Cao Cấp - 001",
+    "title": "Quần Tây Công Sở Cao Cấp",
     "cat": "cat4",
     "catLabel": "ĐỒNG PHỤC CÔNG SỞ",
     "subcat": "cat4_s3",
@@ -111,7 +111,7 @@ const products = [
   },
   {
     "id": "aobaovetayda12",
-    "title": "Áo Bảo Vệ Tay Dài - 001",
+    "title": "Áo Bảo Vệ Tay Dài",
     "cat": "cat5",
     "catLabel": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ",
     "subcat": "cat5_s1",
@@ -121,7 +121,7 @@ const products = [
   },
   {
     "id": "aobaovetayng13",
-    "title": "Áo Bảo Vệ Tay Ngắn - 001",
+    "title": "Áo Bảo Vệ Tay Ngắn",
     "cat": "cat5",
     "catLabel": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ",
     "subcat": "cat5_s2",
@@ -131,7 +131,7 @@ const products = [
   },
   {
     "id": "phukienbaove14",
-    "title": "Phụ Kiện Bảo Vệ Chuyên Nghiệp - 001",
+    "title": "Phụ Kiện Bảo Vệ Chuyên Nghiệp",
     "cat": "cat5",
     "catLabel": "ĐỒNG PHỤC VÀ PHỤ KIỆN BẢO VỆ",
     "subcat": "cat5_s3",
@@ -141,7 +141,7 @@ const products = [
   },
   {
     "id": "gangtaycachd15",
-    "title": "Găng Tay Cách Điện Chính Hãng - 001",
+    "title": "Găng Tay Cách Điện Chính Hãng",
     "cat": "cat6",
     "catLabel": "GĂNG TAY BẢO HỘ LAO ĐỘNG",
     "subcat": "cat6_s1",
@@ -151,7 +151,7 @@ const products = [
   },
   {
     "id": "gangtaycaosu16",
-    "title": "Găng Tay Cao Su Bảo Hộ - 001",
+    "title": "Găng Tay Cao Su Bảo Hộ",
     "cat": "cat6",
     "catLabel": "GĂNG TAY BẢO HỘ LAO ĐỘNG",
     "subcat": "cat6_s2",
@@ -161,7 +161,7 @@ const products = [
   },
   {
     "id": "gangtaydahan17",
-    "title": "Găng Tay Da Hàn Chịu Nhiệt - 001",
+    "title": "Găng Tay Da Hàn Chịu Nhiệt",
     "cat": "cat6",
     "catLabel": "GĂNG TAY BẢO HỘ LAO ĐỘNG",
     "subcat": "cat6_s3",
@@ -171,7 +171,7 @@ const products = [
   },
   {
     "id": "gangtaylenba18",
-    "title": "Găng Tay Len Bảo Hộ - 001",
+    "title": "Găng Tay Len Bảo Hộ",
     "cat": "cat6",
     "catLabel": "GĂNG TAY BẢO HỘ LAO ĐỘNG",
     "subcat": "cat6_s4",
@@ -181,7 +181,7 @@ const products = [
   },
   {
     "id": "quanaocongnh19",
-    "title": "Quần Áo Công Nhân Chất Lượng Cao - 001",
+    "title": "Quần Áo Công Nhân Chất Lượng Cao",
     "cat": "cat7",
     "catLabel": "QUẦN ÁO CÔNG NHÂN",
     "subcat": "cat7_s1",
@@ -191,7 +191,7 @@ const products = [
   },
   {
     "id": "quanaokysuch20",
-    "title": "Quần Áo Kỹ Sư Chuyên Nghiệp - 001",
+    "title": "Quần Áo Kỹ Sư Chuyên Nghiệp",
     "cat": "cat8",
     "catLabel": "QUẦN ÁO KỸ SƯ",
     "subcat": "cat8_s1",
@@ -201,7 +201,7 @@ const products = [
   },
   {
     "id": "aomuacanhdoi21",
-    "title": "Áo Mưa Cánh Dơi Chất Lượng Cao - 001",
+    "title": "Áo Mưa Cánh Dơi Chất Lượng Cao",
     "cat": "cat9",
     "catLabel": "QUẦN ÁO MƯA – ÁO PHAO",
     "subcat": "cat9_s1",
@@ -211,7 +211,7 @@ const products = [
   },
   {
     "id": "aophaocaocap22",
-    "title": "Áo Phao Cao Cấp - 001",
+    "title": "Áo Phao Cao Cấp",
     "cat": "cat9",
     "catLabel": "QUẦN ÁO MƯA – ÁO PHAO",
     "subcat": "cat9_s2",
@@ -221,7 +221,7 @@ const products = [
   },
   {
     "id": "quanaomuaboc23",
-    "title": "Quần Áo Mưa Bộ Cao Cấp - 001",
+    "title": "Quần Áo Mưa Bộ Cao Cấp",
     "cat": "cat9",
     "catLabel": "QUẦN ÁO MƯA – ÁO PHAO",
     "subcat": "cat9_s3",
@@ -231,7 +231,7 @@ const products = [
   },
   {
     "id": "dayantoancho24",
-    "title": "Dây An Toàn Chống Rơi Ngã - 001",
+    "title": "Dây An Toàn Chống Rơi Ngã",
     "cat": "cat11",
     "catLabel": "THIẾT BỊ AN TOÀN TRÊN CAO",
     "subcat": "cat11_s1",
@@ -241,7 +241,7 @@ const products = [
   },
   {
     "id": "daythungcuus25",
-    "title": "Dây Thừng Cứu Sinh Chịu Lực Cao - 001",
+    "title": "Dây Thừng Cứu Sinh Chịu Lực Cao",
     "cat": "cat11",
     "catLabel": "THIẾT BỊ AN TOÀN TRÊN CAO",
     "subcat": "cat11_s2",
@@ -251,7 +251,7 @@ const products = [
   },
   {
     "id": "luoicongtrin26",
-    "title": "Lưới Công Trình Chất Lượng Cao - 001",
+    "title": "Lưới Công Trình Chất Lượng Cao",
     "cat": "cat11",
     "catLabel": "THIẾT BỊ AN TOÀN TRÊN CAO",
     "subcat": "cat11_s3",
@@ -261,7 +261,7 @@ const products = [
   },
   {
     "id": "thangday27",
-    "title": "Thang Dây - 001",
+    "title": "Thang Dây",
     "cat": "cat11",
     "catLabel": "THIẾT BỊ AN TOÀN TRÊN CAO",
     "subcat": "cat11_s4",
@@ -271,7 +271,7 @@ const products = [
   },
   {
     "id": "depnhualaodo28",
-    "title": "Dép Nhựa Lao Động - 001",
+    "title": "Dép Nhựa Lao Động",
     "cat": "cat12",
     "catLabel": "THIẾT BỊ BẢO VỆ CHÂN",
     "subcat": "cat12_s1",
@@ -281,7 +281,7 @@ const products = [
   },
   {
     "id": "depphongsach29",
-    "title": "Dép Phòng Sạch Chống Tĩnh Điện - 001",
+    "title": "Dép Phòng Sạch Chống Tĩnh Điện",
     "cat": "cat12",
     "catLabel": "THIẾT BỊ BẢO VỆ CHÂN",
     "subcat": "cat12_s2",
@@ -291,7 +291,7 @@ const products = [
   },
   {
     "id": "giaybaoholao30",
-    "title": "Giày Bảo Hộ Lao Động Chính Hãng - 001",
+    "title": "Giày Bảo Hộ Lao Động Chính Hãng",
     "cat": "cat12",
     "catLabel": "THIẾT BỊ BẢO VỆ CHÂN",
     "subcat": "cat12_s3",
@@ -301,7 +301,7 @@ const products = [
   },
   {
     "id": "ungbaoholaod31",
-    "title": "Ủng Bảo Hộ Lao Động Chất Lượng Cao - 001",
+    "title": "Ủng Bảo Hộ Lao Động Chất Lượng Cao",
     "cat": "cat12",
     "catLabel": "THIẾT BỊ BẢO VỆ CHÂN",
     "subcat": "cat12_s4",
@@ -311,7 +311,7 @@ const products = [
   },
   {
     "id": "nonbaoholaod32",
-    "title": "Nón Bảo Hộ Lao Động - 001",
+    "title": "Nón Bảo Hộ Lao Động",
     "cat": "cat13",
     "catLabel": "THIẾT BỊ BẢO VỆ ĐẦU",
     "subcat": "cat13_s1",
@@ -321,7 +321,7 @@ const products = [
   },
   {
     "id": "nonvaicongnh33",
-    "title": "Nón Vải Công Nhân Chất Lượng Cao - 001",
+    "title": "Nón Vải Công Nhân Chất Lượng Cao",
     "cat": "cat13",
     "catLabel": "THIẾT BỊ BẢO VỆ ĐẦU",
     "subcat": "cat13_s2",
@@ -341,7 +341,7 @@ const products = [
   },
   {
     "id": "matnabaohola35",
-    "title": "Mặt Nạ Bảo Hộ Lao Động - 001",
+    "title": "Mặt Nạ Bảo Hộ Lao Động",
     "cat": "cat14",
     "catLabel": "THIẾT BỊ BẢO VỆ ĐƯỜNG HÔ HẤP",
     "subcat": "cat14_s2",
@@ -351,7 +351,7 @@ const products = [
   },
   {
     "id": "kinhbaoholao36",
-    "title": "Kính Bảo Hộ Lao Động Chính Hãng - 001",
+    "title": "Kính Bảo Hộ Lao Động Chính Hãng",
     "cat": "cat15",
     "catLabel": "THIẾT BỊ BẢO VỆ MẮT - KÍNH BẢO HỘ LAO ĐỘNG",
     "subcat": "cat15_s1",
@@ -361,7 +361,7 @@ const products = [
   },
   {
     "id": "thungracchat37",
-    "title": "Thùng Rác Chất Lượng Cao - 001",
+    "title": "Thùng Rác Chất Lượng Cao",
     "cat": "cat16",
     "catLabel": "THIẾT BỊ BẢO VỆ SINH MÔI TRƯỜNG - THÙNG RÁC CÔNG NGHIỆP",
     "subcat": "cat16_s1",
@@ -371,7 +371,7 @@ const products = [
   },
   {
     "id": "nuttaichongo38",
-    "title": "Nút Tai Chống Ồn Chất Lượng Cao - 001",
+    "title": "Nút Tai Chống Ồn Chất Lượng Cao",
     "cat": "cat17",
     "catLabel": "THIẾT BỊ BẢO VỆ TAI - NÚT TAI CHỐNG ỒN",
     "subcat": "cat17_s1",
@@ -381,7 +381,7 @@ const products = [
   },
   {
     "id": "bangcanhbaoa39",
-    "title": "Bảng Cảnh Báo An Toàn Chất Lượng Cao - 001",
+    "title": "Bảng Cảnh Báo An Toàn Chất Lượng Cao",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
     "subcat": "cat18_s1",
@@ -391,7 +391,7 @@ const products = [
   },
   {
     "id": "cocgiaothong40",
-    "title": "Cọc Giao Thông Chất Lượng Cao - 001",
+    "title": "Cọc Giao Thông Chất Lượng Cao",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
     "subcat": "cat18_s2",
@@ -401,7 +401,7 @@ const products = [
   },
   {
     "id": "cuonraocongt41",
-    "title": "Cuộn Rào Công Trình Chất Lượng Cao - 001",
+    "title": "Cuộn Rào Công Trình Chất Lượng Cao",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
     "subcat": "cat18_s3",
@@ -411,7 +411,7 @@ const products = [
   },
   {
     "id": "dayphanquang42",
-    "title": "Dây Phản Quang Cảnh Báo - 001",
+    "title": "Dây Phản Quang Cảnh Báo",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
     "subcat": "cat18_s4",
@@ -421,7 +421,7 @@ const products = [
   },
   {
     "id": "dennhapnhayc43",
-    "title": "Đèn Nhấp Nháy Cảnh Báo Giao Thông - 001",
+    "title": "Đèn Nhấp Nháy Cảnh Báo Giao Thông",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
     "subcat": "cat18_s5",
@@ -431,7 +431,7 @@ const products = [
   },
   {
     "id": "noiquy44",
-    "title": "Nội Quy - 001",
+    "title": "Nội Quy",
     "cat": "cat18",
     "catLabel": "THIẾT BỊ CẢNH BÁO AN TOÀN",
     "subcat": "cat18_s6",
@@ -441,7 +441,7 @@ const products = [
   },
   {
     "id": "binhcuuhoabi45",
-    "title": "Bình Cứu Hỏa - 001",
+    "title": "Bình Cứu Hỏa",
     "cat": "cat19",
     "catLabel": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY",
     "subcat": "cat19_s1",
@@ -451,7 +451,7 @@ const products = [
   },
   {
     "id": "botieulenhph46",
-    "title": "Bộ Tiêu Lệnh Phòng Cháy Chữa Cháy Chính Hãng - 001",
+    "title": "Bộ Tiêu Lệnh Phòng Cháy Chữa Cháy Chính Hãng",
     "cat": "cat19",
     "catLabel": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY",
     "subcat": "cat19_s2",
@@ -461,7 +461,7 @@ const products = [
   },
   {
     "id": "kedungbinhch47",
-    "title": "Kệ Đựng Bình Chữa Cháy Chính Hãng - 001",
+    "title": "Kệ Đựng Bình Chữa Cháy Chính Hãng",
     "cat": "cat19",
     "catLabel": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY",
     "subcat": "cat19_s3",
@@ -471,7 +471,7 @@ const products = [
   },
   {
     "id": "quanaophongc48",
-    "title": "Quần Áo Phòng Cháy Chữa Cháy Chính Hãng - 001",
+    "title": "Quần Áo Phòng Cháy Chữa Cháy Chính Hãng",
     "cat": "cat19",
     "catLabel": "THIẾT BỊ PHÒNG CHÁY CHỮA CHÁY",
     "subcat": "cat19_s4",

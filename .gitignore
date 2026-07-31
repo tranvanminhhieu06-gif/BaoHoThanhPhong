@@ -1,0 +1,10 @@
+# Trang quản lý sản phẩm (admin) - không đẩy thư viện cài đặt lên GitHub
+admin/node_modules/
+admin/npm-debug.log*
+
+# Backup tự động được tạo mỗi khi lưu sản phẩm
+js/products.js.bak
+
+# Hệ điều hành / editor
+.DS_Store
+Thumbs.db

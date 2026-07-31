@@ -1,4 +1,6 @@
 const { exec } = require('child_process');
+const GIT_PATH = '"C:\\Program Files\\Git\\cmd\\git.exe"';
+const GIT_ENV = { ...process.env, PATH: (process.env.PATH || '') + ';C:\\Program Files\\Git\\cmd' };
 const fs = require('fs');
 const path = require('path');
 
@@ -49,9 +51,9 @@ fs.watch(WATCH_DIR, { recursive: true }, (eventType, filename) => {
         const commitMessage = `Auto-update: Cập nhật ${filesDisplay}`;
         
         // Chuỗi lệnh Git
-        const gitCommand = `git add . && git commit -m "${commitMessage}" && git push origin main`;
+        const gitCommand = `${GIT_PATH} add . && ${GIT_PATH} commit -m "${commitMessage}" && ${GIT_PATH} push origin main`;
 
-        exec(gitCommand, { cwd: WATCH_DIR }, (error, stdout, stderr) => {
+        exec(gitCommand, { cwd: WATCH_DIR, env: GIT_ENV }, (error, stdout, stderr) => {
             if (error) {
                 // Thường lỗi này xuất hiện khi "nothing to commit"
                 if (stdout.includes('nothing to commit')) {
