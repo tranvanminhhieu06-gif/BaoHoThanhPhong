@@ -41,6 +41,11 @@ const SITE_URL = (process.env.SITE_URL || 'https://baohothanhphong.vn').replace(
 // Chế độ online = có token GitHub
 const ONLINE_MODE = !!GITHUB_TOKEN;
 
+// Tự động phân tích mô tả bằng AI (không bắt buộc - nếu không có key thì
+// chỉ dùng cách tách theo từ khóa)
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || '';
+const AI_MODEL = process.env.AI_MODEL || 'claude-sonnet-5';
+
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
 const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
 const SESSION_DAYS = 7;
@@ -121,6 +126,7 @@ app.get('/api/me', (req, res) => {
     authenticated: isAuthenticated(req),
     needsPassword: !!ADMIN_PASSWORD,
     autoSync: ONLINE_MODE,
+    aiEnabled: !!ANTHROPIC_API_KEY,
   });
 });
 
@@ -511,6 +517,197 @@ async function saveImageFile(file, catLabel, subcatLabel, titleForName) {
   await writeFileEntry(repoPath, file.buffer, `Them anh san pham: ${filename}`);
   return '../' + repoPath;
 }
+
+// =====================================================================
+// Tự động phân tích nội dung mô tả -> tên SP + 3 mục nội dung
+// =====================================================================
+
+// Các tiêu đề thường gặp trong mô tả sản phẩm (đã bỏ dấu để so khớp)
+const HEADING_PATTERNS = [
+  { key: 'title', re: /^(ten san pham|ten sp|ten hang)\b/ },
+  { key: 'app', re: /^(ung dung|ap dung|pham vi|doi tuong|dung cho|phu hop|su dung (cho|trong)|linh vuc)\b/ },
+  { key: 'pros', re: /^(uu diem|dac diem|tinh nang|noi bat|diem manh|uu the|thong so|chat lieu|cau tao)\b/ },
+  { key: 'commit', re: /^(cam ket|bao hanh|chinh sach|dich vu|ho tro|quyen loi)\b/ },
+];
+
+// Bỏ ký tự đầu dòng kiểu gạch đầu dòng / số thứ tự
+function stripBullet(line) {
+  return String(line).replace(/^[\s\-–—•*+>#✔✓☑»]+/, '').replace(/^\d+[.)]\s*/, '').trim();
+}
+
+// Chỉ coi là TIÊU ĐỀ khi dòng đó thực sự trông giống tiêu đề, để tránh nhầm
+// một câu bình thường (vd "Phù hợp mọi môi trường làm việc.") thành tiêu đề:
+//  - có dấu ":" nằm gần đầu dòng, hoặc
+//  - là dòng ngắn, không kết thúc bằng dấu chấm
+function detectHeading(line) {
+  const clean = stripBullet(line);
+  if (!clean) return null;
+
+  const colonIdx = clean.indexOf(':');
+  const hasEarlyColon = colonIdx > 0 && colonIdx <= 40;
+  const looksLikeShortHeading = clean.length <= 40 && !/[.!?]$/.test(clean);
+  if (!hasEarlyColon && !looksLikeShortHeading) return null;
+
+  // Chỉ so khớp phần đứng trước dấu ":" (nếu có)
+  const label = hasEarlyColon ? clean.slice(0, colonIdx) : clean;
+  const norm = removeDiacritics(label).toLowerCase().trim();
+
+  for (const { key, re } of HEADING_PATTERNS) {
+    if (re.test(norm)) {
+      return { key, inline: hasEarlyColon ? clean.slice(colonIdx + 1).trim() : '' };
+    }
+  }
+  return null;
+}
+
+// Một dòng dài chứa nhiều ý -> tách thành nhiều gạch đầu dòng
+function splitLongLine(line) {
+  if (line.length <= 120) return [line];
+  const parts = line.split(/(?<=[.;])\s+/).map((s) => s.trim()).filter(Boolean);
+  return parts.length > 1 ? parts : [line];
+}
+
+function analyzeByKeywords(desc) {
+  const lines = String(desc || '').split('\n').map((l) => l.trim());
+  const buckets = { title: [], app: [], pros: [], commit: [], other: [] };
+
+  let current = 'other';
+  let sawHeading = false;
+
+  for (const line of lines) {
+    if (!line) continue;
+    const heading = detectHeading(line);
+    if (heading) {
+      sawHeading = true;
+      current = heading.key;
+      if (heading.inline) buckets[current].push(heading.inline);
+      continue;
+    }
+    buckets[current].push(stripBullet(line));
+  }
+
+  const toItems = (arr) =>
+    arr.flatMap(splitLongLine).map((s) => s.trim()).filter(Boolean);
+
+  // Tên sản phẩm: lấy từ mục "tên sản phẩm", nếu không có thì lấy dòng đầu
+  // tiên (thường là tiêu đề của cả đoạn mô tả)
+  let title = toItems(buckets.title)[0] || '';
+  if (!title) {
+    const first = buckets.other[0] || '';
+    if (first && first.length <= 120) title = first;
+  }
+  if (title.length > 120) title = '';
+
+  const appItems = toItems(buckets.app);
+  const prosItems = toItems(buckets.pros);
+  const commitItems = toItems(buckets.commit);
+
+  // Đủ tin cậy khi nhận diện được tiêu đề và có ít nhất 2 trong 3 mục
+  const filled = [appItems, prosItems, commitItems].filter((a) => a.length > 0).length;
+  const confident = sawHeading && filled >= 2;
+
+  return { title, appItems, prosItems, commitItems, confident };
+}
+
+const AI_PROMPT = `Bạn là trợ lý biên tập nội dung cho công ty bán thiết bị bảo hộ lao động Thành Phong (Việt Nam).
+
+Dựa vào đoạn mô tả sản phẩm dưới đây, hãy trả về DUY NHẤT một khối JSON hợp lệ, không kèm giải thích, không kèm dấu \`\`\`, theo đúng cấu trúc:
+
+{
+  "title": "Tên sản phẩm ngắn gọn, viết hoa chữ cái đầu mỗi từ chính",
+  "appItems": ["Ứng dụng thực tế 1", "..."],
+  "prosItems": ["Ưu điểm nổi bật 1", "..."],
+  "commitItems": ["Cam kết từ Thành Phong 1", "..."]
+}
+
+Yêu cầu:
+- Viết bằng tiếng Việt có dấu, giọng văn chuyên nghiệp, ngắn gọn.
+- Mỗi mảng có từ 4 đến 8 mục, mỗi mục là một câu ngắn kết thúc bằng dấu chấm.
+- "appItems": sản phẩm dùng ở đâu, cho đối tượng/ngành nghề nào.
+- "prosItems": điểm mạnh về chất liệu, thiết kế, độ bền, tiêu chuẩn an toàn.
+- "commitItems": cam kết của Thành Phong về chất lượng, nguồn gốc, bảo hành, tư vấn, giao hàng.
+- Chỉ dựa trên thông tin trong mô tả; nếu thiếu thì suy luận hợp lý theo đặc thù ngành bảo hộ lao động, tuyệt đối không bịa số liệu, chứng nhận hay thông số kỹ thuật cụ thể.
+
+Mô tả sản phẩm:
+`;
+
+async function analyzeByAI(desc) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'x-api-key': ANTHROPIC_API_KEY,
+      'anthropic-version': '2023-06-01',
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: AI_MODEL,
+      max_tokens: 2000,
+      messages: [{ role: 'user', content: AI_PROMPT + desc }],
+    }),
+  });
+
+  if (!res.ok) {
+    const detail = await res.text();
+    throw new Error(`AI trả về lỗi ${res.status}: ${detail.slice(0, 300)}`);
+  }
+
+  const json = await res.json();
+  const text = (json.content || []).map((c) => c.text || '').join('').trim();
+
+  // Phòng trường hợp AI kèm thêm chữ quanh khối JSON
+  const start = text.indexOf('{');
+  const end = text.lastIndexOf('}');
+  if (start === -1 || end === -1) throw new Error('AI không trả về đúng định dạng JSON.');
+
+  const parsed = JSON.parse(text.slice(start, end + 1));
+  const arr = (v) => (Array.isArray(v) ? v.map((s) => String(s).trim()).filter(Boolean) : []);
+
+  return {
+    title: String(parsed.title || '').trim(),
+    appItems: arr(parsed.appItems),
+    prosItems: arr(parsed.prosItems),
+    commitItems: arr(parsed.commitItems),
+  };
+}
+
+app.post('/api/analyze-description', requireAuth, async (req, res) => {
+  try {
+    const desc = ((req.body && req.body.desc) || '').trim();
+    if (!desc) return res.status(400).json({ error: 'Vui lòng nhập nội dung mô tả trước.' });
+
+    // 1) Thử tách theo từ khóa (miễn phí, tức thì)
+    const byKeyword = analyzeByKeywords(desc);
+    if (byKeyword.confident) {
+      return res.json({ ...byKeyword, source: 'keyword' });
+    }
+
+    // 2) Không đủ tin cậy -> nhờ AI
+    if (ANTHROPIC_API_KEY) {
+      try {
+        const byAI = await analyzeByAI(desc);
+        return res.json({ ...byAI, source: 'ai' });
+      } catch (aiErr) {
+        console.error('Lỗi gọi AI:', aiErr);
+        return res.json({
+          ...byKeyword,
+          source: 'keyword',
+          warning: 'Không gọi được AI (' + aiErr.message + '). Đã tạm tách theo từ khóa.',
+        });
+      }
+    }
+
+    res.json({
+      ...byKeyword,
+      source: 'keyword',
+      warning:
+        'Chưa nhận diện được các tiêu đề như "Ứng dụng:", "Ưu điểm:", "Cam kết:" trong mô tả. ' +
+        'Hãy thêm các tiêu đề đó, hoặc cài đặt AI để tự động phân tích.',
+    });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
 
 // =====================================================================
 // API dữ liệu (yêu cầu đăng nhập)

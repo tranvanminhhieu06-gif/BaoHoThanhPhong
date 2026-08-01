@@ -35,6 +35,8 @@
   const appListInput = el('appListInput');
   const prosListInput = el('prosListInput');
   const commitListInput = el('commitListInput');
+  const autoFillBtn = el('autoFillBtn');
+  const autoFillNote = el('autoFillNote');
 
   const dropZone = el('dropZone');
   const imageInput = el('imageInput');
@@ -332,6 +334,7 @@
     imageInput.value = '';
     formError.classList.add('hidden');
     formError.textContent = '';
+    autoFillNote.classList.add('hidden');
     populateCatSelect(DATA.categories.length ? DATA.categories[0].catId : '__new__');
     handleCatChange();
   }
@@ -456,6 +459,62 @@
     formError.textContent = msg;
     formError.classList.remove('hidden');
   }
+
+  // ---------------------------------------------------------------
+  // Tự động điền từ nội dung mô tả
+  // ---------------------------------------------------------------
+  autoFillBtn.addEventListener('click', async () => {
+    const desc = descInput.value.trim();
+    autoFillNote.classList.add('hidden');
+
+    if (!desc) {
+      showFormError('Vui lòng nhập nội dung mô tả trước khi bấm "Tự động điền".');
+      return;
+    }
+
+    formError.classList.add('hidden');
+    autoFillBtn.disabled = true;
+    const originalHtml = autoFillBtn.innerHTML;
+    autoFillBtn.innerHTML =
+      '<span class="material-symbols-outlined text-[16px] animate-spin">progress_activity</span> Đang phân tích...';
+
+    try {
+      const res = await fetch('/api/analyze-description', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ desc }),
+      });
+      if (res.status === 401) { closeModal(); showLogin(); return; }
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Không phân tích được nội dung.');
+
+      let filled = 0;
+      if (json.title) { titleInput.value = json.title; filled++; }
+      if (json.appItems && json.appItems.length) { appListInput.value = json.appItems.join('\n'); filled++; }
+      if (json.prosItems && json.prosItems.length) { prosListInput.value = json.prosItems.join('\n'); filled++; }
+      if (json.commitItems && json.commitItems.length) { commitListInput.value = json.commitItems.join('\n'); filled++; }
+
+      if (json.warning) {
+        autoFillNote.textContent = json.warning;
+        autoFillNote.classList.remove('hidden');
+      }
+
+      if (filled === 0) {
+        showFormError('Không tách được nội dung nào từ đoạn mô tả này.');
+      } else {
+        showToast(
+          json.source === 'ai'
+            ? 'Đã tự động điền bằng AI. Bạn nên đọc lại và chỉnh cho đúng ý.'
+            : 'Đã tự động điền theo tiêu đề trong mô tả.'
+        );
+      }
+    } catch (err) {
+      showFormError(err.message);
+    } finally {
+      autoFillBtn.disabled = false;
+      autoFillBtn.innerHTML = originalHtml;
+    }
+  });
 
   // ---------------------------------------------------------------
   // Xóa sản phẩm

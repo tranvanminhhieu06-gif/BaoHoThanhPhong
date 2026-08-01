@@ -84,6 +84,12 @@ Vẫn ở màn hình tạo dịch vụ, kéo xuống mục **Environment Variabl
 | `GITHUB_TOKEN` | Token đã copy ở Bước 1 |
 | `GITHUB_REPO` | `tranvanminhhieu06-gif/BaoHoThanhPhong` |
 
+Nếu muốn dùng nút "Tự động điền" bằng AI, thêm 1 dòng nữa (xem mục C):
+
+| Key | Value |
+|---|---|
+| `ANTHROPIC_API_KEY` | API key lấy ở console.anthropic.com |
+
 Sau đó bấm **Create Web Service** và chờ vài phút.
 
 ### Bước 4 — Lấy đường link
@@ -98,12 +104,71 @@ Gửi link này + mật khẩu cho người bạn muốn cho vào quản lý s�
 
 ---
 
+## C. Bật tính năng "Tự động điền" bằng AI (không bắt buộc)
+
+Nút **"Tự động điền"** nằm cạnh ô Mô tả. Bấm vào, máy sẽ đọc đoạn mô tả rồi
+tự điền: **Tên sản phẩm**, **Ứng Dụng Thực Tế**, **Ưu Điểm Nổi Bật**,
+**Cam Kết Từ Thành Phong**.
+
+Nút này hoạt động theo 2 bước:
+
+1. **Tách theo tiêu đề (miễn phí, luôn có sẵn).** Nếu trong đoạn mô tả bạn dán
+   vào đã có sẵn các tiêu đề, máy sẽ tự chia ra. Ví dụ đoạn này sẽ tách đúng
+   mà không cần AI:
+
+   ```
+   Áo phản quang lưới 3M cao cấp
+
+   Ứng dụng:
+   - Công nhân công trình xây dựng.
+   - Nhân viên điều tiết giao thông.
+
+   Ưu điểm:
+   - Vải lưới thoáng mát, nhẹ.
+   - Dải phản quang 3M sáng rõ ban đêm.
+
+   Cam kết:
+   - Hàng đúng mẫu, đổi trả trong 7 ngày.
+   ```
+
+   Máy nhận diện được các tiêu đề như: `Ứng dụng`, `Áp dụng`, `Phù hợp`,
+   `Đối tượng`, `Ưu điểm`, `Đặc điểm`, `Tính năng`, `Chất liệu`, `Cam kết`,
+   `Bảo hành`, `Chính sách`, `Hỗ trợ`.
+
+2. **Nhờ AI viết (có tính phí).** Nếu đoạn mô tả chỉ là một đoạn văn xuôi
+   không có tiêu đề, máy sẽ gửi cho AI đọc và tự viết ra 4 mục.
+
+### Cách lấy API key
+
+1. Vào https://console.anthropic.com → đăng ký / đăng nhập.
+2. Nạp tiền vào tài khoản (mục **Billing**, tối thiểu 5 USD).
+3. Vào mục **API Keys** → **Create Key** → copy chuỗi key (dạng `sk-ant-...`).
+4. Thêm vào Render: dịch vụ của bạn → **Environment** → thêm biến
+   `ANTHROPIC_API_KEY` = chuỗi vừa copy → **Save changes**.
+
+Nếu chạy trên máy cá nhân, đặt biến trước khi chạy:
+
+```
+set ANTHROPIC_API_KEY=sk-ant-...
+npm start
+```
+
+> Không cài API key cũng không sao — nút "Tự động điền" vẫn dùng được ở bước 1
+> (tách theo tiêu đề), chỉ là không tự viết nội dung mới được.
+
+**Lưu ý:** AI có thể viết chưa chính xác. Luôn đọc lại và chỉnh sửa trước khi
+bấm "Lưu sản phẩm".
+
+---
+
 ## Cách dùng
 
 - **Danh mục** (cột trái): bấm để lọc sản phẩm theo danh mục.
 - **Thêm sản phẩm**: bấm "Thêm sản phẩm", chọn ảnh, nhập tên, chọn danh mục
   (hoặc "➕ Danh mục mới..." để tạo danh mục chưa có).
 - **Sửa / Xóa**: mỗi thẻ sản phẩm có 2 nút tương ứng.
+- **Tự động điền**: dán mô tả vào ô Mô tả rồi bấm nút này để máy tự điền tên
+  sản phẩm và 3 mục nội dung (xem mục C ở trên).
 - **3 ô nội dung** (Ứng Dụng Thực Tế / Ưu Điểm Nổi Bật / Cam Kết Từ Thành
   Phong): áp dụng cho cả **danh mục con** đang chọn — mọi sản phẩm cùng danh
   mục con sẽ hiển thị chung nội dung này. Mỗi dòng là 1 gạch đầu dòng.
