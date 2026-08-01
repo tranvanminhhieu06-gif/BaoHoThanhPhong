@@ -396,10 +396,13 @@ function setColumnItems(entry, keyword, items) {
   const col = findColumn(entry, keyword);
   if (col) {
     col.items = items;
-  } else {
-    const def = COLUMN_DEFAULTS.find((d) => removeDiacritics(d.title).toLowerCase().includes(keyword));
-    if (def) entry.columns.push({ ...def, items });
+    return;
   }
+  // Không tự tạo cột rỗng: nếu người dùng đã xóa cột này ở trang "Khối nội
+  // dung" thì tôn trọng lựa chọn đó, chỉ tạo lại khi thực sự có nội dung.
+  if (!items.length) return;
+  const def = COLUMN_DEFAULTS.find((d) => removeDiacritics(d.title).toLowerCase().includes(keyword));
+  if (def) entry.columns.push({ ...def, items });
 }
 
 function getColumnItems(entry, keyword) {
@@ -760,6 +763,126 @@ app.get('/api/category-content/:key', requireAuth, async (req, res) => {
       prosItems: getColumnItems(entry, 'uu diem'),
       commitItems: getColumnItems(entry, 'cam ket'),
     });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// =====================================================================
+// Quản lý các khối nội dung (ô đặc điểm + cột nội dung) của trang chi tiết
+// =====================================================================
+
+// Danh sách danh mục / danh mục con để chọn
+app.get('/api/blocks', requireAuth, async (req, res) => {
+  try {
+    const { products } = await loadData();
+    const { categoryContent } = await loadCategoryContent();
+
+    const seenCat = new Map();
+    for (const p of products) {
+      if (!seenCat.has(p.cat)) {
+        seenCat.set(p.cat, { key: p.cat, label: p.catLabel, type: 'cat', subcats: new Map() });
+      }
+      if (p.subcat && !seenCat.get(p.cat).subcats.has(p.subcat)) {
+        seenCat.get(p.cat).subcats.set(p.subcat, {
+          key: p.subcat,
+          label: p.subcatLabel,
+          type: 'subcat',
+        });
+      }
+    }
+
+    const targets = [];
+    for (const cat of Array.from(seenCat.values()).sort((a, b) => a.label.localeCompare(b.label, 'vi'))) {
+      targets.push({ ...cat, subcats: undefined, hasContent: !!categoryContent[cat.key] });
+      for (const sub of cat.subcats.values()) {
+        targets.push({ ...sub, parent: cat.key, hasContent: !!categoryContent[sub.key] });
+      }
+    }
+
+    res.json({ targets });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Lấy các khối của 1 danh mục / danh mục con
+app.get('/api/blocks/:key', requireAuth, async (req, res) => {
+  try {
+    const { categoryContent } = await loadCategoryContent();
+    const entry = categoryContent[req.params.key];
+    res.json({
+      exists: !!entry,
+      tagline: (entry && entry.tagline) || '',
+      heading: (entry && entry.heading) || '',
+      shortDesc: (entry && entry.shortDesc) || '',
+      features: (entry && Array.isArray(entry.features) ? entry.features : []).map((f) => ({
+        icon: f.icon || 'verified',
+        color: f.color || '',
+        iconWrapClass: f.iconWrapClass || '',
+        iconClass: f.iconClass || '',
+        title: f.title || '',
+        desc: f.desc || '',
+      })),
+      columns: (entry && Array.isArray(entry.columns) ? entry.columns : []).map((c) => ({
+        icon: c.icon || 'check_circle',
+        color: c.color || '#1D5FA8',
+        title: c.title || '',
+        items: Array.isArray(c.items) ? c.items : [],
+      })),
+    });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Lưu các khối (đã sửa nội dung / đổi thứ tự / thêm / xóa)
+app.put('/api/blocks/:key', requireAuth, async (req, res) => {
+  try {
+    const key = req.params.key;
+    const body = req.body || {};
+
+    const features = (Array.isArray(body.features) ? body.features : [])
+      .map((f) => ({
+        icon: String(f.icon || 'verified').trim(),
+        color: String(f.color || '').trim(),
+        iconWrapClass: String(f.iconWrapClass || '').trim(),
+        iconClass: String(f.iconClass || '').trim(),
+        title: String(f.title || '').trim(),
+        desc: String(f.desc || '').trim(),
+      }))
+      .filter((f) => f.title);
+
+    const columns = (Array.isArray(body.columns) ? body.columns : [])
+      .map((c) => ({
+        icon: String(c.icon || 'check_circle').trim(),
+        color: String(c.color || '#1D5FA8').trim(),
+        title: String(c.title || '').trim(),
+        items: (Array.isArray(c.items) ? c.items : [])
+          .map((s) => String(s).trim())
+          .filter(Boolean),
+      }))
+      .filter((c) => c.title);
+
+    const loaded = await loadCategoryContent();
+    const entry = ensureContentEntry(
+      loaded.categoryContent,
+      key,
+      String(body.heading || '').trim() || key,
+      String(body.shortDesc || '').trim()
+    );
+
+    if (body.tagline !== undefined) entry.tagline = String(body.tagline).trim();
+    if (body.heading !== undefined) entry.heading = String(body.heading).trim();
+    if (body.shortDesc !== undefined) entry.shortDesc = String(body.shortDesc).trim();
+    entry.features = features;
+    entry.columns = columns;
+
+    await saveCategoryContent(loaded, loaded.categoryContent);
+    res.json({ ok: true });
   } catch (e) {
     console.error(e);
     res.status(500).json({ error: e.message });

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khối nội dung - Thành Phong</title>
+<link rel="icon" type="image/png" href="images/LOGO/Icon logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+  body{font-family:'Be Vietnam Pro',sans-serif;background:#F4F6F9;color:#1A2744;}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;font-size:20px;vertical-align:middle;}
+  .scrollbar-thin::-webkit-scrollbar{width:6px;}
+  .scrollbar-thin::-webkit-scrollbar-thumb{background:#CBD5E1;border-radius:10px;}
+  .target-item.active{background:#1D5FA8;color:#fff;}
+  .target-item.active .target-sub{color:rgba(255,255,255,.75);}
+
+  /* Kéo thả sắp xếp */
+  .block-card{transition:box-shadow .15s, opacity .15s;}
+  .block-card.dragging{opacity:.4;}
+  .block-card.drag-over{box-shadow:0 -3px 0 0 #1D5FA8;}
+  .drag-handle{cursor:grab;}
+  .drag-handle:active{cursor:grabbing;}
+</style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Màn hình đăng nhập -->
+  <div id="loginScreen" class="fixed inset-0 z-50 bg-[#F4F6F9] items-center justify-center p-4" style="display:none;">
+    <form id="loginForm" class="bg-white w-full max-w-sm rounded-2xl border border-gray-200 shadow-sm p-8">
+      <div class="text-center mb-6">
+        <img src="images/LOGO/Icon logo.png" alt="Logo" class="h-12 w-12 object-contain mx-auto mb-3" onerror="this.style.display='none'">
+        <h1 class="text-lg font-extrabold text-[#1A2744]">Khối nội dung</h1>
+        <p class="text-xs text-gray-400 font-medium mt-1">Thành Phong Bảo Hộ Lao Động</p>
+      </div>
+      <label class="block text-xs font-extrabold uppercase tracking-wide text-gray-500 mb-2">Mật khẩu</label>
+      <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu"
+        class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D5FA8]/20 focus:border-[#1D5FA8]">
+      <p id="loginError" class="hidden mt-3 text-sm font-semibold text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-2"></p>
+      <button type="submit" id="loginBtn"
+        class="mt-5 w-full px-5 py-3 rounded-xl bg-[#1D5FA8] text-white text-sm font-bold hover:bg-[#164A85] active:scale-95 transition">
+        Đăng nhập
+      </button>
+    </form>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-30 bg-white border-b border-gray-200">
+    <div class="max-w-[1400px] mx-auto px-5 py-3 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="images/LOGO/Icon logo.png" alt="Logo" class="h-9 w-9 object-contain" onerror="this.style.display='none'">
+        <div>
+          <h1 class="text-base font-extrabold text-[#1A2744] leading-tight">Khối nội dung</h1>
+          <p class="text-[11px] text-gray-400 font-medium leading-tight">Trang chi tiết sản phẩm</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-bold text-gray-600 hover:bg-gray-50 transition">
+          <span class="material-symbols-outlined text-[18px]">inventory_2</span>
+          <span class="hidden sm:inline">Sản phẩm</span>
+        </a>
+        <button id="saveBtn" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1D5FA8] text-white text-sm font-bold hover:bg-[#164A85] transition active:scale-95 disabled:opacity-40">
+          <span class="material-symbols-outlined text-[18px]">save</span>
+          Lưu thay đổi
+        </button>
+        <button id="logoutBtn" title="Đăng xuất" style="display:none;"
+          class="w-10 h-10 items-center justify-center rounded-xl border border-gray-200 text-gray-500 hover:bg-gray-100 transition">
+          <span class="material-symbols-outlined text-[20px]">logout</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-[1400px] mx-auto px-5 py-6 flex flex-col lg:flex-row gap-6">
+
+    <!-- Danh sách danh mục -->
+    <aside class="lg:w-80 shrink-0">
+      <div class="bg-white rounded-2xl border border-gray-200 p-4 lg:sticky lg:top-20">
+        <h3 class="text-xs font-extrabold uppercase tracking-widest text-[#1D5FA8] mb-3">Chọn danh mục</h3>
+        <p class="text-[11px] text-gray-400 font-medium mb-3 leading-relaxed">
+          Nội dung áp dụng cho mọi sản phẩm thuộc danh mục / danh mục con được chọn.
+        </p>
+        <div id="targetList" class="space-y-1 max-h-[65vh] overflow-y-auto scrollbar-thin pr-1"></div>
+      </div>
+    </aside>
+
+    <!-- Trình soạn khối -->
+    <section class="flex-1 min-w-0">
+      <div id="emptyPick" class="bg-white rounded-2xl border border-gray-200 py-20 text-center text-gray-400">
+        <span class="material-symbols-outlined text-5xl mb-2 block">dashboard_customize</span>
+        <p class="font-semibold">Chọn một danh mục ở cột trái để bắt đầu.</p>
+      </div>
+
+      <div id="editor" style="display:none;">
+        <div class="bg-white rounded-2xl border border-gray-200 p-5 mb-5">
+          <p class="text-[11px] font-extrabold uppercase tracking-widest text-[#1D5FA8] mb-1">Đang sửa</p>
+          <h2 id="editorTitle" class="text-lg font-extrabold text-[#1A2744] mb-4"></h2>
+
+          <label class="block text-xs font-extrabold uppercase tracking-wide text-gray-500 mb-2">Tiêu đề lớn hiển thị trên trang</label>
+          <input id="headingInput" type="text" placeholder="VD: ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH"
+            class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-medium mb-4 focus:outline-none focus:ring-2 focus:ring-[#1D5FA8]/20 focus:border-[#1D5FA8]">
+
+          <label class="block text-xs font-extrabold uppercase tracking-wide text-gray-500 mb-2">Đoạn giới thiệu ngắn</label>
+          <textarea id="shortDescInput" rows="3" placeholder="Đoạn mô tả hiển thị ngay dưới tiêu đề..."
+            class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D5FA8]/20 focus:border-[#1D5FA8]"></textarea>
+        </div>
+
+        <!-- Ô đặc điểm -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-5 mb-5">
+          <div class="flex items-center justify-between gap-3 mb-1">
+            <h3 class="text-sm font-extrabold text-[#1A2744]">Ô đặc điểm</h3>
+            <button id="addFeatureBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#EBF3FF] text-[#1D5FA8] text-xs font-bold hover:bg-[#1D5FA8] hover:text-white transition active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">add</span> Thêm ô
+            </button>
+          </div>
+          <p class="text-[11px] text-gray-400 font-medium mb-4">
+            Các ô nhỏ nằm cạnh ảnh sản phẩm. Kéo biểu tượng ⠿ để đổi thứ tự.
+          </p>
+          <div id="featureList" class="space-y-3"></div>
+          <p id="featureEmpty" class="hidden text-xs text-gray-400 font-medium bg-gray-50 rounded-xl px-4 py-3">
+            Chưa có ô nào. Trang web sẽ hiển thị 3 ô mặc định (chất lượng, giao hàng, đặt số lượng lớn).
+          </p>
+        </div>
+
+        <!-- Cột nội dung -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-5">
+          <div class="flex items-center justify-between gap-3 mb-1">
+            <h3 class="text-sm font-extrabold text-[#1A2744]">Cột nội dung</h3>
+            <button id="addColumnBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#EBF3FF] text-[#1D5FA8] text-xs font-bold hover:bg-[#1D5FA8] hover:text-white transition active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">add</span> Thêm cột
+            </button>
+          </div>
+          <p class="text-[11px] text-gray-400 font-medium mb-4">
+            Các khung lớn phía dưới trang (Ứng Dụng Thực Tế, Ưu Điểm Nổi Bật, Cam Kết...). Mỗi dòng trong ô nội dung là 1 gạch đầu dòng.
+          </p>
+          <div id="columnList" class="space-y-3"></div>
+          <p id="columnEmpty" class="hidden text-xs text-gray-400 font-medium bg-gray-50 rounded-xl px-4 py-3">
+            Chưa có cột nào. Khu vực này sẽ được ẩn trên trang web.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 pointer-events-none transition duration-200">
+    <div id="toastBody" class="px-5 py-3 rounded-xl shadow-xl text-sm font-bold text-white bg-[#1A2744]"></div>
+  </div>
+
+  <script src="boxes.js"></script>
+</body>
+</html>

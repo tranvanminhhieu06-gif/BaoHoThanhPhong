@@ -342,36 +342,8 @@
                     ...
                 </h1>
 
-                <!-- Key features -->
-                <div class="space-y-3 mb-8">
-                    <div class="feature-item">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0" id="feature1-iconwrap">
-                            <span class="material-symbols-outlined text-[#1D5FA8]" id="feature1-icon" style="font-size:20px;">verified</span>
-                        </div>
-                        <div>
-                            <p class="font-bold text-[#1A2744] text-sm" id="feature1-title">Chất lượng cao, đạt tiêu chuẩn an toàn</p>
-                            <p class="text-xs text-gray-500 mt-0.5" id="feature1-desc">Sản phẩm chính hãng, có đầy đủ CO/CQ chứng nhận chất lượng</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0" id="feature2-iconwrap">
-                            <span class="material-symbols-outlined text-[#1D5FA8]" id="feature2-icon" style="font-size:20px;">local_shipping</span>
-                        </div>
-                        <div>
-                            <p class="font-bold text-[#1A2744] text-sm" id="feature2-title">Giao hàng toàn quốc – Nhanh chóng</p>
-                            <p class="text-xs text-gray-500 mt-0.5" id="feature2-desc">Hỗ trợ vận chuyển tận nơi, đóng gói chắc chắn an toàn</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0" id="feature3-iconwrap">
-                            <span class="material-symbols-outlined text-amber-600" id="feature3-icon" style="font-size:20px;">groups</span>
-                        </div>
-                        <div>
-                            <p class="font-bold text-[#1A2744] text-sm" id="feature3-title">Nhận đặt hàng số lượng lớn</p>
-                            <p class="text-xs text-gray-500 mt-0.5" id="feature3-desc">Báo giá sỉ ưu đãi cho doanh nghiệp, may in thêu theo yêu cầu</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Key features (render bằng JS từ js/category_content.js) -->
+                <div class="space-y-3 mb-8" id="product-features"></div>
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-3 mb-4">
@@ -416,29 +388,7 @@
 
         <!-- ===== CATEGORY DETAIL COLUMNS (shown only for categories with custom content) ===== -->
         <section class="mb-20" id="category-columns-section" style="display:none;" data-aos="fade-up">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                    <h3 class="flex items-center gap-2 font-extrabold text-[#1A2744] text-base mb-4">
-                        <span class="material-symbols-outlined" id="col1-icon" style="font-size:20px;color:#1D5FA8;">groups</span>
-                        <span id="col1-title">Ứng Dụng</span>
-                    </h3>
-                    <ul class="space-y-2.5 text-sm text-gray-600" id="col1-list"></ul>
-                </div>
-                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                    <h3 class="flex items-center gap-2 font-extrabold text-[#1A2744] text-base mb-4">
-                        <span class="material-symbols-outlined" id="col2-icon" style="font-size:20px;color:#D99A00;">trending_up</span>
-                        <span id="col2-title">Lợi Ích Khi Sử Dụng</span>
-                    </h3>
-                    <ul class="space-y-2.5 text-sm text-gray-600" id="col2-list"></ul>
-                </div>
-                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                    <h3 class="flex items-center gap-2 font-extrabold text-[#1A2744] text-base mb-4">
-                        <span class="material-symbols-outlined" id="col3-icon" style="font-size:20px;color:#059669;">check_circle</span>
-                        <span id="col3-title">Cam Kết Từ Thành Phong</span>
-                    </h3>
-                    <ul class="space-y-2.5 text-sm text-gray-600" id="col3-list"></ul>
-                </div>
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="category-columns-grid"></div>
         </section>
 
         <!-- ===== PRODUCTS YOU MIGHT LIKE ===== -->
@@ -659,7 +609,106 @@
     var ZALO_URL = 'https://zalo.me/0931160818';
 
     // Per-category marketing content overrides (falls back to generic content when absent)
-    
+
+    function escHtml(str) {
+        return String(str == null ? '' : str)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    // Các ô đặc điểm mặc định, dùng khi danh mục chưa có nội dung riêng
+    var DEFAULT_FEATURES = [
+        {
+            icon: 'verified', iconWrapClass: 'bg-blue-50', iconClass: 'text-[#1D5FA8]',
+            title: 'Chất lượng cao, đạt tiêu chuẩn an toàn',
+            desc: 'Sản phẩm chính hãng, có đầy đủ CO/CQ chứng nhận chất lượng'
+        },
+        {
+            icon: 'local_shipping', iconWrapClass: 'bg-blue-50', iconClass: 'text-[#1D5FA8]',
+            title: 'Giao hàng toàn quốc – Nhanh chóng',
+            desc: 'Hỗ trợ vận chuyển tận nơi, đóng gói chắc chắn an toàn'
+        },
+        {
+            icon: 'groups', iconWrapClass: 'bg-amber-50', iconClass: 'text-amber-600',
+            title: 'Nhận đặt hàng số lượng lớn',
+            desc: 'Báo giá sỉ ưu đãi cho doanh nghiệp, may in thêu theo yêu cầu'
+        }
+    ];
+
+    // Vẽ các ô đặc điểm. Ưu tiên field "color" (do trang quản lý đặt),
+    // nếu không có thì dùng iconWrapClass/iconClass như dữ liệu cũ.
+    function renderFeatures(features) {
+        var wrap = document.getElementById('product-features');
+        if (!wrap) return;
+
+        var list = (Array.isArray(features) && features.length) ? features : DEFAULT_FEATURES;
+
+        wrap.innerHTML = list.map(function (f) {
+            var boxCls = 'w-10 h-10 rounded-xl flex items-center justify-center shrink-0';
+            var boxStyle = '';
+            var iconCls = 'material-symbols-outlined';
+            var iconStyle = 'font-size:20px;';
+
+            if (f.color) {
+                boxStyle = ' style="background:' + escHtml(f.color) + '1A;"';
+                iconStyle += 'color:' + escHtml(f.color) + ';';
+            } else {
+                boxCls += ' ' + (f.iconWrapClass || 'bg-blue-50');
+                iconCls += ' ' + (f.iconClass || 'text-[#1D5FA8]');
+            }
+
+            return '<div class="feature-item">' +
+                '<div class="' + boxCls + '"' + boxStyle + '>' +
+                '<span class="' + iconCls + '" style="' + iconStyle + '">' + escHtml(f.icon || 'verified') + '</span>' +
+                '</div>' +
+                '<div>' +
+                '<p class="font-bold text-[#1A2744] text-sm">' + escHtml(f.title) + '</p>' +
+                (f.desc ? '<p class="text-xs text-gray-500 mt-0.5">' + escHtml(f.desc) + '</p>' : '') +
+                '</div></div>';
+        }).join('');
+    }
+
+    // Vẽ các cột nội dung. Số cột tự co giãn theo số khối thực tế.
+    function renderColumns(columns) {
+        var section = document.getElementById('category-columns-section');
+        var grid = document.getElementById('category-columns-grid');
+        if (!section || !grid) return;
+
+        var list = (Array.isArray(columns) ? columns : []).filter(function (c) {
+            return c && c.title && Array.isArray(c.items) && c.items.length;
+        });
+
+        if (!list.length) {
+            section.style.display = 'none';
+            grid.innerHTML = '';
+            return;
+        }
+
+        // Dùng inline style thay vì class động, để không phụ thuộc vào việc
+        // Tailwind CDN có kịp sinh ra class mới hay không. auto-fit giúp số cột
+        // tự co giãn theo bề rộng màn hình mà không cần xử lý resize.
+        grid.className = 'grid gap-6';
+        grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(260px, 1fr))';
+
+        grid.innerHTML = list.map(function (col) {
+            var color = col.color || '#1D5FA8';
+            var items = col.items.map(function (item) {
+                return '<li class="flex items-start gap-2">' +
+                    '<span class="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style="background:' + escHtml(color) + ';"></span>' +
+                    '<span>' + escHtml(item) + '</span></li>';
+            }).join('');
+
+            return '<div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">' +
+                '<h3 class="flex items-center gap-2 font-extrabold text-[#1A2744] text-base mb-4">' +
+                '<span class="material-symbols-outlined" style="font-size:20px;color:' + escHtml(color) + ';">' +
+                escHtml(col.icon || 'check_circle') + '</span>' +
+                '<span>' + escHtml(col.title) + '</span></h3>' +
+                '<ul class="space-y-2.5 text-sm text-gray-600">' + items + '</ul></div>';
+        }).join('');
+
+        section.style.display = 'block';
+    }
+
     function applyCategoryContent(product, catLabel) {
         var content = (product.subcat && categoryContent[product.subcat]) ? categoryContent[product.subcat] : categoryContent[product.cat];
 
@@ -667,7 +716,6 @@
         var catEl = document.getElementById('product-cat');
         var titleEl = document.getElementById('product-title');
         var descEl = document.getElementById('product-desc');
-        var columnsSection = document.getElementById('category-columns-section');
 
         if (!content) {
             if (taglineEl) taglineEl.style.display = 'none';
@@ -678,7 +726,8 @@
                 descEl.textContent = product.desc ||
                     'Sản phẩm chất lượng cao, đạt chuẩn an toàn quốc gia. Vui lòng liên hệ để được tư vấn kích thước và nhận báo giá tốt nhất cho doanh nghiệp của bạn.';
             }
-            if (columnsSection) columnsSection.style.display = 'none';
+            renderFeatures(null);
+            renderColumns(null);
             return;
         }
 
@@ -694,38 +743,8 @@
         if (titleEl) titleEl.textContent = content.heading;
         if (descEl) descEl.textContent = content.shortDesc;
 
-        content.features.forEach(function(feature, idx) {
-            var n = idx + 1;
-            var wrapEl = document.getElementById('feature' + n + '-iconwrap');
-            var iconEl = document.getElementById('feature' + n + '-icon');
-            var titleEl2 = document.getElementById('feature' + n + '-title');
-            var descEl2 = document.getElementById('feature' + n + '-desc');
-            if (wrapEl) wrapEl.className = 'w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ' + feature.iconWrapClass;
-            if (iconEl) {
-                iconEl.textContent = feature.icon;
-                iconEl.className = 'material-symbols-outlined ' + feature.iconClass;
-            }
-            if (titleEl2) titleEl2.textContent = feature.title;
-            if (descEl2) descEl2.textContent = feature.desc;
-        });
-
-        if (columnsSection) {
-            columnsSection.style.display = 'block';
-            content.columns.forEach(function(col, idx) {
-                var n = idx + 1;
-                var iconEl = document.getElementById('col' + n + '-icon');
-                var titleEl3 = document.getElementById('col' + n + '-title');
-                var listEl = document.getElementById('col' + n + '-list');
-                if (iconEl) { iconEl.textContent = col.icon; iconEl.style.color = col.color; }
-                if (titleEl3) titleEl3.textContent = col.title;
-                if (listEl) {
-                    listEl.innerHTML = col.items.map(function(item) {
-                        var safeItem = item.replace(/</g, '&lt;');
-                        return '<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style="background:' + col.color + ';"></span><span>' + safeItem + '</span></li>';
-                    }).join('');
-                }
-            });
-        }
+        renderFeatures(content.features);
+        renderColumns(content.columns);
     }
 
     // Fisher-Yates shuffle

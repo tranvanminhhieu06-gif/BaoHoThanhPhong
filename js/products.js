@@ -67,7 +67,7 @@ const products = [
     "subcat": "cat3_s2",
     "subcatLabel": "ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI",
     "img": "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/bia-ao-thun-the-thao.png",
-    "desc": "Cotton Pique 220gsm, thêu logo bảo vệ trước ngực, cổ bẻ vải dệt kim. Co giãn nhẹ, thoáng khí, mặc làm việc cả ngày thoải mái."
+    "desc": "Áo thun văn phòng là lựa chọn được nhiều doanh nghiệp ưu tiên sử dụng nhờ sự thoải mái, năng động và chuyên nghiệp. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp áo thun đồng phục văn phòng với nhiều mẫu mã hiện đại, chất liệu cao cấp và dịch vụ may theo yêu cầu.\r\nSản phẩm phù hợp cho nhân viên văn phòng, nhân viên kinh doanh, lễ tân, kỹ thuật và các chương trình sự kiện của doanh nghiệp"
   },
   {
     "id": "aothunvanpho8",

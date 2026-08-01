@@ -169,6 +169,30 @@ bấm "Lưu sản phẩm".
 - **Sửa / Xóa**: mỗi thẻ sản phẩm có 2 nút tương ứng.
 - **Tự động điền**: dán mô tả vào ô Mô tả rồi bấm nút này để máy tự điền tên
   sản phẩm và 3 mục nội dung (xem mục C ở trên).
+
+### Trang "Khối nội dung"
+
+Bấm nút **Khối nội dung** trên thanh đầu trang để mở trang quản lý các khung
+hiển thị trên **trang chi tiết sản phẩm**:
+
+- **Ô đặc điểm** — các ô nhỏ nằm cạnh ảnh sản phẩm (VD: "Chất lượng cao, đạt
+  tiêu chuẩn an toàn").
+- **Cột nội dung** — các khung lớn phía dưới (Ứng Dụng Thực Tế, Ưu Điểm Nổi
+  Bật, Cam Kết Từ Thành Phong...).
+
+Ở mỗi khối bạn có thể: đổi tiêu đề, đổi biểu tượng và màu, sửa nội dung,
+**kéo biểu tượng ⠿ để đổi thứ tự**, bấm 🗑 để xóa, hoặc bấm "Thêm ô" /
+"Thêm cột" để tạo khối mới (không giới hạn 3 khối như trước).
+
+Chấm tròn cạnh tên danh mục cho biết mục đó đã có nội dung riêng (xanh) hay
+chưa (xám). Nhớ bấm **Lưu thay đổi** sau khi chỉnh.
+
+> **Lưu ý về 3 ô ở trang Sản phẩm.** Ba ô "Ứng Dụng Thực Tế / Ưu Điểm Nổi Bật /
+> Cam Kết Từ Thành Phong" trong form thêm–sửa sản phẩm nhận diện cột theo
+> **tên cột**. Nếu bạn đổi tên một cột ở trang Khối nội dung (ví dụ đổi
+> "Ứng Dụng Thực Tế" thành "Phạm Vi Sử Dụng") thì ô tương ứng bên trang Sản
+> phẩm sẽ không còn khớp với cột đó nữa. Muốn giữ liên kết, hãy giữ nguyên tên
+> 3 cột này và chỉ đổi tên/thêm mới với các cột khác.
 - **3 ô nội dung** (Ứng Dụng Thực Tế / Ưu Điểm Nổi Bật / Cam Kết Từ Thành
   Phong): áp dụng cho cả **danh mục con** đang chọn — mọi sản phẩm cùng danh
   mục con sẽ hiển thị chung nội dung này. Mỗi dòng là 1 gạch đầu dòng.

@@ -909,18 +909,18 @@ var categoryContent = {
         "color": "#10B981",
         "title": "Ưu Điểm Nổi Bật",
         "items": [
-          "Form thể thao khỏe khoắn.",
-          "Đường may chắc chắn.",
-          "In chuyển nhiệt sắc nét, bền màu.",
-          "Đồng phục đội nhóm.",
-          "Câu lạc bộ thể thao.",
-          "Giải đấu phong trào.",
-          "Team building doanh nghiệp.",
-          "Hoạt động ngoài trời.",
-          "Thoải mái khi vận động.",
-          "Chất liệu nhẹ, bền.",
-          "Dễ giặt sạch và nhanh khô.",
-          "Màu sắc đa dạng theo yêu cầu."
+          "Chất liệu cao cấp",
+          "Vải cá sấu poly, cá sấu cotton hoặc thun lạnh cao cấp.",
+          "Co giãn tốt, thấm hút mồ hôi hiệu quả.",
+          "Mềm mại, thoáng mát khi mặc cả ngày.",
+          "Thiết kế hiện đại",
+          "Form áo chuẩn, tôn dáng người mặc.",
+          "Cổ bẻ lịch sự, phù hợp môi trường công sở.",
+          "In hoặc thêu logo doanh nghiệp sắc nét.",
+          "Đa dạng màu sắc và kích thước",
+          "Nhiều màu sắc theo bộ nhận diện thương hiệu.",
+          "Đầy đủ size từ S đến 5XL.",
+          "Nhận may đồng phục theo yêu cầu riêng"
         ]
       },
       {
