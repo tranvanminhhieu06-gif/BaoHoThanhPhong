@@ -985,91 +985,6 @@
         </div>
     </footer>
 
-    <!-- Shopping Cart Sidebar -->
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <div class="cart-title-wrapper">
-                <i class="fas fa-shopping-cart"></i>
-                <h3>Giỏ hàng</h3>
-            </div>
-            <button class="cart-close" id="cartClose" aria-label="Đóng giỏ hàng">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="cart-body" id="cartItems">
-            <!-- Items added via JS -->
-            <div class="cart-empty-state">
-                <div class="empty-icon-box">
-                    <i class="fas fa-shopping-basket"></i>
-                </div>
-                <p>Giỏ hàng của bạn đang trống</p>
-                <a href="#products" class="btn btn-cart-buy-now" id="cartEmptyBuyNow">Mua ngay</a>
-            </div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-summary">
-                <div class="total-row">
-                    <span class="label">Tổng cộng:</span>
-                    <span class="value" id="cartTotal">Liên hệ báo giá</span>
-                </div>
-            </div>
-            <div class="cart-actions">
-                <button class="btn btn-view-full-cart" id="viewFullCartBtn">Xem chi tiết giỏ hàng</button>
-                <button class="btn btn-zalo-checkout" id="zaloOrderBtn">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo"
-                        class="zalo-icon-small">
-                    Gửi đơn hàng qua Zalo
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="cart-overlay" id="cartOverlay"></div>
-
-    <!-- Full Cart Page Section -->
-    <div class="full-cart-section" id="fullCartPage">
-        <header class="full-cart-header">
-            <div class="full-cart-container">
-                <button class="full-cart-close" id="fullCartClose">
-                    <i class="fas fa-arrow-left"></i> Quay lại trang chủ
-                </button>
-            </div>
-        </header>
-
-        <main class="full-cart-content">
-            <div class="full-cart-container">
-                <div class="cart-table-header">
-                    <div class="check-col"><input type="checkbox" id="selectAllItems"></div>
-                    <div class="prod-col">Sản phẩm</div>
-                    <div class="price-col">Đơn Giá</div>
-                    <div class="qty-col">Số lượng</div>
-                    <div class="total-col">Số tiền</div>
-                    <div class="action-col">Thao tác</div>
-                </div>
-                <div id="fullCartItems">
-                    <!-- Items added via JS -->
-                </div>
-            </div>
-        </main>
-
-        <footer class="full-cart-footer">
-            <div class="full-cart-container">
-                <div class="footer-action-bar">
-                    <div class="footer-left">
-                        <label><input type="checkbox" id="selectAllItemsFooter"> Chọn tất cả</label>
-                        <button class="btn-text" id="deleteSelected">Xóa đã chọn</button>
-                    </div>
-                    <div class="footer-right">
-                        <div class="total-info">
-                            <span class="label">Tổng thanh toán:</span>
-                            <span class="price" id="fullCartTotal">Liên hệ</span>
-                        </div>
-                        <button class="btn-checkout-red" id="fullCartCheckoutBtn">Mua Hàng</button>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-
     <!-- Floating Action Buttons -->
     <div class="floating-actions">
         <!-- Zalo -->
@@ -1134,9 +1049,9 @@
                     <p id="lt-desc" class="lightbox-prod-desc">Mô tả chi tiết sản phẩm sẽ hiện ở đây...</p>
 
                     <div class="lightbox-actions">
-                        <button class="btn-add-cart" id="lt-add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ HÀNG
-                        </button>
+                        <a href="https://zalo.me/0931160818" target="_blank" rel="noopener" class="btn-add-cart">
+                            <i class="fas fa-comment-dots"></i> LIÊN HỆ BÁO GIÁ
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,26 +1,60 @@
 /**
  * Server quản lý sản phẩm - Thành Phong Bảo Hộ Lao Động
  * ------------------------------------------------------
- * Server nhỏ chạy local (Node.js + Express) cho phép:
- *  - Xem danh sách danh mục / sản phẩm (đọc từ ../js/products.js)
- *  - Thêm / Sửa / Xóa sản phẩm, upload ảnh vào đúng thư mục images/
- *  - Ghi thẳng lại file ../js/products.js (giữ nguyên toàn bộ code hiển thị)
- *  - Nút đồng bộ (git add/commit/push) để đẩy thay đổi lên GitHub Pages
+ * Server chạy được ở 2 chế độ:
  *
- * Chạy:  npm install   rồi   npm start
- * Mở trình duyệt: http://localhost:3000
+ *  1) CHẾ ĐỘ MÁY CÁ NHÂN (không đặt biến GITHUB_TOKEN)
+ *     Đọc/ghi trực tiếp các file trong thư mục website trên máy bạn.
+ *     Bấm nút "Đồng bộ" để git commit + push lên GitHub.
+ *
+ *  2) CHẾ ĐỘ ONLINE (có đặt GITHUB_TOKEN + GITHUB_REPO)
+ *     Đọc/ghi thẳng vào kho GitHub qua API. Dùng khi deploy lên hosting
+ *     (Render, Railway...) để nhiều người cùng vào bằng đường link.
+ *     Mọi thay đổi được tự động lưu lên GitHub, không cần bấm đồng bộ.
+ *
+ * Xem hướng dẫn chi tiết trong file admin/README.md
  */
 
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const crypto = require('crypto');
 const { exec } = require('child_process');
-const GIT_PATH = '"C:\\Program Files\\Git\\cmd\\git.exe"';
+
+// =====================================================================
+// Cấu hình
+// =====================================================================
 
 const ROOT = path.join(__dirname, '..');           // thư mục gốc của website
-const PRODUCTS_JS = path.join(ROOT, 'js', 'products.js');
 const IMAGES_DIR = path.join(ROOT, 'images');
+
+// Đường dẫn file tính từ gốc kho code (dùng chung cho cả 2 chế độ)
+const PRODUCTS_PATH = 'js/products.js';
+const CATEGORY_CONTENT_PATH = 'js/category_content.js';
+
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
+const GITHUB_REPO = process.env.GITHUB_REPO || 'tranvanminhhieu06-gif/BaoHoThanhPhong';
+const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
+const SITE_URL = (process.env.SITE_URL || 'https://baohothanhphong.vn').replace(/\/+$/, '');
+
+// Chế độ online = có token GitHub
+const ONLINE_MODE = !!GITHUB_TOKEN;
+
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
+const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
+const SESSION_DAYS = 7;
+
+// An toàn: nếu chạy online mà quên đặt mật khẩu thì KHÔNG cho khởi động,
+// tránh việc bất kỳ ai có link cũng sửa/xóa được sản phẩm.
+if (ONLINE_MODE && !ADMIN_PASSWORD) {
+  console.error('');
+  console.error('!!! THIẾU MẬT KHẨU ADMIN !!!');
+  console.error('Bạn đang chạy ở chế độ online (có GITHUB_TOKEN) nhưng chưa đặt ADMIN_PASSWORD.');
+  console.error('Hãy thêm biến môi trường ADMIN_PASSWORD rồi chạy lại.');
+  console.error('');
+  process.exit(1);
+}
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -28,17 +62,195 @@ const upload = multer({
 });
 
 const app = express();
+app.set('trust proxy', 1); // chạy sau proxy của hosting (Render...)
 app.use(express.json());
+
+// =====================================================================
+// Đăng nhập (1 mật khẩu chung, lưu bằng cookie có chữ ký)
+// =====================================================================
+
+const COOKIE_NAME = 'tp_admin';
+
+function sign(value) {
+  return crypto.createHmac('sha256', SESSION_SECRET).update(value).digest('hex');
+}
+
+function createToken() {
+  const exp = String(Date.now() + SESSION_DAYS * 24 * 60 * 60 * 1000);
+  return exp + '.' + sign(exp);
+}
+
+function verifyToken(token) {
+  if (!token || typeof token !== 'string') return false;
+  const parts = token.split('.');
+  if (parts.length !== 2) return false;
+  const [exp, mac] = parts;
+  const expected = sign(exp);
+  // So sánh chống dò thời gian
+  const a = Buffer.from(mac);
+  const b = Buffer.from(expected);
+  if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) return false;
+  return Number(exp) > Date.now();
+}
+
+function parseCookies(req) {
+  const header = req.headers.cookie || '';
+  const out = {};
+  header.split(';').forEach((pair) => {
+    const idx = pair.indexOf('=');
+    if (idx === -1) return;
+    const k = pair.slice(0, idx).trim();
+    const v = pair.slice(idx + 1).trim();
+    if (k) out[k] = decodeURIComponent(v);
+  });
+  return out;
+}
+
+function isAuthenticated(req) {
+  if (!ADMIN_PASSWORD) return true; // chạy trên máy cá nhân, không đặt mật khẩu
+  return verifyToken(parseCookies(req)[COOKIE_NAME]);
+}
+
+function requireAuth(req, res, next) {
+  if (isAuthenticated(req)) return next();
+  res.status(401).json({ error: 'Bạn cần đăng nhập để thực hiện thao tác này.' });
+}
+
+app.get('/api/me', (req, res) => {
+  res.json({
+    authenticated: isAuthenticated(req),
+    needsPassword: !!ADMIN_PASSWORD,
+    autoSync: ONLINE_MODE,
+  });
+});
+
+app.post('/api/login', (req, res) => {
+  const password = (req.body && req.body.password) || '';
+  if (!ADMIN_PASSWORD) return res.json({ ok: true });
+
+  const given = Buffer.from(String(password));
+  const real = Buffer.from(ADMIN_PASSWORD);
+  const ok = given.length === real.length && crypto.timingSafeEqual(given, real);
+  if (!ok) return res.status(401).json({ error: 'Mật khẩu không đúng.' });
+
+  const secure = ONLINE_MODE ? ' Secure;' : '';
+  res.setHeader(
+    'Set-Cookie',
+    `${COOKIE_NAME}=${createToken()}; Path=/; HttpOnly; SameSite=Lax;${secure} Max-Age=${SESSION_DAYS * 24 * 60 * 60}`
+  );
+  res.json({ ok: true });
+});
+
+app.post('/api/logout', (req, res) => {
+  res.setHeader('Set-Cookie', `${COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`);
+  res.json({ ok: true });
+});
+
+// Giao diện admin (file tĩnh) - dữ liệu thật vẫn được bảo vệ bởi requireAuth
 app.use(express.static(path.join(__dirname, 'public')));
-// Cho phép trang quản lý xem trực tiếp ảnh trong thư mục images/ của website
+
+// Xem ảnh: ưu tiên file có sẵn trên máy, nếu không có thì lấy từ website thật
 app.use('/images', express.static(IMAGES_DIR));
+app.get('/images/*', (req, res) => {
+  res.redirect(SITE_URL + req.path);
+});
 
 // =====================================================================
-// Helpers: đọc / ghi js/products.js mà không đụng tới phần code JS khác
+// Lớp lưu trữ: máy cá nhân (fs) hoặc GitHub (API)
 // =====================================================================
 
-// Tìm vị trí dấu đóng ngoặc khớp với dấu mở ngoặc tại startIdx,
-// có tính tới chuỗi (string) để không đếm nhầm ngoặc bên trong "..."
+function ghApiUrl(repoPath) {
+  const encoded = repoPath.split('/').map(encodeURIComponent).join('/');
+  return `https://api.github.com/repos/${GITHUB_REPO}/contents/${encoded}`;
+}
+
+async function ghRequest(url, options = {}) {
+  const res = await fetch(url, {
+    ...options,
+    headers: {
+      Authorization: `Bearer ${GITHUB_TOKEN}`,
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+      'User-Agent': 'thanhphong-admin',
+      ...(options.headers || {}),
+    },
+  });
+  return res;
+}
+
+// Đọc file: trả về { text, sha } hoặc null nếu file chưa tồn tại
+async function readFileEntry(repoPath) {
+  if (!ONLINE_MODE) {
+    const full = path.join(ROOT, repoPath);
+    if (!fs.existsSync(full)) return null;
+    return { text: fs.readFileSync(full, 'utf8'), sha: null };
+  }
+
+  const res = await ghRequest(`${ghApiUrl(repoPath)}?ref=${encodeURIComponent(GITHUB_BRANCH)}`);
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`GitHub đọc "${repoPath}" lỗi ${res.status}: ${await res.text()}`);
+  const json = await res.json();
+  return {
+    text: Buffer.from(json.content || '', 'base64').toString('utf8'),
+    sha: json.sha,
+  };
+}
+
+async function fileExists(repoPath) {
+  if (!ONLINE_MODE) return fs.existsSync(path.join(ROOT, repoPath));
+  const res = await ghRequest(`${ghApiUrl(repoPath)}?ref=${encodeURIComponent(GITHUB_BRANCH)}`, { method: 'HEAD' });
+  return res.status !== 404;
+}
+
+// Ghi file (nhận Buffer hoặc chuỗi). sha chỉ dùng ở chế độ online khi ghi đè.
+async function writeFileEntry(repoPath, data, message, sha) {
+  const buffer = Buffer.isBuffer(data) ? data : Buffer.from(String(data), 'utf8');
+
+  if (!ONLINE_MODE) {
+    const full = path.join(ROOT, repoPath);
+    fs.mkdirSync(path.dirname(full), { recursive: true });
+    fs.writeFileSync(full, buffer);
+    return null;
+  }
+
+  const body = {
+    message: message || 'Cap nhat qua trang quan ly',
+    content: buffer.toString('base64'),
+    branch: GITHUB_BRANCH,
+  };
+  if (sha) body.sha = sha;
+
+  const res = await ghRequest(ghApiUrl(repoPath), {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (res.status === 409 || res.status === 422) {
+    throw new Error(
+      'Dữ liệu vừa bị người khác thay đổi trong lúc bạn đang sửa. ' +
+      'Vui lòng tải lại trang (F5) rồi thao tác lại.'
+    );
+  }
+  if (!res.ok) throw new Error(`GitHub ghi "${repoPath}" lỗi ${res.status}: ${await res.text()}`);
+  const json = await res.json();
+
+  // Lưu thêm 1 bản trên đĩa để xem trước ảnh được ngay, không phải chờ
+  // GitHub Pages cập nhật. Nếu không ghi được cũng không sao.
+  try {
+    const full = path.join(ROOT, repoPath);
+    fs.mkdirSync(path.dirname(full), { recursive: true });
+    fs.writeFileSync(full, buffer);
+  } catch (e) { /* bỏ qua */ }
+
+  return json.content ? json.content.sha : null;
+}
+
+// =====================================================================
+// Đọc / ghi js/products.js mà không đụng tới phần code hiển thị
+// =====================================================================
+
+// Tìm dấu đóng ngoặc khớp với dấu mở ngoặc tại startIdx, có tính tới chuỗi
+// (string) để không đếm nhầm ngoặc nằm bên trong "..."
 function findBalanced(str, startIdx, openCh, closeCh) {
   let depth = 0;
   let inStr = false;
@@ -61,8 +273,10 @@ function findBalanced(str, startIdx, openCh, closeCh) {
   return -1;
 }
 
-function loadData() {
-  const raw = fs.readFileSync(PRODUCTS_JS, 'utf8');
+async function loadData() {
+  const entry = await readFileEntry(PRODUCTS_PATH);
+  if (!entry) throw new Error('Không tìm thấy file js/products.js');
+  const raw = entry.text;
 
   const prodMarker = 'const products = ';
   const prodMarkerIdx = raw.indexOf(prodMarker);
@@ -82,6 +296,7 @@ function loadData() {
 
   return {
     raw,
+    sha: entry.sha,
     products,
     catBiaImages,
     prodRange: [prodArrStart, prodArrEnd],
@@ -89,7 +304,7 @@ function loadData() {
   };
 }
 
-function saveData(loaded, products, catBiaImages) {
+async function saveData(loaded, products, catBiaImages, message) {
   const { raw, prodRange, biaRange } = loaded;
   const newBiaJson = JSON.stringify(catBiaImages, null, 2);
   const newProdJson = JSON.stringify(products, null, 2);
@@ -99,10 +314,108 @@ function saveData(loaded, products, catBiaImages) {
   let out = raw.slice(0, biaRange[0]) + newBiaJson + raw.slice(biaRange[1] + 1);
   out = out.slice(0, prodRange[0]) + newProdJson + out.slice(prodRange[1] + 1);
 
-  // Sao lưu bản trước khi ghi đè, phòng khi cần khôi phục
-  try { fs.writeFileSync(PRODUCTS_JS + '.bak', raw, 'utf8'); } catch (e) { /* ignore */ }
+  if (!ONLINE_MODE) {
+    try { fs.writeFileSync(path.join(ROOT, PRODUCTS_PATH) + '.bak', raw, 'utf8'); } catch (e) { /* bỏ qua */ }
+  }
 
-  fs.writeFileSync(PRODUCTS_JS, out, 'utf8');
+  await writeFileEntry(PRODUCTS_PATH, out, message || 'Cap nhat san pham qua trang quan ly', loaded.sha);
+}
+
+// ---- js/category_content.js: nội dung "Ứng Dụng Thực Tế / Ưu Điểm Nổi Bật /
+// Cam Kết Từ Thành Phong" hiển thị ở trang chi tiết sản phẩm. Nội dung này áp
+// dụng cho cả danh mục con (hoặc danh mục nếu không có danh mục con).
+async function loadCategoryContent() {
+  const entry = await readFileEntry(CATEGORY_CONTENT_PATH);
+  if (!entry) throw new Error('Không tìm thấy file js/category_content.js');
+  const raw = entry.text;
+
+  const marker = 'var categoryContent = ';
+  const markerIdx = raw.indexOf(marker);
+  if (markerIdx === -1) throw new Error('Không tìm thấy "var categoryContent" trong js/category_content.js');
+  const objStart = markerIdx + marker.length;
+  const objEnd = findBalanced(raw, objStart, '{', '}');
+  if (objEnd === -1) throw new Error('Không đọc được categoryContent (ngoặc không khớp)');
+  const categoryContent = JSON.parse(raw.slice(objStart, objEnd + 1));
+
+  return { raw, sha: entry.sha, categoryContent, range: [objStart, objEnd] };
+}
+
+async function saveCategoryContent(loaded, categoryContent) {
+  const { raw, range } = loaded;
+  const newJson = JSON.stringify(categoryContent, null, 2);
+  const out = raw.slice(0, range[0]) + newJson + raw.slice(range[1] + 1);
+
+  if (!ONLINE_MODE) {
+    try { fs.writeFileSync(path.join(ROOT, CATEGORY_CONTENT_PATH) + '.bak', raw, 'utf8'); } catch (e) { /* bỏ qua */ }
+  }
+
+  await writeFileEntry(CATEGORY_CONTENT_PATH, out, 'Cap nhat noi dung danh muc qua trang quan ly', loaded.sha);
+}
+
+// Mẫu chuẩn 3 cột, đúng thứ tự + icon/màu đang dùng xuyên suốt category_content.js
+const COLUMN_DEFAULTS = [
+  { icon: 'info', color: '#1D5FA8', title: 'Ứng Dụng Thực Tế' },
+  { icon: 'verified', color: '#10B981', title: 'Ưu Điểm Nổi Bật' },
+  { icon: 'thumb_up', color: '#E8A500', title: 'Cam Kết Từ Thành Phong' },
+];
+
+function linesToItems(text) {
+  return String(text || '')
+    .split('\n')
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+function ensureContentEntry(categoryContent, key, label, fallbackDesc) {
+  if (!categoryContent[key]) {
+    categoryContent[key] = {
+      tagline: '',
+      heading: label || '',
+      shortDesc: fallbackDesc || '',
+      features: [],
+      columns: COLUMN_DEFAULTS.map((c) => ({ ...c, items: [] })),
+    };
+  }
+  if (!Array.isArray(categoryContent[key].columns) || categoryContent[key].columns.length === 0) {
+    categoryContent[key].columns = COLUMN_DEFAULTS.map((c) => ({ ...c, items: [] }));
+  }
+  return categoryContent[key];
+}
+
+function findColumn(entry, keyword) {
+  return entry.columns.find((c) => c.title && removeDiacritics(c.title).toLowerCase().includes(keyword));
+}
+
+function setColumnItems(entry, keyword, items) {
+  const col = findColumn(entry, keyword);
+  if (col) {
+    col.items = items;
+  } else {
+    const def = COLUMN_DEFAULTS.find((d) => removeDiacritics(d.title).toLowerCase().includes(keyword));
+    if (def) entry.columns.push({ ...def, items });
+  }
+}
+
+function getColumnItems(entry, keyword) {
+  const col = entry && findColumn(entry, keyword);
+  return col && Array.isArray(col.items) ? col.items : [];
+}
+
+async function updateCategoryContentColumns(contentKey, label, fallbackDesc, body) {
+  const appItems = linesToItems(body.appList);
+  const prosItems = linesToItems(body.prosList);
+  const commitItems = linesToItems(body.commitList);
+  const hasAnyContent = appItems.length || prosItems.length || commitItems.length;
+
+  const ccLoaded = await loadCategoryContent();
+  const alreadyExists = !!ccLoaded.categoryContent[contentKey];
+  if (!hasAnyContent && !alreadyExists) return; // không tạo mục rỗng không cần thiết
+
+  const entry = ensureContentEntry(ccLoaded.categoryContent, contentKey, label, fallbackDesc);
+  setColumnItems(entry, 'ung dung', appItems);
+  setColumnItems(entry, 'uu diem', prosItems);
+  setColumnItems(entry, 'cam ket', commitItems);
+  await saveCategoryContent(ccLoaded, ccLoaded.categoryContent);
 }
 
 // =====================================================================
@@ -148,7 +461,7 @@ function uniqueId(base, products) {
   return id;
 }
 
-// Loại bỏ ký tự Windows không cho phép trong tên thư mục/file
+// Loại bỏ ký tự không hợp lệ trong tên thư mục/file
 function sanitizeFolder(str) {
   return String(str || '').replace(/[<>:"/\\|?*]/g, '').trim();
 }
@@ -178,50 +491,35 @@ function nextSubcatId(products, catId) {
   return catId + '_s' + (maxS + 1);
 }
 
-// Lưu file ảnh (buffer) vào images/<catLabel>/<subcatLabel>/filename
-// Trả về đường dẫn tương đối để lưu vào field "img" (dùng từ html/ hoặc product/ nên có "../")
-function saveImageFile(file, catLabel, subcatLabel, titleForName) {
+// Lưu ảnh vào images/<catLabel>/<subcatLabel>/filename
+// Trả về đường dẫn để lưu vào field "img" (trang web dùng từ html/ hoặc
+// product/ nên có tiền tố "../")
+async function saveImageFile(file, catLabel, subcatLabel, titleForName) {
   const folderCat = sanitizeFolder(catLabel) || 'Danh-muc';
   const folderSub = sanitizeFolder(subcatLabel) || folderCat;
-  const folder = path.join(IMAGES_DIR, folderCat, folderSub);
-  fs.mkdirSync(folder, { recursive: true });
 
   const ext = (path.extname(file.originalname) || '.png').toLowerCase();
   const base = 'sp-' + slugFile(titleForName);
-  let filename = base + ext;
-  let counter = 1;
-  while (fs.existsSync(path.join(folder, filename))) {
-    filename = base + '-' + counter + ext;
-    counter++;
-  }
-  fs.writeFileSync(path.join(folder, filename), file.buffer);
 
-  return '../images/' + folderCat + '/' + folderSub + '/' + filename;
-}
-
-function saveCoverImageFile(file, catLabel) {
-  const folder = path.join(IMAGES_DIR, 'BÌA');
-  fs.mkdirSync(folder, { recursive: true });
-  const ext = (path.extname(file.originalname) || '.png').toLowerCase();
-  const base = 'bia-' + slugFile(catLabel);
   let filename = base + ext;
-  let counter = 1;
-  while (fs.existsSync(path.join(folder, filename))) {
-    filename = base + '-' + counter + ext;
-    counter++;
+  let repoPath = `images/${folderCat}/${folderSub}/${filename}`;
+  if (await fileExists(repoPath)) {
+    filename = base + '-' + Date.now() + ext;
+    repoPath = `images/${folderCat}/${folderSub}/${filename}`;
   }
-  fs.writeFileSync(path.join(folder, filename), file.buffer);
-  return '../images/BÌA/' + filename;
+
+  await writeFileEntry(repoPath, file.buffer, `Them anh san pham: ${filename}`);
+  return '../' + repoPath;
 }
 
 // =====================================================================
-// API
+// API dữ liệu (yêu cầu đăng nhập)
 // =====================================================================
 
-// Lấy toàn bộ dữ liệu: sản phẩm + danh mục (tổng hợp từ products + catBiaImages)
-app.get('/api/data', (req, res) => {
+// Lấy toàn bộ dữ liệu: sản phẩm + danh mục
+app.get('/api/data', requireAuth, async (req, res) => {
   try {
-    const { products, catBiaImages } = loadData();
+    const { products, catBiaImages } = await loadData();
 
     const catMap = new Map();
     for (const p of products) {
@@ -248,7 +546,23 @@ app.get('/api/data', (req, res) => {
       .map((c) => ({ ...c, subcats: Array.from(c.subcats.values()) }))
       .sort((a, b) => a.catLabel.localeCompare(b.catLabel, 'vi'));
 
-    res.json({ products, categories });
+    res.json({ products, categories, autoSync: ONLINE_MODE });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Lấy nội dung 3 cột hiện có của 1 danh mục / danh mục con
+app.get('/api/category-content/:key', requireAuth, async (req, res) => {
+  try {
+    const { categoryContent } = await loadCategoryContent();
+    const entry = categoryContent[req.params.key];
+    res.json({
+      appItems: getColumnItems(entry, 'ung dung'),
+      prosItems: getColumnItems(entry, 'uu diem'),
+      commitItems: getColumnItems(entry, 'cam ket'),
+    });
   } catch (e) {
     console.error(e);
     res.status(500).json({ error: e.message });
@@ -256,7 +570,7 @@ app.get('/api/data', (req, res) => {
 });
 
 // Thêm sản phẩm mới
-app.post('/api/products', upload.single('image'), (req, res) => {
+app.post('/api/products', requireAuth, upload.single('image'), async (req, res) => {
   try {
     const body = req.body || {};
     const title = (body.title || '').trim();
@@ -264,7 +578,7 @@ app.post('/api/products', upload.single('image'), (req, res) => {
     if (!title) return res.status(400).json({ error: 'Vui lòng nhập tên sản phẩm.' });
     if (!req.file) return res.status(400).json({ error: 'Vui lòng chọn ảnh sản phẩm.' });
 
-    const loaded = loadData();
+    const loaded = await loadData();
     const { products, catBiaImages } = loaded;
 
     // ---- Danh mục ----
@@ -301,12 +615,10 @@ app.post('/api/products', upload.single('image'), (req, res) => {
     }
 
     // ---- Ảnh ----
-    const imgPath = saveImageFile(req.file, catLabel, subcatLabel || catLabel, title);
+    const imgPath = await saveImageFile(req.file, catLabel, subcatLabel || catLabel, title);
 
-    // ---- Danh mục mới thì cần ảnh bìa cho catBiaImages ----
-    if (isNewCat) {
-      catBiaImages[catId] = imgPath;
-    }
+    // Danh mục mới thì cần ảnh bìa cho catBiaImages
+    if (isNewCat) catBiaImages[catId] = imgPath;
 
     const id = uniqueId(slugId(title), products);
     const newProduct = {
@@ -321,7 +633,14 @@ app.post('/api/products', upload.single('image'), (req, res) => {
     };
     products.push(newProduct);
 
-    saveData(loaded, products, catBiaImages);
+    await saveData(loaded, products, catBiaImages, `Them san pham: ${title}`);
+
+    try {
+      await updateCategoryContentColumns(subcatId || catId, subcatLabel || catLabel, desc, body);
+    } catch (e2) {
+      console.error('Lỗi cập nhật category_content.js:', e2);
+    }
+
     res.json({ ok: true, product: newProduct });
   } catch (e) {
     console.error(e);
@@ -330,10 +649,10 @@ app.post('/api/products', upload.single('image'), (req, res) => {
 });
 
 // Sửa sản phẩm
-app.put('/api/products/:id', upload.single('image'), (req, res) => {
+app.put('/api/products/:id', requireAuth, upload.single('image'), async (req, res) => {
   try {
     const body = req.body || {};
-    const loaded = loadData();
+    const loaded = await loadData();
     const { products, catBiaImages } = loaded;
 
     const idx = products.findIndex((p) => p.id === req.params.id);
@@ -377,12 +696,10 @@ app.put('/api/products/:id', upload.single('image'), (req, res) => {
     // ---- Ảnh (chỉ thay nếu có upload mới) ----
     let imgPath = product.img;
     if (req.file) {
-      imgPath = saveImageFile(req.file, catLabel, subcatLabel || catLabel, title);
+      imgPath = await saveImageFile(req.file, catLabel, subcatLabel || catLabel, title);
     }
 
-    if (isNewCat) {
-      catBiaImages[catId] = catBiaImages[catId] || imgPath;
-    }
+    if (isNewCat) catBiaImages[catId] = catBiaImages[catId] || imgPath;
 
     products[idx] = {
       ...product,
@@ -395,7 +712,14 @@ app.put('/api/products/:id', upload.single('image'), (req, res) => {
       desc: (body.desc || '').trim(),
     };
 
-    saveData(loaded, products, catBiaImages);
+    await saveData(loaded, products, catBiaImages, `Sua san pham: ${title}`);
+
+    try {
+      await updateCategoryContentColumns(subcatId || catId, subcatLabel || catLabel, products[idx].desc, body);
+    } catch (e2) {
+      console.error('Lỗi cập nhật category_content.js:', e2);
+    }
+
     res.json({ ok: true, product: products[idx] });
   } catch (e) {
     console.error(e);
@@ -404,14 +728,15 @@ app.put('/api/products/:id', upload.single('image'), (req, res) => {
 });
 
 // Xóa sản phẩm
-app.delete('/api/products/:id', (req, res) => {
+app.delete('/api/products/:id', requireAuth, async (req, res) => {
   try {
-    const loaded = loadData();
+    const loaded = await loadData();
     const { products, catBiaImages } = loaded;
     const idx = products.findIndex((p) => p.id === req.params.id);
     if (idx === -1) return res.status(404).json({ error: 'Không tìm thấy sản phẩm.' });
+    const removed = products[idx];
     products.splice(idx, 1);
-    saveData(loaded, products, catBiaImages);
+    await saveData(loaded, products, catBiaImages, `Xoa san pham: ${removed.title}`);
     res.json({ ok: true });
   } catch (e) {
     console.error(e);
@@ -419,10 +744,16 @@ app.delete('/api/products/:id', (req, res) => {
   }
 });
 
-// Đồng bộ lên GitHub (git add / commit / push) - dùng cho GitHub Pages
-app.post('/api/sync', (req, res) => {
-  const cmd = `${GIT_PATH} add -A && ${GIT_PATH} commit -m "Cap nhat san pham qua trang quan ly" && ${GIT_PATH} push origin main`;
+// Đồng bộ lên GitHub - chỉ cần ở chế độ máy cá nhân
+app.post('/api/sync', requireAuth, (req, res) => {
+  if (ONLINE_MODE) {
+    return res.json({ ok: true, message: 'Chế độ online: thay đổi đã được lưu tự động lên GitHub.' });
+  }
+
+  const git = process.platform === 'win32' ? '"C:\\Program Files\\Git\\cmd\\git.exe"' : 'git';
+  const cmd = `${git} add -A && ${git} commit -m "Cap nhat san pham qua trang quan ly" && ${git} push origin ${GITHUB_BRANCH}`;
   const env = { ...process.env, PATH: (process.env.PATH || '') + ';C:\\Program Files\\Git\\cmd' };
+
   exec(cmd, { cwd: ROOT, maxBuffer: 1024 * 1024 * 10, env }, (err, stdout, stderr) => {
     const out = (stdout || '') + (stderr || '');
     if (err) {
@@ -436,10 +767,18 @@ app.post('/api/sync', (req, res) => {
   });
 });
 
+// =====================================================================
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log('=============================================');
-  console.log('Trang quản lý sản phẩm Thành Phong đang chạy tại:');
-  console.log('  http://localhost:' + PORT);
+  console.log('Trang quan ly san pham Thanh Phong');
+  console.log('  Che do    :', ONLINE_MODE ? 'ONLINE (ghi thang len GitHub)' : 'MAY CA NHAN (ghi file tren may)');
+  console.log('  Mat khau  :', ADMIN_PASSWORD ? 'CO' : 'KHONG (chi nen dung tren may ca nhan)');
+  console.log('  Dia chi   : http://localhost:' + PORT);
   console.log('=============================================');
+  if (ONLINE_MODE && !process.env.SESSION_SECRET) {
+    console.warn('Luu y: chua dat SESSION_SECRET -> moi lan server khoi dong lai,');
+    console.warn('nguoi dung se phai dang nhap lai. Nen dat bien SESSION_SECRET.');
+  }
 });

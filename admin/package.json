@@ -4,6 +4,9 @@
   "private": true,
   "description": "Trang quan ly san pham cho website Thanh Phong Bao Ho Lao Dong",
   "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node server.js"
   },

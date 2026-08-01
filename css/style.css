@@ -2908,21 +2908,6 @@ body.has-ann-bar .navbar {
         font-size: 11px;
     }
 
-    /* Cart icon */
-    .nav-cart {
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
-    }
-
-    .cart-badge {
-        width: 16px;
-        height: 16px;
-        font-size: 9px;
-        top: 1px;
-        right: 1px;
-    }
-
     /* Phone button - chỉ hiện icon */
     .nav-phone {
         width: 36px;
@@ -3614,25 +3599,6 @@ body.has-ann-bar .navbar {
     }
 }
 
-/* === CART SIDEBAR MOBILE === */
-@media (max-width: 768px) {
-    .cart-sidebar {
-        width: 100%;
-        right: -100%;
-    }
-
-    .cart-sidebar.open {
-        right: 0;
-    }
-
-    .cart-header {
-        padding: 18px 20px;
-    }
-
-    .cart-header h3 {
-        font-size: 18px;
-    }
-}
 
 /* === LIGHTBOX MOBILE === */
 @media (max-width: 768px) {

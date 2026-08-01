@@ -1,0 +1,6 @@
+# Cấu hình GitHub Pages.
+# Chỉ dùng để KHÔNG xuất bản các thư mục công cụ nội bộ lên website thật.
+exclude:
+  - admin
+  - scripts
+  - README.md

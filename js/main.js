@@ -276,9 +276,6 @@ const translations = {
         'hero-desc-1': 'Chuyên cung cấp trang thiết bị bảo hộ lao động và đồng phục chuyên dụng chất lượng cao, đạt chuẩn an toàn quốc gia và quốc tế.',
         'btn-explore': 'Khám Phá Sản Phẩm',
         'btn-contact': 'Nhận Tư Vấn Ngay',
-        'cart-title': 'Giỏ Hàng',
-        'cart-empty': 'Giỏ hàng đang trống',
-        'cart-checkout': 'Gửi Đơn Qua Zalo',
         'search-placeholder': 'Tìm sản phẩm...',
         'view-detail': 'Xem chi tiết',
         'contact-price': 'Liên hệ báo giá',
@@ -304,9 +301,6 @@ const translations = {
         'hero-desc-1': 'Specializing in high-quality safety equipment and specialized uniforms, meeting national and international safety standards.',
         'btn-explore': 'Explore Products',
         'btn-contact': 'Get Advice Now',
-        'cart-title': 'Shopping Cart',
-        'cart-empty': 'Your cart is empty',
-        'cart-checkout': 'Order via Zalo',
         'search-placeholder': 'Search products...',
         'view-detail': 'View Detail',
         'contact-price': 'Contact for Quote',
@@ -321,7 +315,6 @@ const translations = {
 };
 
 // Global State
-let cart = JSON.parse(localStorage.getItem('tp_cart')) || [];
 let currentLang = localStorage.getItem('tp_lang') || 'vi';
 
 // ==========================================
@@ -335,7 +328,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbarEffects();
     initProductFilters();
     initSearch();
-    initCart();
     initLanguage();
     initStatsCounter();
     initContactForm();
@@ -345,8 +337,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 800, once: true, offset: 100 });
     }
-
-    updateCartBadge();
 });
 
 // 1. Hero Carousel
@@ -464,226 +454,7 @@ function initSearch() {
     });
 }
 
-// 5. Shopping Cart
-function initCart() {
-    const cartTrigger = document.getElementById('cartTrigger');
-    const cartSidebar = document.getElementById('cartSidebar');
-    const cartClose = document.getElementById('cartClose');
-    const cartOverlay = document.getElementById('cartOverlay');
-    const checkoutZaloBtn = document.getElementById('zaloOrderBtn');
-    
-    // Full Cart View Elements
-    const viewFullCartBtn = document.getElementById('viewFullCartBtn');
-    const fullCartPage = document.getElementById('fullCartPage');
-    const fullCartClose = document.getElementById('fullCartClose');
-    const fullCartCheckoutBtn = document.getElementById('fullCartCheckoutBtn');
-    const cartEmptyBuyNow = document.getElementById('cartEmptyBuyNow');
-
-    const toggleSidebar = () => {
-        cartSidebar.classList.toggle('open');
-        cartOverlay.classList.toggle('open');
-        document.body.style.overflow = cartSidebar.classList.contains('open') ? 'hidden' : '';
-    };
-
-    const openFullCart = () => {
-        fullCartPage.classList.add('active');
-        cartSidebar.classList.remove('open');
-        cartOverlay.classList.remove('open');
-        document.body.style.overflow = 'hidden';
-        renderCart();
-    };
-
-    const closeFullCart = () => {
-        fullCartPage.classList.remove('active');
-        document.body.style.overflow = '';
-    };
-
-    if (cartTrigger) cartTrigger.addEventListener('click', toggleSidebar);
-    if (cartClose) cartClose.addEventListener('click', toggleSidebar);
-    if (cartOverlay) cartOverlay.addEventListener('click', toggleSidebar);
-    if (viewFullCartBtn) viewFullCartBtn.addEventListener('click', openFullCart);
-    if (fullCartClose) fullCartClose.addEventListener('click', closeFullCart);
-    if (cartEmptyBuyNow) cartEmptyBuyNow.addEventListener('click', () => {
-        toggleSidebar();
-    });
-
-    const handleZaloOrder = () => {
-        if (cart.length === 0) {
-            showNotification('Giỏ hàng của bạn đang trống!', 'error');
-            return;
-        }
-
-        let message = 'Xin chào Bảo Hộ Thành Phong, tôi muốn đặt các sản phẩm sau:\n\n';
-        cart.forEach((item, index) => {
-            message += `${index + 1}. ${item.title} (SL: ${item.qty})\n`;
-        });
-        message += '\nTổng cộng: Liên hệ báo giá\n\nVui lòng tư vấn cho tôi!';
-
-        const encodedMsg = encodeURIComponent(message);
-        const zaloUrl = `https://zalo.me/0349781300?text=${encodedMsg}`;
-        window.open(zaloUrl, '_blank');
-    };
-
-    if (checkoutZaloBtn) checkoutZaloBtn.addEventListener('click', handleZaloOrder);
-    if (fullCartCheckoutBtn) fullCartCheckoutBtn.addEventListener('click', handleZaloOrder);
-
-    // Select All Logic for Full Cart
-    const selectAllHeader = document.getElementById('selectAllItems');
-    const selectAllFooter = document.getElementById('selectAllItemsFooter');
-    
-    if (selectAllHeader) {
-        selectAllHeader.addEventListener('change', (e) => {
-            const checked = e.target.checked;
-            if (selectAllFooter) selectAllFooter.checked = checked;
-            document.querySelectorAll('.cart-item-check').forEach(cb => cb.checked = checked);
-        });
-    }
-
-    renderCart();
-}
-
-window.handleAddToCart = (id) => {
-    const product = productData[id];
-    if (!product) return;
-
-    const existing = cart.find(item => item.id === id);
-    if (existing) {
-        existing.qty += 1;
-    } else {
-        cart.push({
-            id: id,
-            title: product.title,
-            img: product.imgs[0],
-            qty: 1
-        });
-    }
-
-    saveCart();
-    renderCart();
-    updateCartBadge();
-    
-    // Open sidebar automatically
-    const cartSidebar = document.getElementById('cartSidebar');
-    const cartOverlay = document.getElementById('cartOverlay');
-    if (cartSidebar && !cartSidebar.classList.contains('open')) {
-        cartSidebar.classList.add('open');
-        cartOverlay.classList.add('open');
-    }
-    
-    showNotification(`Đã thêm "${product.title}" vào giỏ hàng!`);
-};
-
-function saveCart() {
-    localStorage.setItem('tp_cart', JSON.stringify(cart));
-}
-
-function renderCart() {
-    // 1. Render Sidebar
-    const sidebarList = document.getElementById('cartItems');
-    const sidebarTotal = document.getElementById('cartTotal');
-    
-    if (sidebarList) {
-        if (cart.length === 0) {
-            sidebarList.innerHTML = `
-                <div class="cart-empty-state">
-                    <div class="empty-icon-box"><i class="fas fa-shopping-basket"></i></div>
-                    <p>Giỏ hàng của bạn đang trống</p>
-                    <a href="#products" class="btn btn-cart-buy-now" onclick="document.getElementById('cartClose').click()">Mua ngay</a>
-                </div>
-            `;
-        } else {
-            sidebarList.innerHTML = cart.map(item => `
-                <div class="cart-item">
-                    <img src="${item.img}" class="cart-item-img" alt="${item.title}">
-                    <div class="cart-item-info">
-                        <h4>${item.title}</h4>
-                        <p class="cart-item-price">Liên hệ báo giá</p>
-                        <div class="cart-item-qty">
-                            <div class="qty-btn" onclick="updateQty('${item.id}', -1)">-</div>
-                            <span>${item.qty}</span>
-                            <div class="qty-btn" onclick="updateQty('${item.id}', 1)">+</div>
-                            <i class="fas fa-trash-alt" style="margin-left: auto; color: var(--danger); cursor: pointer;" onclick="removeFromCart('${item.id}')"></i>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-    }
-
-    // 2. Render Full Cart
-    const fullCartList = document.getElementById('fullCartItems');
-    const fullCartTotal = document.getElementById('fullCartTotal');
-    
-    if (fullCartList) {
-        if (cart.length === 0) {
-            fullCartList.innerHTML = `
-                <div class="cart-empty-state" style="background: #fff; border-radius: 8px; margin-top: 20px;">
-                    <div class="empty-icon-box"><i class="fas fa-shopping-basket"></i></div>
-                    <p>Giỏ hàng của bạn đang trống. Hãy quay lại chọn sản phẩm nhé!</p>
-                    <button class="btn btn-primary" onclick="document.getElementById('fullCartClose').click()">Tiếp tục mua sắm</button>
-                </div>
-            `;
-        } else {
-            fullCartList.innerHTML = cart.map(item => `
-                <div class="cart-item-row">
-                    <div class="check-col"><input type="checkbox" class="cart-item-check" checked></div>
-                    <div class="prod-col">
-                        <div class="cart-item-product">
-                            <img src="${item.img}" alt="${item.title}">
-                            <div class="cart-item-name">
-                                <h4>${item.title}</h4>
-                                <p>Phân loại: Sản phẩm bảo hộ</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="price-col">Liên hệ</div>
-                    <div class="qty-col">
-                        <div class="quantity-control" style="margin: 0;">
-                            <button onclick="updateQty('${item.id}', -1)">-</button>
-                            <input type="text" value="${item.qty}" readonly>
-                            <button onclick="updateQty('${item.id}', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="total-col cart-item-subtotal">Báo giá</div>
-                    <div class="action-col">
-                        <span class="cart-item-action" onclick="removeFromCart('${item.id}')">Xóa</span>
-                    </div>
-                </div>
-            `).join('');
-        }
-    }
-}
-
-window.updateQty = (id, amt) => {
-    const item = cart.find(i => i.id === id);
-    if (item) {
-        item.qty += amt;
-        if (item.qty < 1) {
-            removeFromCart(id);
-        } else {
-            saveCart();
-            renderCart();
-            updateCartBadge();
-        }
-    }
-};
-
-window.removeFromCart = (id) => {
-    cart = cart.filter(i => i.id !== id);
-    saveCart();
-    renderCart();
-    updateCartBadge();
-};
-
-function updateCartBadge() {
-    const badge = document.getElementById('cartCount');
-    if (!badge) return;
-    const count = cart.reduce((total, item) => total + item.qty, 0);
-    badge.innerText = count;
-    badge.style.display = count > 0 ? 'flex' : 'none';
-}
-
-// 6. Language Switcher
+// 5. Language Switcher
 function initLanguage() {
     const langToggle = document.getElementById('langToggle');
     if (!langToggle) return;
@@ -735,13 +506,6 @@ function applyTranslations() {
     const btnContact = document.getElementById('trans-btn-contact');
     if (btnContact) btnContact.innerText = dict['btn-contact'];
     
-    // Cart
-    const cartTitle = document.querySelector('.cart-header h3');
-    if (cartTitle) cartTitle.innerText = dict['cart-title'];
-    
-    const checkoutBtn = document.getElementById('checkoutZalo');
-    if (checkoutBtn) checkoutBtn.innerHTML = `<i class="fab fa-whatsapp"></i> ${dict['cart-checkout']}`;
-    
     const searchInput = document.getElementById('searchInput');
     if (searchInput) searchInput.placeholder = dict['search-placeholder'];
 
@@ -755,8 +519,6 @@ function applyTranslations() {
         const el = document.getElementById(`trans-${s}-title`);
         if (el) el.innerHTML = dict[`${s}-title`];
     });
-    
-    renderCart(); // Re-render cart for empty message translation
 }
 
 // 7. Stats Counter
@@ -834,7 +596,6 @@ function initProductGalleryLightbox() {
     const overlay = lightbox?.querySelector('.lightbox-overlay');
     const prevBtn = lightbox?.querySelector('.prev-btn');
     const nextBtn = lightbox?.querySelector('.next-btn');
-    const addToCartBtn = document.getElementById('lt-add-to-cart');
 
     if (!lightbox) return;
 
@@ -876,12 +637,6 @@ function initProductGalleryLightbox() {
         const product = productData[currentProductId];
         currentImageIndex = (currentImageIndex + 1) % product.imgs.length;
         updateLightboxContent();
-    });
-
-    addToCartBtn?.addEventListener('click', () => {
-        if (currentProductId) {
-            handleAddToCart(currentProductId);
-        }
     });
 }
 

@@ -4,6 +4,11 @@ admin/npm-debug.log*
 
 # Backup tự động được tạo mỗi khi lưu sản phẩm
 js/products.js.bak
+js/category_content.js.bak
+
+# Biến môi trường / mật khẩu - TUYỆT ĐỐI không đẩy lên GitHub
+.env
+admin/.env
 
 # Hệ điều hành / editor
 .DS_Store

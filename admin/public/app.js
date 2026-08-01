@@ -32,6 +32,9 @@
   const subcatSelect = el('subcatSelect');
   const newSubcatInput = el('newSubcatInput');
   const descInput = el('descInput');
+  const appListInput = el('appListInput');
+  const prosListInput = el('prosListInput');
+  const commitListInput = el('commitListInput');
 
   const dropZone = el('dropZone');
   const imageInput = el('imageInput');
@@ -41,14 +44,86 @@
   const toast = el('toast');
   const toastBody = el('toastBody');
 
+  const loginScreen = el('loginScreen');
+  const loginForm = el('loginForm');
+  const loginPassword = el('loginPassword');
+  const loginError = el('loginError');
+  const loginBtn = el('loginBtn');
+  const logoutBtn = el('logoutBtn');
+
+  // ---------------------------------------------------------------
+  // Đăng nhập
+  // ---------------------------------------------------------------
+  function showLogin() {
+    loginScreen.style.display = 'flex';
+    loginPassword.focus();
+  }
+
+  function hideLogin() {
+    loginScreen.style.display = 'none';
+  }
+
+  async function checkAuth() {
+    try {
+      const res = await fetch('/api/me');
+      const json = await res.json();
+
+      // Chế độ online tự lưu lên GitHub -> không cần nút đồng bộ thủ công
+      if (json.autoSync) syncBtn.style.display = 'none';
+      if (json.needsPassword) logoutBtn.style.display = 'flex';
+
+      if (json.authenticated) {
+        hideLogin();
+        loadData();
+      } else {
+        showLogin();
+      }
+    } catch (e) {
+      showToast('Không kết nối được tới server.', true);
+    }
+  }
+
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    loginError.classList.add('hidden');
+    loginBtn.disabled = true;
+    loginBtn.textContent = 'Đang kiểm tra...';
+    try {
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: loginPassword.value }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Đăng nhập thất bại.');
+      loginPassword.value = '';
+      hideLogin();
+      logoutBtn.style.display = 'flex';
+      loadData();
+    } catch (err) {
+      loginError.textContent = err.message;
+      loginError.classList.remove('hidden');
+    } finally {
+      loginBtn.disabled = false;
+      loginBtn.textContent = 'Đăng nhập';
+    }
+  });
+
+  logoutBtn.addEventListener('click', async () => {
+    await fetch('/api/logout', { method: 'POST' });
+    showLogin();
+  });
+
   // ---------------------------------------------------------------
   // Data loading
   // ---------------------------------------------------------------
   async function loadData() {
     try {
       const res = await fetch('/api/data');
+      if (res.status === 401) { showLogin(); return; }
       if (!res.ok) throw new Error('Không tải được dữ liệu (HTTP ' + res.status + ')');
       DATA = await res.json();
+      if (DATA.autoSync) syncBtn.style.display = 'none';
       render();
     } catch (e) {
       showToast('Lỗi tải dữ liệu: ' + e.message, true);
@@ -197,10 +272,50 @@
     const isNew = subcatSelect.value === '__new__';
     newSubcatInput.classList.toggle('hidden', !isNew);
     if (isNew) newSubcatInput.value = '';
+    refreshCategoryContentFields();
   }
 
   catSelect.addEventListener('change', handleCatChange);
   subcatSelect.addEventListener('change', handleSubcatChange);
+
+  // Khoá "danh mục/danh mục con" hiện đang được dùng để tải nội dung 3 cột,
+  // dùng để tránh nạp chồng lên kết quả cũ khi người dùng đổi lựa chọn liên tục.
+  let contentFetchToken = 0;
+
+  // Xác định key nội dung hiệu lực (subcat nếu có & là mục có sẵn, ngược lại cat
+  // nếu có sẵn). Nếu đang tạo mới danh mục/danh mục con thì chưa có nội dung sẵn.
+  function currentContentKey() {
+    if (subcatSelect.value && subcatSelect.value !== '__new__' && subcatSelect.value !== '__none__') {
+      return subcatSelect.value;
+    }
+    if (catSelect.value && catSelect.value !== '__new__') {
+      return catSelect.value;
+    }
+    return null;
+  }
+
+  async function refreshCategoryContentFields() {
+    const key = currentContentKey();
+    const token = ++contentFetchToken;
+    if (!key) {
+      appListInput.value = '';
+      prosListInput.value = '';
+      commitListInput.value = '';
+      return;
+    }
+    try {
+      const res = await fetch('/api/category-content/' + encodeURIComponent(key));
+      if (res.status === 401) { showLogin(); return; }
+      if (!res.ok) return;
+      const json = await res.json();
+      if (token !== contentFetchToken) return; // đã có lựa chọn mới hơn, bỏ kết quả cũ
+      appListInput.value = (json.appItems || []).join('\n');
+      prosListInput.value = (json.prosItems || []).join('\n');
+      commitListInput.value = (json.commitItems || []).join('\n');
+    } catch (e) {
+      // im lặng bỏ qua, không chặn việc thêm/sửa sản phẩm
+    }
+  }
 
   function resetForm() {
     editingId = null;
@@ -208,6 +323,9 @@
     productIdInput.value = '';
     titleInput.value = '';
     descInput.value = '';
+    appListInput.value = '';
+    prosListInput.value = '';
+    commitListInput.value = '';
     imagePreview.classList.add('hidden');
     imagePreview.src = '';
     dropZonePlaceholder.classList.remove('hidden');
@@ -241,6 +359,7 @@
     populateSubcatSelect(p.cat, p.subcat || '__none__');
     newCatInput.classList.add('hidden');
     newSubcatInput.classList.add('hidden');
+    refreshCategoryContentFields();
     if (p.img) {
       imagePreview.src = toAdminImgPath(p.img);
       imagePreview.classList.remove('hidden');
@@ -306,6 +425,9 @@
     fd.append('newCatLabel', newCatInput.value.trim());
     fd.append('subcatId', subcatSelect.value);
     fd.append('newSubcatLabel', newSubcatInput.value.trim());
+    fd.append('appList', appListInput.value);
+    fd.append('prosList', prosListInput.value);
+    fd.append('commitList', commitListInput.value);
     if (selectedFile) fd.append('image', selectedFile);
 
     const submitBtn = el('submitBtn');
@@ -316,6 +438,7 @@
       const url = editingId ? '/api/products/' + encodeURIComponent(editingId) : '/api/products';
       const method = editingId ? 'PUT' : 'POST';
       const res = await fetch(url, { method, body: fd });
+      if (res.status === 401) { closeModal(); showLogin(); return; }
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || 'Có lỗi xảy ra.');
       closeModal();
@@ -343,6 +466,7 @@
     if (!confirm('Xóa sản phẩm "' + name + '"? Hành động này không thể hoàn tác.')) return;
     try {
       const res = await fetch('/api/products/' + encodeURIComponent(id), { method: 'DELETE' });
+      if (res.status === 401) { showLogin(); return; }
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || 'Không xóa được sản phẩm.');
       showToast('Đã xóa sản phẩm.');
@@ -401,5 +525,5 @@
   }
 
   // ---------------------------------------------------------------
-  loadData();
+  checkAuth();
 })();

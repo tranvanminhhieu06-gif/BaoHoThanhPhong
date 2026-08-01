@@ -57,7 +57,7 @@ const products = [
     "subcat": "cat3_s1",
     "subcatLabel": "ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC",
     "img": "../images/ÁO THUN/ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC/bia-ao-thun-cong-nhan.png",
-    "desc": "Cotton Pique 220gsm, thêu logo bảo vệ trước ngực, cổ bẻ vải dệt kim. Co giãn nhẹ, thoáng khí, mặc làm việc cả ngày thoải mái."
+    "desc": "Áo thun công nhân là dòng đồng phục được thiết kế dành riêng cho người lao động trong các nhà máy, xưởng sản xuất, công trình và kho vận. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp áo thun công nhân chất lượng cao với độ bền vượt trội, mang lại sự thoải mái trong suốt quá trình làm việc."
   },
   {
     "id": "aothunthetha7",
