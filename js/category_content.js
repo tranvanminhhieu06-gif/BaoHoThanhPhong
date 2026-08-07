@@ -1339,10 +1339,11 @@ var categoryContent = {
   "cat5_s1": {
     "tagline": "",
     "heading": "ÁO BẢO VỆ TAY DÀI",
-    "shortDesc": "ÁO BẢO VỆ TAY DÀI là giải pháp bảo hộ lao động tối ưu cho doanh nghiệp, mang lại sự an toàn, chuyên nghiệp và hiệu quả vượt trội trong suốt quá trình làm việc.",
+    "shortDesc": "ÁO BẢO VỆ TAY DÀI - ABV01 được thiết kế theo tiêu chuẩn chuyên nghiệp, đáp ứng nhu cầu sử dụng của doanh nghiệp, nhà máy, chung cư, trường học và nhiều đơn vị dịch vụ bảo vệ. May đồng phục bảo vệ Thành Phong sử dụng chất liệu vải may cao cấp, đứng form, thoáng khí, kết hợp quần âu bền đẹp góp phần xây dựng hình ảnh uy tín nhân viên và nâng cao giá trị thương hiệu cho doanh nghiệp.",
     "features": [
       {
         "icon": "verified",
+        "color": "",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
         "title": "Chất liệu bền bỉ, cao cấp, độ bền vượt trội.",
@@ -1350,6 +1351,7 @@ var categoryContent = {
       },
       {
         "icon": "verified",
+        "color": "",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
         "title": "Chống mài mòn, hạn chế sờn rách hiệu quả.",
@@ -1357,6 +1359,7 @@ var categoryContent = {
       },
       {
         "icon": "verified",
+        "color": "",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
         "title": "Thấm hút mồ hôi tốt, thoáng khí tốt.",
