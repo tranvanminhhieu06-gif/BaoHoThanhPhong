@@ -166,6 +166,126 @@ app.get('/images/*', (req, res) => {
 });
 
 // =====================================================================
+// XEM TRƯỚC WEBSITE (live server)
+// Phục vụ trực tiếp các file website trên máy, kèm tự động tải lại trang
+// mỗi khi có file thay đổi -> xem được kết quả trước khi đồng bộ lên GitHub.
+// =====================================================================
+
+// Những thư mục nội bộ, không phải nội dung website
+const PREVIEW_BLOCKED = new Set(['admin', '.git', '.github', 'node_modules', 'scripts']);
+
+// Danh sách trình duyệt đang mở trang xem trước
+let previewClients = [];
+
+function broadcastReload() {
+  previewClients = previewClients.filter((res) => !res.writableEnded);
+  previewClients.forEach((res) => {
+    try { res.write('data: reload\n\n'); } catch (e) { /* bỏ qua */ }
+  });
+}
+
+// Kênh báo cho trình duyệt biết cần tải lại
+app.get('/preview-events', requireAuth, (req, res) => {
+  res.set({
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    Connection: 'keep-alive',
+  });
+  res.flushHeaders && res.flushHeaders();
+  res.write('retry: 2000\n\n');
+
+  previewClients.push(res);
+  req.on('close', () => {
+    previewClients = previewClients.filter((c) => c !== res);
+  });
+});
+
+const LIVE_RELOAD_SNIPPET = `
+<!-- Chế độ xem trước: tự động tải lại khi có thay đổi -->
+<script>
+(function () {
+  try {
+    var es = new EventSource('/preview-events');
+    es.onmessage = function (e) { if (e.data === 'reload') location.reload(); };
+  } catch (err) { /* bỏ qua */ }
+  var bar = document.createElement('div');
+  bar.textContent = 'BẢN XEM TRƯỚC — chưa đồng bộ lên website thật';
+  bar.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:2147483647;' +
+    'background:#1A2744;color:#fff;font:700 11px/1 Be Vietnam Pro,sans-serif;' +
+    'padding:8px 14px;border-radius:100px;box-shadow:0 4px 14px rgba(0,0,0,.25);' +
+    'letter-spacing:.03em;pointer-events:none;opacity:.9;';
+  if (document.body) document.body.appendChild(bar);
+  else document.addEventListener('DOMContentLoaded', function () { document.body.appendChild(bar); });
+})();
+</script>
+`;
+
+function injectLiveReload(html) {
+  if (html.includes('</body>')) return html.replace(/<\/body>/i, LIVE_RELOAD_SNIPPET + '</body>');
+  return html + LIVE_RELOAD_SNIPPET;
+}
+
+// Thiếu dấu "/" ở cuối thì các đường dẫn tương đối trong trang sẽ sai,
+// nên chuyển hướng về dạng có dấu gạch chéo.
+app.get('/preview', (req, res) => res.redirect('/preview/'));
+
+app.use('/preview', requireAuth, (req, res, next) => {
+  let rel;
+  try { rel = decodeURIComponent(req.path); } catch (e) { return res.status(400).send('Đường dẫn không hợp lệ.'); }
+  if (!rel || rel === '/') rel = '/index.html';
+
+  // Chặn thư mục nội bộ
+  const firstSeg = rel.split('/').filter(Boolean)[0];
+  if (firstSeg && PREVIEW_BLOCKED.has(firstSeg)) {
+    return res.status(403).send('Thư mục này không thuộc nội dung website.');
+  }
+
+  // Chặn truy cập ra ngoài thư mục website
+  const full = path.resolve(ROOT, '.' + rel);
+  if (full !== ROOT && !full.startsWith(ROOT + path.sep)) {
+    return res.status(403).send('Đường dẫn không hợp lệ.');
+  }
+
+  let target = full;
+  if (!fs.existsSync(target)) return next();
+  if (fs.statSync(target).isDirectory()) {
+    target = path.join(target, 'index.html');
+    if (!fs.existsSync(target)) return next();
+  }
+
+  // Trang HTML thì chèn thêm đoạn mã tự tải lại
+  if (/\.html?$/i.test(target)) {
+    try {
+      res.type('html').send(injectLiveReload(fs.readFileSync(target, 'utf8')));
+    } catch (e) {
+      res.status(500).send('Không đọc được file: ' + e.message);
+    }
+    return;
+  }
+
+  res.sendFile(target);
+});
+
+// Theo dõi thay đổi file để tự tải lại. Chỉ bật ở chế độ máy cá nhân —
+// chạy online thì file trên máy chủ không thay đổi trực tiếp.
+if (!ONLINE_MODE) {
+  let reloadTimer = null;
+  try {
+    fs.watch(ROOT, { recursive: true }, (evt, filename) => {
+      if (!filename) return;
+      const f = String(filename).replace(/\\/g, '/');
+      if (f.includes('node_modules') || f.startsWith('.git') || f.endsWith('.bak')) return;
+      if (f.startsWith('admin/')) return; // sửa code admin không cần tải lại website
+
+      clearTimeout(reloadTimer);
+      reloadTimer = setTimeout(broadcastReload, 250);
+    });
+  } catch (e) {
+    console.warn('Không theo dõi được thay đổi file (tự tải lại sẽ không hoạt động):', e.message);
+  }
+}
+
+// =====================================================================
 // Lớp lưu trữ: máy cá nhân (fs) hoặc GitHub (API)
 // =====================================================================
 
@@ -534,6 +654,50 @@ function nextSubcatId(products, catId) {
     }
   }
   return catId + '_s' + (maxS + 1);
+}
+
+/**
+ * Dựng danh sách ảnh của sản phẩm (thư viện ảnh).
+ *
+ * Trang quản lý gửi lên:
+ *   - imageOrder : mảng JSON mô tả thứ tự ảnh cuối cùng. Ảnh cũ là đường dẫn
+ *                  sẵn có, ảnh mới là chuỗi "__NEW_0__", "__NEW_1__"...
+ *   - gallery    : các file ảnh mới, đúng theo thứ tự __NEW_0__, __NEW_1__...
+ *
+ * Nhờ vậy người dùng vừa thêm/xóa vừa kéo sắp xếp lẫn lộn ảnh cũ và ảnh mới
+ * mà thứ tự vẫn đúng.
+ */
+async function buildImageList(body, files, catLabel, subcatLabel, title, oldImages) {
+  let order = null;
+  if (body.imageOrder) {
+    try {
+      const parsed = JSON.parse(body.imageOrder);
+      if (Array.isArray(parsed)) order = parsed.map((s) => String(s));
+    } catch (e) {
+      console.error('imageOrder không hợp lệ:', e.message);
+    }
+  }
+
+  const list = Array.isArray(files) ? files : [];
+
+  // Không gửi thứ tự -> giữ ảnh cũ và nối các ảnh mới vào cuối
+  if (!order) {
+    const uploaded = [];
+    for (const f of list) uploaded.push(await saveImageFile(f, catLabel, subcatLabel, title));
+    return (oldImages || []).concat(uploaded);
+  }
+
+  const out = [];
+  for (const token of order) {
+    const m = /^__NEW_(\d+)__$/.exec(token);
+    if (m) {
+      const file = list[Number(m[1])];
+      if (file) out.push(await saveImageFile(file, catLabel, subcatLabel, title));
+    } else if (token) {
+      out.push(token);
+    }
+  }
+  return out;
 }
 
 // Lưu ảnh vào images/<catLabel>/<subcatLabel>/filename
@@ -1183,13 +1347,15 @@ app.put('/api/blocks/:key', requireAuth, async (req, res) => {
 });
 
 // Thêm sản phẩm mới
-app.post('/api/products', requireAuth, upload.single('image'), async (req, res) => {
+app.post('/api/products', requireAuth, upload.array('gallery', 20), async (req, res) => {
   try {
     const body = req.body || {};
     const title = (body.title || '').trim();
     const desc = (body.desc || '').trim();
     if (!title) return res.status(400).json({ error: 'Vui lòng nhập tên sản phẩm.' });
-    if (!req.file) return res.status(400).json({ error: 'Vui lòng chọn ảnh sản phẩm.' });
+    if (!req.files || !req.files.length) {
+      return res.status(400).json({ error: 'Vui lòng chọn ít nhất 1 ảnh sản phẩm.' });
+    }
 
     const loaded = await loadData();
     const { products, catBiaImages } = loaded;
@@ -1227,8 +1393,10 @@ app.post('/api/products', requireAuth, upload.single('image'), async (req, res) 
       subcatLabel = existingSub.subcatLabel;
     }
 
-    // ---- Ảnh ----
-    const imgPath = await saveImageFile(req.file, catLabel, subcatLabel || catLabel, title);
+    // ---- Thư viện ảnh (ảnh đầu tiên là ảnh bìa) ----
+    const images = await buildImageList(body, req.files, catLabel, subcatLabel || catLabel, title, []);
+    if (!images.length) return res.status(400).json({ error: 'Không lưu được ảnh sản phẩm.' });
+    const imgPath = images[0];
 
     // Danh mục mới thì cần ảnh bìa cho catBiaImages
     if (isNewCat) catBiaImages[catId] = imgPath;
@@ -1242,6 +1410,7 @@ app.post('/api/products', requireAuth, upload.single('image'), async (req, res) 
       subcat: subcatId,
       subcatLabel,
       img: imgPath,
+      images,
       desc,
     };
     products.push(newProduct);
@@ -1262,7 +1431,7 @@ app.post('/api/products', requireAuth, upload.single('image'), async (req, res) 
 });
 
 // Sửa sản phẩm
-app.put('/api/products/:id', requireAuth, upload.single('image'), async (req, res) => {
+app.put('/api/products/:id', requireAuth, upload.array('gallery', 20), async (req, res) => {
   try {
     const body = req.body || {};
     const loaded = await loadData();
@@ -1306,11 +1475,15 @@ app.put('/api/products/:id', requireAuth, upload.single('image'), async (req, re
       subcatLabel = existingSub ? existingSub.subcatLabel : '';
     }
 
-    // ---- Ảnh (chỉ thay nếu có upload mới) ----
-    let imgPath = product.img;
-    if (req.file) {
-      imgPath = await saveImageFile(req.file, catLabel, subcatLabel || catLabel, title);
-    }
+    // ---- Thư viện ảnh ----
+    // Ảnh cũ: dùng mảng images nếu có, không thì lấy tạm ảnh bìa cũ
+    const oldImages = Array.isArray(product.images) && product.images.length
+      ? product.images
+      : (product.img ? [product.img] : []);
+
+    let images = await buildImageList(body, req.files, catLabel, subcatLabel || catLabel, title, oldImages);
+    if (!images.length) images = oldImages;
+    const imgPath = images[0] || product.img;
 
     if (isNewCat) catBiaImages[catId] = catBiaImages[catId] || imgPath;
 
@@ -1322,6 +1495,7 @@ app.put('/api/products/:id', requireAuth, upload.single('image'), async (req, re
       subcat: subcatId,
       subcatLabel,
       img: imgPath,
+      images,
       desc: (body.desc || '').trim(),
     };
 

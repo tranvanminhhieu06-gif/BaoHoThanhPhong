@@ -225,8 +225,9 @@
     editorMode.textContent = 'Đang sửa bài';
     deleteBtn.style.display = 'flex';
     viewLink.style.display = 'flex';
-    viewLink.href = (siteUrl || '') + '/tintuc/index.html?bai=' + encodeURIComponent(p.slug);
-    viewLink.title = 'Mở bài trên website thật (bài cần được đăng lên trước)';
+    // Mở trong bản xem trước để đọc được ngay, chưa cần đồng bộ lên website
+    viewLink.href = '/preview/tintuc/index.html?bai=' + encodeURIComponent(p.slug);
+    viewLink.title = 'Mở bài trong bản xem trước';
 
     emptyPick.style.display = 'none';
     editorWrap.style.display = 'block';

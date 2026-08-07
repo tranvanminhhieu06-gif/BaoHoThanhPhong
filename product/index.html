@@ -70,6 +70,32 @@
             color: var(--gray-400); border: 1.5px dashed var(--gray-200); cursor: default;
         }
 
+        /* Xem ảnh phóng to */
+        #lightbox { display: none; position: fixed; inset: 0; z-index: 9999; }
+        #lightbox.open { display: flex; align-items: center; justify-content: center; }
+        #lb-backdrop { position: absolute; inset: 0; background: rgba(15,23,42,.92); }
+        .lb-stage { position: relative; z-index: 1; max-width: 92vw; max-height: 88vh; display: flex; align-items: center; justify-content: center; }
+        .lb-stage img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 12px; }
+        .lb-btn {
+            position: absolute; z-index: 2; width: 48px; height: 48px; border: none; border-radius: 50%;
+            background: rgba(255,255,255,.92); color: #1A2744; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; transition: .2s;
+        }
+        .lb-btn:hover { background: #fff; transform: scale(1.06); }
+        #lb-prev { left: 24px; top: 50%; transform: translateY(-50%); }
+        #lb-next { right: 24px; top: 50%; transform: translateY(-50%); }
+        #lb-prev:hover, #lb-next:hover { transform: translateY(-50%) scale(1.06); }
+        #lb-close { top: 24px; right: 24px; }
+        #lb-count {
+            position: absolute; z-index: 2; bottom: 24px; left: 50%; transform: translateX(-50%);
+            background: rgba(255,255,255,.92); color: #1A2744; font-size: 13px; font-weight: 700;
+            padding: 6px 16px; border-radius: 100px;
+        }
+        @media (max-width: 640px) {
+            #lb-prev { left: 10px; } #lb-next { right: 10px; }
+            .lb-btn { width: 40px; height: 40px; }
+        }
+
         /* Related product card */
         .related-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -285,11 +311,14 @@
             <!-- LEFT: Product Image -->
             <div class="flex flex-col gap-4">
                 <!-- Main image -->
-                <div class="img-zoom-wrapper aspect-square bg-white border border-gray-100 shadow-sm relative"
-                     style="border-radius:24px; overflow:hidden;">
+                <div id="main-img-wrap" class="img-zoom-wrapper aspect-square bg-white border border-gray-100 shadow-sm relative cursor-zoom-in"
+                     style="border-radius:24px; overflow:hidden;" title="Bấm để xem ảnh lớn">
                     <img id="product-main-img" src="" alt=""
                          class="w-full h-full object-cover"
                          onerror="this.parentElement.style.background='#F1F5F9';">
+                    <span class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/90 shadow flex items-center justify-center text-[#1A2744] pointer-events-none">
+                        <span class="material-symbols-outlined" style="font-size:18px;">zoom_in</span>
+                    </span>
                 </div>
 
                 <!-- Thumbnail gallery -->
@@ -601,6 +630,22 @@
 </script>
 
 <!-- Load product data -->
+<!-- Xem ảnh sản phẩm phóng to -->
+<div id="lightbox" aria-hidden="true">
+  <div id="lb-backdrop"></div>
+  <button type="button" id="lb-close" class="lb-btn" aria-label="Đóng">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <button type="button" id="lb-prev" class="lb-btn" aria-label="Ảnh trước">
+    <span class="material-symbols-outlined">chevron_left</span>
+  </button>
+  <div class="lb-stage"><img id="lb-img" src="" alt="Ảnh sản phẩm"></div>
+  <button type="button" id="lb-next" class="lb-btn" aria-label="Ảnh sau">
+    <span class="material-symbols-outlined">chevron_right</span>
+  </button>
+  <span id="lb-count"></span>
+</div>
+
 <script src="../js/products.js"></script>
 <script src="../js/category_content.js"></script>
 
@@ -818,32 +863,104 @@
         }).join('');
     }
 
-    // Thumbnail gallery below the main image: uses product.images[] when
-    // provided, otherwise shows empty placeholder slots until real photos
-    // are added per product.
-    function renderThumbnails(product, mainImgEl) {
+    // ===== THƯ VIỆN ẢNH SẢN PHẨM =====
+    // Danh sách ảnh lấy từ product.images[]; sản phẩm cũ chỉ có 1 ảnh (product.img)
+    // thì vẫn hiển thị bình thường.
+    var galleryImages = [];
+    var galleryIndex = 0;
+
+    function getGalleryImages(product) {
+        var list = Array.isArray(product.images) ? product.images.filter(Boolean) : [];
+        if (!list.length && product.img) list = [product.img];
+        // Ảnh bìa luôn đứng đầu, không để lặp lại
+        if (product.img && list.indexOf(product.img) === -1) list.unshift(product.img);
+        return list;
+    }
+
+    function showGalleryImage(i) {
+        if (!galleryImages.length) return;
+        galleryIndex = (i + galleryImages.length) % galleryImages.length;
+
+        var mainImg = document.getElementById('product-main-img');
+        if (mainImg) mainImg.src = galleryImages[galleryIndex];
+
+        var thumbs = document.querySelectorAll('#product-thumbs .pd-thumb');
+        for (var k = 0; k < thumbs.length; k++) {
+            thumbs[k].classList.toggle('active', k === galleryIndex);
+        }
+
+        var lbImg = document.getElementById('lb-img');
+        if (lbImg) lbImg.src = galleryImages[galleryIndex];
+        var lbCount = document.getElementById('lb-count');
+        if (lbCount) lbCount.textContent = (galleryIndex + 1) + ' / ' + galleryImages.length;
+    }
+
+    function renderThumbnails(product) {
         var thumbsEl = document.getElementById('product-thumbs');
         if (!thumbsEl) return;
 
-        var images = Array.isArray(product.images) && product.images.length ? product.images : null;
+        galleryImages = getGalleryImages(product);
+        galleryIndex = 0;
 
-        if (images && images.length > 1) {
-            var safeTitle = product.title.replace(/"/g, '&quot;');
-            thumbsEl.innerHTML = images.map(function(src, i) {
-                return '<button type="button" class="pd-thumb' + (i === 0 ? ' active' : '') + '" data-src="' + src + '">' +
-                    '<img src="' + src + '" alt="' + safeTitle + ' - ' + (i + 1) + '"></button>';
-            }).join('');
-            var thumbBtns = thumbsEl.querySelectorAll('.pd-thumb');
-            thumbBtns.forEach(function(btn) {
-                btn.onclick = function() {
-                    if (mainImgEl) mainImgEl.src = btn.dataset.src;
-                    thumbBtns.forEach(function(b) { b.classList.remove('active'); });
-                    btn.classList.add('active');
-                };
-            });
-        } else {
-            thumbsEl.innerHTML = ''; // If none, leave blank
+        if (galleryImages.length <= 1) {
+            thumbsEl.innerHTML = '';
+            return;
         }
+
+        var safeTitle = escHtml(product.title);
+        thumbsEl.innerHTML = galleryImages.map(function (src, i) {
+            return '<button type="button" class="pd-thumb' + (i === 0 ? ' active' : '') + '" data-i="' + i + '">' +
+                '<img src="' + escHtml(src) + '" alt="' + safeTitle + ' - ảnh ' + (i + 1) + '" loading="lazy"></button>';
+        }).join('');
+
+        thumbsEl.querySelectorAll('.pd-thumb').forEach(function (btn) {
+            btn.onclick = function () { showGalleryImage(Number(btn.dataset.i)); };
+        });
+    }
+
+    // ----- Xem ảnh phóng to -----
+    function openLightbox() {
+        if (!galleryImages.length) return;
+        var lb = document.getElementById('lightbox');
+        if (!lb) return;
+        showGalleryImage(galleryIndex);
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        var lb = document.getElementById('lightbox');
+        if (!lb) return;
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function initLightbox() {
+        var mainWrap = document.getElementById('main-img-wrap');
+        if (mainWrap) mainWrap.addEventListener('click', openLightbox);
+
+        var lb = document.getElementById('lightbox');
+        if (!lb) return;
+
+        lb.addEventListener('click', function (e) {
+            if (e.target === lb || e.target.id === 'lb-backdrop') closeLightbox();
+        });
+
+        var closeBtn = document.getElementById('lb-close');
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+        var prev = document.getElementById('lb-prev');
+        if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); showGalleryImage(galleryIndex - 1); });
+
+        var next = document.getElementById('lb-next');
+        if (next) next.addEventListener('click', function (e) { e.stopPropagation(); showGalleryImage(galleryIndex + 1); });
+
+        document.addEventListener('keydown', function (e) {
+            if (!lb.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowLeft') showGalleryImage(galleryIndex - 1);
+            else if (e.key === 'ArrowRight') showGalleryImage(galleryIndex + 1);
+        });
     }
 
     function loadProduct() {
@@ -905,12 +1022,12 @@
         applyCategoryContent(product, catLabel);
 
         var imgEl = document.getElementById('product-main-img');
-        if (imgEl) {
-            imgEl.src = product.img;
-            imgEl.alt = product.title;
-        }
+        if (imgEl) imgEl.alt = product.title;
 
-        renderThumbnails(product, imgEl);
+        // Thư viện ảnh: dựng danh sách ảnh nhỏ rồi hiện ảnh đầu tiên
+        renderThumbnails(product);
+        showGalleryImage(0);
+        initLightbox();
 
         // Related products (random each load)
         renderRelated(product);

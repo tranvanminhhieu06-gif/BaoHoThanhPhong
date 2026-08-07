@@ -319,8 +319,18 @@ dòng "Nguồn bài viết".
 ## Cách dùng
 
 - **Danh mục** (cột trái): bấm để lọc sản phẩm theo danh mục.
-- **Thêm sản phẩm**: bấm "Thêm sản phẩm", chọn ảnh, nhập tên, chọn danh mục
+- **Thêm sản phẩm**: bấm "Thêm sản phẩm", thêm ảnh, nhập tên, chọn danh mục
   (hoặc "➕ Danh mục mới..." để tạo danh mục chưa có).
+- **Thư viện ảnh**: mỗi sản phẩm thêm được nhiều ảnh. Bấm "Thêm ảnh" hoặc kéo
+  thả nhiều ảnh cùng lúc. Trong lưới ảnh:
+  - Ảnh **đầu tiên** là ảnh bìa (hiện ở lưới sản phẩm và trang chủ).
+  - **Kéo ảnh** để đổi thứ tự.
+  - Bấm **⭐** để đưa một ảnh lên làm ảnh bìa.
+  - Bấm **✕** để xóa ảnh khỏi thư viện.
+
+  Trên website, trang chi tiết sản phẩm sẽ hiện dãy ảnh nhỏ dưới ảnh chính;
+  khách bấm vào ảnh chính để xem phóng to, chuyển ảnh bằng nút mũi tên hoặc
+  phím ←/→. Sản phẩm chỉ có 1 ảnh thì hiển thị như cũ, không có dãy ảnh nhỏ.
 - **Sửa / Xóa**: mỗi thẻ sản phẩm có 2 nút tương ứng.
 - **Tự động điền**: dán mô tả vào ô Mô tả rồi bấm nút này để máy tự điền tên
   sản phẩm và 3 mục nội dung (xem mục C ở trên).
@@ -353,6 +363,28 @@ chưa (xám). Nhớ bấm **Lưu thay đổi** sau khi chỉnh.
   mục con sẽ hiển thị chung nội dung này. Mỗi dòng là 1 gạch đầu dòng.
 - **Đồng bộ lên GitHub**: chỉ hiện ở chế độ máy cá nhân. Ở chế độ online,
   mọi thay đổi được lưu tự động.
+
+### Nút "Xem trước" — kiểm tra trước khi đồng bộ
+
+Bấm **Xem trước** trên thanh đầu trang để mở website ngay trên máy bạn, ở địa
+chỉ `http://localhost:3000/preview/`.
+
+Đây là **website thật với toàn bộ thay đổi bạn vừa làm**, nhưng chưa hề được
+đẩy lên GitHub. Khách vào baohothanhphong.vn vẫn thấy bản cũ. Nhờ vậy bạn kiểm
+tra thoải mái, sai thì sửa lại, ưng rồi mới bấm **Đồng bộ lên GitHub**.
+
+Trang xem trước có 2 điểm nhận biết:
+
+- Góc dưới bên trái luôn có nhãn **"BẢN XEM TRƯỚC — chưa đồng bộ lên website thật"**.
+- Mỗi khi bạn lưu sản phẩm, bài viết hay khối nội dung, **trang tự động tải lại**
+  để hiện kết quả mới, không cần bấm F5.
+
+Cách dùng thuận tiện: mở trang quản lý ở một tab, bản xem trước ở tab bên cạnh.
+Sửa bên này, liếc sang tab kia là thấy ngay.
+
+> Ở bản online (Render), nút Xem trước vẫn mở được nhưng hiển thị theo file tại
+> thời điểm triển khai và **không tự tải lại**. Muốn xem chính xác, dùng ở chế
+> độ máy cá nhân.
 
 Sau khi lưu, website thật cần khoảng **1-2 phút** để GitHub Pages cập nhật.
 

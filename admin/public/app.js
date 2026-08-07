@@ -5,7 +5,10 @@
   let currentCat = 'all';
   let searchTerm = '';
   let editingId = null;
-  let selectedFile = null;
+
+  // Thư viện ảnh của sản phẩm đang sửa.
+  // Mỗi phần tử: { kind:'old', path:'../images/...' } hoặc { kind:'new', file:File, preview:'data:...' }
+  let gallery = [];
 
   const el = (id) => document.getElementById(id);
 
@@ -49,8 +52,9 @@
 
   const dropZone = el('dropZone');
   const imageInput = el('imageInput');
-  const imagePreview = el('imagePreview');
-  const dropZonePlaceholder = el('dropZonePlaceholder');
+  const galleryGrid = el('galleryGrid');
+  const galleryCount = el('galleryCount');
+  const addImagesBtn = el('addImagesBtn');
 
   const toast = el('toast');
   const toastBody = el('toastBody');
@@ -332,16 +336,14 @@
 
   function resetForm() {
     editingId = null;
-    selectedFile = null;
+    gallery = [];
+    renderGallery();
     productIdInput.value = '';
     titleInput.value = '';
     descInput.value = '';
     appListInput.value = '';
     prosListInput.value = '';
     commitListInput.value = '';
-    imagePreview.classList.add('hidden');
-    imagePreview.src = '';
-    dropZonePlaceholder.classList.remove('hidden');
     imageInput.value = '';
     formError.classList.add('hidden');
     formError.textContent = '';
@@ -379,11 +381,14 @@
     newCatInput.classList.add('hidden');
     newSubcatInput.classList.add('hidden');
     refreshCategoryContentFields();
-    if (p.img) {
-      imagePreview.src = toAdminImgPath(p.img);
-      imagePreview.classList.remove('hidden');
-      dropZonePlaceholder.classList.add('hidden');
-    }
+
+    // Sản phẩm cũ chỉ có 1 ảnh (field img) -> vẫn hiện đúng trong thư viện
+    const existing = Array.isArray(p.images) && p.images.length
+      ? p.images
+      : (p.img ? [p.img] : []);
+    gallery = existing.map((path) => ({ kind: 'old', path: path }));
+    renderGallery();
+
     modalBackdrop.classList.remove('hidden');
   }
 
@@ -397,22 +402,102 @@
   modalBackdrop.addEventListener('click', (e) => { if (e.target === modalBackdrop) closeModal(); });
 
   // ---------------------------------------------------------------
-  // Upload ảnh: chọn file / kéo thả + xem trước
+  // Thư viện ảnh: thêm nhiều ảnh, kéo sắp xếp, xóa, chọn ảnh bìa
   // ---------------------------------------------------------------
-  function handleFile(file) {
-    if (!file || !file.type.startsWith('image/')) return;
-    selectedFile = file;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      imagePreview.src = e.target.result;
-      imagePreview.classList.remove('hidden');
-      dropZonePlaceholder.classList.add('hidden');
-    };
-    reader.readAsDataURL(file);
+  function renderGallery() {
+    galleryCount.textContent = gallery.length ? '(' + gallery.length + ' ảnh)' : '';
+
+    galleryGrid.innerHTML = gallery.map((item, i) => {
+      const src = item.kind === 'old' ? toAdminImgPath(item.path) : item.preview;
+      return (
+        '<div class="gal-item' + (i === 0 ? ' is-cover' : '') + '" data-index="' + i + '" draggable="true">' +
+        '<img src="' + escapeHtml(src) + '" alt="Ảnh ' + (i + 1) + '" loading="lazy">' +
+        (i === 0 ? '<span class="gal-badge">ẢNH BÌA</span>' : '') +
+        '<div class="gal-actions">' +
+        (i === 0 ? '' :
+          '<button type="button" class="gal-btn" data-action="cover" title="Đặt làm ảnh bìa">' +
+          '<span class="material-symbols-outlined">star</span></button>') +
+        '<button type="button" class="gal-btn del" data-action="remove" title="Xóa ảnh">' +
+        '<span class="material-symbols-outlined">close</span></button>' +
+        '</div></div>'
+      );
+    }).join('');
+
+    wireGalleryItems();
   }
 
+  function wireGalleryItems() {
+    galleryGrid.querySelectorAll('.gal-item').forEach((card) => {
+      const idx = Number(card.dataset.index);
+
+      const coverBtn = card.querySelector('[data-action="cover"]');
+      if (coverBtn) {
+        coverBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const [moved] = gallery.splice(idx, 1);
+          gallery.unshift(moved);
+          renderGallery();
+        });
+      }
+
+      const delBtn = card.querySelector('[data-action="remove"]');
+      if (delBtn) {
+        delBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          gallery.splice(idx, 1);
+          renderGallery();
+        });
+      }
+
+      card.addEventListener('dragstart', (e) => {
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', String(idx));
+        card.classList.add('dragging');
+      });
+      card.addEventListener('dragend', () => {
+        card.classList.remove('dragging');
+        galleryGrid.querySelectorAll('.gal-item').forEach((c) => c.classList.remove('drag-over'));
+      });
+      card.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        card.classList.add('drag-over');
+      });
+      card.addEventListener('dragleave', () => card.classList.remove('drag-over'));
+      card.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        card.classList.remove('drag-over');
+        const from = Number(e.dataTransfer.getData('text/plain'));
+        if (Number.isNaN(from) || from === idx) return;
+        const [moved] = gallery.splice(from, 1);
+        gallery.splice(idx, 0, moved);
+        renderGallery();
+      });
+    });
+  }
+
+  function addFiles(fileList) {
+    const files = Array.from(fileList || []).filter((f) => f.type.startsWith('image/'));
+    if (!files.length) return;
+
+    let pending = files.length;
+    files.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        gallery.push({ kind: 'new', file: file, preview: e.target.result });
+        pending--;
+        if (pending === 0) renderGallery();
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  addImagesBtn.addEventListener('click', () => imageInput.click());
+
   imageInput.addEventListener('change', () => {
-    if (imageInput.files && imageInput.files[0]) handleFile(imageInput.files[0]);
+    addFiles(imageInput.files);
+    imageInput.value = '';
   });
 
   ['dragover', 'dragenter'].forEach((evt) => {
@@ -422,8 +507,7 @@
     dropZone.addEventListener(evt, (e) => { e.preventDefault(); dropZone.classList.remove('dragover'); });
   });
   dropZone.addEventListener('drop', (e) => {
-    const file = e.dataTransfer.files && e.dataTransfer.files[0];
-    if (file) handleFile(file);
+    addFiles(e.dataTransfer.files);
   });
 
   // ---------------------------------------------------------------
@@ -435,7 +519,7 @@
 
     const title = titleInput.value.trim();
     if (!title) { showFormError('Vui lòng nhập tên sản phẩm.'); return; }
-    if (!editingId && !selectedFile) { showFormError('Vui lòng chọn ảnh sản phẩm.'); return; }
+    if (!gallery.length) { showFormError('Vui lòng thêm ít nhất 1 ảnh sản phẩm.'); return; }
 
     const fd = new FormData();
     fd.append('title', title);
@@ -452,7 +536,20 @@
       fd.append('noidungHeading', pickedHeading);
       fd.append('noidungShortDesc', pickedShortDesc);
     }
-    if (selectedFile) fd.append('image', selectedFile);
+    // Thư viện ảnh: gửi thứ tự cuối cùng, ảnh mới đánh dấu bằng __NEW_i__
+    // rồi đính kèm file theo đúng thứ tự đó.
+    const order = [];
+    let newIdx = 0;
+    gallery.forEach((item) => {
+      if (item.kind === 'old') {
+        order.push(item.path);
+      } else {
+        order.push('__NEW_' + newIdx + '__');
+        fd.append('gallery', item.file);
+        newIdx++;
+      }
+    });
+    fd.append('imageOrder', JSON.stringify(order));
 
     const submitBtn = el('submitBtn');
     submitBtn.disabled = true;

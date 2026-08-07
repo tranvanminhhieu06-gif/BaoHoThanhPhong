@@ -21,6 +21,21 @@
   .modal-backdrop{background:rgba(15,23,42,.55);backdrop-filter:blur(2px);}
   .thumb-drop{transition:.15s;}
   .thumb-drop.dragover{border-color:var(--primary);background:#EBF3FF;}
+
+  /* Thư viện ảnh sản phẩm */
+  .gal-item{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;border:2px solid #E2E8F0;background:#F1F5F9;cursor:grab;transition:.15s;}
+  .gal-item:active{cursor:grabbing;}
+  .gal-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  .gal-item.is-cover{border-color:var(--primary);}
+  .gal-item.dragging{opacity:.4;}
+  .gal-item.drag-over{border-color:var(--primary);transform:scale(1.04);}
+  .gal-badge{position:absolute;top:4px;left:4px;background:var(--primary);color:#fff;font-size:9px;font-weight:800;padding:2px 6px;border-radius:6px;letter-spacing:.04em;}
+  .gal-actions{position:absolute;top:4px;right:4px;display:flex;gap:3px;opacity:0;transition:.15s;}
+  .gal-item:hover .gal-actions{opacity:1;}
+  .gal-btn{width:22px;height:22px;border:none;border-radius:6px;background:rgba(255,255,255,.95);color:#334155;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.15);}
+  .gal-btn:hover{background:var(--primary);color:#fff;}
+  .gal-btn.del:hover{background:#DC2626;color:#fff;}
+  .gal-btn .material-symbols-outlined{font-size:14px;}
   .toast{transition:.25s;}
 </style>
 </head>
@@ -64,6 +79,11 @@
         <a href="posts.html" class="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-bold text-gray-600 hover:bg-gray-50 transition">
           <span class="material-symbols-outlined text-[18px]">edit_note</span>
           <span class="hidden sm:inline">Bài viết</span>
+        </a>
+        <a href="/preview/" target="_blank" title="Mở bản xem trước website (chưa đồng bộ)"
+           class="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#1D5FA8]/30 bg-[#EBF3FF] text-sm font-bold text-[#1D5FA8] hover:bg-[#1D5FA8] hover:text-white transition">
+          <span class="material-symbols-outlined text-[18px]">visibility</span>
+          <span class="hidden sm:inline">Xem trước</span>
         </a>
         <button id="syncBtn" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1A2744] text-white text-sm font-bold hover:bg-black/80 transition active:scale-95">
           <span class="material-symbols-outlined text-[18px]">cloud_upload</span>
@@ -149,17 +169,32 @@
             <p id="noidungNote" class="hidden text-[11px] font-bold text-[#1D5FA8] bg-white rounded-xl px-3 py-2 mt-2"></p>
           </div>
 
-          <!-- Ảnh -->
+          <!-- Thư viện ảnh sản phẩm -->
           <div>
-            <label class="block text-xs font-extrabold uppercase tracking-wide text-gray-500 mb-2">Ảnh sản phẩm</label>
-            <label for="imageInput" id="dropZone" class="thumb-drop flex flex-col items-center justify-center gap-2 border-2 border-dashed border-gray-200 rounded-2xl h-40 cursor-pointer overflow-hidden relative">
-              <img id="imagePreview" class="hidden absolute inset-0 w-full h-full object-cover" />
-              <span id="dropZonePlaceholder" class="flex flex-col items-center gap-1 text-gray-400">
-                <span class="material-symbols-outlined text-3xl">add_photo_alternate</span>
-                <span class="text-xs font-semibold">Chọn hoặc kéo thả ảnh vào đây</span>
-              </span>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <label class="block text-xs font-extrabold uppercase tracking-wide text-gray-500">
+                Thư viện ảnh <span id="galleryCount" class="text-gray-400 normal-case"></span>
+              </label>
+              <button type="button" id="addImagesBtn"
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#EBF3FF] text-[#1D5FA8] text-xs font-bold hover:bg-[#1D5FA8] hover:text-white transition active:scale-95">
+                <span class="material-symbols-outlined text-[16px]">add_photo_alternate</span> Thêm ảnh
+              </button>
+            </div>
+
+            <!-- Lưới ảnh: kéo để đổi thứ tự, ảnh đầu tiên là ảnh bìa -->
+            <div id="galleryGrid" class="grid grid-cols-3 sm:grid-cols-4 gap-2 mb-2"></div>
+
+            <label for="imageInput" id="dropZone"
+              class="thumb-drop flex flex-col items-center justify-center gap-1 border-2 border-dashed border-gray-200 rounded-2xl h-24 cursor-pointer text-gray-400">
+              <span class="material-symbols-outlined text-2xl">upload</span>
+              <span class="text-xs font-semibold">Chọn hoặc kéo thả nhiều ảnh vào đây</span>
             </label>
-            <input type="file" id="imageInput" accept="image/*" class="hidden">
+            <input type="file" id="imageInput" accept="image/*" multiple class="hidden">
+
+            <p class="text-[11px] text-gray-400 font-medium mt-2">
+              Ảnh đầu tiên là <b>ảnh bìa</b> (hiện ở lưới sản phẩm). Kéo ảnh để đổi thứ tự,
+              hoặc bấm ⭐ để đưa một ảnh lên làm ảnh bìa.
+            </p>
           </div>
 
           <!-- Tên -->
