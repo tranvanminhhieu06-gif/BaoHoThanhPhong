@@ -40,6 +40,16 @@
   const commitListInput = el('commitListInput');
   const autoFillBtn = el('autoFillBtn');
   const autoFillNote = el('autoFillNote');
+
+  // Biến các ô nội dung thành ô soạn thảo có nút In đậm / Nghiêng / Gạch chân.
+  // Giá trị vẫn được ghi ngược vào textarea nên phần code còn lại không đổi;
+  // chỉ cần dùng setField() thay cho phép gán .value trực tiếp.
+  RichText.attach(descInput, { hint: 'Mỗi dòng là 1 đoạn' });
+  RichText.attach(appListInput);
+  RichText.attach(prosListInput);
+  RichText.attach(commitListInput);
+
+  function setField(input, value) { RichText.set(input, value); }
   const noidungBox = el('noidungBox');
   const noidungSelect = el('noidungSelect');
   const noidungCount = el('noidungCount');
@@ -315,9 +325,9 @@
     const key = currentContentKey();
     const token = ++contentFetchToken;
     if (!key) {
-      appListInput.value = '';
-      prosListInput.value = '';
-      commitListInput.value = '';
+      setField(appListInput, '');
+      setField(prosListInput, '');
+      setField(commitListInput, '');
       return;
     }
     try {
@@ -326,9 +336,9 @@
       if (!res.ok) return;
       const json = await res.json();
       if (token !== contentFetchToken) return; // đã có lựa chọn mới hơn, bỏ kết quả cũ
-      appListInput.value = (json.appItems || []).join('\n');
-      prosListInput.value = (json.prosItems || []).join('\n');
-      commitListInput.value = (json.commitItems || []).join('\n');
+      setField(appListInput, (json.appItems || []).join('\n'));
+      setField(prosListInput, (json.prosItems || []).join('\n'));
+      setField(commitListInput, (json.commitItems || []).join('\n'));
     } catch (e) {
       // im lặng bỏ qua, không chặn việc thêm/sửa sản phẩm
     }
@@ -340,10 +350,10 @@
     renderGallery();
     productIdInput.value = '';
     titleInput.value = '';
-    descInput.value = '';
-    appListInput.value = '';
-    prosListInput.value = '';
-    commitListInput.value = '';
+    setField(descInput, '');
+    setField(appListInput, '');
+    setField(prosListInput, '');
+    setField(commitListInput, '');
     imageInput.value = '';
     formError.classList.add('hidden');
     formError.textContent = '';
@@ -375,7 +385,7 @@
     productIdInput.value = id;
     modalTitle.textContent = 'Sửa sản phẩm';
     titleInput.value = p.title;
-    descInput.value = p.desc || '';
+    setField(descInput, p.desc || '');
     populateCatSelect(p.cat);
     populateSubcatSelect(p.cat, p.subcat || '__none__');
     newCatInput.classList.add('hidden');
@@ -611,16 +621,16 @@
     pickedShortDesc = art.shortDesc || '';
 
     if (art.heading) titleInput.value = art.heading;
-    if (art.shortDesc) descInput.value = art.shortDesc;
+    if (art.shortDesc) setField(descInput, art.shortDesc);
 
     const pick = (keyword) => {
       const col = pickedColumns.find((c) => stripTones(c.title).includes(keyword));
       return col ? col.items.join('\n') : '';
     };
 
-    appListInput.value = pick('ung dung');
-    prosListInput.value = pick('uu diem') || pick('dac diem') || pick('noi bat');
-    commitListInput.value = pick('cam ket');
+    setField(appListInput, pick('ung dung'));
+    setField(prosListInput, pick('uu diem') || pick('dac diem') || pick('noi bat'));
+    setField(commitListInput, pick('cam ket'));
 
     const known = ['ung dung', 'uu diem', 'dac diem', 'noi bat', 'cam ket'];
     const extra = pickedColumns.filter(
@@ -703,9 +713,9 @@
 
       let filled = 0;
       if (json.title) { titleInput.value = json.title; filled++; }
-      if (json.appItems && json.appItems.length) { appListInput.value = json.appItems.join('\n'); filled++; }
-      if (json.prosItems && json.prosItems.length) { prosListInput.value = json.prosItems.join('\n'); filled++; }
-      if (json.commitItems && json.commitItems.length) { commitListInput.value = json.commitItems.join('\n'); filled++; }
+      if (json.appItems && json.appItems.length) { setField(appListInput, json.appItems.join('\n')); filled++; }
+      if (json.prosItems && json.prosItems.length) { setField(prosListInput, json.prosItems.join('\n')); filled++; }
+      if (json.commitItems && json.commitItems.length) { setField(commitListInput, json.commitItems.join('\n')); filled++; }
 
       if (json.warning) {
         autoFillNote.textContent = json.warning;

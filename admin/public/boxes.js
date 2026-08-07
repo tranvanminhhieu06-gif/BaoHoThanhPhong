@@ -29,6 +29,10 @@
   const noidungSelect = el('noidungSelect');
   const noidungCount = el('noidungCount');
 
+  // Ô giới thiệu ngắn: có nút In đậm / Nghiêng / Gạch chân
+  RichText.attach(shortDescInput, { hint: 'Mỗi dòng là 1 đoạn' });
+  const setField = (input, value) => RichText.set(input, value);
+
   const loginScreen = el('loginScreen');
   const loginForm = el('loginForm');
   const loginPassword = el('loginPassword');
@@ -155,7 +159,7 @@
       features = json.features || [];
       columns = json.columns || [];
       headingInput.value = json.heading || '';
-      shortDescInput.value = json.shortDesc || '';
+      setField(shortDescInput, json.shortDesc || '');
 
       const target = TARGETS.find((t) => t.key === key);
       editorTitle.textContent = target ? target.label : key;
@@ -261,6 +265,15 @@
   // ---------------------------------------------------------------
   function wireCards(container, kind) {
     const arr = kind === 'feature' ? features : columns;
+
+    // Các ô nội dung đều có nút In đậm / Nghiêng / Gạch chân.
+    // Thẻ được vẽ lại mỗi lần render nên phải gắn lại sau mỗi lần vẽ.
+    container.querySelectorAll('textarea[data-field="items"]').forEach((ta) => {
+      RichText.attach(ta, { hint: 'Mỗi dòng là 1 gạch đầu dòng' });
+    });
+    container.querySelectorAll('input[data-field="title"], input[data-field="desc"]').forEach((inp) => {
+      RichText.attach(inp);
+    });
 
     container.querySelectorAll('.block-card').forEach((card) => {
       const idx = Number(card.dataset.index);
@@ -376,7 +389,7 @@
       if (!res.ok) throw new Error(json.error || 'Không tải được nội dung.');
 
       if (json.heading) headingInput.value = json.heading;
-      if (json.shortDesc) shortDescInput.value = json.shortDesc;
+      if (json.shortDesc) setField(shortDescInput, json.shortDesc);
       columns = (json.columns || []).map((c) => ({
         icon: c.icon || 'check_circle',
         color: c.color || '#1D5FA8',

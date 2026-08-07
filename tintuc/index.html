@@ -142,6 +142,11 @@
     });
   }
 
+  // Cho phép in đậm / nghiêng / gạch chân trong nội dung soạn từ trang quản lý
+  function inlineHtml(s) {
+    return esc(s).replace(/&lt;(\/?)(b|strong|i|em|u)&gt;/gi, '<$1$2>');
+  }
+
   function formatDate(iso) {
     if (!iso) return '';
     var p = String(iso).split('-');
@@ -182,7 +187,7 @@
   else cover.style.display = 'none';
 
   var excerpt = document.getElementById('aExcerpt');
-  if (post.excerpt) excerpt.textContent = post.excerpt;
+  if (post.excerpt) excerpt.innerHTML = inlineHtml(post.excerpt);
   else excerpt.style.display = 'none';
 
   // Nội dung do quản trị viên soạn trong trang admin

@@ -34,6 +34,7 @@ const IMAGES_DIR = path.join(ROOT, 'images');
 const PRODUCTS_PATH = 'js/products.js';
 const CATEGORY_CONTENT_PATH = 'js/category_content.js';
 const POSTS_PATH = 'js/posts.js';
+const REVIEWS_PATH = 'js/reviews.js';
 const NOIDUNG_PATH = process.env.NOIDUNG_FILE || 'noidung.md';
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
@@ -489,10 +490,23 @@ const COLUMN_DEFAULTS = [
   { icon: 'thumb_up', color: '#E8A500', title: 'Cam Kết Từ Thành Phong' },
 ];
 
+/**
+ * Nội dung sản phẩm cho phép định dạng in đậm / nghiêng / gạch chân.
+ * Chỉ giữ đúng mấy thẻ đó, bỏ mọi thẻ và thuộc tính khác.
+ */
+function sanitizeInline(text) {
+  return String(text == null ? '' : text)
+    .replace(/<\/?([a-zA-Z0-9-]+)[^>]*>/g, (match, tag) => {
+      if (!/^(b|strong|i|em|u)$/i.test(tag)) return '';
+      return (match[1] === '/' ? '</' : '<') + tag.toLowerCase() + '>';
+    })
+    .trim();
+}
+
 function linesToItems(text) {
   return String(text || '')
     .split('\n')
-    .map((s) => s.trim())
+    .map((s) => sanitizeInline(s))
     .filter(Boolean);
 }
 
@@ -547,7 +561,7 @@ async function updateCategoryContentColumns(contentKey, label, fallbackDesc, bod
             icon: String(c.icon || 'check_circle').trim(),
             color: String(c.color || '#1D5FA8').trim(),
             title: String(c.title || '').trim(),
-            items: (Array.isArray(c.items) ? c.items : []).map((s) => String(s).trim()).filter(Boolean),
+            items: (Array.isArray(c.items) ? c.items : []).map((s) => sanitizeInline(s)).filter(Boolean),
           }))
           .filter((c) => c.title && c.items.length);
       }
@@ -560,7 +574,7 @@ async function updateCategoryContentColumns(contentKey, label, fallbackDesc, bod
     const ccLoaded = await loadCategoryContent();
     const entry = ensureContentEntry(ccLoaded.categoryContent, contentKey, label, fallbackDesc);
     if (body.noidungHeading) entry.heading = String(body.noidungHeading).trim();
-    if (body.noidungShortDesc) entry.shortDesc = String(body.noidungShortDesc).trim();
+    if (body.noidungShortDesc) entry.shortDesc = sanitizeInline(body.noidungShortDesc);
     entry.columns = fullColumns;
     await saveCategoryContent(ccLoaded, ccLoaded.categoryContent);
     return;
@@ -1044,7 +1058,7 @@ function buildPostFromBody(body, old, coverPath) {
   const title = String(body.title || '').trim();
   return {
     title,
-    excerpt: String(body.excerpt || '').trim(),
+    excerpt: sanitizeInline(body.excerpt),
     cover: coverPath || (old ? old.cover : ''),
     tag: String(body.tag || '').trim(),
     category: String(body.category || '').trim() || 'Tin tức',
@@ -1153,6 +1167,214 @@ app.post('/api/posts/upload-image', requireAuth, upload.single('image'), async (
     const url = await savePostImage(req.file, (req.body && req.body.name) || 'noi-dung');
     // Trang admin nằm khác cấp thư mục nên trả về thêm đường dẫn để xem trước
     res.json({ ok: true, url, previewUrl: url.replace(/^\.\.\//, '/') });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// =====================================================================
+// Đánh giá / hỏi đáp của khách (js/reviews.js)
+// =====================================================================
+
+async function loadReviews() {
+  const entry = await readFileEntry(REVIEWS_PATH);
+  if (!entry) throw new Error('Không tìm thấy file js/reviews.js');
+  const raw = entry.text;
+
+  const marker = 'const reviews = ';
+  const idx = raw.indexOf(marker);
+  if (idx === -1) throw new Error('Không tìm thấy "const reviews" trong js/reviews.js');
+  const start = idx + marker.length;
+  const end = findBalanced(raw, start, '[', ']');
+  if (end === -1) throw new Error('Không đọc được mảng reviews (ngoặc không khớp)');
+
+  return { raw, sha: entry.sha, reviews: JSON.parse(raw.slice(start, end + 1)), range: [start, end] };
+}
+
+async function saveReviews(loaded, reviews, message) {
+  const { raw, range } = loaded;
+  const out = raw.slice(0, range[0]) + JSON.stringify(reviews, null, 2) + raw.slice(range[1] + 1);
+
+  if (!ONLINE_MODE) {
+    try { fs.writeFileSync(path.join(ROOT, REVIEWS_PATH) + '.bak', raw, 'utf8'); } catch (e) { /* bỏ qua */ }
+  }
+  await writeFileEntry(REVIEWS_PATH, out, message || 'Cap nhat danh gia san pham', loaded.sha);
+}
+
+// Bỏ hết thẻ HTML trong nội dung khách gửi (khách không được định dạng)
+function plainText(str, maxLen) {
+  let s = String(str == null ? '' : str).replace(/<[^>]*>/g, '').trim();
+  if (maxLen && s.length > maxLen) s = s.slice(0, maxLen);
+  return s;
+}
+
+function nextReviewId(reviews) {
+  let max = 0;
+  for (const r of reviews) {
+    const m = /^r(\d+)$/.exec(r.id || '');
+    if (m) max = Math.max(max, parseInt(m[1], 10));
+  }
+  return 'r' + (max + 1);
+}
+
+// --- Chống gửi ồ ạt: mỗi địa chỉ IP tối đa 5 phản hồi / 10 phút ---
+const reviewHits = new Map();
+function tooManyReviews(ip) {
+  const now = Date.now();
+  const WINDOW = 10 * 60 * 1000;
+  const list = (reviewHits.get(ip) || []).filter((t) => now - t < WINDOW);
+  if (list.length >= 5) { reviewHits.set(ip, list); return true; }
+  list.push(now);
+  reviewHits.set(ip, list);
+  return false;
+}
+
+// --- Cho phép website thật gọi sang server này ---
+function reviewCors(req, res, next) {
+  const origin = req.headers.origin;
+  const allowed = [SITE_URL, SITE_URL.replace('https://', 'https://www.')];
+  if (origin && allowed.indexOf(origin) !== -1) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+}
+
+// Khách gửi phản hồi từ website — KHÔNG cần đăng nhập
+app.options('/api/reviews', reviewCors);
+app.post('/api/reviews', reviewCors, async (req, res) => {
+  try {
+    const ip = req.ip || 'unknown';
+    if (tooManyReviews(ip)) {
+      return res.status(429).json({ error: 'Bạn đã gửi quá nhiều phản hồi. Vui lòng thử lại sau ít phút.' });
+    }
+
+    const body = req.body || {};
+    const productId = plainText(body.productId, 60);
+    const author = plainText(body.author, 60);
+    const title = plainText(body.title, 120);
+    const content = plainText(body.content, 2000);
+    const rating = Math.max(1, Math.min(5, parseInt(body.rating, 10) || 0));
+
+    if (!productId) return res.status(400).json({ error: 'Thiếu thông tin sản phẩm.' });
+    if (!author || !title || !content) return res.status(400).json({ error: 'Vui lòng điền đầy đủ các mục bắt buộc.' });
+    if (!rating) return res.status(400).json({ error: 'Vui lòng chọn số sao đánh giá.' });
+
+    const loaded = await loadReviews();
+    const { reviews } = loaded;
+
+    const review = {
+      id: nextReviewId(reviews),
+      productId,
+      rating,
+      title,
+      author,
+      content,
+      date: new Date().toISOString().slice(0, 10),
+      reply: '',
+      approved: false,        // chờ duyệt, chưa hiện trên website
+    };
+
+    reviews.unshift(review);
+    await saveReviews(loaded, reviews, 'Nhan phan hoi moi tu khach');
+    res.json({ ok: true });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: 'Không gửi được phản hồi, vui lòng thử lại sau.' });
+  }
+});
+
+// --- Các API dành cho trang quản lý ---
+
+// Tự thêm đánh giá từ trang quản lý (đăng luôn, không cần duyệt)
+app.post('/api/reviews/manual', requireAuth, async (req, res) => {
+  try {
+    const body = req.body || {};
+    const author = plainText(body.author, 60);
+    const title = plainText(body.title, 120);
+    const content = plainText(body.content, 2000);
+    const rating = Math.max(1, Math.min(5, parseInt(body.rating, 10) || 0));
+
+    if (!author || !title || !content) return res.status(400).json({ error: 'Vui lòng điền đầy đủ các mục bắt buộc.' });
+    if (!rating) return res.status(400).json({ error: 'Vui lòng chọn số sao.' });
+
+    const loaded = await loadReviews();
+    const { reviews } = loaded;
+
+    const review = {
+      id: nextReviewId(reviews),
+      productId: plainText(body.productId, 60),   // để trống = đánh giá chung
+      rating,
+      title,
+      author,
+      role: plainText(body.role, 120),
+      content,
+      date: plainText(body.date, 10) || new Date().toISOString().slice(0, 10),
+      reply: sanitizeInline(String(body.reply || '').slice(0, 2000)),
+      approved: true,
+    };
+
+    reviews.unshift(review);
+    await saveReviews(loaded, reviews, 'Them danh gia tu trang quan ly');
+    res.json({ ok: true, review });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.get('/api/reviews/all', requireAuth, async (req, res) => {
+  try {
+    const { reviews } = await loadReviews();
+    res.json({ reviews });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.put('/api/reviews/:id', requireAuth, async (req, res) => {
+  try {
+    const body = req.body || {};
+    const loaded = await loadReviews();
+    const { reviews } = loaded;
+
+    const idx = reviews.findIndex((r) => r.id === req.params.id);
+    if (idx === -1) return res.status(404).json({ error: 'Không tìm thấy phản hồi.' });
+
+    const old = reviews[idx];
+    reviews[idx] = {
+      ...old,
+      rating: body.rating !== undefined ? Math.max(1, Math.min(5, parseInt(body.rating, 10) || old.rating)) : old.rating,
+      title: body.title !== undefined ? plainText(body.title, 120) : old.title,
+      author: body.author !== undefined ? plainText(body.author, 60) : old.author,
+      content: body.content !== undefined ? plainText(body.content, 2000) : old.content,
+      role: body.role !== undefined ? plainText(body.role, 120) : (old.role || ''),
+      reply: body.reply !== undefined ? sanitizeInline(String(body.reply).slice(0, 2000)) : (old.reply || ''),
+      approved: body.approved !== undefined ? !!body.approved : !!old.approved,
+    };
+
+    await saveReviews(loaded, reviews, 'Cap nhat phan hoi khach hang');
+    res.json({ ok: true, review: reviews[idx] });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.delete('/api/reviews/:id', requireAuth, async (req, res) => {
+  try {
+    const loaded = await loadReviews();
+    const { reviews } = loaded;
+    const idx = reviews.findIndex((r) => r.id === req.params.id);
+    if (idx === -1) return res.status(404).json({ error: 'Không tìm thấy phản hồi.' });
+    reviews.splice(idx, 1);
+    await saveReviews(loaded, reviews, 'Xoa phan hoi khach hang');
+    res.json({ ok: true });
   } catch (e) {
     console.error(e);
     res.status(500).json({ error: e.message });
@@ -1308,8 +1530,8 @@ app.put('/api/blocks/:key', requireAuth, async (req, res) => {
         color: String(f.color || '').trim(),
         iconWrapClass: String(f.iconWrapClass || '').trim(),
         iconClass: String(f.iconClass || '').trim(),
-        title: String(f.title || '').trim(),
-        desc: String(f.desc || '').trim(),
+        title: sanitizeInline(f.title),
+        desc: sanitizeInline(f.desc),
       }))
       .filter((f) => f.title);
 
@@ -1319,7 +1541,7 @@ app.put('/api/blocks/:key', requireAuth, async (req, res) => {
         color: String(c.color || '#1D5FA8').trim(),
         title: String(c.title || '').trim(),
         items: (Array.isArray(c.items) ? c.items : [])
-          .map((s) => String(s).trim())
+          .map((s) => sanitizeInline(s))
           .filter(Boolean),
       }))
       .filter((c) => c.title);
@@ -1334,7 +1556,7 @@ app.put('/api/blocks/:key', requireAuth, async (req, res) => {
 
     if (body.tagline !== undefined) entry.tagline = String(body.tagline).trim();
     if (body.heading !== undefined) entry.heading = String(body.heading).trim();
-    if (body.shortDesc !== undefined) entry.shortDesc = String(body.shortDesc).trim();
+    if (body.shortDesc !== undefined) entry.shortDesc = sanitizeInline(body.shortDesc);
     entry.features = features;
     entry.columns = columns;
 
@@ -1351,7 +1573,7 @@ app.post('/api/products', requireAuth, upload.array('gallery', 20), async (req, 
   try {
     const body = req.body || {};
     const title = (body.title || '').trim();
-    const desc = (body.desc || '').trim();
+    const desc = sanitizeInline(body.desc);
     if (!title) return res.status(400).json({ error: 'Vui lòng nhập tên sản phẩm.' });
     if (!req.files || !req.files.length) {
       return res.status(400).json({ error: 'Vui lòng chọn ít nhất 1 ảnh sản phẩm.' });
@@ -1496,7 +1718,7 @@ app.put('/api/products/:id', requireAuth, upload.array('gallery', 20), async (re
       subcatLabel,
       img: imgPath,
       images,
-      desc: (body.desc || '').trim(),
+      desc: sanitizeInline(body.desc),
     };
 
     await saveData(loaded, products, catBiaImages, `Sua san pham: ${title}`);

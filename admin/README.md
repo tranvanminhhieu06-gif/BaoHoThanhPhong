@@ -316,6 +316,74 @@ dòng "Nguồn bài viết".
 
 ---
 
+## G. Hỏi đáp / Phản hồi của khách
+
+Trang chi tiết sản phẩm giờ có 3 tab: **Chi tiết sản phẩm**, **Thông số kỹ
+thuật**, **Hỏi đáp / Phản hồi**.
+
+- Khung nội dung nào có tên chứa *"Thông số"* hoặc *"kỹ thuật"* sẽ tự động
+  nhảy sang tab **Thông số kỹ thuật** và hiển thị dạng bảng. Các khung còn
+  lại nằm ở tab **Chi tiết sản phẩm**. Không phải cấu hình gì thêm.
+- Tab **Hỏi đáp / Phản hồi** hiện điểm trung bình, danh sách đánh giá và form
+  để khách gửi phản hồi.
+
+### Duyệt phản hồi
+
+Bấm nút **Phản hồi** trên thanh đầu trang quản lý:
+
+- **Chờ duyệt** — phản hồi khách vừa gửi, chưa hiện trên website.
+- Bấm **Duyệt & đăng** để cho hiển thị công khai, hoặc **Xóa** nếu là spam.
+- Ô **Phản hồi của Thành Phong** để trả lời khách; câu trả lời hiện ngay dưới
+  đánh giá của họ trên website.
+- Với phản hồi đã đăng, có nút **Gỡ khỏi website** nếu muốn ẩn lại.
+
+### Tự thêm đánh giá
+
+Bấm **Thêm đánh giá** để tự nhập đánh giá của khách (ví dụ khách khen qua Zalo
+hoặc điện thoại). Đánh giá thêm bằng cách này được **đăng luôn**, không phải
+duyệt.
+
+Ở ô **Đánh giá cho** có 2 kiểu:
+
+| Kiểu | Hiện ở đâu |
+|---|---|
+| **Đánh giá chung về công ty** | Mục "Khách hàng nói gì về chúng tôi" ở trang chủ, và ở cuối tab Hỏi đáp của **mọi** sản phẩm |
+| **Chọn 1 sản phẩm cụ thể** | Tab Hỏi đáp của đúng sản phẩm đó, và được tính vào điểm sao trung bình |
+
+Ô **Chức danh / Công ty** là dòng chữ nhỏ dưới tên khách (ví dụ *"Giám đốc Cty
+TNHH Dịch vụ Bảo vệ Hoàng Long"*) — chủ yếu dùng cho đánh giá chung.
+
+> Mục "Khách hàng nói gì về chúng tôi" trên trang chủ giờ lấy dữ liệu từ đây,
+> hiện 3 đánh giá chung mới nhất. Muốn đổi nội dung khu vực đó thì sửa hoặc
+> thêm đánh giá chung trong trang này, không cần sửa code nữa.
+
+### Bật form gửi phản hồi
+
+Mặc định, nút "Gửi Phản Hồi" trên website sẽ **chuyển khách sang Zalo** kèm sẵn
+nội dung họ vừa nhập — dùng được ngay, không cần cấu hình.
+
+Muốn phản hồi chạy thẳng vào mục "Chờ duyệt", hãy mở file **`js/site-config.js`**
+và điền địa chỉ trang quản lý đã deploy:
+
+```js
+const SITE_CONFIG = {
+  reviewApi: 'https://thanhphong-admin.onrender.com',
+  zaloPhone: '0931160818'
+};
+```
+
+Lưu lại rồi đồng bộ lên GitHub. Từ đó khách gửi phản hồi là bạn thấy ngay
+trong trang quản lý.
+
+### Lưu ý
+
+- Phản hồi lưu trong `js/reviews.js`, mục nào có `approved: false` thì
+  **không hiển thị** trên website.
+- Nội dung khách gửi bị lọc sạch thẻ HTML, chỉ giữ chữ thuần.
+- Mỗi địa chỉ IP gửi tối đa 5 phản hồi trong 10 phút để hạn chế spam.
+
+---
+
 ## Cách dùng
 
 - **Danh mục** (cột trái): bấm để lọc sản phẩm theo danh mục.
@@ -334,6 +402,22 @@ dòng "Nguồn bài viết".
 - **Sửa / Xóa**: mỗi thẻ sản phẩm có 2 nút tương ứng.
 - **Tự động điền**: dán mô tả vào ô Mô tả rồi bấm nút này để máy tự điền tên
   sản phẩm và 3 mục nội dung (xem mục C ở trên).
+- **Định dạng chữ**: mọi ô nội dung đều có 3 nút **B** (in đậm), **I** (in
+  nghiêng), **U** (gạch chân). Bôi đen phần chữ rồi bấm nút, hoặc dùng phím
+  tắt Ctrl+B / Ctrl+I / Ctrl+U. Nút **✕** xóa định dạng. Với ô nhiều dòng,
+  mỗi dòng vẫn là một ý riêng như trước.
+
+  Các ô đang có định dạng:
+
+  | Trang | Ô |
+  |---|---|
+  | Sản phẩm | Mô tả, Ứng Dụng Thực Tế, Ưu Điểm Nổi Bật, Cam Kết Từ Thành Phong |
+  | Khối nội dung | Đoạn giới thiệu, tiêu đề và mô tả từng ô đặc điểm, các dòng trong từng khung |
+  | Bài viết | Tóm tắt ngắn, và toàn bộ nội dung bài (có thêm tiêu đề, danh sách, chèn ảnh...) |
+  | Phản hồi | Câu trả lời của Thành Phong |
+
+  Riêng nội dung do **khách gửi** luôn được lọc thành chữ thuần, khách không
+  chèn được định dạng hay mã lạ.
 
 ### Trang "Khối nội dung"
 

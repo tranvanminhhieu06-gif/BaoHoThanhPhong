@@ -99,6 +99,11 @@
     });
   }
 
+  // Cho phép in đậm / nghiêng / gạch chân trong nội dung soạn từ trang quản lý
+  function inlineHtml(s) {
+    return esc(s).replace(/&lt;(\/?)(b|strong|i|em|u)&gt;/gi, '<$1$2>');
+  }
+
   function formatDate(iso) {
     if (!iso) return '';
     var p = String(iso).split('-');
@@ -164,7 +169,7 @@
         '<span>' + esc(formatDate(p.date)) + '</span><span>·</span><span>' + esc(p.category || 'Tin tức') + '</span>' +
         '</div>' +
         '<h3 class="font-extrabold text-[#1A2744] text-base leading-snug mb-2">' + esc(p.title) + '</h3>' +
-        '<p class="text-sm text-gray-500 leading-relaxed line-clamp-3">' + esc(p.excerpt || '') + '</p>' +
+        '<p class="text-sm text-gray-500 leading-relaxed line-clamp-3">' + inlineHtml(p.excerpt || '') + '</p>' +
         '<span class="inline-flex items-center gap-1.5 mt-4 text-xs font-bold text-[#1D5FA8]">Đọc tiếp ' +
         '<span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span></span>' +
         '</div></a>';

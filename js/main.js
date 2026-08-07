@@ -329,6 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProductFilters();
     initSearch();
     renderHomeNews();
+    renderTestimonials();
     initLanguage();
     initStatsCounter();
     initContactForm();
@@ -750,6 +751,47 @@ window.addEventListener('load', hidePreloader);
 setTimeout(hidePreloader, 3000);
 
 
+// Render mục "Khách hàng nói gì" trên trang chủ (dữ liệu từ js/reviews.js).
+// Chỉ lấy các đánh giá CHUNG về công ty (không gắn sản phẩm cụ thể) và đã duyệt.
+function renderTestimonials() {
+    const grid = document.getElementById('testimonialsGrid');
+    if (!grid || typeof reviews === 'undefined' || !Array.isArray(reviews)) return;
+
+    const escHtml = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+
+    // Vẽ 5 ngôi sao, có hỗ trợ nửa sao
+    const starsHtml = (n) => {
+        const v = Math.max(0, Math.min(5, Number(n) || 0));
+        let out = '';
+        for (let i = 1; i <= 5; i++) {
+            if (v >= i) out += '<i class="fas fa-star"></i>';
+            else if (v >= i - 0.5) out += '<i class="fas fa-star-half-alt"></i>';
+            else out += '<i class="far fa-star"></i>';
+        }
+        return out;
+    };
+
+    const list = reviews
+        .filter((r) => r && r.approved && !r.productId)
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+        .slice(0, 3);
+
+    if (!list.length) { grid.innerHTML = ''; return; }
+
+    grid.innerHTML = list.map((r, i) =>
+        '<div class="testimonial-card" data-aos="fade-up" data-aos-delay="' + (100 + i * 100) + '">' +
+        '<div class="testimonial-stars">' + starsHtml(r.rating) + '</div>' +
+        '<p class="testimonial-text">"' + escHtml(r.content) + '"</p>' +
+        '<div class="testimonial-author">' +
+        '<div class="author-avatar"><i class="fas fa-user-circle"></i></div>' +
+        '<div><strong>' + escHtml(r.author) + '</strong>' +
+        (r.role ? '<span>' + escHtml(r.role) + '</span>' : '') +
+        '</div></div></div>'
+    ).join('');
+}
+
 // Render 3 bài viết mới nhất ở mục Tin tức trên trang chủ (dữ liệu từ js/posts.js)
 function renderHomeNews() {
     const grid = document.getElementById('newsGrid');
@@ -763,6 +805,9 @@ function renderHomeNews() {
         const p = String(iso || '').split('-');
         return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : (iso || '');
     };
+
+    // Cho phép in đậm / nghiêng / gạch chân trong tóm tắt soạn từ trang quản lý
+    const inlineHtml = (s) => escHtml(s).replace(/&lt;(\/?)(b|strong|i|em|u)&gt;/gi, '<$1$2>');
 
     // Bài nổi bật lên đầu, còn lại sắp theo ngày mới nhất
     const sorted = posts.slice().sort((a, b) => {
@@ -786,7 +831,7 @@ function renderHomeNews() {
             '<span><i class="fas fa-tag"></i> ' + escHtml(p.category || 'Tin tức') + '</span>' +
             '</div>' +
             '<h3>' + escHtml(p.title) + '</h3>' +
-            '<p>' + escHtml(p.excerpt || '') + '</p>' +
+            '<p>' + inlineHtml(p.excerpt || '') + '</p>' +
             '<a href="' + url + '" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>' +
             '</div></div>';
     }).join('');

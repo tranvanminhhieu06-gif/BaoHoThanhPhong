@@ -61,6 +61,10 @@
 
   function setDirty(v) { dirty = v; }
 
+  // Ô tóm tắt cũng có nút In đậm / Nghiêng / Gạch chân
+  RichText.attach(excerptInput, { hint: 'Bôi đen rồi bấm B / I / U' });
+  const setField = (input, value) => RichText.set(input, value);
+
   // ---------------------------------------------------------------
   // Đăng nhập
   // ---------------------------------------------------------------
@@ -166,7 +170,7 @@
   function resetForm() {
     coverFile = null;
     titleInput.value = '';
-    excerptInput.value = '';
+    setField(excerptInput, '');
     categoryInput.value = '';
     tagInput.value = '';
     authorInput.value = 'Thành Phong';
@@ -206,7 +210,7 @@
     resetForm();
 
     titleInput.value = p.title || '';
-    excerptInput.value = p.excerpt || '';
+    setField(excerptInput, p.excerpt || '');
     categoryInput.value = p.category || '';
     tagInput.value = p.tag || '';
     dateInput.value = p.date || '';

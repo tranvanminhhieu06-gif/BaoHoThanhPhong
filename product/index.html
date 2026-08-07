@@ -70,6 +70,68 @@
             color: var(--gray-400); border: 1.5px dashed var(--gray-200); cursor: default;
         }
 
+        /* ===== TAB ===== */
+        .tab-bar { display: flex; gap: 4px; border-bottom: 2px solid var(--gray-200); overflow-x: auto; }
+        .tab-btn {
+            padding: 14px 22px; border: none; background: transparent; cursor: pointer;
+            font-family: inherit; font-size: 13px; font-weight: 800; letter-spacing: .04em;
+            color: var(--gray-500); white-space: nowrap; border-bottom: 3px solid transparent;
+            margin-bottom: -2px; transition: .2s;
+        }
+        .tab-btn:hover { color: var(--primary); }
+        .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .tab-panel { display: none; padding-top: 28px; }
+        .tab-panel.active { display: block; }
+
+        /* ===== THÔNG SỐ KỸ THUẬT ===== */
+        .spec-table { width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid var(--gray-200); border-radius: 16px; overflow: hidden; }
+        .spec-table tr { border-bottom: 1px solid var(--gray-100); }
+        .spec-table tr:last-child { border-bottom: none; }
+        .spec-table td { padding: 13px 18px; font-size: 14px; vertical-align: top; }
+        .spec-table td:first-child { width: 38%; font-weight: 700; color: var(--navy); background: var(--gray-50); }
+        .spec-table td:last-child { color: var(--gray-700); }
+
+        /* ===== ĐÁNH GIÁ / HỎI ĐÁP ===== */
+        .rv-item { padding: 20px 0; border-bottom: 1px solid var(--gray-100); }
+        .rv-item:last-child { border-bottom: none; }
+        .rv-title { font-weight: 800; color: var(--navy); font-size: 15px; margin-bottom: 10px; }
+        .rv-row { display: flex; gap: 24px; flex-wrap: wrap; }
+        .rv-left { min-width: 150px; }
+        .rv-right { flex: 1; min-width: 240px; font-size: 14px; color: var(--gray-700); line-height: 1.7; }
+        .rv-label-sm { font-size: 12px; font-weight: 700; color: var(--gray-500); margin-right: 8px; }
+        .stars { color: #F5A623; letter-spacing: 2px; font-size: 14px; }
+        .stars .off { color: #D8DEE6; }
+        .rv-meta { font-size: 12px; color: var(--gray-500); margin-top: 12px; line-height: 1.7; }
+        .rv-reply {
+            margin-top: 12px; background: #EBF3FF; border-left: 3px solid var(--primary);
+            border-radius: 0 12px 12px 0; padding: 12px 16px; font-size: 13.5px; color: var(--gray-700);
+        }
+        .rv-reply b { color: var(--primary); }
+
+        .rv-form-box { background: #fff; border: 1px solid var(--gray-200); border-radius: 20px; padding: 26px; }
+        .rv-label { display: block; font-size: 13px; font-weight: 700; color: var(--navy); margin: 16px 0 6px; }
+        .rv-req { color: #DC2626; }
+        .rv-input {
+            width: 100%; padding: 11px 14px; border: 1px solid var(--gray-200); border-radius: 12px;
+            font-family: inherit; font-size: 14px; color: var(--gray-700); outline: none; transition: .15s;
+        }
+        .rv-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(29,95,168,.12); }
+        .rv-stars { font-size: 26px; letter-spacing: 4px; color: #D8DEE6; cursor: pointer; user-select: none; }
+        .rv-stars span { transition: .12s; }
+        .rv-stars span.on { color: #F5A623; }
+        .rv-stars span:hover { transform: scale(1.12); }
+        .rv-submit {
+            margin-top: 20px; padding: 13px 34px; border: none; border-radius: 14px;
+            background: var(--primary); color: #fff; font-family: inherit; font-size: 14px;
+            font-weight: 800; cursor: pointer; transition: .2s;
+        }
+        .rv-submit:hover { background: var(--primary-dark); }
+        .rv-submit:disabled { opacity: .5; cursor: not-allowed; }
+        .rv-msg { margin-top: 14px; padding: 11px 15px; border-radius: 12px; font-size: 13.5px; font-weight: 600; }
+        .rv-msg.ok { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+        .rv-msg.err { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+
         /* Xem ảnh phóng to */
         #lightbox { display: none; position: fixed; inset: 0; z-index: 9999; }
         #lightbox.open { display: flex; align-items: center; justify-content: center; }
@@ -416,8 +478,68 @@
         </div>
 
         <!-- ===== CATEGORY DETAIL COLUMNS (shown only for categories with custom content) ===== -->
-        <section class="mb-20" id="category-columns-section" style="display:none;" data-aos="fade-up">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="category-columns-grid"></div>
+        <!-- ===== TAB: CHI TIẾT / THÔNG SỐ / HỎI ĐÁP ===== -->
+        <section class="mb-20" id="product-tabs" data-aos="fade-up">
+            <div class="tab-bar">
+                <button type="button" class="tab-btn active" data-tab="detail">CHI TIẾT SẢN PHẨM</button>
+                <button type="button" class="tab-btn" data-tab="specs">THÔNG SỐ KỸ THUẬT</button>
+                <button type="button" class="tab-btn" data-tab="qa">HỎI ĐÁP / PHẢN HỒI</button>
+            </div>
+
+            <!-- Tab 1: các khung nội dung -->
+            <div class="tab-panel active" id="tab-detail">
+                <div class="grid gap-6" id="category-columns-grid"
+                     style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));"></div>
+                <p id="detail-empty" class="text-sm text-gray-400 font-medium py-8 text-center" style="display:none;">
+                    Nội dung chi tiết đang được cập nhật. Vui lòng liên hệ để được tư vấn.
+                </p>
+            </div>
+
+            <!-- Tab 2: thông số kỹ thuật -->
+            <div class="tab-panel" id="tab-specs">
+                <div id="specs-wrap"></div>
+                <p id="specs-empty" class="text-sm text-gray-400 font-medium py-8 text-center" style="display:none;">
+                    Thông số kỹ thuật đang được cập nhật. Vui lòng liên hệ để được tư vấn chi tiết.
+                </p>
+            </div>
+
+            <!-- Tab 3: hỏi đáp / phản hồi -->
+            <div class="tab-panel" id="tab-qa">
+                <div id="review-summary" class="mb-6"></div>
+                <div id="review-list" class="mb-10"></div>
+
+                <div class="rv-form-box">
+                    <p class="text-sm text-gray-500 mb-1">
+                        Bạn đang đánh giá: <b id="rv-product-name" class="text-[#1A2744]"></b>
+                    </p>
+                    <h3 class="text-lg font-extrabold text-[#1A2744] mb-5">Đánh giá của bạn</h3>
+
+                    <form id="review-form">
+                        <label class="rv-label">Đánh giá <span class="rv-req">*</span></label>
+                        <div class="rv-stars" id="rv-star-picker">
+                            <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span>
+                            <span data-v="4">★</span><span data-v="5">★</span>
+                        </div>
+
+                        <label class="rv-label" for="rv-author">Họ tên / Định danh <span class="rv-req">*</span></label>
+                        <input id="rv-author" type="text" class="rv-input" maxlength="60" placeholder="Ví dụ: Nguyễn Văn A">
+
+                        <label class="rv-label" for="rv-title">Tóm tắt <span class="rv-req">*</span></label>
+                        <input id="rv-title" type="text" class="rv-input" maxlength="120" placeholder="Ví dụ: Hàng đẹp, giao nhanh">
+
+                        <label class="rv-label" for="rv-content">Nội dung hỏi đáp / phản hồi về sản phẩm <span class="rv-req">*</span></label>
+                        <textarea id="rv-content" rows="5" class="rv-input" maxlength="2000"
+                                  placeholder="Chia sẻ cảm nhận hoặc đặt câu hỏi về sản phẩm..."></textarea>
+
+                        <p id="rv-msg" class="rv-msg" style="display:none;"></p>
+
+                        <button type="submit" id="rv-submit" class="rv-submit btn-press">Gửi Phản Hồi</button>
+                        <p class="text-xs text-gray-400 font-medium mt-3">
+                            Phản hồi sẽ được kiểm duyệt trước khi hiển thị công khai.
+                        </p>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <!-- ===== PRODUCTS YOU MIGHT LIKE ===== -->
@@ -646,6 +768,8 @@
   <span id="lb-count"></span>
 </div>
 
+<script src="../js/site-config.js"></script>
+<script src="../js/reviews.js"></script>
 <script src="../js/products.js"></script>
 <script src="../js/category_content.js"></script>
 
@@ -659,6 +783,25 @@
         return String(str == null ? '' : str)
             .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    // Nội dung do trang quản lý soạn có thể chứa định dạng in đậm / nghiêng /
+    // gạch chân. Ở đây escape sạch trước rồi mới mở lại đúng mấy thẻ đó, nên
+    // không có thẻ hay thuộc tính nào khác lọt qua được.
+    function inlineHtml(str) {
+        return escHtml(str).replace(/&lt;(\/?)(b|strong|i|em|u)&gt;/gi, '<$1$2>');
+    }
+
+    // Đổ đoạn văn nhiều dòng vào 1 thẻ: mỗi dòng thành 1 đoạn riêng
+    function setRichText(node, text) {
+        if (!node) return;
+        var lines = String(text == null ? '' : text).split('\n').filter(function (l) { return l.trim(); });
+        node.innerHTML = lines.length
+            ? lines.map(function (l, i) {
+                var gap = i === lines.length - 1 ? '' : 'margin-bottom:.7em;';
+                return '<span style="display:block;' + gap + '">' + inlineHtml(l) + '</span>';
+            }).join('')
+            : '';
     }
 
     // Các ô đặc điểm mặc định, dùng khi danh mục chưa có nội dung riêng
@@ -707,27 +850,78 @@
                 '<span class="' + iconCls + '" style="' + iconStyle + '">' + escHtml(f.icon || 'verified') + '</span>' +
                 '</div>' +
                 '<div>' +
-                '<p class="font-bold text-[#1A2744] text-sm">' + escHtml(f.title) + '</p>' +
-                (f.desc ? '<p class="text-xs text-gray-500 mt-0.5">' + escHtml(f.desc) + '</p>' : '') +
+                '<p class="font-bold text-[#1A2744] text-sm">' + inlineHtml(f.title) + '</p>' +
+                (f.desc ? '<p class="text-xs text-gray-500 mt-0.5">' + inlineHtml(f.desc) + '</p>' : '') +
                 '</div></div>';
+        }).join('');
+    }
+
+    // Bỏ dấu tiếng Việt để so khớp tên khung
+    function noTone(str) {
+        return String(str == null ? '' : str).normalize('NFD')
+            .replace(new RegExp('[' + String.fromCodePoint(0x0300) + '-' + String.fromCodePoint(0x036f) + ']', 'g'), '')
+            .replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+    }
+
+    // Khung có tên kiểu "Thông số kỹ thuật" sẽ nằm ở tab riêng
+    function isSpecColumn(col) {
+        return /thong so|ky thuat/.test(noTone(col && col.title));
+    }
+
+    // Vẽ bảng thông số kỹ thuật (tab 2)
+    function renderSpecs(columns) {
+        var wrap = document.getElementById('specs-wrap');
+        var empty = document.getElementById('specs-empty');
+        if (!wrap) return;
+
+        var specCols = (Array.isArray(columns) ? columns : []).filter(function (c) {
+            return c && c.title && Array.isArray(c.items) && c.items.length && isSpecColumn(c);
+        });
+
+        if (!specCols.length) {
+            wrap.innerHTML = '';
+            if (empty) empty.style.display = 'block';
+            return;
+        }
+        if (empty) empty.style.display = 'none';
+
+        wrap.innerHTML = specCols.map(function (col) {
+            var rows = col.items.map(function (item) {
+                // Dòng dạng "Tên: giá trị" thì tách thành 2 cột cho dễ đọc
+                var s = String(item);
+                var idx = s.indexOf(':');
+                if (idx > 0 && idx < 40) {
+                    return '<tr><td>' + inlineHtml(s.slice(0, idx).trim()) + '</td>' +
+                        '<td>' + inlineHtml(s.slice(idx + 1).trim()) + '</td></tr>';
+                }
+                return '<tr><td colspan="2">' + inlineHtml(s) + '</td></tr>';
+            }).join('');
+
+            return '<h3 class="flex items-center gap-2 font-extrabold text-[#1A2744] text-base mb-4">' +
+                '<span class="material-symbols-outlined" style="font-size:20px;color:' + escHtml(col.color || '#1D5FA8') + ';">' +
+                escHtml(col.icon || 'settings') + '</span><span>' + escHtml(col.title) + '</span></h3>' +
+                '<table class="spec-table mb-8">' + rows + '</table>';
         }).join('');
     }
 
     // Vẽ các cột nội dung. Số cột tự co giãn theo số khối thực tế.
     function renderColumns(columns) {
-        var section = document.getElementById('category-columns-section');
         var grid = document.getElementById('category-columns-grid');
-        if (!section || !grid) return;
+        var empty = document.getElementById('detail-empty');
+        if (!grid) return;
+
+        renderSpecs(columns);
 
         var list = (Array.isArray(columns) ? columns : []).filter(function (c) {
-            return c && c.title && Array.isArray(c.items) && c.items.length;
+            return c && c.title && Array.isArray(c.items) && c.items.length && !isSpecColumn(c);
         });
 
         if (!list.length) {
-            section.style.display = 'none';
             grid.innerHTML = '';
+            if (empty) empty.style.display = 'block';
             return;
         }
+        if (empty) empty.style.display = 'none';
 
         // Dùng inline style thay vì class động, để không phụ thuộc vào việc
         // Tailwind CDN có kịp sinh ra class mới hay không. auto-fit giúp số cột
@@ -740,7 +934,7 @@
             var items = col.items.map(function (item) {
                 return '<li class="flex items-start gap-2">' +
                     '<span class="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style="background:' + escHtml(color) + ';"></span>' +
-                    '<span>' + escHtml(item) + '</span></li>';
+                    '<span>' + inlineHtml(item) + '</span></li>';
             }).join('');
 
             return '<div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">' +
@@ -750,8 +944,193 @@
                 '<span>' + escHtml(col.title) + '</span></h3>' +
                 '<ul class="space-y-2.5 text-sm text-gray-600">' + items + '</ul></div>';
         }).join('');
+    }
 
-        section.style.display = 'block';
+    // ===== HỎI ĐÁP / PHẢN HỒI =====
+    function starsHtml(n) {
+        n = Math.max(0, Math.min(5, Number(n) || 0));
+        var s = '';
+        for (var i = 1; i <= 5; i++) s += (i <= n ? '<span>★</span>' : '<span class="off">★</span>');
+        return '<span class="stars">' + s + '</span>';
+    }
+
+    function formatDateVN(iso) {
+        var p = String(iso || '').split('-');
+        return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : (iso || '');
+    }
+
+    function renderReviews(product) {
+        var listEl = document.getElementById('review-list');
+        var sumEl = document.getElementById('review-summary');
+        if (!listEl) return;
+
+        var all = (typeof reviews !== 'undefined' && Array.isArray(reviews)) ? reviews : [];
+        var byDate = function (a, b) { return String(b.date).localeCompare(String(a.date)); };
+
+        // Đánh giá của đúng sản phẩm này
+        var mine = all.filter(function (r) {
+            return r && r.approved && r.productId === product.id;
+        }).sort(byDate);
+
+        // Đánh giá chung về công ty (không gắn sản phẩm cụ thể)
+        var general = all.filter(function (r) {
+            return r && r.approved && !r.productId;
+        }).sort(byDate);
+
+        // Điểm trung bình tính trên đánh giá của sản phẩm này
+        if (sumEl) {
+            if (!mine.length) {
+                sumEl.innerHTML = '';
+            } else {
+                var avg = mine.reduce(function (s, r) { return s + (Number(r.rating) || 0); }, 0) / mine.length;
+                sumEl.innerHTML =
+                    '<div class="flex items-center gap-3 flex-wrap">' +
+                    starsHtml(Math.round(avg)) +
+                    '<span class="text-sm font-bold text-[#1A2744]">' + avg.toFixed(1) + '/5</span>' +
+                    '<span class="text-sm text-gray-500">(' + mine.length + ' đánh giá)</span></div>';
+            }
+        }
+
+        function itemHtml(r) {
+            return '<div class="rv-item">' +
+                '<div class="rv-title">' + escHtml(r.title) + '</div>' +
+                '<div class="rv-row">' +
+                '<div class="rv-left"><span class="rv-label-sm">Đánh giá</span>' + starsHtml(r.rating) + '</div>' +
+                '<div class="rv-right">' +
+                escHtml(r.content).replace(/\n/g, '<br>') +
+                (r.reply ? '<div class="rv-reply"><b>Thành Phong phản hồi:</b><br>' +
+                    inlineHtml(r.reply).replace(/\n/g, '<br>') + '</div>' : '') +
+                '<div class="rv-meta">đánh giá bởi <b>' + escHtml(r.author) + '</b>' +
+                (r.role ? '<br>' + escHtml(r.role) : '') + '<br>' +
+                'Được đăng trên ' + escHtml(formatDateVN(r.date)) + '</div>' +
+                '</div></div></div>';
+        }
+
+        var html = '';
+
+        if (mine.length) {
+            html += mine.map(itemHtml).join('');
+        } else {
+            html += '<p class="text-sm text-gray-400 font-medium py-6">' +
+                'Chưa có đánh giá nào cho sản phẩm này. Hãy là người đầu tiên chia sẻ cảm nhận!</p>';
+        }
+
+        if (general.length) {
+            html += '<h3 class="text-sm font-extrabold text-[#1A2744] uppercase tracking-wide mt-8 mb-1 pt-6 border-t border-gray-100">' +
+                'Khách hàng nói gì về Thành Phong</h3>' +
+                '<p class="text-xs text-gray-400 font-medium mb-2">Đánh giá chung về sản phẩm và dịch vụ của công ty</p>' +
+                general.map(itemHtml).join('');
+        }
+
+        listEl.innerHTML = html;
+    }
+
+    function initReviews(product) {
+        renderReviews(product);
+
+        var nameEl = document.getElementById('rv-product-name');
+        if (nameEl) nameEl.textContent = product.title;
+
+        // Chọn số sao
+        var chosen = 0;
+        var picker = document.getElementById('rv-star-picker');
+        if (picker) {
+            var stars = picker.querySelectorAll('span');
+            var paint = function (n) {
+                stars.forEach(function (s) {
+                    s.classList.toggle('on', Number(s.dataset.v) <= n);
+                });
+            };
+            stars.forEach(function (s) {
+                s.addEventListener('mouseenter', function () { paint(Number(s.dataset.v)); });
+                s.addEventListener('click', function () { chosen = Number(s.dataset.v); paint(chosen); });
+            });
+            picker.addEventListener('mouseleave', function () { paint(chosen); });
+        }
+
+        var form = document.getElementById('review-form');
+        if (!form) return;
+
+        var msg = document.getElementById('rv-msg');
+        var submitBtn = document.getElementById('rv-submit');
+
+        function showMsg(text, ok) {
+            if (!msg) return;
+            msg.textContent = text;
+            msg.className = 'rv-msg ' + (ok ? 'ok' : 'err');
+            msg.style.display = 'block';
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var author = document.getElementById('rv-author').value.trim();
+            var title = document.getElementById('rv-title').value.trim();
+            var content = document.getElementById('rv-content').value.trim();
+
+            if (!chosen) { showMsg('Vui lòng chọn số sao đánh giá.', false); return; }
+            if (!author) { showMsg('Vui lòng nhập họ tên của bạn.', false); return; }
+            if (!title) { showMsg('Vui lòng nhập phần tóm tắt.', false); return; }
+            if (!content) { showMsg('Vui lòng nhập nội dung phản hồi.', false); return; }
+
+            var api = (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.reviewApi) ? SITE_CONFIG.reviewApi : '';
+
+            // Chưa cấu hình server nhận -> chuyển sang Zalo kèm nội dung đã nhập
+            if (!api) {
+                var phone = (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.zaloPhone) ? SITE_CONFIG.zaloPhone : '0931160818';
+                var text = 'Phản hồi sản phẩm: ' + product.title + '\n' +
+                    'Đánh giá: ' + chosen + '/5 sao\n' +
+                    'Họ tên: ' + author + '\n' +
+                    'Tóm tắt: ' + title + '\n' +
+                    'Nội dung: ' + content;
+                window.open('https://zalo.me/' + phone + '?text=' + encodeURIComponent(text), '_blank');
+                showMsg('Đang chuyển sang Zalo để gửi phản hồi của bạn. Cảm ơn bạn!', true);
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Đang gửi...';
+
+            fetch(api.replace(/\/+$/, '') + '/api/reviews', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    productId: product.id,
+                    productTitle: product.title,
+                    rating: chosen,
+                    author: author,
+                    title: title,
+                    content: content
+                })
+            }).then(function (res) {
+                return res.json().then(function (json) { return { ok: res.ok, json: json }; });
+            }).then(function (r) {
+                if (!r.ok) throw new Error(r.json.error || 'Gửi không thành công.');
+                form.reset();
+                chosen = 0;
+                if (picker) picker.querySelectorAll('span').forEach(function (s) { s.classList.remove('on'); });
+                showMsg('Cảm ơn bạn! Phản hồi đã được gửi và sẽ hiển thị sau khi được kiểm duyệt.', true);
+            }).catch(function (err) {
+                showMsg('Không gửi được: ' + err.message + '. Bạn có thể liên hệ trực tiếp qua Zalo.', false);
+            }).finally(function () {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Gửi Phản Hồi';
+            });
+        });
+    }
+
+    // Chuyển qua lại giữa 3 tab
+    function initTabs() {
+        var btns = document.querySelectorAll('#product-tabs .tab-btn');
+        btns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                btns.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                document.querySelectorAll('#product-tabs .tab-panel').forEach(function (p) {
+                    p.classList.toggle('active', p.id === 'tab-' + btn.dataset.tab);
+                });
+            });
+        });
     }
 
     function applyCategoryContent(product, catLabel) {
@@ -768,8 +1147,8 @@
             if (catEl) catEl.textContent = catLabel;
             if (titleEl) titleEl.textContent = product.title;
             if (descEl) {
-                descEl.textContent = product.desc ||
-                    'Sản phẩm chất lượng cao, đạt chuẩn an toàn quốc gia. Vui lòng liên hệ để được tư vấn kích thước và nhận báo giá tốt nhất cho doanh nghiệp của bạn.';
+                setRichText(descEl, product.desc ||
+                    'Sản phẩm chất lượng cao, đạt chuẩn an toàn quốc gia. Vui lòng liên hệ để được tư vấn kích thước và nhận báo giá tốt nhất cho doanh nghiệp của bạn.');
             }
             renderFeatures(null);
             renderColumns(null);
@@ -786,7 +1165,7 @@
         }
         if (catEl) catEl.style.display = 'none';
         if (titleEl) titleEl.textContent = content.heading;
-        if (descEl) descEl.textContent = content.shortDesc;
+        if (descEl) setRichText(descEl, content.shortDesc);
 
         renderFeatures(content.features);
         renderColumns(content.columns);
@@ -1028,6 +1407,10 @@
         renderThumbnails(product);
         showGalleryImage(0);
         initLightbox();
+
+        // Tab + khu vực hỏi đáp / phản hồi
+        initTabs();
+        initReviews(product);
 
         // Related products (random each load)
         renderRelated(product);
