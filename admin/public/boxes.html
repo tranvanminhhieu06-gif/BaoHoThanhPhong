@@ -60,6 +60,10 @@
           <span class="material-symbols-outlined text-[18px]">inventory_2</span>
           <span class="hidden sm:inline">Sản phẩm</span>
         </a>
+        <a href="posts.html" class="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-bold text-gray-600 hover:bg-gray-50 transition">
+          <span class="material-symbols-outlined text-[18px]">edit_note</span>
+          <span class="hidden sm:inline">Bài viết</span>
+        </a>
         <button id="saveBtn" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1D5FA8] text-white text-sm font-bold hover:bg-[#164A85] transition active:scale-95 disabled:opacity-40">
           <span class="material-symbols-outlined text-[18px]">save</span>
           Lưu thay đổi
@@ -96,6 +100,24 @@
         <div class="bg-white rounded-2xl border border-gray-200 p-5 mb-5">
           <p class="text-[11px] font-extrabold uppercase tracking-widest text-[#1D5FA8] mb-1">Đang sửa</p>
           <h2 id="editorTitle" class="text-lg font-extrabold text-[#1A2744] mb-4"></h2>
+
+          <!-- Nạp sẵn từ file noidung.md -->
+          <div id="noidungBox" style="display:none;" class="rounded-2xl border border-[#1D5FA8]/20 bg-[#EBF3FF] p-4 mb-5">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <label class="block text-xs font-extrabold uppercase tracking-wide text-[#1D5FA8]">
+                Nạp nội dung có sẵn
+              </label>
+              <span id="noidungCount" class="text-[11px] font-bold text-[#1D5FA8]/70"></span>
+            </div>
+            <select id="noidungSelect"
+              class="w-full px-4 py-2.5 rounded-xl border border-[#1D5FA8]/30 bg-white text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D5FA8]/20 focus:border-[#1D5FA8]">
+              <option value="">— Chọn bài trong file nội dung —</option>
+            </select>
+            <p class="text-[11px] text-[#1D5FA8]/80 font-medium mt-2 leading-relaxed">
+              Chọn một bài để nạp toàn bộ khung nội dung vào bên dưới. Bạn sửa/sắp xếp
+              lại rồi mới bấm Lưu — chưa chọn Lưu thì website chưa thay đổi gì.
+            </p>
+          </div>
 
           <label class="block text-xs font-extrabold uppercase tracking-wide text-gray-500 mb-2">Tiêu đề lớn hiển thị trên trang</label>
           <input id="headingInput" type="text" placeholder="VD: ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH"

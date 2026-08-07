@@ -25,6 +25,9 @@
   const logoutBtn = el('logoutBtn');
   const toast = el('toast');
   const toastBody = el('toastBody');
+  const noidungBox = el('noidungBox');
+  const noidungSelect = el('noidungSelect');
+  const noidungCount = el('noidungCount');
 
   const loginScreen = el('loginScreen');
   const loginForm = el('loginForm');
@@ -59,7 +62,7 @@
       const res = await fetch('/api/me');
       const json = await res.json();
       if (json.needsPassword) logoutBtn.style.display = 'flex';
-      if (json.authenticated) { hideLogin(); loadTargets(); }
+      if (json.authenticated) { hideLogin(); loadTargets(); loadNoidungList(); }
       else showLogin();
     } catch (e) {
       showToast('Không kết nối được tới server.', true);
@@ -83,6 +86,7 @@
       hideLogin();
       logoutBtn.style.display = 'flex';
       loadTargets();
+      loadNoidungList();
     } catch (err) {
       loginError.textContent = err.message;
       loginError.classList.remove('hidden');
@@ -158,6 +162,7 @@
 
       emptyPick.style.display = 'none';
       editor.style.display = 'block';
+      noidungSelect.value = '';
       setDirty(false);
       renderTargets();
       renderFeatures();
@@ -330,6 +335,62 @@
       });
     });
   }
+
+  // ---------------------------------------------------------------
+  // Nạp sẵn nội dung từ file noidung.md
+  // ---------------------------------------------------------------
+  async function loadNoidungList() {
+    try {
+      const res = await fetch('/api/noidung');
+      if (!res.ok) return;
+      const json = await res.json();
+      if (!json.available || !json.items.length) return;
+
+      noidungSelect.innerHTML =
+        '<option value="">— Chọn bài trong file nội dung —</option>' +
+        json.items.map(function (it) {
+          return '<option value="' + escapeHtml(it.id) + '">' +
+            escapeHtml(it.name) + ' (' + it.columnCount + ' khung)</option>';
+        }).join('');
+
+      noidungCount.textContent = json.items.length + ' bài';
+      noidungBox.style.display = 'block';
+    } catch (e) {
+      // Không có file nội dung thì ẩn phần này đi
+    }
+  }
+
+  noidungSelect.addEventListener('change', async () => {
+    const id = noidungSelect.value;
+    if (!id || !currentKey) return;
+
+    if (dirty && !confirm('Bạn có thay đổi chưa lưu. Nạp nội dung mới và bỏ các thay đổi đó?')) {
+      noidungSelect.value = '';
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/noidung/' + encodeURIComponent(id));
+      if (res.status === 401) { showLogin(); return; }
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Không tải được nội dung.');
+
+      if (json.heading) headingInput.value = json.heading;
+      if (json.shortDesc) shortDescInput.value = json.shortDesc;
+      columns = (json.columns || []).map((c) => ({
+        icon: c.icon || 'check_circle',
+        color: c.color || '#1D5FA8',
+        title: c.title || '',
+        items: Array.isArray(c.items) ? c.items.slice() : [],
+      }));
+
+      setDirty(true);
+      renderColumns();
+      showToast('Đã nạp ' + columns.length + ' khung. Xem lại rồi bấm Lưu thay đổi.');
+    } catch (e) {
+      showToast(e.message, true);
+    }
+  });
 
   // ---------------------------------------------------------------
   // Thêm khối mới

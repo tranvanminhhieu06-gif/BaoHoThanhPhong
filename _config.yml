@@ -4,3 +4,4 @@ exclude:
   - admin
   - scripts
   - README.md
+  - noidung.md

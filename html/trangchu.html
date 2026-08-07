@@ -750,63 +750,13 @@
                 <p class="section-desc">Cập nhật thông tin mới nhất về an toàn lao động, quy định pháp luật và kiến thức
                     bảo hộ</p>
             </div>
-            <div class="news-grid">
-                <div class="news-card featured" data-aos="fade-up" data-aos-delay="100">
-                    <div class="news-image">
-                        <img src="../images/TIN TỨC/Screenshot 2026-06-11 112727.png" alt="Nổi bật" class="news-img-placeholder"
-                            style="object-fit: cover; background: none;">
-                        <span class="news-tag hot">Nổi bật</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-calendar-alt"></i> Tháng 5, 2026</span>
-                            <span><i class="fas fa-tag"></i> An toàn lao động</span>
-                        </div>
-                        <h3>TP.HCM phát động Tháng hành động An toàn Vệ sinh Lao động năm 2026</h3>
-                        <p>TP. Hồ Chí Minh chính thức phát động Tháng hành động về an toàn, vệ sinh lao động năm 2026,
-                            nhấn mạnh tăng trưởng kinh tế chỉ thực sự trọn vẹn khi đi đôi với bảo vệ tính mạng và sức
-                            khỏe người lao động.</p>
-                        <a href="https://baophapluat.vn/tp-ho-chi-minh-phat-dong-thang-hanh-dong-ve-an-toan-ve-sinh-lao-dong-nam-2026.html"
-                            target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="news-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="news-image">
-                        <img src="../images/TIN TỨC/Screenshot 2026-06-11 112832.png" alt="Thống kê" class="news-img-placeholder"
-                            style="object-fit: cover; background: none;">
-                        <span class="news-tag">Thống kê</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-calendar-alt"></i> Tháng 4, 2026</span>
-                            <span><i class="fas fa-tag"></i> Báo cáo</span>
-                        </div>
-                        <h3>Tai nạn lao động năm 2025: Giảm số vụ nhưng vẫn tiềm ẩn rủi ro</h3>
-                        <p>Cả nước ghi nhận 7.004 vụ tai nạn lao động trong năm 2025, làm 658 người tử vong. Nguyên nhân
-                            chủ yếu do vi phạm quy trình an toàn và không sử dụng phương tiện bảo vệ cá nhân.</p>
-                        <a href="https://tcnnld.vn/news/detail/71676/Tinh-hinh-tai-nan-lao-dong-nam-2025-Giam-ve-so-vu-nhung-van-tiem-an-nhieu-rui-ro.html"
-                            target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="news-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="news-image">
-                        <img src="../images/TIN TỨC/Screenshot 2026-06-11 112912.png" alt="Pháp luật" class="news-img-placeholder"
-                            style="object-fit: cover; background: none;">
-                        <span class="news-tag">Pháp luật</span>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 2025</span>
-                            <span><i class="fas fa-tag"></i> Quy định mới</span>
-                        </div>
-                        <h3>Luật An Toàn Lao Động 2025: Doanh nghiệp bắt buộc trang bị bảo hộ từ ngày đầu làm việc</h3>
-                        <p>Theo quy định mới, doanh nghiệp phải trang bị đầy đủ thiết bị bảo hộ từ ngày đầu tiên người
-                            lao động đi làm. Vi phạm có thể bị phạt lên đến 75 triệu đồng.</p>
-                        <a href="https://honeywell-safety.vn/luat-an-toan-lao-dong-2025-ve-trang-bi-bao-ho"
-                            target="_blank" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+            <!-- Các thẻ tin được render bằng JS từ js/posts.js -->
+            <div class="news-grid" id="newsGrid"></div>
+
+            <div style="text-align:center; margin-top:40px;">
+                <a href="tintuc.html" class="btn btn-primary">Xem tất cả tin tức</a>
             </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -1061,6 +1011,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/posts.js"></script>
     <script src="../js/main.js"></script>
     <script>
         (function () {

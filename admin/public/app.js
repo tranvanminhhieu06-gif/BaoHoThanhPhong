@@ -37,6 +37,15 @@
   const commitListInput = el('commitListInput');
   const autoFillBtn = el('autoFillBtn');
   const autoFillNote = el('autoFillNote');
+  const noidungBox = el('noidungBox');
+  const noidungSelect = el('noidungSelect');
+  const noidungCount = el('noidungCount');
+  const noidungNote = el('noidungNote');
+
+  // Bộ khung nội dung lấy từ bài đã chọn trong file noidung.md (gửi kèm khi lưu)
+  let pickedColumns = null;
+  let pickedHeading = '';
+  let pickedShortDesc = '';
 
   const dropZone = el('dropZone');
   const imageInput = el('imageInput');
@@ -77,6 +86,7 @@
       if (json.authenticated) {
         hideLogin();
         loadData();
+        loadNoidungList();
       } else {
         showLogin();
       }
@@ -102,6 +112,7 @@
       hideLogin();
       logoutBtn.style.display = 'flex';
       loadData();
+      loadNoidungList();
     } catch (err) {
       loginError.textContent = err.message;
       loginError.classList.remove('hidden');
@@ -335,6 +346,11 @@
     formError.classList.add('hidden');
     formError.textContent = '';
     autoFillNote.classList.add('hidden');
+    noidungNote.classList.add('hidden');
+    noidungSelect.value = '';
+    pickedColumns = null;
+    pickedHeading = '';
+    pickedShortDesc = '';
     populateCatSelect(DATA.categories.length ? DATA.categories[0].catId : '__new__');
     handleCatChange();
   }
@@ -431,6 +447,11 @@
     fd.append('appList', appListInput.value);
     fd.append('prosList', prosListInput.value);
     fd.append('commitList', commitListInput.value);
+    if (pickedColumns && pickedColumns.length) {
+      fd.append('noidungColumns', JSON.stringify(pickedColumns));
+      fd.append('noidungHeading', pickedHeading);
+      fd.append('noidungShortDesc', pickedShortDesc);
+    }
     if (selectedFile) fd.append('image', selectedFile);
 
     const submitBtn = el('submitBtn');
@@ -459,6 +480,101 @@
     formError.textContent = msg;
     formError.classList.remove('hidden');
   }
+
+  // ---------------------------------------------------------------
+  // Danh sách thả xuống: chọn sẵn nội dung từ file noidung.md
+  // ---------------------------------------------------------------
+  async function loadNoidungList() {
+    try {
+      const res = await fetch('/api/noidung');
+      if (!res.ok) return;
+      const json = await res.json();
+      if (!json.available || !json.items.length) return;
+
+      noidungSelect.innerHTML =
+        '<option value="">— Tự nhập tay —</option>' +
+        json.items.map((it) =>
+          '<option value="' + escapeHtml(it.id) + '">' +
+          escapeHtml(it.name) + ' (' + it.columnCount + ' khung)' +
+          '</option>'
+        ).join('');
+
+      noidungCount.textContent = json.items.length + ' bài';
+      noidungBox.style.display = 'block';
+    } catch (e) {
+      // Không có file nội dung cũng không sao, chỉ ẩn phần này đi
+    }
+  }
+
+  // Ghép các khung của bài vào đúng 3 ô quen thuộc; khung nào không thuộc
+  // 3 loại đó vẫn được giữ và lưu kèm khi bấm Lưu sản phẩm.
+  function fillFromArticle(art) {
+    pickedColumns = art.columns || [];
+    pickedHeading = art.heading || '';
+    pickedShortDesc = art.shortDesc || '';
+
+    if (art.heading) titleInput.value = art.heading;
+    if (art.shortDesc) descInput.value = art.shortDesc;
+
+    const pick = (keyword) => {
+      const col = pickedColumns.find((c) => stripTones(c.title).includes(keyword));
+      return col ? col.items.join('\n') : '';
+    };
+
+    appListInput.value = pick('ung dung');
+    prosListInput.value = pick('uu diem') || pick('dac diem') || pick('noi bat');
+    commitListInput.value = pick('cam ket');
+
+    const known = ['ung dung', 'uu diem', 'dac diem', 'noi bat', 'cam ket'];
+    const extra = pickedColumns.filter(
+      (c) => !known.some((k) => stripTones(c.title).includes(k))
+    );
+
+    noidungNote.classList.remove('hidden');
+    noidungNote.textContent =
+      'Đã nạp ' + pickedColumns.length + ' khung nội dung.' +
+      (extra.length
+        ? ' Trong đó ' + extra.length + ' khung ngoài 3 ô bên dưới (' +
+          extra.map((c) => c.title).join(', ') + ') sẽ được thêm khi bạn bấm Lưu.'
+        : '');
+  }
+
+  // Tạo regex từ mã ký tự thay vì gõ thẳng dấu kết hợp vào mã nguồn,
+  // tránh sai lệch khi file được lưu ở bảng mã khác.
+  var COMBINING_RE = new RegExp(
+    '[' + String.fromCodePoint(0x0300) + '-' + String.fromCodePoint(0x036f) + ']', 'g'
+  );
+
+  function stripTones(str) {
+    return String(str || '')
+      .normalize('NFD')
+      .replace(COMBINING_RE, '')
+      .replace(/đ/g, 'd').replace(/Đ/g, 'D')
+      .toLowerCase();
+  }
+
+  noidungSelect.addEventListener('change', async () => {
+    const id = noidungSelect.value;
+    noidungNote.classList.add('hidden');
+
+    if (!id) {
+      pickedColumns = null;
+      pickedHeading = '';
+      pickedShortDesc = '';
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/noidung/' + encodeURIComponent(id));
+      if (res.status === 401) { closeModal(); showLogin(); return; }
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Không tải được nội dung.');
+      fillFromArticle(json);
+      showToast('Đã điền nội dung từ file. Bạn nên xem lại trước khi lưu.');
+    } catch (err) {
+      showFormError(err.message);
+    }
+  });
 
   // ---------------------------------------------------------------
   // Tự động điền từ nội dung mô tả

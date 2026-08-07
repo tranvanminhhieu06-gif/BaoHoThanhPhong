@@ -161,6 +161,161 @@ bấm "Lưu sản phẩm".
 
 ---
 
+## D. Nạp nội dung hàng loạt từ file Word (noidung.md)
+
+Dùng khi bạn có sẵn một file nội dung dài chứa mô tả của nhiều sản phẩm và
+muốn đưa hết vào website, thay vì gõ tay từng danh mục.
+
+### Bước 1 — Chuẩn bị
+
+Chép file `noidung.md` vào thư mục **BaoHoThanhPhong** (cùng chỗ với
+`index.html`).
+
+> Sau khi chép file này vào, trang quản lý sẽ tự có thêm **danh sách thả
+> xuống** để chọn nội dung có sẵn — xem mục E bên dưới. Nếu muốn dùng cả trên
+> bản online thì nhớ commit/push file `noidung.md` lên GitHub.
+
+### Bước 2 — Tạo bản xem trước
+
+Mở Command Prompt tại thư mục `BaoHoThanhPhong`, chạy:
+
+```
+node scripts/import-noidung.js noidung.md
+```
+
+Lệnh này **không sửa gì trên website**. Nó chỉ đọc file, tách nội dung và in
+ra bảng kết quả, ví dụ:
+
+```
+Đã đọc 18 bảng trong file.
+
+Ghép được   : 42 bài vào danh mục
+Chưa ghép   : 3 bài
+
+  [OK] cat2_s1      <- ÁO PHẢN QUANG PALIZE  (5 khung)
+  [OK] cat7_s1      <- QUẦN ÁO CÔNG NHÂN     (6 khung)
+  [??] PHỤ KIỆN BẢO VỆ  (4 khung)
+```
+
+- `[OK]` = đã tìm được danh mục tương ứng trong website.
+- `[??]` = chưa tìm được, bài này sẽ bị bỏ qua khi áp dụng.
+
+### Bước 3 — Xem demo
+
+Mở file **`admin/preview/demo.html`** bằng trình duyệt (nhấp đúp vào file).
+
+Trang demo hiển thị đúng như trang chi tiết sản phẩm thật: tiêu đề, đoạn giới
+thiệu, các ô đặc điểm và **toàn bộ khung nội dung được tạo tự động** từ file.
+Chọn từng bài ở cột trái để xem.
+
+Script tự tạo khung cho **mọi mục** có trong file, kể cả những mục website
+chưa từng có như *Chính Sách Bảo Hành*, *Chất liệu*, *Thiết kế*, *Đặc điểm
+nổi bật* — mỗi mục được gán biểu tượng và màu phù hợp.
+
+### Bước 4 — Áp dụng vào website
+
+Khi đã ưng ý, chạy lại kèm `--apply`:
+
+```
+node scripts/import-noidung.js noidung.md --apply
+```
+
+Nội dung sẽ được ghi vào `js/category_content.js`. Bản cũ được sao lưu tại
+`js/category_content.js.bak`.
+
+Sau đó vào trang quản lý bấm **Đồng bộ lên GitHub** (chế độ máy cá nhân), hoặc
+commit/push như bình thường, để đưa lên website thật.
+
+### Lưu ý
+
+- Chỉ những danh mục **có trong file** mới bị ghi đè. Danh mục không có trong
+  file giữ nguyên nội dung cũ.
+- Việc ghép tên là **tự động theo tên gần đúng**. Hãy xem kỹ cột trái của
+  trang demo — nếu một bài bị ghép nhầm danh mục, bạn có thể sửa lại thủ công
+  qua trang **Khối nội dung** sau khi áp dụng.
+- Một tên chung trong file (ví dụ "ÁO BẢO VỆ") có thể khớp với nhiều danh mục
+  con (Áo Bảo Vệ Tay Dài / Tay Ngắn). Khi đó script chọn một mục, phần còn lại
+  bạn tự bổ sung qua trang Khối nội dung.
+- Ba ô đặc điểm ở đầu trang không có trong file nên được giữ nguyên như cũ.
+
+---
+
+## E. Danh sách thả xuống — chọn nội dung thay vì gõ tay
+
+Khi trong thư mục website có file `noidung.md`, trang quản lý sẽ tự hiện thêm
+danh sách thả xuống. Không cần chạy lệnh gì cả.
+
+### Trong form thêm / sửa sản phẩm
+
+Ngay đầu form có ô **"Chọn nội dung có sẵn"** liệt kê toàn bộ sản phẩm trong
+file, kèm số khung nội dung của từng bài. Chọn một mục là hệ thống tự điền:
+
+- Tên sản phẩm
+- Mô tả
+- Ứng Dụng Thực Tế / Ưu Điểm Nổi Bật / Cam Kết Từ Thành Phong
+
+Nếu bài đó có thêm khung ngoài 3 ô trên (ví dụ *Chính Sách Bảo Hành*, *Thông
+số kỹ thuật*, *Hướng dẫn bảo quản*), hệ thống báo ngay dưới ô chọn và sẽ tự
+thêm các khung đó khi bạn bấm **Lưu sản phẩm**.
+
+Mọi ô đều sửa lại được sau khi điền — chọn từ danh sách chỉ là để khỏi gõ tay.
+
+### Trong trang Khối nội dung
+
+Có ô **"Nạp nội dung có sẵn"**. Chọn một bài để nạp toàn bộ khung của bài đó
+vào trình soạn, rồi bạn sửa nội dung, đổi biểu tượng/màu, kéo sắp xếp lại thứ
+tự, xóa khung thừa — xong mới bấm **Lưu thay đổi**. Chưa bấm Lưu thì website
+chưa đổi gì.
+
+### Khi cập nhật lại file noidung.md
+
+Server đọc file 1 lần rồi ghi nhớ để chạy cho nhanh. Sau khi sửa file, khởi
+động lại server (`Ctrl + C` rồi `npm start`) để nạp nội dung mới.
+
+---
+
+## F. Viết bài cho website
+
+Bấm nút **Bài viết** trên thanh đầu trang quản lý.
+
+### Viết bài mới
+
+1. Bấm **"Viết bài mới"** ở cột trái.
+2. Nhập **tiêu đề**, **tóm tắt ngắn** (đoạn hiện ở thẻ tin ngoài trang chủ),
+   chọn **chủ đề**, **nhãn**, **ngày đăng** và **ảnh bìa**.
+3. Soạn nội dung ở khung bên dưới. Thanh công cụ có:
+   - In đậm / nghiêng / gạch chân
+   - Tiêu đề lớn (H2), tiêu đề nhỏ (H3), đoạn văn thường
+   - Danh sách gạch đầu dòng, danh sách đánh số, trích dẫn
+   - Chèn liên kết, **chèn ảnh vào giữa bài**
+4. Bấm **Lưu bài**.
+
+Tick **"Đặt làm bài nổi bật"** nếu muốn bài đó hiện ở ô lớn trên trang chủ.
+
+Nếu là tin dẫn lại từ báo khác, điền **Link bài gốc** — cuối bài sẽ tự hiện
+dòng "Nguồn bài viết".
+
+### Bài viết hiện ở đâu trên website
+
+- **Trang chủ** — mục Tin tức hiện 3 bài mới nhất (bài nổi bật lên đầu), kèm
+  nút "Xem tất cả tin tức".
+- **Trang danh sách** `html/tintuc.html` — liệt kê toàn bộ bài, lọc theo chủ đề,
+  có phân trang 9 bài mỗi trang.
+- **Trang chi tiết** `tintuc/index.html?bai=<đường-dẫn-bài>` — trang riêng cho
+  từng bài, có phần liên hệ và gợi ý bài khác ở cuối.
+
+### Lưu ý
+
+- Ảnh bài viết được lưu vào `images/TIN TỨC/`.
+- Nội dung bài lưu trong `js/posts.js`. Ở chế độ máy cá nhân có bản sao lưu
+  `js/posts.js.bak`.
+- Khi dán nội dung từ Word hoặc web khác, hệ thống **chỉ lấy phần chữ** để
+  tránh mang theo định dạng rác. Bạn định dạng lại bằng thanh công cụ.
+- Nút **"Xem trên web"** mở bài trên baohothanhphong.vn — chỉ xem được sau khi
+  đã đồng bộ/đăng lên GitHub.
+
+---
+
 ## Cách dùng
 
 - **Danh mục** (cột trái): bấm để lọc sản phẩm theo danh mục.

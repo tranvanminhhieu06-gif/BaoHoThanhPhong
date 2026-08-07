@@ -21,6 +21,7 @@ const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
 const { exec } = require('child_process');
+const { parseNoidung } = require('../scripts/noidung-parser');
 
 // =====================================================================
 // Cấu hình
@@ -32,6 +33,8 @@ const IMAGES_DIR = path.join(ROOT, 'images');
 // Đường dẫn file tính từ gốc kho code (dùng chung cho cả 2 chế độ)
 const PRODUCTS_PATH = 'js/products.js';
 const CATEGORY_CONTENT_PATH = 'js/category_content.js';
+const POSTS_PATH = 'js/posts.js';
+const NOIDUNG_PATH = process.env.NOIDUNG_FILE || 'noidung.md';
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
 const GITHUB_REPO = process.env.GITHUB_REPO || 'tranvanminhhieu06-gif/BaoHoThanhPhong';
@@ -127,6 +130,7 @@ app.get('/api/me', (req, res) => {
     needsPassword: !!ADMIN_PASSWORD,
     autoSync: ONLINE_MODE,
     aiEnabled: !!ANTHROPIC_API_KEY,
+    siteUrl: SITE_URL,
   });
 });
 
@@ -411,6 +415,38 @@ function getColumnItems(entry, keyword) {
 }
 
 async function updateCategoryContentColumns(contentKey, label, fallbackDesc, body) {
+  // Trường hợp 1: người dùng chọn sẵn 1 bài từ file noidung.md trong danh sách
+  // thả xuống -> thay nguyên bộ khung nội dung theo bài đó.
+  let fullColumns = null;
+  if (body.noidungColumns) {
+    try {
+      const parsed = JSON.parse(body.noidungColumns);
+      if (Array.isArray(parsed) && parsed.length) {
+        fullColumns = parsed
+          .map((c) => ({
+            icon: String(c.icon || 'check_circle').trim(),
+            color: String(c.color || '#1D5FA8').trim(),
+            title: String(c.title || '').trim(),
+            items: (Array.isArray(c.items) ? c.items : []).map((s) => String(s).trim()).filter(Boolean),
+          }))
+          .filter((c) => c.title && c.items.length);
+      }
+    } catch (e) {
+      console.error('noidungColumns không hợp lệ:', e.message);
+    }
+  }
+
+  if (fullColumns) {
+    const ccLoaded = await loadCategoryContent();
+    const entry = ensureContentEntry(ccLoaded.categoryContent, contentKey, label, fallbackDesc);
+    if (body.noidungHeading) entry.heading = String(body.noidungHeading).trim();
+    if (body.noidungShortDesc) entry.shortDesc = String(body.noidungShortDesc).trim();
+    entry.columns = fullColumns;
+    await saveCategoryContent(ccLoaded, ccLoaded.categoryContent);
+    return;
+  }
+
+  // Trường hợp 2: nhập tay 3 ô quen thuộc
   const appItems = linesToItems(body.appList);
   const prosItems = linesToItems(body.prosList);
   const commitItems = linesToItems(body.commitList);
@@ -763,6 +799,263 @@ app.get('/api/category-content/:key', requireAuth, async (req, res) => {
       prosItems: getColumnItems(entry, 'uu diem'),
       commitItems: getColumnItems(entry, 'cam ket'),
     });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// =====================================================================
+// Bài viết / tin tức (js/posts.js)
+// =====================================================================
+
+async function loadPosts() {
+  const entry = await readFileEntry(POSTS_PATH);
+  if (!entry) throw new Error('Không tìm thấy file js/posts.js');
+  const raw = entry.text;
+
+  const marker = 'const posts = ';
+  const idx = raw.indexOf(marker);
+  if (idx === -1) throw new Error('Không tìm thấy "const posts" trong js/posts.js');
+  const start = idx + marker.length;
+  const end = findBalanced(raw, start, '[', ']');
+  if (end === -1) throw new Error('Không đọc được mảng posts (ngoặc không khớp)');
+
+  return { raw, sha: entry.sha, posts: JSON.parse(raw.slice(start, end + 1)), range: [start, end] };
+}
+
+async function savePosts(loaded, posts, message) {
+  const { raw, range } = loaded;
+  const out = raw.slice(0, range[0]) + JSON.stringify(posts, null, 2) + raw.slice(range[1] + 1);
+
+  if (!ONLINE_MODE) {
+    try { fs.writeFileSync(path.join(ROOT, POSTS_PATH) + '.bak', raw, 'utf8'); } catch (e) { /* bỏ qua */ }
+  }
+  await writeFileEntry(POSTS_PATH, out, message || 'Cap nhat bai viet qua trang quan ly', loaded.sha);
+}
+
+/**
+ * Lọc HTML do người soạn nhập vào.
+ * Nội dung này do quản trị viên tự viết nên rủi ro thấp, nhưng vẫn loại bỏ
+ * thẻ script/iframe, thuộc tính on... và link javascript: cho chắc chắn.
+ */
+function sanitizeHtml(html) {
+  let s = String(html || '');
+  s = s.replace(/<\s*(script|style|iframe|object|embed|form|link|meta)[^>]*>[\s\S]*?<\s*\/\s*\1\s*>/gi, '');
+  s = s.replace(/<\s*(script|style|iframe|object|embed|form|link|meta)[^>]*\/?\s*>/gi, '');
+  s = s.replace(/\son\w+\s*=\s*"[^"]*"/gi, '');
+  s = s.replace(/\son\w+\s*=\s*'[^']*'/gi, '');
+  s = s.replace(/\son\w+\s*=\s*[^\s>]+/gi, '');
+  s = s.replace(/(href|src)\s*=\s*(["'])\s*javascript:[^"']*\2/gi, '$1="#"');
+  return s.trim();
+}
+
+function slugify(title) {
+  const s = removeDiacritics(String(title || ''))
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return s.slice(0, 80) || 'bai-viet';
+}
+
+function uniqueSlug(base, posts, ignoreId) {
+  const taken = new Set(posts.filter((p) => p.id !== ignoreId).map((p) => p.slug));
+  if (!taken.has(base)) return base;
+  let n = 2;
+  while (taken.has(base + '-' + n)) n++;
+  return base + '-' + n;
+}
+
+function nextPostId(posts) {
+  let max = 0;
+  for (const p of posts) {
+    const m = /^p(\d+)$/.exec(p.id || '');
+    if (m) max = Math.max(max, parseInt(m[1], 10));
+  }
+  return 'p' + (max + 1);
+}
+
+// Lấy dữ liệu từ form (multipart) và chuẩn hóa thành 1 bài viết
+function buildPostFromBody(body, old, coverPath) {
+  const title = String(body.title || '').trim();
+  return {
+    title,
+    excerpt: String(body.excerpt || '').trim(),
+    cover: coverPath || (old ? old.cover : ''),
+    tag: String(body.tag || '').trim(),
+    category: String(body.category || '').trim() || 'Tin tức',
+    date: String(body.date || '').trim() || new Date().toISOString().slice(0, 10),
+    author: String(body.author || '').trim() || 'Thành Phong',
+    sourceUrl: String(body.sourceUrl || '').trim(),
+    featured: body.featured === 'true' || body.featured === true,
+    contentHtml: sanitizeHtml(body.contentHtml),
+  };
+}
+
+// Lưu ảnh của bài viết vào images/TIN TỨC/
+async function savePostImage(file, nameHint) {
+  const ext = (path.extname(file.originalname) || '.png').toLowerCase();
+  const base = 'bai-' + slugify(nameHint || 'anh');
+  let filename = base + ext;
+  let repoPath = 'images/TIN TỨC/' + filename;
+  if (await fileExists(repoPath)) {
+    filename = base + '-' + Date.now() + ext;
+    repoPath = 'images/TIN TỨC/' + filename;
+  }
+  await writeFileEntry(repoPath, file.buffer, 'Them anh bai viet: ' + filename);
+  return '../' + repoPath;
+}
+
+app.get('/api/posts', requireAuth, async (req, res) => {
+  try {
+    const { posts } = await loadPosts();
+    res.json({ posts });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.post('/api/posts', requireAuth, upload.single('cover'), async (req, res) => {
+  try {
+    const body = req.body || {};
+    const title = String(body.title || '').trim();
+    if (!title) return res.status(400).json({ error: 'Vui lòng nhập tiêu đề bài viết.' });
+
+    const loaded = await loadPosts();
+    const { posts } = loaded;
+
+    const coverPath = req.file ? await savePostImage(req.file, title) : '';
+    const post = buildPostFromBody(body, null, coverPath);
+    post.id = nextPostId(posts);
+    post.slug = uniqueSlug(String(body.slug || '').trim() || slugify(title), posts, null);
+
+    posts.unshift(post);
+    await savePosts(loaded, posts, 'Them bai viet: ' + title);
+    res.json({ ok: true, post });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.put('/api/posts/:id', requireAuth, upload.single('cover'), async (req, res) => {
+  try {
+    const body = req.body || {};
+    const loaded = await loadPosts();
+    const { posts } = loaded;
+
+    const idx = posts.findIndex((p) => p.id === req.params.id);
+    if (idx === -1) return res.status(404).json({ error: 'Không tìm thấy bài viết.' });
+
+    const title = String(body.title || '').trim();
+    if (!title) return res.status(400).json({ error: 'Vui lòng nhập tiêu đề bài viết.' });
+
+    const old = posts[idx];
+    const coverPath = req.file ? await savePostImage(req.file, title) : '';
+    const updated = buildPostFromBody(body, old, coverPath);
+    updated.id = old.id;
+    updated.slug = uniqueSlug(String(body.slug || '').trim() || old.slug || slugify(title), posts, old.id);
+
+    posts[idx] = updated;
+    await savePosts(loaded, posts, 'Sua bai viet: ' + title);
+    res.json({ ok: true, post: updated });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.delete('/api/posts/:id', requireAuth, async (req, res) => {
+  try {
+    const loaded = await loadPosts();
+    const { posts } = loaded;
+    const idx = posts.findIndex((p) => p.id === req.params.id);
+    if (idx === -1) return res.status(404).json({ error: 'Không tìm thấy bài viết.' });
+    const removed = posts[idx];
+    posts.splice(idx, 1);
+    await savePosts(loaded, posts, 'Xoa bai viet: ' + removed.title);
+    res.json({ ok: true });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Chèn ảnh vào giữa bài viết
+app.post('/api/posts/upload-image', requireAuth, upload.single('image'), async (req, res) => {
+  try {
+    if (!req.file) return res.status(400).json({ error: 'Chưa chọn ảnh.' });
+    const url = await savePostImage(req.file, (req.body && req.body.name) || 'noi-dung');
+    // Trang admin nằm khác cấp thư mục nên trả về thêm đường dẫn để xem trước
+    res.json({ ok: true, url, previewUrl: url.replace(/^\.\.\//, '/') });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// =====================================================================
+// Kho nội dung có sẵn (file noidung.md) - dùng cho danh sách thả xuống
+// =====================================================================
+
+// File này khá lớn (vài trăm KB) nên chỉ đọc và phân tích 1 lần rồi giữ lại.
+let noidungCache = null;
+
+async function getNoidungArticles() {
+  if (noidungCache) return noidungCache;
+
+  const entry = await readFileEntry(NOIDUNG_PATH);
+  if (!entry) {
+    noidungCache = { available: false, articles: [] };
+    return noidungCache;
+  }
+
+  const articles = parseNoidung(entry.text);
+  noidungCache = { available: true, articles };
+  console.log('Đã nạp ' + articles.length + ' bài từ ' + NOIDUNG_PATH);
+  return noidungCache;
+}
+
+// Danh sách rút gọn để đổ vào dropdown
+app.get('/api/noidung', requireAuth, async (req, res) => {
+  try {
+    const { available, articles } = await getNoidungArticles();
+    res.json({
+      available,
+      file: NOIDUNG_PATH,
+      items: articles.map((a) => ({
+        id: a.id,
+        name: a.sourceName,
+        heading: a.heading,
+        columnCount: a.columns.length,
+      })),
+    });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Nội dung đầy đủ của 1 bài
+app.get('/api/noidung/:id', requireAuth, async (req, res) => {
+  try {
+    const { articles } = await getNoidungArticles();
+    const art = articles.find((a) => a.id === req.params.id);
+    if (!art) return res.status(404).json({ error: 'Không tìm thấy bài này trong file nội dung.' });
+    res.json(art);
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Đọc lại file (dùng khi vừa cập nhật noidung.md)
+app.post('/api/noidung/reload', requireAuth, async (req, res) => {
+  try {
+    noidungCache = null;
+    const { available, articles } = await getNoidungArticles();
+    res.json({ ok: true, available, count: articles.length });
   } catch (e) {
     console.error(e);
     res.status(500).json({ error: e.message });

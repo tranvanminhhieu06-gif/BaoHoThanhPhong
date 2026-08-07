@@ -328,6 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbarEffects();
     initProductFilters();
     initSearch();
+    renderHomeNews();
     initLanguage();
     initStatsCounter();
     initContactForm();
@@ -748,6 +749,48 @@ window.addEventListener('load', hidePreloader);
 // Safety timeout: Hide preloader after 3 seconds regardless of load state
 setTimeout(hidePreloader, 3000);
 
+
+// Render 3 bài viết mới nhất ở mục Tin tức trên trang chủ (dữ liệu từ js/posts.js)
+function renderHomeNews() {
+    const grid = document.getElementById('newsGrid');
+    if (!grid || typeof posts === 'undefined' || !posts.length) return;
+
+    const escHtml = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+
+    const formatDate = (iso) => {
+        const p = String(iso || '').split('-');
+        return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : (iso || '');
+    };
+
+    // Bài nổi bật lên đầu, còn lại sắp theo ngày mới nhất
+    const sorted = posts.slice().sort((a, b) => {
+        if (!!b.featured !== !!a.featured) return b.featured ? 1 : -1;
+        return String(b.date).localeCompare(String(a.date));
+    });
+
+    grid.innerHTML = sorted.slice(0, 3).map((p, idx) => {
+        const url = '../tintuc/index.html?bai=' + encodeURIComponent(p.slug);
+        const cardCls = 'news-card' + (idx === 0 ? ' featured' : '');
+        const tagCls = 'news-tag' + (idx === 0 ? ' hot' : '');
+        return '<div class="' + cardCls + '" data-aos="fade-up" data-aos-delay="' + (100 + idx * 50) + '">' +
+            '<div class="news-image">' +
+            '<img src="' + escHtml(p.cover) + '" alt="' + escHtml(p.title) + '" class="news-img-placeholder" ' +
+            'style="object-fit: cover; background: none;" loading="lazy">' +
+            (p.tag ? '<span class="' + tagCls + '">' + escHtml(p.tag) + '</span>' : '') +
+            '</div>' +
+            '<div class="news-content">' +
+            '<div class="news-meta">' +
+            '<span><i class="fas fa-calendar-alt"></i> ' + escHtml(formatDate(p.date)) + '</span>' +
+            '<span><i class="fas fa-tag"></i> ' + escHtml(p.category || 'Tin tức') + '</span>' +
+            '</div>' +
+            '<h3>' + escHtml(p.title) + '</h3>' +
+            '<p>' + escHtml(p.excerpt || '') + '</p>' +
+            '<a href="' + url + '" class="news-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>' +
+            '</div></div>';
+    }).join('');
+}
 
 // Helper: Shuffle homepage hero slides (ảnh bìa banner)
 function shuffleHomepageBanners() {

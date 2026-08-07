@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xem trước nội dung mới - Thành Phong</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+  body{font-family:'Be Vietnam Pro',sans-serif;background:#F4F6F9;color:#334155;}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;vertical-align:middle;}
+  .scrollbar-thin::-webkit-scrollbar{width:6px;}
+  .scrollbar-thin::-webkit-scrollbar-thumb{background:#CBD5E1;border-radius:10px;}
+  .item.active{background:#1D5FA8;color:#fff;}
+  .item.active .sub{color:rgba(255,255,255,.75);}
+  .feature-item{display:flex;align-items:flex-start;gap:12px;}
+</style>
+</head>
+<body class="min-h-screen">
+
+<header class="sticky top-0 z-30 bg-white border-b border-gray-200">
+  <div class="max-w-[1400px] mx-auto px-5 py-3 flex items-center justify-between gap-4">
+    <div>
+      <h1 class="text-base font-extrabold text-[#1A2744] leading-tight">Xem trước nội dung mới</h1>
+      <p id="metaLine" class="text-[11px] text-gray-400 font-medium leading-tight">Đang tải...</p>
+    </div>
+    <div class="flex items-center gap-2 text-xs font-bold">
+      <span class="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700" id="okCount">–</span>
+      <span class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-700" id="badCount">–</span>
+    </div>
+  </div>
+</header>
+
+<div id="noData" class="max-w-2xl mx-auto mt-16 bg-white border border-gray-200 rounded-2xl p-8 text-center" style="display:none;">
+  <span class="material-symbols-outlined text-5xl text-gray-300 block mb-3">description</span>
+  <h2 class="font-extrabold text-[#1A2744] mb-2">Chưa có dữ liệu xem trước</h2>
+  <p class="text-sm text-gray-500 mb-4">Hãy chạy lệnh sau tại thư mục <b>BaoHoThanhPhong</b>:</p>
+  <code class="block bg-gray-900 text-gray-100 rounded-xl px-4 py-3 text-xs text-left">node scripts/import-noidung.js noidung.md</code>
+</div>
+
+<main id="app" class="max-w-[1400px] mx-auto px-5 py-6 flex flex-col lg:flex-row gap-6" style="display:none;">
+
+  <aside class="lg:w-80 shrink-0">
+    <div class="bg-white rounded-2xl border border-gray-200 p-4 lg:sticky lg:top-20">
+      <h3 class="text-xs font-extrabold uppercase tracking-widest text-[#1D5FA8] mb-3">Danh sách bài</h3>
+      <div id="list" class="space-y-1 max-h-[70vh] overflow-y-auto scrollbar-thin pr-1"></div>
+    </div>
+  </aside>
+
+  <section class="flex-1 min-w-0">
+    <div id="warn" class="hidden mb-5 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm font-semibold text-amber-800"></div>
+
+    <!-- Khu vực mô phỏng trang chi tiết sản phẩm -->
+    <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 mb-6">
+      <p class="text-[11px] font-extrabold uppercase tracking-widest text-[#1D5FA8] mb-2">Phần đầu trang sản phẩm</p>
+      <h1 id="pHeading" class="text-2xl sm:text-3xl font-extrabold text-[#1A2744] tracking-tight leading-tight mb-4"></h1>
+      <div id="pDesc" class="text-sm text-gray-600 leading-relaxed space-y-2 mb-8"></div>
+
+      <p class="text-[11px] font-extrabold uppercase tracking-widest text-[#1D5FA8] mb-3">Ô đặc điểm</p>
+      <div id="pFeatures" class="space-y-3"></div>
+    </div>
+
+    <p class="text-[11px] font-extrabold uppercase tracking-widest text-[#1D5FA8] mb-3 px-1">
+      Khung nội dung (<span id="colCount">0</span>)
+    </p>
+    <div id="pColumns" class="grid gap-6" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));"></div>
+  </section>
+</main>
+
+<script src="noidung-data.js" onerror="document.getElementById('noData').style.display='block'"></script>
+<script>
+(function () {
+  var DATA = window.__NOIDUNG__;
+  if (!DATA) { document.getElementById('noData').style.display = 'block'; return; }
+
+  document.getElementById('app').style.display = 'flex';
+  document.getElementById('metaLine').textContent =
+    'Nguồn: ' + DATA.sourceFile + ' · tạo lúc ' + new Date(DATA.generatedAt).toLocaleString('vi-VN');
+  document.getElementById('okCount').textContent = DATA.matched.length + ' bài ghép được';
+  document.getElementById('badCount').textContent = DATA.unmatched.length + ' bài chưa ghép';
+
+  var ALL = DATA.matched.map(function (r) { return { r: r, ok: true }; })
+    .concat(DATA.unmatched.map(function (r) { return { r: r, ok: false }; }));
+
+  var DEFAULT_FEATURES = [
+    { icon: 'verified', color: '#1D5FA8', title: 'Chất lượng cao, đạt tiêu chuẩn an toàn', desc: 'Sản phẩm chính hãng, có đầy đủ CO/CQ chứng nhận chất lượng' },
+    { icon: 'local_shipping', color: '#1D5FA8', title: 'Giao hàng toàn quốc – Nhanh chóng', desc: 'Hỗ trợ vận chuyển tận nơi, đóng gói chắc chắn an toàn' },
+    { icon: 'groups', color: '#E8A500', title: 'Nhận đặt hàng số lượng lớn', desc: 'Báo giá sỉ ưu đãi cho doanh nghiệp, may in thêu theo yêu cầu' }
+  ];
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  var current = 0;
+
+  function renderList() {
+    document.getElementById('list').innerHTML = ALL.map(function (x, i) {
+      var dot = x.ok
+        ? '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>'
+        : '<span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>';
+      return '<button data-i="' + i + '" class="item' + (i === current ? ' active' : '') +
+        ' w-full flex items-center gap-2 px-3 py-2 rounded-xl text-left hover:bg-gray-50 transition">' +
+        dot + '<span class="flex-1 min-w-0">' +
+        '<span class="block text-xs font-bold truncate">' + esc(x.r.sourceName) + '</span>' +
+        '<span class="sub block text-[10px] text-gray-400 font-medium truncate">' +
+        (x.ok ? esc(x.r.key + ' · ' + x.r.label) : 'chưa ghép được danh mục') +
+        '</span></span></button>';
+    }).join('');
+
+    Array.prototype.forEach.call(document.querySelectorAll('.item'), function (b) {
+      b.addEventListener('click', function () { current = Number(b.dataset.i); renderList(); renderOne(); });
+    });
+  }
+
+  function renderOne() {
+    var x = ALL[current];
+    if (!x) return;
+    var r = x.r;
+
+    var warn = document.getElementById('warn');
+    if (x.ok) {
+      warn.classList.add('hidden');
+    } else {
+      warn.classList.remove('hidden');
+      warn.textContent = 'Bài này chưa ghép được vào danh mục nào trong products.js. ' +
+        'Khi chạy --apply nó sẽ bị bỏ qua. Bạn có thể tự thêm nội dung qua trang "Khối nội dung".';
+    }
+
+    document.getElementById('pHeading').textContent = r.heading || '(không có tiêu đề)';
+
+    document.getElementById('pDesc').innerHTML = (r.shortDesc || '')
+      .split('\n').filter(Boolean)
+      .map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') ||
+      '<p class="text-gray-400 italic">(không có đoạn giới thiệu)</p>';
+
+    document.getElementById('pFeatures').innerHTML = DEFAULT_FEATURES.map(function (f) {
+      return '<div class="feature-item">' +
+        '<div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:' + f.color + '1A;">' +
+        '<span class="material-symbols-outlined" style="font-size:20px;color:' + f.color + ';">' + f.icon + '</span></div>' +
+        '<div><p class="font-bold text-[#1A2744] text-sm">' + esc(f.title) + '</p>' +
+        '<p class="text-xs text-gray-500 mt-0.5">' + esc(f.desc) + '</p></div></div>';
+    }).join('') +
+      '<p class="text-[11px] text-gray-400 font-medium pt-1">Giữ nguyên 3 ô mặc định – file nội dung không có phần này.</p>';
+
+    document.getElementById('colCount').textContent = r.columns.length;
+    document.getElementById('pColumns').innerHTML = r.columns.map(function (c) {
+      var items = c.items.map(function (it) {
+        return '<li class="flex items-start gap-2">' +
+          '<span class="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style="background:' + c.color + ';"></span>' +
+          '<span>' + esc(it) + '</span></li>';
+      }).join('');
+      return '<div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">' +
+        '<h3 class="flex items-center gap-2 font-extrabold text-[#1A2744] text-base mb-4">' +
+        '<span class="material-symbols-outlined" style="font-size:20px;color:' + c.color + ';">' + esc(c.icon) + '</span>' +
+        '<span>' + esc(c.title) + '</span></h3>' +
+        '<ul class="space-y-2.5 text-sm text-gray-600">' + items + '</ul></div>';
+    }).join('');
+  }
+
+  renderList();
+  renderOne();
+})();
+</script>
+</body>
+</html>

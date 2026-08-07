@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tin tức - Thành Phong Bảo Hộ Lao Động</title>
+<meta name="description" id="metaDesc" content="Tin tức và kiến thức về an toàn lao động từ Công ty TNHH Bảo Hộ Lao Động Thành Phong.">
+<link rel="icon" type="image/png" href="../images/LOGO/Icon logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  :root{--primary:#1D5FA8;--navy:#1A2744;--accent:#E8A500;}
+  body{font-family:'Be Vietnam Pro',sans-serif;background:#F8FAFC;color:#334155;}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;vertical-align:middle;}
+  .btn-press{transition:all .2s cubic-bezier(.4,0,.2,1);}
+  .btn-press:active{transform:scale(.95);}
+
+  /* Định dạng nội dung bài viết */
+  .article-body{font-size:16px;line-height:1.85;color:#334155;}
+  .article-body p{margin:0 0 18px;}
+  .article-body h2{font-size:24px;font-weight:800;color:var(--navy);margin:32px 0 14px;}
+  .article-body h3{font-size:20px;font-weight:800;color:var(--navy);margin:28px 0 12px;}
+  .article-body ul,.article-body ol{margin:0 0 18px;padding-left:22px;}
+  .article-body ul{list-style:disc;}
+  .article-body ol{list-style:decimal;}
+  .article-body li{margin-bottom:8px;}
+  .article-body a{color:var(--primary);text-decoration:underline;font-weight:600;}
+  .article-body img{max-width:100%;height:auto;border-radius:16px;margin:20px 0;}
+  .article-body blockquote{border-left:4px solid var(--primary);background:#F1F5F9;padding:14px 18px;border-radius:0 12px 12px 0;margin:0 0 18px;font-style:italic;}
+  .article-body strong{font-weight:700;color:var(--navy);}
+
+  .floating-actions{position:fixed;bottom:30px;right:24px;z-index:100;display:flex;flex-direction:column;gap:14px;}
+</style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- Nút liên hệ nổi -->
+<div class="floating-actions">
+  <a href="https://zalo.me/0931160818" target="_blank" rel="noopener" aria-label="Chat Zalo"
+     class="w-14 h-14 rounded-[12px] flex items-center justify-center btn-press">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo"
+         style="width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15);">
+  </a>
+  <a href="tel:0931160818" aria-label="Gọi điện"
+     class="w-14 h-14 bg-[#E8A500] text-white rounded-full flex items-center justify-center shadow-2xl btn-press">
+    <span class="material-symbols-outlined" style="font-size:28px;">call</span>
+  </a>
+</div>
+
+<!-- Thanh điều hướng -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <a class="flex items-center" href="../html/trangchu.html">
+        <img src="../images/LOGO/Icon logo.png" alt="Thành Phong" class="h-12 w-auto object-contain">
+      </a>
+      <div class="hidden lg:flex items-center gap-2">
+        <a class="text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:text-[#1D5FA8] px-4 py-2 rounded-lg transition-all" href="../html/trangchu.html">Trang chủ</a>
+        <a class="text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:text-[#1D5FA8] px-4 py-2 rounded-lg transition-all" href="../html/sanpham.html">Sản phẩm</a>
+        <a class="text-sm font-bold bg-[#EBF3FF] text-[#1D5FA8] px-4 py-2 rounded-lg transition-all" href="../html/tintuc.html">Tin tức</a>
+        <a class="text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:text-[#1D5FA8] px-4 py-2 rounded-lg transition-all" href="../html/trangchu.html#contact">Liên hệ</a>
+      </div>
+      <a href="../html/tintuc.html" class="text-sm font-bold text-[#1D5FA8] hover:underline">Tất cả tin tức</a>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-32 pb-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+  <!-- Không tìm thấy bài -->
+  <div id="notFound" class="hidden text-center py-24">
+    <span class="material-symbols-outlined text-6xl text-gray-300 block mb-4">article</span>
+    <h1 class="text-2xl font-extrabold text-[#1A2744] mb-2">Không tìm thấy bài viết</h1>
+    <p class="text-gray-500 mb-6">Bài viết có thể đã được gỡ hoặc đường dẫn không đúng.</p>
+    <a href="../html/tintuc.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#1D5FA8] text-white rounded-2xl text-sm font-bold btn-press">
+      <span class="material-symbols-outlined" style="font-size:18px;">arrow_back</span> Xem tất cả tin tức
+    </a>
+  </div>
+
+  <article id="article" style="display:none;">
+    <nav class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">
+      <a class="hover:text-[#1D5FA8] transition-colors" href="../html/trangchu.html">Trang chủ</a>
+      <span class="material-symbols-outlined" style="font-size:14px;">chevron_right</span>
+      <a class="hover:text-[#1D5FA8] transition-colors" href="../html/tintuc.html">Tin tức</a>
+    </nav>
+
+    <span id="aTag" class="inline-block px-3 py-1 rounded-full bg-[#EBF3FF] text-[#1D5FA8] text-[11px] font-extrabold uppercase tracking-widest mb-4"></span>
+
+    <h1 id="aTitle" class="text-3xl sm:text-4xl font-extrabold text-[#1A2744] tracking-tight leading-tight mb-4"></h1>
+
+    <div class="flex flex-wrap items-center gap-4 text-xs font-semibold text-gray-500 mb-8">
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined" style="font-size:16px;">calendar_month</span><span id="aDate"></span></span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined" style="font-size:16px;">person</span><span id="aAuthor"></span></span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined" style="font-size:16px;">sell</span><span id="aCategory"></span></span>
+    </div>
+
+    <img id="aCover" alt="" class="w-full rounded-3xl mb-8 object-cover" style="max-height:440px;">
+
+    <p id="aExcerpt" class="text-lg font-semibold text-[#1A2744] leading-relaxed border-l-4 border-[#1D5FA8] pl-5 mb-8"></p>
+
+    <div id="aBody" class="article-body"></div>
+
+    <div id="aSourceWrap" class="hidden mt-8 rounded-2xl bg-gray-100 px-5 py-4 text-sm">
+      <span class="font-bold text-[#1A2744]">Nguồn bài viết: </span>
+      <a id="aSource" href="#" target="_blank" rel="noopener" class="text-[#1D5FA8] font-semibold underline break-all"></a>
+    </div>
+
+    <!-- Kêu gọi liên hệ -->
+    <div class="mt-12 rounded-3xl bg-[#1A2744] text-white p-8 text-center">
+      <h3 class="text-xl font-extrabold mb-2">Cần tư vấn trang bị bảo hộ cho doanh nghiệp?</h3>
+      <p class="text-white/70 text-sm mb-6">Thành Phong hỗ trợ tư vấn miễn phí và báo giá sỉ nhanh chóng.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://zalo.me/0931160818" target="_blank" rel="noopener"
+           class="px-6 py-3 rounded-2xl text-sm font-bold btn-press" style="background:#0068FF;">Liên hệ qua Zalo</a>
+        <a href="tel:0931160818" class="px-6 py-3 rounded-2xl text-sm font-bold bg-[#E8A500] btn-press">Gọi 0931160818</a>
+      </div>
+    </div>
+
+    <!-- Bài viết khác -->
+    <section class="mt-16">
+      <h2 class="text-xl font-extrabold text-[#1A2744] mb-6">Bài viết khác</h2>
+      <div id="related" class="grid grid-cols-1 sm:grid-cols-2 gap-5"></div>
+    </section>
+  </article>
+</main>
+
+<footer class="bg-[#1A2744] text-white/60 py-8 text-center text-xs font-medium">
+  © 2024 Công Ty TNHH Bảo Hộ Lao Động Thành Phong — MST: 0316903199
+</footer>
+
+<script src="../js/posts.js"></script>
+<script>
+(function () {
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '';
+    var p = String(iso).split('-');
+    if (p.length !== 3) return iso;
+    return p[2] + '/' + p[1] + '/' + p[0];
+  }
+
+  if (typeof posts === 'undefined' || !posts.length) {
+    document.getElementById('notFound').classList.remove('hidden');
+    return;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var slug = params.get('bai') || params.get('slug');
+
+  var post = null;
+  for (var i = 0; i < posts.length; i++) {
+    if (posts[i].slug === slug || posts[i].id === slug) { post = posts[i]; break; }
+  }
+
+  if (!post) {
+    document.getElementById('notFound').classList.remove('hidden');
+    return;
+  }
+
+  document.title = post.title + ' - Thành Phong Bảo Hộ Lao Động';
+  var meta = document.getElementById('metaDesc');
+  if (meta) meta.setAttribute('content', post.excerpt || post.title);
+
+  document.getElementById('aTag').textContent = post.tag || 'Tin tức';
+  document.getElementById('aTitle').textContent = post.title;
+  document.getElementById('aDate').textContent = formatDate(post.date);
+  document.getElementById('aAuthor').textContent = post.author || 'Thành Phong';
+  document.getElementById('aCategory').textContent = post.category || 'Tin tức';
+
+  var cover = document.getElementById('aCover');
+  if (post.cover) { cover.src = post.cover; cover.alt = post.title; }
+  else cover.style.display = 'none';
+
+  var excerpt = document.getElementById('aExcerpt');
+  if (post.excerpt) excerpt.textContent = post.excerpt;
+  else excerpt.style.display = 'none';
+
+  // Nội dung do quản trị viên soạn trong trang admin
+  document.getElementById('aBody').innerHTML = post.contentHtml || '';
+
+  if (post.sourceUrl) {
+    document.getElementById('aSourceWrap').classList.remove('hidden');
+    var a = document.getElementById('aSource');
+    a.href = post.sourceUrl;
+    a.textContent = post.sourceUrl;
+  }
+
+  document.getElementById('article').style.display = 'block';
+
+  // Bài viết khác: 2 bài mới nhất còn lại
+  var others = posts.filter(function (p) { return p.slug !== post.slug; })
+    .sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); })
+    .slice(0, 4);
+
+  document.getElementById('related').innerHTML = others.map(function (p) {
+    return '<a href="index.html?bai=' + encodeURIComponent(p.slug) + '" ' +
+      'class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">' +
+      '<div class="aspect-[16/9] bg-gray-100 overflow-hidden">' +
+      (p.cover ? '<img src="' + esc(p.cover) + '" alt="' + esc(p.title) + '" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">' : '') +
+      '</div><div class="p-4">' +
+      '<p class="text-[10px] font-extrabold text-[#1D5FA8] uppercase tracking-widest mb-1">' + esc(p.category || 'Tin tức') + '</p>' +
+      '<h3 class="font-bold text-sm text-[#1A2744] leading-snug">' + esc(p.title) + '</h3>' +
+      '</div></a>';
+  }).join('');
+})();
+</script>
+</body>
+</html>

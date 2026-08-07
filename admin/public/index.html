@@ -61,6 +61,10 @@
           <span class="material-symbols-outlined text-[18px]">dashboard_customize</span>
           <span class="hidden sm:inline">Khối nội dung</span>
         </a>
+        <a href="posts.html" class="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-bold text-gray-600 hover:bg-gray-50 transition">
+          <span class="material-symbols-outlined text-[18px]">edit_note</span>
+          <span class="hidden sm:inline">Bài viết</span>
+        </a>
         <button id="syncBtn" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1A2744] text-white text-sm font-bold hover:bg-black/80 transition active:scale-95">
           <span class="material-symbols-outlined text-[18px]">cloud_upload</span>
           Đồng bộ lên GitHub
@@ -125,6 +129,25 @@
 
         <div class="p-6 space-y-5">
           <input type="hidden" id="productId" value="">
+
+          <!-- Chọn nội dung có sẵn từ file noidung.md -->
+          <div id="noidungBox" style="display:none;" class="rounded-2xl border border-[#1D5FA8]/20 bg-[#EBF3FF] p-4">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <label class="block text-xs font-extrabold uppercase tracking-wide text-[#1D5FA8]">
+                Chọn nội dung có sẵn
+              </label>
+              <span id="noidungCount" class="text-[11px] font-bold text-[#1D5FA8]/70"></span>
+            </div>
+            <select id="noidungSelect"
+              class="w-full px-4 py-2.5 rounded-xl border border-[#1D5FA8]/30 bg-white text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D5FA8]/20 focus:border-[#1D5FA8]">
+              <option value="">— Tự nhập tay —</option>
+            </select>
+            <p class="text-[11px] text-[#1D5FA8]/80 font-medium mt-2 leading-relaxed">
+              Chọn một sản phẩm trong danh sách, hệ thống sẽ tự điền tên, mô tả và
+              toàn bộ khung nội dung. Bạn vẫn sửa lại được trước khi lưu.
+            </p>
+            <p id="noidungNote" class="hidden text-[11px] font-bold text-[#1D5FA8] bg-white rounded-xl px-3 py-2 mt-2"></p>
+          </div>
 
           <!-- Ảnh -->
           <div>
