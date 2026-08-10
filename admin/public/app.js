@@ -19,7 +19,6 @@
   const searchInput = el('searchInput');
   const addBtn = el('addBtn');
   const syncBtn = el('syncBtn');
-  const syncStatus = el('syncStatus');
 
   const modalBackdrop = el('modalBackdrop');
   const productForm = el('productForm');
@@ -771,24 +770,20 @@
   });
 
   // ---------------------------------------------------------------
-  // Đồng bộ GitHub
+  // Đẩy ngay lên GitHub (bình thường server tự đẩy sau mỗi lần lưu)
   // ---------------------------------------------------------------
   syncBtn.addEventListener('click', async () => {
     syncBtn.disabled = true;
-    const originalHtml = syncBtn.innerHTML;
-    syncBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span> Đang đồng bộ...';
-    syncStatus.textContent = '';
     try {
-      const res = await fetch('/api/sync', { method: 'POST' });
+      const res = await fetch('/api/git-push', { method: 'POST' });
       const json = await res.json();
-      if (!json.ok) throw new Error(json.message || 'Đồng bộ thất bại.');
+      if (!json.ok) throw new Error(json.message || 'Đẩy lên GitHub thất bại.');
       showToast(json.message);
-      syncStatus.textContent = 'Đồng bộ lúc ' + new Date().toLocaleTimeString('vi-VN');
+      if (window.refreshGitStatus) window.refreshGitStatus();
     } catch (err) {
-      showToast('Lỗi đồng bộ: ' + err.message, true);
+      showToast('Lỗi: ' + err.message, true);
     } finally {
       syncBtn.disabled = false;
-      syncBtn.innerHTML = originalHtml;
     }
   });
 
@@ -805,6 +800,9 @@
       toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
     }, 3500);
   }
+
+  // Để chỉ báo đồng bộ (gitstatus.js) báo được lỗi đẩy GitHub cho người dùng
+  window.showToast = showToast;
 
   // ---------------------------------------------------------------
   checkAuth();

@@ -223,8 +223,8 @@ node scripts/import-noidung.js noidung.md --apply
 Nội dung sẽ được ghi vào `js/category_content.js`. Bản cũ được sao lưu tại
 `js/category_content.js.bak`.
 
-Sau đó vào trang quản lý bấm **Đồng bộ lên GitHub** (chế độ máy cá nhân), hoặc
-commit/push như bình thường, để đưa lên website thật.
+Sau đó commit/push như bình thường để đưa lên website thật (script này chạy
+ngoài trang quản lý nên không tự đẩy).
 
 ### Lưu ý
 
@@ -445,32 +445,36 @@ chưa (xám). Nhớ bấm **Lưu thay đổi** sau khi chỉnh.
 - **3 ô nội dung** (Ứng Dụng Thực Tế / Ưu Điểm Nổi Bật / Cam Kết Từ Thành
   Phong): áp dụng cho cả **danh mục con** đang chọn — mọi sản phẩm cùng danh
   mục con sẽ hiển thị chung nội dung này. Mỗi dòng là 1 gạch đầu dòng.
-- **Đồng bộ lên GitHub**: chỉ hiện ở chế độ máy cá nhân. Ở chế độ online,
-  mọi thay đổi được lưu tự động.
+### Tự động đẩy lên GitHub
 
-### Nút "Xem trước" — kiểm tra trước khi đồng bộ
+**Không cần bấm gì cả.** Cứ lưu là xong — server tự chạy `git add`, `commit`
+và `push` lên GitHub ngay sau đó.
 
-Bấm **Xem trước** trên thanh đầu trang để mở website ngay trên máy bạn, ở địa
-chỉ `http://localhost:3000/preview/`.
+Nhiều thay đổi liên tiếp được gom lại thành một lần đẩy (đợi khoảng 1,5 giây
+sau lần lưu cuối), nên sửa nhanh nhiều mục cũng không tạo ra hàng chục commit
+rác.
 
-Đây là **website thật với toàn bộ thay đổi bạn vừa làm**, nhưng chưa hề được
-đẩy lên GitHub. Khách vào baohothanhphong.vn vẫn thấy bản cũ. Nhờ vậy bạn kiểm
-tra thoải mái, sai thì sửa lại, ưng rồi mới bấm **Đồng bộ lên GitHub**.
+Góc phải thanh đầu trang có chỉ báo trạng thái:
 
-Trang xem trước có 2 điểm nhận biết:
+| Hiển thị | Nghĩa là |
+|---|---|
+| ☁ **Sắp đẩy lên GitHub...** (vàng) | Vừa lưu, đang chờ gom thêm thay đổi |
+| ⟳ **Đang đẩy lên GitHub...** (xanh dương) | Đang chạy git push |
+| ☁ **Đã đẩy lên GitHub** (xanh lá) | Xong, nội dung đã lên GitHub |
+| ☁ **Lỗi đẩy lên GitHub** (đỏ) | Không push được — xem lý do ở thông báo hiện ra |
 
-- Góc dưới bên trái luôn có nhãn **"BẢN XEM TRƯỚC — chưa đồng bộ lên website thật"**.
-- Mỗi khi bạn lưu sản phẩm, bài viết hay khối nội dung, **trang tự động tải lại**
-  để hiện kết quả mới, không cần bấm F5.
+Nút **Đẩy ngay** dùng khi bạn không muốn chờ, hoặc muốn thử lại sau khi bị lỗi.
 
-Cách dùng thuận tiện: mở trang quản lý ở một tab, bản xem trước ở tab bên cạnh.
-Sửa bên này, liếc sang tab kia là thấy ngay.
+Sau khi đẩy thành công, website thật cần thêm khoảng **1-2 phút** để GitHub
+Pages cập nhật.
 
-> Ở bản online (Render), nút Xem trước vẫn mở được nhưng hiển thị theo file tại
-> thời điểm triển khai và **không tự tải lại**. Muốn xem chính xác, dùng ở chế
-> độ máy cá nhân.
+> Ở chế độ online (Render), mọi thay đổi được ghi thẳng lên GitHub ngay lúc
+> lưu, không qua bước git nào cả. Chỉ báo sẽ hiện **"Tự lưu lên GitHub"**.
 
-Sau khi lưu, website thật cần khoảng **1-2 phút** để GitHub Pages cập nhật.
+**Nếu gặp lỗi đẩy:** thường do máy chưa đăng nhập git hoặc chưa từng push repo
+này. Mở Command Prompt tại thư mục `BaoHoThanhPhong` và chạy thử
+`git push origin main` một lần để đăng nhập, sau đó trang quản lý sẽ tự đẩy
+được bình thường.
 
 ---
 

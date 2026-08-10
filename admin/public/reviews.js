@@ -326,5 +326,8 @@
     }, 3500);
   }
 
+  // Để chỉ báo đồng bộ (gitstatus.js) báo được lỗi đẩy GitHub cho người dùng
+  window.showToast = showToast;
+
   checkAuth();
 })();

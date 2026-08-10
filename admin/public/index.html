@@ -71,7 +71,7 @@
         </div>
       </div>
       <div class="flex items-center gap-3">
-        <span id="syncStatus" class="text-xs font-semibold text-gray-400 hidden sm:inline"></span>
+        <div id="gitStatus"></div>
         <a href="boxes.html" class="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-bold text-gray-600 hover:bg-gray-50 transition">
           <span class="material-symbols-outlined text-[18px]">dashboard_customize</span>
           <span class="hidden sm:inline">Khối nội dung</span>
@@ -84,14 +84,15 @@
           <span class="material-symbols-outlined text-[18px]">forum</span>
           <span class="hidden sm:inline">Phản hồi</span>
         </a>
-        <a href="/preview/" target="_blank" title="Mở bản xem trước website (chưa đồng bộ)"
-           class="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#1D5FA8]/30 bg-[#EBF3FF] text-sm font-bold text-[#1D5FA8] hover:bg-[#1D5FA8] hover:text-white transition">
-          <span class="material-symbols-outlined text-[18px]">visibility</span>
-          <span class="hidden sm:inline">Xem trước</span>
+        <a href="https://baohothanhphong.vn" target="_blank" title="Mở website thật"
+           class="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-bold text-gray-600 hover:bg-gray-50 transition">
+          <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+          <span class="hidden sm:inline">Website</span>
         </a>
-        <button id="syncBtn" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1A2744] text-white text-sm font-bold hover:bg-black/80 transition active:scale-95">
+        <button id="syncBtn" title="Đẩy ngay lên GitHub, không chờ gom thay đổi"
+          class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1A2744] text-white text-sm font-bold hover:bg-black/80 transition active:scale-95">
           <span class="material-symbols-outlined text-[18px]">cloud_upload</span>
-          Đồng bộ lên GitHub
+          <span class="hidden sm:inline">Đẩy ngay</span>
         </button>
         <button id="logoutBtn" title="Đăng xuất" style="display:none;"
           class="w-10 h-10 items-center justify-center rounded-xl border border-gray-200 text-gray-500 hover:bg-gray-100 transition">
@@ -287,6 +288,7 @@
   </div>
 
   <script src="richtext.js"></script>
+  <script src="gitstatus.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

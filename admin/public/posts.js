@@ -229,9 +229,8 @@
     editorMode.textContent = 'Đang sửa bài';
     deleteBtn.style.display = 'flex';
     viewLink.style.display = 'flex';
-    // Mở trong bản xem trước để đọc được ngay, chưa cần đồng bộ lên website
-    viewLink.href = '/preview/tintuc/index.html?bai=' + encodeURIComponent(p.slug);
-    viewLink.title = 'Mở bài trong bản xem trước';
+    viewLink.href = (siteUrl || '') + '/tintuc/index.html?bai=' + encodeURIComponent(p.slug);
+    viewLink.title = 'Mở bài trên website (chờ GitHub cập nhật khoảng 1-2 phút sau khi lưu)';
 
     emptyPick.style.display = 'none';
     editorWrap.style.display = 'block';
@@ -455,6 +454,9 @@
       toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
     }, 3500);
   }
+
+  // Để chỉ báo đồng bộ (gitstatus.js) báo được lỗi đẩy GitHub cho người dùng
+  window.showToast = showToast;
 
   checkAuth();
 })();

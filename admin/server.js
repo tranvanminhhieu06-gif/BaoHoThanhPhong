@@ -167,124 +167,79 @@ app.get('/images/*', (req, res) => {
 });
 
 // =====================================================================
-// XEM TRƯỚC WEBSITE (live server)
-// Phục vụ trực tiếp các file website trên máy, kèm tự động tải lại trang
-// mỗi khi có file thay đổi -> xem được kết quả trước khi đồng bộ lên GitHub.
+// TỰ ĐỘNG ĐẨY LÊN GITHUB
+// Ở chế độ máy cá nhân, mỗi lần lưu xong sẽ tự git add + commit + push.
+// Nhiều thay đổi liên tiếp được gom lại thành 1 lần đẩy cho gọn.
+// (Chế độ online thì mỗi lần lưu đã ghi thẳng lên GitHub rồi.)
 // =====================================================================
 
-// Những thư mục nội bộ, không phải nội dung website
-const PREVIEW_BLOCKED = new Set(['admin', '.git', '.github', 'node_modules', 'scripts']);
+// Trạng thái lần đẩy gần nhất, để trang quản lý hiển thị cho người dùng biết
+let gitState = { state: 'idle', message: '', at: null };
 
-// Danh sách trình duyệt đang mở trang xem trước
-let previewClients = [];
+let pushTimer = null;
+let pushing = false;
+let pushAgain = false;
 
-function broadcastReload() {
-  previewClients = previewClients.filter((res) => !res.writableEnded);
-  previewClients.forEach((res) => {
-    try { res.write('data: reload\n\n'); } catch (e) { /* bỏ qua */ }
-  });
+function gitCmd() {
+  return process.platform === 'win32' ? '"C:\\Program Files\\Git\\cmd\\git.exe"' : 'git';
 }
 
-// Kênh báo cho trình duyệt biết cần tải lại
-app.get('/preview-events', requireAuth, (req, res) => {
-  res.set({
-    'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache',
-    Connection: 'keep-alive',
-  });
-  res.flushHeaders && res.flushHeaders();
-  res.write('retry: 2000\n\n');
+function runGitPush() {
+  if (ONLINE_MODE) return;
+  if (pushing) { pushAgain = true; return; }
 
-  previewClients.push(res);
-  req.on('close', () => {
-    previewClients = previewClients.filter((c) => c !== res);
-  });
-});
+  pushing = true;
+  gitState = { state: 'pushing', message: 'Đang đẩy lên GitHub...', at: Date.now() };
 
-const LIVE_RELOAD_SNIPPET = `
-<!-- Chế độ xem trước: tự động tải lại khi có thay đổi -->
-<script>
-(function () {
-  try {
-    var es = new EventSource('/preview-events');
-    es.onmessage = function (e) { if (e.data === 'reload') location.reload(); };
-  } catch (err) { /* bỏ qua */ }
-  var bar = document.createElement('div');
-  bar.textContent = 'BẢN XEM TRƯỚC — chưa đồng bộ lên website thật';
-  bar.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:2147483647;' +
-    'background:#1A2744;color:#fff;font:700 11px/1 Be Vietnam Pro,sans-serif;' +
-    'padding:8px 14px;border-radius:100px;box-shadow:0 4px 14px rgba(0,0,0,.25);' +
-    'letter-spacing:.03em;pointer-events:none;opacity:.9;';
-  if (document.body) document.body.appendChild(bar);
-  else document.addEventListener('DOMContentLoaded', function () { document.body.appendChild(bar); });
-})();
-</script>
-`;
+  const git = gitCmd();
+  const cmd = `${git} add -A && ${git} commit -m "Cap nhat noi dung qua trang quan ly" && ${git} push origin ${GITHUB_BRANCH}`;
+  const env = { ...process.env, PATH: (process.env.PATH || '') + ';C:\\Program Files\\Git\\cmd' };
 
-function injectLiveReload(html) {
-  if (html.includes('</body>')) return html.replace(/<\/body>/i, LIVE_RELOAD_SNIPPET + '</body>');
-  return html + LIVE_RELOAD_SNIPPET;
-}
+  exec(cmd, { cwd: ROOT, maxBuffer: 1024 * 1024 * 10, env }, (err, stdout, stderr) => {
+    const out = (stdout || '') + (stderr || '');
+    pushing = false;
 
-// Thiếu dấu "/" ở cuối thì các đường dẫn tương đối trong trang sẽ sai,
-// nên chuyển hướng về dạng có dấu gạch chéo.
-app.get('/preview', (req, res) => res.redirect('/preview/'));
-
-app.use('/preview', requireAuth, (req, res, next) => {
-  let rel;
-  try { rel = decodeURIComponent(req.path); } catch (e) { return res.status(400).send('Đường dẫn không hợp lệ.'); }
-  if (!rel || rel === '/') rel = '/index.html';
-
-  // Chặn thư mục nội bộ
-  const firstSeg = rel.split('/').filter(Boolean)[0];
-  if (firstSeg && PREVIEW_BLOCKED.has(firstSeg)) {
-    return res.status(403).send('Thư mục này không thuộc nội dung website.');
-  }
-
-  // Chặn truy cập ra ngoài thư mục website
-  const full = path.resolve(ROOT, '.' + rel);
-  if (full !== ROOT && !full.startsWith(ROOT + path.sep)) {
-    return res.status(403).send('Đường dẫn không hợp lệ.');
-  }
-
-  let target = full;
-  if (!fs.existsSync(target)) return next();
-  if (fs.statSync(target).isDirectory()) {
-    target = path.join(target, 'index.html');
-    if (!fs.existsSync(target)) return next();
-  }
-
-  // Trang HTML thì chèn thêm đoạn mã tự tải lại
-  if (/\.html?$/i.test(target)) {
-    try {
-      res.type('html').send(injectLiveReload(fs.readFileSync(target, 'utf8')));
-    } catch (e) {
-      res.status(500).send('Không đọc được file: ' + e.message);
+    if (err) {
+      if (out.includes('nothing to commit')) {
+        gitState = { state: 'ok', message: 'Không có thay đổi mới.', at: Date.now() };
+      } else {
+        console.error('Lỗi đẩy lên GitHub:\n' + out);
+        gitState = {
+          state: 'error',
+          message: 'Không đẩy được lên GitHub. ' + out.split('\n').filter(Boolean).slice(-1)[0],
+          at: Date.now(),
+        };
+      }
+    } else {
+      gitState = { state: 'ok', message: 'Đã đẩy lên GitHub.', at: Date.now() };
     }
-    return;
-  }
 
-  res.sendFile(target);
+    // Có thay đổi phát sinh trong lúc đang đẩy -> đẩy thêm lần nữa
+    if (pushAgain) { pushAgain = false; schedulePush(); }
+  });
+}
+
+// Gom các lần lưu sát nhau lại (đợi 1,5 giây sau lần ghi cuối)
+function schedulePush() {
+  if (ONLINE_MODE) return;
+  gitState = { state: 'pending', message: 'Sắp đẩy lên GitHub...', at: Date.now() };
+  clearTimeout(pushTimer);
+  pushTimer = setTimeout(runGitPush, 1500);
+}
+
+app.get('/api/git-status', requireAuth, (req, res) => {
+  res.json({ ...gitState, autoPush: !ONLINE_MODE, onlineMode: ONLINE_MODE });
 });
 
-// Theo dõi thay đổi file để tự tải lại. Chỉ bật ở chế độ máy cá nhân —
-// chạy online thì file trên máy chủ không thay đổi trực tiếp.
-if (!ONLINE_MODE) {
-  let reloadTimer = null;
-  try {
-    fs.watch(ROOT, { recursive: true }, (evt, filename) => {
-      if (!filename) return;
-      const f = String(filename).replace(/\\/g, '/');
-      if (f.includes('node_modules') || f.startsWith('.git') || f.endsWith('.bak')) return;
-      if (f.startsWith('admin/')) return; // sửa code admin không cần tải lại website
-
-      clearTimeout(reloadTimer);
-      reloadTimer = setTimeout(broadcastReload, 250);
-    });
-  } catch (e) {
-    console.warn('Không theo dõi được thay đổi file (tự tải lại sẽ không hoạt động):', e.message);
+// Đẩy ngay, không chờ gom
+app.post('/api/git-push', requireAuth, (req, res) => {
+  if (ONLINE_MODE) {
+    return res.json({ ok: true, message: 'Chế độ online: thay đổi đã được lưu thẳng lên GitHub.' });
   }
-}
+  clearTimeout(pushTimer);
+  runGitPush();
+  res.json({ ok: true, message: 'Đang đẩy lên GitHub...' });
+});
 
 // =====================================================================
 // Lớp lưu trữ: máy cá nhân (fs) hoặc GitHub (API)
@@ -341,6 +296,7 @@ async function writeFileEntry(repoPath, data, message, sha) {
     const full = path.join(ROOT, repoPath);
     fs.mkdirSync(path.dirname(full), { recursive: true });
     fs.writeFileSync(full, buffer);
+    schedulePush();   // lưu xong là tự đẩy lên GitHub
     return null;
   }
 
@@ -1751,29 +1707,6 @@ app.delete('/api/products/:id', requireAuth, async (req, res) => {
     console.error(e);
     res.status(500).json({ error: e.message });
   }
-});
-
-// Đồng bộ lên GitHub - chỉ cần ở chế độ máy cá nhân
-app.post('/api/sync', requireAuth, (req, res) => {
-  if (ONLINE_MODE) {
-    return res.json({ ok: true, message: 'Chế độ online: thay đổi đã được lưu tự động lên GitHub.' });
-  }
-
-  const git = process.platform === 'win32' ? '"C:\\Program Files\\Git\\cmd\\git.exe"' : 'git';
-  const cmd = `${git} add -A && ${git} commit -m "Cap nhat san pham qua trang quan ly" && ${git} push origin ${GITHUB_BRANCH}`;
-  const env = { ...process.env, PATH: (process.env.PATH || '') + ';C:\\Program Files\\Git\\cmd' };
-
-  exec(cmd, { cwd: ROOT, maxBuffer: 1024 * 1024 * 10, env }, (err, stdout, stderr) => {
-    const out = (stdout || '') + (stderr || '');
-    if (err) {
-      if (out.includes('nothing to commit')) {
-        return res.json({ ok: true, message: 'Không có thay đổi nào mới cần đồng bộ.' });
-      }
-      console.error(out);
-      return res.status(500).json({ ok: false, message: out || err.message });
-    }
-    res.json({ ok: true, message: 'Đã đồng bộ (commit + push) lên GitHub thành công.' });
-  });
 });
 
 // =====================================================================
