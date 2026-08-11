@@ -57,7 +57,14 @@ const products = [
     "subcat": "cat2_s3",
     "subcatLabel": "Áo Phản Quang Palize Cao Cấp – An Toàn, Thoáng Mát, May Theo Yêu Cầu",
     "img": "../images/ÁO PHẢN QUANG/Áo Phản Quang Palize Cao Cấp – An Toàn, Thoáng Mát, May Theo Yêu Cầu/bia-ao-phan-quang-palize.png",
-    "desc": "Áo vàng Class 2 EN ISO 20471, 2 dải ngang thân + dải vai. Vải polyester 120gsm, dải phản quang 50mm RA≥330 cd/lux/m²."
+    "desc": "Áo vàng Class 2 EN ISO 20471, 2 dải ngang thân + dải vai. Vải polyester 120gsm, dải phản quang 50mm RA≥330 cd/lux/m².",
+    "images": [
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Palize Cao Cấp – An Toàn, Thoáng Mát, May Theo Yêu Cầu/bia-ao-phan-quang-palize.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Palize Cao Cấp – An Toàn, Thoáng Mát, May Theo Yêu Cầu/sp-ao-phan-quang-palize-cao-cap.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Palize Cao Cấp – An Toàn, Thoáng Mát, May Theo Yêu Cầu/sp-ao-phan-quang-palize-cao-cap-1786444245700.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Palize Cao Cấp – An Toàn, Thoáng Mát, May Theo Yêu Cầu/sp-ao-phan-quang-palize-cao-cap-1786444248718.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Palize Cao Cấp – An Toàn, Thoáng Mát, May Theo Yêu Cầu/sp-ao-phan-quang-palize-cao-cap-1786444251782.png"
+    ]
   },
   {
     "id": "aophanquangt5",
