@@ -23,7 +23,14 @@ const products = [
     "subcat": "cat2_s1",
     "subcatLabel": "Áo Phản Quang Kiểu 3M Cao Cấp – Thiết Kế Hiện Đại An Toàn Khi Làm Việc",
     "img": "../images/ÁO PHẢN QUANG/Áo Phản Quang Kiểu 3M Cao Cấp – Thiết Kế Hiện Đại An Toàn Khi Làm Việc/bia-ao-phan-quang-kieu-3m.png",
-    "desc": "Áo vàng Class 2 EN ISO 20471, 2 dải ngang thân + dải vai. Vải polyester 120gsm, dải phản quang 50mm RA≥330 cd/lux/m²."
+    "desc": "Áo vàng Class 2 EN ISO 20471, 2 dải ngang thân + dải vai. Vải polyester 120gsm, dải phản quang 50mm RA≥330 cd/lux/m².",
+    "images": [
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Kiểu 3M Cao Cấp – Thiết Kế Hiện Đại An Toàn Khi Làm Việc/bia-ao-phan-quang-kieu-3m.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Kiểu 3M Cao Cấp – Thiết Kế Hiện Đại An Toàn Khi Làm Việc/sp-ao-phan-quang-kieu-3m-cao-cap.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Kiểu 3M Cao Cấp – Thiết Kế Hiện Đại An Toàn Khi Làm Việc/sp-ao-phan-quang-kieu-3m-cao-cap-1786444131640.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Kiểu 3M Cao Cấp – Thiết Kế Hiện Đại An Toàn Khi Làm Việc/sp-ao-phan-quang-kieu-3m-cao-cap-1786444134921.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Kiểu 3M Cao Cấp – Thiết Kế Hiện Đại An Toàn Khi Làm Việc/sp-ao-phan-quang-kieu-3m-cao-cap-1786444139288.png"
+    ]
   },
   {
     "id": "aophanquangl3",
