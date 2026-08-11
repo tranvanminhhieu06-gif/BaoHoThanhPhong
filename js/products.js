@@ -7,7 +7,13 @@ const products = [
     "subcat": "cat1_s1",
     "subcatLabel": "ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH",
     "img": "../images/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/bia-ao-ghile.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất.",
+    "images": [
+      "../images/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/bia-ao-ghile.png",
+      "../images/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/sp-ao-gile-ky-su-1786421889483.png",
+      "../images/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/sp-ao-gile-ky-su-1786421892827.png",
+      "../images/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH/sp-ao-gile-ky-su-1786421895804.png"
+    ]
   },
   {
     "id": "aophanquangk2",
