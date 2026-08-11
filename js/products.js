@@ -74,7 +74,14 @@ const products = [
     "subcat": "cat2_s4",
     "subcatLabel": "Áo Phản Quang Túi Lưới Cao Cấp – Thoáng Mát, Nhiều Ngăn Tiện Lợi",
     "img": "../images/ÁO PHẢN QUANG/Áo Phản Quang Túi Lưới Cao Cấp – Thoáng Mát, Nhiều Ngăn Tiện Lợi/bia-ao-phan-quang-tui-luoi.png",
-    "desc": "Áo vàng Class 2 EN ISO 20471, 2 dải ngang thân + dải vai. Vải polyester 120gsm, dải phản quang 50mm RA≥330 cd/lux/m²."
+    "desc": "Áo vàng Class 2 EN ISO 20471, 2 dải ngang thân + dải vai. Vải polyester 120gsm, dải phản quang 50mm RA≥330 cd/lux/m².",
+    "images": [
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Túi Lưới Cao Cấp – Thoáng Mát, Nhiều Ngăn Tiện Lợi/bia-ao-phan-quang-tui-luoi.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Túi Lưới Cao Cấp – Thoáng Mát, Nhiều Ngăn Tiện Lợi/sp-ao-phan-quang-tui-luoi-cao-cap.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Túi Lưới Cao Cấp – Thoáng Mát, Nhiều Ngăn Tiện Lợi/sp-ao-phan-quang-tui-luoi-cao-cap-1786444284582.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Túi Lưới Cao Cấp – Thoáng Mát, Nhiều Ngăn Tiện Lợi/sp-ao-phan-quang-tui-luoi-cao-cap-1786444287929.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Túi Lưới Cao Cấp – Thoáng Mát, Nhiều Ngăn Tiện Lợi/sp-ao-phan-quang-tui-luoi-cao-cap-1786444291316.png"
+    ]
   },
   {
     "id": "aothuncongnh6",
