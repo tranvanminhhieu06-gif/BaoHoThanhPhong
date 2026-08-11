@@ -40,7 +40,14 @@ const products = [
     "subcat": "cat2_s2",
     "subcatLabel": "Áo Phản Quang Lưới Thun 2 Bên Cao Cấp – Thoáng Mát, Nhẹ, An Toàn",
     "img": "../images/ÁO PHẢN QUANG/Áo Phản Quang Lưới Thun 2 Bên Cao Cấp – Thoáng Mát, Nhẹ, An Toàn/bia-ao-phan-quang-thun-2-ben.png",
-    "desc": "Áo vàng Class 2 EN ISO 20471, 2 dải ngang thân + dải vai. Vải polyester 120gsm, dải phản quang 50mm RA≥330 cd/lux/m²."
+    "desc": "Áo vàng Class 2 EN ISO 20471, 2 dải ngang thân + dải vai. Vải polyester 120gsm, dải phản quang 50mm RA≥330 cd/lux/m².",
+    "images": [
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Lưới Thun 2 Bên Cao Cấp – Thoáng Mát, Nhẹ, An Toàn/bia-ao-phan-quang-thun-2-ben.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Lưới Thun 2 Bên Cao Cấp – Thoáng Mát, Nhẹ, An Toàn/sp-ao-phan-quang-luoi-thun-2-ben-cao-cap.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Lưới Thun 2 Bên Cao Cấp – Thoáng Mát, Nhẹ, An Toàn/sp-ao-phan-quang-luoi-thun-2-ben-cao-cap-1786444179271.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Lưới Thun 2 Bên Cao Cấp – Thoáng Mát, Nhẹ, An Toàn/sp-ao-phan-quang-luoi-thun-2-ben-cao-cap-1786444181997.png",
+      "../images/ÁO PHẢN QUANG/Áo Phản Quang Lưới Thun 2 Bên Cao Cấp – Thoáng Mát, Nhẹ, An Toàn/sp-ao-phan-quang-luoi-thun-2-ben-cao-cap-1786444184995.png"
+    ]
   },
   {
     "id": "aophanquangp4",
