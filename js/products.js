@@ -164,7 +164,12 @@ const products = [
     "subcat": "cat4_s2",
     "subcatLabel": "CHÂN VÁY CÔNG SỞ CAO CẤP – THANH LỊCH, TÔN DÁNG CHO NỮ NHÂN VIÊN",
     "img": "../images/ĐỒNG PHỤC CÔNG SỞ/CHÂN VÁY CÔNG SỞ CAO CẤP – THANH LỊCH, TÔN DÁNG CHO NỮ NHÂN VIÊN/bia-chan-vay-cong-so.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất.",
+    "images": [
+      "../images/ĐỒNG PHỤC CÔNG SỞ/CHÂN VÁY CÔNG SỞ CAO CẤP – THANH LỊCH, TÔN DÁNG CHO NỮ NHÂN VIÊN/bia-chan-vay-cong-so.png",
+      "../images/ĐỒNG PHỤC CÔNG SỞ/CHÂN VÁY CÔNG SỞ CAO CẤP – THANH LỊCH, TÔN DÁNG CHO NỮ NHÂN VIÊN/sp-chan-vay-cong-so-cao-cap.png",
+      "../images/ĐỒNG PHỤC CÔNG SỞ/CHÂN VÁY CÔNG SỞ CAO CẤP – THANH LỊCH, TÔN DÁNG CHO NỮ NHÂN VIÊN/sp-chan-vay-cong-so-cao-cap-1786699772238.png"
+    ]
   },
   {
     "id": "quantaycongs11",
