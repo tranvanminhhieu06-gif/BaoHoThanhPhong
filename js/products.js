@@ -91,7 +91,15 @@ const products = [
     "subcat": "cat3_s1",
     "subcatLabel": "ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC",
     "img": "../images/ÁO THUN/ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC/bia-ao-thun-cong-nhan.png",
-    "desc": "Áo thun công nhân là dòng đồng phục được thiết kế dành riêng cho người lao động trong các nhà máy, xưởng sản xuất, công trình và kho vận. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp áo thun công nhân chất lượng cao với độ bền vượt trội, mang lại sự thoải mái trong suốt quá trình làm việc."
+    "desc": "Áo thun công nhân là dòng đồng phục được thiết kế dành riêng cho người lao động trong các nhà máy, xưởng sản xuất, công trình và kho vận. Công ty TNHH Bảo Hộ Lao Động Thành Phong cung cấp áo thun công nhân chất lượng cao với độ bền vượt trội, mang lại sự thoải mái trong suốt quá trình làm việc.",
+    "images": [
+      "../images/ÁO THUN/ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC/bia-ao-thun-cong-nhan.png",
+      "../images/ÁO THUN/ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC/sp-ao-thun-cong-nhan-ben-dep-1786696777365.png",
+      "../images/ÁO THUN/ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC/sp-ao-thun-cong-nhan-ben-dep-1786696780578.png",
+      "../images/ÁO THUN/ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC/sp-ao-thun-cong-nhan-ben-dep-1786696783959.png",
+      "../images/ÁO THUN/ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC/sp-ao-thun-cong-nhan-ben-dep-1786696787844.png",
+      "../images/ÁO THUN/ÁO THUN CÔNG NHÂN BỀN ĐẸP – THOÁNG MÁT, PHÙ HỢP MỌI MÔI TRƯỜNG LÀM VIỆC/sp-ao-thun-cong-nhan-ben-dep-1786696791445.png"
+    ]
   },
   {
     "id": "aothunthetha7",
