@@ -148,7 +148,13 @@ const products = [
     "subcat": "cat4_s1",
     "subcatLabel": "ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP",
     "img": "../images/ĐỒNG PHỤC CÔNG SỞ/ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/bia-ao-so-mi.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất.",
+    "images": [
+      "../images/ĐỒNG PHỤC CÔNG SỞ/ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/bia-ao-so-mi.png",
+      "../images/ĐỒNG PHỤC CÔNG SỞ/ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/sp-ao-so-mi-cong-so-cao-cap.png",
+      "../images/ĐỒNG PHỤC CÔNG SỞ/ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/sp-ao-so-mi-cong-so-cao-cap-1786699413180.png",
+      "../images/ĐỒNG PHỤC CÔNG SỞ/ÁO SƠ MI CÔNG SỞ CAO CẤP – THANH LỊCH, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/sp-ao-so-mi-cong-so-cao-cap-1786699422644.png"
+    ]
   },
   {
     "id": "chanvaycongs10",
