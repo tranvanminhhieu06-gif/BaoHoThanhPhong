@@ -131,7 +131,14 @@ const products = [
     "subcat": "cat3_s3",
     "subcatLabel": "ÁO THUN VĂN PHÒNG CAO CẤP – THOẢI MÁI, CHUYÊN NGHIỆP CHO DOANH NGHIỆP",
     "img": "../images/ÁO THUN/ÁO THUN VĂN PHÒNG CAO CẤP – THOẢI MÁI, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/bia-ao-thun-van-phong.png",
-    "desc": "Cotton Pique 220gsm, thêu logo bảo vệ trước ngực, cổ bẻ vải dệt kim. Co giãn nhẹ, thoáng khí, mặc làm việc cả ngày thoải mái."
+    "desc": "Cotton Pique 220gsm, thêu logo bảo vệ trước ngực, cổ bẻ vải dệt kim. Co giãn nhẹ, thoáng khí, mặc làm việc cả ngày thoải mái.",
+    "images": [
+      "../images/ÁO THUN/ÁO THUN VĂN PHÒNG CAO CẤP – THOẢI MÁI, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/bia-ao-thun-van-phong.png",
+      "../images/ÁO THUN/ÁO THUN VĂN PHÒNG CAO CẤP – THOẢI MÁI, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/sp-ao-thun-van-phong-cao-cap.png",
+      "../images/ÁO THUN/ÁO THUN VĂN PHÒNG CAO CẤP – THOẢI MÁI, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/sp-ao-thun-van-phong-cao-cap-1786698082739.png",
+      "../images/ÁO THUN/ÁO THUN VĂN PHÒNG CAO CẤP – THOẢI MÁI, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/sp-ao-thun-van-phong-cao-cap-1786698086357.png",
+      "../images/ÁO THUN/ÁO THUN VĂN PHÒNG CAO CẤP – THOẢI MÁI, CHUYÊN NGHIỆP CHO DOANH NGHIỆP/sp-ao-thun-van-phong-cao-cap-1786698090212.png"
+    ]
   },
   {
     "id": "aosomicongso9",
