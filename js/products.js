@@ -179,7 +179,12 @@ const products = [
     "subcat": "cat4_s3",
     "subcatLabel": "QUẦN TÂY CÔNG SỞ CAO CẤP – LỊCH SỰ, SANG TRỌNG VÀ BỀN ĐẸP",
     "img": "../images/ĐỒNG PHỤC CÔNG SỞ/QUẦN TÂY CÔNG SỞ CAO CẤP – LỊCH SỰ, SANG TRỌNG VÀ BỀN ĐẸP/bia-quan-tay.png",
-    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất."
+    "desc": "Sản phẩm bảo hộ lao động chất lượng cao, đạt tiêu chuẩn an toàn quốc gia. Bền đẹp, độ bền vượt trội trong nhiều môi trường làm việc. Liên hệ để được tư vấn và báo giá tốt nhất.",
+    "images": [
+      "../images/ĐỒNG PHỤC CÔNG SỞ/QUẦN TÂY CÔNG SỞ CAO CẤP – LỊCH SỰ, SANG TRỌNG VÀ BỀN ĐẸP/bia-quan-tay.png",
+      "../images/ĐỒNG PHỤC CÔNG SỞ/QUẦN TÂY CÔNG SỞ CAO CẤP – LỊCH SỰ, SANG TRỌNG VÀ BỀN ĐẸP/sp-quan-tay-cong-so-cao-cap-1786701287517.png",
+      "../images/ĐỒNG PHỤC CÔNG SỞ/QUẦN TÂY CÔNG SỞ CAO CẤP – LỊCH SỰ, SANG TRỌNG VÀ BỀN ĐẸP/sp-quan-tay-cong-so-cao-cap-1786701290987.png"
+    ]
   },
   {
     "id": "aobaovetayda12",
