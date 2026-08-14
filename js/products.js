@@ -109,7 +109,19 @@ const products = [
     "subcat": "cat3_s2",
     "subcatLabel": "ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI",
     "img": "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/bia-ao-thun-the-thao.png",
-    "desc": "Áo thun văn phòng là lựa chọn được nhiều doanh nghiệp ưu tiên sử dụng nhờ sự thoải mái, năng động và chuyên nghiệp. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp áo thun đồng phục văn phòng với nhiều mẫu mã hiện đại, chất liệu cao cấp và dịch vụ may theo yêu cầu.\r\nSản phẩm phù hợp cho nhân viên văn phòng, nhân viên kinh doanh, lễ tân, kỹ thuật và các chương trình sự kiện của doanh nghiệp"
+    "desc": "Áo thun văn phòng là lựa chọn được nhiều doanh nghiệp ưu tiên sử dụng nhờ sự thoải mái, năng động và chuyên nghiệp. Công ty TNHH Bảo Hộ Lao Động Thành Phong chuyên cung cấp áo thun đồng phục văn phòng với nhiều mẫu mã hiện đại, chất liệu cao cấp và dịch vụ may theo yêu cầu.\r\nSản phẩm phù hợp cho nhân viên văn phòng, nhân viên kinh doanh, lễ tân, kỹ thuật và các chương trình sự kiện của doanh nghiệp",
+    "images": [
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/bia-ao-thun-the-thao.png",
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/sp-ao-thun-the-thao-cao-cap-1786697046481.png",
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/sp-ao-thun-the-thao-cao-cap-1786697050750.png",
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/sp-ao-thun-the-thao-cao-cap-1786697052519.png",
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/sp-ao-thun-the-thao-cao-cap-1786697054760.png",
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/sp-ao-thun-the-thao-cao-cap-1786697056910.png",
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/sp-ao-thun-the-thao-cao-cap-1786697058890.png",
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/sp-ao-thun-the-thao-cao-cap-1786697061182.png",
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/sp-ao-thun-the-thao-cao-cap-1786697063471.png",
+      "../images/ÁO THUN/ÁO THUN THỂ THAO CAO CẤP – CO GIÃN TỐT, THOÁNG KHÍ VƯỢT TRỘI/sp-ao-thun-the-thao-cao-cap-1786697065390.png"
+    ]
   },
   {
     "id": "aothunvanpho8",
