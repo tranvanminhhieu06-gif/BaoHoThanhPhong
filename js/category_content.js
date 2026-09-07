@@ -65,6 +65,7 @@ var categoryContent = {
     "features": [
       {
         "icon": "verified",
+        "color": "",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
         "title": "Vải kaki liên doanh cao cấp.",
@@ -72,6 +73,7 @@ var categoryContent = {
       },
       {
         "icon": "verified",
+        "color": "",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
         "title": "Chống nhăn, chống bám bụi.",
@@ -79,6 +81,7 @@ var categoryContent = {
       },
       {
         "icon": "verified",
+        "color": "",
         "iconWrapClass": "bg-blue-50",
         "iconClass": "text-[#1D5FA8]",
         "title": "Độ bền cao, phù hợp môi trường công trình.",
@@ -86,24 +89,6 @@ var categoryContent = {
       }
     ],
     "columns": [
-      {
-        "icon": "info",
-        "color": "#1D5FA8",
-        "title": "Ứng Dụng Thực Tế",
-        "items": [
-          "Phù hợp cho:",
-          "Kỹ sư xây dựng.",
-          "Kỹ sư giám sát.",
-          "Chỉ huy trưởng công trình.",
-          "Nhân viên kỹ thuật.",
-          "Đội ngũ thi công và quản lý dự án.",
-          "Ưu Điểm Nổi Bật",
-          "Tăng tính chuyên nghiệp tại công trình.",
-          "Hỗ trợ mang theo dụng cụ làm việc.",
-          "Dễ dàng nhận diện vị trí công tác.",
-          "Thoải mái khi sử dụng trong thời gian dài."
-        ]
-      },
       {
         "icon": "verified",
         "color": "#10B981",
