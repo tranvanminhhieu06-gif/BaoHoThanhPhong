@@ -1,7 +1,7 @@
 const products = [
   {
     "id": "aogilekysuao1",
-    "title": "Áo Gile Kỹ Sư",
+    "title": "Áo Gile Kỹ Sư - N1",
     "cat": "cat1",
     "catLabel": "ÁO GILE KỸ SƯ – ÁO GILE CÔNG TRÌNH",
     "subcat": "cat1_s1",
